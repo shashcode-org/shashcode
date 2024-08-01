@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shashcode</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        #vanta-canvas {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            z-index: 2;
+            flex-wrap: wrap; /* Allows wrapping for small screens */
+            transition: all 0.3s ease;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            transition: background-color 0.3s, transform 0.3s;
+            border-radius: 5px;
+            border: 1px solid transparent;
+            font-size: 1em;
+            position: relative; /* For positioning dropdown */
+        }
+
+        .navbar a:hover {
+            background: linear-gradient(45deg, #FF8800, #FF5500); /* Orange gradient */
+            color: white;
+            transform: scale(1.1);
+            border: 1px solid white;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown .arrow {
+            display: inline-block;
+            margin-left: 5px;
+            transition: transform 0.3s;
+        }
+
+        .dropdown.open .arrow {
+            transform: rotate(180deg); /* Rotate arrow when open */
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.9);
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 4; /* Ensure it is above other elements */
+            border-radius: 5px;
+            top: 100%;
+            left: 0;
+            padding: 0;
+            margin-top: 5px; /* Space between navbar item and dropdown */
+            white-space: nowrap; /* Prevents text wrapping */
+            transition: max-height 0.5s, padding 0.5s; /* Animation for dropdown */
+            max-height: 0; /* Start collapsed */
+            overflow: hidden;
+        }
+
+        .dropdown.open .dropdown-content {
+            display: block;
+            max-height: 300px; /* Adjust as needed */
+            padding: 10px 0;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #FFDD00; /* Yellowish-orange */
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            text-align: center;
+            color: white;
+            z-index: 1;
+            position: relative;
+        }
+
+        .content h1 {
+            font-size: 4em; /* Larger font size */
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7), -1px -1px 4px rgba(255, 255, 255, 0.4);
+            animation: pulse 1.5s infinite; /* Added animation */
+            line-height: 1; /* Ensures no extra space between lines */
+        }
+
+        .content h1 span {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .content h1 .part1 {
+            color: white;
+        }
+
+        .content h1 .part2 {
+            color: #FFDD00; /* Yellow */
+        }
+
+        .content h1 .part3 {
+            color: #FF8800; /* Orange */
+        }
+
+        @keyframes pulse {
+            0% {
+                text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7), -1px -1px 4px rgba(255, 255, 255, 0.4);
+            }
+            50% {
+                text-shadow: 6px 6px 12px rgba(0, 0, 0, 0.8), -1px -1px 6px rgba(255, 255, 255, 0.5);
+            }
+            100% {
+                text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7), -1px -1px 4px rgba(255, 255, 255, 0.4);
+            }
+        }
+
+        .content button {
+            padding: 15px 30px;
+            font-size: 1.5em;
+            color: white;
+            background: linear-gradient(45deg, #FFDD00, #FF8800);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.5s, transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            font-weight: bold; /* Make text bolder */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Add text shadow for better readability */
+        }
+
+        .content button:hover {
+            background: linear-gradient(135deg, #FFDD00, #FF8800);
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+                cursor: pointer;
+                position: absolute;
+                left: 20px;
+                top: 20px;
+                z-index: 3;
+            }
+
+            .hamburger .line {
+                width: 30px;
+                height: 3px;
+                background: #fefefe;
+                margin: 6px 0;
+            }
+
+            .navbar a {
+                display: none;
+            }
+
+            .navbar.active {
+                display: flex;
+                flex-direction: column;
+                align-items: center; /* Center the items horizontally */
+                padding-top: 60px; /* Adjust padding to push items down */
+            }
+
+            .navbar.active a {
+                display: block;
+                width: 100%; /* Full width to center items */
+                text-align: center; /* Center text within items */
+                padding: 10px 0; /* Add padding for spacing */
+                transition: 0.5s;
+            }
+
+            .navbar.active .dropdown-content {
+                min-width: 100%;
+                left: 0;
+            }
+
+            .content h1 {
+                font-size: 3em; /* Adjusted for smaller screens */
+            }
+
+            .content button {
+                padding: 12px 25px;
+                font-size: 1.2em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 5px;
+            }
+
+            .navbar a {
+                padding: 8px;
+                font-size: 0.8em;
+            }
+
+            .dropdown-content {
+                min-width: 100%;
+                font-size: 0.9em;
+            }
+
+            .content h1 {
+                font-size: 2.5em; /* Adjusted for mobile screens */
+            }
+
+            .content button {
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="vanta-canvas"></div>
+    <div class="navbar">
+        <div class="hamburger" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <a href="#">Home</a>
+        <div class="dropdown">
+            <a href="#" onclick="toggleDropdown(event)">Learning Paths <span class="arrow">▼</span></a>
+            <div class="dropdown-content">
+                <a href="page1.html">Java</a>
+                <a href="page2.html">DSA</a>
+                <a href="page3.html">Java + DSA</a>
+            </div>
+        </div>
+        <a href="mailto:collaboratewithshashwat@gmail.com">Write to Us</a>
+        <a href="#">Contribute Notes</a>
+        <a href="work-with-us.html">Work With Us</a>
+    </div>
+    <div class="content">
+        <h1>
+            <span class="part1">Welcome to </span>
+            <span class="part2">SHASH</span>
+            <span class="part3">CODE</span>
+        </h1>
+        <button onclick="location.href='dsa.html'">Start your DSA journey</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.birds.min.js"></script>
+    <script>
+        VANTA.BIRDS({
+            el: "#vanta-canvas",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color1: 0xFFDD00,  // Primary color for the birds
+            color2: 0xFF8800,  // Secondary color for the birds
+            backgroundColor: 0x000000  // Background color
+        });
+
+        function toggleMenu() {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('active');
+        }
+
+        function toggleDropdown(event) {
+            event.preventDefault();
+            const dropdown = event.target.closest('.dropdown');
+            dropdown.classList.toggle('open');
+        }
+
+        document.addEventListener('click', function(event) {
+            const navbar = document.querySelector('.navbar');
+            const isClickInside = navbar.contains(event.target);
+            const hamburger = document.querySelector('.hamburger');
+
+            if (!isClickInside && navbar.classList.contains('active') && event.target !== hamburger) {
+                navbar.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
