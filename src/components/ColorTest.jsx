@@ -21,11 +21,8 @@ const ColorTest = () => {
           <div className='flex flex-col space-y-4'>
               <h1 className='text-2xl font-semibold'>Theme Colors</h1>
               <p className='text-lg bg-primary'>Color Primary</p>
-              <p className='text-lg bg-secondary'>Color Secondary</p>
-              <p className='text-lg bg-accent'>Color Accent</p>
-              <p className='text-lg bg-neutral'>Color Neutral</p>
-              <p className='text-lg bg-background text-[black]'>Color Background</p>
-              <p className='text-lg bg-warning'>Color Warning</p>
+              <p className='text-lg bg-accent text-vite_dark'>Color Accent</p>
+              <p className='text-lg bg-warning text-vite_dark'>Color Warning</p>
               <p className='text-lg bg-success'>Color Success</p>
               <p className='text-lg bg-danger'>Color Danger</p>
           </div>

@@ -12,7 +12,7 @@ function App() {
 
 
   return (
-    <div>
+    <div className=''>
       <Router>
         <div className="w-3/4 mx-auto">
           <Navbar />
