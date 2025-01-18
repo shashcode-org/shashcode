@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
+import { csvData } from '../data/csv-data';
 
 const data = [
     {
