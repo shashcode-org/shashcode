@@ -53,9 +53,8 @@ const CSV_UI_1 = () => {
     };
 
     return (
-        <div className="p-4">
-            <h1 className="text-xl font-bold mb-4">Topics and Subtopics</h1>
-            <div className="mb-4">
+        <div className="mt-10">
+            <div className="mb-10">
                 <label htmlFor="mainTopic" className="mr-2 font-medium">Select a Main Topic:</label>
                 <select
                     id="mainTopic"

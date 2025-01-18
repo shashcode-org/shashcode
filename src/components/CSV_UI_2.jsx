@@ -11,8 +11,8 @@ const CSV_UI_2 = () => {
     };
 
     return (
-        <div className="accordion-table-container">
-            <h2>Accordion Table of Topics</h2>
+        <div className="accordion-table-container mt-10">
+
             {csvData.map((mainTopic, mainIndex) => (
                 <div key={mainIndex} className="accordion-section">
                     {/* Main Topic Row (Collapsible Header) */}
