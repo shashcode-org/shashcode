@@ -1,13 +1,13 @@
 import React from 'react'
 
-const DSA = () => {
+const Contact = () => {
   return (
-    <div className='mt-10'>
+      <div className='mt-10'>
         <h1 className='text-3xl font-semibold uppercase'>
-            DSA
+            Contact
         </h1>
     </div>
   )
 }
 
-export default DSA
+export default Contact

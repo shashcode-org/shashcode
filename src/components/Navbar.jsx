@@ -31,23 +31,23 @@ const Navbar = () => {
             <ul className='hidden md:flex'>
                 
                 {navItemsData.map(navItem => (
-                    <li
-                        key={navItem.id}
-                        className='p-4 hover:bg-signature_yellow rounded-xl m-2 cursor-pointer duration-300 hover:text-signature_dark flex gap-2 items-center'
-                    >
-                       
-                        <span className="flex items-center justify-center h-full">
-                            <navItem.icon className="h-full w-auto" />
-                        </span>
-                     
-                        <Link to={navItem.url} className='leading-none'> {navItem.title} </Link>
-                    </li>
+                    <Link key={navItem.id} to={navItem.url}> 
+                        <li
+                            className='p-4 hover:bg-signature_yellow rounded-xl m-2 cursor-pointer duration-300 hover:text-signature_dark flex gap-2 items-center leading-none'
+                        >
+                        
+                            <span className="flex items-center justify-center h-full">
+                                <navItem.icon className="h-full w-auto" />
+                            </span>
+                            {navItem.title} 
+                        </li>
+                    </Link>
                 ))}
             </ul>
 
             {/* Mobile Navigation Icon */}
             <div onClick={handleNav} className='block md:hidden cursor-pointer'>
-                {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
+                {nav ? <AiOutlineClose className='w-[25px] h-auto' /> : <AiOutlineMenu className='w-[25px] h-auto' />}
             </div>
 
             {/* Mobile Navigation Menu */}
@@ -60,21 +60,25 @@ const Navbar = () => {
             >
                 {/* Mobile Logo */}
                 <div className='flex justify-between items-center p-4'>
-                    <h1 className='w-full text-3xl font-bold text-signature_yellow m-4'> Shash Code </h1>
-                    <span onClick={handleNav} className='absolute right-5 cursor-pointer'>
-                        <AiOutlineClose size={20} />
+                    <h1 className='text-3xl font-bold text-signature_yellow m-4'> Shash Code </h1>
+                    <span onClick={handleNav} className='mr-4 cursor-pointer'>
+                        <AiOutlineClose className='w-[25px] h-auto' />
                     </span>
                 </div>
 
                 {/* Mobile Navigation Items */}
                 <ul className='flex flex-col h-full'>
-                    {navItems.map(item => (
-                        <li
-                            key={item.id}
-                            className='p-10 border-b hover:bg-signature_yellow duration-300 hover:text-signature_dark cursor-pointer border-gray-600'
-                        >
-                            {item.text}
-                        </li>
+                    {navItemsData.map(navItem => (
+                        <Link key={navItem.id} to={navItem.url} onClick={() => setNav(false)}> 
+                            <li
+                                className='py-10 px-8 border-b hover:bg-signature_yellow duration-300 hover:text-signature_dark cursor-pointer border-gray-600 flex gap-2 items-center justify-start leading-none'
+                            >
+                                <span className="flex items-center justify-center h-full">
+                                    <navItem.icon className="h-full w-auto" />
+                                </span>
+                                {navItem.title}
+                            </li>
+                        </Link>
                     ))}
                 </ul>
             </ul>
