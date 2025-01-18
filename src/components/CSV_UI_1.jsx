@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { csvData } from '../data/csv-data';
 
-const TopicsTable = () => {
+const CSV_UI_1 = () => {
     const [selectedMainTopic, setSelectedMainTopic] = useState(null);
 
     const handleMainTopicChange = (event) => {
@@ -75,4 +75,4 @@ const TopicsTable = () => {
     );
 };
 
-export default TopicsTable;
+export default CSV_UI_1;
