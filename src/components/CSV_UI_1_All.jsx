@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { csvData } from '../data/csv-data';
+import { csvDataAll } from '../data/csv-data-all';
 
 const CSV_UI_1 = () => {
     const [selectedMainTopic, setSelectedMainTopic] = useState(null);
@@ -9,7 +9,7 @@ const CSV_UI_1 = () => {
     };
 
     const renderTable = () => {
-        const mainTopic = csvData.find(topic => topic["Main Topic"] === selectedMainTopic);
+        const mainTopic = csvDataAll.find(topic => topic["Main Topic"] === selectedMainTopic);
 
         if (!mainTopic) {
             return <p>Please select a main topic to view subtopics.</p>;
@@ -62,7 +62,7 @@ const CSV_UI_1 = () => {
                     onChange={handleMainTopicChange}
                 >
                     <option value="">-- Select --</option>
-                    {csvData.map((topic, index) => (
+                    {csvDataAll.map((topic, index) => (
                         <option key={index} value={topic["Main Topic"]}>
                             {topic["Main Topic"]}
                         </option>
