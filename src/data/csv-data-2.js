@@ -1,4 +1,4 @@
-export const csvData = [
+export const csv_data_2 = [
   {
     "Main Topic": "Java Basics",
     Subtopics: [
@@ -40,21 +40,6 @@ export const csvData = [
           },
         ],
         "Video Link": "https://youtu.be/DEC268j2hk0",
-      },
-      {
-        Subtopic: "Flow of a program",
-        Details: [
-          {
-            Detail: "Flowchart",
-          },
-          {
-            Detail: "Psuedocode",
-          },
-          {
-            Detail: "Algorithm",
-          },
-        ],
-        "Video Link": "https://youtu.be/wL6sbJOzF5A",
       },
     ],
   },
@@ -315,15 +300,6 @@ export const csvData = [
           },
         ],
         "Video Link": "https://youtu.be/HuOcDlB1uXk",
-      },
-      {
-        Subtopic: "Q36. Aggressive cows",
-        Details: [
-          {
-            Detail: "The Element 11",
-          },
-        ],
-        "Video Link": "https://youtu.be/86xSPxfc4iQ",
       },
     ],
   },

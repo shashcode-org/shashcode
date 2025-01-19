@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { csvData } from '../data/csv-data';
+import { csv_data_2 } from '../data/csv-data-2';
 
 const CSV_UI_1 = () => {
     const [selectedMainTopic, setSelectedMainTopic] = useState(null);

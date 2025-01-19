@@ -17,7 +17,9 @@ const Navbar = () => {
         <div className='bg-signature_dark    flex justify-between items-center h-16 mx-auto px-10 text-vite_light'>
             
             {/* Logo */}
-            <h1 className='text-3xl font-bold text-signature_yellow'>Shash Code</h1>
+            <Link to='/'>
+                <h1 className='text-3xl font-bold text-signature_yellow'>Shash Code</h1>
+            </Link>
 
             {/* Desktop Navigation */}
             <ul className='hidden md:flex'>
@@ -52,7 +54,9 @@ const Navbar = () => {
             >
                 {/* Mobile Logo */}
                 <div className='flex justify-between items-center px-4 py-10 h-16'>
-                    <h1 className='text-3xl font-bold text-signature_yellow m-4'> Shash Code </h1>
+                    <Link to="/">
+                        <h1 className='text-3xl font-bold text-signature_yellow m-4'> Shash Code </h1>
+                    </Link>
                     <span onClick={handleNav} className='mr-4 cursor-pointer'>
                         <AiOutlineClose className='w-[25px] h-auto' />
                     </span>
