@@ -13,16 +13,8 @@ const Navbar = () => {
         setNav(!nav);
     };
 
-    // Array containing navigation items
-    const navItems = [
-        { id: 1, text: 'Home' },
-        { id: 2, text: 'About' },
-        { id: 3, text: 'DSA' },
-        { id: 4, text: 'Contact' },
-    ];
-
     return (
-        <div className='bg-signature_dark    flex justify-between items-center h-24 mx-auto px-10 text-vite_light'>
+        <div className='bg-signature_dark    flex justify-between items-center h-16 mx-auto px-10 text-vite_light'>
             
             {/* Logo */}
             <h1 className='text-3xl font-bold text-signature_yellow'>Shash Code</h1>
@@ -59,7 +51,7 @@ const Navbar = () => {
                 }
             >
                 {/* Mobile Logo */}
-                <div className='flex justify-between items-center p-4'>
+                <div className='flex justify-between items-center px-4 py-10 h-16'>
                     <h1 className='text-3xl font-bold text-signature_yellow m-4'> Shash Code </h1>
                     <span onClick={handleNav} className='mr-4 cursor-pointer'>
                         <AiOutlineClose className='w-[25px] h-auto' />
