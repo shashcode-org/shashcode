@@ -80,8 +80,8 @@ const CSV_UI_3_3_Tags_Link = () => {
                                     <tr className="bg-gray-200 text-left text-sm">
                                         <th className="border p-2 w-[30%]">Subtopic</th>
                                         <th className="border p-2 w-1/2">Details</th>
-                                        <th className="border py-2 w-fit text-center">Solve</th>
-                                        <th className="border py-2 w-fit text-center">Video</th>
+                                        <th className="border py-2 w-[10%] text-center">Solve</th>
+                                        <th className="border py-2 w-[10%] text-center">Video</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -96,19 +96,26 @@ const CSV_UI_3_3_Tags_Link = () => {
                                                     </td>
                                                 ) : null}
 
-                                                {/* Details (Question Name) */}
-                                                <td className="border p-2 text-sm capitalize align-top">
-                                                    {detail.Detail}
-                                                </td>
+                                                {/* If no Solve link, merge Solve column into Details */}
+                                                {detail.Solve === "N/A" ? (
+                                                    <td className="border p-2 text-sm capitalize align-top" colSpan={2}>
+                                                        {detail.Detail}
+                                                    </td>
+                                                ) : (
+                                                    <>
+                                                        {/* Details (Question Name) */}
+                                                        <td className="border p-2 text-sm capitalize align-top">
+                                                            {detail.Detail}
+                                                        </td>
 
-                                                {/* Solve Links */}
-                                                <td className="border p-2 text-center align-top">
-                                                    {detail.Solve !== "N/A" ? (
-                                                        <a href={detail.Solve} target="_blank" rel="noopener noreferrer">
-                                                            <SiLeetcode className="inline-block w-[24px] h-auto text-yellow-500" />
-                                                        </a>
-                                                    ) : ""}
-                                                </td>
+                                                        {/* Solve Links */}
+                                                        <td className="border p-2 text-center align-top">
+                                                            <a href={detail.Solve} target="_blank" rel="noopener noreferrer">
+                                                                <SiLeetcode className="inline-block w-[24px] h-auto text-yellow-500" />
+                                                            </a>
+                                                        </td>
+                                                    </>
+                                                )}
 
                                                 {/* Video Link (Only for first row of each subtopic) */}
                                                 {detailIndex === 0 ? (
