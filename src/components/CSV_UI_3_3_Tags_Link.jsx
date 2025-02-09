@@ -86,49 +86,42 @@ const CSV_UI_3_3_Tags_Link = () => {
                                 </thead>
                                 <tbody>
                                     {mainTopic.Subtopics.map((subtopic, subIndex) => (
-                                        <tr key={subIndex} className="border">
-                                            {/* Subtopic */}
-                                            <td className="border p-2 w-[30%] font-semibold align-top text-[15px]">
-                                                {subtopic.Subtopic}
-                                            </td>
+                                        subtopic.Details.map((detail, detailIndex) => (
+                                            <tr key={`${subIndex}-${detailIndex}`} className="border">
 
-                                            {/* Details */}
-                                            <td className="border p-2 w-auto">
-                                                <ul className="list-disc pl-4 text-sm capitalize">
-                                                    {subtopic.Details.map((detail, detailIndex) => (
-                                                        <li key={detailIndex}>
-                                                            {detail.Detail}
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            </td>
+                                                {/* Subtopic (Only for first detail row of each subtopic) */}
+                                                {detailIndex === 0 ? (
+                                                    <td className="border p-2 font-semibold align-top text-[15px]" rowSpan={subtopic.Details.length}>
+                                                        {subtopic.Subtopic}
+                                                    </td>
+                                                ) : null}
 
-                                            {/* Solve Links */}
-                                            <td className="border py-2 text-center w-fit align-top">
-                                                {subtopic.Details.map((detail, detailIndex) => (
-                                                    <div key={detailIndex}>
-                                                        {detail.Solve !== "N/A" && (
-                                                            <a
-                                                                href={detail.Solve}
-                                                                target="_blank"
-                                                                rel="noopener noreferrer"
-                                                            >
-                                                                <SiLeetcode className="inline-block w-[24px] h-auto text-yellow-500" />
+                                                {/* Details (Question Name) */}
+                                                <td className="border p-2 text-sm capitalize align-top">
+                                                    {detail.Detail}
+                                                </td>
+
+                                                {/* Solve Links */}
+                                                <td className="border p-2 text-center align-top">
+                                                    {detail.Solve !== "N/A" ? (
+                                                        <a href={detail.Solve} target="_blank" rel="noopener noreferrer">
+                                                            <SiLeetcode className="inline-block w-[24px] h-auto text-yellow-500" />
+                                                        </a>
+                                                    ) : ""}
+                                                </td>
+
+                                                {/* Video Link (Only for first row of each subtopic) */}
+                                                {detailIndex === 0 ? (
+                                                    <td className="border p-2 text-center align-top" rowSpan={subtopic.Details.length}>
+                                                        {subtopic["Video Link"] && (
+                                                            <a href={subtopic["Video Link"]} target="_blank" rel="noopener noreferrer">
+                                                                <FaYoutube className="inline-block w-[24px] h-auto text-red-700" />
                                                             </a>
                                                         )}
-                                                    </div>
-                                                ))}
-                                            </td>
-
-                                            {/* Video Link */}
-                                            <td className="border py-2 text-center w-fit align-top">
-                                                {subtopic["Video Link"] && (
-                                                    <a href={subtopic["Video Link"]} target="_blank" rel="noopener noreferrer">
-                                                        <FaYoutube className="inline-block w-[24px] h-auto text-red-700" />
-                                                    </a>
-                                                )}
-                                            </td>
-                                        </tr>
+                                                    </td>
+                                                ) : null}
+                                            </tr>
+                                        ))
                                     ))}
                                 </tbody>
 
