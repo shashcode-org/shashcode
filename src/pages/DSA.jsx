@@ -4,7 +4,7 @@ import {
     Route,
     Outlet, Link
 } from 'react-router-dom'
-import { CSV_UI_1, CSV_UI_1_All, CSV_UI_2, CSV_UI_2_All, CSV_UI_V2_Data_1, CSV_UI_V2_Data_2 } from '../components'
+import { CSV_UI_1, CSV_UI_1_All, CSV_UI_2, CSV_UI_2_All, CSV_UI_V2_Data_1, CSV_UI_V2_Data_2, CSV_UI_3_1_Dropdown, CSV_UI_3_2_Tags } from '../components'
 import { useNavigate } from "react-router-dom";
 
 
@@ -36,6 +36,9 @@ const DSA = () => {
                         <option value="/dsa/csv_ui_2_all">UI 2 All</option>
                         <option value="/dsa/csv_ui_v2_data_1">UI V2 Data 1(Details/Questions Separated)</option>
                         <option value="/dsa/csv_ui_v2_data_2">UI V2 Data 2(Details/Questions Combined)</option>
+                        <option value="/dsa/csv_ui_3_dropdown">UI 3 Dropdown</option>
+                        <option value="/dsa/csv_ui_3_tags">UI 3 Tags</option>
+
                     </select>
                 </div>
             </h1>
@@ -49,6 +52,8 @@ const DSA = () => {
                 <Route path="/csv_ui_2_all" element={<CSV_UI_2_All />} />
                 <Route path="/csv_ui_v2_data_1" element={<CSV_UI_V2_Data_1 />} />
                 <Route path="/csv_ui_v2_data_2" element={<CSV_UI_V2_Data_2 />} />
+                <Route path="/csv_ui_3_dropdown" element={<CSV_UI_3_1_Dropdown />} />
+                <Route path="/csv_ui_3_tags" element={<CSV_UI_3_2_Tags />} />
             </Routes>
         </div>
     )
