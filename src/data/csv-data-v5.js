@@ -1,4 +1,3 @@
-// Missing Video Links for Details
 export const csvDataAll = [
   {
     "Main Topic": "Java Basics",
@@ -9,6 +8,7 @@ export const csvDataAll = [
           {
             Detail: "What is a programming Language",
             Links: "N/A",
+            "Video Link": "https://youtu.be/DEC268j2hk0",
           },
           {
             Detail: "Machine Language",
@@ -59,6 +59,7 @@ export const csvDataAll = [
           {
             Detail: "Flowchart",
             Links: "N/A",
+            "Video Link": "https://youtu.be/wL6sbJOzF5A",
           },
           {
             Detail: "Psuedocode",
@@ -77,6 +78,7 @@ export const csvDataAll = [
           {
             Detail: "Byte code",
             Links: "N/A",
+            "Video Link": "https://youtu.be/2Uer9X75EPI",
           },
           {
             Detail: "Machine code",
@@ -99,6 +101,7 @@ export const csvDataAll = [
           {
             Detail: "installation of Java",
             Links: "N/A",
+            "Video Link": "https://youtu.be/1Z2QzcbLicY",
           },
           {
             Detail: "installation of IDE",
@@ -137,6 +140,7 @@ export const csvDataAll = [
           {
             Detail: "Variables and constants",
             Links: "N/A",
+            "Video Link": "https://youtu.be/FVs7Z9RfIJE",
           },
           {
             Detail: "Literals and keywords",
@@ -179,6 +183,7 @@ export const csvDataAll = [
           {
             Detail: "Operators in java",
             Links: "N/A",
+            "Video Link": "https://youtu.be/NZF0Rwrubs0",
           },
           {
             Detail: "How to take input",
@@ -193,6 +198,7 @@ export const csvDataAll = [
           {
             Detail: "Java Packages",
             Links: "N/A",
+            "Video Link": "https://youtu.be/Axw8usR3rEA",
           },
           {
             Detail: "Access Specifiers",
@@ -207,6 +213,7 @@ export const csvDataAll = [
           {
             Detail: "if-else",
             Links: "N/A",
+            "Video Link": "https://youtu.be/N6unLhAxy8s",
           },
           {
             Detail: "switch case",
@@ -233,6 +240,7 @@ export const csvDataAll = [
           {
             Detail: "Functions",
             Links: "N/A",
+            "Video Link": "https://youtu.be/IkOkAzNuefc",
           },
           {
             Detail: "Types of functions",
@@ -255,6 +263,7 @@ export const csvDataAll = [
           {
             Detail: "Calculator Application",
             Links: "N/A",
+            "Video Link": "https://youtu.be/FM1ujSiOSi0",
           },
           {
             Detail: "Temperature convertor",
@@ -269,6 +278,7 @@ export const csvDataAll = [
           {
             Detail: "characters",
             Links: "N/A",
+            "Video Link": "https://youtu.be/aqjGYjtczvY",
           },
           {
             Detail: "string literals",
@@ -307,6 +317,7 @@ export const csvDataAll = [
           {
             Detail: "String Builder",
             Links: "N/A",
+            "Video Link": "https://youtu.be/rXSUJ-PwU4g",
           },
           {
             Detail: "String Buffer",
@@ -373,6 +384,7 @@ export const csvDataAll = [
           {
             Detail: "Input Buffer and delimeters",
             Links: "N/A",
+            "Video Link": "https://youtu.be/SrPyIYakYt8",
           },
           {
             Detail: "String formatting",
@@ -391,6 +403,7 @@ export const csvDataAll = [
           {
             Detail: "what are arrays",
             Links: "N/A",
+            "Video Link": "https://youtu.be/TsoTexsJWlI",
           },
           {
             Detail: "concept of indexing",
@@ -438,6 +451,7 @@ export const csvDataAll = [
           {
             Detail: "TBD",
             Links: "N/A",
+            "Video Link": "TBD",
           },
         ],
         "Video Link": "TBD",
@@ -453,54 +467,67 @@ export const csvDataAll = [
           {
             Detail: "Classes and Objects",
             Links: "N/A",
+            "Video Link": "https://youtu.be/yGT6-P3XGrg?si=A8C7Bhnk9Jw9_3Eo",
           },
           {
             Detail: "Pillars of Oops",
             Links: "N/A",
+            "Video Link": "https://youtu.be/G5djyUY_LKc?si=3pWEptBtHSDmXZdw",
           },
           {
             Detail: "Inheritance",
             Links: "N/A",
+            "Video Link": "https://youtu.be/5_pMrxQ17rY?si=3KP2Dq9CFLHYbF4r",
           },
           {
             Detail: "Important Keywords",
             Links: "N/A",
+            "Video Link": "https://youtu.be/txtsaKx3eME?si=F5RFc62AkV6TCvKW",
           },
           {
             Detail: "Constructor Calling and Access Specifier",
             Links: "N/A",
+            "Video Link": "https://youtu.be/7VLroC57Exk?si=Gojo6PdpxLRQEk46",
           },
           {
             Detail: "Getters and Setters",
             Links: "N/A",
+            "Video Link": "https://youtu.be/W1P7tvRWZvs?si=_VVQEdr-AJFUvFUi",
           },
           {
             Detail: "Function Overriding",
             Links: "N/A",
+            "Video Link": "https://youtu.be/_Xog65pQgDk?si=WpwfA8BgXA5urOgL",
           },
           {
             Detail: "Abstract Classes",
             Links: "N/A",
+            "Video Link": "https://youtu.be/MrK_eL96fnY?si=7HCmcqIDdDFCJzUp",
           },
           {
             Detail: "Java Interfaces",
             Links: "N/A",
+            "Video Link": "https://youtu.be/a2QGa30h3Is?si=Fo2_E2upIdm_6YRe",
           },
           {
             Detail: "Nested Classes",
             Links: "N/A",
+            "Video Link": "https://youtu.be/rjWDZt7hbD8?si=rRLug4uAy0i81Tbt",
           },
           {
             Detail: "Java Generics",
             Links: "N/A",
+            "Video Link": "https://youtu.be/vGG9d_FEl60?si=IfDlHPpCONjSEbod",
           },
           {
             Detail: "Comparator and Comparable",
             Links: "N/A",
+            "Video Link": "https://youtu.be/quegYlReztM?si=ywgPQvHFaTwPKrFC",
           },
           {
             Detail: "Java Association",
             Links: "N/A",
+            "Video Link": "https://youtu.be/iWTi0V1LEzA?si=1oQWHxvJZ2Y8FcDi",
           },
         ],
         "Video Link": "https://youtu.be/yGT6-P3XGrg?si=A8C7Bhnk9Jw9_3Eo",
@@ -516,18 +543,22 @@ export const csvDataAll = [
           {
             Detail: "Lambda Expression",
             Links: "N/A",
+            "Video Link": "https://youtu.be/3DkmAUdrzKw?si=RZyjaYjAXgJGcICk",
           },
           {
             Detail: "Functional Interfaces",
             Links: "N/A",
+            "Video Link": "https://youtu.be/jAJ4CNxdOIs?si=HT0CAPI0xF4R4cJ9",
           },
           {
             Detail: "Stream API",
             Links: "N/A",
+            "Video Link": "https://youtu.be/5UF2lYo9bcQ?si=NPRBMVAgbGUTMvCs",
           },
           {
             Detail: "Java Annotations",
             Links: "N/A",
+            "Video Link": "https://youtu.be/nv3OCaskB9g?si=PXhZNNFrtBBBHa2a",
           },
         ],
         "Video Link": "https://youtu.be/3DkmAUdrzKw?si=RZyjaYjAXgJGcICk",
@@ -543,18 +574,22 @@ export const csvDataAll = [
           {
             Detail: "star pattern",
             Links: "N/A",
+            "Video Link": "TBD",
           },
           {
             Detail: "triangle",
             Links: "N/A",
+            "Video Link": "TBD",
           },
           {
             Detail: "pattern2",
             Links: "N/A",
+            "Video Link": "TBD",
           },
           {
             Detail: "pattern3",
             Links: "N/A",
+            "Video Link": "TBD",
           },
         ],
         "Video Link": "TBD",
@@ -570,6 +605,7 @@ export const csvDataAll = [
           {
             Detail: "What is Algorithm Complexity",
             Links: "N/A",
+            "Video Link": "https://youtu.be/ZltvAvQXIEo",
           },
           {
             Detail: "Asymptotic Notations",
@@ -609,6 +645,7 @@ export const csvDataAll = [
           {
             Detail: "Number system",
             Links: "N/A",
+            "Video Link": "https://youtu.be/q0kKRFpGmiE",
           },
           {
             Detail: "Conversion from one system to other",
@@ -643,6 +680,7 @@ export const csvDataAll = [
           {
             Detail: "count digits",
             Links: "N/A",
+            "Video Link": "https://youtu.be/bvmoEgSp9O4",
           },
           {
             Detail: "count digits using log",
@@ -722,6 +760,7 @@ export const csvDataAll = [
           {
             Detail: "Least Significant Bits",
             Links: "N/A",
+            "Video Link": "https://youtu.be/cn_KKSd3T2g",
           },
           {
             Detail: "Most Significant Bits",
@@ -768,6 +807,7 @@ export const csvDataAll = [
           {
             Detail: "Find the i-th Bit",
             Links: "N/A",
+            "Video Link": "https://youtu.be/wGrEXbLQX1k",
           },
           {
             Detail: "Set the i-th Bit",
@@ -810,6 +850,7 @@ export const csvDataAll = [
           {
             Detail: "Bitwise Operators",
             Links: "N/A",
+            "Video Link": "https://youtu.be/UTVvLfkuSEs",
           },
           {
             Detail: "Bit Manipulation",
@@ -837,6 +878,7 @@ export const csvDataAll = [
           {
             Detail: "Linear Search",
             Links: "N/A",
+            "Video Link": "https://youtu.be/slqFdKVMjeQ",
           },
           {
             Detail: "Q. search an Element / first occurrence",
@@ -871,6 +913,7 @@ export const csvDataAll = [
           {
             Detail: "Binary Search",
             Links: "N/A",
+            "Video Link": "https://youtu.be/kOIECDEUzaI",
           },
           {
             Detail: "Sorted in increasing",
@@ -893,6 +936,7 @@ export const csvDataAll = [
           {
             Detail: "Q1. Ceiling of a Number",
             Links: "N/A",
+            "Video Link": "https://youtu.be/P-vl_BrdxJA",
           },
           {
             Detail: "Q2. Floor of a Number",
@@ -921,6 +965,7 @@ export const csvDataAll = [
           {
             Detail: "Binary Search in range",
             Links: "N/A",
+            "Video Link": "https://youtu.be/DoVawmdh5NM",
           },
           {
             Detail: "Q6. Find Minimum Difference in a Sorted array.",
@@ -944,6 +989,7 @@ export const csvDataAll = [
           {
             Detail: "Bitonic Array",
             Links: "N/A",
+            "Video Link": "https://youtu.be/IK5eSvNw9Qw?si=f6gSi2LkYE4VAtSQ",
           },
           {
             Detail: "Q9. Valid Mountain Array",
@@ -968,6 +1014,7 @@ export const csvDataAll = [
             Detail: "Q12. Search in rotated sorted array",
             Links:
               "https://leetcode.com/problems/search-in-rotated-sorted-array/",
+            "Video Link": "https://youtu.be/n12QcCu8oBI",
           },
           {
             Detail: "Q13. Search in rotated sorted array - 2",
@@ -998,6 +1045,7 @@ export const csvDataAll = [
             Detail: "Q14. Allocated minimum number of pages",
             Links:
               "https://www.geeksforgeeks.org/problems/allocate-minimum-number-of-pages0937/1",
+            "Video Link": "https://youtu.be/_4LmUWmmYbY",
           },
           {
             Detail: "Q15. Capacity to Ship within D Days",
@@ -1008,30 +1056,36 @@ export const csvDataAll = [
             Detail: "Q16. Koko Eating bananas",
             Links:
               "https://leetcode.com/problems/koko-eating-bananas/description/",
+            "Video Link": "https://youtu.be/BUFHoQIOnAs",
           },
           {
             Detail: "Q17. Smallest Divisor given a threshold",
             Links:
               "https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/description/",
+            "Video Link": "https://youtu.be/pSGtbhpuhbk",
           },
           {
             Detail:
               "Q18. Minimize Maximum of products distributed to any store",
             Links:
               "https://leetcode.com/problems/minimized-maximum-of-products-distributed-to-any-store/description/",
+            "Video Link": "https://youtu.be/4O6wrTtUQvY",
           },
           {
             Detail: "Q19. Aggressive cows",
             Links: "https://www.geeksforgeeks.org/problems/aggressive-cows/1",
+            "Video Link": "https://youtu.be/86xSPxfc4iQ",
           },
           {
             Detail: "Q20. Median of two sorted arrays",
             Links: "https://leetcode.com/problems/median-of-two-sorted-arrays/",
+            "Video Link": "https://youtu.be/2BOgAlmyTkc",
           },
           {
             Detail: "Q21. Kth element of two sorted arrays",
             Links:
               "https://www.geeksforgeeks.org/problems/k-th-element-of-two-sorted-array1317/1",
+            "Video Link": "https://youtu.be/SB6j8D95eHM",
           },
         ],
         "Video Link": "https://youtu.be/_4LmUWmmYbY",
@@ -1043,6 +1097,7 @@ export const csvDataAll = [
             Detail: "Q22. Single Element in a Sorted Array",
             Links:
               "https://leetcode.com/problems/single-element-in-a-sorted-array/description/",
+            "Video Link": "https://youtu.be/f09DayNeigg",
           },
           {
             Detail: "Q23. Finding square root",
@@ -1061,6 +1116,7 @@ export const csvDataAll = [
           {
             Detail: "Jump Search",
             Links: "N/A",
+            "Video Link": "https://youtu.be/rFwBm-VT99A",
           },
           {
             Detail: "Interpolation Search",
@@ -1078,11 +1134,13 @@ export const csvDataAll = [
             Detail: "Q. Median of a Sorted Matrix",
             Links:
               "https://www.geeksforgeeks.org/problems/median-in-a-row-wise-sorted-matrix1527/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=practice_card",
+            "Video Link": "https://youtu.be/aNIfGl1ZKQE",
           },
           {
             Detail: "Q. Kth Smallest element of a Matrix",
             Links:
               "https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/",
+            "Video Link": "https://youtu.be/HuOcDlB1uXk",
           },
         ],
         "Video Link": "https://youtu.be/rFwBm-VT99A",
@@ -1099,6 +1157,7 @@ export const csvDataAll = [
             Detail: "Q. Search a 2d matrix",
             Links:
               "https://leetcode.com/problems/search-a-2d-matrix/description/",
+            "Video Link": "https://youtu.be/EXcmeMx3Dq0",
           },
           {
             Detail: "Q. Search a 2d matrix 2",
@@ -1114,6 +1173,7 @@ export const csvDataAll = [
             Detail: "Q. Transpose a Matrix",
             Links:
               "https://www.geeksforgeeks.org/problems/transpose-of-matrix-1587115621/1",
+            "Video Link": "https://youtu.be/hA_yvtCpjsg",
           },
           {
             Detail: "Q. Rotate image",
@@ -1133,6 +1193,7 @@ export const csvDataAll = [
           {
             Detail: "Q. Spiral Matrix - 1",
             Links: "https://leetcode.com/problems/spiral-matrix/",
+            "Video Link": "https://youtu.be/uAaoWcYX2_8",
           },
           {
             Detail: "Q. Spiral Matrix - 2",
@@ -1153,45 +1214,55 @@ export const csvDataAll = [
           {
             Detail: "Insertion Sort",
             Links: "N/A",
+            "Video Link": "https://youtu.be/EHBeiIm59Yk",
           },
           {
             Detail: "Selection Sort [Uni and Bi - directional]",
             Links: "N/A",
+            "Video Link": "https://youtu.be/CfEZKDoVRcw",
           },
           {
             Detail: "Bubble Sort and Brick Sort",
             Links: "N/A",
+            "Video Link": "https://youtu.be/vXwKKzn6D4E",
           },
           {
             Detail: "Counting Sort",
             Links: "N/A",
+            "Video Link": "https://youtu.be/e644HVGFAJY",
           },
           {
             Detail: "Radix Sort",
             Links: "N/A",
+            "Video Link": "https://youtu.be/HuwgdPVEwCc",
           },
           {
             Detail: "Pigeonhole Sort",
             Links: "N/A",
+            "Video Link": "https://youtu.be/sWX1eMPYzSU",
           },
           {
             Detail: "Cyclic Sort",
             Links: "N/A",
+            "Video Link": "https://youtu.be/vJn71L7CPH4",
           },
           {
             Detail: "Q. Find missing element in range of 0 to N",
             Links: "https://leetcode.com/problems/missing-number/description/",
+            "Video Link": "https://youtu.be/bIHpx5NN2bg",
           },
           {
             Detail:
               "Q. Given an array [1 to N] return all elements in range [1 to N] that are absent in the array",
             Links:
               "https://leetcode.com/problems/find-all-duplicates-in-an-array/description/",
+            "Video Link": "https://youtu.be/xxFebE0VznM",
           },
           {
             Detail: "Q. Find all duplicates in an array",
             Links:
               "https://leetcode.com/problems/find-all-duplicates-in-an-array/",
+            "Video Link": "https://youtu.be/Us63C10ozzw",
           },
           {
             Detail: "Questions on Duplicate Numbers",
@@ -1206,15 +1277,18 @@ export const csvDataAll = [
             Detail:
               "Q. Given an array [1 to N] with elements appearing once or twice, return all elements that appear twice",
             Links: "N/A",
+            "Video Link": "TBD",
           },
           {
             Detail:
               "Q. Find the missing and repeating element in an array [1 to N]",
             Links: "N/A",
+            "Video Link": "TBD",
           },
           {
             Detail: "Q. Return the smallest positive number missing",
             Links: "N/A",
+            "Video Link": "TBD",
           },
         ],
         "Video Link": "https://youtu.be/EHBeiIm59Yk",
@@ -1234,23 +1308,28 @@ export const csvDataAll = [
           {
             Detail: "Types of recursion",
             Links: "N/A",
+            "Video Link": "TBD",
           },
           {
             Detail: "Q. convert decimal to binary",
             Links:
               "https://www.geeksforgeeks.org/problems/decimal-to-binary-1587115620/1",
+            "Video Link": "https://youtu.be/1uw8aVnD4VE?si=sdOxOm67SIhYdjR3",
           },
           {
             Detail: "Q. reverse a number / string",
             Links: "https://leetcode.com/problems/reverse-string/description/",
+            "Video Link": "https://youtu.be/KMzcV4QsXdQ?si=NRQMzaA7pk0UPcv6",
           },
           {
             Detail: "Q. reverse an array inplace",
             Links: "https://leetcode.com/problems/reverse-string/description/",
+            "Video Link": "https://youtu.be/F_AFAG3m1r0?si=i6q8DKOn4p5PRb3a",
           },
           {
             Detail: "Q. reverse a stack",
             Links: "https://www.geeksforgeeks.org/problems/reverse-a-stack/1",
+            "Video Link": "https://youtu.be/setwBLDtlck?si=D_zfPZqG1SJzwD7-",
           },
         ],
       },
@@ -1260,6 +1339,7 @@ export const csvDataAll = [
           {
             Detail: "Leap of Faith",
             Links: "N/A",
+            "Video Link": "https://youtu.be/vDh9dGyegvs?si=FSXfXW3KnrSC5fdJ",
           },
           {
             Detail: "Q. Tower of Hanoi",
@@ -1269,6 +1349,7 @@ export const csvDataAll = [
           {
             Detail: "Q. Count ways in a Matrix",
             Links: "N/A",
+            "Video Link": "https://youtu.be/cPV3Jxw2NPU?si=oAduxst7oQSP1Wej",
           },
         ],
         "Video Link": "https://youtu.be/vDh9dGyegvs?si=FSXfXW3KnrSC5fdJ",
@@ -1279,6 +1360,7 @@ export const csvDataAll = [
           {
             Detail: "Notations",
             Links: "N/A",
+            "Video Link": "https://youtu.be/L2jJMTS-KfY?si=XD6RgPZYAxxQXo1C",
           },
           {
             Detail: "Recurrence Relation",
@@ -1297,33 +1379,40 @@ export const csvDataAll = [
           {
             Detail: "Backtracking and All it's variants",
             Links: "N/A",
+            "Video Link": "https://youtu.be/rBJ6lNgIwfs?si=BjYRCAbitUHXCuIC",
           },
           {
             Detail: "Q. Rat in a Maze",
             Links:
               "https://www.geeksforgeeks.org/problems/rat-in-a-maze-problem/1",
+            "Video Link": "https://youtu.be/HoaXmlzyAWs?si=UGRxfc3-KDoFUHXc",
           },
           {
             Detail: "Q. All permutations",
             Links: "https://leetcode.com/problems/permutations/description/",
+            "Video Link": "https://youtu.be/m9HgMrsdvaQ?si=gcVhCyp5V_B-drJY",
           },
           {
             Detail: "Q. Pallindrome Partitioning",
             Links:
               "https://leetcode.com/problems/palindrome-partitioning/description/",
+            "Video Link": "https://youtu.be/-GrwQ-Yfs48?si=WVU_8qyIHFL0FwfT",
           },
           {
             Detail: "Q. Letter Combination of a Phone Number",
             Links:
               "https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/",
+            "Video Link": "https://youtu.be/iMboZzRh-UM?si=1kExLPQf2O1ut17V",
           },
           {
             Detail: "Q. Print Subdequences of a String",
             Links: "N/A",
+            "Video Link": "https://youtu.be/mj20tLqdJRk?si=fXEiE59i1F1L0y09",
           },
           {
             Detail: "Q. Subsequences with sum equal K",
             Links: "N/A",
+            "Video Link": "https://youtu.be/j-y_ohVDRRI?si=ZIKh3815ORC1b5zy",
           },
         ],
         "Video Link": "https://youtu.be/rBJ6lNgIwfs?si=BjYRCAbitUHXCuIC",
@@ -1334,21 +1423,25 @@ export const csvDataAll = [
           {
             Detail: "Q. Combination Sum - I",
             Links: "https://leetcode.com/problems/combination-sum/description/",
+            "Video Link": "https://youtu.be/fC_rh6jA6Tw?si=-tWhz2PM8ofwUISB",
           },
           {
             Detail: "Q. Combination Sum - II",
             Links:
               "https://leetcode.com/problems/combination-sum-ii/description/",
+            "Video Link": "https://youtu.be/Edw151zdBTI?si=iA_f9T_g3X4a1U3l",
           },
           {
             Detail: "Q. Combination Sum - III",
             Links:
               "https://leetcode.com/problems/combination-sum-iii/description/",
+            "Video Link": "https://youtu.be/gSza2TQV0gs?si=W95ZbOUasGMMAf12",
           },
           {
             Detail: "Q. Combination Sum - IV",
             Links:
               "https://leetcode.com/problems/combination-sum-iv/description/",
+            "Video Link": "https://youtu.be/y1KU16gUOSE?si=F0dwyhG6O6YssxQr",
           },
         ],
         "Video Link": "https://youtu.be/fC_rh6jA6Tw?si=-tWhz2PM8ofwUISB",
@@ -1360,18 +1453,22 @@ export const csvDataAll = [
             Detail: "Q. Number of islands",
             Links:
               "https://leetcode.com/problems/number-of-islands/description/",
+            "Video Link": "https://youtu.be/jUBoim74Fvc?si=KrK3mm2QE-w3YJNw",
           },
           {
             Detail: "Q. Knights tour problem",
             Links: "N/A",
+            "Video Link": "https://youtu.be/TZb-bAAMuzY?si=JQWhxWpZNo_aNQud",
           },
           {
             Detail: "Q. N Queens problem",
             Links: "N/A",
+            "Video Link": "https://youtu.be/76K-yS4sByc?si=Uy_EnBB6yOpnoUZe",
           },
           {
             Detail: "Q. Suduko Solver",
             Links: "TBD",
+            "Video Link": "TBD",
           },
         ],
         "Video Link": "https://youtu.be/jUBoim74Fvc?si=KrK3mm2QE-w3YJNw",
@@ -1383,10 +1480,12 @@ export const csvDataAll = [
             Detail: "Binary Search using recursion",
             Links:
               "https://www.geeksforgeeks.org/problems/binary-search-1587115620/1",
+            "Video Link": "https://youtu.be/456By5f2-4o?si=bR07D8MNT4zSzoQe",
           },
           {
             Detail: "Q. Josephus problem - Kill in circle",
             Links: "https://www.geeksforgeeks.org/problems/josephus-problem/1",
+            "Video Link": "https://youtu.be/4JE_9zOaX58?si=DRcQ9eRk6suWuI8B",
           },
         ],
         "Video Link": "https://youtu.be/456By5f2-4o?si=bR07D8MNT4zSzoQe",
@@ -1401,14 +1500,17 @@ export const csvDataAll = [
           {
             Detail: "Q. Merge Sort",
             Links: "https://www.geeksforgeeks.org/problems/merge-sort/1",
+            "Video Link": "https://youtu.be/oviqkqemCRY?si=rMjLaDHLbjDVdKvc",
           },
           {
             Detail: "Q. Quick Sort",
             Links: "https://www.geeksforgeeks.org/problems/quick-sort/1",
+            "Video Link": "https://youtu.be/RFbZx9nTB3s?si=wCJ1lyskolGze6pb",
           },
           {
             Detail: "Q. Count Inversion",
             Links: "TBD",
+            "Video Link": "TBD",
           },
           {
             Detail: "Strassen's Matrix Multiplication",
@@ -1427,6 +1529,7 @@ export const csvDataAll = [
           {
             Detail: "Stack",
             Links: "N/A",
+            "Video Link": "https://youtu.be/TpuQWpma7ug",
           },
           {
             Detail: "Stack using Arrays",
@@ -1436,67 +1539,80 @@ export const csvDataAll = [
             Detail: "Q. Check parenthesis",
             Links:
               "https://leetcode.com/problems/valid-parentheses/description/",
+            "Video Link": "https://youtu.be/CNOoP25NpfQ",
           },
           {
             Detail: "Q. Remove minimum brackets to balance string",
             Links:
               "https://www.geeksforgeeks.org/problems/count-the-reversals0401/1",
+            "Video Link": "https://youtu.be/FB6wSdPjVGw",
           },
           {
             Detail: "Q. Add minimum brackets to balance string",
             Links:
               "https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/description/",
+            "Video Link": "https://youtu.be/BNFBv1KtcDM",
           },
           {
             Detail: "Q. Swap minimum brackets to balance string",
             Links:
               "https://leetcode.com/problems/minimum-number-of-swaps-to-make-the-string-balanced/description/",
+            "Video Link": "https://youtu.be/RZTapGf3pzI",
           },
           {
             Detail: "Q. Swap adjacent brackets to balance string",
             Links:
               "https://www.geeksforgeeks.org/problems/minimum-swaps-for-bracket-balancing2704/1",
+            "Video Link": "https://youtu.be/U48xDsqb8OE",
           },
           {
             Detail: "Q. Asteroid Collision",
             Links:
               "https://leetcode.com/problems/asteroid-collision/description/",
+            "Video Link": "https://youtu.be/OtddlksWtS4",
           },
           {
             Detail: "Q. Stock Span Problem",
             Links:
               "https://leetcode.com/problems/online-stock-span/description/",
+            "Video Link": "https://youtu.be/1_Bbq5qOraY",
           },
           {
             Detail: "Q. Next Greater element",
             Links:
               "https://www.geeksforgeeks.org/problems/next-larger-element-1587115620/1",
+            "Video Link": "https://youtu.be/8P3e34EgVyY",
           },
           {
             Detail: "Q. Next Smaller element",
             Links:
               "https://www.geeksforgeeks.org/problems/help-classmates--141631/1",
+            "Video Link": "https://youtu.be/MqQchOMmTGY",
           },
           {
             Detail: "Q. Next Greater / Smaller element in circular array",
             Links:
               "https://leetcode.com/problems/next-greater-element-ii/description/",
+            "Video Link": "https://youtu.be/ahlaBL4gG1s",
           },
           {
             Detail:
               "Q. Largest Rectangle in Histogram + Previous smaller element",
             Links:
               "https://leetcode.com/problems/largest-rectangle-in-histogram/description/",
+            "Video Link": "https://youtu.be/qUS-DZU4fj4",
           },
           {
             Detail: "Q. Max Rectangle",
             Links:
               "https://leetcode.com/problems/maximal-rectangle/description/",
+            "Video Link": "https://youtu.be/DPkDmhCyyuc",
           },
           {
             Detail: "Q. Longest Valid Parentheses",
             Links:
               "https://leetcode.com/problems/longest-valid-parentheses/description/",
+            "Video Link": "https://youtu.be/gqQsbdTcey0",
           },
         ],
         "Video Link": "https://youtu.be/TpuQWpma7ug",
@@ -1512,6 +1628,7 @@ export const csvDataAll = [
           {
             Detail: "Queue",
             Links: "N/A",
+            "Video Link": "https://youtu.be/9m4SZPRQXQI?si=izPej7j2qhbiKrys",
           },
           {
             Detail: "Queue using Array",
@@ -1528,30 +1645,37 @@ export const csvDataAll = [
           {
             Detail: "Implement queue using stack",
             Links: "N/A",
+            "Video Link": "https://youtu.be/Enygu8ivr0w?si=SgzjEHke5oc_cwdk",
           },
           {
             Detail: "Implement stack using queue",
             Links: "N/A",
+            "Video Link": "https://youtu.be/z4FxPUgXn90?si=86tva8iOIGV5E74n",
           },
           {
             Detail: "Q. LRU Cache",
             Links: "N/A",
+            "Video Link": "TBL",
           },
           {
             Detail: "Q. LFU Cache",
             Links: "N/A",
+            "Video Link": "TBL",
           },
           {
             Detail: "Q. Rotten Oranges",
             Links: "N/A",
+            "Video Link": "TBL",
           },
           {
             Detail: "Q. Sliding Window Maximum",
             Links: "N/A",
+            "Video Link": "TBL",
           },
           {
             Detail: "Q. Find Maximum and Minimum of Every Window Size",
             Links: "N/A",
+            "Video Link": "TBL",
           },
         ],
         "Video Link": "https://youtu.be/9m4SZPRQXQI?si=izPej7j2qhbiKrys",
@@ -1567,6 +1691,7 @@ export const csvDataAll = [
           {
             Detail: "Introduction",
             Links: "N/A",
+            "Video Link": "https://youtu.be/CRG9tcCr8iU",
           },
           {
             Detail: "Need of Data Structure and Algorithms",
@@ -1754,52 +1879,64 @@ export const csvDataAll = [
           {
             Detail: "Q. Print all substrings",
             Links: "N/A",
+            "Video Link": "https://youtu.be/I1rgYRi1tXE",
           },
           {
             Detail: "Q. Reverse a string",
             Links: "N/A",
+            "Video Link": "https://youtu.be/m9QAjIVnmp4",
           },
           {
             Detail: "Q. Check if a string is pallindrome",
             Links: "N/A",
+            "Video Link": "https://youtu.be/-HGtMO4MkWs",
           },
           {
             Detail: "Q. Reverse words in a String",
             Links: "N/A",
+            "Video Link": "https://youtu.be/KhNAMB3jDOU",
           },
           {
             Detail: "Q. Check if two strings are anagram",
             Links:
               "https://www.geeksforgeeks.org/problems/anagram-1587115620/1",
+            "Video Link": "https://youtu.be/SFF3ND7TPc0",
           },
           {
             Detail: "Q. Reverse Words in a String -iii",
             Links:
               "https://leetcode.com/problems/reverse-words-in-a-string-iii/",
+            "Video Link": "https://youtu.be/ajhV7EYLfOY",
           },
           {
             Detail: "Q. Longest Pallindrome",
             Links: "N/A",
+            "Video Link": "TBD",
           },
           {
             Detail: "Q. Find all Anagrams",
             Links: "N/A",
+            "Video Link": "TBD",
           },
           {
             Detail: "Q. K-Anagrams",
             Links: "N/A",
+            "Video Link": "TBD",
           },
           {
             Detail: "Q. Roman to Integer",
             Links: "N/A",
+            "Video Link": "TBD",
           },
           {
             Detail: "Q. First Repeated word in a string",
             Links: "N/A",
+            "Video Link": "TBD",
           },
           {
             Detail: "Q. Isomorphic String checker",
             Links: "N/A",
+            "Video Link": "TBD",
           },
         ],
         "Video Link": "https://youtu.be/I1rgYRi1tXE",
@@ -1815,6 +1952,7 @@ export const csvDataAll = [
           {
             Detail: "Components of Hashing",
             Links: "N/A",
+            "Video Link": "https://youtu.be/vB3WKXNH-v4?si=oAOjWmxgCLXQvjC2",
           },
           {
             Detail: "How hashing works?",
@@ -1857,6 +1995,7 @@ export const csvDataAll = [
           {
             Detail: "What is hashmap?",
             Links: "N/A",
+            "Video Link": "https://youtu.be/CMA0MQQ3jhA?si=qi9VRUEUv4Rldbv2",
           },
           {
             Detail: "How to use custom key-value pair",
@@ -1871,6 +2010,7 @@ export const csvDataAll = [
           {
             Detail: "All Methods",
             Links: "N/A",
+            "Video Link": "https://youtu.be/B4VukYcQG_E?si=D4bP5zpwtOFPzNQM",
           },
           {
             Detail: "Hashcode function",
@@ -1889,16 +2029,19 @@ export const csvDataAll = [
           {
             Detail: "Q. Most frequent element in an array",
             Links: "https://www.geeksforgeeks.org/frequent-element-array/",
+            "Video Link": "https://youtu.be/O5iUfFHxCZc?si=wKCy3r5x7hgIDEib",
           },
           {
             Detail: "Q. Check if an array is subset of another array",
             Links:
               "https://www.geeksforgeeks.org/problems/array-subset-of-another-array2317/1",
+            "Video Link": "https://youtu.be/V4hi-l-xNXU?si=LMEB14_uTicW-6vM",
           },
           {
             Detail: "Q. Count Pairs with given sum",
             Links:
               "https://www.geeksforgeeks.org/problems/count-pairs-with-given-sum5022/1",
+            "Video Link": "https://youtu.be/NC9r8D2QnHk?si=nWVnSK7h3P9V8k7u",
           },
         ],
         "Video Link": "https://youtu.be/O5iUfFHxCZc?si=wKCy3r5x7hgIDEib",
@@ -1909,6 +2052,7 @@ export const csvDataAll = [
           {
             Detail: "what is hashset data structure",
             Links: "N/A",
+            "Video Link": "https://youtu.be/3euKVlloIWY?si=Uvz3qkcdHLlIsnbX",
           },
           {
             Detail: "Usage of map keys",
@@ -1927,10 +2071,12 @@ export const csvDataAll = [
           {
             Detail: "Q. Minimum number of subsets with distinct elements",
             Links: "N/A",
+            "Video Link": "https://youtu.be/h6jzp9waCyk?si=GTlG-0HGVxzwzuvK",
           },
           {
             Detail: "Q. Check if subarray with K sum Exists or Not",
             Links: "N/A",
+            "Video Link": "https://youtu.be/S6tARGbBGEo?si=7wRtd-jYnSdHRYmk",
           },
           {
             Detail: "Q. Find the starting and ending index of K sum subarray",
@@ -1959,29 +2105,35 @@ export const csvDataAll = [
             Detail: "Q. Longest subarray with sum divisible by K",
             Links:
               "https://www.geeksforgeeks.org/problems/longest-subarray-with-sum-divisible-by-k1259/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article",
+            "Video Link": "https://youtu.be/L03d0qThnJQ?si=1TEHDMBGaDGVeElr",
           },
           {
             Detail: "Q. Longest increasing concecutive subsequence",
             Links:
               "https://leetcode.com/problems/longest-consecutive-sequence/description/",
+            "Video Link": "https://youtu.be/4ohND5Hq-wQ?si=-Rdz-tpJZ4W1ke-g",
           },
           {
             Detail: "Q. Count distinct elements in every window of size K",
             Links: "N/A",
+            "Video Link": "TBD",
           },
           {
             Detail: "Q. Largest subarray with equal number of 0s and 1s",
             Links:
               "https://www.geeksforgeeks.org/problems/largest-subarray-of-0s-and-1s/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article",
+            "Video Link": "https://youtu.be/qOCuB-IC9KA?si=NEEgvm_zlI-dvSm_",
           },
           {
             Detail:
               "Q. Find pairs with given sum such that elements of pair are in different rows",
             Links: "N/A",
+            "Video Link": "TBD",
           },
           {
             Detail: "Bucket Sort Algorithm",
             Links: "N/A",
+            "Video Link": "https://youtu.be/5Pe3YSnqGh8?si=8cnivpNvhCX6X0hf",
           },
         ],
         "Video Link": "https://youtu.be/h6jzp9waCyk?si=GTlG-0HGVxzwzuvK",
@@ -1997,51 +2149,61 @@ export const csvDataAll = [
           {
             Detail: "Sliding Window Technique",
             Links: "N/A",
+            "Video Link": "https://youtu.be/DQMxp7TS2BI?si=WN_ksJt1fWPXuLmF",
           },
           {
             Detail: "Q. Maximum Sum Subarray of Size K",
             Links:
               "https://www.geeksforgeeks.org/problems/max-sum-subarray-of-size-k5313/1",
+            "Video Link": "https://youtu.be/rGl2Z6fuAas?si=t3JH4diL-nDnBwGe",
           },
           {
             Detail: "Q. First Negative Number in Each Subarray of Size K",
             Links:
               "https://www.geeksforgeeks.org/problems/first-negative-integer-in-every-window-of-size-k3345/1",
+            "Video Link": "https://youtu.be/Rot0y4cmlNw?si=TAp7sbW1OOQkW57C",
           },
           {
             Detail: "Q. Chocolate Distribution Problem",
             Links:
               "https://www.geeksforgeeks.org/problems/chocolate-distribution-problem3825/1",
+            "Video Link": "https://youtu.be/oYNU1TD9W5Y?si=1rn_BjF9-LIJDwcH",
           },
           {
             Detail: "Q. Smallest subarray with sum greater than x",
             Links:
               "https://www.geeksforgeeks.org/problems/smallest-subarray-with-sum-greater-than-x5651/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article",
+            "Video Link": "https://youtu.be/UXValb-h70s?si=VaCxJsB7-WKbL4nW",
           },
           {
             Detail: "Q. Longest Substring with K unique Elements",
             Links:
               "https://www.geeksforgeeks.org/problems/longest-k-unique-characters-substring0853/1",
+            "Video Link": "https://youtu.be/Yp3T06_27MY?si=GUuisgzt8fXO5gF6",
           },
           {
             Detail: "Q. Longest Substring without repeating elements",
             Links:
               "https://leetcode.com/problems/longest-substring-without-repeating-characters/description/",
+            "Video Link": "https://youtu.be/Vgo7tvBm8OU?si=fxI1Ggsz3C_sMlIj",
           },
           {
             Detail: "Q. Count Occurances of Anagrams",
             Links:
               "https://www.geeksforgeeks.org/problems/count-occurences-of-anagrams5839/1",
+            "Video Link": "https://youtu.be/PVXVsSkItpY?si=0zBiqLK0x9yzN85K",
           },
           {
             Detail: "Q. Minimum Window Substring",
             Links:
               "https://leetcode.com/problems/minimum-window-substring/description/",
+            "Video Link": "https://youtu.be/26E3K8Njm7M",
           },
           {
             Detail: "Q. Sliding Window Maximum",
             Links:
               "https://leetcode.com/problems/sliding-window-maximum/description/",
+            "Video Link": "https://youtu.be/jOoZuTrfpjc",
           },
         ],
         "Video Link": "https://youtu.be/DQMxp7TS2BI?si=WN_ksJt1fWPXuLmF",
@@ -2057,30 +2219,37 @@ export const csvDataAll = [
           {
             Detail: "Q. Container with Most Water",
             Links: "N/A",
+            "Video Link": "TBD",
           },
           {
             Detail: "Q. Trapping Rainwater",
             Links: "N/A",
+            "Video Link": "TBD",
           },
           {
             Detail: "Q. Find Pair with a given sum in sorted Array",
             Links: "N/A",
+            "Video Link": "TBD",
           },
           {
             Detail: "Q. Remove Duplicates from Sorted Array",
             Links: "N/A",
+            "Video Link": "TBD",
           },
           {
             Detail: "Q. Maximum Consecutive ones",
             Links: "N/A",
+            "Video Link": "TBD",
           },
           {
             Detail: "Q. Reverse Pairs",
             Links: "N/A",
+            "Video Link": "TBD",
           },
           {
             Detail: "Q. The Celebrity Problem",
             Links: "N/A",
+            "Video Link": "TBD",
           },
         ],
         "Video Link": "TBD",
@@ -2096,6 +2265,7 @@ export const csvDataAll = [
           {
             Detail: "Intro to linked list Data Structure",
             Links: "N/A",
+            "Video Link": "https://youtu.be/cf4RNGYI6hk?si=aY6v4j2CUzgaPlpm",
           },
           {
             Detail: "Types of linked list",
@@ -2126,6 +2296,7 @@ export const csvDataAll = [
           {
             Detail: "Intro to Doubly linked list",
             Links: "N/A",
+            "Video Link": "https://youtu.be/JxIC0XeTl4Y?si=5HZNJ_-u8IqktXam",
           },
           {
             Detail: "All operations and their time complexity",
@@ -2145,89 +2316,107 @@ export const csvDataAll = [
             Detail: "Q. Find Middle of Linked List (Hare Tortoise Algorithm)",
             Links:
               "https://leetcode.com/problems/middle-of-the-linked-list/description/",
+            "Video Link": "https://youtu.be/NUbqd8-lHl4?si=gByqGlulWwtiPV__",
           },
           {
             Detail: "Q. Delete Middle of Linked list",
             Links:
               "https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/description/",
+            "Video Link": "https://youtu.be/uLlJJHpq7hw?si=Fm2c_sOMqUx5QPqP",
           },
           {
             Detail: "Q. Pairwise swap nodes of Linked List",
             Links:
               "https://www.geeksforgeeks.org/problems/pairwise-swap-elements-of-a-linked-list-by-swapping-data/1",
+            "Video Link": "https://youtu.be/92f3L2p31Oc?si=oyC441Kt3bph4ZCZ",
           },
           {
             Detail: "Q. Add two numbers using Linked List",
             Links: "https://leetcode.com/problems/add-two-numbers/description/",
+            "Video Link": "https://youtu.be/OgSnJa9pDk0?si=fRMC6sMYZcrkZr07",
           },
           {
             Detail: "Q. Reverse the linked list (Iterative + Recursive)",
             Links:
               "https://leetcode.com/problems/reverse-linked-list/description/",
+            "Video Link": "https://youtu.be/6GkwvqS9Cq4?si=gGSvqdH_iCcI3a_K",
           },
           {
             Detail: "Q. Palindrome linked list",
             Links:
               "https://leetcode.com/problems/palindrome-linked-list/description/",
+            "Video Link": "https://youtu.be/uXB8S875uyw?si=JVxHNQHRKatVgKPy",
           },
           {
             Detail: "Q. Detect Cycle in a linked list",
             Links:
               "https://leetcode.com/problems/linked-list-cycle/description/",
+            "Video Link": "https://youtu.be/6VRgzaOT2G0?si=Tx8_Z5poHSB09yyd",
           },
           {
             Detail: "Q. Segregate a linked list into odd and even list",
             Links:
               "https://leetcode.com/problems/odd-even-linked-list/description/",
+            "Video Link": "https://youtu.be/EqsLvheH5fA?si=-GLAb-yfSnpr3oFc",
           },
           {
             Detail: "Q. Reverse Nodes in K Group",
             Links:
               "https://leetcode.com/problems/reverse-nodes-in-k-group/description/ , https://www.geeksforgeeks.org/problems/reverse-a-linked-list-in-groups-of-given-size/1",
+            "Video Link": "https://youtu.be/zsuqutkRYcs?si=7bmdLeSN25CvQwve",
           },
           {
             Detail: "Q. Remove Nth node from the end of linked list",
             Links:
               "https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/",
+            "Video Link": "https://youtu.be/XLPiw_Dz5-A?si=_dkgHPvLVig4yrFR",
           },
           {
             Detail: "Q. Sort a linked list of 0's, 1's and 2's",
             Links:
               "https://www.geeksforgeeks.org/problems/given-a-linked-list-of-0s-1s-and-2s-sort-it/1",
+            "Video Link": "https://youtu.be/c2C4lbstw1w?si=hG4blZtDKCcPpg5e",
           },
           {
             Detail: "Q. Intersection of two Sorted linked list",
             Links:
               "https://www.geeksforgeeks.org/problems/intersection-of-two-sorted-linked-lists/1?utm_source=gfg&utm_medium=article&utm_campaign=bottom_sticky_on_article",
+            "Video Link": "https://youtu.be/19unN7dz54A?si=KiqIImUyRioMkqhU",
           },
           {
             Detail: "Q. Intersection point of two linked list",
             Links:
               "https://leetcode.com/problems/intersection-of-two-linked-lists/description/",
+            "Video Link": "https://youtu.be/qw0ZKmP-GTk?si=hLR5f5AShqMgMBdB",
           },
           {
             Detail: "Q. Insert in a sorted list",
             Links:
               "https://www.geeksforgeeks.org/problems/insert-in-a-sorted-list/1",
+            "Video Link": "https://youtu.be/wa4fTaf3qSw?si=Iu6oK0TRh503HGk0",
           },
           {
             Detail: "Q. Insertion Sort on Linked List",
             Links:
               "https://leetcode.com/problems/insertion-sort-list/description/",
+            "Video Link": "https://youtu.be/fzx8CWqbxxI?si=LB1C44XQCKC9T9JU",
           },
           {
             Detail: "Q. Merge Sort on Linked List",
             Links: "https://leetcode.com/problems/sort-list/description/",
+            "Video Link": "https://youtu.be/13UkRumpqZw?si=uw-eXXBmA6YeHaFu",
           },
           {
             Detail: "Q. Split a circular linked list into two circular lists",
             Links:
               "https://www.geeksforgeeks.org/problems/split-a-circular-linked-list-into-two-halves/1?utm_source=gfg&utm_medium=article&utm_campaign=bottom_sticky_on_article",
+            "Video Link": "https://youtu.be/dBxiAxuT2I8?si=utMWpF083dismeIJ",
           },
           {
             Detail: "Q. Clone a linked list with random and next pointer",
             Links:
               "https://leetcode.com/problems/copy-list-with-random-pointer/description/",
+            "Video Link": "TBD",
           },
         ],
         "Video Link": "https://youtu.be/NUbqd8-lHl4?si=gByqGlulWwtiPV__",
@@ -2243,6 +2432,7 @@ export const csvDataAll = [
           {
             Detail: "Linear Data Structure",
             Links: "N/A",
+            "Video Link": "https://youtu.be/jeQ_B7-nihM",
           },
           {
             Detail: "Non Linear Data Structure",
@@ -2257,6 +2447,7 @@ export const csvDataAll = [
           {
             Detail: "What is a tree Data Structure.",
             Links: "N/A",
+            "Video Link": "https://youtu.be/qfHkWUl1zlc?si=Z1PWfLJg3e8wL6GC",
           },
           {
             Detail: "Types of trees.",
@@ -2318,168 +2509,203 @@ export const csvDataAll = [
             Detail: "Tree Traversal BFS",
             Links:
               "https://www.geeksforgeeks.org/problems/level-order-traversal/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article",
+            "Video Link": "https://youtu.be/4NZV0XBbKfA?si=wn_pcNP-l7dmDcXA",
           },
           {
             Detail: "BFS on N-Ary Trees",
             Links:
               "https://www.geeksforgeeks.org/problems/level-order-traversal/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article",
+            "Video Link": "https://youtu.be/4NZV0XBbKfA?si=wn_pcNP-l7dmDcXA",
           },
           {
             Detail: "Tree Traversal DFS - Recursive",
             Links:
               "https://www.geeksforgeeks.org/problems/preorder-traversal/1",
+            "Video Link": "https://youtu.be/aQKJ9juD87k?si=Gou7Ob0zLS2xOoU2",
           },
           {
             Detail: "Preorder Iterative",
             Links:
               "https://leetcode.com/problems/binary-tree-preorder-traversal/description/",
+            "Video Link": "https://youtu.be/Tp2kzBIunWk?si=LYmDgBNvOFJogvt1",
           },
           {
             Detail: "Inorder Iterative",
             Links:
               "https://leetcode.com/problems/binary-tree-inorder-traversal/description/",
+            "Video Link": "https://youtu.be/-VzRxq3Jwp4?si=8XJFCAnFCXWss35l",
           },
           {
             Detail: "Postorder Iterative",
             Links:
               "https://leetcode.com/problems/binary-tree-postorder-traversal/description/",
+            "Video Link": "https://youtu.be/xEPe6aWlRd0?si=rRWVNq5RgT8w9Z6e",
           },
           {
             Detail: "Q. Construct tree using inorder and postorder.",
             Links:
               "https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/description/",
+            "Video Link": "https://youtu.be/uDuOuMcSHwo?si=8bymVQfdrdovJImK",
           },
           {
             Detail: "Q. Maximum Depth of Binary Tree",
             Links:
               "https://leetcode.com/problems/maximum-depth-of-binary-tree/description/",
+            "Video Link": "https://youtu.be/zbZEcUV0t7k?si=iyca3V-SbEKcEthY",
           },
           {
             Detail: "Q. Maximum Depth of N-Ary Tree",
             Links:
               "https://leetcode.com/problems/maximum-depth-of-n-ary-tree/description/",
+            "Video Link": "https://youtu.be/Mehu7yep3ag?si=jVmAzUOxVZRD-JYV",
           },
           {
             Detail: "Q. Diameter of Binary Tree",
             Links:
               "https://leetcode.com/problems/diameter-of-binary-tree/description/",
+            "Video Link": "https://youtu.be/Dt-U4vzYDTM?si=NdWKcECHM7PslySR",
           },
           {
             Detail: "Q. Diameter of N-ary Tree",
             Links:
               "https://leetcode.com/problems/diameter-of-n-ary-tree/description/",
+            "Video Link": "https://youtu.be/mPTJyH6Qs4c?si=vBK8aPbfmdQjYs8f",
           },
           {
             Detail: "Q. Count number of node in compete Binary Tree",
             Links:
               "https://www.geeksforgeeks.org/problems/count-number-of-nodes-in-a-binary-tree/1",
+            "Video Link": "https://youtu.be/1m3F7zEW9qc?si=YI6cXSo8StZmYUAY",
           },
           {
             Detail: "Q. Left and Right View of Binary Tree",
             Links:
               "https://leetcode.com/problems/binary-tree-right-side-view/description/",
+            "Video Link": "https://youtu.be/JgRsVsw_ZSw",
           },
           {
             Detail: "Q. Top and Bottom View of Binary Tree",
             Links:
               "https://www.geeksforgeeks.org/problems/top-view-of-binary-tree/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article",
+            "Video Link": "https://youtu.be/zbA4yWuEoYE",
           },
           {
             Detail: "Q. Vertical Order Traversal of Binary Tree",
             Links:
               "https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/description/",
+            "Video Link": "https://youtu.be/X-XLc_jOmHE",
           },
           {
             Detail: "Q. Boundary Traversal of Binary Tree",
             Links:
               "https://www.geeksforgeeks.org/problems/boundary-traversal-of-binary-tree/1",
+            "Video Link": "https://youtu.be/c2uD7WBjE5A",
           },
           {
             Detail: "Q. ZigZag Level Order Traversal of Binary Tree",
             Links:
               "https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/description/",
+            "Video Link": "https://youtu.be/9VLBM60-AVs",
           },
           {
             Detail: "Q. Balanced Binary Tree",
             Links:
               "https://leetcode.com/problems/balanced-binary-tree/description/",
+            "Video Link": "https://youtu.be/PPD2X52uzMc",
           },
           {
             Detail: "Q. Lowest Common Ancestor of Binary Tree (LCA)",
             Links:
               "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/description/",
+            "Video Link": "https://youtu.be/m9NKcTvrhSc",
           },
           {
             Detail: "Introduction to Binary Search Tree",
             Links:
               "https://leetcode.com/problems/insert-into-a-binary-search-tree/description/",
+            "Video Link": "https://youtu.be/WikD4AEvRq0",
           },
           {
             Detail: "Delete a Node in BST",
             Links:
               "https://leetcode.com/problems/delete-node-in-a-bst/description/",
+            "Video Link": "https://youtu.be/kdXBGjmiVCE",
           },
           {
             Detail: "Q. Validate BST",
             Links:
               "https://leetcode.com/problems/validate-binary-search-tree/description/",
+            "Video Link": "https://youtu.be/GcY4pTdHzq0",
           },
           {
             Detail: "Q. Two Sum in BST",
             Links:
               "https://leetcode.com/problems/two-sum-iv-input-is-a-bst/description/",
+            "Video Link": "https://youtu.be/9luczLx9YYc",
           },
           {
             Detail: "Q. Kth Smallest Element in BST",
             Links:
               "https://leetcode.com/problems/kth-smallest-element-in-a-bst/description/",
+            "Video Link": "https://youtu.be/RM8k2pr6V38",
           },
           {
             Detail: "Q. LCA in BST",
             Links:
               "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/description/",
+            "Video Link": "https://youtu.be/TytL24jNZ6k",
           },
           {
             Detail: "Q. Burn a Tree",
             Links: "N/A",
+            "Video Link": "TBD",
           },
           {
             Detail: "Q. BT to DLL",
             Links: "N/A",
+            "Video Link": "TBD",
           },
           {
             Detail: "Q. Floor and Ceil in BST",
             Links: "N/A",
+            "Video Link": "TBD",
           },
           {
             Detail: "Q. Search in BST",
             Links: "N/A",
+            "Video Link": "TBD",
           },
           {
             Detail: "Q. Binary Search Tree Iterator",
             Links:
               "https://leetcode.com/problems/binary-search-tree-iterator/description/",
+            "Video Link": "https://youtu.be/V9J9gGIVt_E",
           },
           {
             Detail: "Q. Maximum Sum BST in Binary Tree",
             Links:
               "https://leetcode.com/problems/maximum-sum-bst-in-binary-tree/description/",
+            "Video Link": "https://youtu.be/zAz-WbqIaf8",
           },
           {
             Detail: "Flood fill algorithm in BT",
             Links: "N/A",
+            "Video Link": "TBD",
           },
           {
             Detail: "Segment tree",
             Links: "N/A",
+            "Video Link": "TBD",
           },
           {
             Detail: "Range query",
             Links: "N/A",
+            "Video Link": "TBD",
           },
           {
             Detail: "Red Black Tree",
             Links: "N/A",
+            "Video Link": "TBD",
           },
         ],
         "Video Link": "https://youtu.be/qfHkWUl1zlc?si=Z1PWfLJg3e8wL6GC",
@@ -2490,6 +2716,7 @@ export const csvDataAll = [
           {
             Detail: "1. AVL Trees",
             Links: "N/A",
+            "Video Link": "https://youtu.be/QEvpN09q3nw",
           },
           {
             Detail: "2. Balanced Trees",
@@ -2537,6 +2764,7 @@ export const csvDataAll = [
             Detail: "Time based key value store",
             Links:
               "https://leetcode.com/problems/time-based-key-value-store/description/",
+            "Video Link": "https://youtu.be/W0JgjIgz3zQ",
           },
         ],
         "Video Link": "https://youtu.be/W0JgjIgz3zQ",
@@ -2552,6 +2780,7 @@ export const csvDataAll = [
           {
             Detail: "1. Heaps",
             Links: "N/A",
+            "Video Link": "https://youtu.be/NFiYQGyL8rg",
           },
           {
             Detail: "2. Heapify",
@@ -2602,6 +2831,7 @@ export const csvDataAll = [
           {
             Detail: "1. Priority Queue in Java collections",
             Links: "N/A",
+            "Video Link": "https://youtu.be/XGfa9jnDJNY",
           },
           {
             Detail: "2. Priority Queue on custom classes.",
@@ -2629,41 +2859,50 @@ export const csvDataAll = [
             Detail: "Q. Top K Frequent Elements",
             Links:
               "https://leetcode.com/problems/top-k-frequent-elements/description/",
+            "Video Link": "https://youtu.be/bXbiLwGSZHU",
           },
           {
             Detail: "Q. Sort Characters by frequency",
             Links:
               "https://leetcode.com/problems/sort-characters-by-frequency/description/",
+            "Video Link": "https://youtu.be/zPB7j1TMTDM",
           },
           {
             Detail: "Q. IPO",
             Links:
               "https://leetcode.com/problems/ipo/description/?envType=daily-question&envId=2024-06-15",
+            "Video Link": "https://youtu.be/sdCvHi2i03E",
           },
           {
             Detail: "Q. Design Twitter",
             Links: "https://leetcode.com/problems/design-twitter/description/",
+            "Video Link": "https://youtu.be/tH051S6aM5M",
           },
           {
             Detail: "Q. Task Scheduler",
             Links:
               "https://leetcode.com/problems/task-scheduler/description/?envType=daily-question&envId=2024-03-19",
+            "Video Link": "https://youtu.be/it-tqUPacgM",
           },
           {
             Detail: "Q. Connect N ropes with Minimum cost",
             Links: "N/A",
+            "Video Link": "TBD",
           },
           {
             Detail: "Q. Medium of Running Streams of Integers",
             Links: "N/A",
+            "Video Link": "TBD",
           },
           {
             Detail: "Q. Maximum Sum Combination",
             Links: "N/A",
+            "Video Link": "TBD",
           },
           {
             Detail: "Q. Merge K sorted Elements",
             Links: "N/A",
+            "Video Link": "TBD",
           },
         ],
         "Video Link": "https://youtu.be/bXbiLwGSZHU",
@@ -2679,6 +2918,7 @@ export const csvDataAll = [
           {
             Detail: "1. Introduction to graphs",
             Links: "N/A",
+            "Video Link": "https://youtu.be/f-buby0Aac8",
           },
           {
             Detail: "2. Directed Graph",
@@ -2717,6 +2957,7 @@ export const csvDataAll = [
           {
             Detail: "1. How to represent graph in memory",
             Links: "N/A",
+            "Video Link": "https://youtu.be/2oXUetonhUg",
           },
           {
             Detail: "2. InDegree of directed graph",
@@ -2756,11 +2997,13 @@ export const csvDataAll = [
             Detail: "Q. Find the center of star graph",
             Links:
               "https://leetcode.com/problems/find-center-of-star-graph/description/?envType=daily-question&envId=2024-06-27",
+            "Video Link": "https://youtu.be/bEzD_V6Uhss",
           },
           {
             Detail: "Q. Maximum Total Importance of Roads",
             Links:
               "https://leetcode.com/problems/maximum-total-importance-of-roads/description/?envType=daily-question&envId=2024-06-28",
+            "Video Link": "https://youtu.be/C7BENkkO3oU",
           },
         ],
         "Video Link": "https://youtu.be/bEzD_V6Uhss",
@@ -2771,6 +3014,7 @@ export const csvDataAll = [
           {
             Detail: "1. How to traverse multiple components in a graph",
             Links: "N/A",
+            "Video Link": "https://youtu.be/bmULgrjRcss",
           },
           {
             Detail: "2. TreeTraversal vs Graph Traversal",
@@ -2796,162 +3040,196 @@ export const csvDataAll = [
             Detail: "DFS Traversal in Graph",
             Links:
               "https://www.geeksforgeeks.org/problems/depth-first-traversal-for-a-graph/1",
+            "Video Link": "https://youtu.be/8ZP_Y3boL0M",
           },
           {
             Detail: "BFS Traversal in Graph",
             Links:
               "https://www.geeksforgeeks.org/problems/bfs-traversal-of-graph/1",
+            "Video Link": "https://youtu.be/88WZluVGlFI",
           },
           {
             Detail: "Q. Flood fill using BFS",
             Links: "https://leetcode.com/problems/flood-fill/description/",
+            "Video Link": "https://youtu.be/W6nOvvWzZYg",
           },
           {
             Detail: "Q. Number of Islands",
             Links:
               "https://leetcode.com/problems/number-of-islands/description/",
+            "Video Link": "https://youtu.be/mwsuv-S1biw",
           },
           {
             Detail: "Q. Word Ladder -1",
             Links: "https://leetcode.com/problems/word-ladder/description/",
+            "Video Link": "https://youtu.be/zjR2WGbBA2k",
           },
           {
             Detail: "Q. Word Ladder -2",
             Links:
               "https://leetcode.com/problems/word-ladder-ii/description/ , https://www.geeksforgeeks.org/problems/word-ladder-ii/1",
+            "Video Link": "https://youtu.be/KsNOBLyImbY",
           },
           {
             Detail: "Q. Evaluate Division",
             Links:
               "https://leetcode.com/problems/evaluate-division/description/",
+            "Video Link": "https://youtu.be/i0lqeMRuI5k",
           },
           {
             Detail: "Q. Get Watched Videos by your friends",
             Links:
               "https://leetcode.com/problems/get-watched-videos-by-your-friends/description/",
+            "Video Link": "https://youtu.be/dCTAWkkO4h4",
           },
           {
             Detail: "Q. Rotting Oranges | Multisource BFS",
             Links: "https://leetcode.com/problems/rotting-oranges/description/",
+            "Video Link": "https://youtu.be/PULSUj4gBBc",
           },
           {
             Detail: "Q. Minimum Time to Collect All Apples in a Tree",
             Links:
               "https://leetcode.com/problems/minimum-time-to-collect-all-apples-in-a-tree/description/",
+            "Video Link": "https://youtu.be/ROI1bS_uBSE",
           },
           {
             Detail: "Q. Most Stones Removed with Same Row or Column",
             Links:
               "https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/description/",
+            "Video Link": "https://youtu.be/SjdbuY-Ryuk",
           },
           {
             Detail: "Q. Accounts Merge",
             Links: "https://leetcode.com/problems/accounts-merge/description/",
+            "Video Link": "https://youtu.be/kmzlMoxmCs4",
           },
           {
             Detail: "cycle detection in undirected graph using BFS",
             Links:
               "https://www.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1",
+            "Video Link": "https://youtu.be/gvNeSmWatIc",
           },
           {
             Detail: "cycle detection in undirected graph using DFS",
             Links:
               "https://www.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1",
+            "Video Link": "https://youtu.be/erRL82Gl2Xg",
           },
           {
             Detail: "Cycle Detection In Directed Graphs using DFS",
             Links:
               "https://www.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1",
+            "Video Link": "https://youtu.be/Y3eIsQj-DpI",
           },
           {
             Detail: "Kahn's Algorithm for Toposort",
             Links: "https://www.geeksforgeeks.org/problems/topological-sort/1",
+            "Video Link": "https://youtu.be/tZjVTTABXV0",
           },
           {
             Detail: "Toposort using DFS",
             Links: "https://www.geeksforgeeks.org/problems/topological-sort/1",
+            "Video Link": "https://youtu.be/syzUtO95I8g",
           },
           {
             Detail: "Cycle Detection in directed graph using toposort",
             Links:
               "https://www.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1",
+            "Video Link": "https://youtu.be/3PMWe72jF_8",
           },
           {
             Detail: "When to apply BFS | Shortest Path using BFS",
             Links:
               "https://www.geeksforgeeks.org/problems/shortest-path-in-undirected-graph-having-unit-distance/1",
+            "Video Link": "https://youtu.be/vNHDWm_aVgA",
           },
           {
             Detail: "Dijkstra Algorithm | Shortest Path",
             Links:
               "https://www.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1",
+            "Video Link": "https://youtu.be/jhlo_YQPXR0",
           },
           {
             Detail: "Floyd Warshall Algorithm | Shortest Path",
             Links:
               "https://www.geeksforgeeks.org/problems/implementing-floyd-warshall2042/1?category%255B%255D=Graph",
+            "Video Link": "https://youtu.be/7y88NO1Aq1o",
           },
           {
             Detail: "Bellmanford Algorithm | Shortest Path",
             Links:
               "https://www.geeksforgeeks.org/problems/distance-from-the-source-bellman-ford-algorithm/1",
+            "Video Link": "https://youtu.be/Kbfgo3E3n6c",
           },
           {
             Detail: "Q. Network Delay Time",
             Links:
               "https://leetcode.com/problems/network-delay-time/description/",
+            "Video Link": "https://youtu.be/n551TcPWSH8",
           },
           {
             Detail: "Q. Cheapest Flights Within K Stops",
             Links:
               "https://leetcode.com/problems/cheapest-flights-within-k-stops/description/",
+            "Video Link": "https://youtu.be/NIrYezLg_6Q",
           },
           {
             Detail: "Q. Minimum Cost to Convert String I",
             Links:
               "https://leetcode.com/problems/minimum-cost-to-convert-string-i/description/",
+            "Video Link": "https://youtu.be/jmqnpjtVPNs",
           },
           {
             Detail: "Disjoint Sets in one shot",
             Links: "N/A",
+            "Video Link": "https://youtu.be/7wgUuv0U5zs",
           },
           {
             Detail: "Q. Redundant Connection",
             Links:
               "https://leetcode.com/problems/redundant-connection/description/",
+            "Video Link": "https://youtu.be/jrLOReWZSes",
           },
           {
             Detail: "Q. Satisfiability of Equality Equations",
             Links:
               "https://leetcode.com/problems/satisfiability-of-equality-equations/description/",
+            "Video Link": "https://youtu.be/87bMglHvC8A",
           },
           {
             Detail: "Q. Number of Operations to Make Network Connected",
             Links:
               "https://leetcode.com/problems/number-of-operations-to-make-network-connected/description/",
+            "Video Link": "https://youtu.be/Gn6ZlaLIDjY",
           },
           {
             Detail: "Q. Is Graph Bipartite?",
             Links:
               "https://leetcode.com/problems/is-graph-bipartite/description/",
+            "Video Link": "https://youtu.be/7nETmZcQRko",
           },
           {
             Detail: "Strongly Connected Components | Kosaraju's Algorithm",
             Links: "N/A",
+            "Video Link": "TBD",
           },
           {
             Detail: "Minimum spanning tree",
             Links: "N/A",
+            "Video Link": "https://youtu.be/XozGcnGHJXM",
           },
           {
             Detail: "Prim's Algorithm for minimum spanning tree",
             Links:
               "https://www.geeksforgeeks.org/problems/minimum-spanning-tree/1",
+            "Video Link": "https://youtu.be/4EuFmlbcSY8",
           },
           {
             Detail: "Kruskal's Algorithm for minimum spanning tree",
             Links:
               "https://www.geeksforgeeks.org/problems/minimum-spanning-tree/1",
+            "Video Link": "https://youtu.be/dBGYpKLY2bQ",
           },
         ],
         "Video Link": "https://youtu.be/bmULgrjRcss",
@@ -2967,6 +3245,7 @@ export const csvDataAll = [
           {
             Detail: "Overlapping Subproblems",
             Links: "N/A",
+            "Video Link": "https://youtu.be/P3MFBCZCGXs?si=FNhk7mjC7Cf0MZRD",
           },
           {
             Detail: "Optimal Substructures",
@@ -3062,6 +3341,7 @@ export const csvDataAll = [
           {
             Detail: "Q. Pallindromic Partitioning",
             Links: "TBD",
+            "Video Link": "TBD",
           },
           {
             Detail: "Kadanes Algorithm",
@@ -3101,42 +3381,52 @@ export const csvDataAll = [
           {
             Detail: "Q. Activity Selection Problem",
             Links: "TBD",
+            "Video Link": "TBD",
           },
           {
             Detail: "Q. Eqyption Fraction",
             Links: "TBD",
+            "Video Link": "TBD",
           },
           {
             Detail: "Q. Job Sequencing Problem",
             Links: "TBD",
+            "Video Link": "TBD",
           },
           {
             Detail: "Q. Policemen Catches Thieves",
             Links: "TBD",
+            "Video Link": "TBD",
           },
           {
             Detail: "Q. Assign mice to Holes",
             Links: "TBD",
+            "Video Link": "TBD",
           },
           {
             Detail: "Q. Minimum swaps for bracket balancing",
             Links: "TBD",
+            "Video Link": "TBD",
           },
           {
             Detail: "Q. Minimum number of Platforms for Railway station",
             Links: "TBD",
+            "Video Link": "TBD",
           },
           {
             Detail: "Q. Minimum number of Coins - greedy",
             Links: "TBD",
+            "Video Link": "TBD",
           },
           {
             Detail: "Q. Fractional Knapsack - greedy",
             Links: "TBD",
+            "Video Link": "TBD",
           },
           {
             Detail: "Q. Text Justification",
             Links: "TBD",
+            "Video Link": "TBD",
           },
         ],
         "Video Link": "TBD",
@@ -3152,14 +3442,17 @@ export const csvDataAll = [
           {
             Detail: "Introduction to Trie",
             Links: "TBD",
+            "Video Link": "TBD",
           },
           {
             Detail: "Implement a Trie in java",
             Links: "TBD",
+            "Video Link": "TBD",
           },
           {
             Detail: "Insert, Search and delete operations",
             Links: "TBD",
+            "Video Link": "TBD",
           },
         ],
         "Video Link": "TBD",
@@ -3170,18 +3463,22 @@ export const csvDataAll = [
           {
             Detail: "Q. Longest String with All prefixes",
             Links: "TBD",
+            "Video Link": "TBD",
           },
           {
             Detail: "Q. Number of Distinct substrings in string",
             Links: "TBD",
+            "Video Link": "TBD",
           },
           {
             Detail: "Q. Power Set",
             Links: "TBD",
+            "Video Link": "TBD",
           },
           {
             Detail: "Q. Maximum XoR of two Numbers in an Array",
             Links: "TBD",
+            "Video Link": "TBD",
           },
         ],
         "Video Link": "TBD",
@@ -3192,18 +3489,22 @@ export const csvDataAll = [
           {
             Detail: "Rabin Karp",
             Links: "TBD",
+            "Video Link": "TBD",
           },
           {
             Detail: "Z Algorithm",
             Links: "TBD",
+            "Video Link": "TBD",
           },
           {
             Detail: "Boyer Moore Algorithm",
             Links: "TBD",
+            "Video Link": "TBD",
           },
           {
             Detail: "Extra",
             Links: "TBD",
+            "Video Link": "TBD",
           },
         ],
         "Video Link": "TBD",
@@ -3219,6 +3520,7 @@ export const csvDataAll = [
           {
             Detail: "Extra",
             Links: "TBD",
+            "Video Link": "TBD",
           },
         ],
         "Video Link": "TBD",
@@ -3234,6 +3536,7 @@ export const csvDataAll = [
           {
             Detail: "Extra",
             Links: "TBD",
+            "Video Link": "TBD",
           },
         ],
         "Video Link": "TBD",
@@ -3249,6 +3552,7 @@ export const csvDataAll = [
           {
             Detail: "Extra",
             Links: "TBD",
+            "Video Link": "TBD",
           },
         ],
         "Video Link": "TBD",
@@ -3264,6 +3568,7 @@ export const csvDataAll = [
           {
             Detail: "Extra",
             Links: "TBD",
+            "Video Link": "TBD",
           },
         ],
         "Video Link": "TBD",
@@ -3279,6 +3584,7 @@ export const csvDataAll = [
           {
             Detail: "Extra",
             Links: "TBD",
+            "Video Link": "TBD",
           },
         ],
         "Video Link": "TBD",
