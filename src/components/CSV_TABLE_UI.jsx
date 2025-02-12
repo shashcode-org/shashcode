@@ -5,7 +5,7 @@ import { RiArrowRightSLine } from "react-icons/ri";
 import { FaYoutube } from "react-icons/fa";
 import { SiLeetcode, SiGeeksforgeeks } from "react-icons/si";
 
-const CSV_UI_3_3_Tags_Link = () => {
+const CSV_TABLE_UI = () => {
     const [expandedTopicIndex, setExpandedTopicIndex] = useState(null);
     const [selectedTopic, setSelectedTopic] = useState("All");
 
@@ -142,4 +142,4 @@ const CSV_UI_3_3_Tags_Link = () => {
     );
 };
 
-export default CSV_UI_3_3_Tags_Link;
+export default CSV_TABLE_UI;

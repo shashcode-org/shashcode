@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { CSV_UI_3_3_Tags_Link } from '../components'
+import { CSV_TABLE_UI } from '../components'
 
 
 const DSA = () => {
@@ -11,7 +11,7 @@ const DSA = () => {
                 DSA
             </h1>
             
-            <CSV_UI_3_3_Tags_Link />
+            <CSV_TABLE_UI />
         </div>
     )
 }

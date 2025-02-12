@@ -2,12 +2,12 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Spinner from "./Spinner";
 import ColorTest from "./ColorTest";
-import CSV_UI_3_3_Tags_Link from "./CSV_UI_3_3_Tags_Link";
+import CSV_TABLE_UI from "./CSV_TABLE_UI";
 
 export {
   Navbar,
   Footer,
   Spinner,
   ColorTest,
-  CSV_UI_3_3_Tags_Link,
+  CSV_TABLE_UI,
 };
