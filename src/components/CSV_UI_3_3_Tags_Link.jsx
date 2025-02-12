@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { csvDataAll } from '../data/csv-data-v3-solve';
+import { csvDataAll } from '../data/csv-data-v4';
 import '../styles/Table.css';
 import { RiArrowRightSLine } from "react-icons/ri";
 import { FaYoutube } from "react-icons/fa";
@@ -96,8 +96,8 @@ const CSV_UI_3_3_Tags_Link = () => {
                                                     </td>
                                                 ) : null}
 
-                                                {/* If no Solve link, merge Solve column into Details */}
-                                                {detail.Solve === "N/A" ? (
+                                                {/* If no valid Solve link, merge Solve column into Details */}
+                                                {!detail.Links || !detail.Links.startsWith("http") ? (
                                                     <td className="border p-2 text-sm capitalize align-top" colSpan={2}>
                                                         {detail.Detail}
                                                     </td>
@@ -110,12 +110,13 @@ const CSV_UI_3_3_Tags_Link = () => {
 
                                                         {/* Solve Links */}
                                                         <td className="border p-2 text-center align-top">
-                                                            <a href={detail.Solve} target="_blank" rel="noopener noreferrer">
+                                                            <a href={detail.Links} target="_blank" rel="noopener noreferrer">
                                                                 <SiLeetcode className="inline-block w-[24px] h-auto text-yellow-500" />
                                                             </a>
                                                         </td>
                                                     </>
                                                 )}
+
 
                                                 {/* Video Link (Only for first row of each subtopic) */}
                                                 {detailIndex === 0 ? (
