@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { csvDataAll } from '../data/csv-data-v4';
+import { csvDataAll } from '../data/csv-data-v5';
 import '../styles/Table.css';
 import { RiArrowRightSLine } from "react-icons/ri";
 import { FaYoutube } from "react-icons/fa";
@@ -110,24 +110,75 @@ const CSV_TABLE_UI = () => {
 
                                                         {/* Solve Links */}
                                                         <td className="border p-2 text-center align-top">
-                                                            <a href={detail.Links} target="_blank" rel="noopener noreferrer">
-                                                                <SiLeetcode className="inline-block w-[24px] h-auto text-yellow-500" />
-                                                            </a>
+                                                            {detail.Links.includes('leetcode') ? (
+                                                                <a href={detail.Links} target="_blank" rel="noopener noreferrer">
+                                                                    <SiLeetcode className="inline-block w-[24px] h-auto text-yellow-500" />
+                                                                </a>
+                                                            ) : detail.Links.includes('geeksforgeeks') ? (
+                                                                <a href={detail.Links} target="_blank" rel="noopener noreferrer">
+                                                                    <SiGeeksforgeeks className="inline-block w-[24px] h-auto text-green-500" />
+                                                                </a>
+                                                            ) : (
+                                                                <a href={detail.Links} target="_blank" rel="noopener noreferrer">
+                                                                    Link
+                                                                </a>
+                                                            )}
                                                         </td>
                                                     </>
                                                 )}
 
 
-                                                {/* Video Link (Only for first row of each subtopic) */}
-                                                {detailIndex === 0 ? (
-                                                    <td className="border p-2 text-center align-top" rowSpan={subtopic.Details.length}>
-                                                        {subtopic["Video Link"] && (
+                                                {/* Video Link (Show both subtopic and detail level video links) */}
+                                                {/* Duplicate Video Link for Subtopic and Detail */}
+                                                {/* <td className="border p-2 text-center align-top">
+                                                    {(detailIndex === 0 && subtopic["Video Link"] && !subtopic.Details.some((d, i) => i > 0 && d["Video Link"])) && (
+                                                        <a href={subtopic["Video Link"]} target="_blank" rel="noopener noreferrer">
+                                                            <FaYoutube className="inline-block w-[24px] h-auto text-red-700" />
+                                                        </a>
+                                                    )}
+                                                    {detail["Video Link"] && (
+                                                        <a href={detail["Video Link"]} target="_blank" rel="noopener noreferrer">
+                                                            <FaYoutube className="inline-block w-[24px] h-auto text-red-700" />
+                                                        </a>
+                                                    )}
+                                                </td> */}
+
+                                                {/* Video Link (Show both subtopic and detail level video links) */}
+                                                {/* No Duplicate Video Link */}
+                                                {/* <td className="border p-2 text-center align-top">
+                                                    {(detailIndex === 0 && subtopic["Video Link"] && subtopic["Video Link"] !== detail["Video Link"]) && (
+                                                        <a href={subtopic["Video Link"]} target="_blank" rel="noopener noreferrer">
+                                                            <FaYoutube className="inline-block w-[24px] h-auto text-red-700" />
+                                                        </a>
+                                                    )}
+                                                    {detail["Video Link"] && (
+                                                        <a href={detail["Video Link"]} target="_blank" rel="noopener noreferrer">
+                                                            <FaYoutube className="inline-block w-[24px] h-auto text-red-700" />
+                                                        </a>
+                                                    )}
+                                                </td> */}
+
+                                                {/* Video Link (Show both subtopic and detail level video links) */}
+                                                {detailIndex === 0 || detail["Video Link"] || subtopic.Details.findIndex((d, i) => i >= detailIndex && d["Video Link"]) === detailIndex ? (
+                                                    <td className="border p-2 text-center align-top" rowSpan={subtopic.Details.findIndex((d, i) => i >= detailIndex && d["Video Link"]) - detailIndex + 1 || subtopic.Details.length - detailIndex}>
+                                                        {(detailIndex === 0 && subtopic["Video Link"] && subtopic["Video Link"] !== detail["Video Link"]) && (
                                                             <a href={subtopic["Video Link"]} target="_blank" rel="noopener noreferrer">
+                                                                <FaYoutube className="inline-block w-[24px] h-auto text-red-700" />
+                                                            </a>
+                                                        )}
+                                                        {detail["Video Link"] && (
+                                                            <a href={detail["Video Link"]} target="_blank" rel="noopener noreferrer">
                                                                 <FaYoutube className="inline-block w-[24px] h-auto text-red-700" />
                                                             </a>
                                                         )}
                                                     </td>
                                                 ) : null}
+
+
+
+
+
+
                                             </tr>
                                         ))
                                     ))}
