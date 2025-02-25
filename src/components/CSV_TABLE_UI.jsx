@@ -41,7 +41,7 @@ const CSV_TABLE_UI = () => {
     return (
         <div className="accordion-table-container mt-10">
             {/* Tag Filter Section */}
-            <div className="flex flex-wrap gap-2 mb-4">
+            <div className="flex flex-wrap gap-2 mb-6">
                 {uniqueTopics.map((topic, index) => (
                     <button
                         key={index}
