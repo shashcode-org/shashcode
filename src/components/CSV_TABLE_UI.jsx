@@ -129,7 +129,7 @@ const CSV_TABLE_UI = () => {
 
 
                                                 {/* Video Link (Show both subtopic and detail level video links) */}
-                                                {/* Duplicate Video Link for Subtopic and Detail */}
+                                                {/* Duplicate Video Link for Subtopic and Detail || Cant use */}
                                                 {/* <td className="border p-2 text-center align-top">
                                                     {(detailIndex === 0 && subtopic["Video Link"] && !subtopic.Details.some((d, i) => i > 0 && d["Video Link"])) && (
                                                         <a href={subtopic["Video Link"]} target="_blank" rel="noopener noreferrer">
@@ -145,7 +145,7 @@ const CSV_TABLE_UI = () => {
 
                                                 {/* Video Link (Show both subtopic and detail level video links) */}
                                                 {/* No Duplicate Video Link */}
-                                                {/* <td className="border p-2 text-center align-top">
+                                                <td className="border p-2 text-center align-top">
                                                     {(detailIndex === 0 && subtopic["Video Link"] && subtopic["Video Link"] !== detail["Video Link"]) && (
                                                         <a href={subtopic["Video Link"]} target="_blank" rel="noopener noreferrer">
                                                             <FaYoutube className="inline-block w-[24px] h-auto text-red-700" />
@@ -156,10 +156,10 @@ const CSV_TABLE_UI = () => {
                                                             <FaYoutube className="inline-block w-[24px] h-auto text-red-700" />
                                                         </a>
                                                     )}
-                                                </td> */}
+                                                </td>
 
-                                                {/* Video Link (Show both subtopic and detail level video links) */}
-                                                {detailIndex === 0 || detail["Video Link"] || subtopic.Details.findIndex((d, i) => i >= detailIndex && d["Video Link"]) === detailIndex ? (
+                                                {/* Video Link (Show both subtopic and detail level video links and working fine) */}
+                                                {/* {detailIndex === 0 || detail["Video Link"] || subtopic.Details.findIndex((d, i) => i >= detailIndex && d["Video Link"]) === detailIndex ? (
                                                     <td className="border p-2 text-center align-top" rowSpan={subtopic.Details.findIndex((d, i) => i >= detailIndex && d["Video Link"]) - detailIndex + 1 || subtopic.Details.length - detailIndex}>
                                                         {(detailIndex === 0 && subtopic["Video Link"] && subtopic["Video Link"] !== detail["Video Link"]) && (
                                                             <a href={subtopic["Video Link"]} target="_blank" rel="noopener noreferrer">
@@ -172,7 +172,7 @@ const CSV_TABLE_UI = () => {
                                                             </a>
                                                         )}
                                                     </td>
-                                                ) : null}
+                                                ) : null} */}
 
 
 
