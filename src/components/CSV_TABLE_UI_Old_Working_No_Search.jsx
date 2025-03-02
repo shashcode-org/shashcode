@@ -5,37 +5,19 @@ import { RiArrowRightSLine } from "react-icons/ri";
 import { FaYoutube } from "react-icons/fa";
 import { SiLeetcode, SiGeeksforgeeks } from "react-icons/si";
 
-const CSV_TABLE_UI = () => {
+const CSV_TABLE_UI_Old_Working_No_Search = () => {
     const [expandedTopicIndex, setExpandedTopicIndex] = useState(null);
     const [selectedTopic, setSelectedTopic] = useState("All");
-    const [searchQuery, setSearchQuery] = useState(""); // Search State
 
     // Get unique main topics for filtering
     const uniqueTopics = useMemo(() => ["All", ...new Set(csvDataAll.map(topic => topic["Main Topic"]))], []);
 
-    // Filter topics based on selected tag and search query
+    // Memoized filtered topics for better performance
     const filteredTopics = useMemo(() => {
-        let topics = selectedTopic === "All"
+        return selectedTopic === "All"
             ? csvDataAll
             : csvDataAll.filter(topic => topic["Main Topic"] === selectedTopic);
-
-        // If search query exists, filter subtopics and details
-        if (searchQuery.trim() !== "") {
-            topics = topics.map(topic => {
-                const filteredSubtopics = topic.Subtopics.map(subtopic => {
-                    const filteredDetails = subtopic.Details.filter(detail =>
-                        detail.Detail.toLowerCase().includes(searchQuery.toLowerCase())
-                    );
-
-                    return filteredDetails.length > 0 ? { ...subtopic, Details: filteredDetails } : null;
-                }).filter(subtopic => subtopic !== null);
-
-                return filteredSubtopics.length > 0 ? { ...topic, Subtopics: filteredSubtopics } : null;
-            }).filter(topic => topic !== null);
-        }
-
-        return topics;
-    }, [selectedTopic, searchQuery]);
+    }, [selectedTopic]);
 
     // Automatically expand the first topic when a tag is selected
     useEffect(() => {
@@ -58,17 +40,6 @@ const CSV_TABLE_UI = () => {
 
     return (
         <div className="accordion-table-container mt-10">
-            {/* Search Input */}
-            <div className="mb-4">
-                <input
-                    type="text"
-                    placeholder="Search Subtopics or Questions..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="p-2 w-full border rounded-md"
-                />
-            </div>
-
             {/* Tag Filter Section */}
             <div className="flex flex-wrap gap-2 mb-6">
                 {uniqueTopics.map((topic, index) => (
@@ -156,17 +127,16 @@ const CSV_TABLE_UI = () => {
                                                     </>
                                                 )}
 
+
                                                 {/* Video Link (Show both subtopic and detail level video links) */}
                                                 {/* No Duplicate Video Link */}
                                                 <td className="border p-2 text-center align-top">
-
-                                                    {(detailIndex === 0 && subtopic["Video Link"] && subtopic["Video Link"] !== detail["Video Link"]) && subtopic["Video Link"].includes('https') && (
+                                                    {(detailIndex === 0 && subtopic["Video Link"] && subtopic["Video Link"] !== detail["Video Link"]) && (
                                                         <a href={subtopic["Video Link"]} target="_blank" rel="noopener noreferrer">
                                                             <FaYoutube className="inline-block w-[24px] h-auto text-red-700" />
                                                         </a>
                                                     )}
-
-                                                    {detail["Video Link"] && detail["Video Link"].includes('https') && (
+                                                    {detail["Video Link"] && (
                                                         <a href={detail["Video Link"]} target="_blank" rel="noopener noreferrer">
                                                             <FaYoutube className="inline-block w-[24px] h-auto text-red-700" />
                                                         </a>
@@ -186,4 +156,4 @@ const CSV_TABLE_UI = () => {
     );
 };
 
-export default CSV_TABLE_UI;
+export default CSV_TABLE_UI_Old_Working_No_Search;
