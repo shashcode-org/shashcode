@@ -172,6 +172,20 @@ const CSV_TABLE_UI = () => {
                                                         </a>
                                                     )}
                                                 </td>
+
+                                                {/* Video Link (Ensure only one video link per subtopic) */}
+                                                {/* <td className="border p-2 text-center align-top">
+                                                    {detailIndex === 0 && subtopic["Video Link"] ? (
+                                                        <a href={subtopic["Video Link"]} target="_blank" rel="noopener noreferrer">
+                                                            <FaYoutube className="inline-block w-[24px] h-auto text-red-700" />
+                                                        </a>
+                                                    ) : !subtopic["Video Link"] && detail["Video Link"] ? (
+                                                        <a href={detail["Video Link"]} target="_blank" rel="noopener noreferrer">
+                                                            <FaYoutube className="inline-block w-[24px] h-auto text-red-700" />
+                                                        </a>
+                                                    ) : null}
+                                                </td> */}
+
                                             </tr>
                                         ))
                                     ))}
