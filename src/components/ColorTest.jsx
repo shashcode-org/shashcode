@@ -30,4 +30,4 @@ const ColorTest = () => {
   )
 }
 
-export default ColorTest
+export default ColorTest;
