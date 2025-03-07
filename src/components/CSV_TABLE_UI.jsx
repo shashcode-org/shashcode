@@ -6,9 +6,12 @@ import { FaYoutube } from "react-icons/fa";
 import { SiLeetcode, SiGeeksforgeeks } from "react-icons/si";
 
 const CSV_TABLE_UI = () => {
+
     const [expandedTopicIndex, setExpandedTopicIndex] = useState(null);
     const [selectedTopic, setSelectedTopic] = useState("All");
-    const [searchQuery, setSearchQuery] = useState(""); // Search State
+    
+    // Search State
+    const [searchQuery, setSearchQuery] = useState("");
 
     // Get unique main topics for filtering
     const uniqueTopics = useMemo(() => ["All", ...new Set(csvDataAll.map(topic => topic["Main Topic"]))], []);
