@@ -60,9 +60,9 @@ const CSV_TABLE_UI = () => {
     };
 
     return (
-        <div className="accordion-table-container mt-10">
+        <div className="accordion-table-container mt-4">
             {/* Search Input */}
-            <div className="mb-4">
+            <div className="mb-6">
                 <input
                     type="text"
                     placeholder="Search Subtopics or Questions..."
