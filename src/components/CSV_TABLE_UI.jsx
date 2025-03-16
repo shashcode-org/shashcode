@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { csvDataAll } from '../data/csv-data-v8-detail-video-links';
+import { csvData } from '../data/csv-data-v9-multiple-solve';
 import { RiArrowRightSLine } from "react-icons/ri";
 import { FaYoutube } from "react-icons/fa";
 import { SiLeetcode, SiGeeksforgeeks } from "react-icons/si";
@@ -14,13 +14,13 @@ const CSV_TABLE_UI = () => {
     const [searchQuery, setSearchQuery] = useState("");
 
     // Get unique main topics for filtering
-    const uniqueTopics = useMemo(() => ["All", ...new Set(csvDataAll.map(topic => topic["Main Topic"]))], []);
+    const uniqueTopics = useMemo(() => ["All", ...new Set(csvData.map(topic => topic["Main Topic"]))], []);
 
     // Filter topics based on selected tag and search query
     const filteredTopics = useMemo(() => {
         let topics = selectedTopic === "All"
-            ? csvDataAll
-            : csvDataAll.filter(topic => topic["Main Topic"] === selectedTopic);
+            ? csvData
+            : csvData.filter(topic => topic["Main Topic"] === selectedTopic);
 
         // If search query exists, filter subtopics and details
         if (searchQuery.trim() !== "") {

@@ -1,4 +1,4 @@
-export const csvDataAll = [
+export const csvData = [
     {
       "Main Topic": "Java Basics",
       "Subtopics": [
