@@ -106,7 +106,7 @@ const CSV_TABLE_UI = () => {
 
                     {/* Collapsible Content: Show Subtopics Table */}
                     {expandedTopicIndex === mainIndex && (
-                        <div className="mt-3 p-3 bg-white shadow rounded-md">
+                        <div className="mt-3 p-3 bg-white rounded-md">
                             <table className="w-full border-collapse border border-gray-300">
                                 <thead>
                                     <tr className="bg-gray-200 text-left text-sm">
