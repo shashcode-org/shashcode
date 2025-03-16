@@ -129,7 +129,9 @@ const CSV_TABLE_UI = () => {
                                                 ) : null}
 
                                                 {/* If no valid Solve link, merge Solve column into Details */}
-                                                {!detail.Links || !detail.Links.startsWith("http") ? (
+                                                {/* {!detail.Links || !detail.Links.startsWith("http") ? (  */}
+                                                {/* {!detail.Links || !Array.isArray(detail.Links) || !detail.Links.some(link => link.startsWith("http")) ? ( */}
+                                                {!detail.Links || !Array.isArray(detail.Links) || !detail.Links.some(link => link.startsWith("http"))  ? (
                                                     <td className="border p-2 text-sm capitalize align-top" colSpan={2}>
                                                         {detail.Detail}
                                                     </td>
@@ -140,21 +142,23 @@ const CSV_TABLE_UI = () => {
                                                             {detail.Detail}
                                                         </td>
 
-                                                        {/* Solve Links */}
+                                                        {/* Solve Links (Handle multiple links) */}
                                                         <td className="border p-2 text-center align-top">
-                                                            {detail.Links.includes('leetcode') ? (
-                                                                <a href={detail.Links} target="_blank" rel="noopener noreferrer">
-                                                                    <SiLeetcode className="inline-block w-[24px] h-auto text-yellow-500" />
-                                                                </a>
-                                                            ) : detail.Links.includes('geeksforgeeks') ? (
-                                                                <a href={detail.Links} target="_blank" rel="noopener noreferrer">
-                                                                    <SiGeeksforgeeks className="inline-block w-[24px] h-auto text-green-500" />
-                                                                </a>
-                                                            ) : (
-                                                                <a href={detail.Links} target="_blank" rel="noopener noreferrer">
-                                                                    Link
-                                                                </a>
-                                                            )}
+                                                            <div className="flex align-center justify-center gap-2">
+                                                                {detail.Links.map((link, index) => (
+                                                                    link !== "N/A" ? (
+                                                                        <a key={index} href={link} target="_blank" rel="noopener noreferrer" className="inline-block">
+                                                                            {link.includes("leetcode") ? (
+                                                                                <SiLeetcode className="w-[20px] h-auto text-yellow-500" />
+                                                                            ) : link.includes("geeksforgeeks") ? (
+                                                                                <SiGeeksforgeeks className="w-[24px] h-auto text-green-500" />
+                                                                            ) : (
+                                                                                <span className="text-blue-600 underline"> No Link </span>
+                                                                            )}
+                                                                        </a>
+                                                                    ) : null
+                                                                ))}
+                                                            </div>
                                                         </td>
                                                     </>
                                                 )}
