@@ -5,7 +5,7 @@ import { FaYoutube } from "react-icons/fa";
 import { SiLeetcode, SiGeeksforgeeks } from "react-icons/si";
 import '../styles/Table.css';
 
-const CSV_TABLE_UI = () => {
+const CSV_TABLE_UI_V7_Data_Duplicate_YT = () => {
 
     const [expandedTopicIndex, setExpandedTopicIndex] = useState(null);
     const [selectedTopic, setSelectedTopic] = useState("All");
@@ -159,14 +159,36 @@ const CSV_TABLE_UI = () => {
                                                     </>
                                                 )}
 
-                                                {/* Video Link (Show detail level video links) */}
+                                                {/* Video Link (Show both subtopic and detail level video links) */}
+                                                {/* No Duplicate Video Link */}
                                                 <td className="border p-2 text-center align-top">
+
+                                                    {(detailIndex === 0 && subtopic["Video Link"] && subtopic["Video Link"] !== detail["Video Link"]) && subtopic["Video Link"].includes('https') && (
+                                                        <a href={subtopic["Video Link"]} target="_blank" rel="noopener noreferrer">
+                                                            <FaYoutube className="inline-block w-[24px] h-auto text-red-700" />
+                                                        </a>
+                                                    )}
+
                                                     {detail["Video Link"] && detail["Video Link"].includes('https') && (
                                                         <a href={detail["Video Link"]} target="_blank" rel="noopener noreferrer">
                                                             <FaYoutube className="inline-block w-[24px] h-auto text-red-700" />
                                                         </a>
                                                     )}
                                                 </td>
+
+                                                {/* Video Link (Ensure only one video link per subtopic) */}
+                                                {/* <td className="border p-2 text-center align-top">
+                                                    {detailIndex === 0 && subtopic["Video Link"] ? (
+                                                        <a href={subtopic["Video Link"]} target="_blank" rel="noopener noreferrer">
+                                                            <FaYoutube className="inline-block w-[24px] h-auto text-red-700" />
+                                                        </a>
+                                                    ) : !subtopic["Video Link"] && detail["Video Link"] ? (
+                                                        <a href={detail["Video Link"]} target="_blank" rel="noopener noreferrer">
+                                                            <FaYoutube className="inline-block w-[24px] h-auto text-red-700" />
+                                                        </a>
+                                                    ) : null}
+                                                </td> */}
+
                                             </tr>
                                         ))
                                     ))}
@@ -181,4 +203,4 @@ const CSV_TABLE_UI = () => {
     );
 };
 
-export default CSV_TABLE_UI;
+export default CSV_TABLE_UI_V7_Data_Duplicate_YT;
