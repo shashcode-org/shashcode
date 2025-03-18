@@ -163,7 +163,6 @@ const CSV_TABLE_UI = () => {
                                                     </>
                                                 )}
                                                 
-
                                                 {/* Video Link (Show detail level video links) */}
                                                 <td className="border p-2 text-center align-top">
                                                     {detail["Video Link"] && detail["Video Link"].includes('https') && (
