@@ -61,6 +61,7 @@ const CSV_TABLE_UI = () => {
 
     return (
         <div className="accordion-table-container mt-4">
+            
             {/* Search Input */}
             <div className="mb-6">
                 <input
