@@ -155,7 +155,7 @@ const CSV_TABLE_UI = () => {
                                                                             ) : link.includes("geeksforgeeks") ? (
                                                                                 <SiGeeksforgeeks className="w-[24px] h-auto text-green-500" />
                                                                             ) : (
-                                                                                <span className="text-blue-600 underline"> No Link </span>
+                                                                                <span className="text-blue-600 underline"> No Solve Link </span>
                                                                             )}
                                                                         </a>
                                                                     ) : null
