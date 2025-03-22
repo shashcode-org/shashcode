@@ -133,7 +133,7 @@ const CSV_TABLE_UI = () => {
                                                 {/* If no valid Solve link, merge Solve column into Details */}
                                                 {/* {!detail.Links || !detail.Links.startsWith("http") ? (  */}
                                                 {/* {!detail.Links || !Array.isArray(detail.Links) || !detail.Links.some(link => link.startsWith("http")) ? ( */}
-                                                {!detail.Links || !Array.isArray(detail.Links) || !detail.Links.some(link => link.startsWith("http"))  ? (
+                                                {!detail.Links || !Array.isArray(detail.Links) || !detail.Links.some(link => link.includes("leetcode") || link.includes("geeksforgeeks"))  ? (
                                                     <td className="border p-2 text-sm capitalize align-top" colSpan={2}>
                                                         {detail.Detail}
                                                     </td>
