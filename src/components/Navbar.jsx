@@ -14,7 +14,7 @@ const Navbar = () => {
     };
 
     return (
-        <div className='bg-signature_dark    flex justify-between items-center h-16 mx-auto px-10 text-vite_light'>
+        <div className='bg-signature_dark flex justify-between items-center h-16 mx-auto px-4 sm:px-10 text-vite_light'>
             
             {/* Logo */}
             <Link to='/'>

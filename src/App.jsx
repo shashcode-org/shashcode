@@ -15,7 +15,7 @@ function App() {
     <div className=''>
       <Router>
         <Navbar />
-        <div className="w-3/4 mx-auto">
+        <div className="w-[90%] md:w-3/4 mx-auto">
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/about' element={<About />} />

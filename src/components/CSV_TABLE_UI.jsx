@@ -3,7 +3,6 @@ import { csvData } from '../data/csv-data-v10-sheet-6.3';
 import { RiArrowRightSLine } from "react-icons/ri";
 import { FaYoutube } from "react-icons/fa";
 import { SiLeetcode, SiGeeksforgeeks } from "react-icons/si";
-import '../styles/Table.css';
 
 const CSV_TABLE_UI = () => {
 
@@ -63,7 +62,7 @@ const CSV_TABLE_UI = () => {
         <div className="accordion-table-container mt-4">
             
             {/* Search Input */}
-            <div className="mb-6">
+            <div className="mb-6 text-xs sm:text-sm">
                 <input
                     type="text"
                     placeholder="Search Subtopics or Questions..."
@@ -78,7 +77,7 @@ const CSV_TABLE_UI = () => {
                 {uniqueTopics.map((topic, index) => (
                     <button
                         key={index}
-                        className={`px-3 py-1 rounded-full text-xs font-semibold transition-all 
+                        className={`px-2 py-[3px] sm:px-3 sm:py-1 rounded-full text-[11px] sm:text-xs font-semibold transition-all 
                             ${selectedTopic === topic
                                 ? "bg-signature_yellow text-signature_dark shadow-md"
                                 : "bg-gray-200 text-gray-700 hover:bg-gray-300"}`}
@@ -91,27 +90,27 @@ const CSV_TABLE_UI = () => {
 
             {/* Accordion Sections */}
             {filteredTopics.map((mainTopic, mainIndex) => (
-                <div key={mainIndex} className="accordion-section">
+                <div key={mainIndex} className="accordion-section mb-3">
                     
                     {/* Main Topic Row (Collapsible Header) */}
                     <div
-                        className="accordion-header flex justify-between items-center p-3 bg-gray-100 rounded-md cursor-pointer hover:bg-gray-200 transition-all"
+                        className="accordion-header flex justify-between items-center p-3 bg-gray-200 rounded-md cursor-pointer hover:bg-gray-300 transition-all text-sm sm:text-base"
                         onClick={() => handleTopicToggle(mainIndex)}
                         onKeyDown={(e) => handleKeyDown(e, mainIndex)}
                         tabIndex={0}
                     >
                         <span className="font-semibold">{mainTopic["Main Topic"]}</span>
-                        <span className={`arrow transition-transform ${expandedTopicIndex === mainIndex ? 'rotate-90' : 'rotate-0'}`}>
-                            <RiArrowRightSLine size={25} />
+                        <span className={`arrow transition-transform duration-300 ease-in-out ${expandedTopicIndex === mainIndex ? 'rotate-90' : 'rotate-0'}`}>
+                            <RiArrowRightSLine className='w-[20px] sm:w-[24px] h-auto' />
                         </span>
                     </div>
 
                     {/* Collapsible Content: Show Subtopics Table */}
                     {expandedTopicIndex === mainIndex && (
-                        <div className="mt-3 p-3 bg-white rounded-md">
+                        <div className="mt-3 bg-white rounded-md overflow-x-auto shadow-md">
                             <table className="w-full border-collapse border border-gray-300">
                                 <thead>
-                                    <tr className="bg-gray-200 text-left text-sm">
+                                    <tr className="bg-gray-200 text-left text-xs sm:text-sm">
                                         <th className="border p-2 w-[30%]">Subtopic</th>
                                         <th className="border p-2 w-1/2">Details</th>
                                         <th className="border py-2 w-[10%] text-center">Solve</th>
@@ -125,7 +124,7 @@ const CSV_TABLE_UI = () => {
 
                                                 {/* Subtopic (Only for first detail row of each subtopic) */}
                                                 {detailIndex === 0 ? (
-                                                    <td className="border p-2 font-semibold align-top text-[15px]" rowSpan={subtopic.Details.length}>
+                                                    <td className="border p-2 font-semibold align-top text-xs sm:text-sm" rowSpan={subtopic.Details.length}>
                                                         {subtopic.Subtopic}
                                                     </td>
                                                 ) : null}
@@ -134,13 +133,13 @@ const CSV_TABLE_UI = () => {
                                                 {/* {!detail.Links || !detail.Links.startsWith("http") ? (  */}
                                                 {/* {!detail.Links || !Array.isArray(detail.Links) || !detail.Links.some(link => link.startsWith("http")) ? ( */}
                                                 {!detail.Links || !Array.isArray(detail.Links) || !detail.Links.some(link => link.includes("leetcode") || link.includes("geeksforgeeks"))  ? (
-                                                    <td className="border p-2 text-sm capitalize align-top" colSpan={2}>
+                                                    <td className="border p-2 text-xs sm:text-sm capitalize align-top" colSpan={2}>
                                                         {detail.Detail}
                                                     </td>
                                                 ) : (
                                                     <>
                                                         {/* Details (Question Name) */}
-                                                        <td className="border p-2 text-sm capitalize align-top">
+                                                        <td className="border p-2 text-xs sm:text-sm capitalize align-top">
                                                             {detail.Detail}
                                                         </td>
 
@@ -151,9 +150,9 @@ const CSV_TABLE_UI = () => {
                                                                     link !== "N/A" ? (
                                                                         <a key={index} href={link} target="_blank" rel="noopener noreferrer" className="inline-block">
                                                                             {link.includes("leetcode") ? (
-                                                                                <SiLeetcode className="w-[20px] h-auto text-yellow-500" />
+                                                                                <SiLeetcode className="w-[16px] sm:w-[20px] h-auto text-yellow-500" />
                                                                             ) : link.includes("geeksforgeeks") ? (
-                                                                                <SiGeeksforgeeks className="w-[24px] h-auto text-green-500" />
+                                                                                <SiGeeksforgeeks className="w-[20px] sm:w-[24px] h-auto text-green-500" />
                                                                             ) : (
                                                                                 <span className="text-blue-600 underline"> No Solve Link </span>
                                                                             )}
@@ -169,7 +168,7 @@ const CSV_TABLE_UI = () => {
                                                 <td className="border p-2 text-center align-top">
                                                     {detail["Video Link"] && detail["Video Link"].includes('https') && (
                                                         <a href={detail["Video Link"]} target="_blank" rel="noopener noreferrer">
-                                                            <FaYoutube className="inline-block w-[24px] h-auto text-red-700" />
+                                                            <FaYoutube className="inline-block w-[20px] sm:w-[24px] h-auto text-red-700" />
                                                         </a>
                                                     )}
                                                 </td>

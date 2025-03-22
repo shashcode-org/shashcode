@@ -21,6 +21,9 @@ export default {
         success: "#4CAF50",
         danger: "#F44336",
       },
+      maskImage: {
+        gradient: "linear-gradient(to right, rgba(0,0,0,0.1), rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, rgba(0,0,0,0.1))",
+      },
     },
   },
   plugins: [],
