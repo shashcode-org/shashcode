@@ -10,7 +10,23 @@ import { useNavigate } from 'react-router-dom'; // ← Import here
 
 
 const Home = () => {
+
   const navigate = useNavigate(); // ← Initialize here
+
+  const skillsData = [
+    "GoLang",
+    "Java",
+    "Python",
+    "JavaScript",
+    "AWS",
+    "REST APIs",
+    "WebSockets",
+    "Microservices",
+    "CI / CD",
+    "System Design",
+    "Performance Testing"
+  ]
+
   return (
     <div className="mt-10">
       {/* Hero Section */}
@@ -114,7 +130,12 @@ const Home = () => {
               As the creator of the <strong>Java + DSA Sheet</strong>, Shashwat helps students master coding interviews with well-structured prep material, system design insights, and career mentorship.
             </p>
             <p>
-              <strong>Skills:</strong> GoLang, Java, Python, JavaScript, AWS, REST APIs, WebSockets, Microservices, CI/CD, System Design, Performance Testing.
+              <strong className='uppercase text-sm'>Skills: </strong>
+              {skillsData.map((skill, index) => (
+                <span key={index} className='inline-block text-xs bg-slate-700 py-[1px] px-2 mx-[2px] rounded-md whitespace-nowrap'>
+                  {skill}
+                </span>
+              ))}
             </p>
 
             {/* Logos */}
