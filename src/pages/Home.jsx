@@ -14,10 +14,12 @@ const Home = () => {
   return (
     <div className="mt-10">
       {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center py-16 bg-gray-900">
-        <h1 className="text-4xl sm:text-5xl font-bold text-signature_yellow mb-4">Welcome to ShashCode</h1>
-        <p className="text-lg sm:text-xl text-gray-300 text-center max-w-2xl">
-        Crack the code, rule the road!
+      <section className="flex flex-col items-center justify-center py-16 bg-gray-900 px-4 text-center">
+        <h1 className="text-4xl sm:text-5xl font-bold text-signature_yellow mb-4">
+          Welcome to <br /> ShashCode
+        </h1>
+        <p className="text-lg sm:text-xl text-gray-300 max-w-2xl">
+          Crack the code, rule the road!
         </p>
       </section>
 
