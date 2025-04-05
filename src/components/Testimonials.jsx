@@ -37,25 +37,21 @@ const Testimonials = () => {
   const checkScroll = () => {
     const container = scrollRef.current;
     if (!container) return;
-
     setAtStart(container.scrollLeft === 0);
-    setAtEnd(
-      container.scrollLeft + container.clientWidth >= container.scrollWidth - 5
-    );
+    setAtEnd(container.scrollLeft + container.clientWidth >= container.scrollWidth - 5);
   };
 
   const scrollLeft = () => {
-    scrollRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+    scrollRef.current.scrollBy({ left: -window.innerWidth, behavior: 'smooth' });
   };
 
   const scrollRight = () => {
-    scrollRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+    scrollRef.current.scrollBy({ left: window.innerWidth, behavior: 'smooth' });
   };
 
   useEffect(() => {
     const container = scrollRef.current;
-    checkScroll(); // initial check
-
+    checkScroll();
     if (container) {
       container.addEventListener('scroll', checkScroll);
       return () => container.removeEventListener('scroll', checkScroll);
@@ -64,53 +60,55 @@ const Testimonials = () => {
 
   return (
     <div className="max-w-6xl mx-auto px-4">
-    <section className="bg-gray-900 py-14 px-4 relative rounded-2xl">
-    {/* <section className="bg-gray-900 py-14 px-4 relative"> */}
-      <h2 className="text-3xl font-bold text-center text-signature_yellow mb-10">What Learners Say</h2>
+      <section className="bg-gray-900 py-14 px-4 relative rounded-2xl">
+        <h2 className="text-3xl font-bold text-center text-signature_yellow mb-10">
+          What Learners Say
+        </h2>
 
-      {/* Scroll Arrows */}
-      <button
-        onClick={scrollLeft}
-        disabled={atStart}
-        className={`absolute left-2 top-1/2 transform -translate-y-1/2 p-2 rounded-full z-10 transition ${
-          atStart
-            ? 'bg-gray-600 opacity-30 cursor-not-allowed'
-            : 'bg-gray-700 hover:bg-gray-600 text-white'
-        }`}
-      >
-        <ArrowLeft size={20} />
-      </button>
+        {/* Scroll Arrows */}
+        <button
+          onClick={scrollLeft}
+          disabled={atStart}
+          className={`absolute left-2 top-1/2 transform -translate-y-1/2 p-2 rounded-full z-10 transition ${
+            atStart
+              ? 'bg-gray-600 opacity-30 cursor-not-allowed'
+              : 'bg-gray-700 hover:bg-gray-600 text-white'
+          }`}
+        >
+          <ArrowLeft size={20} />
+        </button>
 
-      <button
-        onClick={scrollRight}
-        disabled={atEnd}
-        className={`absolute right-2 top-1/2 transform -translate-y-1/2 p-2 rounded-full z-10 transition ${
-          atEnd
-            ? 'bg-gray-600 opacity-30 cursor-not-allowed'
-            : 'bg-gray-700 hover:bg-gray-600 text-white'
-        }`}
-      >
-        <ArrowRight size={20} />
-      </button>
+        <button
+          onClick={scrollRight}
+          disabled={atEnd}
+          className={`absolute right-2 top-1/2 transform -translate-y-1/2 p-2 rounded-full z-10 transition ${
+            atEnd
+              ? 'bg-gray-600 opacity-30 cursor-not-allowed'
+              : 'bg-gray-700 hover:bg-gray-600 text-white'
+          }`}
+        >
+          <ArrowRight size={20} />
+        </button>
 
-      <div
-        ref={scrollRef}
-        className="overflow-x-auto flex gap-6 px-6 snap-x snap-mandatory scroll-smooth scrollbar-hide"
-      >
-        {testimonials.map((testimonial, index) => (
-          <div
-            key={index}
-            className="snap-center shrink-0 w-[90%] sm:w-[80%] md:w-[50%] lg:w-[40%] bg-gray-800 p-6 rounded-2xl shadow-md mx-auto"
-          >
-            <p className="italic text-gray-300">"{testimonial.quote}"</p>
-            <p className="mt-4 font-semibold text-yellow-400">
-              – {testimonial.name}
-              {/* – {testimonial.name}, {testimonial.role} */}
-            </p>
-          </div>
-        ))}
-      </div>
-    </section>
+        <div
+  ref={scrollRef}
+  className="overflow-x-auto flex snap-x snap-mandatory scroll-smooth scrollbar-hide px-4 space-x-6"
+>
+  {testimonials.map((testimonial, index) => (
+    <div
+      key={index}
+      className="snap-center shrink-0 w-full sm:w-[80%] md:w-[50%] lg:w-[40%] bg-gray-800 p-6 rounded-2xl shadow-md"
+    >
+      <p className="italic text-gray-300">"{testimonial.quote}"</p>
+      <p className="mt-4 font-semibold text-yellow-400">
+        {/* – {testimonial.name}, {testimonial.role} */}
+        – {testimonial.name}
+      </p>
+    </div>
+  ))}
+</div>
+
+      </section>
     </div>
   );
 };
