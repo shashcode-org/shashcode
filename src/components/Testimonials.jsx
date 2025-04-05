@@ -73,17 +73,17 @@ const Testimonials = () => {
 
   return (
     <div className="max-w-6xl mx-auto px-4">
-      <section className="bg-gray-900 py-14 px-4 relative rounded-2xl">
+      <section className="py-14 px-4 rounded-2xl">
         <h2 className="text-3xl font-bold text-center text-signature_yellow mb-10">
           What Learners Say
         </h2>
 
-        <div className="relative flex items-center lg:w-[80%] mx-auto">
+        <div className="flex items-center lg:w-[80%] mx-auto">
           {/* Left Arrow */}
           <button
             onClick={scrollLeft}
             disabled={atStart}
-            className={`z-10 p-2 rounded-full transition absolute left-0 top-1/2 -translate-y-1/2 ${atStart
+            className={`p-2 rounded-full transition ${atStart
                 ? 'bg-gray-600 opacity-30 cursor-not-allowed'
                 : 'bg-gray-700 hover:bg-gray-600 text-white'
               }`}
@@ -94,12 +94,12 @@ const Testimonials = () => {
           {/* Scrollable Container */}
           <div
             ref={scrollRef}
-            className="overflow-x-auto flex snap-x snap-mandatory scroll-smooth scrollbar-hide space-x-6 mx-12"
+            className="overflow-x-auto flex snap-x snap-mandatory scroll-smooth scrollbar-hide space-x-6 mx-6"
           >
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="snap-center shrink-0 w-full bg-gray-800 p-6 rounded-2xl shadow-md"
+                className="snap-center shrink-0 w-full p-6 rounded-2xl shadow-md bg-slate-800/40 border border-white/10"
               >
                 <p className="italic text-gray-300">"{testimonial.quote}"</p>
                 <p className="mt-4 font-semibold text-yellow-400">– {testimonial.name}</p>
@@ -111,7 +111,7 @@ const Testimonials = () => {
           <button
             onClick={scrollRight}
             disabled={atEnd}
-            className={`z-10 p-2 rounded-full transition absolute right-0 top-1/2 -translate-y-1/2 ${atEnd
+            className={`p-2 rounded-full transition ${atEnd
                 ? 'bg-gray-600 opacity-30 cursor-not-allowed'
                 : 'bg-gray-700 hover:bg-gray-600 text-white'
               }`}

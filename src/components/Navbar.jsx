@@ -50,7 +50,7 @@ const Navbar = () => {
                 className={
                     nav
                         ? 'fixed md:hidden left-0 top-0 w-full h-full bg-vite_dark ease-in-out duration-500'
-                        : 'ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%]'
+                        : 'ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%] z-40'
                 }
             >
                 {/* Mobile Logo */}
