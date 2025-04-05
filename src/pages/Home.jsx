@@ -40,7 +40,7 @@ const Home = () => {
       </section>
 
       {/* Explore DSA Sheet - Call to Action */}
-      <section className="py-16 px-4 text-center bg-black rounded-2xl mx-4 sm:mx-8 lg:mx-32 shadow-lg">
+      <section className="py-16 px-4 text-center bg-slate-800 rounded-2xl mx-4 sm:mx-8 lg:mx-32 shadow-lg">
         <h2 className="text-3xl font-bold mb-6 text-signature_yellow">Explore our Java DSA Sheet</h2>
         <p className="text-gray-300 max-w-xl mx-auto mb-8">
           Structured roadmap to crack top tech companies — from Arrays to Dynamic Programming.
