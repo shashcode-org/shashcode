@@ -5,12 +5,16 @@ import {
   Routes,
   Route
 } from 'react-router-dom'
-import { Home, About, DSA, Contact } from './pages'
-import { Navbar } from './components'
+// import { Home, About, DSA, Contact } from './pages'
+import { Home, DSA } from './pages'
+import { Navbar, Footer } from './components'
+
+// Import the legal pages
+import Terms from './pages/Terms.jsx'
+import Privacy from './pages/Privacy.jsx'
+import NotFound from './pages/NotFound.jsx'
 
 function App() {
-
-
   return (
     <div className=''>
       <Router>
@@ -18,13 +22,16 @@ function App() {
         <div className="w-[90%] md:w-3/4 mx-auto">
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/about' element={<About />} />
+            {/* <Route path='/about' element={<About />} /> */}
             <Route path='/dsa/*' element={<DSA />} />
-            <Route path='/contact' element={<Contact />} />
+            {/* <Route path='/contact' element={<Contact />} /> */}
+            <Route path='/terms' element={<Terms />} />
+            <Route path='/privacy' element={<Privacy />} />
+            <Route path='*' element={<NotFound />} />
           </Routes>
         </div>
+        <Footer />
       </Router>
-
     </div>
   )
 }

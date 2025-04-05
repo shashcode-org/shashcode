@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import { Link, useNavigate } from 'react-router-dom'
 import { navItemsData } from '../data/nav-items';
+import logo from '../assets/black-logo.png';
 
 const Navbar = () => {
 
@@ -18,7 +19,7 @@ const Navbar = () => {
             
             {/* Logo */}
             <Link to='/'>
-                <h1 className='text-3xl font-bold text-signature_yellow'>Shash Code</h1>
+                <img src={logo} alt="ShashCode Logo" className="h-10 w-auto" />
             </Link>
 
             {/* Desktop Navigation */}
@@ -55,7 +56,7 @@ const Navbar = () => {
                 {/* Mobile Logo */}
                 <div className='flex justify-between items-center px-4 py-10 h-16'>
                     <Link to="/">
-                        <h1 className='text-3xl font-bold text-signature_yellow m-4'> Shash Code </h1>
+                        <img src={logo} alt="ShashCode Logo" className="h-10 w-auto" />
                     </Link>
                     <span onClick={handleNav} className='mr-4 cursor-pointer'>
                         <AiOutlineClose className='w-[25px] h-auto' />

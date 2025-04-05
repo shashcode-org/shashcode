@@ -12,22 +12,22 @@ export const navItemsData = [
     url: "/",
     icon: AiFillHome,
   },
+  // {
+  //   id: 2,
+  //   title: "About",
+  //   url: "/about",
+  //   icon: MdOutlineRoundaboutRight,
+  // },
   {
     id: 2,
-    title: "About",
-    url: "/about",
-    icon: MdOutlineRoundaboutRight,
-  },
-  {
-    id: 3,
     title: "DSA",
     url: "/dsa",
     icon: FaCode,
   },
-  {
-    id: 4,
-    title: "Contact",
-    url: "/contact",
-    icon: MdContactMail,
-  },
+  // {
+  //   id: 4,
+  //   title: "Contact",
+  //   url: "/contact",
+  //   icon: MdContactMail,
+  // },
 ];
