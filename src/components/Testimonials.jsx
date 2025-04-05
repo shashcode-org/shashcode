@@ -42,12 +42,25 @@ const Testimonials = () => {
   };
 
   const scrollLeft = () => {
-    scrollRef.current.scrollBy({ left: -window.innerWidth, behavior: 'smooth' });
+    const container = scrollRef.current;
+    if (container) {
+      container.scrollBy({
+        left: -container.clientWidth,
+        behavior: 'smooth'
+      });
+    }
   };
 
   const scrollRight = () => {
-    scrollRef.current.scrollBy({ left: window.innerWidth, behavior: 'smooth' });
+    const container = scrollRef.current;
+    if (container) {
+      container.scrollBy({
+        left: container.clientWidth,
+        behavior: 'smooth'
+      });
+    }
   };
+
 
   useEffect(() => {
     const container = scrollRef.current;
@@ -65,47 +78,47 @@ const Testimonials = () => {
           What Learners Say
         </h2>
 
-        {/* Scroll Arrows */}
-        <button
-          onClick={scrollLeft}
-          disabled={atStart}
-          className={`absolute left-2 top-1/2 transform -translate-y-1/2 p-2 rounded-full z-10 transition ${atStart
-              ? 'bg-gray-600 opacity-30 cursor-not-allowed'
-              : 'bg-gray-700 hover:bg-gray-600 text-white'
-            }`}
-        >
-          <ArrowLeft size={20} />
-        </button>
+        <div className="relative flex items-center lg:w-[80%] mx-auto">
+          {/* Left Arrow */}
+          <button
+            onClick={scrollLeft}
+            disabled={atStart}
+            className={`z-10 p-2 rounded-full transition absolute left-0 top-1/2 -translate-y-1/2 ${atStart
+                ? 'bg-gray-600 opacity-30 cursor-not-allowed'
+                : 'bg-gray-700 hover:bg-gray-600 text-white'
+              }`}
+          >
+            <ArrowLeft size={20} />
+          </button>
 
-        <button
-          onClick={scrollRight}
-          disabled={atEnd}
-          className={`absolute right-2 top-1/2 transform -translate-y-1/2 p-2 rounded-full z-10 transition ${atEnd
-              ? 'bg-gray-600 opacity-30 cursor-not-allowed'
-              : 'bg-gray-700 hover:bg-gray-600 text-white'
-            }`}
-        >
-          <ArrowRight size={20} />
-        </button>
+          {/* Scrollable Container */}
+          <div
+            ref={scrollRef}
+            className="overflow-x-auto flex snap-x snap-mandatory scroll-smooth scrollbar-hide space-x-6 mx-12"
+          >
+            {testimonials.map((testimonial, index) => (
+              <div
+                key={index}
+                className="snap-center shrink-0 w-full bg-gray-800 p-6 rounded-2xl shadow-md"
+              >
+                <p className="italic text-gray-300">"{testimonial.quote}"</p>
+                <p className="mt-4 font-semibold text-yellow-400">– {testimonial.name}</p>
+              </div>
+            ))}
+          </div>
 
-        <div
-          ref={scrollRef}
-          className="overflow-x-auto flex snap-x snap-mandatory scroll-smooth scrollbar-hide px-4 space-x-6"
-        >
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className="snap-center shrink-0 w-full sm:w-[80%] md:w-[50%] lg:w-[40%] bg-gray-800 p-6 rounded-2xl shadow-md"
-            >
-              <p className="italic text-gray-300">"{testimonial.quote}"</p>
-              <p className="mt-4 font-semibold text-yellow-400">
-                {/* – {testimonial.name}, {testimonial.role} */}
-                – {testimonial.name}
-              </p>
-            </div>
-          ))}
+          {/* Right Arrow */}
+          <button
+            onClick={scrollRight}
+            disabled={atEnd}
+            className={`z-10 p-2 rounded-full transition absolute right-0 top-1/2 -translate-y-1/2 ${atEnd
+                ? 'bg-gray-600 opacity-30 cursor-not-allowed'
+                : 'bg-gray-700 hover:bg-gray-600 text-white'
+              }`}
+          >
+            <ArrowRight size={20} />
+          </button>
         </div>
-
       </section>
     </div>
   );
