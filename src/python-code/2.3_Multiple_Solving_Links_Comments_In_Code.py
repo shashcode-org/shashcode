@@ -8,6 +8,17 @@ structured_data = []
 current_main_topic = None
 current_subtopic = None
 
+# Read the CSV File
+try:
+  df = pd.read_csv('JavaDSASheetFinal.csv')
+  # print(df)
+except FileNotFoundError:
+  print("Error: 'your_file.csv' not found. Please upload the file or provide the correct path.")
+except pd.errors.EmptyDataError:
+  print("Error: 'your_file.csv' is empty.")
+except pd.errors.ParserError:
+  print("Error: Could not parse 'your_file.csv'. Please check the file format.")
+
 for index, row in df.iterrows():
     main_topic = row['Main Topics']
     subtopic = row['Subtopics']

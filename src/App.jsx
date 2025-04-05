@@ -16,7 +16,7 @@ import NotFound from './pages/NotFound.jsx'
 
 function App() {
   return (
-    <div className=''>
+    <div className='bg-gray-900 min-h-screen'>
       <Router>
         <Navbar />
         <div className="w-[90%] md:w-3/4 mx-auto">

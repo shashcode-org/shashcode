@@ -6,11 +6,13 @@ import cognizantLogo from '../assets/cognizant.png';
 import microsoftLearnLogo from '../assets/microsoftLearn.png';
 import hpLogo from '../assets/hp.png';
 import Testimonials from '../components/Testimonials';
+import { useNavigate } from 'react-router-dom'; // ← Import here
 
 
 const Home = () => {
+  const navigate = useNavigate(); // ← Initialize here
   return (
-    <div className='mt-10'>
+    <div className="mt-10">
       {/* Hero Section */}
       <section className="flex flex-col items-center justify-center py-16 bg-gray-900">
         <h1 className="text-4xl sm:text-5xl font-bold text-signature_yellow mb-4">Welcome to ShashCode</h1>
@@ -20,25 +22,31 @@ const Home = () => {
       </section>
 
       {/* Explore DSA Sheet - Call to Action */}
-      <section className="py-16 px-4 text-center bg-black">
-        <h2 className="text-3xl font-bold mb-6 text-signature_yellow">Explore our Java DSA Sheet</h2>
-        <p className="text-gray-300 max-w-xl mx-auto mb-8">
-          Structured roadmap to crack top tech companies — from Arrays to Dynamic Programming.
-        </p>
-        <button className="bg-signature_yellow text-black font-semibold px-6 py-3 rounded-2xl hover:bg-yellow-400 transition duration-300">
-          View Sheet
-        </button>
-      </section>
+<section className="py-16 px-4 text-center bg-black rounded-2xl mx-4 sm:mx-8 lg:mx-32 shadow-lg">
+  <h2 className="text-3xl font-bold mb-6 text-signature_yellow">Explore our Java DSA Sheet</h2>
+  <p className="text-gray-300 max-w-xl mx-auto mb-8">
+    Structured roadmap to crack top tech companies — from Arrays to Dynamic Programming.
+  </p>
+  <button 
+    onClick={() => navigate('/dsa')}
+    className="bg-signature_yellow text-black font-semibold px-6 py-3 rounded-2xl hover:bg-yellow-400 transition duration-300">
+    View Sheet
+  </button>
+</section>
+
 
 {/* Testimonials Section */}
 
 <Testimonials />
 
-<section className="bg-black text-gray-300 py-16 px-6">
+{/* About Section of Website */}
+<section className="bg-black text-gray-300 py-16 px-6 rounded-2xl mx-4 sm:mx-8 lg:mx-32 shadow-lg">
   <h2 className="text-3xl font-bold text-center text-signature_yellow mb-10">About ShashCode</h2>
 
   <div className="max-w-4xl mx-auto space-y-6 text-[17px] leading-relaxed">
-    <p className="text-center text-lg">Welcome to <span className="font-semibold text-yellow-400">ShashCode</span>!</p>
+    <p className="text-center text-lg">
+      Welcome to <span className="font-semibold text-yellow-400">ShashCode</span>!
+    </p>
 
     <p>
       ShashCode is a platform dedicated to making coding and technology education accessible to everyone.
@@ -110,7 +118,7 @@ const Home = () => {
 
       {/* Logos */}
       <div>
-        <h4 className="text-lg font-semibold text-signature_yellow mt-2">Companies I've Worked With:</h4>
+        <h4 className="text-lg font-semibold text-signature_yellow mt-2">Professional Experience:</h4>
         <div className="flex gap-6 flex-wrap items-center mt-3">
           <img src={samsungLogo} alt="Samsung" className="h-20" />
           <img src={npciLogo} alt="Npci" className="h-10" />

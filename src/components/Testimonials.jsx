@@ -63,7 +63,9 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section className="bg-gray-900 py-14 px-4 relative">
+    <div className="max-w-6xl mx-auto px-4">
+    <section className="bg-gray-900 py-14 px-4 relative rounded-2xl">
+    {/* <section className="bg-gray-900 py-14 px-4 relative"> */}
       <h2 className="text-3xl font-bold text-center text-signature_yellow mb-10">What Learners Say</h2>
 
       {/* Scroll Arrows */}
@@ -102,12 +104,14 @@ const Testimonials = () => {
           >
             <p className="italic text-gray-300">"{testimonial.quote}"</p>
             <p className="mt-4 font-semibold text-yellow-400">
-              – {testimonial.name}, {testimonial.role}
+              – {testimonial.name}
+              {/* – {testimonial.name}, {testimonial.role} */}
             </p>
           </div>
         ))}
       </div>
     </section>
+    </div>
   );
 };
 

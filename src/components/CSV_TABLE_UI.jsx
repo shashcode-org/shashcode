@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { csvData } from '../data/csv-data-v10-sheet-6.3';
+import { csvData } from '../data/csv-data-java-dsa-release-v1';
 import { RiArrowRightSLine } from "react-icons/ri";
 import { FaYoutube } from "react-icons/fa";
 import { SiLeetcode, SiGeeksforgeeks } from "react-icons/si";
@@ -59,7 +59,8 @@ const CSV_TABLE_UI = () => {
                     placeholder="Search Subtopics or Questions..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-signature_yellow"
+                    // className="p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-signature_yellow"
+                    className="p-2 w-full bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-signature_yellow placeholder-gray-400"
                 />
             </div>
 
@@ -70,7 +71,10 @@ const CSV_TABLE_UI = () => {
                         className={`px-3 py-[6px] sm:px-4 sm:py-2 rounded-full text-[11px] sm:text-sm font-medium transition-all duration-300 shadow-sm
                             ${selectedTopic === topic
                                 ? "bg-signature_yellow text-signature_dark shadow-md"
-                                : "bg-gray-100 text-gray-700 hover:bg-gray-200"}`}
+                                : "bg-gray-800 text-gray-200 hover:bg-gray-700"
+                            }`}
+                                // ? "bg-signature_yellow text-signature_dark shadow-md"
+                                // : "bg-gray-100 text-gray-700 hover:bg-gray-200"}`}
                         onClick={() => handleTagClick(topic)}
                     >
                         {topic}
@@ -81,19 +85,23 @@ const CSV_TABLE_UI = () => {
             {filteredTopics.map((mainTopic, mainIndex) => (
                 <div key={mainIndex} className="accordion-section mb-4">
                     <div
-                        className="accordion-header flex justify-between items-center p-4 bg-gray-100 rounded-lg cursor-pointer hover:bg-gray-200 transition-all text-sm sm:text-base"
+                        className="accordion-header flex justify-between items-center p-4 bg-gray-800 rounded-lg cursor-pointer hover:bg-gray-700 transition-all text-sm sm:text-base text-white"
+                        // className="accordion-header flex justify-between items-center p-4 bg-gray-800 rounded-lg cursor-pointer hover:bg-gray-700 transition-all text-sm sm:text-base text-white"
+                        // className="accordion-header flex justify-between items-center p-4 bg-gray-100 rounded-lg cursor-pointer hover:bg-gray-200 transition-all text-sm sm:text-base"
                         onClick={() => handleTopicToggle(mainIndex)}
                         onKeyDown={(e) => handleKeyDown(e, mainIndex)}
                         tabIndex={0}
                     >
-                        <span className="font-semibold text-signature_dark">{mainTopic["Main Topic"]}</span>
+                        {/* <span className="font-semibold text-signature_dark">{mainTopic["Main Topic"]}</span> */}
+                        <span className="font-semibold text-white">{mainTopic["Main Topic"]}</span>
                         <span className={`arrow transition-transform duration-300 ease-in-out ${expandedTopicIndex === mainIndex ? 'rotate-90' : 'rotate-0'}`}>
                             <RiArrowRightSLine className='w-[20px] sm:w-[24px] h-auto' />
                         </span>
                     </div>
 
                     {expandedTopicIndex === mainIndex && (
-                        <div className="mt-3 bg-white rounded-lg overflow-x-auto shadow-md">
+                        // <div className="mt-3 bg-white rounded-lg overflow-x-auto shadow-md">
+                            <div className="mt-3 text-white rounded-lg overflow-x-auto shadow-md">
                             <table className="w-full border-collapse border border-gray-200">
                                 <thead>
                                     <tr className="bg-signature_yellow text-signature_dark text-left text-xs sm:text-sm">
@@ -106,9 +114,9 @@ const CSV_TABLE_UI = () => {
                                 <tbody>
                                     {mainTopic.Subtopics.map((subtopic, subIndex) => (
                                         subtopic.Details.map((detail, detailIndex) => (
-                                            <tr key={`${subIndex}-${detailIndex}`} className="border hover:bg-gray-50 transition-all">
+                                            <tr key={`${subIndex}-${detailIndex}`} className="border hover:bg-gray-700 transition-all">
                                                 {detailIndex === 0 ? (
-                                                    <td className="border p-2 font-semibold align-top text-xs sm:text-sm bg-gray-50" rowSpan={subtopic.Details.length}>
+                                                    <td className="border p-2 font-semibold align-top text-xs sm:text-sm" rowSpan={subtopic.Details.length}>
                                                         {subtopic.Subtopic}
                                                     </td>
                                                 ) : null}
