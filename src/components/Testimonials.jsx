@@ -69,11 +69,10 @@ const Testimonials = () => {
         <button
           onClick={scrollLeft}
           disabled={atStart}
-          className={`absolute left-2 top-1/2 transform -translate-y-1/2 p-2 rounded-full z-10 transition ${
-            atStart
+          className={`absolute left-2 top-1/2 transform -translate-y-1/2 p-2 rounded-full z-10 transition ${atStart
               ? 'bg-gray-600 opacity-30 cursor-not-allowed'
               : 'bg-gray-700 hover:bg-gray-600 text-white'
-          }`}
+            }`}
         >
           <ArrowLeft size={20} />
         </button>
@@ -81,32 +80,31 @@ const Testimonials = () => {
         <button
           onClick={scrollRight}
           disabled={atEnd}
-          className={`absolute right-2 top-1/2 transform -translate-y-1/2 p-2 rounded-full z-10 transition ${
-            atEnd
+          className={`absolute right-2 top-1/2 transform -translate-y-1/2 p-2 rounded-full z-10 transition ${atEnd
               ? 'bg-gray-600 opacity-30 cursor-not-allowed'
               : 'bg-gray-700 hover:bg-gray-600 text-white'
-          }`}
+            }`}
         >
           <ArrowRight size={20} />
         </button>
 
         <div
-  ref={scrollRef}
-  className="overflow-x-auto flex snap-x snap-mandatory scroll-smooth scrollbar-hide px-4 space-x-6"
->
-  {testimonials.map((testimonial, index) => (
-    <div
-      key={index}
-      className="snap-center shrink-0 w-full sm:w-[80%] md:w-[50%] lg:w-[40%] bg-gray-800 p-6 rounded-2xl shadow-md"
-    >
-      <p className="italic text-gray-300">"{testimonial.quote}"</p>
-      <p className="mt-4 font-semibold text-yellow-400">
-        {/* – {testimonial.name}, {testimonial.role} */}
-        – {testimonial.name}
-      </p>
-    </div>
-  ))}
-</div>
+          ref={scrollRef}
+          className="overflow-x-auto flex snap-x snap-mandatory scroll-smooth scrollbar-hide px-4 space-x-6"
+        >
+          {testimonials.map((testimonial, index) => (
+            <div
+              key={index}
+              className="snap-center shrink-0 w-full sm:w-[80%] md:w-[50%] lg:w-[40%] bg-gray-800 p-6 rounded-2xl shadow-md"
+            >
+              <p className="italic text-gray-300">"{testimonial.quote}"</p>
+              <p className="mt-4 font-semibold text-yellow-400">
+                {/* – {testimonial.name}, {testimonial.role} */}
+                – {testimonial.name}
+              </p>
+            </div>
+          ))}
+        </div>
 
       </section>
     </div>
