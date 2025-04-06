@@ -124,3 +124,5 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
+
+ // py-16 px-4 text-center bg-slate-800 rounded-2xl mx-4 sm:mx-8 lg:mx-32 shadow-lg
