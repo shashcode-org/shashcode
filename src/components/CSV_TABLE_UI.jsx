@@ -60,7 +60,8 @@ const CSV_TABLE_UI = () => {
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     // className="p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-signature_yellow"
-                    className="p-2 w-full bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-signature_yellow placeholder-gray-400"
+                    // className="p-2 w-full bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-signature_yellow placeholder-gray-400"
+                    className="p-2 w-full bg-slate-800 text-white border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 placeholder-gray-400"
                 />
             </div>
 
@@ -70,9 +71,9 @@ const CSV_TABLE_UI = () => {
                         key={index}
                         className={`px-3 py-[6px] sm:px-4 sm:py-2 rounded-full text-[11px] sm:text-sm font-medium transition-all duration-300 shadow-sm
                             ${selectedTopic === topic
-                                ? "bg-signature_yellow text-signature_dark shadow-md"
-                                : "bg-gray-800 text-gray-200 hover:bg-gray-700"
-                            }`}
+                                ? "bg-yellow-400 text-slate-900 shadow-md"
+                                : "bg-slate-800 text-gray-200 hover:bg-slate-700"}
+                              `}
                                 // ? "bg-signature_yellow text-signature_dark shadow-md"
                                 // : "bg-gray-100 text-gray-700 hover:bg-gray-200"}`}
                         onClick={() => handleTagClick(topic)}
@@ -85,7 +86,8 @@ const CSV_TABLE_UI = () => {
             {filteredTopics.map((mainTopic, mainIndex) => (
                 <div key={mainIndex} className="accordion-section mb-4">
                     <div
-                        className="accordion-header flex justify-between items-center p-4 bg-gray-800 rounded-lg cursor-pointer hover:bg-gray-700 transition-all text-sm sm:text-base text-white"
+                        className="accordion-header flex justify-between items-center p-4 bg-slate-800 rounded-lg cursor-pointer hover:bg-slate-700 transition-all text-sm sm:text-base text-white"
+                        // className="accordion-header flex justify-between items-center p-4 bg-gray-800 rounded-lg cursor-pointer hover:bg-gray-700 transition-all text-sm sm:text-base text-white"
                         // className="accordion-header flex justify-between items-center p-4 bg-gray-800 rounded-lg cursor-pointer hover:bg-gray-700 transition-all text-sm sm:text-base text-white"
                         // className="accordion-header flex justify-between items-center p-4 bg-gray-100 rounded-lg cursor-pointer hover:bg-gray-200 transition-all text-sm sm:text-base"
                         onClick={() => handleTopicToggle(mainIndex)}
@@ -101,36 +103,37 @@ const CSV_TABLE_UI = () => {
 
                     {expandedTopicIndex === mainIndex && (
                         // <div className="mt-3 bg-white rounded-lg overflow-x-auto shadow-md">
-                            <div className="mt-3 text-white rounded-lg overflow-x-auto shadow-md">
-                            <table className="w-full border-collapse border border-gray-200">
+                            <div className="mt-3  bg-slate-800 text-white rounded-lg overflow-x-auto shadow-md">
+                            {/* <table className="w-full border-collapse border border-gray-200"> */}
+                            <table className="w-full border-collapse border border-slate-700">
                                 <thead>
-                                    <tr className="bg-signature_yellow text-signature_dark text-left text-xs sm:text-sm">
-                                        <th className="border p-2 w-[30%]">Subtopic</th>
-                                        <th className="border p-2 w-1/2">Details</th>
-                                        <th className="border py-2 w-[10%] text-center">Solve</th>
-                                        <th className="border py-2 w-[10%] text-center">Video</th>
+                                    <tr className="text-white text-left text-xs sm:text-sm">
+                                        <th className="border border-slate-700 p-2 w-[30%]">Subtopic</th>
+                                        <th className="border border-slate-700 p-2 w-1/2">Details</th>
+                                        <th className="border border-slate-700 py-2 w-[10%] text-center">Solve</th>
+                                        <th className="border border-slate-700 py-2 w-[10%] text-center">Video</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {mainTopic.Subtopics.map((subtopic, subIndex) => (
                                         subtopic.Details.map((detail, detailIndex) => (
-                                            <tr key={`${subIndex}-${detailIndex}`} className="border hover:bg-gray-700 transition-all">
+                                            <tr key={`${subIndex}-${detailIndex}`} className="border border-slate-700 hover:bg-slate-700 transition-all">
                                                 {detailIndex === 0 ? (
-                                                    <td className="border p-2 font-semibold align-top text-xs sm:text-sm" rowSpan={subtopic.Details.length}>
+                                                    <td className="border border-slate-700 p-2 font-semibold align-top text-xs sm:text-sm" rowSpan={subtopic.Details.length}>
                                                         {subtopic.Subtopic}
                                                     </td>
                                                 ) : null}
 
                                                 {!detail.Links || !Array.isArray(detail.Links) || !detail.Links.some(link => link.includes("leetcode") || link.includes("geeksforgeeks")) ? (
-                                                    <td className="border p-2 text-xs sm:text-sm capitalize align-top" colSpan={2}>
+                                                    <td className="border border-slate-700 p-2 text-xs sm:text-sm capitalize align-top" colSpan={2}>
                                                         {detail.Detail}
                                                     </td>
                                                 ) : (
                                                     <>
-                                                        <td className="border p-2 text-xs sm:text-sm capitalize align-top">
+                                                        <td className="border border-slate-700 p-2 text-xs sm:text-sm capitalize align-top">
                                                             {detail.Detail}
                                                         </td>
-                                                        <td className="border p-2 text-center align-top">
+                                                        <td className="border border-slate-700 p-2 text-center align-top">
                                                             <div className="flex justify-center gap-2">
                                                                 {detail.Links.map((link, index) => (
                                                                     link !== "N/A" ? (
@@ -150,7 +153,7 @@ const CSV_TABLE_UI = () => {
                                                     </>
                                                 )}
 
-                                                <td className="border p-2 text-center align-top">
+                                                <td className="border border-slate-700 p-2 text-center align-top">
                                                     {detail["Video Link"] && detail["Video Link"].includes('https') && (
                                                         <a href={detail["Video Link"]} target="_blank" rel="noopener noreferrer">
                                                             <FaYoutube className="inline-block w-[20px] sm:w-[24px] h-auto text-red-600 hover:text-red-700" />

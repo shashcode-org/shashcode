@@ -238,3 +238,17 @@ const CSV_TABLE_UI = () => {
 };
 
 export default CSV_TABLE_UI;
+
+
+ <thead>
+                                    <tr className="bg-signature_yellow text-signature_dark text-left text-xs sm:text-sm">
+                                        <th className="border p-2 w-[30%]">Subtopic</th>
+                                        <th className="border p-2 w-1/2">Details</th>
+                                        <th className="border py-2 w-[10%] text-center">Solve</th>
+                                        <th className="border py-2 w-[10%] text-center">Video</th>
+                                    </tr>
+                                </thead>
+
+
+                                The daily LeetCode challenges helped me stay consistent and sharpen my problem-solving skills. What I loved most was how practical and clear the content was—it gave me the confidence to tackle coding rounds and interviews. Honestly, it wasn’t just about learning; it felt like having a mentor guide me through every step. Shashcode made a big difference for me, and I’m really grateful for it! 
+                                 As per college placement policy. I also want to mention that I regularly follow shashwat sir and comment on yt on every question that I solve without any hint

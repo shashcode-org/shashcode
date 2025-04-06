@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import { Link, useNavigate } from 'react-router-dom'
 import { navItemsData } from '../data/nav-items';
-import logo from '../assets/black-logo.png';
+import logo from '../assets/edited.png';
 
 const Navbar = () => {
 
@@ -15,11 +15,11 @@ const Navbar = () => {
     };
 
     return (
-        <div className='bg-black flex justify-between items-center h-16 mx-auto px-4 sm:px-10 text-vite_light'>
+        <div className='bg-slate-900 flex justify-between items-center h-16 mx-auto px-4 sm:px-10 text-white'>
             
             {/* Logo */}
             <Link to='/'>
-                <img src={logo} alt="ShashCode Logo" className="h-10 w-auto" />
+                <img src={logo} alt="ShashCode Logo" className="h-14 w-auto" />
             </Link>
 
             {/* Desktop Navigation */}
@@ -28,7 +28,7 @@ const Navbar = () => {
                 {navItemsData.map(navItem => (
                     <Link key={navItem.id} to={navItem.url}> 
                         <li
-                            className='p-4 hover:bg-signature_yellow rounded-xl m-2 cursor-pointer duration-300 hover:text-signature_dark flex gap-2 items-center leading-none'
+                            className='p-4 hover:bg-yellow-400 rounded-xl m-2 cursor-pointer duration-300 hover:text-slate-900 flex gap-2 items-center leading-none'
                         >
                         
                             <span className="flex items-center justify-center h-full">
@@ -49,8 +49,8 @@ const Navbar = () => {
             <ul
                 className={
                     nav
-                        ? 'fixed md:hidden left-0 top-0 w-full h-full bg-vite_dark ease-in-out duration-500'
-                        : 'ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%]'
+                        ? 'fixed md:hidden left-0 top-0 w-full h-full bg-slate-900 ease-in-out duration-500'
+                        : 'ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%] z-40'
                 }
             >
                 {/* Mobile Logo */}
@@ -68,7 +68,7 @@ const Navbar = () => {
                     {navItemsData.map(navItem => (
                         <Link key={navItem.id} to={navItem.url} onClick={() => setNav(false)}> 
                             <li
-                                className='py-10 px-8 border-b hover:bg-signature_yellow duration-300 hover:text-signature_dark cursor-pointer border-gray-600 flex gap-2 items-center justify-start leading-none'
+                                className='py-10 px-8 border-b hover:bg-yellow-400 duration-300 hover:text-slate-900 cursor-pointer border-slate-700 flex gap-2 items-center justify-start leading-none'
                             >
                                 <span className="flex items-center justify-center h-full">
                                     <navItem.icon className="h-full w-auto" />
