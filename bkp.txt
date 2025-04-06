@@ -252,3 +252,39 @@ export default CSV_TABLE_UI;
 
                                 The daily LeetCode challenges helped me stay consistent and sharpen my problem-solving skills. What I loved most was how practical and clear the content was—it gave me the confidence to tackle coding rounds and interviews. Honestly, it wasn’t just about learning; it felt like having a mentor guide me through every step. Shashcode made a big difference for me, and I’m really grateful for it! 
                                  As per college placement policy. I also want to mention that I regularly follow shashwat sir and comment on yt on every question that I solve without any hint
+
+
+
+                                               <div
+                key={index}
+                className="snap-center shrink-0 w-full p-6 rounded-2xl shadow-md bg-slate-800/40 border border-white/10"
+              >
+                <p className="italic text-gray-300">"{testimonial.quote}"</p>
+                <p className="mt-4 font-semibold text-yellow-400">– {testimonial.name}</p>
+              </div>
+
+
+
+                         <div
+              key={index}
+              className="snap-center shrink-0 w-[90vw] sm:w-[28rem] p-4 sm:p-6 rounded-2xl shadow-md bg-slate-800/40 border border-white/10"
+            >
+              <p className="italic text-gray-300 text-sm sm:text-base leading-relaxed">
+                "{testimonial.quote}"
+              </p>
+              <p className="mt-4 font-semibold text-yellow-400 text-sm sm:text-base">
+                – {testimonial.name}
+              </p>
+            </div>
+
+            <div
+              key={index}
+              className="snap-center shrink-0 w-[90vw] sm:w-[75vw] md:w-[50vw] lg:w-[35vw] p-4 sm:p-6 rounded-2xl shadow-md bg-slate-800/40 border border-white/10 mx-auto"
+            >
+              <p className="italic text-gray-300 text-sm sm:text-base leading-relaxed">
+                "{testimonial.quote}"
+              </p>
+              <p className="mt-4 font-semibold text-yellow-400 text-sm sm:text-base">
+                – {testimonial.name}
+              </p>
+            </div>
