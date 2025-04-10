@@ -1,13 +1,34 @@
-import React, { useState } from 'react';
-import { CSV_TABLE_UI } from '../components';
+
+import React from 'react';
+import CSV_TABLE_UI from '../components/CSV_TABLE_UI';
+import AnimatedElement from '@/components/AnimatedElement';
+import Section from '@/components/Section';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 const DSA = () => {
   return (
-    <div className="my-6 px-4 md:px-8 min-h-screen">
-      <h1 className="text-3xl sm:text-4xl font-bold text-signature_yellow mb-6 text-center">
-        Java + DSA Sheet
-      </h1>
-      <CSV_TABLE_UI />
+    <div className="min-h-screen flex flex-col">
+      <Navbar />
+      
+      <div className="pt-24 flex-grow">
+        <AnimatedElement animation="fadeIn">
+          <Section
+            title="Java + DSA Sheet"
+            subtitle="Master data structures and algorithms with our comprehensive learning path"
+            contentClassName="mt-8"
+            gradient
+          >
+            <AnimatedElement animation="fadeIn" delay="100">
+              <div className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 shadow-lg">
+                <CSV_TABLE_UI />
+              </div>
+            </AnimatedElement>
+          </Section>
+        </AnimatedElement>
+      </div>
+      
+      <Footer />
     </div>
   );
 };

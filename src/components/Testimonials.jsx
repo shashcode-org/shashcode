@@ -1,5 +1,8 @@
-import { useRef, useState, useEffect } from 'react';
+
+import React, { useRef, useState, useEffect } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import AnimatedElement from './AnimatedElement';
+import Card, { CardContent } from './Card';
 
 const Testimonials = () => {
   const scrollRef = useRef(null);
@@ -18,7 +21,7 @@ const Testimonials = () => {
       role: "Intern @ Microsoft"
     },
     {
-      quote: "Really helped in maintaining consistency and made super easy for me to understand non linear and complex DSA problems and concepts.",
+      quote: "Really helped in maintaining consistency and made super easy for me to understand non linear and complex DSA concepts and problems.",
       name: "Anant Aggarwal",
       role: "Placed @ Cognizant"
     },
@@ -71,21 +74,25 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <div className="max-w-6xl mx-auto px-4">
-      <section className="py-14 px-4 rounded-2xl">
-        <h2 className="text-3xl font-bold text-center text-signature_yellow mb-10">
-          What Learners Say
-        </h2>
+    <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <AnimatedElement animation="fadeIn">
+          <h2 className="text-3xl font-bold text-center text-gradient mb-10">
+            What Learners Say
+          </h2>
+        </AnimatedElement>
 
-        <div className="flex items-center lg:w-[80%] mx-auto">
+        <div className="flex items-center max-w-4xl mx-auto">
           {/* Left Arrow */}
           <button
             onClick={scrollLeft}
             disabled={atStart}
-            className={`p-2 rounded-full transition ${atStart
-                ? 'bg-gray-600 opacity-30 cursor-not-allowed'
-                : 'bg-gray-700 hover:bg-gray-600 text-white'
-              }`}
+            className={`p-2 rounded-full transition shrink-0 ${
+              atStart
+                ? 'bg-muted opacity-30 cursor-not-allowed'
+                : 'bg-background hover:bg-accent text-foreground'
+            }`}
+            aria-label="Previous testimonial"
           >
             <ArrowLeft size={20} />
           </button>
@@ -93,15 +100,24 @@ const Testimonials = () => {
           {/* Scrollable Container */}
           <div
             ref={scrollRef}
-            className="overflow-x-auto flex snap-x snap-mandatory scroll-smooth scrollbar-hide space-x-6 mx-6"
+            className="overflow-x-auto flex snap-x snap-mandatory scroll-smooth scrollbar-none space-x-6 mx-6 p-4"
           >
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="snap-center shrink-0 w-full p-6 rounded-2xl shadow-md bg-slate-800/40 border border-white/10"
+                className="snap-center shrink-0 w-full"
               >
-                <p className="italic text-gray-300">"{testimonial.quote}"</p>
-                <p className="mt-4 font-semibold text-yellow-400">– {testimonial.name}</p>
+                <AnimatedElement animation="fadeIn" delay="100">
+                  <Card glass className="h-full">
+                    <CardContent className="p-6">
+                      <p className="italic text-gray-600 mb-6">"{testimonial.quote}"</p>
+                      <div className="mt-4">
+                        <p className="font-semibold text-primary">{testimonial.name}</p>
+                        <p className="text-sm text-gray-500">{testimonial.role}</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </AnimatedElement>
               </div>
             ))}
           </div>
@@ -110,19 +126,19 @@ const Testimonials = () => {
           <button
             onClick={scrollRight}
             disabled={atEnd}
-            className={`p-2 rounded-full transition ${atEnd
-                ? 'bg-gray-600 opacity-30 cursor-not-allowed'
-                : 'bg-gray-700 hover:bg-gray-600 text-white'
-              }`}
+            className={`p-2 rounded-full transition shrink-0 ${
+              atEnd
+                ? 'bg-muted opacity-30 cursor-not-allowed'
+                : 'bg-background hover:bg-accent text-foreground'
+            }`}
+            aria-label="Next testimonial"
           >
             <ArrowRight size={20} />
           </button>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 
 export default Testimonials;
-
- // py-16 px-4 text-center bg-slate-800 rounded-2xl mx-4 sm:mx-8 lg:mx-32 shadow-lg
