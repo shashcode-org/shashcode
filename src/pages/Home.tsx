@@ -70,7 +70,7 @@ const Home = () => {
                     rel="noopener noreferrer"
                     className="btn-outline flex items-center justify-center gap-2"
                   >
-                    <YoutubeIcon size={18} className="text-red-500" />
+                    <YoutubeIcon size={20} className="px-[2px] text-slate-200 bg-red-700 rounded-[4px]" />
                     Subscribe
                   </a>
                 </div>
@@ -83,7 +83,7 @@ const Home = () => {
                   <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-primary to-secondary opacity-30 blur-xl"></div>
                   <div className="card-glass p-8 relative">
                     <div className="bg-gray-800 rounded-lg overflow-hidden">
-                      <pre className="p-4 text-white font-mono text-sm overflow-x-auto">
+                      <pre className="p-4 text-white font-mono text-xs sm:text-sm overflow-x-auto">
                         <code>{`public class ShashCode {
   public boolean isSuccess(boolean hardWork, boolean luck) {
     if (hardWork || luck) {
