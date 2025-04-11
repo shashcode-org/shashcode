@@ -50,7 +50,7 @@ const Home = () => {
               </AnimatedElement>
               
               <AnimatedElement animation="fadeIn" delay="100">
-                <p className="text-lg text-gray-300 mb-8">
+                <p className="text-lg text-black-300 mb-8">
                   Crack the code, rule the road! Master Java & DSA with structured learning paths 
                   designed for interview success.
                 </p>
@@ -152,7 +152,7 @@ const Home = () => {
             description: "Master the patterns and techniques that top companies look for in technical interviews."
           }
         ].map((feature, index) => (
-          <AnimatedElement key={index} animation="fadeIn" delay={`${(index + 1) * 100}`}>
+          <AnimatedElement key={index} animation="fadeIn" delay={`${(index + 1) * 100}`as any}>
             <Card hover className="h-full">
               <CardContent>
                 <div className="mb-4">{feature.icon}</div>
