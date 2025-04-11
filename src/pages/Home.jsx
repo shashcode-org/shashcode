@@ -10,12 +10,12 @@ import Card, { CardContent, CardTitle } from '@/components/Card';
 import { ArrowRight, Code, Award, BookOpen, YoutubeIcon } from 'lucide-react';
 
 // Import images
-import instructorImg from '../assets/shash-instructor-1.png';
-import samsungLogo from '../assets/samsung.png';
-import npciLogo from '../assets/npci.png';
-import cognizantLogo from '../assets/cognizant.png';
-import microsoftLearnLogo from '../assets/microsoftLearn.png';
-import hpLogo from '../assets/hpcl.png';
+import instructorImg from '../assets/shash-instructor-1.webp';
+import samsungLogo from '../assets/samsung.webp';
+import npciLogo from '../assets/npci.webp';
+import cognizantLogo from '../assets/cognizant.webp';
+import microsoftLearnLogo from '../assets/microsoftLearn.webp';
+import hpLogo from '../assets/hpcl.webp';
 
 const Home = () => {
   const navigate = useNavigate();

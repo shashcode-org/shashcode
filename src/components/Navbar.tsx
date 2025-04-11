@@ -46,7 +46,7 @@ const Navbar = () => {
           <AnimatedElement animation="fadeIn" className="opacity-100">
             <Link to="/" className="flex items-center space-x-3">
               <img 
-                src="/logo.png" 
+                src="/logo.webp" 
                 alt="ShashCode Logo" 
                 className="h-8 md:h-14 w-auto"
               />

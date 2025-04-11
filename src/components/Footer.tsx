@@ -44,7 +44,7 @@ const Footer = () => {
               <Link to="/" className="inline-block">
                 <div className="flex items-center space-x-3">
                   <img 
-                    src="/bl-logo.png" 
+                    src="/bl-logo.webp" 
                     alt="ShashCode Logo" 
                     className="h-16 w-auto" 
                   />
