@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://shashcode-website.netlify.app/sitemap.xml
