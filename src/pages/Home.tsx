@@ -85,17 +85,17 @@ const Home = () => {
                     <div className="bg-gray-800 rounded-lg overflow-hidden">
                       <pre className="p-4 text-white font-mono text-xs sm:text-sm overflow-x-auto">
                         <code>{`public class ShashCode {
-  public boolean isSuccess(boolean hardWork, boolean luck) {
-    if (hardWork || luck) {
-      System.out.println("You succeeded 🎯");
-    } else {
-      System.out.println("You still succeeded 💪");
-    }
+                          public boolean isSuccess(boolean hardWork, boolean luck) {
+                            if (hardWork || luck) {
+                              System.out.println("You succeeded 🎯");
+                            } else {
+                              System.out.println("You still succeeded 💪");
+                            }
 
-    return true; // Because success is a mindset.
-  }
-}
-`}</code>
+                            return true; // Because success is a mindset.
+                          }
+                        }
+                        `}</code>
                       </pre>
                     </div>
                   </div>
