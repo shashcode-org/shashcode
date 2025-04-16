@@ -23,7 +23,7 @@ const Home = () => {
   const skillsData = [
     "GoLang",
     "Java",
-    "Python", 
+    "Python",
     "JavaScript",
     "AWS",
     "REST APIs",
@@ -37,7 +37,7 @@ const Home = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 hero-gradient">
         <div className="max-w-7xl mx-auto">
@@ -48,14 +48,14 @@ const Home = () => {
                   Welcome to <span className="text-gradient">ShashCode</span>
                 </h1>
               </AnimatedElement>
-              
+
               <AnimatedElement animation="fadeIn" delay="100">
                 <p className="text-lg text-black-300 mb-8">
-                  Crack the code, rule the road! Master Java & DSA with structured learning paths 
+                  Crack the code, rule the road! Master Java & DSA with structured learning paths
                   designed for interview success.
                 </p>
               </AnimatedElement>
-              
+
               <AnimatedElement animation="fadeIn" delay="200">
                 <div className="flex flex-col sm:flex-row gap-4">
                   <button
@@ -64,9 +64,9 @@ const Home = () => {
                   >
                     Explore DSA Sheet <ArrowRight size={18} />
                   </button>
-                  <a 
-                    href="https://www.youtube.com/@shashwat_tiwari_st" 
-                    target="_blank" 
+                  <a
+                    href="https://www.youtube.com/@shashwat_tiwari_st"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="btn-outline flex items-center justify-center gap-2"
                   >
@@ -76,26 +76,25 @@ const Home = () => {
                 </div>
               </AnimatedElement>
             </div>
-            
-            <div className="lg:w-1/2">
+
+            <div className="w-full lg:w-1/2 sm:px-4">
               <AnimatedElement animation="fadeIn" delay="200">
                 <div className="relative">
                   <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-primary to-secondary opacity-30 blur-xl"></div>
-                  <div className="card-glass p-8 relative">
+                  <div className="card-glass p-2 sm:p-4 lg:p-8 relative">
                     <div className="bg-gray-800 rounded-lg overflow-hidden">
-                      <pre className="p-4 text-white font-mono text-xs sm:text-sm overflow-x-auto">
+                      <pre className="px-4 py-4 sm:p-6 text-white font-heading text-xs sm:text-sm overflow-x-auto whitespace-pre max-w-full text-[9px]">
                         <code>{`public class ShashCode {
-                                  public boolean isSuccess(boolean hardWork, boolean luck) {
-                                    if (hardWork || luck) {
-                                      System.out.println("You succeeded 🎯");
-                                    } else {
-                                      System.out.println("You still succeeded 💪");
-                                    }
+  public boolean isSuccess(boolean hardWork, boolean luck) {
+    if (hardWork || luck) {
+      System.out.println("You succeeded 🎯");
+    } else {
+      System.out.println("You still succeeded 💪");
+    }
 
-                                    return true; // Because success is a mindset.
-                                  }
-                                }
-                        `}</code>
+    return true; // Because success is a mindset.
+  }
+}`}</code>
                       </pre>
                     </div>
                   </div>
@@ -105,7 +104,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Explore DSA Sheet */}
       <Section
         contentClassName="text-center"
@@ -127,9 +126,9 @@ const Home = () => {
           </Card>
         </AnimatedElement>
       </Section>
-      
+
       {/* Features Section */}
-      <Section 
+      <Section
         title="Why Choose ShashCode?"
         subtitle="Comprehensive learning resources for every level of programmer"
         contentClassName="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8"
@@ -152,7 +151,7 @@ const Home = () => {
             description: "Master the patterns and techniques that top companies look for in technical interviews."
           }
         ].map((feature, index) => (
-          <AnimatedElement key={index} animation="fadeIn" delay={`${(index + 1) * 100}`as any}>
+          <AnimatedElement key={index} animation="fadeIn" delay={`${(index + 1) * 100}` as any}>
             <Card hover className="h-full">
               <CardContent>
                 <div className="mb-4">{feature.icon}</div>
@@ -163,12 +162,12 @@ const Home = () => {
           </AnimatedElement>
         ))}
       </Section>
-      
+
       {/* Testimonials */}
       <Testimonials />
-      
+
       {/* About Section */}
-      <Section 
+      <Section
         id="about"
         title="About ShashCode"
         contentClassName="max-w-4xl mx-auto space-y-6 text-[17px] leading-relaxed"
@@ -177,7 +176,7 @@ const Home = () => {
           <Card glass className="p-8">
             <CardContent className="space-y-6">
               <p>
-              <span className="font-semibold text-primary">ShashCode</span> is a platform dedicated to making coding and technology education accessible to everyone. It helps students and professionals master Coding & Data Structures and Algorithms (DSA) in Java for placements.
+                <span className="font-semibold text-primary">ShashCode</span> is a platform dedicated to making coding and technology education accessible to everyone. It helps students and professionals master Coding & Data Structures and Algorithms (DSA) in Java for placements.
               </p>
               <p>
                 Founded by <span className="font-semibold text-primary">Shashwat Tiwari</span>, a software engineer and content creator, ShashCode simplifies complex topics through structured learning paths, coding sheets, and video tutorials.
@@ -201,9 +200,9 @@ const Home = () => {
           </Card>
         </AnimatedElement>
       </Section>
-      
+
       {/* Instructor Section */}
-      <Section 
+      <Section
         title="Meet the Instructor"
         subtitle="Learn from experienced developers and educators"
         gradient
@@ -269,7 +268,7 @@ const Home = () => {
           </Card>
         </AnimatedElement>
       </Section>
-      
+
       <Footer />
     </div>
   );

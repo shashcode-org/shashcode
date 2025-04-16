@@ -23,6 +23,7 @@ export default {
 				sans: ['Inter', 'sans-serif'],
 				heading: ['Poppins', 'sans-serif'],
 				mono: ['JetBrains Mono', 'monospace'],
+				sourceCode: ['Source Code Pro', 'monospace']
 			},
 			colors: {
 				border: 'hsl(var(--border))',
