@@ -100,7 +100,7 @@ const Testimonials = () => {
           {/* Scrollable Container */}
           <div
             ref={scrollRef}
-            className="overflow-x-auto flex snap-x snap-mandatory scroll-smooth scrollbar-none space-x-6 mx-6 p-4"
+            className="overflow-x-auto flex snap-x snap-mandatory scroll-smooth scrollbar-none space-x-6 mx-6 gap-4 p-4 items-center"
           >
             {testimonials.map((testimonial, index) => (
               <div
