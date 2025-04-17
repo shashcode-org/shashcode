@@ -11,7 +11,7 @@ const Privacy = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       
-      <div className="pt-32 pb-16 flex-grow">
+      <div className="privacy-page pt-32 pb-16 flex-grow">
         <Section contentClassName="max-w-4xl mx-auto">
           <AnimatedElement animation="fadeIn">
             <Card className="bg-white text-slate-800">

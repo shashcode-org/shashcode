@@ -11,7 +11,7 @@ const Terms = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       
-      <div className="pt-32 pb-16 flex-grow">
+      <div className="terms-page pt-32 pb-16 flex-grow">
         <Section contentClassName="max-w-4xl mx-auto">
           <AnimatedElement animation="fadeIn">
             <Card className="bg-white text-slate-800">
@@ -27,7 +27,7 @@ const Terms = () => {
                   </section>
 
                   <section>
-                    <h2 className="text-xl font-semibold mb-3 text-primary">1. Definitions</h2>
+                    <h2 className="text-xl font-semibold my-6 text-primary">1. Definitions</h2>
                     <p><strong>"ShashCode"</strong> ("we," "our," "us") – Refers to the website, content, and services provided.</p>
                     <p><strong>"User"</strong> ("you") – Any individual accessing or using our services.</p>
                     <p><strong>"Content"</strong> – Includes all materials, videos, articles, code, and digital products available on the platform.</p>
