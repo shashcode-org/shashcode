@@ -1,5 +1,4 @@
-
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from "react";
 import { csvData } from '../data/csv-data-java-dsa-release-v1';
 import { Search, ChevronRight, Youtube } from 'lucide-react';
 import AnimatedElement from '@/components/AnimatedElement';
@@ -40,6 +39,12 @@ export const CSV_TABLE_UI = () => {
 
     useEffect(() => {
         setExpandedTopicIndex(selectedTopic === "All" ? null : 0);
+        if (selectedTopic !== "All") {
+            // Scroll to the first expanded topic card
+            setTimeout(() => {
+                firstExpandedRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+            }, 100); // slight delay ensures the card is rendered before scroll
+        }
     }, [selectedTopic]);
 
     const handleTopicToggle = (index) => {
@@ -55,7 +60,7 @@ export const CSV_TABLE_UI = () => {
             handleTopicToggle(index);
         }
     };
-
+    const firstExpandedRef = useRef(null);
     return (
         <div className="p-4 sm:p-6 md:p-8">
             <AnimatedElement animation="fadeIn" delay="100">
@@ -91,7 +96,13 @@ export const CSV_TABLE_UI = () => {
                 </div>
             </AnimatedElement>
 
-            {filteredTopics.map((mainTopic, mainIndex) => (
+            {filteredTopics.map((mainTopic, mainIndex) => {
+                return (
+                    <div
+                    key={mainIndex}
+                    ref={mainIndex === 0 ? firstExpandedRef : null} // Attach ref only to the first item
+                    className="mb-6 bg-white rounded-xl shadow-md scroll-mt-24"
+                    >
                 <AnimatedElement 
                     key={mainIndex} 
                     animation="fadeIn" 
@@ -205,7 +216,8 @@ export const CSV_TABLE_UI = () => {
                         </AnimatePresence>
                     </Card>
                 </AnimatedElement>
-            ))}
+            </div>
+            )})}
         </div>
     );
 };
