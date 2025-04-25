@@ -63,21 +63,7 @@ export const CSV_TABLE_UI = () => {
     const firstExpandedRef = useRef(null);
     return (
         <div className="p-4 sm:p-6 md:p-8">
-            <AnimatedElement animation="fadeIn" delay="100">
-                <div className="relative mb-6">
-                    <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
-                        <Search size={18} className="text-muted-foreground" />
-                    </div>
-                    <input
-                        type="text"
-                        placeholder="Search topics or questions..."
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                        className="pl-10 p-3 w-full bg-background/60 backdrop-blur-sm border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary text-foreground placeholder-muted-foreground shadow-sm transition-all"
-                    />
-                </div>
-            </AnimatedElement>
-
+            
             <AnimatedElement animation="fadeIn" delay="200">
                 <div className="flex flex-wrap gap-2 mb-8">
                     {uniqueTopics.map((topic, index) => (
@@ -93,6 +79,21 @@ export const CSV_TABLE_UI = () => {
                             {topic}
                         </button>
                     ))}
+                </div>
+            </AnimatedElement>
+
+            <AnimatedElement animation="fadeIn" delay="100">
+                <div className="relative mb-6">
+                    <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
+                        <Search size={18} className="text-muted-foreground" />
+                    </div>
+                    <input
+                        type="text"
+                        placeholder="Search topics or questions..."
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        className="pl-10 p-3 w-full bg-background/60 backdrop-blur-sm border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary text-foreground placeholder-muted-foreground shadow-sm transition-all"
+                    />
                 </div>
             </AnimatedElement>
 
