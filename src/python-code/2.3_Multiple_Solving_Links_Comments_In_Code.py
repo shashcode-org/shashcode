@@ -81,3 +81,9 @@ if current_main_topic:
 json_data = json.dumps(structured_data, indent=2)
 
 print(json_data)
+
+# ✅ Save to JavaScript file
+with open("../csv-data-bkp/csv-data-java-dsa-release-v2.js", "w", encoding="utf-8") as f:
+    f.write("export const csvData = ")
+    f.write(json_data)
+    f.write(";")  # Add semicolon to end JS export

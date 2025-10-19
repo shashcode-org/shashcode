@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
-import { csvData } from '../data/csv-data-java-dsa-release-v1';
+import { csvData } from '../data/csv-data-java-dsa-release-v2';
 import { Search, ChevronRight, Youtube } from 'lucide-react';
 import AnimatedElement from '@/components/AnimatedElement';
 import { Card } from '@/components/ui/card';
