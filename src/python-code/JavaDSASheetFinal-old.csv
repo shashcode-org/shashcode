@@ -1,4 +1,4 @@
-Main Topics,Subtopics,Details,Links,Video Links
+﻿Main Topics,Subtopics,Details,Links,Video Links
 Java Basics,Programming Language and Memory Management,What is a programming Language,,https://youtu.be/DEC268j2hk0
 ,,Machine Language,,
 ,,Assembly Language,,
@@ -84,124 +84,169 @@ Java Basics,Programming Language and Memory Management,What is a programming Lan
 ,,Operations on functions,,
 ,,Jagged Array,,
 ,,passing arrays to functions,,
-Exception Handling,dummy,dummy,,TBD
-Object Oriented Programming,oops,Classes and Objects,,https://youtu.be/yGT6-P3XGrg?si=A8C7Bhnk9Jw9_3Eo
-,,Pillars of Oops,,https://youtu.be/G5djyUY_LKc?si=3pWEptBtHSDmXZdw
-,,Inheritance,,https://youtu.be/5_pMrxQ17rY?si=3KP2Dq9CFLHYbF4r
-,,Important Keywords,,https://youtu.be/txtsaKx3eME?si=F5RFc62AkV6TCvKW
-,,Constructor Calling and Access Specifier,,https://youtu.be/7VLroC57Exk?si=Gojo6PdpxLRQEk46
-,,Getters and Setters,,https://youtu.be/W1P7tvRWZvs?si=_VVQEdr-AJFUvFUi
-,,Function Overriding,,https://youtu.be/_Xog65pQgDk?si=WpwfA8BgXA5urOgL
-,,Abstract Classes,,https://youtu.be/MrK_eL96fnY?si=7HCmcqIDdDFCJzUp
-,,Java Interfaces,,https://youtu.be/a2QGa30h3Is?si=Fo2_E2upIdm_6YRe
-,,Nested Classes,,https://youtu.be/rjWDZt7hbD8?si=rRLug4uAy0i81Tbt
-,,Java Generics,,https://youtu.be/vGG9d_FEl60?si=IfDlHPpCONjSEbod
-,,Comparator and Comparable,,https://youtu.be/quegYlReztM?si=ywgPQvHFaTwPKrFC
-,,Java Association,,https://youtu.be/iWTi0V1LEzA?si=1oQWHxvJZ2Y8FcDi
-Java 8 Features,Annotation & Interfaces,Lambda Expression,,https://youtu.be/3DkmAUdrzKw?si=RZyjaYjAXgJGcICk
-,,Functional Interfaces,,https://youtu.be/jAJ4CNxdOIs?si=HT0CAPI0xF4R4cJ9
-,,Stream API,,https://youtu.be/5UF2lYo9bcQ?si=NPRBMVAgbGUTMvCs
-,,Java Annotations,,https://youtu.be/nv3OCaskB9g?si=PXhZNNFrtBBBHa2a
-Multi-threading ,multi-threading,tbd,,TBD
-Pattern Printing ,patterns,pattern1,,TBD
-,,star pattern,,TBD
-,,triangle,,TBD
-,,pattern2,,TBD
-,,pattern3,,TBD
+Object Oriented Programming,Java OOP Basics,What is a Class,,
+,,What is an Object,,
+,,How to Create an Object of a Class,,
+,,How Object is Stored in Memory,,
+,,What is new keyword,,
+,,Constructor in Java,,
+,Java OOP Basics - Lecture 2,Constructor Definition,,
+,,"Types of Constructors - default, parameterized, copy",,
+,,this keyword,,
+,,this function,,
+,,"object copying - reference, field wise, copy",,
+,Static in Java,Static Variable,,
+,,Static Method,,
+,,Static Block,,
+,Encapsulation in Java,Encapsulation in Java,,
+,,Advantages of Encapsulation,,
+,Inheritance in Java,What is Inheritance?,,
+,,"Types of Inheritance in Java - Single, Multilevel, Hierarchical, Hybrid",,
+,,Multiple Inheritance in Java,,
+,,Parent-Child Method Access,,
+,,Object Class in Java,,
+,Abstraction in Java,What is Abstraction,,
+,,How to Achieve Abstraction in Java,,
+,,Abstract Classes,,
+,,Interfaces in Java,,
+,,Multiple Inheritance Using Interfaces,,
+,Polymorphism in Java,What is Polymorphism,,
+,,Compile-time Polymorphism (Method Overloading),,
+,,Runtime Polymorphism (Method Overriding),,
+,,Rules for Method Overloading,,
+,,Rules for Method Overriding,,
+,"Final, Super, and Access Modifiers in Java",Access Modifiers in Java (Visibility),,
+,,final Keyword in Java,,
+,,super Keyword in Java,,
+,Nested Classes in Java,Types of Nested Classes,,
+,,Member Inner Class,,
+,,Local Inner Class,,
+,,Anonymous Inner Class,,
+,,Static Nested Class,,
+,,Scope and Object Creation Summary,,
+,Generics in Java,What are Generics,,
+,,Why Generics,,
+,,"Forms of Generics in Java - Generic Classes, Generic Methods, Generic Interfaces, Bounded Generics, ",,
+,Comparable and Comparator in Java,Why Do We Need Them,,
+,,Comparable Interface,,
+,,Comparator Interface,,
+,,Lambda Expressions in Java (Introduced in Java 8),,
+,"Association, Aggregation, and Composition in Java",Association,,
+,,Aggregation,,
+,,Composition,,
+Exception Handling,Exception Handling in Java,What is an Exception?,,
+,,try-catch Block,,
+,,"types of exceptions - checked, unchecked exception",,
+,Multi-Catch Block,multi-catch block,,
+,Compiler Behavior During Exceptions,Checked Exceptions,,
+,,Unchecked Exceptions,,
+,Finally Block,finally block,,
+,try-with-resources,try-with-resources,,
+,throw vs throws,throw keyword,,
+,,throws keyword,,
+,,throw vs throws,,
+,User-Defined or custom Exceptions,User-Defined or custom Exceptions,,
+Pattern Printing ,patterns,"Solid Pattern - square, right angled triangle",,
+,,Number and Character Patterns,,
+,,Inverted and Mirrored Patterns,,
+,,Pyramid and Diamond Patterns,,
+,,"Advanced Number Patterns - Pascal’s Triangle, Floyd’s Triangle",,
 Time & Space Complexity,Time and Space Complexity,What is Algorithm Complexity,,https://youtu.be/ZltvAvQXIEo
-,,Asymptotic Notations,,
+,,"Asymptotic Notations - upper, lower, average",,
 ,,Time Complexity,,
 ,,Space Complexity,,
-,,Big Oh cheat sheet.,,
-,,How to calculate time complexity,,
-,,Algorithm optimizations,,
-Maths in DSA,Mathematics in DSA - Part 1,Number system,,https://youtu.be/q0kKRFpGmiE
-,,Conversion from one system to other,,
-,,Digit extraction,,
-,,Reverse a Number.,,
-,,Find even odd,,
-,,Find Power of a number.,,
-,,Fast exponentiation,,
-,Mathematics in DSA - Part 2,count digits,,https://youtu.be/bvmoEgSp9O4
-,,count digits using log,,
-,,using log formulas,,
-,,Armstrong Number ,,
+,,Rules for calculating time complexity,,
+,,Questions on time complexity,,
+,,Big Oh cheat sheet,,
+Maths in DSA,Mathematics in DSA - Part 1,find number of digits,,
+,,appending digits to the end,,
+,,insert digit at the front,,
+,,reverse a number,,
+,,even / odd number,,
+,,find power,,
+,,fast exponentiation,,
+,,Number system,,
+,,Any base to decimal,,
+,,Decimal to any base,,
+,Mathematics in DSA - Part 2,Armstrong Number ,,
 ,,Pallindrome Number,,
 ,,Print all divisors,,
-,,Check if Number is Prime,,
-,,Sieve Algorithm,,
-,,Newton Raphson Algorithm for square root,,
+,,check prime number,,
+,,Sieve of Eratosthenes,,
 ,,Greatest Common Divisor,,
 ,,Euclidian GCD Algorithm,,
 ,,lcm of two numbers,,
-,,Modular Arithmetics,,
-,,fast exponentiation with modular arithmetics ,,
+,,print all unique prime factors of a number,,
+,,smallest prime factor,,
 ,,factorial of a number,,
-,,find trailing zeros in a factorial,,
-,,ceiling and floor of a number,,
-Bits Manipulation,Bits and Binary Operations,Least Significant Bits,,https://youtu.be/cn_KKSd3T2g
-,,Most Significant Bits,,
-,,Signed and unsigned Numbers,,
-,,Calculate range of data type,,
-,,How to add binary numbers,,
-,,How to find 1's complement,,
-,,How to find 2's complement,,
-,,Left shift and Right shift,,
-,,Trick to divide or multiply any number.,,
-,,"Bitwise NOT, Bitwise AND, Bitwise OR",,
-,Play with Bits / Bit Manipulation,Find the i-th Bit,,https://youtu.be/wGrEXbLQX1k
-,,Set the i-th Bit,,
-,,Toggle the i-th Bit,,
-,,Unset the i-th Bit,,
-,,Print the number in binary without conversion,,
-,,Find if a number is even / odd using bit manipulation,,
-,,Find if a number is power of 2.,,
-,,Count the number of set bits.,,
-,,Unset the right most set bit.,,
-,Bit Manipulation,Bitwise Operators,,https://youtu.be/UTVvLfkuSEs
-,,Bit Manipulation,,
-,,Bit Masking,,
-,,Advanced XoR problems of Bit Manipulation,,
-Searching Algorithms,Searching Algorithms - 1,Linear Search,,https://youtu.be/slqFdKVMjeQ
-,,Q. search an Element / first occurrence,,
-,,Q. Find the minimum element in an array (1D/2D),,
-,,Q. Find the maximum element in an array (1D/2D),,
-,,Q. Find max sum 1D array in a 2D array,,
-,,Q. Search all occurrences (1D/2D),,
-,,Q. Search last occurrence (1D/2D),,
-,Searching Algorithms - 2,Binary Search,,https://youtu.be/kOIECDEUzaI
-,,Sorted in increasing,,
-,,Sorted in decreasing,,
+,,find trailing zero in factorial of a number,,
+,,Modular Arithmatics,,
+Bits Manipulation,Bit basics & fundamentals,Binary Representation of Numbers,,https://youtu.be/cn_KKSd3T2g
+,,One's Complement,,
+,,Two's Complement,,
+,,Range of Integers,,
+,,"Bitwise Operators - AND, OR, XOR, NOT, Left Shift, Right Shift, Unsigned Right Shift, ",,
+,,Check Odd/Even,,
+,,Swap Two Numbers using XOR,,
+,Useful Tricks in Bit Manipulation,Check if k-th Bit is Set,,https://youtu.be/wGrEXbLQX1k
+,,Set / Unset / Toggle a Bit,,
+,,Count Set Bits,,
+,,Rightmost Set Bit,,
+,,Check if Number is Power of 2,,
+,,Character Case Conversion using Bits,,
+,Standard Questions in Bit Manipulation,Find the Unique Number (all others appear twice) - [Single Number I],,https://youtu.be/UTVvLfkuSEs
+,,Find Unique Number (all others appear thrice) [Single Number II],,
+,,Find 2 Unique Numbers (all others appear twice) [Single Number III],,
+,,Minimum Number of Bit Flips (Convert A → B),,
+,,Print All Subsets (Power Set),,
+Searching Algorithms,Linear Search,Linear Search,,https://youtu.be/slqFdKVMjeQ
+,,Search First Occurrence of Element in 1D Array,,
+,, Search First Occurrence of Element in 2D Array,,
+,,Find Maximum Element in 1D Array,,
+,,Find Maximum Sum Subarray in 2D Array,,
+,,Find Minimum Element in 1D Array,,
+,,Find Minimum Sum Subarray in 2D Array,,
+,,Search All Occurrences of Element in 1D Array,,
+,,Search All Occurrences of Element in 2D Array,,
+,,Search Last Occurrence of Element in 1D Array,,
+,,Search Last Occurrence of Element in 2D Array,,
+,,How to Use LeetCode,,
+,,How to Find Number of Elements in 2D Array,,
+,Binary Search,Binary Search,,https://youtu.be/kOIECDEUzaI
+,,Binary Search in Increasing Order,,
+,,Binary Search in Decreasing Order,,
 ,,Order Agnostic Binary Search,,
+,,Avoid Overflow in Finding Mid,,
+,,Why Binary Search is Faster,,
+,,Find if Array is Sorted in Increasing or Decreasing Order,,
 ,Questions on Binary Search Part 1,Q1. Ceiling of a Number,,https://youtu.be/P-vl_BrdxJA
 ,,Q2. Floor of a Number,,
 ,,Q3. First and Last Position of element in sorted array,https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/description/,
 ,,Q4. Count all occurrence of element in an array,,
 ,,Q5. Find smallest letter greater than target,https://leetcode.com/problems/find-smallest-letter-greater-than-target/description/,
-,Questions on Binary Search Part 2,Binary Search in range,,https://youtu.be/DoVawmdh5NM
-,,Q6. Find Minimum Difference in a Sorted array.,,
-,,Q7. Find an element in an array of Infinite size,,
-,,Q8. Find first 1 in an infinite and sorted array of 0s and 1s,,
-,Questions on Binary Search Part 3,Bitonic Array,,https://youtu.be/IK5eSvNw9Qw?si=f6gSi2LkYE4VAtSQ
-,,Q9. Valid Mountain Array,https://leetcode.com/problems/valid-mountain-array/,
-,,Q10. Peak Index in Mountain Array,https://leetcode.com/problems/peak-index-in-a-mountain-array/,
-,,Q11. find in mountain array,https://leetcode.com/problems/find-in-mountain-array/,
-,Questions on Binary Search Part 4,Q12. Search in rotated sorted array,https://leetcode.com/problems/search-in-rotated-sorted-array/,https://youtu.be/n12QcCu8oBI
-,,Q13. Search in rotated sorted array - 2,https://leetcode.com/problems/search-in-rotated-sorted-array-ii/description/,
-,,Q14. Find minimum in rotated sorted array,https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/,
-,,Q15. find k rotation,https://www.geeksforgeeks.org/problems/rotation4723/1,
-,,Q16. Find minimum in rotated sorted array - 2,https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/,
-,Questions on Binary Search Part 5,Q14. Allocated minimum number of pages,https://www.geeksforgeeks.org/problems/allocate-minimum-number-of-pages0937/1,https://youtu.be/_4LmUWmmYbY
-,,Q15. Capacity to Ship within D Days,https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/,
-,,Q16. Koko Eating bananas,https://leetcode.com/problems/koko-eating-bananas/description/,https://youtu.be/BUFHoQIOnAs
-,,Q17. Smallest Divisor given a threshold,https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/description/,https://youtu.be/pSGtbhpuhbk
-,,Q18. Minimize Maximum of products distributed to any store,https://leetcode.com/problems/minimized-maximum-of-products-distributed-to-any-store/description/,https://youtu.be/4O6wrTtUQvY
-,,Q19. Aggressive cows,https://www.geeksforgeeks.org/problems/aggressive-cows/1,https://youtu.be/86xSPxfc4iQ
-,,Q20. Median of two sorted arrays,https://leetcode.com/problems/median-of-two-sorted-arrays/,https://youtu.be/2BOgAlmyTkc
-,,Q21. Kth element of two sorted arrays,https://www.geeksforgeeks.org/problems/k-th-element-of-two-sorted-array1317/1,https://youtu.be/SB6j8D95eHM
-,Questions on Binary Search Part 6,Q22. Single Element in a Sorted Array ,https://leetcode.com/problems/single-element-in-a-sorted-array/description/,https://youtu.be/f09DayNeigg
-,,Q23. Finding square root ,https://leetcode.com/problems/sqrtx/description/,
-,,Q24. Count Squares ,https://www.geeksforgeeks.org/problems/count-squares3649/1,
+,Binary Search on Infinite Array,Binary Search in range,,https://youtu.be/DoVawmdh5NM
+,,Q1. Find Minimum Difference in a Sorted array.,,
+,,Q2. Find an element in an array of Infinite size,,
+,,Q3. Find first 1 in an infinite and sorted array of 0s and 1s,,
+,Bitonic Array,Bitonic Array,,https://youtu.be/IK5eSvNw9Qw?si=f6gSi2LkYE4VAtSQ
+,,Q1. Valid Mountain Array,https://leetcode.com/problems/valid-mountain-array/,
+,,Q2. Peak Index in Mountain Array,https://leetcode.com/problems/peak-index-in-a-mountain-array/,
+,,Q3. find in mountain array,https://leetcode.com/problems/find-in-mountain-array/,
+,Binary Search on Rotated Sorted Array,Q1. Search in rotated sorted array,https://leetcode.com/problems/search-in-rotated-sorted-array/,https://youtu.be/n12QcCu8oBI
+,,Q2. Search in rotated sorted array - 2,https://leetcode.com/problems/search-in-rotated-sorted-array-ii/description/,
+,,Q3. Find minimum in rotated sorted array,https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/,
+,,Q4. find k rotation,https://www.geeksforgeeks.org/problems/rotation4723/1,
+,,Q5. Find minimum in rotated sorted array - 2,https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/,
+,Binary Search on answer concept,Binary Search on answer concept,,
+,,Q1. Allocated minimum number of pages,https://www.geeksforgeeks.org/problems/allocate-minimum-number-of-pages0937/1,
+,,Q2. Aggressive cows,https://www.geeksforgeeks.org/problems/aggressive-cows/1,
+,,Q3. Koko Eating bananas,https://leetcode.com/problems/koko-eating-bananas/description/,
+,,Q4. Capacity To Ship Packages Within D Days,https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/description/,
+,Binary Search on two arrays,Q1. Median of two sorted arrays,https://leetcode.com/problems/median-of-two-sorted-arrays/,
+,,Q2. Kth element of two sorted arrays,https://www.geeksforgeeks.org/problems/k-th-element-of-two-sorted-array1317/1,
+,Questions on Binary Search Part 6,Q1. Single Element in a Sorted Array ,https://leetcode.com/problems/single-element-in-a-sorted-array/description/,https://youtu.be/f09DayNeigg
+,,Q2. Finding square root ,https://leetcode.com/problems/sqrtx/description/,
+,,Q3. Count Squares ,https://www.geeksforgeeks.org/problems/count-squares3649/1,
 ,Other Searching Algorithms,Jump Search,,https://youtu.be/rFwBm-VT99A
 ,,Interpolation Search,,
 ,,Exponential Search,,
@@ -215,31 +260,23 @@ Matrix,Questions on Matrix - 1,Q. Median of a Sorted Matrix,https://www.geeksfor
 ,,Q. Rotate by 90 degree,https://www.geeksforgeeks.org/problems/rotate-by-90-degree0356/1,
 ,Questions on Matrix - 4,Q. Spiral Matrix - 1,https://leetcode.com/problems/spiral-matrix/,https://youtu.be/uAaoWcYX2_8
 ,,Q. Spiral Matrix - 2,https://leetcode.com/problems/spiral-matrix-ii/description/,
-Sorting Algorithms,Sorting Algo,Insertion Sort,,https://youtu.be/EHBeiIm59Yk
-,,Selection Sort [Uni and Bi - directional],,https://youtu.be/CfEZKDoVRcw
-,,Bubble Sort and Brick Sort,,https://youtu.be/vXwKKzn6D4E
-,,Counting Sort,,https://youtu.be/e644HVGFAJY
-,,Radix Sort,,https://youtu.be/HuwgdPVEwCc
-,,Pigeonhole Sort,,https://youtu.be/sWX1eMPYzSU
-,,Cyclic Sort,,https://youtu.be/vJn71L7CPH4
-,,Q. Find missing element in range of 0 to N,https://leetcode.com/problems/missing-number/description/,https://youtu.be/bIHpx5NN2bg
-,,Q. Given an array [1 to N] return all elements in range [1 to N] that are absent in the array,https://leetcode.com/problems/find-all-duplicates-in-an-array/description/,https://youtu.be/xxFebE0VznM
-,,Q. Find all duplicates in an array,https://leetcode.com/problems/find-all-duplicates-in-an-array/,https://youtu.be/Us63C10ozzw
-,Questions on Duplicate Numbers,Q. Find the duplicate Number in an array [1 to N] ( inclusive ),,TBD
-,,"Q. Given an array [1 to N] with elements appearing once or twice, return all elements that appear twice",,TBD
-,,Q. Find the missing and repeating element in an array [1 to N],,TBD
-,,Q. Return the smallest positive number missing,,TBD
-Recursion,Recursion - I,playing with function calls,,TBD
-,,Types of recursion,,
-,,Q. convert decimal to binary,https://www.geeksforgeeks.org/problems/decimal-to-binary-1587115620/1,https://youtu.be/1uw8aVnD4VE?si=sdOxOm67SIhYdjR3
-,,Q. reverse a number / string,https://leetcode.com/problems/reverse-string/description/,https://youtu.be/KMzcV4QsXdQ?si=NRQMzaA7pk0UPcv6
-,,Q. reverse an array inplace,https://leetcode.com/problems/reverse-string/description/,https://youtu.be/F_AFAG3m1r0?si=i6q8DKOn4p5PRb3a
-,,Q. reverse a stack,https://www.geeksforgeeks.org/problems/reverse-a-stack/1,https://youtu.be/setwBLDtlck?si=D_zfPZqG1SJzwD7-
-,Recursion - II,Q. Tower of Hanoi,https://www.geeksforgeeks.org/problems/tower-of-hanoi-1587115621/1,https://youtu.be/vDh9dGyegvs?si=FSXfXW3KnrSC5fdJ
-,,Q. Count ways in a Matrix,,https://youtu.be/cPV3Jxw2NPU?si=oAduxst7oQSP1Wej
-,Time and Space Complexity Analysis,Notations,,https://youtu.be/L2jJMTS-KfY?si=XD6RgPZYAxxQXo1C
-,,Recurrence Relation,,
-,,Trick,,
+Sorting Algorithms,Insertion Sort,Insertion Sort,,https://youtu.be/EHBeiIm59Yk
+,Selection Sort,Selection Sort [Uni and Bi - directional],,https://youtu.be/CfEZKDoVRcw
+,Bubble and Brick Sort,Bubble Sort and Brick Sort,,https://youtu.be/vXwKKzn6D4E
+,Counting Sort,Counting Sort,,
+,Radix Sort,Radix Sort,,
+,Pigeonhole Sort,Pigeonhole Sort,,https://youtu.be/sWX1eMPYzSU
+,Cyclic Sort,Cyclic Sort,,
+,,Cycle sort on fixed range,,
+,,Missing Number,,
+,,Find the duplicate number,,
+,,First missing positive,,
+Recursion,Introduction to recursion,,,
+,,,,
+,Recursion on Arrays,,,
+,,,,
+,Recursion on Strings,,,
+,,,,
 ,Backtracking,Backtracking and All it's variants,,https://youtu.be/rBJ6lNgIwfs?si=BjYRCAbitUHXCuIC
 ,,Q. Rat in a Maze,https://www.geeksforgeeks.org/problems/rat-in-a-maze-problem/1,https://youtu.be/HoaXmlzyAWs?si=UGRxfc3-KDoFUHXc
 ,,Q. All permutations,https://leetcode.com/problems/permutations/description/,https://youtu.be/m9HgMrsdvaQ?si=gcVhCyp5V_B-drJY

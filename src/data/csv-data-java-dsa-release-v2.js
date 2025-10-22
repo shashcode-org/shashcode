@@ -2026,15 +2026,150 @@ export const csvData = [
     "Subtopics": [
       {
         "Subtopic": "Introduction to recursion",
-        "Details": []
+        "Details": [
+          {
+            "Detail": "Recursion basics and syntax",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "print number code using recursion",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "function stack and recursive states",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "print number from N to 1",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "factorial of a number",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "fibonacci number",
+            "Links": [
+              "N/A"
+            ]
+          }
+        ]
       },
       {
         "Subtopic": "Recursion on Arrays",
-        "Details": []
+        "Details": [
+          {
+            "Detail": "how to apply recursion on arrays",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "Print array left to right using recursion",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "Print array right to left using recursion",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "check if target is present in array",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "find first occurrence of element in array",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "find last occurrence of element in array",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "Find Index",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "find all occurrence",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "binary search using recursion",
+            "Links": [
+              "N/A"
+            ]
+          }
+        ]
       },
       {
         "Subtopic": "Recursion on Strings",
-        "Details": []
+        "Details": [
+          {
+            "Detail": "recursion on strings",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "print string",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "reverse print string",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "check palindrome",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "remove a char from string",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "replace PI with 3.14",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "count and say",
+            "Links": [
+              "N/A"
+            ]
+          }
+        ]
       },
       {
         "Subtopic": "Backtracking",
