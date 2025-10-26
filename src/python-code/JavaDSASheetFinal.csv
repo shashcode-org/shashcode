@@ -158,6 +158,62 @@ Time & Space Complexity,Time and Space Complexity,What is Algorithm Complexity,,
 ,,Rules for calculating time complexity,,
 ,,Questions on time complexity,,
 ,,Big Oh cheat sheet,,
+Collections Framework,Collections in One Shot,Introduction,,https://youtu.be/CRG9tcCr8iU
+,,Need of Data Structure and Algorithms,,
+,,Data and Object in real world ,,
+,,Need for a framework,,
+,,What is collection framework? ,,
+,,Modules Vs Framework Vs Library Vs Package,,
+,,How to Import Collections Framework,,
+,,Hierarchy of Collections Framework - Interfaces & Classes,,
+,,Functions in Collection Interface ,,
+,,Java Generics and AutoBoxing,,
+,,List Interface,,
+,,ArrayList & its functions,,
+,,How to Iterate your List using Iterator,,
+,,Internal Working of ArrayList,,
+,,Sorting using Comparator,,
+,,Sorting based on Custom Comparator,,
+,,How to Iterate your List using ListIterator,,
+,,Time Complexity of ArrayList,,
+,,LinkedList & its functions,,
+,,ArrayList VS LinkedList,,
+,,Time Complexity of LinkedList,,
+,,Vectors and their use,,
+,,Stack & its functions,,
+,,Time Complexity of Stack,,
+,,Queue & its functions,,
+,,Queue using LinkedList,,
+,,Queue using ArrayDeque,,
+,,Deque Interface using ArrayDeque & LinkedList,,
+,,PriorityQueue Implementation of Queue,,
+,,Map Interface ,,
+,,Hashing Concept,,
+,,How Map uses Hashing Concept,,
+,,HashMap & its functions,,
+,,How to traverse a Map using Entry Interface,,
+,,Map using LinkedHashMap,,
+,,Map using TreeMap,,
+,,BST,,
+,,Self Balanced BST or Red-Black Tree,,
+,,TreeMap & its functions,,
+,,Set Interface,,
+,,HashSet,,
+,,How HashSet works Internally,,
+,,LinkedHashSet,,
+,,TreeSet,,
+String Manipulation,Problems on strings,Q. Print all substrings,,https://youtu.be/I1rgYRi1tXE
+,,Q. Reverse a string,,https://youtu.be/m9QAjIVnmp4
+,,Q. Check if a string is pallindrome,,https://youtu.be/-HGtMO4MkWs
+,,Q. Reverse words in a String,,https://youtu.be/KhNAMB3jDOU
+,,Q. Check if two strings are anagram,https://www.geeksforgeeks.org/problems/anagram-1587115620/1,https://youtu.be/SFF3ND7TPc0
+,,Q. Reverse Words in a String -iii,https://leetcode.com/problems/reverse-words-in-a-string-iii/,https://youtu.be/ajhV7EYLfOY
+,,Q. Longest Pallindrome,,TBD
+,,Q. Find all Anagrams,,TBD
+,,Q. K-Anagrams,,TBD
+,,Q. Roman to Integer,,TBD
+,,Q. First Repeated word in a string,,TBD
+,,Q. Isomorphic String checker,,TBD
 Maths in DSA,Mathematics in DSA - Part 1,find number of digits,,
 ,,appending digits to the end,,
 ,,insert digit at the front,,
@@ -219,7 +275,7 @@ Searching Algorithms,Linear Search,Linear Search,,https://youtu.be/slqFdKVMjeQ
 ,,Avoid Overflow in Finding Mid,,
 ,,Why Binary Search is Faster,,
 ,,Find if Array is Sorted in Increasing or Decreasing Order,,
-,Questions on Binary Search Part 1,Q1. Ceiling of a Number,,https://youtu.be/P-vl_BrdxJA
+,Basic Questions on Binary Search,Q1. Ceiling of a Number,,https://youtu.be/P-vl_BrdxJA
 ,,Q2. Floor of a Number,,
 ,,Q3. First and Last Position of element in sorted array,https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/description/,
 ,,Q4. Count all occurrence of element in an array,,
@@ -244,22 +300,13 @@ Searching Algorithms,Linear Search,Linear Search,,https://youtu.be/slqFdKVMjeQ
 ,,Q4. Capacity To Ship Packages Within D Days,https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/description/,
 ,Binary Search on two arrays,Q1. Median of two sorted arrays,https://leetcode.com/problems/median-of-two-sorted-arrays/,
 ,,Q2. Kth element of two sorted arrays,https://www.geeksforgeeks.org/problems/k-th-element-of-two-sorted-array1317/1,
-,Questions on Binary Search Part 6,Q1. Single Element in a Sorted Array ,https://leetcode.com/problems/single-element-in-a-sorted-array/description/,https://youtu.be/f09DayNeigg
+,Miscellaneous Questions on Binary Search,Q1. Single Element in a Sorted Array ,https://leetcode.com/problems/single-element-in-a-sorted-array/description/,https://youtu.be/f09DayNeigg
 ,,Q2. Finding square root ,https://leetcode.com/problems/sqrtx/description/,
 ,,Q3. Count Squares ,https://www.geeksforgeeks.org/problems/count-squares3649/1,
 ,Other Searching Algorithms,Jump Search,,https://youtu.be/rFwBm-VT99A
 ,,Interpolation Search,,
 ,,Exponential Search,,
 ,,Ternary Search,,
-Matrix,Questions on Matrix - 1,Q. Median of a Sorted Matrix,https://www.geeksforgeeks.org/problems/median-in-a-row-wise-sorted-matrix1527/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=practice_card,https://youtu.be/aNIfGl1ZKQE
-,,Q. Kth Smallest element of a Matrix,https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/,https://youtu.be/HuOcDlB1uXk
-,Questions on Matrix - 2,Q. Search a 2d matrix,https://leetcode.com/problems/search-a-2d-matrix/description/,https://youtu.be/EXcmeMx3Dq0
-,,Q. Search a 2d matrix 2,https://leetcode.com/problems/search-a-2d-matrix-ii/,
-,Questions on Matrix - 3,Q. Transpose a Matrix,https://www.geeksforgeeks.org/problems/transpose-of-matrix-1587115621/1,https://youtu.be/hA_yvtCpjsg
-,,Q. Rotate image,https://leetcode.com/problems/rotate-image/,
-,,Q. Rotate by 90 degree,https://www.geeksforgeeks.org/problems/rotate-by-90-degree0356/1,
-,Questions on Matrix - 4,Q. Spiral Matrix - 1,https://leetcode.com/problems/spiral-matrix/,https://youtu.be/uAaoWcYX2_8
-,,Q. Spiral Matrix - 2,https://leetcode.com/problems/spiral-matrix-ii/description/,
 Sorting Algorithms,Insertion Sort,Insertion Sort,,https://youtu.be/EHBeiIm59Yk
 ,Selection Sort,Selection Sort [Uni and Bi - directional],,https://youtu.be/CfEZKDoVRcw
 ,Bubble and Brick Sort,Bubble Sort and Brick Sort,,https://youtu.be/vXwKKzn6D4E
@@ -271,6 +318,36 @@ Sorting Algorithms,Insertion Sort,Insertion Sort,,https://youtu.be/EHBeiIm59Yk
 ,,Missing Number,,
 ,,Find the duplicate number,,
 ,,First missing positive,,
+Matrix,Questions on Matrix - 1,Q. Median of a Sorted Matrix,https://www.geeksforgeeks.org/problems/median-in-a-row-wise-sorted-matrix1527/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=practice_card,https://youtu.be/aNIfGl1ZKQE
+,,Q. Kth Smallest element of a Matrix,https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/,https://youtu.be/HuOcDlB1uXk
+,Questions on Matrix - 2,Q. Search a 2d matrix,https://leetcode.com/problems/search-a-2d-matrix/description/,https://youtu.be/EXcmeMx3Dq0
+,,Q. Search a 2d matrix 2,https://leetcode.com/problems/search-a-2d-matrix-ii/,
+,Questions on Matrix - 3,Q. Transpose a Matrix,https://www.geeksforgeeks.org/problems/transpose-of-matrix-1587115621/1,https://youtu.be/hA_yvtCpjsg
+,,Q. Rotate image,https://leetcode.com/problems/rotate-image/,
+,,Q. Rotate by 90 degree,https://www.geeksforgeeks.org/problems/rotate-by-90-degree0356/1,
+,Questions on Matrix - 4,Q. Spiral Matrix - 1,https://leetcode.com/problems/spiral-matrix/,https://youtu.be/uAaoWcYX2_8
+,,Q. Spiral Matrix - 2,https://leetcode.com/problems/spiral-matrix-ii/description/,
+Sliding Window,Sliding Window Technique,What is sliding window,,https://youtu.be/DQMxp7TS2BI?si=WN_ksJt1fWPXuLmF
+,,Q. Maximum Sum Subarray of Size K,https://www.geeksforgeeks.org/problems/max-sum-subarray-of-size-k5313/1,https://youtu.be/rGl2Z6fuAas?si=t3JH4diL-nDnBwGe
+,,Q. First Negative Number in Each Subarray of Size K,https://www.geeksforgeeks.org/problems/first-negative-integer-in-every-window-of-size-k3345/1,https://youtu.be/Rot0y4cmlNw?si=TAp7sbW1OOQkW57C
+,,Q. Chocolate Distribution Problem,https://www.geeksforgeeks.org/problems/chocolate-distribution-problem3825/1,https://youtu.be/oYNU1TD9W5Y?si=1rn_BjF9-LIJDwcH
+,,Q. Smallest subarray with sum greater than x,https://www.geeksforgeeks.org/problems/smallest-subarray-with-sum-greater-than-x5651/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article,https://youtu.be/UXValb-h70s?si=VaCxJsB7-WKbL4nW
+,,Q. Longest Substring with K unique Elements,https://www.geeksforgeeks.org/problems/longest-k-unique-characters-substring0853/1,https://youtu.be/Yp3T06_27MY?si=GUuisgzt8fXO5gF6
+,,Q. Longest Substring without repeating elements,https://leetcode.com/problems/longest-substring-without-repeating-characters/description/,https://youtu.be/Vgo7tvBm8OU?si=fxI1Ggsz3C_sMlIj
+,,Q. Count Occurances of Anagrams,https://www.geeksforgeeks.org/problems/count-occurences-of-anagrams5839/1,https://youtu.be/PVXVsSkItpY?si=0zBiqLK0x9yzN85K
+,,Q. Minimum Window Substring,https://leetcode.com/problems/minimum-window-substring/description/,https://youtu.be/26E3K8Njm7M
+,,Q. Sliding Window Maximum,https://leetcode.com/problems/sliding-window-maximum/description/,https://youtu.be/jOoZuTrfpjc
+Two Pointers,Questions on two pointer,Q. Container with Most Water,,TBD
+,,Q. Trapping Rainwater,,TBD
+,,Q. Find Pair with a given sum in sorted Array,,TBD
+,,Q. Remove Duplicates from Sorted Array,,TBD
+,,Q. Maximum Consecutive ones,,TBD
+,,Q. Reverse Pairs,,TBD
+,,Q. The Celebrity Problem,,TBD
+String Pattern Matching,Pattern Matching Algorithms,KMP Algorithm,,TBD
+,,Rabin Karp,,TBD
+,,Z Algorithm,,TBD
+,,Boyer Moore Algorithm,,TBD
 Recursion,Introduction to recursion,Recursion basics and syntax,,
 ,,print number code using recursion,,
 ,,function stack and recursive states,,
@@ -315,9 +392,48 @@ Recursion,Introduction to recursion,Recursion basics and syntax,,
 ,,Q. Quick Sort,https://www.geeksforgeeks.org/problems/quick-sort/1,https://youtu.be/RFbZx9nTB3s?si=wCJ1lyskolGze6pb
 ,,Q. Count Inversion,,
 ,,Strassen's Matrix Multiplication,,
-Stack,Stack Data Structure,Stack,,https://youtu.be/TpuQWpma7ug
+Dynamic Programming (DP),Dynamic Programming Part 1,Overlapping Subproblems,,https://youtu.be/P3MFBCZCGXs?si=FNhk7mjC7Cf0MZRD
+,,Optimal Substructures,,
+,,Q. Fibonacci Number,https://leetcode.com/problems/fibonacci-number/description/,
+,,Q. Climbing Stairs,https://leetcode.com/problems/climbing-stairs/description/,
+,,Q. Counting Bits,https://leetcode.com/problems/counting-bits/description/,
+,,Q. Min Cost Climbing Stairs,https://leetcode.com/problems/min-cost-climbing-stairs/description/,
+,,Q. House Robber 1,https://leetcode.com/problems/house-robber/description/,
+,,Q. House Robber 2,https://leetcode.com/problems/house-robber-ii/description/,
+,,Q. Check if there exist a subsequence with sum K,https://www.geeksforgeeks.org/problems/check-if-there-exists-a-subsequence-with-sum-k/0,
+,,Q. Perfect Sum Problem,https://www.geeksforgeeks.org/problems/perfect-sum-problem5633/0,
+,,Q. 01 Knapsack Problem,https://www.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1,
+,,Q. Coin Change 1,https://leetcode.com/problems/coin-change/description/,
+,,Q. Coin Change 2,https://leetcode.com/problems/coin-change-ii/description/,
+,,Q. Rod Cutting Problem,https://www.geeksforgeeks.org/problems/rod-cutting0840/1,
+,,Q. Longest Common Subsequence,https://leetcode.com/problems/longest-common-subsequence/description/,
+,,Q. Longest Palindromic Subsequence,https://leetcode.com/problems/longest-palindromic-subsequence/description/,
+,,Q. Longest Increasing Subsequence,https://leetcode.com/problems/longest-increasing-subsequence/description/,
+,,Q. Maximum Length of pair chain,https://leetcode.com/problems/maximum-length-of-pair-chain/description/,
+,,Q. Unique Paths 1,https://leetcode.com/problems/unique-paths/description/,
+,,Q. Unique Paths 2,https://leetcode.com/problems/unique-paths-ii/description/,
+,Dynamic Programming Part 2,Q. Pallindromic Partitioning,,TBD
+,,Kadanes Algorithm,,
+,,Q. Maximum Sum Subarray,,
+,,Q. Maximum Product Subarray,,
+,,Q. Maximum Sum Rectangle,,
+,,Q. Edit Distance,,
+,,Q. Word Break Problem,,
+Greedy Algorithms,Greedy Algorithm Introduction,Intro to Greedy,,https://youtu.be/ofaNk7NerW8
+,,Q. Activity Selection Problem,https://www.geeksforgeeks.org/problems/activity-selection-1587115620/1,
+,,Q. Non Overlapping Intervals,https://leetcode.com/problems/non-overlapping-intervals/description/,
+,,Q. Minimum Number of Arrows to burst balloons,https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/description/,
+,,Q. Job Sequencing problem,https://www.geeksforgeeks.org/problems/job-sequencing-problem-1587115620/1,
+,,Q. Assign mice to Holes,https://www.geeksforgeeks.org/problems/assign-mice-holes3053/0,
+,,Q. Police and Thieves,https://www.geeksforgeeks.org/problems/police-and-thieves--141631/1,
+,,Q. Fractional Knapsack,https://www.geeksforgeeks.org/problems/fractional-knapsack-1587115620/1,
+,,Q. Maximum units on a truck,https://leetcode.com/problems/maximum-units-on-a-truck/description/,
+,,Q. Maximum Bags with full capacity of rocks,https://leetcode.com/problems/maximum-bags-with-full-capacity-of-rocks/description/,
+,,Q. Jump Game 1,https://leetcode.com/problems/jump-game/description/,
+,,Q. Jump Game 2,https://leetcode.com/problems/jump-game-ii/description/,
+Stack,Stack Basics,Stack,,https://youtu.be/TpuQWpma7ug
 ,,Stack using Arrays,,
-,,Q. Check parenthesis,https://leetcode.com/problems/valid-parentheses/description/,https://youtu.be/CNOoP25NpfQ
+,Questions on stack,Q. Check parenthesis,https://leetcode.com/problems/valid-parentheses/description/,https://youtu.be/CNOoP25NpfQ
 ,,Q. Remove minimum brackets to balance string,https://www.geeksforgeeks.org/problems/count-the-reversals0401/1,https://youtu.be/FB6wSdPjVGw
 ,,Q. Add minimum brackets to balance string,https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/description/,https://youtu.be/BNFBv1KtcDM
 ,,Q. Swap minimum brackets to balance string,https://leetcode.com/problems/minimum-number-of-swaps-to-make-the-string-balanced/description/,https://youtu.be/RZTapGf3pzI
@@ -330,73 +446,17 @@ Stack,Stack Data Structure,Stack,,https://youtu.be/TpuQWpma7ug
 ,,Q. Largest Rectangle in Histogram + Previous smaller element,https://leetcode.com/problems/largest-rectangle-in-histogram/description/,https://youtu.be/qUS-DZU4fj4
 ,,Q. Max Rectangle,https://leetcode.com/problems/maximal-rectangle/description/,https://youtu.be/DPkDmhCyyuc
 ,,Q. Longest Valid Parentheses,https://leetcode.com/problems/longest-valid-parentheses/description/,https://youtu.be/gqQsbdTcey0
-Queue,Queue Data Structure,Queue,,https://youtu.be/9m4SZPRQXQI?si=izPej7j2qhbiKrys
+Queue,Queue Basics,Queue,,https://youtu.be/9m4SZPRQXQI?si=izPej7j2qhbiKrys
 ,,Queue using Array,,
 ,,Circular Queue ,,
 ,,Double ended Queue,,
 ,,Implement queue using stack ,,https://youtu.be/Enygu8ivr0w?si=SgzjEHke5oc_cwdk
 ,,Implement stack using queue,,https://youtu.be/z4FxPUgXn90?si=86tva8iOIGV5E74n
-,,Q. LRU Cache,,TBL
+,Questions on queue,Q. LRU Cache,,TBL
 ,,Q. LFU Cache,,TBL
 ,,Q. Rotten Oranges,,TBL
 ,,Q. Sliding Window Maximum,,TBL
 ,,Q. Find Maximum and Minimum of Every Window Size,,TBL
-Collections Framework,Collections in One Shot,Introduction,,https://youtu.be/CRG9tcCr8iU
-,,Need of Data Structure and Algorithms,,
-,,Data and Object in real world ,,
-,,Need for a framework,,
-,,What is collection framework? ,,
-,,Modules Vs Framework Vs Library Vs Package,,
-,,How to Import Collections Framework,,
-,,Hierarchy of Collections Framework - Interfaces & Classes,,
-,,Functions in Collection Interface ,,
-,,Java Generics and AutoBoxing,,
-,,List Interface,,
-,,ArrayList & its functions,,
-,,How to Iterate your List using Iterator,,
-,,Internal Working of ArrayList,,
-,,Sorting using Comparator,,
-,,Sorting based on Custom Comparator,,
-,,How to Iterate your List using ListIterator,,
-,,Time Complexity of ArrayList,,
-,,LinkedList & its functions,,
-,,ArrayList VS LinkedList,,
-,,Time Complexity of LinkedList,,
-,,Vectors and their use,,
-,,Stack & its functions,,
-,,Time Complexity of Stack,,
-,,Queue & its functions,,
-,,Queue using LinkedList,,
-,,Queue using ArrayDeque,,
-,,Deque Interface using ArrayDeque & LinkedList,,
-,,PriorityQueue Implementation of Queue,,
-,,Map Interface ,,
-,,Hashing Concept,,
-,,How Map uses Hashing Concept,,
-,,HashMap & its functions,,
-,,How to traverse a Map using Entry Interface,,
-,,Map using LinkedHashMap,,
-,,Map using TreeMap,,
-,,BST,,
-,,Self Balanced BST or Red-Black Tree,,
-,,TreeMap & its functions,,
-,,Set Interface,,
-,,HashSet,,
-,,How HashSet works Internally,,
-,,LinkedHashSet,,
-,,TreeSet,,
-String Manipulation,Problems on strings,Q. Print all substrings,,https://youtu.be/I1rgYRi1tXE
-,,Q. Reverse a string,,https://youtu.be/m9QAjIVnmp4
-,,Q. Check if a string is pallindrome,,https://youtu.be/-HGtMO4MkWs
-,,Q. Reverse words in a String,,https://youtu.be/KhNAMB3jDOU
-,,Q. Check if two strings are anagram,https://www.geeksforgeeks.org/problems/anagram-1587115620/1,https://youtu.be/SFF3ND7TPc0
-,,Q. Reverse Words in a String -iii,https://leetcode.com/problems/reverse-words-in-a-string-iii/,https://youtu.be/ajhV7EYLfOY
-,,Q. Longest Pallindrome,,TBD
-,,Q. Find all Anagrams,,TBD
-,,Q. K-Anagrams,,TBD
-,,Q. Roman to Integer,,TBD
-,,Q. First Repeated word in a string,,TBD
-,,Q. Isomorphic String checker,,TBD
 Hashing,Hashing,Components of Hashing,,https://youtu.be/vB3WKXNH-v4?si=oAOjWmxgCLXQvjC2
 ,,How hashing works?,,
 ,,Types of Hash Functions,,
@@ -431,23 +491,6 @@ Hashing,Hashing,Components of Hashing,,https://youtu.be/vB3WKXNH-v4?si=oAOjWmxgC
 ,,Q. Largest subarray with equal number of 0s and 1s,https://www.geeksforgeeks.org/problems/largest-subarray-of-0s-and-1s/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article,https://youtu.be/qOCuB-IC9KA?si=NEEgvm_zlI-dvSm_
 ,,Q. Find pairs with given sum such that elements of pair are in different rows,,TBD
 ,,Bucket Sort Algorithm,,https://youtu.be/5Pe3YSnqGh8?si=8cnivpNvhCX6X0hf
-Sliding Window,Sliding Window Technique,What is sliding window,,https://youtu.be/DQMxp7TS2BI?si=WN_ksJt1fWPXuLmF
-,,Q. Maximum Sum Subarray of Size K,https://www.geeksforgeeks.org/problems/max-sum-subarray-of-size-k5313/1,https://youtu.be/rGl2Z6fuAas?si=t3JH4diL-nDnBwGe
-,,Q. First Negative Number in Each Subarray of Size K,https://www.geeksforgeeks.org/problems/first-negative-integer-in-every-window-of-size-k3345/1,https://youtu.be/Rot0y4cmlNw?si=TAp7sbW1OOQkW57C
-,,Q. Chocolate Distribution Problem,https://www.geeksforgeeks.org/problems/chocolate-distribution-problem3825/1,https://youtu.be/oYNU1TD9W5Y?si=1rn_BjF9-LIJDwcH
-,,Q. Smallest subarray with sum greater than x,https://www.geeksforgeeks.org/problems/smallest-subarray-with-sum-greater-than-x5651/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article,https://youtu.be/UXValb-h70s?si=VaCxJsB7-WKbL4nW
-,,Q. Longest Substring with K unique Elements,https://www.geeksforgeeks.org/problems/longest-k-unique-characters-substring0853/1,https://youtu.be/Yp3T06_27MY?si=GUuisgzt8fXO5gF6
-,,Q. Longest Substring without repeating elements,https://leetcode.com/problems/longest-substring-without-repeating-characters/description/,https://youtu.be/Vgo7tvBm8OU?si=fxI1Ggsz3C_sMlIj
-,,Q. Count Occurances of Anagrams,https://www.geeksforgeeks.org/problems/count-occurences-of-anagrams5839/1,https://youtu.be/PVXVsSkItpY?si=0zBiqLK0x9yzN85K
-,,Q. Minimum Window Substring,https://leetcode.com/problems/minimum-window-substring/description/,https://youtu.be/26E3K8Njm7M
-,,Q. Sliding Window Maximum,https://leetcode.com/problems/sliding-window-maximum/description/,https://youtu.be/jOoZuTrfpjc
-Two Pointers,Questions on two pointer,Q. Container with Most Water,,TBD
-,,Q. Trapping Rainwater,,TBD
-,,Q. Find Pair with a given sum in sorted Array,,TBD
-,,Q. Remove Duplicates from Sorted Array,,TBD
-,,Q. Maximum Consecutive ones,,TBD
-,,Q. Reverse Pairs,,TBD
-,,Q. The Celebrity Problem,,TBD
 Linked List,Linked List Data Structure,Intro to linked list Data Structure,,https://youtu.be/cf4RNGYI6hk?si=aY6v4j2CUzgaPlpm
 ,,Types of linked list,,
 ,,All operations of Single linked list,,
@@ -619,45 +662,6 @@ Graphs,Graph Introduction,1. Introduction to graphs,,https://youtu.be/f-buby0Aac
 ,,Minimum spanning tree,,https://youtu.be/XozGcnGHJXM
 ,,Prim's Algorithm for minimum spanning tree,https://www.geeksforgeeks.org/problems/minimum-spanning-tree/1,https://youtu.be/4EuFmlbcSY8
 ,,Kruskal's Algorithm for minimum spanning tree,https://www.geeksforgeeks.org/problems/minimum-spanning-tree/1,https://youtu.be/dBGYpKLY2bQ
-Dynamic Programming (DP),Dynamic Programming Part 1,Overlapping Subproblems,,https://youtu.be/P3MFBCZCGXs?si=FNhk7mjC7Cf0MZRD
-,,Optimal Substructures,,
-,,Q. Fibonacci Number,https://leetcode.com/problems/fibonacci-number/description/,
-,,Q. Climbing Stairs,https://leetcode.com/problems/climbing-stairs/description/,
-,,Q. Counting Bits,https://leetcode.com/problems/counting-bits/description/,
-,,Q. Min Cost Climbing Stairs,https://leetcode.com/problems/min-cost-climbing-stairs/description/,
-,,Q. House Robber 1,https://leetcode.com/problems/house-robber/description/,
-,,Q. House Robber 2,https://leetcode.com/problems/house-robber-ii/description/,
-,,Q. Check if there exist a subsequence with sum K,https://www.geeksforgeeks.org/problems/check-if-there-exists-a-subsequence-with-sum-k/0,
-,,Q. Perfect Sum Problem,https://www.geeksforgeeks.org/problems/perfect-sum-problem5633/0,
-,,Q. 01 Knapsack Problem,https://www.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1,
-,,Q. Coin Change 1,https://leetcode.com/problems/coin-change/description/,
-,,Q. Coin Change 2,https://leetcode.com/problems/coin-change-ii/description/,
-,,Q. Rod Cutting Problem,https://www.geeksforgeeks.org/problems/rod-cutting0840/1,
-,,Q. Longest Common Subsequence,https://leetcode.com/problems/longest-common-subsequence/description/,
-,,Q. Longest Palindromic Subsequence,https://leetcode.com/problems/longest-palindromic-subsequence/description/,
-,,Q. Longest Increasing Subsequence,https://leetcode.com/problems/longest-increasing-subsequence/description/,
-,,Q. Maximum Length of pair chain,https://leetcode.com/problems/maximum-length-of-pair-chain/description/,
-,,Q. Unique Paths 1,https://leetcode.com/problems/unique-paths/description/,
-,,Q. Unique Paths 2,https://leetcode.com/problems/unique-paths-ii/description/,
-,Dynamic Programming Part 2,Q. Pallindromic Partitioning,,TBD
-,,Kadanes Algorithm,,
-,,Q. Maximum Sum Subarray,,
-,,Q. Maximum Product Subarray,,
-,,Q. Maximum Sum Rectangle,,
-,,Q. Edit Distance,,
-,,Q. Word Break Problem,,
-Greedy Algorithms,Greedy Algorithm Introduction,Intro to Greedy,,https://youtu.be/ofaNk7NerW8
-,,Q. Activity Selection Problem,https://www.geeksforgeeks.org/problems/activity-selection-1587115620/1,
-,,Q. Non Overlapping Intervals,https://leetcode.com/problems/non-overlapping-intervals/description/,
-,,Q. Minimum Number of Arrows to burst balloons,https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/description/,
-,,Q. Job Sequencing problem,https://www.geeksforgeeks.org/problems/job-sequencing-problem-1587115620/1,
-,,Q. Assign mice to Holes,https://www.geeksforgeeks.org/problems/assign-mice-holes3053/0,
-,,Q. Police and Thieves,https://www.geeksforgeeks.org/problems/police-and-thieves--141631/1,
-,,Q. Fractional Knapsack,https://www.geeksforgeeks.org/problems/fractional-knapsack-1587115620/1,
-,,Q. Maximum units on a truck,https://leetcode.com/problems/maximum-units-on-a-truck/description/,
-,,Q. Maximum Bags with full capacity of rocks,https://leetcode.com/problems/maximum-bags-with-full-capacity-of-rocks/description/,
-,,Q. Jump Game 1,https://leetcode.com/problems/jump-game/description/,
-,,Q. Jump Game 2,https://leetcode.com/problems/jump-game-ii/description/,
 Tries,Trie,Introduction to Trie,,TBD
 ,,Implement a Trie in java,,TBD
 ,,"Insert, Search and delete operations",,TBD
@@ -665,12 +669,7 @@ Tries,Trie,Introduction to Trie,,TBD
 ,,Q. Number of Distinct substrings in string,,TBD
 ,,Q. Power Set,,TBD
 ,,Q. Maximum XoR of two Numbers in an Array,,TBD
-String Pattern Matching,Pattern Matching Algorithms,KMP Algorithm,,TBD
-,,Rabin Karp,,TBD
-,,Z Algorithm,,TBD
-,,Boyer Moore Algorithm,,TBD
 Segment Trees,Extra,Extra,,TBD
 Square Decomposition,Extra,Extra,,TBD
-Segment tree,Extra,Extra,,TBD
 Range query,Extra,Extra,,TBD
 Red Black Tree,Extra,Extra,,TBD
