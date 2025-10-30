@@ -1675,9 +1675,9 @@ export const csvData = [
             ]
           },
           {
-            "Detail": "find trailing zero in factorial of a number",
+            "Detail": "Q. find trailing zero in factorial of a number",
             "Links": [
-              "N/A"
+              "https://leetcode.com/problems/factorial-trailing-zeroes/"
             ]
           },
           {
@@ -1787,34 +1787,34 @@ export const csvData = [
         "Subtopic": "Standard Questions in Bit Manipulation",
         "Details": [
           {
-            "Detail": "Find the Unique Number (all others appear twice) - [Single Number I]",
+            "Detail": "Q. Find the Unique Number (all others appear twice) - [Single Number I]",
             "Links": [
-              "N/A"
+              "https://leetcode.com/problems/single-number/description/"
             ],
             "Video Link": "https://youtu.be/UTVvLfkuSEs"
           },
           {
-            "Detail": "Find Unique Number (all others appear thrice) [Single Number II]",
+            "Detail": "Q. Find Unique Number (all others appear thrice) [Single Number II]",
             "Links": [
-              "N/A"
+              "https://leetcode.com/problems/single-number-ii/description/"
             ]
           },
           {
-            "Detail": "Find 2 Unique Numbers (all others appear twice) [Single Number III]",
+            "Detail": "Q. Find 2 Unique Numbers (all others appear twice) [Single Number III]",
             "Links": [
-              "N/A"
+              "https://leetcode.com/problems/single-number-iii/description/"
             ]
           },
           {
-            "Detail": "Minimum Number of Bit Flips (Convert A \u2192 B)",
+            "Detail": "Q. Minimum Number of Bit Flips (Convert A \u2192 B)",
             "Links": [
-              "N/A"
+              "https://leetcode.com/problems/minimum-bit-flips-to-convert-number/description/"
             ]
           },
           {
-            "Detail": "Print All Subsets (Power Set)",
+            "Detail": "Q. Print All Subsets (Power Set)",
             "Links": [
-              "N/A"
+              "https://leetcode.com/problems/subsets/description/"
             ]
           }
         ]
@@ -1960,32 +1960,32 @@ export const csvData = [
         "Subtopic": "Basic Questions on Binary Search",
         "Details": [
           {
-            "Detail": "Q1. Ceiling of a Number",
+            "Detail": "Q. Ceiling of a Number",
             "Links": [
               "N/A"
             ],
             "Video Link": "https://youtu.be/P-vl_BrdxJA"
           },
           {
-            "Detail": "Q2. Floor of a Number",
+            "Detail": "Q. Floor of a Number",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "Q3. First and Last Position of element in sorted array",
+            "Detail": "Q. First and Last Position of element in sorted array",
             "Links": [
               "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/description/"
             ]
           },
           {
-            "Detail": "Q4. Count all occurrence of element in an array",
+            "Detail": "Q. Count all occurrence of element in an array",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "Q5. Find smallest letter greater than target",
+            "Detail": "Q. Find smallest letter greater than target",
             "Links": [
               "https://leetcode.com/problems/find-smallest-letter-greater-than-target/description/"
             ]
@@ -2003,19 +2003,19 @@ export const csvData = [
             "Video Link": "https://youtu.be/DoVawmdh5NM"
           },
           {
-            "Detail": "Q1. Find Minimum Difference in a Sorted array.",
+            "Detail": "Q. Find Minimum Difference in a Sorted array.",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "Q2. Find an element in an array of Infinite size",
+            "Detail": "Q. Find an element in an array of Infinite size",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "Q3. Find first 1 in an infinite and sorted array of 0s and 1s",
+            "Detail": "Q. Find first 1 in an infinite and sorted array of 0s and 1s",
             "Links": [
               "N/A"
             ]
@@ -2033,19 +2033,19 @@ export const csvData = [
             "Video Link": "https://youtu.be/IK5eSvNw9Qw?si=f6gSi2LkYE4VAtSQ"
           },
           {
-            "Detail": "Q1. Valid Mountain Array",
+            "Detail": "Q. Valid Mountain Array",
             "Links": [
               "https://leetcode.com/problems/valid-mountain-array/"
             ]
           },
           {
-            "Detail": "Q2. Peak Index in Mountain Array",
+            "Detail": "Q. Peak Index in Mountain Array",
             "Links": [
               "https://leetcode.com/problems/peak-index-in-a-mountain-array/"
             ]
           },
           {
-            "Detail": "Q3. find in mountain array",
+            "Detail": "Q. find in mountain array",
             "Links": [
               "https://leetcode.com/problems/find-in-mountain-array/"
             ]
@@ -2056,32 +2056,32 @@ export const csvData = [
         "Subtopic": "Binary Search on Rotated Sorted Array",
         "Details": [
           {
-            "Detail": "Q1. Search in rotated sorted array",
+            "Detail": "Q. Search in rotated sorted array",
             "Links": [
               "https://leetcode.com/problems/search-in-rotated-sorted-array/"
             ],
             "Video Link": "https://youtu.be/n12QcCu8oBI"
           },
           {
-            "Detail": "Q2. Search in rotated sorted array - 2",
+            "Detail": "Q. Search in rotated sorted array - 2",
             "Links": [
               "https://leetcode.com/problems/search-in-rotated-sorted-array-ii/description/"
             ]
           },
           {
-            "Detail": "Q3. Find minimum in rotated sorted array",
+            "Detail": "Q. Find minimum in rotated sorted array",
             "Links": [
               "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/"
             ]
           },
           {
-            "Detail": "Q4. find k rotation",
+            "Detail": "Q. find k rotation",
             "Links": [
               "https://www.geeksforgeeks.org/problems/rotation4723/1"
             ]
           },
           {
-            "Detail": "Q5. Find minimum in rotated sorted array - 2",
+            "Detail": "Q. Find minimum in rotated sorted array - 2",
             "Links": [
               "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/"
             ]
@@ -2098,25 +2098,25 @@ export const csvData = [
             ]
           },
           {
-            "Detail": "Q1. Allocated minimum number of pages",
+            "Detail": "Q. Allocated minimum number of pages",
             "Links": [
               "https://www.geeksforgeeks.org/problems/allocate-minimum-number-of-pages0937/1"
             ]
           },
           {
-            "Detail": "Q2. Aggressive cows",
+            "Detail": "Q. Aggressive cows",
             "Links": [
               "https://www.geeksforgeeks.org/problems/aggressive-cows/1"
             ]
           },
           {
-            "Detail": "Q3. Koko Eating bananas",
+            "Detail": "Q. Koko Eating bananas",
             "Links": [
               "https://leetcode.com/problems/koko-eating-bananas/description/"
             ]
           },
           {
-            "Detail": "Q4. Capacity To Ship Packages Within D Days",
+            "Detail": "Q. Capacity To Ship Packages Within D Days",
             "Links": [
               "https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/description/"
             ]
@@ -2127,13 +2127,13 @@ export const csvData = [
         "Subtopic": "Binary Search on two arrays",
         "Details": [
           {
-            "Detail": "Q1. Median of two sorted arrays",
+            "Detail": "Q. Median of two sorted arrays",
             "Links": [
               "https://leetcode.com/problems/median-of-two-sorted-arrays/"
             ]
           },
           {
-            "Detail": "Q2. Kth element of two sorted arrays",
+            "Detail": "Q. Kth element of two sorted arrays",
             "Links": [
               "https://www.geeksforgeeks.org/problems/k-th-element-of-two-sorted-array1317/1"
             ]
@@ -2144,20 +2144,20 @@ export const csvData = [
         "Subtopic": "Miscellaneous Questions on Binary Search",
         "Details": [
           {
-            "Detail": "Q1. Single Element in a Sorted Array ",
+            "Detail": "Q. Single Element in a Sorted Array ",
             "Links": [
               "https://leetcode.com/problems/single-element-in-a-sorted-array/description/"
             ],
             "Video Link": "https://youtu.be/f09DayNeigg"
           },
           {
-            "Detail": "Q2. Finding square root ",
+            "Detail": "Q. Finding square root ",
             "Links": [
               "https://leetcode.com/problems/sqrtx/description/"
             ]
           },
           {
-            "Detail": "Q3. Count Squares ",
+            "Detail": "Q. Count Squares ",
             "Links": [
               "https://www.geeksforgeeks.org/problems/count-squares3649/1"
             ]
@@ -2285,21 +2285,21 @@ export const csvData = [
             ]
           },
           {
-            "Detail": "Missing Number",
+            "Detail": "Q. Missing Number",
             "Links": [
-              "N/A"
+              "https://leetcode.com/problems/missing-number/description/"
             ]
           },
           {
-            "Detail": "Find the duplicate number",
+            "Detail": "Q. Find the duplicate number",
             "Links": [
-              "N/A"
+              "https://leetcode.com/problems/find-the-duplicate-number/description/"
             ]
           },
           {
-            "Detail": "First missing positive",
+            "Detail": "Q. First missing positive",
             "Links": [
-              "N/A"
+              "https://leetcode.com/problems/first-missing-positive/description/"
             ]
           }
         ]
@@ -2479,49 +2479,49 @@ export const csvData = [
           {
             "Detail": "Q. Container with Most Water",
             "Links": [
-              "N/A"
+              "https://leetcode.com/problems/container-with-most-water/description/"
             ],
             "Video Link": "TBD"
           },
           {
             "Detail": "Q. Trapping Rainwater",
             "Links": [
-              "N/A"
+              "https://leetcode.com/problems/trapping-rain-water/description/"
             ],
             "Video Link": "TBD"
           },
           {
             "Detail": "Q. Find Pair with a given sum in sorted Array",
             "Links": [
-              "N/A"
+              "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/"
             ],
             "Video Link": "TBD"
           },
           {
             "Detail": "Q. Remove Duplicates from Sorted Array",
             "Links": [
-              "N/A"
+              "https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/"
             ],
             "Video Link": "TBD"
           },
           {
             "Detail": "Q. Maximum Consecutive ones",
             "Links": [
-              "N/A"
+              "https://leetcode.com/problems/max-consecutive-ones/description/"
             ],
             "Video Link": "TBD"
           },
           {
             "Detail": "Q. Reverse Pairs",
             "Links": [
-              "N/A"
+              "https://leetcode.com/problems/reverse-pairs/description/"
             ],
             "Video Link": "TBD"
           },
           {
             "Detail": "Q. The Celebrity Problem",
             "Links": [
-              "N/A"
+              "https://www.geeksforgeeks.org/problems/the-celebrity-problem/1"
             ],
             "Video Link": "TBD"
           }
@@ -2598,15 +2598,15 @@ export const csvData = [
             ]
           },
           {
-            "Detail": "factorial of a number",
+            "Detail": "Q. Factorial of a number",
             "Links": [
-              "N/A"
+              "https://www.geeksforgeeks.org/problems/factorial5739/1"
             ]
           },
           {
-            "Detail": "fibonacci number",
+            "Detail": "Q. Fibonacci number",
             "Links": [
-              "N/A"
+              "https://leetcode.com/problems/fibonacci-number/description/"
             ]
           }
         ]
@@ -2651,9 +2651,9 @@ export const csvData = [
             ]
           },
           {
-            "Detail": "Find Index",
+            "Detail": "Q. Find Index",
             "Links": [
-              "N/A"
+              "https://www.geeksforgeeks.org/problems/find-index4752/1"
             ]
           },
           {
@@ -2710,9 +2710,9 @@ export const csvData = [
             ]
           },
           {
-            "Detail": "count and say",
+            "Detail": "Q. Count and say",
             "Links": [
-              "N/A"
+              "https://leetcode.com/problems/count-and-say/description/"
             ]
           }
         ]
@@ -3328,28 +3328,14 @@ export const csvData = [
           {
             "Detail": "Q. LRU Cache",
             "Links": [
-              "N/A"
+              "https://leetcode.com/problems/lru-cache/description/"
             ],
             "Video Link": "TBL"
           },
           {
             "Detail": "Q. LFU Cache",
             "Links": [
-              "N/A"
-            ],
-            "Video Link": "TBL"
-          },
-          {
-            "Detail": "Q. Rotten Oranges",
-            "Links": [
-              "N/A"
-            ],
-            "Video Link": "TBL"
-          },
-          {
-            "Detail": "Q. Sliding Window Maximum",
-            "Links": [
-              "N/A"
+              "https://leetcode.com/problems/lfu-cache/description/"
             ],
             "Video Link": "TBL"
           },
@@ -3528,9 +3514,14 @@ export const csvData = [
               "N/A"
             ],
             "Video Link": "https://youtu.be/h6jzp9waCyk?si=GTlG-0HGVxzwzuvK"
-          },
+          }
+        ]
+      },
+      {
+        "Subtopic": "Questions on K-SUM Subarray Pattern",
+        "Details": [
           {
-            "Detail": "Questions on K-SUM Subarray Pattern",
+            "Detail": "K-SUM Subarray Pattern",
             "Links": [
               "N/A"
             ],
@@ -3942,42 +3933,42 @@ export const csvData = [
         "Subtopic": "Tree Traversal",
         "Details": [
           {
-            "Detail": "Tree Traversal BFS",
+            "Detail": "Q. Tree Traversal BFS",
             "Links": [
               "https://www.geeksforgeeks.org/problems/level-order-traversal/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article"
             ],
             "Video Link": "https://youtu.be/4NZV0XBbKfA?si=wn_pcNP-l7dmDcXA"
           },
           {
-            "Detail": "BFS on N-Ary Trees",
+            "Detail": "Q. BFS on N-Ary Trees",
             "Links": [
               "https://www.geeksforgeeks.org/problems/level-order-traversal/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article"
             ],
             "Video Link": "https://youtu.be/4NZV0XBbKfA?si=wn_pcNP-l7dmDcXA"
           },
           {
-            "Detail": "Tree Traversal DFS - Recursive",
+            "Detail": "Q. Tree Traversal DFS - Recursive",
             "Links": [
               "https://www.geeksforgeeks.org/problems/preorder-traversal/1"
             ],
             "Video Link": "https://youtu.be/aQKJ9juD87k?si=Gou7Ob0zLS2xOoU2"
           },
           {
-            "Detail": "Preorder Iterative",
+            "Detail": "Q. Preorder Iterative",
             "Links": [
               "https://leetcode.com/problems/binary-tree-preorder-traversal/description/"
             ],
             "Video Link": "https://youtu.be/Tp2kzBIunWk?si=LYmDgBNvOFJogvt1"
           },
           {
-            "Detail": "Inorder Iterative",
+            "Detail": "Q. Inorder Iterative",
             "Links": [
               "https://leetcode.com/problems/binary-tree-inorder-traversal/description/"
             ],
             "Video Link": "https://youtu.be/-VzRxq3Jwp4?si=8XJFCAnFCXWss35l"
           },
           {
-            "Detail": "Postorder Iterative",
+            "Detail": "Q. Postorder Iterative",
             "Links": [
               "https://leetcode.com/problems/binary-tree-postorder-traversal/description/"
             ],
@@ -4143,35 +4134,34 @@ export const csvData = [
           {
             "Detail": "Q. Burn a Tree",
             "Links": [
-              "N/A"
+              "https://www.geeksforgeeks.org/problems/burning-tree/1"
             ],
             "Video Link": "TBD"
           },
           {
             "Detail": "Q. BT to DLL",
             "Links": [
-              "N/A"
+              "https://www.geeksforgeeks.org/problems/binary-tree-to-dll/1"
             ],
             "Video Link": "TBD"
           },
           {
-            "Detail": "Q. Floor and Ceil in BST",
+            "Detail": "Q. Floor in BST",
             "Links": [
-              "N/A"
+              "https://www.geeksforgeeks.org/problems/floor-in-bst/1"
+            ]
+          },
+          {
+            "Detail": "Q. Ceil in BST",
+            "Links": [
+              "https://www.geeksforgeeks.org/problems/implementing-ceil-in-bst/1"
             ],
             "Video Link": "TBD"
           },
           {
             "Detail": "Q. Search in BST",
             "Links": [
-              "N/A"
-            ],
-            "Video Link": "TBD"
-          },
-          {
-            "Detail": "Flood fill algorithm in BT",
-            "Links": [
-              "N/A"
+              "https://leetcode.com/problems/search-in-a-binary-search-tree/description/"
             ],
             "Video Link": "TBD"
           }
@@ -4181,62 +4171,62 @@ export const csvData = [
         "Subtopic": "AVL Tree ",
         "Details": [
           {
-            "Detail": "1. AVL Trees",
+            "Detail": "AVL Trees",
             "Links": [
               "N/A"
             ],
             "Video Link": "https://youtu.be/QEvpN09q3nw"
           },
           {
-            "Detail": "2. Balanced Trees",
+            "Detail": "Balanced Trees",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "3. Insert in AVL Tree",
+            "Detail": "Insert in AVL Tree",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "4. Delete in AVL Tree",
+            "Detail": "Delete in AVL Tree",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "5. Balance factor of AVL Tree",
+            "Detail": "Balance factor of AVL Tree",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "6. AVL Tree rotations",
+            "Detail": "AVL Tree rotations",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "7. LL",
+            "Detail": "LL",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "8. RR",
+            "Detail": "RR",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "9. LR",
+            "Detail": "LR",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "10. RL",
+            "Detail": "RL",
             "Links": [
               "N/A"
             ]
@@ -4249,14 +4239,14 @@ export const csvData = [
           {
             "Detail": "TreeMap Collections",
             "Links": [
-              "https://leetcode.com/problems/time-based-key-value-store/description/"
+              "N/A"
             ],
             "Video Link": "https://youtu.be/W0JgjIgz3zQ"
           },
           {
-            "Detail": "Time based key value store",
+            "Detail": "Q. Time based key value store",
             "Links": [
-              "N/A"
+              "https://leetcode.com/problems/time-based-key-value-store/description/"
             ]
           }
         ]
@@ -4270,68 +4260,68 @@ export const csvData = [
         "Subtopic": "Heap",
         "Details": [
           {
-            "Detail": "1. Heaps",
+            "Detail": "Heaps",
             "Links": [
               "N/A"
             ],
             "Video Link": "https://youtu.be/NFiYQGyL8rg"
           },
           {
-            "Detail": "2. Heapify",
+            "Detail": "Heapify",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "3. Heapsort",
+            "Detail": "Heapsort",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "4. Min Heap",
+            "Detail": "Min Heap",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "5. Max Heap",
+            "Detail": "Max Heap",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "6. Increase Key",
+            "Detail": "Increase Key",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "7. Decrease Key",
+            "Detail": "Decrease Key",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "8. Insert in Heap",
+            "Detail": "Insert in Heap",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "9. Delete from Heap",
+            "Detail": "Delete from Heap",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "10. build heap from array",
+            "Detail": "Build heap from array",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "11. Complete Tree",
+            "Detail": "Complete Tree",
             "Links": [
               "N/A"
             ]
@@ -4342,32 +4332,32 @@ export const csvData = [
         "Subtopic": "Priority Queue in one shot",
         "Details": [
           {
-            "Detail": "1. Priority Queue in Java collections",
+            "Detail": "Priority Queue in Java collections",
             "Links": [
               "N/A"
             ],
             "Video Link": "https://youtu.be/XGfa9jnDJNY"
           },
           {
-            "Detail": "2. Priority Queue on custom classes.",
+            "Detail": "Priority Queue on custom classes.",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "3. Collections.ReverseOrder()",
+            "Detail": "Collections.ReverseOrder()",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "4. dsa playlist",
+            "Detail": "Dsa playlist",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "5. Equate objects in pq",
+            "Detail": "Equate objects in pq",
             "Links": [
               "N/A"
             ]
@@ -4415,28 +4405,28 @@ export const csvData = [
           {
             "Detail": "Q. Connect N ropes with Minimum cost",
             "Links": [
-              "N/A"
+              "https://www.geeksforgeeks.org/problems/minimum-cost-of-ropes-1587115620/1"
             ],
             "Video Link": "TBD"
           },
           {
-            "Detail": "Q. Medium of Running Streams of Integers",
+            "Detail": "Q. Median of Running Streams of Integers",
             "Links": [
-              "N/A"
+              "https://www.geeksforgeeks.org/problems/find-median-in-a-stream-1587115620/1"
             ],
             "Video Link": "TBD"
           },
           {
             "Detail": "Q. Maximum Sum Combination",
             "Links": [
-              "N/A"
+              "https://www.geeksforgeeks.org/problems/maximum-sum-combination/1"
             ],
             "Video Link": "TBD"
           },
           {
-            "Detail": "Q. Merge K sorted Elements",
+            "Detail": "Q. Merge K sorted Arrays",
             "Links": [
-              "N/A"
+              "https://www.geeksforgeeks.org/problems/merge-k-sorted-arrays/1"
             ],
             "Video Link": "TBD"
           }
@@ -4451,50 +4441,50 @@ export const csvData = [
         "Subtopic": "Graph Introduction",
         "Details": [
           {
-            "Detail": "1. Introduction to graphs",
+            "Detail": "Introduction to graphs",
             "Links": [
               "N/A"
             ],
             "Video Link": "https://youtu.be/f-buby0Aac8"
           },
           {
-            "Detail": "2. Directed Graph",
+            "Detail": "Directed Graph",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "3. UnDirected Graph",
+            "Detail": "UnDirected Graph",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "4. Weighted Graph",
+            "Detail": "Weighted Graph",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "5. UnWeighted Graph",
+            "Detail": "UnWeighted Graph",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "6. Vertex and Edges",
+            "Detail": "Vertex and Edges",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "7. Degree of a node in graph",
+            "Detail": "Degree of a node in graph",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "8. In-degree and Out-degree in graphs",
+            "Detail": "In-degree and Out-degree in graphs",
             "Links": [
               "N/A"
             ]
@@ -4505,50 +4495,50 @@ export const csvData = [
         "Subtopic": "Graph Representation & Application",
         "Details": [
           {
-            "Detail": "1. How to represent graph in memory",
+            "Detail": "How to represent graph in memory",
             "Links": [
               "N/A"
             ],
             "Video Link": "https://youtu.be/2oXUetonhUg"
           },
           {
-            "Detail": "2. InDegree of directed graph",
+            "Detail": "InDegree of directed graph",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "3. outDegree of directed graph",
+            "Detail": "OutDegree of directed graph",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "4. Adjacency List",
+            "Detail": "Adjacency List",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "5. Adjacency Matrix",
+            "Detail": "Adjacency Matrix",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "6. Degree of a graph",
+            "Detail": "Degree of a graph",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "7. Represent Directed graph with weight",
+            "Detail": "Represent Directed graph with weight",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "8. Represent UnDirected graph with weight",
+            "Detail": "Represent UnDirected graph with weight",
             "Links": [
               "N/A"
             ]
@@ -4578,51 +4568,51 @@ export const csvData = [
         "Subtopic": "Connected Components and Path",
         "Details": [
           {
-            "Detail": "1. How to traverse multiple components in a graph",
+            "Detail": "How to traverse multiple components in a graph",
             "Links": [
               "N/A"
             ],
             "Video Link": "https://youtu.be/bmULgrjRcss"
           },
           {
-            "Detail": "2. TreeTraversal vs Graph Traversal",
+            "Detail": "TreeTraversal vs Graph Traversal",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "3. Path in a graph",
+            "Detail": "Path in a graph",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "4. Cycle in a graph",
+            "Detail": "Cycle in a graph",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "5. Directed Acyclic Graph (DAG)",
+            "Detail": "Directed Acyclic Graph (DAG)",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "7. Find if a path is valid or not",
+            "Detail": "Find if a path is valid or not",
             "Links": [
               "N/A"
             ]
           },
           {
-            "Detail": "DFS Traversal in Graph",
+            "Detail": "Q. DFS Traversal in Graph",
             "Links": [
               "https://www.geeksforgeeks.org/problems/depth-first-traversal-for-a-graph/1"
             ],
             "Video Link": "https://youtu.be/8ZP_Y3boL0M"
           },
           {
-            "Detail": "BFS Traversal in Graph",
+            "Detail": "Q. BFS Traversal in Graph",
             "Links": [
               "https://www.geeksforgeeks.org/problems/bfs-traversal-of-graph/1"
             ],
@@ -4700,70 +4690,70 @@ export const csvData = [
             "Video Link": "https://youtu.be/kmzlMoxmCs4"
           },
           {
-            "Detail": "cycle detection in undirected graph using BFS",
+            "Detail": "Q. Cycle detection in undirected graph using BFS",
             "Links": [
               "https://www.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1"
             ],
             "Video Link": "https://youtu.be/gvNeSmWatIc"
           },
           {
-            "Detail": "cycle detection in undirected graph using DFS",
+            "Detail": "Q. Cycle detection in undirected graph using DFS",
             "Links": [
               "https://www.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1"
             ],
             "Video Link": "https://youtu.be/erRL82Gl2Xg"
           },
           {
-            "Detail": "Cycle Detection In Directed Graphs using DFS",
+            "Detail": "Q. Cycle Detection In Directed Graphs using DFS",
             "Links": [
               "https://www.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1"
             ],
             "Video Link": "https://youtu.be/Y3eIsQj-DpI"
           },
           {
-            "Detail": "Kahn's Algorithm for Toposort",
+            "Detail": "Q. Kahn's Algorithm for Toposort",
             "Links": [
               "https://www.geeksforgeeks.org/problems/topological-sort/1"
             ],
             "Video Link": "https://youtu.be/tZjVTTABXV0"
           },
           {
-            "Detail": "Toposort using DFS",
+            "Detail": "Q. Toposort using DFS",
             "Links": [
               "https://www.geeksforgeeks.org/problems/topological-sort/1"
             ],
             "Video Link": "https://youtu.be/syzUtO95I8g"
           },
           {
-            "Detail": "Cycle Detection in directed graph using toposort",
+            "Detail": "Q. Cycle Detection in directed graph using toposort",
             "Links": [
               "https://www.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1"
             ],
             "Video Link": "https://youtu.be/3PMWe72jF_8"
           },
           {
-            "Detail": "When to apply BFS | Shortest Path using BFS",
+            "Detail": "Q. When to apply BFS | Shortest Path using BFS",
             "Links": [
               "https://www.geeksforgeeks.org/problems/shortest-path-in-undirected-graph-having-unit-distance/1"
             ],
             "Video Link": "https://youtu.be/vNHDWm_aVgA"
           },
           {
-            "Detail": "Dijkstra Algorithm | Shortest Path",
+            "Detail": "Q. Dijkstra Algorithm | Shortest Path",
             "Links": [
               "https://www.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1"
             ],
             "Video Link": "https://youtu.be/jhlo_YQPXR0"
           },
           {
-            "Detail": "Floyd Warshall Algorithm | Shortest Path",
+            "Detail": "Q. Floyd Warshall Algorithm | Shortest Path",
             "Links": [
               "https://www.geeksforgeeks.org/problems/implementing-floyd-warshall2042/1?category%255B%255D=Graph"
             ],
             "Video Link": "https://youtu.be/7y88NO1Aq1o"
           },
           {
-            "Detail": "Bellmanford Algorithm | Shortest Path",
+            "Detail": "Q. Bellmanford Algorithm | Shortest Path",
             "Links": [
               "https://www.geeksforgeeks.org/problems/distance-from-the-source-bellman-ford-algorithm/1"
             ],
@@ -4845,14 +4835,14 @@ export const csvData = [
             "Video Link": "https://youtu.be/XozGcnGHJXM"
           },
           {
-            "Detail": "Prim's Algorithm for minimum spanning tree",
+            "Detail": "Q. Prim's Algorithm for minimum spanning tree",
             "Links": [
               "https://www.geeksforgeeks.org/problems/minimum-spanning-tree/1"
             ],
             "Video Link": "https://youtu.be/4EuFmlbcSY8"
           },
           {
-            "Detail": "Kruskal's Algorithm for minimum spanning tree",
+            "Detail": "Q. Kruskal's Algorithm for minimum spanning tree",
             "Links": [
               "https://www.geeksforgeeks.org/problems/minimum-spanning-tree/1"
             ],

@@ -235,7 +235,7 @@ Maths in DSA,Mathematics in DSA - Part 1,find number of digits,,
 ,,print all unique prime factors of a number,,
 ,,smallest prime factor,,
 ,,factorial of a number,,
-,,find trailing zero in factorial of a number,,
+,,Q. find trailing zero in factorial of a number,https://leetcode.com/problems/factorial-trailing-zeroes/,
 ,,Modular Arithmatics,,
 Bits Manipulation,Bit basics & fundamentals,Binary Representation of Numbers,,https://youtu.be/cn_KKSd3T2g
 ,,One's Complement,,
@@ -250,11 +250,11 @@ Bits Manipulation,Bit basics & fundamentals,Binary Representation of Numbers,,ht
 ,,Rightmost Set Bit,,
 ,,Check if Number is Power of 2,,
 ,,Character Case Conversion using Bits,,
-,Standard Questions in Bit Manipulation,Find the Unique Number (all others appear twice) - [Single Number I],,https://youtu.be/UTVvLfkuSEs
-,,Find Unique Number (all others appear thrice) [Single Number II],,
-,,Find 2 Unique Numbers (all others appear twice) [Single Number III],,
-,,Minimum Number of Bit Flips (Convert A → B),,
-,,Print All Subsets (Power Set),,
+,Standard Questions in Bit Manipulation,Q. Find the Unique Number (all others appear twice) - [Single Number I],https://leetcode.com/problems/single-number/description/,https://youtu.be/UTVvLfkuSEs
+,,Q. Find Unique Number (all others appear thrice) [Single Number II],https://leetcode.com/problems/single-number-ii/description/,
+,,Q. Find 2 Unique Numbers (all others appear twice) [Single Number III],https://leetcode.com/problems/single-number-iii/description/,
+,,Q. Minimum Number of Bit Flips (Convert A → B),https://leetcode.com/problems/minimum-bit-flips-to-convert-number/description/,
+,,Q. Print All Subsets (Power Set),https://leetcode.com/problems/subsets/description/,
 Searching Algorithms,Linear Search,Linear Search,,https://youtu.be/slqFdKVMjeQ
 ,,Search First Occurrence of Element in 1D Array,,
 ,, Search First Occurrence of Element in 2D Array,,
@@ -275,34 +275,34 @@ Searching Algorithms,Linear Search,Linear Search,,https://youtu.be/slqFdKVMjeQ
 ,,Avoid Overflow in Finding Mid,,
 ,,Why Binary Search is Faster,,
 ,,Find if Array is Sorted in Increasing or Decreasing Order,,
-,Basic Questions on Binary Search,Q1. Ceiling of a Number,,https://youtu.be/P-vl_BrdxJA
-,,Q2. Floor of a Number,,
-,,Q3. First and Last Position of element in sorted array,https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/description/,
-,,Q4. Count all occurrence of element in an array,,
-,,Q5. Find smallest letter greater than target,https://leetcode.com/problems/find-smallest-letter-greater-than-target/description/,
+,Basic Questions on Binary Search,Q. Ceiling of a Number,,https://youtu.be/P-vl_BrdxJA
+,,Q. Floor of a Number,,
+,,Q. First and Last Position of element in sorted array,https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/description/,
+,,Q. Count all occurrence of element in an array,,
+,,Q. Find smallest letter greater than target,https://leetcode.com/problems/find-smallest-letter-greater-than-target/description/,
 ,Binary Search on Infinite Array,Binary Search in range,,https://youtu.be/DoVawmdh5NM
-,,Q1. Find Minimum Difference in a Sorted array.,,
-,,Q2. Find an element in an array of Infinite size,,
-,,Q3. Find first 1 in an infinite and sorted array of 0s and 1s,,
+,,Q. Find Minimum Difference in a Sorted array.,,
+,,Q. Find an element in an array of Infinite size,,
+,,Q. Find first 1 in an infinite and sorted array of 0s and 1s,,
 ,Bitonic Array,Bitonic Array,,https://youtu.be/IK5eSvNw9Qw?si=f6gSi2LkYE4VAtSQ
-,,Q1. Valid Mountain Array,https://leetcode.com/problems/valid-mountain-array/,
-,,Q2. Peak Index in Mountain Array,https://leetcode.com/problems/peak-index-in-a-mountain-array/,
-,,Q3. find in mountain array,https://leetcode.com/problems/find-in-mountain-array/,
-,Binary Search on Rotated Sorted Array,Q1. Search in rotated sorted array,https://leetcode.com/problems/search-in-rotated-sorted-array/,https://youtu.be/n12QcCu8oBI
-,,Q2. Search in rotated sorted array - 2,https://leetcode.com/problems/search-in-rotated-sorted-array-ii/description/,
-,,Q3. Find minimum in rotated sorted array,https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/,
-,,Q4. find k rotation,https://www.geeksforgeeks.org/problems/rotation4723/1,
-,,Q5. Find minimum in rotated sorted array - 2,https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/,
+,,Q. Valid Mountain Array,https://leetcode.com/problems/valid-mountain-array/,
+,,Q. Peak Index in Mountain Array,https://leetcode.com/problems/peak-index-in-a-mountain-array/,
+,,Q. find in mountain array,https://leetcode.com/problems/find-in-mountain-array/,
+,Binary Search on Rotated Sorted Array,Q. Search in rotated sorted array,https://leetcode.com/problems/search-in-rotated-sorted-array/,https://youtu.be/n12QcCu8oBI
+,,Q. Search in rotated sorted array - 2,https://leetcode.com/problems/search-in-rotated-sorted-array-ii/description/,
+,,Q. Find minimum in rotated sorted array,https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/,
+,,Q. find k rotation,https://www.geeksforgeeks.org/problems/rotation4723/1,
+,,Q. Find minimum in rotated sorted array - 2,https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/,
 ,Binary Search on answer concept,Binary Search on answer concept,,
-,,Q1. Allocated minimum number of pages,https://www.geeksforgeeks.org/problems/allocate-minimum-number-of-pages0937/1,
-,,Q2. Aggressive cows,https://www.geeksforgeeks.org/problems/aggressive-cows/1,
-,,Q3. Koko Eating bananas,https://leetcode.com/problems/koko-eating-bananas/description/,
-,,Q4. Capacity To Ship Packages Within D Days,https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/description/,
-,Binary Search on two arrays,Q1. Median of two sorted arrays,https://leetcode.com/problems/median-of-two-sorted-arrays/,
-,,Q2. Kth element of two sorted arrays,https://www.geeksforgeeks.org/problems/k-th-element-of-two-sorted-array1317/1,
-,Miscellaneous Questions on Binary Search,Q1. Single Element in a Sorted Array ,https://leetcode.com/problems/single-element-in-a-sorted-array/description/,https://youtu.be/f09DayNeigg
-,,Q2. Finding square root ,https://leetcode.com/problems/sqrtx/description/,
-,,Q3. Count Squares ,https://www.geeksforgeeks.org/problems/count-squares3649/1,
+,,Q. Allocated minimum number of pages,https://www.geeksforgeeks.org/problems/allocate-minimum-number-of-pages0937/1,
+,,Q. Aggressive cows,https://www.geeksforgeeks.org/problems/aggressive-cows/1,
+,,Q. Koko Eating bananas,https://leetcode.com/problems/koko-eating-bananas/description/,
+,,Q. Capacity To Ship Packages Within D Days,https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/description/,
+,Binary Search on two arrays,Q. Median of two sorted arrays,https://leetcode.com/problems/median-of-two-sorted-arrays/,
+,,Q. Kth element of two sorted arrays,https://www.geeksforgeeks.org/problems/k-th-element-of-two-sorted-array1317/1,
+,Miscellaneous Questions on Binary Search,Q. Single Element in a Sorted Array ,https://leetcode.com/problems/single-element-in-a-sorted-array/description/,https://youtu.be/f09DayNeigg
+,,Q. Finding square root ,https://leetcode.com/problems/sqrtx/description/,
+,,Q. Count Squares ,https://www.geeksforgeeks.org/problems/count-squares3649/1,
 ,Other Searching Algorithms,Jump Search,,https://youtu.be/rFwBm-VT99A
 ,,Interpolation Search,,
 ,,Exponential Search,,
@@ -315,9 +315,9 @@ Sorting Algorithms,Insertion Sort,Insertion Sort,,https://youtu.be/EHBeiIm59Yk
 ,Pigeonhole Sort,Pigeonhole Sort,,https://youtu.be/sWX1eMPYzSU
 ,Cyclic Sort,Cyclic Sort,,
 ,,Cycle sort on fixed range,,
-,,Missing Number,,
-,,Find the duplicate number,,
-,,First missing positive,,
+,,Q. Missing Number,https://leetcode.com/problems/missing-number/description/,
+,,Q. Find the duplicate number,https://leetcode.com/problems/find-the-duplicate-number/description/,
+,,Q. First missing positive,https://leetcode.com/problems/first-missing-positive/description/,
 Matrix,Questions on Matrix - 1,Q. Median of a Sorted Matrix,https://www.geeksforgeeks.org/problems/median-in-a-row-wise-sorted-matrix1527/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=practice_card,https://youtu.be/aNIfGl1ZKQE
 ,,Q. Kth Smallest element of a Matrix,https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/,https://youtu.be/HuOcDlB1uXk
 ,Questions on Matrix - 2,Q. Search a 2d matrix,https://leetcode.com/problems/search-a-2d-matrix/description/,https://youtu.be/EXcmeMx3Dq0
@@ -337,13 +337,13 @@ Sliding Window,Sliding Window Technique,What is sliding window,,https://youtu.be
 ,,Q. Count Occurances of Anagrams,https://www.geeksforgeeks.org/problems/count-occurences-of-anagrams5839/1,https://youtu.be/PVXVsSkItpY?si=0zBiqLK0x9yzN85K
 ,,Q. Minimum Window Substring,https://leetcode.com/problems/minimum-window-substring/description/,https://youtu.be/26E3K8Njm7M
 ,,Q. Sliding Window Maximum,https://leetcode.com/problems/sliding-window-maximum/description/,https://youtu.be/jOoZuTrfpjc
-Two Pointers,Questions on two pointer,Q. Container with Most Water,,TBD
-,,Q. Trapping Rainwater,,TBD
-,,Q. Find Pair with a given sum in sorted Array,,TBD
-,,Q. Remove Duplicates from Sorted Array,,TBD
-,,Q. Maximum Consecutive ones,,TBD
-,,Q. Reverse Pairs,,TBD
-,,Q. The Celebrity Problem,,TBD
+Two Pointers,Questions on two pointer,Q. Container with Most Water,https://leetcode.com/problems/container-with-most-water/description/,TBD
+,,Q. Trapping Rainwater,https://leetcode.com/problems/trapping-rain-water/description/,TBD
+,,Q. Find Pair with a given sum in sorted Array,https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/,TBD
+,,Q. Remove Duplicates from Sorted Array,https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/,TBD
+,,Q. Maximum Consecutive ones,https://leetcode.com/problems/max-consecutive-ones/description/,TBD
+,,Q. Reverse Pairs,https://leetcode.com/problems/reverse-pairs/description/,TBD
+,,Q. The Celebrity Problem,https://www.geeksforgeeks.org/problems/the-celebrity-problem/1,TBD
 String Pattern Matching,Pattern Matching Algorithms,KMP Algorithm,,TBD
 ,,Rabin Karp,,TBD
 ,,Z Algorithm,,TBD
@@ -352,15 +352,15 @@ Recursion,Introduction to recursion,Recursion basics and syntax,,
 ,,print number code using recursion,,
 ,,function stack and recursive states,,
 ,,print number from N to 1,,
-,,factorial of a number,,
-,,fibonacci number,,
+,,Q. Factorial of a number,https://www.geeksforgeeks.org/problems/factorial5739/1,
+,,Q. Fibonacci number,https://leetcode.com/problems/fibonacci-number/description/,
 ,Recursion on Arrays,how to apply recursion on arrays,,
 ,,Print array left to right using recursion,,
 ,,Print array right to left using recursion,,
 ,,check if target is present in array,,
 ,,find first occurrence of element in array,,
 ,,find last occurrence of element in array,,
-,,Find Index,,
+,,Q. Find Index,https://www.geeksforgeeks.org/problems/find-index4752/1,
 ,,find all occurrence,,
 ,,binary search using recursion,,
 ,Recursion on Strings,recursion on strings,,
@@ -369,7 +369,7 @@ Recursion,Introduction to recursion,Recursion basics and syntax,,
 ,,check palindrome,,
 ,,remove a char from string,,
 ,,replace PI with 3.14,,
-,,count and say,,
+,,Q. Count and say,https://leetcode.com/problems/count-and-say/description/,
 ,Backtracking,Backtracking and All it's variants,,https://youtu.be/rBJ6lNgIwfs?si=BjYRCAbitUHXCuIC
 ,,Q. Rat in a Maze,https://www.geeksforgeeks.org/problems/rat-in-a-maze-problem/1,https://youtu.be/HoaXmlzyAWs?si=UGRxfc3-KDoFUHXc
 ,,Q. All permutations,https://leetcode.com/problems/permutations/description/,https://youtu.be/m9HgMrsdvaQ?si=gcVhCyp5V_B-drJY
@@ -452,10 +452,8 @@ Queue,Queue Basics,Queue,,https://youtu.be/9m4SZPRQXQI?si=izPej7j2qhbiKrys
 ,,Double ended Queue,,
 ,,Implement queue using stack ,,https://youtu.be/Enygu8ivr0w?si=SgzjEHke5oc_cwdk
 ,,Implement stack using queue,,https://youtu.be/z4FxPUgXn90?si=86tva8iOIGV5E74n
-,Questions on queue,Q. LRU Cache,,TBL
-,,Q. LFU Cache,,TBL
-,,Q. Rotten Oranges,,TBL
-,,Q. Sliding Window Maximum,,TBL
+,Questions on queue,Q. LRU Cache,https://leetcode.com/problems/lru-cache/description/,TBL
+,,Q. LFU Cache,https://leetcode.com/problems/lfu-cache/description/,TBL
 ,,Q. Find Maximum and Minimum of Every Window Size,,TBL
 Hashing,Hashing,Components of Hashing,,https://youtu.be/vB3WKXNH-v4?si=oAOjWmxgCLXQvjC2
 ,,How hashing works?,,
@@ -478,7 +476,7 @@ Hashing,Hashing,Components of Hashing,,https://youtu.be/vB3WKXNH-v4?si=oAOjWmxgC
 ,,Usage of map keys,,
 ,,Set Iterator,,
 ,Subarray questions using set,Q. Minimum number of subsets with distinct elements,,https://youtu.be/h6jzp9waCyk?si=GTlG-0HGVxzwzuvK
-,,Questions on K-SUM Subarray Pattern,,https://youtu.be/S6tARGbBGEo?si=7wRtd-jYnSdHRYmk
+,Questions on K-SUM Subarray Pattern,K-SUM Subarray Pattern,,https://youtu.be/S6tARGbBGEo?si=7wRtd-jYnSdHRYmk
 ,,Q. Check if subarray with K sum Exists or Not,,
 ,,Q. Find the starting and ending index of K sum subarray,https://www.geeksforgeeks.org/problems/subarray-with-given-sum-1587115621/1,
 ,,Q. Find the maximum length subarray with K sum,https://www.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article,
@@ -535,12 +533,12 @@ Trees,Linear and Non Linear Data Structures,Linear Data Structure ,,https://yout
 ,,1Height of a Tree.,,
 ,,Child of a node in tree.,,
 ,,Parent of a node in tree.,,
-,Tree Traversal,Tree Traversal BFS,https://www.geeksforgeeks.org/problems/level-order-traversal/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article,https://youtu.be/4NZV0XBbKfA?si=wn_pcNP-l7dmDcXA
-,,BFS on N-Ary Trees,https://www.geeksforgeeks.org/problems/level-order-traversal/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article,https://youtu.be/4NZV0XBbKfA?si=wn_pcNP-l7dmDcXA
-,,Tree Traversal DFS - Recursive,https://www.geeksforgeeks.org/problems/preorder-traversal/1,https://youtu.be/aQKJ9juD87k?si=Gou7Ob0zLS2xOoU2
-,,Preorder Iterative,https://leetcode.com/problems/binary-tree-preorder-traversal/description/,https://youtu.be/Tp2kzBIunWk?si=LYmDgBNvOFJogvt1
-,,Inorder Iterative,https://leetcode.com/problems/binary-tree-inorder-traversal/description/,https://youtu.be/-VzRxq3Jwp4?si=8XJFCAnFCXWss35l
-,,Postorder Iterative,https://leetcode.com/problems/binary-tree-postorder-traversal/description/,https://youtu.be/xEPe6aWlRd0?si=rRWVNq5RgT8w9Z6e
+,Tree Traversal,Q. Tree Traversal BFS,https://www.geeksforgeeks.org/problems/level-order-traversal/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article,https://youtu.be/4NZV0XBbKfA?si=wn_pcNP-l7dmDcXA
+,,Q. BFS on N-Ary Trees,https://www.geeksforgeeks.org/problems/level-order-traversal/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article,https://youtu.be/4NZV0XBbKfA?si=wn_pcNP-l7dmDcXA
+,,Q. Tree Traversal DFS - Recursive,https://www.geeksforgeeks.org/problems/preorder-traversal/1,https://youtu.be/aQKJ9juD87k?si=Gou7Ob0zLS2xOoU2
+,,Q. Preorder Iterative,https://leetcode.com/problems/binary-tree-preorder-traversal/description/,https://youtu.be/Tp2kzBIunWk?si=LYmDgBNvOFJogvt1
+,,Q. Inorder Iterative,https://leetcode.com/problems/binary-tree-inorder-traversal/description/,https://youtu.be/-VzRxq3Jwp4?si=8XJFCAnFCXWss35l
+,,Q. Postorder Iterative,https://leetcode.com/problems/binary-tree-postorder-traversal/description/,https://youtu.be/xEPe6aWlRd0?si=rRWVNq5RgT8w9Z6e
 ,Questions on traversal,Q. Construct tree using inorder and postorder.,https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/description/,https://youtu.be/uDuOuMcSHwo?si=8bymVQfdrdovJImK
 ,,Q. Maximum Depth of Binary Tree,https://leetcode.com/problems/maximum-depth-of-binary-tree/description/,https://youtu.be/zbZEcUV0t7k?si=iyca3V-SbEKcEthY
 ,,Q. Maximum Depth of N-Ary Tree,https://leetcode.com/problems/maximum-depth-of-n-ary-tree/description/,https://youtu.be/Mehu7yep3ag?si=jVmAzUOxVZRD-JYV
@@ -562,74 +560,74 @@ Trees,Linear and Non Linear Data Structures,Linear Data Structure ,,https://yout
 ,,Q. LCA in BST,https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/description/,https://youtu.be/TytL24jNZ6k
 ,,Q. Binary Search Tree Iterator,https://leetcode.com/problems/binary-search-tree-iterator/description/,https://youtu.be/V9J9gGIVt_E
 ,,Q. Maximum Sum BST in Binary Tree,https://leetcode.com/problems/maximum-sum-bst-in-binary-tree/description/,https://youtu.be/zAz-WbqIaf8
-,,Q. Burn a Tree,,TBD
-,,Q. BT to DLL,,TBD
-,,Q. Floor and Ceil in BST,,TBD
-,,Q. Search in BST,,TBD
-,,Flood fill algorithm in BT,,TBD
-,AVL Tree ,1. AVL Trees,,https://youtu.be/QEvpN09q3nw
-,,2. Balanced Trees,,
-,,3. Insert in AVL Tree,,
-,,4. Delete in AVL Tree,,
-,,5. Balance factor of AVL Tree,,
-,,6. AVL Tree rotations,,
-,,7. LL,,
-,,8. RR,,
-,,9. LR,,
-,,10. RL,,
-,TreeMap,TreeMap Collections,https://leetcode.com/problems/time-based-key-value-store/description/,https://youtu.be/W0JgjIgz3zQ
-,,Time based key value store,,
-Heap & Priority Queue,Heap,1. Heaps,,https://youtu.be/NFiYQGyL8rg
-,,2. Heapify,,
-,,3. Heapsort,,
-,,4. Min Heap,,
-,,5. Max Heap,,
-,,6. Increase Key,,
-,,7. Decrease Key,,
-,,8. Insert in Heap,,
-,,9. Delete from Heap,,
-,,10. build heap from array,,
-,,11. Complete Tree,,
-,Priority Queue in one shot,1. Priority Queue in Java collections,,https://youtu.be/XGfa9jnDJNY
-,,2. Priority Queue on custom classes.,,
-,,3. Collections.ReverseOrder(),,
-,,4. dsa playlist,,
-,,5. Equate objects in pq,,
+,,Q. Burn a Tree,https://www.geeksforgeeks.org/problems/burning-tree/1,TBD
+,,Q. BT to DLL,https://www.geeksforgeeks.org/problems/binary-tree-to-dll/1,TBD
+,,Q. Floor in BST,https://www.geeksforgeeks.org/problems/floor-in-bst/1,
+,,Q. Ceil in BST,https://www.geeksforgeeks.org/problems/implementing-ceil-in-bst/1,TBD
+,,Q. Search in BST,https://leetcode.com/problems/search-in-a-binary-search-tree/description/,TBD
+,AVL Tree ,AVL Trees,,https://youtu.be/QEvpN09q3nw
+,,Balanced Trees,,
+,,Insert in AVL Tree,,
+,,Delete in AVL Tree,,
+,,Balance factor of AVL Tree,,
+,,AVL Tree rotations,,
+,,LL,,
+,,RR,,
+,,LR,,
+,,RL,,
+,TreeMap,TreeMap Collections,,https://youtu.be/W0JgjIgz3zQ
+,,Q. Time based key value store,https://leetcode.com/problems/time-based-key-value-store/description/,
+Heap & Priority Queue,Heap,Heaps,,https://youtu.be/NFiYQGyL8rg
+,,Heapify,,
+,,Heapsort,,
+,,Min Heap,,
+,,Max Heap,,
+,,Increase Key,,
+,,Decrease Key,,
+,,Insert in Heap,,
+,,Delete from Heap,,
+,,Build heap from array,,
+,,Complete Tree,,
+,Priority Queue in one shot,Priority Queue in Java collections,,https://youtu.be/XGfa9jnDJNY
+,,Priority Queue on custom classes.,,
+,,Collections.ReverseOrder(),,
+,,Dsa playlist,,
+,,Equate objects in pq,,
 ,Priority Queue questions,Q. Top K Frequent Elements,https://leetcode.com/problems/top-k-frequent-elements/description/,https://youtu.be/bXbiLwGSZHU
 ,,Q. Sort Characters by frequency,https://leetcode.com/problems/sort-characters-by-frequency/description/,https://youtu.be/zPB7j1TMTDM
 ,,Q. IPO,https://leetcode.com/problems/ipo/description/?envType=daily-question&envId=2024-06-15,https://youtu.be/sdCvHi2i03E
 ,,Q. Design Twitter,https://leetcode.com/problems/design-twitter/description/,https://youtu.be/tH051S6aM5M
 ,,Q. Task Scheduler,https://leetcode.com/problems/task-scheduler/description/?envType=daily-question&envId=2024-03-19,https://youtu.be/it-tqUPacgM
-,,Q. Connect N ropes with Minimum cost,,TBD
-,,Q. Medium of Running Streams of Integers,,TBD
-,,Q. Maximum Sum Combination,,TBD
-,,Q. Merge K sorted Elements,,TBD
-Graphs,Graph Introduction,1. Introduction to graphs,,https://youtu.be/f-buby0Aac8
-,,2. Directed Graph,,
-,,3. UnDirected Graph,,
-,,4. Weighted Graph,,
-,,5. UnWeighted Graph,,
-,,6. Vertex and Edges,,
-,,7. Degree of a node in graph,,
-,,8. In-degree and Out-degree in graphs,,
-,Graph Representation & Application,1. How to represent graph in memory,,https://youtu.be/2oXUetonhUg
-,,2. InDegree of directed graph,,
-,,3. outDegree of directed graph,,
-,,4. Adjacency List,,
-,,5. Adjacency Matrix,,
-,,6. Degree of a graph,,
-,,7. Represent Directed graph with weight,,
-,,8. Represent UnDirected graph with weight,,
+,,Q. Connect N ropes with Minimum cost,https://www.geeksforgeeks.org/problems/minimum-cost-of-ropes-1587115620/1,TBD
+,,Q. Median of Running Streams of Integers,https://www.geeksforgeeks.org/problems/find-median-in-a-stream-1587115620/1,TBD
+,,Q. Maximum Sum Combination,https://www.geeksforgeeks.org/problems/maximum-sum-combination/1,TBD
+,,Q. Merge K sorted Arrays,https://www.geeksforgeeks.org/problems/merge-k-sorted-arrays/1,TBD
+Graphs,Graph Introduction,Introduction to graphs,,https://youtu.be/f-buby0Aac8
+,,Directed Graph,,
+,,UnDirected Graph,,
+,,Weighted Graph,,
+,,UnWeighted Graph,,
+,,Vertex and Edges,,
+,,Degree of a node in graph,,
+,,In-degree and Out-degree in graphs,,
+,Graph Representation & Application,How to represent graph in memory,,https://youtu.be/2oXUetonhUg
+,,InDegree of directed graph,,
+,,OutDegree of directed graph,,
+,,Adjacency List,,
+,,Adjacency Matrix,,
+,,Degree of a graph,,
+,,Represent Directed graph with weight,,
+,,Represent UnDirected graph with weight,,
 ,Easy Graph Problems,Q. Find the center of star graph,https://leetcode.com/problems/find-center-of-star-graph/description/?envType=daily-question&envId=2024-06-27,https://youtu.be/bEzD_V6Uhss
 ,,Q. Maximum Total Importance of Roads,https://leetcode.com/problems/maximum-total-importance-of-roads/description/?envType=daily-question&envId=2024-06-28,https://youtu.be/C7BENkkO3oU
-,Connected Components and Path,1. How to traverse multiple components in a graph,,https://youtu.be/bmULgrjRcss
-,,2. TreeTraversal vs Graph Traversal,,
-,,3. Path in a graph,,
-,,4. Cycle in a graph,,
-,,5. Directed Acyclic Graph (DAG),,
-,,7. Find if a path is valid or not,,
-,,DFS Traversal in Graph,https://www.geeksforgeeks.org/problems/depth-first-traversal-for-a-graph/1,https://youtu.be/8ZP_Y3boL0M
-,,BFS Traversal in Graph,https://www.geeksforgeeks.org/problems/bfs-traversal-of-graph/1,https://youtu.be/88WZluVGlFI
+,Connected Components and Path,How to traverse multiple components in a graph,,https://youtu.be/bmULgrjRcss
+,,TreeTraversal vs Graph Traversal,,
+,,Path in a graph,,
+,,Cycle in a graph,,
+,,Directed Acyclic Graph (DAG),,
+,,Find if a path is valid or not,,
+,,Q. DFS Traversal in Graph,https://www.geeksforgeeks.org/problems/depth-first-traversal-for-a-graph/1,https://youtu.be/8ZP_Y3boL0M
+,,Q. BFS Traversal in Graph,https://www.geeksforgeeks.org/problems/bfs-traversal-of-graph/1,https://youtu.be/88WZluVGlFI
 ,,Q. Flood fill using BFS,https://leetcode.com/problems/flood-fill/description/,https://youtu.be/W6nOvvWzZYg
 ,,Q. Number of Islands,https://leetcode.com/problems/number-of-islands/description/,https://youtu.be/mwsuv-S1biw
 ,,Q. Word Ladder -1,https://leetcode.com/problems/word-ladder/description/,https://youtu.be/zjR2WGbBA2k
@@ -640,16 +638,16 @@ Graphs,Graph Introduction,1. Introduction to graphs,,https://youtu.be/f-buby0Aac
 ,,Q. Minimum Time to Collect All Apples in a Tree,https://leetcode.com/problems/minimum-time-to-collect-all-apples-in-a-tree/description/,https://youtu.be/ROI1bS_uBSE
 ,,Q. Most Stones Removed with Same Row or Column,https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/description/,https://youtu.be/SjdbuY-Ryuk
 ,,Q. Accounts Merge,https://leetcode.com/problems/accounts-merge/description/,https://youtu.be/kmzlMoxmCs4
-,,cycle detection in undirected graph using BFS,https://www.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1,https://youtu.be/gvNeSmWatIc
-,,cycle detection in undirected graph using DFS,https://www.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1,https://youtu.be/erRL82Gl2Xg
-,,Cycle Detection In Directed Graphs using DFS,https://www.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1,https://youtu.be/Y3eIsQj-DpI
-,,Kahn's Algorithm for Toposort,https://www.geeksforgeeks.org/problems/topological-sort/1,https://youtu.be/tZjVTTABXV0
-,,Toposort using DFS,https://www.geeksforgeeks.org/problems/topological-sort/1,https://youtu.be/syzUtO95I8g
-,,Cycle Detection in directed graph using toposort,https://www.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1,https://youtu.be/3PMWe72jF_8
-,,When to apply BFS | Shortest Path using BFS,https://www.geeksforgeeks.org/problems/shortest-path-in-undirected-graph-having-unit-distance/1,https://youtu.be/vNHDWm_aVgA
-,,Dijkstra Algorithm | Shortest Path,https://www.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1,https://youtu.be/jhlo_YQPXR0
-,,Floyd Warshall Algorithm | Shortest Path,https://www.geeksforgeeks.org/problems/implementing-floyd-warshall2042/1?category%255B%255D=Graph,https://youtu.be/7y88NO1Aq1o
-,,Bellmanford Algorithm | Shortest Path,https://www.geeksforgeeks.org/problems/distance-from-the-source-bellman-ford-algorithm/1,https://youtu.be/Kbfgo3E3n6c
+,,Q. Cycle detection in undirected graph using BFS,https://www.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1,https://youtu.be/gvNeSmWatIc
+,,Q. Cycle detection in undirected graph using DFS,https://www.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1,https://youtu.be/erRL82Gl2Xg
+,,Q. Cycle Detection In Directed Graphs using DFS,https://www.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1,https://youtu.be/Y3eIsQj-DpI
+,,Q. Kahn's Algorithm for Toposort,https://www.geeksforgeeks.org/problems/topological-sort/1,https://youtu.be/tZjVTTABXV0
+,,Q. Toposort using DFS,https://www.geeksforgeeks.org/problems/topological-sort/1,https://youtu.be/syzUtO95I8g
+,,Q. Cycle Detection in directed graph using toposort,https://www.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1,https://youtu.be/3PMWe72jF_8
+,,Q. When to apply BFS | Shortest Path using BFS,https://www.geeksforgeeks.org/problems/shortest-path-in-undirected-graph-having-unit-distance/1,https://youtu.be/vNHDWm_aVgA
+,,Q. Dijkstra Algorithm | Shortest Path,https://www.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1,https://youtu.be/jhlo_YQPXR0
+,,Q. Floyd Warshall Algorithm | Shortest Path,https://www.geeksforgeeks.org/problems/implementing-floyd-warshall2042/1?category%255B%255D=Graph,https://youtu.be/7y88NO1Aq1o
+,,Q. Bellmanford Algorithm | Shortest Path,https://www.geeksforgeeks.org/problems/distance-from-the-source-bellman-ford-algorithm/1,https://youtu.be/Kbfgo3E3n6c
 ,,Q. Network Delay Time,https://leetcode.com/problems/network-delay-time/description/,https://youtu.be/n551TcPWSH8
 ,,Q. Cheapest Flights Within K Stops,https://leetcode.com/problems/cheapest-flights-within-k-stops/description/,https://youtu.be/NIrYezLg_6Q
 ,,Q. Minimum Cost to Convert String I,https://leetcode.com/problems/minimum-cost-to-convert-string-i/description/,https://youtu.be/jmqnpjtVPNs
@@ -660,8 +658,8 @@ Graphs,Graph Introduction,1. Introduction to graphs,,https://youtu.be/f-buby0Aac
 ,,Q. Is Graph Bipartite?,https://leetcode.com/problems/is-graph-bipartite/description/,https://youtu.be/7nETmZcQRko
 ,,Strongly Connected Components | Kosaraju's Algorithm,,TBD
 ,,Minimum spanning tree,,https://youtu.be/XozGcnGHJXM
-,,Prim's Algorithm for minimum spanning tree,https://www.geeksforgeeks.org/problems/minimum-spanning-tree/1,https://youtu.be/4EuFmlbcSY8
-,,Kruskal's Algorithm for minimum spanning tree,https://www.geeksforgeeks.org/problems/minimum-spanning-tree/1,https://youtu.be/dBGYpKLY2bQ
+,,Q. Prim's Algorithm for minimum spanning tree,https://www.geeksforgeeks.org/problems/minimum-spanning-tree/1,https://youtu.be/4EuFmlbcSY8
+,,Q. Kruskal's Algorithm for minimum spanning tree,https://www.geeksforgeeks.org/problems/minimum-spanning-tree/1,https://youtu.be/dBGYpKLY2bQ
 Tries,Trie,Introduction to Trie,,TBD
 ,,Implement a Trie in java,,TBD
 ,,"Insert, Search and delete operations",,TBD
