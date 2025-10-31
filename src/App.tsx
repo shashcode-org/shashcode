@@ -8,6 +8,8 @@ import Home from "./pages/Home";
 import DSA from "./pages/DSA";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
+import ContactUs from "./pages/Contact";
+import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import ScrollToTop  from "./components/ScrollToTop";
 import './App.css'
@@ -26,6 +28,8 @@ const App = () => (
           <Route path="/dsa" element={<DSA />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
+          <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="/about" element={<About />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

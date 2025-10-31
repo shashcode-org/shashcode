@@ -17,14 +17,16 @@ const Footer = () => {
       ]
     },
     {
-      title: 'Legal',
+      title: 'Company',
       links: [
+        { name: 'About Us', path: '/about' },
+        { name: 'Contact Us', path: '/contact-us' },
         { name: 'Terms & Conditions', path: '/terms' },
         { name: 'Privacy Policy', path: '/privacy' },
       ]
     },
     {
-      title: 'Connect',
+      title: 'Socials',
       links: [
         { name: 'Youtube', path: 'https://www.youtube.com/@shashwat_tiwari_st' },
         { name: 'Twitter', path: 'https://x.com/shashCode/' },
