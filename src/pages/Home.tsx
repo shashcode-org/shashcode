@@ -167,7 +167,7 @@ const Home = () => {
       <Testimonials />
 
       {/* About Section */}
-      <Section
+      {/* <Section
         id="about"
         title="About ShashCode"
         contentClassName="max-w-4xl mx-auto space-y-6 text-[17px] leading-relaxed"
@@ -199,10 +199,10 @@ const Home = () => {
             </CardContent>
           </Card>
         </AnimatedElement>
-      </Section>
+      </Section> */}
 
       {/* Instructor Section */}
-      <Section
+      {/* <Section
         title="Meet the Instructor"
         subtitle="Learn from experienced developers and educators"
         gradient
@@ -212,7 +212,7 @@ const Home = () => {
           <Card className="p-8">
             <CardContent>
               <div className="flex flex-col md:flex-row-reverse items-center gap-10">
-                {/* Instructor Image */}
+            
                 <div className="flex flex-col items-center w-full md:w-[30%]">
                   <div className="relative">
                     <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-primary to-secondary opacity-30 blur-xl"></div>
@@ -226,7 +226,7 @@ const Home = () => {
                   <p className="text-gray-500 text-sm text-center">Engineer | Educator | Creator</p>
                 </div>
 
-                {/* Instructor Info */}
+            
                 <div className="text-gray-600 text-[17px] leading-relaxed space-y-5 md:w-[70%] text-center md:text-left">
                   <p>
                     Shashwat is a <strong>Senior Engineer at Samsung R&D</strong>, where he specializes in backend systems, microservices, and performance optimization. He's also a passionate educator with a thriving tech channel <strong>ShashCode</strong> that reaches 1.4L+ learners monthly.
@@ -251,7 +251,7 @@ const Home = () => {
                     </div>
                   </p>
 
-                  {/* Logos */}
+    
                   <div className="mt-4">
                     <h4 className="text-lg font-semibold text-primary">Professional Experience</h4>
                     <div className="flex gap-4 flex-wrap items-center mt-2 justify-center md:justify-start">
@@ -267,6 +267,43 @@ const Home = () => {
             </CardContent>
           </Card>
         </AnimatedElement>
+      </Section> */}
+
+            
+      {/* Stats Section */}
+      <Section 
+        title="Growing Community"
+        subtitle="Join thousands of developers learning with ShashCode"
+        gradient
+        contentClassName="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8"
+      >
+        {[
+          {
+            number: "1.4L+",
+            label: "Monthly YouTube Views",
+            icon: <YoutubeIcon className="h-12 w-12 text-red-500" />
+          },
+          {
+            number: "3M+",
+            label: "Total Views Across YouTube",
+            icon: <Award className="h-12 w-12 text-primary" />
+          },
+          {
+            number: "2K+",
+            label: "Instagram Community",
+            icon: <Code className="h-12 w-12 text-primary" />
+          }
+        ].map((stat, index) => (
+          <AnimatedElement key={index} animation="fadeIn" delay={`${(index + 1) * 100}` as any}>
+            <Card hover className="h-full">
+              <CardContent className="text-center py-8">
+                <div className="mb-4 flex justify-center">{stat.icon}</div>
+                <div className="text-4xl font-bold text-gradient mb-2">{stat.number}</div>
+                <p className="text-gray-600 font-medium">{stat.label}</p>
+              </CardContent>
+            </Card>
+          </AnimatedElement>
+        ))}
       </Section>
 
       <Footer />
