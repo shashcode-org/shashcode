@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useRef } from "react";
+import React, { useState, useEffect, useMemo, useRef, useLayoutEffect } from "react";
 import { csvData } from '../data/csv-data-java-dsa-release-v2';
 import { Search, ChevronRight, Youtube } from 'lucide-react';
 import AnimatedElement from '@/components/AnimatedElement';
@@ -12,6 +12,8 @@ export const CSV_TABLE_UI = () => {
     const [expandedTopicIndex, setExpandedTopicIndex] = useState(null);
     const [selectedTopic, setSelectedTopic] = useState("All");
     const [searchQuery, setSearchQuery] = useState("");
+
+    const lastIndexRef = useRef(null);
 
     const uniqueTopics = useMemo(() => ["All", ...new Set(csvData.map(topic => topic["Main Topic"]))], []);
 
@@ -48,12 +50,64 @@ export const CSV_TABLE_UI = () => {
     }, [selectedTopic]);
 
     const handleTopicToggle = (index) => {
-        setExpandedTopicIndex(prevIndex => (prevIndex === index ? null : index));
+        setExpandedTopicIndex((prevIndex) => {
+            const newIndex = prevIndex === index ? null : index;
+            lastIndexRef.current = newIndex; // store target for later scroll
+            return newIndex;
+        });
     };
+
+    // After expand/collapse animation completes, scroll properly
+    useLayoutEffect(() => {
+        if (lastIndexRef.current !== null) {
+            const el = document.getElementById(`topic-${lastIndexRef.current}`);
+            if (el) {
+                // Wait for layout to stabilize (framer-motion transition)
+                setTimeout(() => {
+                    const yOffset = -80; // adjust for navbar height
+                    const y = el.getBoundingClientRect().top + window.scrollY + yOffset;
+                    window.scrollTo({ top: y, behavior: "smooth" });
+                }, 400); // give enough time for animation & reflow
+            }
+        }
+    }, [expandedTopicIndex]);
+
 
     const handleTagClick = (topic) => {
         setSelectedTopic(topic);
-    };
+      
+        // reset open topic
+        setExpandedTopicIndex(null);
+      
+        // scroll to top smoothly
+        setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }, 100);
+      };
+      
+      useEffect(() => {
+        if (selectedTopic !== "All") {
+          // automatically open the first topic of that tag
+          setExpandedTopicIndex(0);
+      
+          // wait for render + expansion animation
+          setTimeout(() => {
+            const el = document.getElementById("topic-0");
+            if (el) {
+              const yOffset = -80; // adjust if navbar height different
+              const y = el.getBoundingClientRect().top + window.scrollY + yOffset;
+              window.scrollTo({ top: y, behavior: "smooth" });
+            }
+          }, 400); // 300ms expand anim + 100ms buffer
+        } else {
+          // if "All" clicked, collapse all and scroll to top
+          setExpandedTopicIndex(null);
+          setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }, 100);
+        }
+      }, [selectedTopic]);
+      
 
     const handleKeyDown = (event, index) => {
         if (event.key === 'Enter' || event.key === ' ') {
@@ -63,18 +117,17 @@ export const CSV_TABLE_UI = () => {
     const firstExpandedRef = useRef(null);
     return (
         <div className="p-4 sm:p-6 md:p-8">
-            
+
             <AnimatedElement animation="fadeIn" delay="200">
                 <div className="flex flex-wrap gap-2 mb-8">
                     {uniqueTopics.map((topic, index) => (
                         <button
                             key={index}
                             onClick={() => handleTagClick(topic)}
-                            className={`px-4 py-2 rounded-full text-sm font-medium transition-all shadow-sm ${
-                                selectedTopic === topic
-                                    ? "bg-primary text-primary-foreground shadow-md"
-                                    : "bg-muted/60 text-foreground hover:bg-accent hover:text-accent-foreground"
-                            }`}
+                            className={`px-4 py-2 rounded-full text-sm font-medium transition-all shadow-sm ${selectedTopic === topic
+                                ? "bg-primary text-primary-foreground shadow-md"
+                                : "bg-muted/60 text-foreground hover:bg-accent hover:text-accent-foreground"
+                                }`}
                         >
                             {topic}
                         </button>
@@ -100,125 +153,126 @@ export const CSV_TABLE_UI = () => {
             {filteredTopics.map((mainTopic, mainIndex) => {
                 return (
                     <div
-                    key={mainIndex}
-                    ref={mainIndex === 0 ? firstExpandedRef : null} // Attach ref only to the first item
-                    className="mb-6 bg-white rounded-xl shadow-md scroll-mt-24"
+                        key={mainIndex}
+                        id={`topic-${mainIndex}`}
+                        ref={mainIndex === 0 ? firstExpandedRef : null}
+                        className="mb-6 bg-white rounded-xl shadow-md scroll-mt-24"
                     >
-                <AnimatedElement 
-                    key={mainIndex} 
-                    animation="fadeIn" 
-                    delay={`${Math.min((mainIndex + 3) * 100, 500)}`} 
-                    className="mb-4"
-                >
-                    <Card className="overflow-hidden">
-                        <div
-                            className="flex justify-between items-center p-4 cursor-pointer hover:bg-accent/10 transition-all"
-                            onClick={() => handleTopicToggle(mainIndex)}
-                            onKeyDown={(e) => handleKeyDown(e, mainIndex)}
-                            tabIndex={0}
-                            role="button"
-                            aria-expanded={expandedTopicIndex === mainIndex}
+                        <AnimatedElement
+                            key={mainIndex}
+                            animation="fadeIn"
+                            delay={`${Math.min((mainIndex + 3) * 100, 500)}`}
+                            className="mb-4"
                         >
-                            <span className="font-semibold">{mainTopic["Main Topic"]}</span>
-                            <ChevronRight
-                                className={`w-5 h-5 transition-transform duration-300 ${
-                                    expandedTopicIndex === mainIndex ? 'rotate-90' : 'rotate-0'
-                                }`}
-                            />
-                        </div>
-
-                        <AnimatePresence initial={false}>
-                            {expandedTopicIndex === mainIndex && (
-                                <motion.div
-                                    initial={{ height: 0, opacity: 0 }}
-                                    animate={{ height: 'auto', opacity: 1 }}
-                                    exit={{ height: 0, opacity: 0 }}
-                                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                            <Card className="overflow-hidden">
+                                <div
+                                    className="flex justify-between items-center p-4 cursor-pointer hover:bg-accent/10 transition-all"
+                                    onClick={() => handleTopicToggle(mainIndex)}
+                                    onKeyDown={(e) => handleKeyDown(e, mainIndex)}
+                                    tabIndex={0}
+                                    role="button"
+                                    aria-expanded={expandedTopicIndex === mainIndex}
                                 >
-                                    <Separator />
-                                    <div className="overflow-x-auto p-1">
-                                        <Table>
-                                            <TableHeader>
-                                                <TableRow>
-                                                    <TableHead className="w-[30%]">Subtopic</TableHead>
-                                                    <TableHead className="w-[50%]">Details</TableHead>
-                                                    <TableHead className="w-[10%] text-center">Solve</TableHead>
-                                                    <TableHead className="w-[10%] text-center">Video</TableHead>
-                                                </TableRow>
-                                            </TableHeader>
-                                            <TableBody>
-                                                {mainTopic.Subtopics.map((subtopic, subIndex) => (
-                                                    subtopic.Details.map((detail, detailIndex) => (
-                                                        <TableRow key={`${subIndex}-${detailIndex}`} className="hover:bg-accent/5 transition-colors">
-                                                            {detailIndex === 0 ? (
-                                                                <TableCell className="font-medium align-top" rowSpan={subtopic.Details.length}>
-                                                                    {subtopic.Subtopic}
-                                                                </TableCell>
-                                                            ) : null}
+                                    <span className="font-semibold">{mainTopic["Main Topic"]}</span>
+                                    <ChevronRight
+                                        className={`w-5 h-5 transition-transform duration-300 ${expandedTopicIndex === mainIndex ? 'rotate-90' : 'rotate-0'
+                                            }`}
+                                    />
+                                </div>
 
-                                                            {!detail.Links || !Array.isArray(detail.Links) || !detail.Links.some(link => link.includes("leetcode") || link.includes("geeksforgeeks")) ? (
-                                                                <TableCell className="capitalize align-top" colSpan={2}>
-                                                                    {detail.Detail}
-                                                                </TableCell>
-                                                            ) : (
-                                                                <>
-                                                                    <TableCell className="capitalize align-top">
-                                                                        {detail.Detail}
-                                                                    </TableCell>
-                                                                    <TableCell className="text-center align-top">
-                                                                        <div className="flex justify-center space-x-2">
-                                                                                {detail.Links.map((link, index) => (
-                                                                                    link !== "N/A" ? (
-                                                                                        <a
-                                                                                            key={index}
-                                                                                            href={link}
-                                                                                            target="_blank"
-                                                                                            rel="noopener noreferrer"
-                                                                                            className="inline-flex items-center justify-center h-8 w-8 rounded-full bg-background hover:bg-accent transition-colors"
-                                                                                        >
-                                                                                            {link.includes("leetcode") ? (
-                                                                                                <SiLeetcode className="w-[16px] sm:w-[20px] h-auto" style={{ color: '#FFA116' }} />
-                                                                                            ) : link.includes("geeksforgeeks") ? (
-                                                                                                <SiGeeksforgeeks className="w-[20px] sm:w-[24px] h-auto" style={{ color: '#2F8D46' }} />
-                                                                                            ) : (
-                                                                                                <span className="text-primary text-xs font-bold">Solve</span>
-                                                                                            )}
-                                                                                        </a>
-                                                                                    ) : null
-                                                                                ))}
-                                                                        </div>
-                                                                    </TableCell>
-                                                                </>
-                                                            )}
-
-                                                            <TableCell className="text-center align-top">
-                                                                {detail["Video Link"] && detail["Video Link"].includes('https') && (
-                                                                    <a 
-                                                                        href={detail["Video Link"]} 
-                                                                        target="_blank" 
-                                                                        rel="noopener noreferrer"
-                                                                        className="inline-flex items-center justify-center h-8 w-8 rounded-full bg-background hover:bg-accent transition-colors"
-                                                                    >
-                                                                        <Youtube
-                                                                            className="h-4 w-4"
-                                                                            style={{ color: "#FF0000" }} // YouTube red
-                                                                        />
-                                                                    </a>
-                                                                )}
-                                                            </TableCell>
+                                <AnimatePresence initial={false}>
+                                    {expandedTopicIndex === mainIndex && (
+                                        <motion.div
+                                            initial={{ height: 0, opacity: 0 }}
+                                            animate={{ height: 'auto', opacity: 1 }}
+                                            exit={{ height: 0, opacity: 0 }}
+                                            transition={{ duration: 0.3, ease: "easeInOut" }}
+                                        >
+                                            <Separator />
+                                            <div className="overflow-x-auto p-1">
+                                                <Table>
+                                                    <TableHeader>
+                                                        <TableRow>
+                                                            <TableHead className="w-[30%]">Subtopic</TableHead>
+                                                            <TableHead className="w-[50%]">Details</TableHead>
+                                                            <TableHead className="w-[10%] text-center">Solve</TableHead>
+                                                            <TableHead className="w-[10%] text-center">Video</TableHead>
                                                         </TableRow>
-                                                    ))
-                                                ))}
-                                            </TableBody>
-                                        </Table>
-                                    </div>
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
-                    </Card>
-                </AnimatedElement>
-            </div>
-            )})}
+                                                    </TableHeader>
+                                                    <TableBody>
+                                                        {mainTopic.Subtopics.map((subtopic, subIndex) => (
+                                                            subtopic.Details.map((detail, detailIndex) => (
+                                                                <TableRow key={`${subIndex}-${detailIndex}`} className="hover:bg-accent/5 transition-colors">
+                                                                    {detailIndex === 0 ? (
+                                                                        <TableCell className="font-medium align-top" rowSpan={subtopic.Details.length}>
+                                                                            {subtopic.Subtopic}
+                                                                        </TableCell>
+                                                                    ) : null}
+
+                                                                    {!detail.Links || !Array.isArray(detail.Links) || !detail.Links.some(link => link.includes("leetcode") || link.includes("geeksforgeeks")) ? (
+                                                                        <TableCell className="capitalize align-top" colSpan={2}>
+                                                                            {detail.Detail}
+                                                                        </TableCell>
+                                                                    ) : (
+                                                                        <>
+                                                                            <TableCell className="capitalize align-top">
+                                                                                {detail.Detail}
+                                                                            </TableCell>
+                                                                            <TableCell className="text-center align-top">
+                                                                                <div className="flex justify-center space-x-2">
+                                                                                    {detail.Links.map((link, index) => (
+                                                                                        link !== "N/A" ? (
+                                                                                            <a
+                                                                                                key={index}
+                                                                                                href={link}
+                                                                                                target="_blank"
+                                                                                                rel="noopener noreferrer"
+                                                                                                className="inline-flex items-center justify-center h-8 w-8 rounded-full bg-background hover:bg-accent transition-colors"
+                                                                                            >
+                                                                                                {link.includes("leetcode") ? (
+                                                                                                    <SiLeetcode className="w-[16px] sm:w-[20px] h-auto" style={{ color: '#FFA116' }} />
+                                                                                                ) : link.includes("geeksforgeeks") ? (
+                                                                                                    <SiGeeksforgeeks className="w-[20px] sm:w-[24px] h-auto" style={{ color: '#2F8D46' }} />
+                                                                                                ) : (
+                                                                                                    <span className="text-primary text-xs font-bold">Solve</span>
+                                                                                                )}
+                                                                                            </a>
+                                                                                        ) : null
+                                                                                    ))}
+                                                                                </div>
+                                                                            </TableCell>
+                                                                        </>
+                                                                    )}
+
+                                                                    <TableCell className="text-center align-top">
+                                                                        {detail["Video Link"] && detail["Video Link"].includes('https') && (
+                                                                            <a
+                                                                                href={detail["Video Link"]}
+                                                                                target="_blank"
+                                                                                rel="noopener noreferrer"
+                                                                                className="inline-flex items-center justify-center h-8 w-8 rounded-full bg-background hover:bg-accent transition-colors"
+                                                                            >
+                                                                                <Youtube
+                                                                                    className="h-4 w-4"
+                                                                                    style={{ color: "#FF0000" }} // YouTube red
+                                                                                />
+                                                                            </a>
+                                                                        )}
+                                                                    </TableCell>
+                                                                </TableRow>
+                                                            ))
+                                                        ))}
+                                                    </TableBody>
+                                                </Table>
+                                            </div>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </Card>
+                        </AnimatedElement>
+                    </div>
+                )
+            })}
         </div>
     );
 };
