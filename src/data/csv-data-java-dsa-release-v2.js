@@ -1182,31 +1182,7 @@ export const csvData = [
             "Video Link": "https://youtu.be/CRG9tcCr8iU"
           },
           {
-            "Detail": "Need of Data Structure and Algorithms",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
-            "Detail": "Data and Object in real world ",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
-            "Detail": "Need for a framework",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
             "Detail": "What is collection framework? ",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
-            "Detail": "Modules Vs Framework Vs Library Vs Package",
             "Links": [
               "N/A"
             ]
@@ -1219,12 +1195,6 @@ export const csvData = [
           },
           {
             "Detail": "Hierarchy of Collections Framework - Interfaces & Classes",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
-            "Detail": "Functions in Collection Interface ",
             "Links": [
               "N/A"
             ]
@@ -1248,31 +1218,13 @@ export const csvData = [
             ]
           },
           {
-            "Detail": "How to Iterate your List using Iterator",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
-            "Detail": "Internal Working of ArrayList",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
-            "Detail": "Sorting using Comparator",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
-            "Detail": "Sorting based on Custom Comparator",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
             "Detail": "How to Iterate your List using ListIterator",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "Sorting using Sort Method",
             "Links": [
               "N/A"
             ]
@@ -1297,12 +1249,6 @@ export const csvData = [
           },
           {
             "Detail": "Time Complexity of LinkedList",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
-            "Detail": "Vectors and their use",
             "Links": [
               "N/A"
             ]
@@ -1392,18 +1338,6 @@ export const csvData = [
             ]
           },
           {
-            "Detail": "BST",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
-            "Detail": "Self Balanced BST or Red-Black Tree",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
             "Detail": "TreeMap & its functions",
             "Links": [
               "N/A"
@@ -1422,12 +1356,6 @@ export const csvData = [
             ]
           },
           {
-            "Detail": "How HashSet works Internally",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
             "Detail": "LinkedHashSet",
             "Links": [
               "N/A"
@@ -1438,100 +1366,6 @@ export const csvData = [
             "Links": [
               "N/A"
             ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "Main Topic": "String Manipulation",
-    "Subtopics": [
-      {
-        "Subtopic": "Problems on strings",
-        "Details": [
-          {
-            "Detail": "Q. Print all substrings",
-            "Links": [
-              "N/A"
-            ],
-            "Video Link": "https://youtu.be/I1rgYRi1tXE"
-          },
-          {
-            "Detail": "Q. Reverse a string",
-            "Links": [
-              "N/A"
-            ],
-            "Video Link": "https://youtu.be/m9QAjIVnmp4"
-          },
-          {
-            "Detail": "Q. Check if a string is pallindrome",
-            "Links": [
-              "N/A"
-            ],
-            "Video Link": "https://youtu.be/-HGtMO4MkWs"
-          },
-          {
-            "Detail": "Q. Reverse words in a String",
-            "Links": [
-              "N/A"
-            ],
-            "Video Link": "https://youtu.be/KhNAMB3jDOU"
-          },
-          {
-            "Detail": "Q. Check if two strings are anagram",
-            "Links": [
-              "https://www.geeksforgeeks.org/problems/anagram-1587115620/1"
-            ],
-            "Video Link": "https://youtu.be/SFF3ND7TPc0"
-          },
-          {
-            "Detail": "Q. Reverse Words in a String -iii",
-            "Links": [
-              "https://leetcode.com/problems/reverse-words-in-a-string-iii/"
-            ],
-            "Video Link": "https://youtu.be/ajhV7EYLfOY"
-          },
-          {
-            "Detail": "Q. Longest Pallindrome",
-            "Links": [
-              "N/A"
-            ],
-            "Video Link": "TBD"
-          },
-          {
-            "Detail": "Q. Find all Anagrams",
-            "Links": [
-              "N/A"
-            ],
-            "Video Link": "TBD"
-          },
-          {
-            "Detail": "Q. K-Anagrams",
-            "Links": [
-              "N/A"
-            ],
-            "Video Link": "TBD"
-          },
-          {
-            "Detail": "Q. Roman to Integer",
-            "Links": [
-              "N/A"
-            ],
-            "Video Link": "TBD"
-          },
-          {
-            "Detail": "Q. First Repeated word in a string",
-            "Links": [
-              "N/A"
-            ],
-            "Video Link": "TBD"
-          },
-          {
-            "Detail": "Q. Isomorphic String checker",
-            "Links": [
-              "N/A"
-            ],
-            "Video Link": "TBD"
           }
         ]
       }
@@ -2391,966 +2225,6 @@ export const csvData = [
     ]
   },
   {
-    "Main Topic": "Sliding Window",
-    "Subtopics": [
-      {
-        "Subtopic": "Sliding Window Technique",
-        "Details": [
-          {
-            "Detail": "What is sliding window",
-            "Links": [
-              "N/A"
-            ],
-            "Video Link": "https://youtu.be/DQMxp7TS2BI?si=WN_ksJt1fWPXuLmF"
-          },
-          {
-            "Detail": "Q. Maximum Sum Subarray of Size K",
-            "Links": [
-              "https://www.geeksforgeeks.org/problems/max-sum-subarray-of-size-k5313/1"
-            ],
-            "Video Link": "https://youtu.be/rGl2Z6fuAas?si=t3JH4diL-nDnBwGe"
-          },
-          {
-            "Detail": "Q. First Negative Number in Each Subarray of Size K",
-            "Links": [
-              "https://www.geeksforgeeks.org/problems/first-negative-integer-in-every-window-of-size-k3345/1"
-            ],
-            "Video Link": "https://youtu.be/Rot0y4cmlNw?si=TAp7sbW1OOQkW57C"
-          },
-          {
-            "Detail": "Q. Chocolate Distribution Problem",
-            "Links": [
-              "https://www.geeksforgeeks.org/problems/chocolate-distribution-problem3825/1"
-            ],
-            "Video Link": "https://youtu.be/oYNU1TD9W5Y?si=1rn_BjF9-LIJDwcH"
-          },
-          {
-            "Detail": "Q. Smallest subarray with sum greater than x",
-            "Links": [
-              "https://www.geeksforgeeks.org/problems/smallest-subarray-with-sum-greater-than-x5651/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article"
-            ],
-            "Video Link": "https://youtu.be/UXValb-h70s?si=VaCxJsB7-WKbL4nW"
-          },
-          {
-            "Detail": "Q. Longest Substring with K unique Elements",
-            "Links": [
-              "https://www.geeksforgeeks.org/problems/longest-k-unique-characters-substring0853/1"
-            ],
-            "Video Link": "https://youtu.be/Yp3T06_27MY?si=GUuisgzt8fXO5gF6"
-          },
-          {
-            "Detail": "Q. Longest Substring without repeating elements",
-            "Links": [
-              "https://leetcode.com/problems/longest-substring-without-repeating-characters/description/"
-            ],
-            "Video Link": "https://youtu.be/Vgo7tvBm8OU?si=fxI1Ggsz3C_sMlIj"
-          },
-          {
-            "Detail": "Q. Count Occurances of Anagrams",
-            "Links": [
-              "https://www.geeksforgeeks.org/problems/count-occurences-of-anagrams5839/1"
-            ],
-            "Video Link": "https://youtu.be/PVXVsSkItpY?si=0zBiqLK0x9yzN85K"
-          },
-          {
-            "Detail": "Q. Minimum Window Substring",
-            "Links": [
-              "https://leetcode.com/problems/minimum-window-substring/description/"
-            ],
-            "Video Link": "https://youtu.be/26E3K8Njm7M"
-          },
-          {
-            "Detail": "Q. Sliding Window Maximum",
-            "Links": [
-              "https://leetcode.com/problems/sliding-window-maximum/description/"
-            ],
-            "Video Link": "https://youtu.be/jOoZuTrfpjc"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "Main Topic": "Two Pointers",
-    "Subtopics": [
-      {
-        "Subtopic": "Questions on two pointer",
-        "Details": [
-          {
-            "Detail": "Q. Container with Most Water",
-            "Links": [
-              "https://leetcode.com/problems/container-with-most-water/description/"
-            ],
-            "Video Link": "TBD"
-          },
-          {
-            "Detail": "Q. Trapping Rainwater",
-            "Links": [
-              "https://leetcode.com/problems/trapping-rain-water/description/"
-            ],
-            "Video Link": "TBD"
-          },
-          {
-            "Detail": "Q. Find Pair with a given sum in sorted Array",
-            "Links": [
-              "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/"
-            ],
-            "Video Link": "TBD"
-          },
-          {
-            "Detail": "Q. Remove Duplicates from Sorted Array",
-            "Links": [
-              "https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/"
-            ],
-            "Video Link": "TBD"
-          },
-          {
-            "Detail": "Q. Maximum Consecutive ones",
-            "Links": [
-              "https://leetcode.com/problems/max-consecutive-ones/description/"
-            ],
-            "Video Link": "TBD"
-          },
-          {
-            "Detail": "Q. Reverse Pairs",
-            "Links": [
-              "https://leetcode.com/problems/reverse-pairs/description/"
-            ],
-            "Video Link": "TBD"
-          },
-          {
-            "Detail": "Q. The Celebrity Problem",
-            "Links": [
-              "https://www.geeksforgeeks.org/problems/the-celebrity-problem/1"
-            ],
-            "Video Link": "TBD"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "Main Topic": "String Pattern Matching",
-    "Subtopics": [
-      {
-        "Subtopic": "Pattern Matching Algorithms",
-        "Details": [
-          {
-            "Detail": "KMP Algorithm",
-            "Links": [
-              "N/A"
-            ],
-            "Video Link": "TBD"
-          },
-          {
-            "Detail": "Rabin Karp",
-            "Links": [
-              "N/A"
-            ],
-            "Video Link": "TBD"
-          },
-          {
-            "Detail": "Z Algorithm",
-            "Links": [
-              "N/A"
-            ],
-            "Video Link": "TBD"
-          },
-          {
-            "Detail": "Boyer Moore Algorithm",
-            "Links": [
-              "N/A"
-            ],
-            "Video Link": "TBD"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "Main Topic": "Recursion",
-    "Subtopics": [
-      {
-        "Subtopic": "Introduction to recursion",
-        "Details": [
-          {
-            "Detail": "Recursion basics and syntax",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
-            "Detail": "print number code using recursion",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
-            "Detail": "function stack and recursive states",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
-            "Detail": "print number from N to 1",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
-            "Detail": "Q. Factorial of a number",
-            "Links": [
-              "https://www.geeksforgeeks.org/problems/factorial5739/1"
-            ]
-          },
-          {
-            "Detail": "Q. Fibonacci number",
-            "Links": [
-              "https://leetcode.com/problems/fibonacci-number/description/"
-            ]
-          }
-        ]
-      },
-      {
-        "Subtopic": "Recursion on Arrays",
-        "Details": [
-          {
-            "Detail": "how to apply recursion on arrays",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
-            "Detail": "Print array left to right using recursion",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
-            "Detail": "Print array right to left using recursion",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
-            "Detail": "check if target is present in array",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
-            "Detail": "find first occurrence of element in array",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
-            "Detail": "find last occurrence of element in array",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
-            "Detail": "Q. Find Index",
-            "Links": [
-              "https://www.geeksforgeeks.org/problems/find-index4752/1"
-            ]
-          },
-          {
-            "Detail": "find all occurrence",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
-            "Detail": "binary search using recursion",
-            "Links": [
-              "N/A"
-            ]
-          }
-        ]
-      },
-      {
-        "Subtopic": "Recursion on Strings",
-        "Details": [
-          {
-            "Detail": "recursion on strings",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
-            "Detail": "print string",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
-            "Detail": "reverse print string",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
-            "Detail": "check palindrome",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
-            "Detail": "remove a char from string",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
-            "Detail": "replace PI with 3.14",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
-            "Detail": "Q. Count and say",
-            "Links": [
-              "https://leetcode.com/problems/count-and-say/description/"
-            ]
-          }
-        ]
-      },
-      {
-        "Subtopic": "Backtracking",
-        "Details": [
-          {
-            "Detail": "Backtracking and All it's variants",
-            "Links": [
-              "N/A"
-            ],
-            "Video Link": "https://youtu.be/rBJ6lNgIwfs?si=BjYRCAbitUHXCuIC"
-          },
-          {
-            "Detail": "Q. Rat in a Maze",
-            "Links": [
-              "https://www.geeksforgeeks.org/problems/rat-in-a-maze-problem/1"
-            ],
-            "Video Link": "https://youtu.be/HoaXmlzyAWs?si=UGRxfc3-KDoFUHXc"
-          },
-          {
-            "Detail": "Q. All permutations",
-            "Links": [
-              "https://leetcode.com/problems/permutations/description/"
-            ],
-            "Video Link": "https://youtu.be/m9HgMrsdvaQ?si=gcVhCyp5V_B-drJY"
-          },
-          {
-            "Detail": "Q. Pallindrome Partitioning",
-            "Links": [
-              "https://leetcode.com/problems/palindrome-partitioning/description/"
-            ],
-            "Video Link": "https://youtu.be/-GrwQ-Yfs48?si=WVU_8qyIHFL0FwfT"
-          },
-          {
-            "Detail": "Q. Letter Combination of a Phone Number",
-            "Links": [
-              "https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/"
-            ],
-            "Video Link": "https://youtu.be/iMboZzRh-UM?si=1kExLPQf2O1ut17V"
-          },
-          {
-            "Detail": "Q. Print Subdequences of a String",
-            "Links": [
-              "N/A"
-            ],
-            "Video Link": "https://youtu.be/mj20tLqdJRk?si=fXEiE59i1F1L0y09"
-          },
-          {
-            "Detail": "Q. Subsequences with sum equal K",
-            "Links": [
-              "N/A"
-            ],
-            "Video Link": "https://youtu.be/j-y_ohVDRRI?si=ZIKh3815ORC1b5zy"
-          }
-        ]
-      },
-      {
-        "Subtopic": "Backtracking with Pruning",
-        "Details": [
-          {
-            "Detail": "Q. Combination Sum - I",
-            "Links": [
-              "https://leetcode.com/problems/combination-sum/description/"
-            ],
-            "Video Link": "https://youtu.be/fC_rh6jA6Tw?si=-tWhz2PM8ofwUISB"
-          },
-          {
-            "Detail": "Q. Combination Sum - II",
-            "Links": [
-              "https://leetcode.com/problems/combination-sum-ii/description/"
-            ],
-            "Video Link": "https://youtu.be/Edw151zdBTI?si=iA_f9T_g3X4a1U3l"
-          },
-          {
-            "Detail": "Q. Combination Sum - III",
-            "Links": [
-              "https://leetcode.com/problems/combination-sum-iii/description/"
-            ],
-            "Video Link": "https://youtu.be/gSza2TQV0gs?si=W95ZbOUasGMMAf12"
-          },
-          {
-            "Detail": "Q. Combination Sum - IV",
-            "Links": [
-              "https://leetcode.com/problems/combination-sum-iv/description/"
-            ],
-            "Video Link": "https://youtu.be/y1KU16gUOSE?si=F0dwyhG6O6YssxQr"
-          }
-        ]
-      },
-      {
-        "Subtopic": "More Questions on Backtracking",
-        "Details": [
-          {
-            "Detail": "Q. Number of islands",
-            "Links": [
-              "https://leetcode.com/problems/number-of-islands/description/"
-            ],
-            "Video Link": "https://youtu.be/jUBoim74Fvc?si=KrK3mm2QE-w3YJNw"
-          },
-          {
-            "Detail": "Q. Knights tour problem",
-            "Links": [
-              "N/A"
-            ],
-            "Video Link": "https://youtu.be/TZb-bAAMuzY?si=JQWhxWpZNo_aNQud"
-          },
-          {
-            "Detail": "Q. N Queens problem",
-            "Links": [
-              "N/A"
-            ],
-            "Video Link": "https://youtu.be/76K-yS4sByc?si=Uy_EnBB6yOpnoUZe"
-          },
-          {
-            "Detail": "Q. Suduko Solver",
-            "Links": [
-              "N/A"
-            ]
-          }
-        ]
-      },
-      {
-        "Subtopic": "Recursion - III",
-        "Details": [
-          {
-            "Detail": "Binary Search using recursion",
-            "Links": [
-              "https://www.geeksforgeeks.org/problems/binary-search-1587115620/1"
-            ],
-            "Video Link": "https://youtu.be/456By5f2-4o?si=bR07D8MNT4zSzoQe"
-          },
-          {
-            "Detail": "Q. Josephus problem - Kill in circle",
-            "Links": [
-              "https://www.geeksforgeeks.org/problems/josephus-problem/1"
-            ],
-            "Video Link": "https://youtu.be/4JE_9zOaX58?si=DRcQ9eRk6suWuI8B"
-          }
-        ]
-      },
-      {
-        "Subtopic": "Divide and Conquer",
-        "Details": [
-          {
-            "Detail": "Q. calculating power ( x^n)",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
-            "Detail": "Q. Merge Sort",
-            "Links": [
-              "https://www.geeksforgeeks.org/problems/merge-sort/1"
-            ],
-            "Video Link": "https://youtu.be/oviqkqemCRY?si=rMjLaDHLbjDVdKvc"
-          },
-          {
-            "Detail": "Q. Quick Sort",
-            "Links": [
-              "https://www.geeksforgeeks.org/problems/quick-sort/1"
-            ],
-            "Video Link": "https://youtu.be/RFbZx9nTB3s?si=wCJ1lyskolGze6pb"
-          },
-          {
-            "Detail": "Q. Count Inversion",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
-            "Detail": "Strassen's Matrix Multiplication",
-            "Links": [
-              "N/A"
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "Main Topic": "Dynamic Programming (DP)",
-    "Subtopics": [
-      {
-        "Subtopic": "Dynamic Programming Part 1",
-        "Details": [
-          {
-            "Detail": "Overlapping Subproblems",
-            "Links": [
-              "N/A"
-            ],
-            "Video Link": "https://youtu.be/P3MFBCZCGXs?si=FNhk7mjC7Cf0MZRD"
-          },
-          {
-            "Detail": "Optimal Substructures",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
-            "Detail": "Q. Fibonacci Number",
-            "Links": [
-              "https://leetcode.com/problems/fibonacci-number/description/"
-            ]
-          },
-          {
-            "Detail": "Q. Climbing Stairs",
-            "Links": [
-              "https://leetcode.com/problems/climbing-stairs/description/"
-            ]
-          },
-          {
-            "Detail": "Q. Counting Bits",
-            "Links": [
-              "https://leetcode.com/problems/counting-bits/description/"
-            ]
-          },
-          {
-            "Detail": "Q. Min Cost Climbing Stairs",
-            "Links": [
-              "https://leetcode.com/problems/min-cost-climbing-stairs/description/"
-            ]
-          },
-          {
-            "Detail": "Q. House Robber 1",
-            "Links": [
-              "https://leetcode.com/problems/house-robber/description/"
-            ]
-          },
-          {
-            "Detail": "Q. House Robber 2",
-            "Links": [
-              "https://leetcode.com/problems/house-robber-ii/description/"
-            ]
-          },
-          {
-            "Detail": "Q. Check if there exist a subsequence with sum K",
-            "Links": [
-              "https://www.geeksforgeeks.org/problems/check-if-there-exists-a-subsequence-with-sum-k/0"
-            ]
-          },
-          {
-            "Detail": "Q. Perfect Sum Problem",
-            "Links": [
-              "https://www.geeksforgeeks.org/problems/perfect-sum-problem5633/0"
-            ]
-          },
-          {
-            "Detail": "Q. 01 Knapsack Problem",
-            "Links": [
-              "https://www.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1"
-            ]
-          },
-          {
-            "Detail": "Q. Coin Change 1",
-            "Links": [
-              "https://leetcode.com/problems/coin-change/description/"
-            ]
-          },
-          {
-            "Detail": "Q. Coin Change 2",
-            "Links": [
-              "https://leetcode.com/problems/coin-change-ii/description/"
-            ]
-          },
-          {
-            "Detail": "Q. Rod Cutting Problem",
-            "Links": [
-              "https://www.geeksforgeeks.org/problems/rod-cutting0840/1"
-            ]
-          },
-          {
-            "Detail": "Q. Longest Common Subsequence",
-            "Links": [
-              "https://leetcode.com/problems/longest-common-subsequence/description/"
-            ]
-          },
-          {
-            "Detail": "Q. Longest Palindromic Subsequence",
-            "Links": [
-              "https://leetcode.com/problems/longest-palindromic-subsequence/description/"
-            ]
-          },
-          {
-            "Detail": "Q. Longest Increasing Subsequence",
-            "Links": [
-              "https://leetcode.com/problems/longest-increasing-subsequence/description/"
-            ]
-          },
-          {
-            "Detail": "Q. Maximum Length of pair chain",
-            "Links": [
-              "https://leetcode.com/problems/maximum-length-of-pair-chain/description/"
-            ]
-          },
-          {
-            "Detail": "Q. Unique Paths 1",
-            "Links": [
-              "https://leetcode.com/problems/unique-paths/description/"
-            ]
-          },
-          {
-            "Detail": "Q. Unique Paths 2",
-            "Links": [
-              "https://leetcode.com/problems/unique-paths-ii/description/"
-            ]
-          }
-        ]
-      },
-      {
-        "Subtopic": "Dynamic Programming Part 2",
-        "Details": [
-          {
-            "Detail": "Q. Pallindromic Partitioning",
-            "Links": [
-              "N/A"
-            ],
-            "Video Link": "TBD"
-          },
-          {
-            "Detail": "Kadanes Algorithm",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
-            "Detail": "Q. Maximum Sum Subarray",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
-            "Detail": "Q. Maximum Product Subarray",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
-            "Detail": "Q. Maximum Sum Rectangle",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
-            "Detail": "Q. Edit Distance",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
-            "Detail": "Q. Word Break Problem",
-            "Links": [
-              "N/A"
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "Main Topic": "Greedy Algorithms",
-    "Subtopics": [
-      {
-        "Subtopic": "Greedy Algorithm Introduction",
-        "Details": [
-          {
-            "Detail": "Intro to Greedy",
-            "Links": [
-              "N/A"
-            ],
-            "Video Link": "https://youtu.be/ofaNk7NerW8"
-          },
-          {
-            "Detail": "Q. Activity Selection Problem",
-            "Links": [
-              "https://www.geeksforgeeks.org/problems/activity-selection-1587115620/1"
-            ]
-          },
-          {
-            "Detail": "Q. Non Overlapping Intervals",
-            "Links": [
-              "https://leetcode.com/problems/non-overlapping-intervals/description/"
-            ]
-          },
-          {
-            "Detail": "Q. Minimum Number of Arrows to burst balloons",
-            "Links": [
-              "https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/description/"
-            ]
-          },
-          {
-            "Detail": "Q. Job Sequencing problem",
-            "Links": [
-              "https://www.geeksforgeeks.org/problems/job-sequencing-problem-1587115620/1"
-            ]
-          },
-          {
-            "Detail": "Q. Assign mice to Holes",
-            "Links": [
-              "https://www.geeksforgeeks.org/problems/assign-mice-holes3053/0"
-            ]
-          },
-          {
-            "Detail": "Q. Police and Thieves",
-            "Links": [
-              "https://www.geeksforgeeks.org/problems/police-and-thieves--141631/1"
-            ]
-          },
-          {
-            "Detail": "Q. Fractional Knapsack",
-            "Links": [
-              "https://www.geeksforgeeks.org/problems/fractional-knapsack-1587115620/1"
-            ]
-          },
-          {
-            "Detail": "Q. Maximum units on a truck",
-            "Links": [
-              "https://leetcode.com/problems/maximum-units-on-a-truck/description/"
-            ]
-          },
-          {
-            "Detail": "Q. Maximum Bags with full capacity of rocks",
-            "Links": [
-              "https://leetcode.com/problems/maximum-bags-with-full-capacity-of-rocks/description/"
-            ]
-          },
-          {
-            "Detail": "Q. Jump Game 1",
-            "Links": [
-              "https://leetcode.com/problems/jump-game/description/"
-            ]
-          },
-          {
-            "Detail": "Q. Jump Game 2",
-            "Links": [
-              "https://leetcode.com/problems/jump-game-ii/description/"
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "Main Topic": "Stack",
-    "Subtopics": [
-      {
-        "Subtopic": "Stack Basics",
-        "Details": [
-          {
-            "Detail": "Stack",
-            "Links": [
-              "N/A"
-            ],
-            "Video Link": "https://youtu.be/TpuQWpma7ug"
-          },
-          {
-            "Detail": "Stack using Arrays",
-            "Links": [
-              "N/A"
-            ]
-          }
-        ]
-      },
-      {
-        "Subtopic": "Questions on stack",
-        "Details": [
-          {
-            "Detail": "Q. Check parenthesis",
-            "Links": [
-              "https://leetcode.com/problems/valid-parentheses/description/"
-            ],
-            "Video Link": "https://youtu.be/CNOoP25NpfQ"
-          },
-          {
-            "Detail": "Q. Remove minimum brackets to balance string",
-            "Links": [
-              "https://www.geeksforgeeks.org/problems/count-the-reversals0401/1"
-            ],
-            "Video Link": "https://youtu.be/FB6wSdPjVGw"
-          },
-          {
-            "Detail": "Q. Add minimum brackets to balance string",
-            "Links": [
-              "https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/description/"
-            ],
-            "Video Link": "https://youtu.be/BNFBv1KtcDM"
-          },
-          {
-            "Detail": "Q. Swap minimum brackets to balance string",
-            "Links": [
-              "https://leetcode.com/problems/minimum-number-of-swaps-to-make-the-string-balanced/description/"
-            ],
-            "Video Link": "https://youtu.be/RZTapGf3pzI"
-          },
-          {
-            "Detail": "Q. Swap adjacent brackets to balance string",
-            "Links": [
-              "https://www.geeksforgeeks.org/problems/minimum-swaps-for-bracket-balancing2704/1"
-            ],
-            "Video Link": "https://youtu.be/U48xDsqb8OE"
-          },
-          {
-            "Detail": "Q. Asteroid Collision",
-            "Links": [
-              "https://leetcode.com/problems/asteroid-collision/description/"
-            ],
-            "Video Link": "https://youtu.be/OtddlksWtS4"
-          },
-          {
-            "Detail": "Q. Stock Span Problem",
-            "Links": [
-              "https://leetcode.com/problems/online-stock-span/description/"
-            ],
-            "Video Link": "https://youtu.be/1_Bbq5qOraY"
-          },
-          {
-            "Detail": "Q. Next Greater element",
-            "Links": [
-              "https://www.geeksforgeeks.org/problems/next-larger-element-1587115620/1"
-            ],
-            "Video Link": "https://youtu.be/8P3e34EgVyY"
-          },
-          {
-            "Detail": "Q. Next Smaller element",
-            "Links": [
-              "https://www.geeksforgeeks.org/problems/help-classmates--141631/1"
-            ],
-            "Video Link": "https://youtu.be/MqQchOMmTGY"
-          },
-          {
-            "Detail": "Q. Next Greater / Smaller element in circular array",
-            "Links": [
-              "https://leetcode.com/problems/next-greater-element-ii/description/"
-            ],
-            "Video Link": "https://youtu.be/ahlaBL4gG1s"
-          },
-          {
-            "Detail": "Q. Largest Rectangle in Histogram + Previous smaller element",
-            "Links": [
-              "https://leetcode.com/problems/largest-rectangle-in-histogram/description/"
-            ],
-            "Video Link": "https://youtu.be/qUS-DZU4fj4"
-          },
-          {
-            "Detail": "Q. Max Rectangle",
-            "Links": [
-              "https://leetcode.com/problems/maximal-rectangle/description/"
-            ],
-            "Video Link": "https://youtu.be/DPkDmhCyyuc"
-          },
-          {
-            "Detail": "Q. Longest Valid Parentheses",
-            "Links": [
-              "https://leetcode.com/problems/longest-valid-parentheses/description/"
-            ],
-            "Video Link": "https://youtu.be/gqQsbdTcey0"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "Main Topic": "Queue",
-    "Subtopics": [
-      {
-        "Subtopic": "Queue Basics",
-        "Details": [
-          {
-            "Detail": "Queue",
-            "Links": [
-              "N/A"
-            ],
-            "Video Link": "https://youtu.be/9m4SZPRQXQI?si=izPej7j2qhbiKrys"
-          },
-          {
-            "Detail": "Queue using Array",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
-            "Detail": "Circular Queue ",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
-            "Detail": "Double ended Queue",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
-            "Detail": "Implement queue using stack ",
-            "Links": [
-              "N/A"
-            ],
-            "Video Link": "https://youtu.be/Enygu8ivr0w?si=SgzjEHke5oc_cwdk"
-          },
-          {
-            "Detail": "Implement stack using queue",
-            "Links": [
-              "N/A"
-            ],
-            "Video Link": "https://youtu.be/z4FxPUgXn90?si=86tva8iOIGV5E74n"
-          }
-        ]
-      },
-      {
-        "Subtopic": "Questions on queue",
-        "Details": [
-          {
-            "Detail": "Q. LRU Cache",
-            "Links": [
-              "https://leetcode.com/problems/lru-cache/description/"
-            ],
-            "Video Link": "TBL"
-          },
-          {
-            "Detail": "Q. LFU Cache",
-            "Links": [
-              "https://leetcode.com/problems/lfu-cache/description/"
-            ],
-            "Video Link": "TBL"
-          },
-          {
-            "Detail": "Q. Find Maximum and Minimum of Every Window Size",
-            "Links": [
-              "N/A"
-            ],
-            "Video Link": "TBL"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "Main Topic": "Hashing",
     "Subtopics": [
       {
@@ -3578,13 +2452,6 @@ export const csvData = [
             "Video Link": "https://youtu.be/4ohND5Hq-wQ?si=-Rdz-tpJZ4W1ke-g"
           },
           {
-            "Detail": "Q. Count distinct elements in every window of size K",
-            "Links": [
-              "N/A"
-            ],
-            "Video Link": "TBD"
-          },
-          {
             "Detail": "Q. Largest subarray with equal number of 0s and 1s",
             "Links": [
               "https://www.geeksforgeeks.org/problems/largest-subarray-of-0s-and-1s/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article"
@@ -3592,18 +2459,970 @@ export const csvData = [
             "Video Link": "https://youtu.be/qOCuB-IC9KA?si=NEEgvm_zlI-dvSm_"
           },
           {
-            "Detail": "Q. Find pairs with given sum such that elements of pair are in different rows",
-            "Links": [
-              "N/A"
-            ],
-            "Video Link": "TBD"
-          },
-          {
             "Detail": "Bucket Sort Algorithm",
             "Links": [
               "N/A"
             ],
             "Video Link": "https://youtu.be/5Pe3YSnqGh8?si=8cnivpNvhCX6X0hf"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Main Topic": "Sliding Window",
+    "Subtopics": [
+      {
+        "Subtopic": "Sliding Window Technique",
+        "Details": [
+          {
+            "Detail": "What is sliding window",
+            "Links": [
+              "N/A"
+            ],
+            "Video Link": "https://youtu.be/DQMxp7TS2BI?si=WN_ksJt1fWPXuLmF"
+          },
+          {
+            "Detail": "Q. Maximum Sum Subarray of Size K",
+            "Links": [
+              "https://www.geeksforgeeks.org/problems/max-sum-subarray-of-size-k5313/1"
+            ],
+            "Video Link": "https://youtu.be/rGl2Z6fuAas?si=t3JH4diL-nDnBwGe"
+          },
+          {
+            "Detail": "Q. First Negative Number in Each Subarray of Size K",
+            "Links": [
+              "https://www.geeksforgeeks.org/problems/first-negative-integer-in-every-window-of-size-k3345/1"
+            ],
+            "Video Link": "https://youtu.be/Rot0y4cmlNw?si=TAp7sbW1OOQkW57C"
+          },
+          {
+            "Detail": "Q. Chocolate Distribution Problem",
+            "Links": [
+              "https://www.geeksforgeeks.org/problems/chocolate-distribution-problem3825/1"
+            ],
+            "Video Link": "https://youtu.be/oYNU1TD9W5Y?si=1rn_BjF9-LIJDwcH"
+          },
+          {
+            "Detail": "Q. Smallest subarray with sum greater than x",
+            "Links": [
+              "https://www.geeksforgeeks.org/problems/smallest-subarray-with-sum-greater-than-x5651/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article"
+            ],
+            "Video Link": "https://youtu.be/UXValb-h70s?si=VaCxJsB7-WKbL4nW"
+          },
+          {
+            "Detail": "Q. Longest Substring with K unique Elements",
+            "Links": [
+              "https://www.geeksforgeeks.org/problems/longest-k-unique-characters-substring0853/1"
+            ],
+            "Video Link": "https://youtu.be/Yp3T06_27MY?si=GUuisgzt8fXO5gF6"
+          },
+          {
+            "Detail": "Q. Longest Substring without repeating elements",
+            "Links": [
+              "https://leetcode.com/problems/longest-substring-without-repeating-characters/description/"
+            ],
+            "Video Link": "https://youtu.be/Vgo7tvBm8OU?si=fxI1Ggsz3C_sMlIj"
+          },
+          {
+            "Detail": "Q. Count Occurances of Anagrams",
+            "Links": [
+              "https://www.geeksforgeeks.org/problems/count-occurences-of-anagrams5839/1"
+            ],
+            "Video Link": "https://youtu.be/PVXVsSkItpY?si=0zBiqLK0x9yzN85K"
+          },
+          {
+            "Detail": "Q. Minimum Window Substring",
+            "Links": [
+              "https://leetcode.com/problems/minimum-window-substring/description/"
+            ],
+            "Video Link": "https://youtu.be/26E3K8Njm7M"
+          },
+          {
+            "Detail": "Q. Sliding Window Maximum",
+            "Links": [
+              "https://leetcode.com/problems/sliding-window-maximum/description/"
+            ],
+            "Video Link": "https://youtu.be/jOoZuTrfpjc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Main Topic": "Two Pointers",
+    "Subtopics": [
+      {
+        "Subtopic": "Questions on two pointer",
+        "Details": [
+          {
+            "Detail": "Q. Container with Most Water",
+            "Links": [
+              "https://leetcode.com/problems/container-with-most-water/description/"
+            ],
+            "Video Link": "TBD"
+          },
+          {
+            "Detail": "Q. Trapping Rainwater",
+            "Links": [
+              "https://leetcode.com/problems/trapping-rain-water/description/"
+            ],
+            "Video Link": "https://youtu.be/pzmoYG6Y3Xs?si=IpM2ifhf6enwWWZ2"
+          },
+          {
+            "Detail": "Q. Find Pair with a given sum in sorted Array",
+            "Links": [
+              "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/"
+            ],
+            "Video Link": "TBD"
+          },
+          {
+            "Detail": "Q. Remove Duplicates from Sorted Array",
+            "Links": [
+              "https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/"
+            ],
+            "Video Link": "TBD"
+          },
+          {
+            "Detail": "Q. Maximum Consecutive ones",
+            "Links": [
+              "https://leetcode.com/problems/max-consecutive-ones/description/"
+            ],
+            "Video Link": "TBD"
+          },
+          {
+            "Detail": "Q. Sort Colors",
+            "Links": [
+              "https://leetcode.com/problems/sort-colors/description/"
+            ],
+            "Video Link": "https://youtu.be/G4LWBrda_H4?si=hvyWLgeGTDpdPcan"
+          },
+          {
+            "Detail": "Q. Separate Black and White Balls",
+            "Links": [
+              "https://leetcode.com/problems/separate-black-and-white-balls/"
+            ],
+            "Video Link": "https://youtu.be/Eb7UbW2R_vo?si=w0H5bt2eUyn4-2hT"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Main Topic": "Recursion",
+    "Subtopics": [
+      {
+        "Subtopic": "Introduction to recursion",
+        "Details": [
+          {
+            "Detail": "Recursion basics and syntax",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "print number code using recursion",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "function stack and recursive states",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "print number from N to 1",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "Q. Factorial of a number",
+            "Links": [
+              "https://www.geeksforgeeks.org/problems/factorial5739/1"
+            ]
+          },
+          {
+            "Detail": "Q. Fibonacci number",
+            "Links": [
+              "https://leetcode.com/problems/fibonacci-number/description/"
+            ]
+          }
+        ]
+      },
+      {
+        "Subtopic": "Recursion on Arrays",
+        "Details": [
+          {
+            "Detail": "how to apply recursion on arrays",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "Print array left to right using recursion",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "Print array right to left using recursion",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "check if target is present in array",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "find first occurrence of element in array",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "find last occurrence of element in array",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "Q. Find Index",
+            "Links": [
+              "https://www.geeksforgeeks.org/problems/find-index4752/1"
+            ]
+          },
+          {
+            "Detail": "find all occurrence",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "binary search using recursion",
+            "Links": [
+              "N/A"
+            ]
+          }
+        ]
+      },
+      {
+        "Subtopic": "Recursion on Strings",
+        "Details": [
+          {
+            "Detail": "recursion on strings",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "print string",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "reverse print string",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "check palindrome",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "remove a char from string",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "replace PI with 3.14",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "Q. Count and say",
+            "Links": [
+              "https://leetcode.com/problems/count-and-say/description/"
+            ]
+          }
+        ]
+      },
+      {
+        "Subtopic": "Recursion on Subsequences",
+        "Details": [
+          {
+            "Detail": "What is a subsequence",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "Print all subsequence of a string",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "Count all subsequece of string",
+            "Links": [
+              "N/A"
+            ]
+          }
+        ]
+      },
+      {
+        "Subtopic": "Questions on recursion",
+        "Details": [
+          {
+            "Detail": "Q. Josephus problem - Find the Winner of the Circular Game",
+            "Links": [
+              "https://leetcode.com/problems/find-the-winner-of-the-circular-game/description/"
+            ],
+            "Video Link": "https://youtu.be/2dN4ktn6D1k?si=zPPFxgG8dv_VvHnm"
+          }
+        ]
+      },
+      {
+        "Subtopic": "Backtracking",
+        "Details": [
+          {
+            "Detail": "Backtracking and All it's variants",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "Q. Subsets -1",
+            "Links": [
+              "https://leetcode.com/problems/subsets/description/"
+            ]
+          },
+          {
+            "Detail": "Q. Subsets -2",
+            "Links": [
+              "https://leetcode.com/problems/subsets-ii/description/"
+            ]
+          },
+          {
+            "Detail": "Q. Permutations -1",
+            "Links": [
+              "https://leetcode.com/problems/permutations/description/"
+            ]
+          },
+          {
+            "Detail": "Q. Permutations -2",
+            "Links": [
+              "https://leetcode.com/problems/permutations-ii/description/"
+            ]
+          },
+          {
+            "Detail": "Q. Letter Combination of a Phone Number",
+            "Links": [
+              "https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/"
+            ]
+          },
+          {
+            "Detail": "Q. Generate Parentheses",
+            "Links": [
+              "https://leetcode.com/problems/generate-parentheses/description/"
+            ]
+          },
+          {
+            "Detail": "Q. Combination Sum -1",
+            "Links": [
+              "https://leetcode.com/problems/combination-sum/description/"
+            ]
+          },
+          {
+            "Detail": "Q. Combination Sum -2",
+            "Links": [
+              "https://leetcode.com/problems/combination-sum-ii/description/"
+            ]
+          },
+          {
+            "Detail": "Q. N Queens problem",
+            "Links": [
+              "https://leetcode.com/problems/n-queens/description/"
+            ]
+          },
+          {
+            "Detail": "Q. Sudoku Solver",
+            "Links": [
+              "https://leetcode.com/problems/sudoku-solver/description/"
+            ]
+          },
+          {
+            "Detail": "Q. Pallindrome Partitioning",
+            "Links": [
+              "https://leetcode.com/problems/palindrome-partitioning/description/"
+            ]
+          },
+          {
+            "Detail": "Q. Rat in a Maze",
+            "Links": [
+              "https://www.geeksforgeeks.org/problems/rat-in-a-maze-problem/1"
+            ]
+          },
+          {
+            "Detail": "Q. Knights tour problem",
+            "Links": [
+              "https://www.geeksforgeeks.org/problems/the-knights-tour-problem/1"
+            ]
+          },
+          {
+            "Detail": "Q. Word Search ",
+            "Links": [
+              "https://leetcode.com/problems/word-search/description/"
+            ],
+            "Video Link": "https://youtu.be/HBboUqC-rZ0?si=dcEMaByR0gfChsBs"
+          }
+        ]
+      },
+      {
+        "Subtopic": "Divide and Conquer",
+        "Details": [
+          {
+            "Detail": "Q. Merge Sort",
+            "Links": [
+              "https://www.geeksforgeeks.org/problems/merge-sort/1"
+            ],
+            "Video Link": "https://youtu.be/oviqkqemCRY?si=rMjLaDHLbjDVdKvc"
+          },
+          {
+            "Detail": "Q. Quick Sort",
+            "Links": [
+              "https://www.geeksforgeeks.org/problems/quick-sort/1"
+            ],
+            "Video Link": "https://youtu.be/RFbZx9nTB3s?si=wCJ1lyskolGze6pb"
+          },
+          {
+            "Detail": "Q. Count Inversion",
+            "Links": [
+              "https://www.geeksforgeeks.org/problems/inversion-of-array-1587115620/1"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Main Topic": "Dynamic Programming (DP)",
+    "Subtopics": [
+      {
+        "Subtopic": "Dynamic Programming Part 1",
+        "Details": [
+          {
+            "Detail": "Overlapping Subproblems",
+            "Links": [
+              "N/A"
+            ],
+            "Video Link": "https://youtu.be/P3MFBCZCGXs?si=FNhk7mjC7Cf0MZRD"
+          },
+          {
+            "Detail": "Optimal Substructures",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "Q. Fibonacci Number",
+            "Links": [
+              "https://leetcode.com/problems/fibonacci-number/description/"
+            ]
+          },
+          {
+            "Detail": "Q. Climbing Stairs",
+            "Links": [
+              "https://leetcode.com/problems/climbing-stairs/description/"
+            ]
+          },
+          {
+            "Detail": "Q. Counting Bits",
+            "Links": [
+              "https://leetcode.com/problems/counting-bits/description/"
+            ]
+          },
+          {
+            "Detail": "Q. Min Cost Climbing Stairs",
+            "Links": [
+              "https://leetcode.com/problems/min-cost-climbing-stairs/description/"
+            ]
+          },
+          {
+            "Detail": "Q. House Robber 1",
+            "Links": [
+              "https://leetcode.com/problems/house-robber/description/"
+            ]
+          },
+          {
+            "Detail": "Q. House Robber 2",
+            "Links": [
+              "https://leetcode.com/problems/house-robber-ii/description/"
+            ]
+          },
+          {
+            "Detail": "Q. Check if there exist a subsequence with sum K",
+            "Links": [
+              "https://www.geeksforgeeks.org/problems/check-if-there-exists-a-subsequence-with-sum-k/0"
+            ]
+          },
+          {
+            "Detail": "Q. Perfect Sum Problem",
+            "Links": [
+              "https://www.geeksforgeeks.org/problems/perfect-sum-problem5633/0"
+            ]
+          },
+          {
+            "Detail": "Q. 01 Knapsack Problem",
+            "Links": [
+              "https://www.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1"
+            ]
+          },
+          {
+            "Detail": "Q. Coin Change 1",
+            "Links": [
+              "https://leetcode.com/problems/coin-change/description/"
+            ]
+          },
+          {
+            "Detail": "Q. Coin Change 2",
+            "Links": [
+              "https://leetcode.com/problems/coin-change-ii/description/"
+            ]
+          },
+          {
+            "Detail": "Q. Rod Cutting Problem",
+            "Links": [
+              "https://www.geeksforgeeks.org/problems/rod-cutting0840/1"
+            ]
+          },
+          {
+            "Detail": "Q. Longest Common Subsequence",
+            "Links": [
+              "https://leetcode.com/problems/longest-common-subsequence/description/"
+            ]
+          },
+          {
+            "Detail": "Q. Longest Palindromic Subsequence",
+            "Links": [
+              "https://leetcode.com/problems/longest-palindromic-subsequence/description/"
+            ]
+          },
+          {
+            "Detail": "Q. Longest Increasing Subsequence",
+            "Links": [
+              "https://leetcode.com/problems/longest-increasing-subsequence/description/"
+            ]
+          },
+          {
+            "Detail": "Q. Maximum Length of pair chain",
+            "Links": [
+              "https://leetcode.com/problems/maximum-length-of-pair-chain/description/"
+            ]
+          },
+          {
+            "Detail": "Q. Unique Paths 1",
+            "Links": [
+              "https://leetcode.com/problems/unique-paths/description/"
+            ]
+          },
+          {
+            "Detail": "Q. Unique Paths 2",
+            "Links": [
+              "https://leetcode.com/problems/unique-paths-ii/description/"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Main Topic": "Greedy Algorithms",
+    "Subtopics": [
+      {
+        "Subtopic": "Greedy Algorithm Introduction",
+        "Details": [
+          {
+            "Detail": "Intro to Greedy",
+            "Links": [
+              "N/A"
+            ],
+            "Video Link": "https://youtu.be/ofaNk7NerW8"
+          },
+          {
+            "Detail": "Q. Activity Selection Problem",
+            "Links": [
+              "https://www.geeksforgeeks.org/problems/activity-selection-1587115620/1"
+            ]
+          },
+          {
+            "Detail": "Q. Non Overlapping Intervals",
+            "Links": [
+              "https://leetcode.com/problems/non-overlapping-intervals/description/"
+            ]
+          },
+          {
+            "Detail": "Q. Minimum Number of Arrows to burst balloons",
+            "Links": [
+              "https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/description/"
+            ]
+          },
+          {
+            "Detail": "Q. Job Sequencing problem",
+            "Links": [
+              "https://www.geeksforgeeks.org/problems/job-sequencing-problem-1587115620/1"
+            ]
+          },
+          {
+            "Detail": "Q. Assign mice to Holes",
+            "Links": [
+              "https://www.geeksforgeeks.org/problems/assign-mice-holes3053/0"
+            ]
+          },
+          {
+            "Detail": "Q. Police and Thieves",
+            "Links": [
+              "https://www.geeksforgeeks.org/problems/police-and-thieves--141631/1"
+            ]
+          },
+          {
+            "Detail": "Q. Fractional Knapsack",
+            "Links": [
+              "https://www.geeksforgeeks.org/problems/fractional-knapsack-1587115620/1"
+            ]
+          },
+          {
+            "Detail": "Q. Maximum units on a truck",
+            "Links": [
+              "https://leetcode.com/problems/maximum-units-on-a-truck/description/"
+            ]
+          },
+          {
+            "Detail": "Q. Maximum Bags with full capacity of rocks",
+            "Links": [
+              "https://leetcode.com/problems/maximum-bags-with-full-capacity-of-rocks/description/"
+            ]
+          },
+          {
+            "Detail": "Q. Jump Game 1",
+            "Links": [
+              "https://leetcode.com/problems/jump-game/description/"
+            ]
+          },
+          {
+            "Detail": "Q. Jump Game 2",
+            "Links": [
+              "https://leetcode.com/problems/jump-game-ii/description/"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Main Topic": "Stack",
+    "Subtopics": [
+      {
+        "Subtopic": "Stack Basics",
+        "Details": [
+          {
+            "Detail": "Stack",
+            "Links": [
+              "N/A"
+            ],
+            "Video Link": "https://youtu.be/TpuQWpma7ug"
+          },
+          {
+            "Detail": "Stack using Arrays",
+            "Links": [
+              "N/A"
+            ]
+          }
+        ]
+      },
+      {
+        "Subtopic": "Questions on stack",
+        "Details": [
+          {
+            "Detail": "Q. Valid parenthesis",
+            "Links": [
+              "https://leetcode.com/problems/valid-parentheses/description/"
+            ],
+            "Video Link": "https://youtu.be/CNOoP25NpfQ"
+          },
+          {
+            "Detail": "Q. Count the Reversals",
+            "Links": [
+              "https://www.geeksforgeeks.org/problems/count-the-reversals0401/1"
+            ],
+            "Video Link": "https://youtu.be/FB6wSdPjVGw"
+          },
+          {
+            "Detail": "Q. Add minimum brackets to balance string",
+            "Links": [
+              "https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/description/"
+            ],
+            "Video Link": "https://youtu.be/BNFBv1KtcDM"
+          },
+          {
+            "Detail": "Q. Swap minimum brackets to balance string",
+            "Links": [
+              "https://leetcode.com/problems/minimum-number-of-swaps-to-make-the-string-balanced/description/"
+            ],
+            "Video Link": "https://youtu.be/RZTapGf3pzI"
+          },
+          {
+            "Detail": "Q. Swap adjacent brackets to balance string",
+            "Links": [
+              "https://www.geeksforgeeks.org/problems/minimum-swaps-for-bracket-balancing2704/1"
+            ],
+            "Video Link": "https://youtu.be/U48xDsqb8OE"
+          },
+          {
+            "Detail": "Q. Asteroid Collision",
+            "Links": [
+              "https://leetcode.com/problems/asteroid-collision/description/"
+            ],
+            "Video Link": "https://youtu.be/OtddlksWtS4"
+          },
+          {
+            "Detail": "Q. Stock Span Problem",
+            "Links": [
+              "https://leetcode.com/problems/online-stock-span/description/"
+            ],
+            "Video Link": "https://youtu.be/1_Bbq5qOraY"
+          },
+          {
+            "Detail": "Q. Next Greater element",
+            "Links": [
+              "https://www.geeksforgeeks.org/problems/next-larger-element-1587115620/1"
+            ],
+            "Video Link": "https://youtu.be/8P3e34EgVyY"
+          },
+          {
+            "Detail": "Q. Next Smaller element",
+            "Links": [
+              "https://www.geeksforgeeks.org/problems/help-classmates--141631/1"
+            ],
+            "Video Link": "https://youtu.be/MqQchOMmTGY"
+          },
+          {
+            "Detail": "Q. Next Greater / Smaller element in circular array",
+            "Links": [
+              "https://leetcode.com/problems/next-greater-element-ii/description/"
+            ],
+            "Video Link": "https://youtu.be/ahlaBL4gG1s"
+          },
+          {
+            "Detail": "Q. Largest Rectangle in Histogram + Previous smaller element",
+            "Links": [
+              "https://leetcode.com/problems/largest-rectangle-in-histogram/description/"
+            ],
+            "Video Link": "https://youtu.be/qUS-DZU4fj4"
+          },
+          {
+            "Detail": "Q. Max Rectangle",
+            "Links": [
+              "https://leetcode.com/problems/maximal-rectangle/description/"
+            ],
+            "Video Link": "https://youtu.be/DPkDmhCyyuc"
+          },
+          {
+            "Detail": "Q. Longest Valid Parentheses",
+            "Links": [
+              "https://leetcode.com/problems/longest-valid-parentheses/description/"
+            ],
+            "Video Link": "https://youtu.be/gqQsbdTcey0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Main Topic": "Queue",
+    "Subtopics": [
+      {
+        "Subtopic": "Queue Basics",
+        "Details": [
+          {
+            "Detail": "Queue",
+            "Links": [
+              "N/A"
+            ],
+            "Video Link": "https://youtu.be/9m4SZPRQXQI?si=izPej7j2qhbiKrys"
+          },
+          {
+            "Detail": "Queue using Array",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "Circular Queue ",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "Double ended Queue",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "Implement queue using stack ",
+            "Links": [
+              "N/A"
+            ],
+            "Video Link": "https://youtu.be/Enygu8ivr0w?si=SgzjEHke5oc_cwdk"
+          },
+          {
+            "Detail": "Implement stack using queue",
+            "Links": [
+              "N/A"
+            ],
+            "Video Link": "https://youtu.be/z4FxPUgXn90?si=86tva8iOIGV5E74n"
+          }
+        ]
+      },
+      {
+        "Subtopic": "Questions on queue",
+        "Details": [
+          {
+            "Detail": "Q. LRU Cache",
+            "Links": [
+              "https://leetcode.com/problems/lru-cache/description/"
+            ],
+            "Video Link": "TBD"
+          },
+          {
+            "Detail": "Q. LFU Cache",
+            "Links": [
+              "https://leetcode.com/problems/lfu-cache/description/"
+            ],
+            "Video Link": "TBD"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Main Topic": "String Manipulation",
+    "Subtopics": [
+      {
+        "Subtopic": "Problems on strings",
+        "Details": [
+          {
+            "Detail": "Q. Print all substrings",
+            "Links": [
+              "N/A"
+            ],
+            "Video Link": "https://youtu.be/I1rgYRi1tXE"
+          },
+          {
+            "Detail": "Q. Reverse a string",
+            "Links": [
+              "N/A"
+            ],
+            "Video Link": "https://youtu.be/m9QAjIVnmp4"
+          },
+          {
+            "Detail": "Q. Check if a string is pallindrome",
+            "Links": [
+              "https://www.geeksforgeeks.org/problems/palindrome-string0817/1"
+            ],
+            "Video Link": "https://youtu.be/-HGtMO4MkWs"
+          },
+          {
+            "Detail": "Q. Reverse words in a String",
+            "Links": [
+              "https://leetcode.com/problems/reverse-words-in-a-string/description/"
+            ],
+            "Video Link": "https://youtu.be/KhNAMB3jDOU"
+          },
+          {
+            "Detail": "Q. Check if two strings are anagram",
+            "Links": [
+              "https://www.geeksforgeeks.org/problems/anagram-1587115620/1"
+            ],
+            "Video Link": "https://youtu.be/SFF3ND7TPc0"
+          },
+          {
+            "Detail": "Q. Reverse Words in a String -iii",
+            "Links": [
+              "https://leetcode.com/problems/reverse-words-in-a-string-iii/"
+            ],
+            "Video Link": "https://youtu.be/ajhV7EYLfOY"
+          },
+          {
+            "Detail": "Q. Longest Pallindrome",
+            "Links": [
+              "https://leetcode.com/problems/longest-palindrome/description/"
+            ],
+            "Video Link": "https://youtu.be/Rbf3StOcRo0?si=k7VfhrhUbjsSTX2I"
+          },
+          {
+            "Detail": "Q. Find all Anagrams",
+            "Links": [
+              "https://leetcode.com/problems/find-all-anagrams-in-a-string/description/"
+            ],
+            "Video Link": "TBD"
+          },
+          {
+            "Detail": "Q. K-Anagrams",
+            "Links": [
+              "https://www.geeksforgeeks.org/problems/check-if-two-strings-are-k-anagrams-or-not/1"
+            ],
+            "Video Link": "TBD"
+          },
+          {
+            "Detail": "Q. Roman to Integer",
+            "Links": [
+              "https://leetcode.com/problems/roman-to-integer/description/"
+            ],
+            "Video Link": "TBD"
+          },
+          {
+            "Detail": "Q. Isomorphic String checker",
+            "Links": [
+              "https://leetcode.com/problems/isomorphic-strings/description/"
+            ],
+            "Video Link": "https://youtu.be/TKGEUoVwdOk?si=4r_3bxXC17CKr5Oc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Main Topic": "String Pattern Matching",
+    "Subtopics": [
+      {
+        "Subtopic": "Pattern Matching Algorithms",
+        "Details": [
+          {
+            "Detail": "KMP Algorithm",
+            "Links": [
+              "https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/description/"
+            ],
+            "Video Link": "TBD"
+          },
+          {
+            "Detail": "Rabin Karp",
+            "Links": [
+              "https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/description/"
+            ],
+            "Video Link": "TBD"
           }
         ]
       }
@@ -3800,13 +3619,6 @@ export const csvData = [
               "https://www.geeksforgeeks.org/problems/split-a-circular-linked-list-into-two-halves/1?utm_source=gfg&utm_medium=article&utm_campaign=bottom_sticky_on_article"
             ],
             "Video Link": "https://youtu.be/dBxiAxuT2I8?si=utMWpF083dismeIJ"
-          },
-          {
-            "Detail": "Q. Clone a linked list with random and next pointer",
-            "Links": [
-              "https://leetcode.com/problems/copy-list-with-random-pointer/description/"
-            ],
-            "Video Link": "TBL"
           }
         ]
       }
@@ -3949,7 +3761,9 @@ export const csvData = [
           {
             "Detail": "Q. Tree Traversal DFS - Recursive",
             "Links": [
-              "https://www.geeksforgeeks.org/problems/preorder-traversal/1"
+              "https://www.geeksforgeeks.org/problems/preorder-traversal/1",
+              "https://www.geeksforgeeks.org/problems/inorder-traversal/1",
+              "https://www.geeksforgeeks.org/problems/postorder-traversal/1"
             ],
             "Video Link": "https://youtu.be/aQKJ9juD87k?si=Gou7Ob0zLS2xOoU2"
           },
@@ -4130,40 +3944,6 @@ export const csvData = [
               "https://leetcode.com/problems/maximum-sum-bst-in-binary-tree/description/"
             ],
             "Video Link": "https://youtu.be/zAz-WbqIaf8"
-          },
-          {
-            "Detail": "Q. Burn a Tree",
-            "Links": [
-              "https://www.geeksforgeeks.org/problems/burning-tree/1"
-            ],
-            "Video Link": "TBD"
-          },
-          {
-            "Detail": "Q. BT to DLL",
-            "Links": [
-              "https://www.geeksforgeeks.org/problems/binary-tree-to-dll/1"
-            ],
-            "Video Link": "TBD"
-          },
-          {
-            "Detail": "Q. Floor in BST",
-            "Links": [
-              "https://www.geeksforgeeks.org/problems/floor-in-bst/1"
-            ]
-          },
-          {
-            "Detail": "Q. Ceil in BST",
-            "Links": [
-              "https://www.geeksforgeeks.org/problems/implementing-ceil-in-bst/1"
-            ],
-            "Video Link": "TBD"
-          },
-          {
-            "Detail": "Q. Search in BST",
-            "Links": [
-              "https://leetcode.com/problems/search-in-a-binary-search-tree/description/"
-            ],
-            "Video Link": "TBD"
           }
         ]
       },
@@ -4410,23 +4190,9 @@ export const csvData = [
             "Video Link": "TBD"
           },
           {
-            "Detail": "Q. Median of Running Streams of Integers",
+            "Detail": "Q. Find Median from Data Stream",
             "Links": [
-              "https://www.geeksforgeeks.org/problems/find-median-in-a-stream-1587115620/1"
-            ],
-            "Video Link": "TBD"
-          },
-          {
-            "Detail": "Q. Maximum Sum Combination",
-            "Links": [
-              "https://www.geeksforgeeks.org/problems/maximum-sum-combination/1"
-            ],
-            "Video Link": "TBD"
-          },
-          {
-            "Detail": "Q. Merge K sorted Arrays",
-            "Links": [
-              "https://www.geeksforgeeks.org/problems/merge-k-sorted-arrays/1"
+              "https://leetcode.com/problems/find-median-from-data-stream/description/"
             ],
             "Video Link": "TBD"
           }
@@ -4448,6 +4214,18 @@ export const csvData = [
             "Video Link": "https://youtu.be/f-buby0Aac8"
           },
           {
+            "Detail": "Vertex and Edges",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "Components",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
             "Detail": "Directed Graph",
             "Links": [
               "N/A"
@@ -4460,24 +4238,6 @@ export const csvData = [
             ]
           },
           {
-            "Detail": "Weighted Graph",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
-            "Detail": "UnWeighted Graph",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
-            "Detail": "Vertex and Edges",
-            "Links": [
-              "N/A"
-            ]
-          },
-          {
             "Detail": "Degree of a node in graph",
             "Links": [
               "N/A"
@@ -4485,6 +4245,18 @@ export const csvData = [
           },
           {
             "Detail": "In-degree and Out-degree in graphs",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "Weighted Graph",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "UnWeighted Graph",
             "Links": [
               "N/A"
             ]
@@ -4603,7 +4375,12 @@ export const csvData = [
             "Links": [
               "N/A"
             ]
-          },
+          }
+        ]
+      },
+      {
+        "Subtopic": "Graph Traversal and Questions",
+        "Details": [
           {
             "Detail": "Q. DFS Traversal in Graph",
             "Links": [
@@ -4688,7 +4465,12 @@ export const csvData = [
               "https://leetcode.com/problems/accounts-merge/description/"
             ],
             "Video Link": "https://youtu.be/kmzlMoxmCs4"
-          },
+          }
+        ]
+      },
+      {
+        "Subtopic": "Graph Cycle",
+        "Details": [
           {
             "Detail": "Q. Cycle detection in undirected graph using BFS",
             "Links": [
@@ -4730,7 +4512,12 @@ export const csvData = [
               "https://www.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1"
             ],
             "Video Link": "https://youtu.be/3PMWe72jF_8"
-          },
+          }
+        ]
+      },
+      {
+        "Subtopic": "Shortest Path Algorithms & Questions",
+        "Details": [
           {
             "Detail": "Q. When to apply BFS | Shortest Path using BFS",
             "Links": [
@@ -4823,9 +4610,9 @@ export const csvData = [
           {
             "Detail": "Strongly Connected Components | Kosaraju's Algorithm",
             "Links": [
-              "N/A"
+              "https://www.geeksforgeeks.org/problems/strongly-connected-components-kosarajus-algo/1"
             ],
-            "Video Link": "TBD"
+            "Video Link": "https://youtu.be/6PyWrGdSK1o?si=TgpfMYwHgCowRa-m"
           },
           {
             "Detail": "Minimum spanning tree",
@@ -4856,7 +4643,7 @@ export const csvData = [
     "Main Topic": "Tries",
     "Subtopics": [
       {
-        "Subtopic": "Trie",
+        "Subtopic": "Trie Basics and Prefix Trie Implementation",
         "Details": [
           {
             "Detail": "Introduction to Trie",
@@ -4878,6 +4665,13 @@ export const csvData = [
               "N/A"
             ],
             "Video Link": "TBD"
+          },
+          {
+            "Detail": "Q. Prefix Tries",
+            "Links": [
+              "https://leetcode.com/problems/implement-trie-prefix-tree/"
+            ],
+            "Video Link": "TBD"
           }
         ]
       },
@@ -4885,98 +4679,30 @@ export const csvData = [
         "Subtopic": "Questions on TRIE",
         "Details": [
           {
+            "Detail": "Q. Counting Words With a Given Prefix",
+            "Links": [
+              "https://leetcode.com/problems/counting-words-with-a-given-prefix/description/"
+            ],
+            "Video Link": "TBD"
+          },
+          {
             "Detail": "Q. Longest String with All prefixes",
             "Links": [
-              "N/A"
+              "https://leetcode.com/problems/longest-common-prefix/description/"
             ],
             "Video Link": "TBD"
           },
           {
             "Detail": "Q. Number of Distinct substrings in string",
             "Links": [
-              "N/A"
-            ],
-            "Video Link": "TBD"
-          },
-          {
-            "Detail": "Q. Power Set",
-            "Links": [
-              "N/A"
+              "https://leetcode.com/problems/number-of-distinct-substrings-in-a-string/description/"
             ],
             "Video Link": "TBD"
           },
           {
             "Detail": "Q. Maximum XoR of two Numbers in an Array",
             "Links": [
-              "N/A"
-            ],
-            "Video Link": "TBD"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "Main Topic": "Segment Trees",
-    "Subtopics": [
-      {
-        "Subtopic": "Extra",
-        "Details": [
-          {
-            "Detail": "Extra",
-            "Links": [
-              "N/A"
-            ],
-            "Video Link": "TBD"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "Main Topic": "Square Decomposition",
-    "Subtopics": [
-      {
-        "Subtopic": "Extra",
-        "Details": [
-          {
-            "Detail": "Extra",
-            "Links": [
-              "N/A"
-            ],
-            "Video Link": "TBD"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "Main Topic": "Range query",
-    "Subtopics": [
-      {
-        "Subtopic": "Extra",
-        "Details": [
-          {
-            "Detail": "Extra",
-            "Links": [
-              "N/A"
-            ],
-            "Video Link": "TBD"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "Main Topic": "Red Black Tree",
-    "Subtopics": [
-      {
-        "Subtopic": "Extra",
-        "Details": [
-          {
-            "Detail": "Extra",
-            "Links": [
-              "N/A"
+              "https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/"
             ],
             "Video Link": "TBD"
           }
