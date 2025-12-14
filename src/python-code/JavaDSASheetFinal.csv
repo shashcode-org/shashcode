@@ -159,27 +159,18 @@ Time & Space Complexity,Time and Space Complexity,What is Algorithm Complexity,,
 ,,Questions on time complexity,,
 ,,Big Oh cheat sheet,,
 Collections Framework,Collections in One Shot,Introduction,,https://youtu.be/CRG9tcCr8iU
-,,Need of Data Structure and Algorithms,,
-,,Data and Object in real world ,,
-,,Need for a framework,,
 ,,What is collection framework? ,,
-,,Modules Vs Framework Vs Library Vs Package,,
 ,,How to Import Collections Framework,,
 ,,Hierarchy of Collections Framework - Interfaces & Classes,,
-,,Functions in Collection Interface ,,
 ,,Java Generics and AutoBoxing,,
 ,,List Interface,,
 ,,ArrayList & its functions,,
-,,How to Iterate your List using Iterator,,
-,,Internal Working of ArrayList,,
-,,Sorting using Comparator,,
-,,Sorting based on Custom Comparator,,
 ,,How to Iterate your List using ListIterator,,
+,,Sorting using Sort Method,,
 ,,Time Complexity of ArrayList,,
 ,,LinkedList & its functions,,
 ,,ArrayList VS LinkedList,,
 ,,Time Complexity of LinkedList,,
-,,Vectors and their use,,
 ,,Stack & its functions,,
 ,,Time Complexity of Stack,,
 ,,Queue & its functions,,
@@ -194,26 +185,11 @@ Collections Framework,Collections in One Shot,Introduction,,https://youtu.be/CRG
 ,,How to traverse a Map using Entry Interface,,
 ,,Map using LinkedHashMap,,
 ,,Map using TreeMap,,
-,,BST,,
-,,Self Balanced BST or Red-Black Tree,,
 ,,TreeMap & its functions,,
 ,,Set Interface,,
 ,,HashSet,,
-,,How HashSet works Internally,,
 ,,LinkedHashSet,,
 ,,TreeSet,,
-String Manipulation,Problems on strings,Q. Print all substrings,,https://youtu.be/I1rgYRi1tXE
-,,Q. Reverse a string,,https://youtu.be/m9QAjIVnmp4
-,,Q. Check if a string is pallindrome,,https://youtu.be/-HGtMO4MkWs
-,,Q. Reverse words in a String,,https://youtu.be/KhNAMB3jDOU
-,,Q. Check if two strings are anagram,https://www.geeksforgeeks.org/problems/anagram-1587115620/1,https://youtu.be/SFF3ND7TPc0
-,,Q. Reverse Words in a String -iii,https://leetcode.com/problems/reverse-words-in-a-string-iii/,https://youtu.be/ajhV7EYLfOY
-,,Q. Longest Pallindrome,,TBD
-,,Q. Find all Anagrams,,TBD
-,,Q. K-Anagrams,,TBD
-,,Q. Roman to Integer,,TBD
-,,Q. First Repeated word in a string,,TBD
-,,Q. Isomorphic String checker,,TBD
 Maths in DSA,Mathematics in DSA - Part 1,find number of digits,,
 ,,appending digits to the end,,
 ,,insert digit at the front,,
@@ -327,134 +303,6 @@ Matrix,Questions on Matrix - 1,Q. Median of a Sorted Matrix,https://www.geeksfor
 ,,Q. Rotate by 90 degree,https://www.geeksforgeeks.org/problems/rotate-by-90-degree0356/1,
 ,Questions on Matrix - 4,Q. Spiral Matrix - 1,https://leetcode.com/problems/spiral-matrix/,https://youtu.be/uAaoWcYX2_8
 ,,Q. Spiral Matrix - 2,https://leetcode.com/problems/spiral-matrix-ii/description/,
-Sliding Window,Sliding Window Technique,What is sliding window,,https://youtu.be/DQMxp7TS2BI?si=WN_ksJt1fWPXuLmF
-,,Q. Maximum Sum Subarray of Size K,https://www.geeksforgeeks.org/problems/max-sum-subarray-of-size-k5313/1,https://youtu.be/rGl2Z6fuAas?si=t3JH4diL-nDnBwGe
-,,Q. First Negative Number in Each Subarray of Size K,https://www.geeksforgeeks.org/problems/first-negative-integer-in-every-window-of-size-k3345/1,https://youtu.be/Rot0y4cmlNw?si=TAp7sbW1OOQkW57C
-,,Q. Chocolate Distribution Problem,https://www.geeksforgeeks.org/problems/chocolate-distribution-problem3825/1,https://youtu.be/oYNU1TD9W5Y?si=1rn_BjF9-LIJDwcH
-,,Q. Smallest subarray with sum greater than x,https://www.geeksforgeeks.org/problems/smallest-subarray-with-sum-greater-than-x5651/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article,https://youtu.be/UXValb-h70s?si=VaCxJsB7-WKbL4nW
-,,Q. Longest Substring with K unique Elements,https://www.geeksforgeeks.org/problems/longest-k-unique-characters-substring0853/1,https://youtu.be/Yp3T06_27MY?si=GUuisgzt8fXO5gF6
-,,Q. Longest Substring without repeating elements,https://leetcode.com/problems/longest-substring-without-repeating-characters/description/,https://youtu.be/Vgo7tvBm8OU?si=fxI1Ggsz3C_sMlIj
-,,Q. Count Occurances of Anagrams,https://www.geeksforgeeks.org/problems/count-occurences-of-anagrams5839/1,https://youtu.be/PVXVsSkItpY?si=0zBiqLK0x9yzN85K
-,,Q. Minimum Window Substring,https://leetcode.com/problems/minimum-window-substring/description/,https://youtu.be/26E3K8Njm7M
-,,Q. Sliding Window Maximum,https://leetcode.com/problems/sliding-window-maximum/description/,https://youtu.be/jOoZuTrfpjc
-Two Pointers,Questions on two pointer,Q. Container with Most Water,https://leetcode.com/problems/container-with-most-water/description/,TBD
-,,Q. Trapping Rainwater,https://leetcode.com/problems/trapping-rain-water/description/,TBD
-,,Q. Find Pair with a given sum in sorted Array,https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/,TBD
-,,Q. Remove Duplicates from Sorted Array,https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/,TBD
-,,Q. Maximum Consecutive ones,https://leetcode.com/problems/max-consecutive-ones/description/,TBD
-,,Q. Reverse Pairs,https://leetcode.com/problems/reverse-pairs/description/,TBD
-,,Q. The Celebrity Problem,https://www.geeksforgeeks.org/problems/the-celebrity-problem/1,TBD
-String Pattern Matching,Pattern Matching Algorithms,KMP Algorithm,,TBD
-,,Rabin Karp,,TBD
-,,Z Algorithm,,TBD
-,,Boyer Moore Algorithm,,TBD
-Recursion,Introduction to recursion,Recursion basics and syntax,,
-,,print number code using recursion,,
-,,function stack and recursive states,,
-,,print number from N to 1,,
-,,Q. Factorial of a number,https://www.geeksforgeeks.org/problems/factorial5739/1,
-,,Q. Fibonacci number,https://leetcode.com/problems/fibonacci-number/description/,
-,Recursion on Arrays,how to apply recursion on arrays,,
-,,Print array left to right using recursion,,
-,,Print array right to left using recursion,,
-,,check if target is present in array,,
-,,find first occurrence of element in array,,
-,,find last occurrence of element in array,,
-,,Q. Find Index,https://www.geeksforgeeks.org/problems/find-index4752/1,
-,,find all occurrence,,
-,,binary search using recursion,,
-,Recursion on Strings,recursion on strings,,
-,,print string,,
-,,reverse print string,,
-,,check palindrome,,
-,,remove a char from string,,
-,,replace PI with 3.14,,
-,,Q. Count and say,https://leetcode.com/problems/count-and-say/description/,
-,Backtracking,Backtracking and All it's variants,,https://youtu.be/rBJ6lNgIwfs?si=BjYRCAbitUHXCuIC
-,,Q. Rat in a Maze,https://www.geeksforgeeks.org/problems/rat-in-a-maze-problem/1,https://youtu.be/HoaXmlzyAWs?si=UGRxfc3-KDoFUHXc
-,,Q. All permutations,https://leetcode.com/problems/permutations/description/,https://youtu.be/m9HgMrsdvaQ?si=gcVhCyp5V_B-drJY
-,,Q. Pallindrome Partitioning,https://leetcode.com/problems/palindrome-partitioning/description/,https://youtu.be/-GrwQ-Yfs48?si=WVU_8qyIHFL0FwfT
-,,Q. Letter Combination of a Phone Number,https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/,https://youtu.be/iMboZzRh-UM?si=1kExLPQf2O1ut17V
-,,Q. Print Subdequences of a String,,https://youtu.be/mj20tLqdJRk?si=fXEiE59i1F1L0y09
-,,Q. Subsequences with sum equal K,,https://youtu.be/j-y_ohVDRRI?si=ZIKh3815ORC1b5zy
-,Backtracking with Pruning,Q. Combination Sum - I,https://leetcode.com/problems/combination-sum/description/,https://youtu.be/fC_rh6jA6Tw?si=-tWhz2PM8ofwUISB
-,,Q. Combination Sum - II,https://leetcode.com/problems/combination-sum-ii/description/,https://youtu.be/Edw151zdBTI?si=iA_f9T_g3X4a1U3l
-,,Q. Combination Sum - III,https://leetcode.com/problems/combination-sum-iii/description/,https://youtu.be/gSza2TQV0gs?si=W95ZbOUasGMMAf12
-,,Q. Combination Sum - IV,https://leetcode.com/problems/combination-sum-iv/description/,https://youtu.be/y1KU16gUOSE?si=F0dwyhG6O6YssxQr
-,More Questions on Backtracking,Q. Number of islands,https://leetcode.com/problems/number-of-islands/description/,https://youtu.be/jUBoim74Fvc?si=KrK3mm2QE-w3YJNw
-,,Q. Knights tour problem,,https://youtu.be/TZb-bAAMuzY?si=JQWhxWpZNo_aNQud
-,,Q. N Queens problem,,https://youtu.be/76K-yS4sByc?si=Uy_EnBB6yOpnoUZe
-,,Q. Suduko Solver,,
-,Recursion - III,Binary Search using recursion,https://www.geeksforgeeks.org/problems/binary-search-1587115620/1,https://youtu.be/456By5f2-4o?si=bR07D8MNT4zSzoQe
-,,Q. Josephus problem - Kill in circle,https://www.geeksforgeeks.org/problems/josephus-problem/1,https://youtu.be/4JE_9zOaX58?si=DRcQ9eRk6suWuI8B
-,Divide and Conquer,Q. calculating power ( x^n),,
-,,Q. Merge Sort,https://www.geeksforgeeks.org/problems/merge-sort/1,https://youtu.be/oviqkqemCRY?si=rMjLaDHLbjDVdKvc
-,,Q. Quick Sort,https://www.geeksforgeeks.org/problems/quick-sort/1,https://youtu.be/RFbZx9nTB3s?si=wCJ1lyskolGze6pb
-,,Q. Count Inversion,,
-,,Strassen's Matrix Multiplication,,
-Dynamic Programming (DP),Dynamic Programming Part 1,Overlapping Subproblems,,https://youtu.be/P3MFBCZCGXs?si=FNhk7mjC7Cf0MZRD
-,,Optimal Substructures,,
-,,Q. Fibonacci Number,https://leetcode.com/problems/fibonacci-number/description/,
-,,Q. Climbing Stairs,https://leetcode.com/problems/climbing-stairs/description/,
-,,Q. Counting Bits,https://leetcode.com/problems/counting-bits/description/,
-,,Q. Min Cost Climbing Stairs,https://leetcode.com/problems/min-cost-climbing-stairs/description/,
-,,Q. House Robber 1,https://leetcode.com/problems/house-robber/description/,
-,,Q. House Robber 2,https://leetcode.com/problems/house-robber-ii/description/,
-,,Q. Check if there exist a subsequence with sum K,https://www.geeksforgeeks.org/problems/check-if-there-exists-a-subsequence-with-sum-k/0,
-,,Q. Perfect Sum Problem,https://www.geeksforgeeks.org/problems/perfect-sum-problem5633/0,
-,,Q. 01 Knapsack Problem,https://www.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1,
-,,Q. Coin Change 1,https://leetcode.com/problems/coin-change/description/,
-,,Q. Coin Change 2,https://leetcode.com/problems/coin-change-ii/description/,
-,,Q. Rod Cutting Problem,https://www.geeksforgeeks.org/problems/rod-cutting0840/1,
-,,Q. Longest Common Subsequence,https://leetcode.com/problems/longest-common-subsequence/description/,
-,,Q. Longest Palindromic Subsequence,https://leetcode.com/problems/longest-palindromic-subsequence/description/,
-,,Q. Longest Increasing Subsequence,https://leetcode.com/problems/longest-increasing-subsequence/description/,
-,,Q. Maximum Length of pair chain,https://leetcode.com/problems/maximum-length-of-pair-chain/description/,
-,,Q. Unique Paths 1,https://leetcode.com/problems/unique-paths/description/,
-,,Q. Unique Paths 2,https://leetcode.com/problems/unique-paths-ii/description/,
-,Dynamic Programming Part 2,Q. Pallindromic Partitioning,,TBD
-,,Kadanes Algorithm,,
-,,Q. Maximum Sum Subarray,,
-,,Q. Maximum Product Subarray,,
-,,Q. Maximum Sum Rectangle,,
-,,Q. Edit Distance,,
-,,Q. Word Break Problem,,
-Greedy Algorithms,Greedy Algorithm Introduction,Intro to Greedy,,https://youtu.be/ofaNk7NerW8
-,,Q. Activity Selection Problem,https://www.geeksforgeeks.org/problems/activity-selection-1587115620/1,
-,,Q. Non Overlapping Intervals,https://leetcode.com/problems/non-overlapping-intervals/description/,
-,,Q. Minimum Number of Arrows to burst balloons,https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/description/,
-,,Q. Job Sequencing problem,https://www.geeksforgeeks.org/problems/job-sequencing-problem-1587115620/1,
-,,Q. Assign mice to Holes,https://www.geeksforgeeks.org/problems/assign-mice-holes3053/0,
-,,Q. Police and Thieves,https://www.geeksforgeeks.org/problems/police-and-thieves--141631/1,
-,,Q. Fractional Knapsack,https://www.geeksforgeeks.org/problems/fractional-knapsack-1587115620/1,
-,,Q. Maximum units on a truck,https://leetcode.com/problems/maximum-units-on-a-truck/description/,
-,,Q. Maximum Bags with full capacity of rocks,https://leetcode.com/problems/maximum-bags-with-full-capacity-of-rocks/description/,
-,,Q. Jump Game 1,https://leetcode.com/problems/jump-game/description/,
-,,Q. Jump Game 2,https://leetcode.com/problems/jump-game-ii/description/,
-Stack,Stack Basics,Stack,,https://youtu.be/TpuQWpma7ug
-,,Stack using Arrays,,
-,Questions on stack,Q. Check parenthesis,https://leetcode.com/problems/valid-parentheses/description/,https://youtu.be/CNOoP25NpfQ
-,,Q. Remove minimum brackets to balance string,https://www.geeksforgeeks.org/problems/count-the-reversals0401/1,https://youtu.be/FB6wSdPjVGw
-,,Q. Add minimum brackets to balance string,https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/description/,https://youtu.be/BNFBv1KtcDM
-,,Q. Swap minimum brackets to balance string,https://leetcode.com/problems/minimum-number-of-swaps-to-make-the-string-balanced/description/,https://youtu.be/RZTapGf3pzI
-,,Q. Swap adjacent brackets to balance string,https://www.geeksforgeeks.org/problems/minimum-swaps-for-bracket-balancing2704/1,https://youtu.be/U48xDsqb8OE
-,,Q. Asteroid Collision,https://leetcode.com/problems/asteroid-collision/description/,https://youtu.be/OtddlksWtS4
-,,Q. Stock Span Problem,https://leetcode.com/problems/online-stock-span/description/,https://youtu.be/1_Bbq5qOraY
-,,Q. Next Greater element,https://www.geeksforgeeks.org/problems/next-larger-element-1587115620/1,https://youtu.be/8P3e34EgVyY
-,,Q. Next Smaller element,https://www.geeksforgeeks.org/problems/help-classmates--141631/1,https://youtu.be/MqQchOMmTGY
-,,Q. Next Greater / Smaller element in circular array,https://leetcode.com/problems/next-greater-element-ii/description/,https://youtu.be/ahlaBL4gG1s
-,,Q. Largest Rectangle in Histogram + Previous smaller element,https://leetcode.com/problems/largest-rectangle-in-histogram/description/,https://youtu.be/qUS-DZU4fj4
-,,Q. Max Rectangle,https://leetcode.com/problems/maximal-rectangle/description/,https://youtu.be/DPkDmhCyyuc
-,,Q. Longest Valid Parentheses,https://leetcode.com/problems/longest-valid-parentheses/description/,https://youtu.be/gqQsbdTcey0
-Queue,Queue Basics,Queue,,https://youtu.be/9m4SZPRQXQI?si=izPej7j2qhbiKrys
-,,Queue using Array,,
-,,Circular Queue ,,
-,,Double ended Queue,,
-,,Implement queue using stack ,,https://youtu.be/Enygu8ivr0w?si=SgzjEHke5oc_cwdk
-,,Implement stack using queue,,https://youtu.be/z4FxPUgXn90?si=86tva8iOIGV5E74n
-,Questions on queue,Q. LRU Cache,https://leetcode.com/problems/lru-cache/description/,TBL
-,,Q. LFU Cache,https://leetcode.com/problems/lfu-cache/description/,TBL
-,,Q. Find Maximum and Minimum of Every Window Size,,TBL
 Hashing,Hashing,Components of Hashing,,https://youtu.be/vB3WKXNH-v4?si=oAOjWmxgCLXQvjC2
 ,,How hashing works?,,
 ,,Types of Hash Functions,,
@@ -485,10 +333,137 @@ Hashing,Hashing,Components of Hashing,,https://youtu.be/vB3WKXNH-v4?si=oAOjWmxgC
 ,,Q. Find largest subarray with 0 sum,,
 ,,Q. Longest subarray with sum divisible by K,https://www.geeksforgeeks.org/problems/longest-subarray-with-sum-divisible-by-k1259/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article,https://youtu.be/L03d0qThnJQ?si=1TEHDMBGaDGVeElr
 ,,Q. Longest increasing concecutive subsequence,https://leetcode.com/problems/longest-consecutive-sequence/description/,https://youtu.be/4ohND5Hq-wQ?si=-Rdz-tpJZ4W1ke-g
-,,Q. Count distinct elements in every window of size K,,TBD
 ,,Q. Largest subarray with equal number of 0s and 1s,https://www.geeksforgeeks.org/problems/largest-subarray-of-0s-and-1s/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article,https://youtu.be/qOCuB-IC9KA?si=NEEgvm_zlI-dvSm_
-,,Q. Find pairs with given sum such that elements of pair are in different rows,,TBD
 ,,Bucket Sort Algorithm,,https://youtu.be/5Pe3YSnqGh8?si=8cnivpNvhCX6X0hf
+Sliding Window,Sliding Window Technique,What is sliding window,,https://youtu.be/DQMxp7TS2BI?si=WN_ksJt1fWPXuLmF
+,,Q. Maximum Sum Subarray of Size K,https://www.geeksforgeeks.org/problems/max-sum-subarray-of-size-k5313/1,https://youtu.be/rGl2Z6fuAas?si=t3JH4diL-nDnBwGe
+,,Q. First Negative Number in Each Subarray of Size K,https://www.geeksforgeeks.org/problems/first-negative-integer-in-every-window-of-size-k3345/1,https://youtu.be/Rot0y4cmlNw?si=TAp7sbW1OOQkW57C
+,,Q. Chocolate Distribution Problem,https://www.geeksforgeeks.org/problems/chocolate-distribution-problem3825/1,https://youtu.be/oYNU1TD9W5Y?si=1rn_BjF9-LIJDwcH
+,,Q. Smallest subarray with sum greater than x,https://www.geeksforgeeks.org/problems/smallest-subarray-with-sum-greater-than-x5651/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article,https://youtu.be/UXValb-h70s?si=VaCxJsB7-WKbL4nW
+,,Q. Longest Substring with K unique Elements,https://www.geeksforgeeks.org/problems/longest-k-unique-characters-substring0853/1,https://youtu.be/Yp3T06_27MY?si=GUuisgzt8fXO5gF6
+,,Q. Longest Substring without repeating elements,https://leetcode.com/problems/longest-substring-without-repeating-characters/description/,https://youtu.be/Vgo7tvBm8OU?si=fxI1Ggsz3C_sMlIj
+,,Q. Count Occurances of Anagrams,https://www.geeksforgeeks.org/problems/count-occurences-of-anagrams5839/1,https://youtu.be/PVXVsSkItpY?si=0zBiqLK0x9yzN85K
+,,Q. Minimum Window Substring,https://leetcode.com/problems/minimum-window-substring/description/,https://youtu.be/26E3K8Njm7M
+,,Q. Sliding Window Maximum,https://leetcode.com/problems/sliding-window-maximum/description/,https://youtu.be/jOoZuTrfpjc
+Two Pointers,Questions on two pointer,Q. Container with Most Water,https://leetcode.com/problems/container-with-most-water/description/,TBD
+,,Q. Trapping Rainwater,https://leetcode.com/problems/trapping-rain-water/description/,https://youtu.be/pzmoYG6Y3Xs?si=IpM2ifhf6enwWWZ2
+,,Q. Find Pair with a given sum in sorted Array,https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/,TBD
+,,Q. Remove Duplicates from Sorted Array,https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/,TBD
+,,Q. Maximum Consecutive ones,https://leetcode.com/problems/max-consecutive-ones/description/,TBD
+,,Q. Sort Colors,https://leetcode.com/problems/sort-colors/description/,https://youtu.be/G4LWBrda_H4?si=hvyWLgeGTDpdPcan
+,,Q. Separate Black and White Balls,https://leetcode.com/problems/separate-black-and-white-balls/,https://youtu.be/Eb7UbW2R_vo?si=w0H5bt2eUyn4-2hT
+Recursion,Introduction to recursion,Recursion basics and syntax,,
+,,print number code using recursion,,
+,,function stack and recursive states,,
+,,print number from N to 1,,
+,,Q. Factorial of a number,https://www.geeksforgeeks.org/problems/factorial5739/1,
+,,Q. Fibonacci number,https://leetcode.com/problems/fibonacci-number/description/,
+,Recursion on Arrays,how to apply recursion on arrays,,
+,,Print array left to right using recursion,,
+,,Print array right to left using recursion,,
+,,check if target is present in array,,
+,,find first occurrence of element in array,,
+,,find last occurrence of element in array,,
+,,Q. Find Index,https://www.geeksforgeeks.org/problems/find-index4752/1,
+,,find all occurrence,,
+,,binary search using recursion,,
+,Recursion on Strings,recursion on strings,,
+,,print string,,
+,,reverse print string,,
+,,check palindrome,,
+,,remove a char from string,,
+,,replace PI with 3.14,,
+,,Q. Count and say,https://leetcode.com/problems/count-and-say/description/,
+,Recursion on Subsequences,What is a subsequence,,
+,,Print all subsequence of a string,,
+,,Count all subsequece of string,,
+,Questions on recursion,Q. Josephus problem - Find the Winner of the Circular Game,https://leetcode.com/problems/find-the-winner-of-the-circular-game/description/,https://youtu.be/2dN4ktn6D1k?si=zPPFxgG8dv_VvHnm
+,Backtracking,Backtracking and All it's variants,,
+,,Q. Subsets -1,https://leetcode.com/problems/subsets/description/,
+,,Q. Subsets -2,https://leetcode.com/problems/subsets-ii/description/,
+,,Q. Permutations -1,https://leetcode.com/problems/permutations/description/,
+,,Q. Permutations -2,https://leetcode.com/problems/permutations-ii/description/,
+,,Q. Letter Combination of a Phone Number,https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/,
+,,Q. Generate Parentheses,https://leetcode.com/problems/generate-parentheses/description/,
+,,Q. Combination Sum -1,https://leetcode.com/problems/combination-sum/description/,
+,,Q. Combination Sum -2,https://leetcode.com/problems/combination-sum-ii/description/,
+,,Q. N Queens problem,https://leetcode.com/problems/n-queens/description/,
+,,Q. Sudoku Solver,https://leetcode.com/problems/sudoku-solver/description/,
+,,Q. Pallindrome Partitioning,https://leetcode.com/problems/palindrome-partitioning/description/,
+,,Q. Rat in a Maze,https://www.geeksforgeeks.org/problems/rat-in-a-maze-problem/1,
+,,Q. Knights tour problem,https://www.geeksforgeeks.org/problems/the-knights-tour-problem/1,
+,,Q. Word Search ,https://leetcode.com/problems/word-search/description/,https://youtu.be/HBboUqC-rZ0?si=dcEMaByR0gfChsBs
+,Divide and Conquer,Q. Merge Sort,https://www.geeksforgeeks.org/problems/merge-sort/1,https://youtu.be/oviqkqemCRY?si=rMjLaDHLbjDVdKvc
+,,Q. Quick Sort,https://www.geeksforgeeks.org/problems/quick-sort/1,https://youtu.be/RFbZx9nTB3s?si=wCJ1lyskolGze6pb
+,,Q. Count Inversion,https://www.geeksforgeeks.org/problems/inversion-of-array-1587115620/1,
+Dynamic Programming (DP),Dynamic Programming Part 1,Overlapping Subproblems,,https://youtu.be/P3MFBCZCGXs?si=FNhk7mjC7Cf0MZRD
+,,Optimal Substructures,,
+,,Q. Fibonacci Number,https://leetcode.com/problems/fibonacci-number/description/,
+,,Q. Climbing Stairs,https://leetcode.com/problems/climbing-stairs/description/,
+,,Q. Counting Bits,https://leetcode.com/problems/counting-bits/description/,
+,,Q. Min Cost Climbing Stairs,https://leetcode.com/problems/min-cost-climbing-stairs/description/,
+,,Q. House Robber 1,https://leetcode.com/problems/house-robber/description/,
+,,Q. House Robber 2,https://leetcode.com/problems/house-robber-ii/description/,
+,,Q. Check if there exist a subsequence with sum K,https://www.geeksforgeeks.org/problems/check-if-there-exists-a-subsequence-with-sum-k/0,
+,,Q. Perfect Sum Problem,https://www.geeksforgeeks.org/problems/perfect-sum-problem5633/0,
+,,Q. 01 Knapsack Problem,https://www.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1,
+,,Q. Coin Change 1,https://leetcode.com/problems/coin-change/description/,
+,,Q. Coin Change 2,https://leetcode.com/problems/coin-change-ii/description/,
+,,Q. Rod Cutting Problem,https://www.geeksforgeeks.org/problems/rod-cutting0840/1,
+,,Q. Longest Common Subsequence,https://leetcode.com/problems/longest-common-subsequence/description/,
+,,Q. Longest Palindromic Subsequence,https://leetcode.com/problems/longest-palindromic-subsequence/description/,
+,,Q. Longest Increasing Subsequence,https://leetcode.com/problems/longest-increasing-subsequence/description/,
+,,Q. Maximum Length of pair chain,https://leetcode.com/problems/maximum-length-of-pair-chain/description/,
+,,Q. Unique Paths 1,https://leetcode.com/problems/unique-paths/description/,
+,,Q. Unique Paths 2,https://leetcode.com/problems/unique-paths-ii/description/,
+Greedy Algorithms,Greedy Algorithm Introduction,Intro to Greedy,,https://youtu.be/ofaNk7NerW8
+,,Q. Activity Selection Problem,https://www.geeksforgeeks.org/problems/activity-selection-1587115620/1,
+,,Q. Non Overlapping Intervals,https://leetcode.com/problems/non-overlapping-intervals/description/,
+,,Q. Minimum Number of Arrows to burst balloons,https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/description/,
+,,Q. Job Sequencing problem,https://www.geeksforgeeks.org/problems/job-sequencing-problem-1587115620/1,
+,,Q. Assign mice to Holes,https://www.geeksforgeeks.org/problems/assign-mice-holes3053/0,
+,,Q. Police and Thieves,https://www.geeksforgeeks.org/problems/police-and-thieves--141631/1,
+,,Q. Fractional Knapsack,https://www.geeksforgeeks.org/problems/fractional-knapsack-1587115620/1,
+,,Q. Maximum units on a truck,https://leetcode.com/problems/maximum-units-on-a-truck/description/,
+,,Q. Maximum Bags with full capacity of rocks,https://leetcode.com/problems/maximum-bags-with-full-capacity-of-rocks/description/,
+,,Q. Jump Game 1,https://leetcode.com/problems/jump-game/description/,
+,,Q. Jump Game 2,https://leetcode.com/problems/jump-game-ii/description/,
+Stack,Stack Basics,Stack,,https://youtu.be/TpuQWpma7ug
+,,Stack using Arrays,,
+,Questions on stack,Q. Valid parenthesis,https://leetcode.com/problems/valid-parentheses/description/,https://youtu.be/CNOoP25NpfQ
+,,Q. Count the Reversals,https://www.geeksforgeeks.org/problems/count-the-reversals0401/1,https://youtu.be/FB6wSdPjVGw
+,,Q. Add minimum brackets to balance string,https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/description/,https://youtu.be/BNFBv1KtcDM
+,,Q. Swap minimum brackets to balance string,https://leetcode.com/problems/minimum-number-of-swaps-to-make-the-string-balanced/description/,https://youtu.be/RZTapGf3pzI
+,,Q. Swap adjacent brackets to balance string,https://www.geeksforgeeks.org/problems/minimum-swaps-for-bracket-balancing2704/1,https://youtu.be/U48xDsqb8OE
+,,Q. Asteroid Collision,https://leetcode.com/problems/asteroid-collision/description/,https://youtu.be/OtddlksWtS4
+,,Q. Stock Span Problem,https://leetcode.com/problems/online-stock-span/description/,https://youtu.be/1_Bbq5qOraY
+,,Q. Next Greater element,https://www.geeksforgeeks.org/problems/next-larger-element-1587115620/1,https://youtu.be/8P3e34EgVyY
+,,Q. Next Smaller element,https://www.geeksforgeeks.org/problems/help-classmates--141631/1,https://youtu.be/MqQchOMmTGY
+,,Q. Next Greater / Smaller element in circular array,https://leetcode.com/problems/next-greater-element-ii/description/,https://youtu.be/ahlaBL4gG1s
+,,Q. Largest Rectangle in Histogram + Previous smaller element,https://leetcode.com/problems/largest-rectangle-in-histogram/description/,https://youtu.be/qUS-DZU4fj4
+,,Q. Max Rectangle,https://leetcode.com/problems/maximal-rectangle/description/,https://youtu.be/DPkDmhCyyuc
+,,Q. Longest Valid Parentheses,https://leetcode.com/problems/longest-valid-parentheses/description/,https://youtu.be/gqQsbdTcey0
+Queue,Queue Basics,Queue,,https://youtu.be/9m4SZPRQXQI?si=izPej7j2qhbiKrys
+,,Queue using Array,,
+,,Circular Queue ,,
+,,Double ended Queue,,
+,,Implement queue using stack ,,https://youtu.be/Enygu8ivr0w?si=SgzjEHke5oc_cwdk
+,,Implement stack using queue,,https://youtu.be/z4FxPUgXn90?si=86tva8iOIGV5E74n
+,Questions on queue,Q. LRU Cache,https://leetcode.com/problems/lru-cache/description/,TBD
+,,Q. LFU Cache,https://leetcode.com/problems/lfu-cache/description/,TBD
+String Manipulation,Problems on strings,Q. Print all substrings,,https://youtu.be/I1rgYRi1tXE
+,,Q. Reverse a string,,https://youtu.be/m9QAjIVnmp4
+,,Q. Check if a string is pallindrome,https://www.geeksforgeeks.org/problems/palindrome-string0817/1,https://youtu.be/-HGtMO4MkWs
+,,Q. Reverse words in a String,https://leetcode.com/problems/reverse-words-in-a-string/description/,https://youtu.be/KhNAMB3jDOU
+,,Q. Check if two strings are anagram,https://www.geeksforgeeks.org/problems/anagram-1587115620/1,https://youtu.be/SFF3ND7TPc0
+,,Q. Reverse Words in a String -iii,https://leetcode.com/problems/reverse-words-in-a-string-iii/,https://youtu.be/ajhV7EYLfOY
+,,Q. Longest Pallindrome,https://leetcode.com/problems/longest-palindrome/description/,https://youtu.be/Rbf3StOcRo0?si=k7VfhrhUbjsSTX2I
+,,Q. Find all Anagrams,https://leetcode.com/problems/find-all-anagrams-in-a-string/description/,TBD
+,,Q. K-Anagrams,https://www.geeksforgeeks.org/problems/check-if-two-strings-are-k-anagrams-or-not/1,TBD
+,,Q. Roman to Integer,https://leetcode.com/problems/roman-to-integer/description/,TBD
+,,Q. Isomorphic String checker,https://leetcode.com/problems/isomorphic-strings/description/,https://youtu.be/TKGEUoVwdOk?si=4r_3bxXC17CKr5Oc
+String Pattern Matching,Pattern Matching Algorithms,KMP Algorithm,https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/description/,TBD
+,,Rabin Karp,https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/description/,TBD
 Linked List,Linked List Data Structure,Intro to linked list Data Structure,,https://youtu.be/cf4RNGYI6hk?si=aY6v4j2CUzgaPlpm
 ,,Types of linked list,,
 ,,All operations of Single linked list,,
@@ -515,7 +490,6 @@ Linked List,Linked List Data Structure,Intro to linked list Data Structure,,http
 ,,Q. Insertion Sort on Linked List,https://leetcode.com/problems/insertion-sort-list/description/,https://youtu.be/fzx8CWqbxxI?si=LB1C44XQCKC9T9JU
 ,,Q. Merge Sort on Linked List,https://leetcode.com/problems/sort-list/description/,https://youtu.be/13UkRumpqZw?si=uw-eXXBmA6YeHaFu
 ,,Q. Split a circular linked list into two circular lists,https://www.geeksforgeeks.org/problems/split-a-circular-linked-list-into-two-halves/1?utm_source=gfg&utm_medium=article&utm_campaign=bottom_sticky_on_article,https://youtu.be/dBxiAxuT2I8?si=utMWpF083dismeIJ
-,,Q. Clone a linked list with random and next pointer,https://leetcode.com/problems/copy-list-with-random-pointer/description/,TBL
 Trees,Linear and Non Linear Data Structures,Linear Data Structure ,,https://youtu.be/jeQ_B7-nihM
 ,,Non Linear Data Structure,,
 ,Intro to Tree Data Structure,What is a tree Data Structure.,,https://youtu.be/qfHkWUl1zlc?si=Z1PWfLJg3e8wL6GC
@@ -535,7 +509,7 @@ Trees,Linear and Non Linear Data Structures,Linear Data Structure ,,https://yout
 ,,Parent of a node in tree.,,
 ,Tree Traversal,Q. Tree Traversal BFS,https://www.geeksforgeeks.org/problems/level-order-traversal/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article,https://youtu.be/4NZV0XBbKfA?si=wn_pcNP-l7dmDcXA
 ,,Q. BFS on N-Ary Trees,https://www.geeksforgeeks.org/problems/level-order-traversal/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article,https://youtu.be/4NZV0XBbKfA?si=wn_pcNP-l7dmDcXA
-,,Q. Tree Traversal DFS - Recursive,https://www.geeksforgeeks.org/problems/preorder-traversal/1,https://youtu.be/aQKJ9juD87k?si=Gou7Ob0zLS2xOoU2
+,,Q. Tree Traversal DFS - Recursive,"https://www.geeksforgeeks.org/problems/preorder-traversal/1 , https://www.geeksforgeeks.org/problems/inorder-traversal/1 , https://www.geeksforgeeks.org/problems/postorder-traversal/1",https://youtu.be/aQKJ9juD87k?si=Gou7Ob0zLS2xOoU2
 ,,Q. Preorder Iterative,https://leetcode.com/problems/binary-tree-preorder-traversal/description/,https://youtu.be/Tp2kzBIunWk?si=LYmDgBNvOFJogvt1
 ,,Q. Inorder Iterative,https://leetcode.com/problems/binary-tree-inorder-traversal/description/,https://youtu.be/-VzRxq3Jwp4?si=8XJFCAnFCXWss35l
 ,,Q. Postorder Iterative,https://leetcode.com/problems/binary-tree-postorder-traversal/description/,https://youtu.be/xEPe6aWlRd0?si=rRWVNq5RgT8w9Z6e
@@ -560,11 +534,6 @@ Trees,Linear and Non Linear Data Structures,Linear Data Structure ,,https://yout
 ,,Q. LCA in BST,https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/description/,https://youtu.be/TytL24jNZ6k
 ,,Q. Binary Search Tree Iterator,https://leetcode.com/problems/binary-search-tree-iterator/description/,https://youtu.be/V9J9gGIVt_E
 ,,Q. Maximum Sum BST in Binary Tree,https://leetcode.com/problems/maximum-sum-bst-in-binary-tree/description/,https://youtu.be/zAz-WbqIaf8
-,,Q. Burn a Tree,https://www.geeksforgeeks.org/problems/burning-tree/1,TBD
-,,Q. BT to DLL,https://www.geeksforgeeks.org/problems/binary-tree-to-dll/1,TBD
-,,Q. Floor in BST,https://www.geeksforgeeks.org/problems/floor-in-bst/1,
-,,Q. Ceil in BST,https://www.geeksforgeeks.org/problems/implementing-ceil-in-bst/1,TBD
-,,Q. Search in BST,https://leetcode.com/problems/search-in-a-binary-search-tree/description/,TBD
 ,AVL Tree ,AVL Trees,,https://youtu.be/QEvpN09q3nw
 ,,Balanced Trees,,
 ,,Insert in AVL Tree,,
@@ -599,17 +568,16 @@ Heap & Priority Queue,Heap,Heaps,,https://youtu.be/NFiYQGyL8rg
 ,,Q. Design Twitter,https://leetcode.com/problems/design-twitter/description/,https://youtu.be/tH051S6aM5M
 ,,Q. Task Scheduler,https://leetcode.com/problems/task-scheduler/description/?envType=daily-question&envId=2024-03-19,https://youtu.be/it-tqUPacgM
 ,,Q. Connect N ropes with Minimum cost,https://www.geeksforgeeks.org/problems/minimum-cost-of-ropes-1587115620/1,TBD
-,,Q. Median of Running Streams of Integers,https://www.geeksforgeeks.org/problems/find-median-in-a-stream-1587115620/1,TBD
-,,Q. Maximum Sum Combination,https://www.geeksforgeeks.org/problems/maximum-sum-combination/1,TBD
-,,Q. Merge K sorted Arrays,https://www.geeksforgeeks.org/problems/merge-k-sorted-arrays/1,TBD
+,,Q. Find Median from Data Stream,https://leetcode.com/problems/find-median-from-data-stream/description/,TBD
 Graphs,Graph Introduction,Introduction to graphs,,https://youtu.be/f-buby0Aac8
+,,Vertex and Edges,,
+,,Components,,
 ,,Directed Graph,,
 ,,UnDirected Graph,,
-,,Weighted Graph,,
-,,UnWeighted Graph,,
-,,Vertex and Edges,,
 ,,Degree of a node in graph,,
 ,,In-degree and Out-degree in graphs,,
+,,Weighted Graph,,
+,,UnWeighted Graph,,
 ,Graph Representation & Application,How to represent graph in memory,,https://youtu.be/2oXUetonhUg
 ,,InDegree of directed graph,,
 ,,OutDegree of directed graph,,
@@ -626,7 +594,7 @@ Graphs,Graph Introduction,Introduction to graphs,,https://youtu.be/f-buby0Aac8
 ,,Cycle in a graph,,
 ,,Directed Acyclic Graph (DAG),,
 ,,Find if a path is valid or not,,
-,,Q. DFS Traversal in Graph,https://www.geeksforgeeks.org/problems/depth-first-traversal-for-a-graph/1,https://youtu.be/8ZP_Y3boL0M
+,Graph Traversal and Questions,Q. DFS Traversal in Graph,https://www.geeksforgeeks.org/problems/depth-first-traversal-for-a-graph/1,https://youtu.be/8ZP_Y3boL0M
 ,,Q. BFS Traversal in Graph,https://www.geeksforgeeks.org/problems/bfs-traversal-of-graph/1,https://youtu.be/88WZluVGlFI
 ,,Q. Flood fill using BFS,https://leetcode.com/problems/flood-fill/description/,https://youtu.be/W6nOvvWzZYg
 ,,Q. Number of Islands,https://leetcode.com/problems/number-of-islands/description/,https://youtu.be/mwsuv-S1biw
@@ -638,13 +606,13 @@ Graphs,Graph Introduction,Introduction to graphs,,https://youtu.be/f-buby0Aac8
 ,,Q. Minimum Time to Collect All Apples in a Tree,https://leetcode.com/problems/minimum-time-to-collect-all-apples-in-a-tree/description/,https://youtu.be/ROI1bS_uBSE
 ,,Q. Most Stones Removed with Same Row or Column,https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/description/,https://youtu.be/SjdbuY-Ryuk
 ,,Q. Accounts Merge,https://leetcode.com/problems/accounts-merge/description/,https://youtu.be/kmzlMoxmCs4
-,,Q. Cycle detection in undirected graph using BFS,https://www.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1,https://youtu.be/gvNeSmWatIc
+,Graph Cycle,Q. Cycle detection in undirected graph using BFS,https://www.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1,https://youtu.be/gvNeSmWatIc
 ,,Q. Cycle detection in undirected graph using DFS,https://www.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1,https://youtu.be/erRL82Gl2Xg
 ,,Q. Cycle Detection In Directed Graphs using DFS,https://www.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1,https://youtu.be/Y3eIsQj-DpI
 ,,Q. Kahn's Algorithm for Toposort,https://www.geeksforgeeks.org/problems/topological-sort/1,https://youtu.be/tZjVTTABXV0
 ,,Q. Toposort using DFS,https://www.geeksforgeeks.org/problems/topological-sort/1,https://youtu.be/syzUtO95I8g
 ,,Q. Cycle Detection in directed graph using toposort,https://www.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1,https://youtu.be/3PMWe72jF_8
-,,Q. When to apply BFS | Shortest Path using BFS,https://www.geeksforgeeks.org/problems/shortest-path-in-undirected-graph-having-unit-distance/1,https://youtu.be/vNHDWm_aVgA
+,Shortest Path Algorithms & Questions,Q. When to apply BFS | Shortest Path using BFS,https://www.geeksforgeeks.org/problems/shortest-path-in-undirected-graph-having-unit-distance/1,https://youtu.be/vNHDWm_aVgA
 ,,Q. Dijkstra Algorithm | Shortest Path,https://www.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1,https://youtu.be/jhlo_YQPXR0
 ,,Q. Floyd Warshall Algorithm | Shortest Path,https://www.geeksforgeeks.org/problems/implementing-floyd-warshall2042/1?category%255B%255D=Graph,https://youtu.be/7y88NO1Aq1o
 ,,Q. Bellmanford Algorithm | Shortest Path,https://www.geeksforgeeks.org/problems/distance-from-the-source-bellman-ford-algorithm/1,https://youtu.be/Kbfgo3E3n6c
@@ -656,18 +624,15 @@ Graphs,Graph Introduction,Introduction to graphs,,https://youtu.be/f-buby0Aac8
 ,,Q. Satisfiability of Equality Equations,https://leetcode.com/problems/satisfiability-of-equality-equations/description/,https://youtu.be/87bMglHvC8A
 ,,Q. Number of Operations to Make Network Connected,https://leetcode.com/problems/number-of-operations-to-make-network-connected/description/,https://youtu.be/Gn6ZlaLIDjY
 ,,Q. Is Graph Bipartite?,https://leetcode.com/problems/is-graph-bipartite/description/,https://youtu.be/7nETmZcQRko
-,,Strongly Connected Components | Kosaraju's Algorithm,,TBD
+,,Strongly Connected Components | Kosaraju's Algorithm,https://www.geeksforgeeks.org/problems/strongly-connected-components-kosarajus-algo/1,https://youtu.be/6PyWrGdSK1o?si=TgpfMYwHgCowRa-m
 ,,Minimum spanning tree,,https://youtu.be/XozGcnGHJXM
 ,,Q. Prim's Algorithm for minimum spanning tree,https://www.geeksforgeeks.org/problems/minimum-spanning-tree/1,https://youtu.be/4EuFmlbcSY8
 ,,Q. Kruskal's Algorithm for minimum spanning tree,https://www.geeksforgeeks.org/problems/minimum-spanning-tree/1,https://youtu.be/dBGYpKLY2bQ
-Tries,Trie,Introduction to Trie,,TBD
+Tries,Trie Basics and Prefix Trie Implementation,Introduction to Trie,,TBD
 ,,Implement a Trie in java,,TBD
 ,,"Insert, Search and delete operations",,TBD
-,Questions on TRIE,Q. Longest String with All prefixes,,TBD
-,,Q. Number of Distinct substrings in string,,TBD
-,,Q. Power Set,,TBD
-,,Q. Maximum XoR of two Numbers in an Array,,TBD
-Segment Trees,Extra,Extra,,TBD
-Square Decomposition,Extra,Extra,,TBD
-Range query,Extra,Extra,,TBD
-Red Black Tree,Extra,Extra,,TBD
+,,Q. Prefix Tries,https://leetcode.com/problems/implement-trie-prefix-tree/,TBD
+,Questions on TRIE,Q. Counting Words With a Given Prefix,https://leetcode.com/problems/counting-words-with-a-given-prefix/description/,TBD
+,,Q. Longest String with All prefixes,https://leetcode.com/problems/longest-common-prefix/description/,TBD
+,,Q. Number of Distinct substrings in string,https://leetcode.com/problems/number-of-distinct-substrings-in-a-string/description/,TBD
+,,Q. Maximum XoR of two Numbers in an Array,https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/,TBD
