@@ -82,7 +82,7 @@ export const csvData = [
             "Links": [
               "N/A"
             ],
-            "Video Link": "https://youtu.be/wL6sbJOzF5A"
+            "Video Link": "https://youtu.be/VlBUOjj0R30"
           },
           {
             "Detail": "Psuedocode",
@@ -136,7 +136,7 @@ export const csvData = [
             "Links": [
               "N/A"
             ],
-            "Video Link": "https://youtu.be/1Z2QzcbLicY"
+            "Video Link": "https://youtu.be/9MIgxW-3qbs"
           },
           {
             "Detail": "installation of IDE",
@@ -322,7 +322,7 @@ export const csvData = [
             "Links": [
               "N/A"
             ],
-            "Video Link": "https://youtu.be/IkOkAzNuefc"
+            "Video Link": "https://youtu.be/L2i2Y90Zq2U"
           },
           {
             "Detail": "Types of functions",
@@ -352,7 +352,7 @@ export const csvData = [
             "Links": [
               "N/A"
             ],
-            "Video Link": "https://youtu.be/FM1ujSiOSi0"
+            "Video Link": "https://youtu.be/hKjRDM-f51g"
           },
           {
             "Detail": "Temperature convertor",
@@ -544,7 +544,7 @@ export const csvData = [
             "Links": [
               "N/A"
             ],
-            "Video Link": "https://youtu.be/TsoTexsJWlI"
+            "Video Link": "https://youtu.be/JQlzB5i8trQ"
           },
           {
             "Detail": "concept of indexing",
@@ -608,7 +608,8 @@ export const csvData = [
             "Detail": "What is a Class",
             "Links": [
               "N/A"
-            ]
+            ],
+            "Video Link": "https://youtu.be/F27yToEQLDk"
           },
           {
             "Detail": "What is an Object",
@@ -643,13 +644,14 @@ export const csvData = [
         ]
       },
       {
-        "Subtopic": "Java OOP Basics - Lecture 2",
+        "Subtopic": "Constructors",
         "Details": [
           {
             "Detail": "Constructor Definition",
             "Links": [
               "N/A"
-            ]
+            ],
+            "Video Link": "https://youtu.be/m3mAjcE9Hws"
           },
           {
             "Detail": "Types of Constructors - default, parameterized, copy",
@@ -684,7 +686,8 @@ export const csvData = [
             "Detail": "Static Variable",
             "Links": [
               "N/A"
-            ]
+            ],
+            "Video Link": "https://youtu.be/Ex4dwA9_Fls"
           },
           {
             "Detail": "Static Method",
@@ -707,7 +710,8 @@ export const csvData = [
             "Detail": "Encapsulation in Java",
             "Links": [
               "N/A"
-            ]
+            ],
+            "Video Link": "https://youtu.be/6WcSAiYBshM"
           },
           {
             "Detail": "Advantages of Encapsulation",
@@ -724,7 +728,8 @@ export const csvData = [
             "Detail": "What is Inheritance?",
             "Links": [
               "N/A"
-            ]
+            ],
+            "Video Link": "https://youtu.be/OuYLjyonukg"
           },
           {
             "Detail": "Types of Inheritance in Java - Single, Multilevel, Hierarchical, Hybrid",
@@ -759,7 +764,8 @@ export const csvData = [
             "Detail": "What is Abstraction",
             "Links": [
               "N/A"
-            ]
+            ],
+            "Video Link": "https://youtu.be/VTyzBtlG8DU"
           },
           {
             "Detail": "How to Achieve Abstraction in Java",
@@ -794,7 +800,8 @@ export const csvData = [
             "Detail": "What is Polymorphism",
             "Links": [
               "N/A"
-            ]
+            ],
+            "Video Link": "https://youtu.be/XZ9Doau9p-w"
           },
           {
             "Detail": "Compile-time Polymorphism (Method Overloading)",
@@ -829,7 +836,8 @@ export const csvData = [
             "Detail": "Access Modifiers in Java (Visibility)",
             "Links": [
               "N/A"
-            ]
+            ],
+            "Video Link": "https://youtu.be/zUpUrr4vNHw"
           },
           {
             "Detail": "final Keyword in Java",
@@ -852,7 +860,8 @@ export const csvData = [
             "Detail": "Types of Nested Classes",
             "Links": [
               "N/A"
-            ]
+            ],
+            "Video Link": "https://youtu.be/rjWDZt7hbD8?si=B25hPrfzlVLtqZC4"
           },
           {
             "Detail": "Member Inner Class",
@@ -893,7 +902,8 @@ export const csvData = [
             "Detail": "What are Generics",
             "Links": [
               "N/A"
-            ]
+            ],
+            "Video Link": "https://youtu.be/vGG9d_FEl60?si=fnvplRPJQ6KbmmDS"
           },
           {
             "Detail": "Why Generics",
@@ -916,7 +926,8 @@ export const csvData = [
             "Detail": "Why Do We Need Them",
             "Links": [
               "N/A"
-            ]
+            ],
+            "Video Link": "https://youtu.be/v4X6AUgCQyQ"
           },
           {
             "Detail": "Comparable Interface",
@@ -945,7 +956,8 @@ export const csvData = [
             "Detail": "Association",
             "Links": [
               "N/A"
-            ]
+            ],
+            "Video Link": "https://youtu.be/CAaVEbM7-yg"
           },
           {
             "Detail": "Aggregation",
@@ -973,7 +985,8 @@ export const csvData = [
             "Detail": "What is an Exception?",
             "Links": [
               "N/A"
-            ]
+            ],
+            "Video Link": "https://youtu.be/1fZTclLybT0"
           },
           {
             "Detail": "try-catch Block",
@@ -996,7 +1009,8 @@ export const csvData = [
             "Detail": "multi-catch block",
             "Links": [
               "N/A"
-            ]
+            ],
+            "Video Link": "https://youtu.be/cdyRZ11cTv0"
           }
         ]
       },
@@ -1007,7 +1021,8 @@ export const csvData = [
             "Detail": "Checked Exceptions",
             "Links": [
               "N/A"
-            ]
+            ],
+            "Video Link": "https://youtu.be/UNcyNIn9kig"
           },
           {
             "Detail": "Unchecked Exceptions",
@@ -1024,7 +1039,8 @@ export const csvData = [
             "Detail": "finally block",
             "Links": [
               "N/A"
-            ]
+            ],
+            "Video Link": "https://youtu.be/AJJJmojNJ_U"
           }
         ]
       },
@@ -1035,7 +1051,8 @@ export const csvData = [
             "Detail": "try-with-resources",
             "Links": [
               "N/A"
-            ]
+            ],
+            "Video Link": "https://youtu.be/5oZDJzHkeIg"
           }
         ]
       },
@@ -1046,7 +1063,8 @@ export const csvData = [
             "Detail": "throw keyword",
             "Links": [
               "N/A"
-            ]
+            ],
+            "Video Link": "https://youtu.be/PDdraWmfW5I"
           },
           {
             "Detail": "throws keyword",
@@ -1069,7 +1087,8 @@ export const csvData = [
             "Detail": "User-Defined or custom Exceptions",
             "Links": [
               "N/A"
-            ]
+            ],
+            "Video Link": "https://youtu.be/PtS4fTPx1E0"
           }
         ]
       }
@@ -1085,7 +1104,8 @@ export const csvData = [
             "Detail": "Solid Pattern - square, right angled triangle",
             "Links": [
               "N/A"
-            ]
+            ],
+            "Video Link": "https://youtu.be/R3iZV9pm-9k"
           },
           {
             "Detail": "Number and Character Patterns",
@@ -1126,7 +1146,7 @@ export const csvData = [
             "Links": [
               "N/A"
             ],
-            "Video Link": "https://youtu.be/ZltvAvQXIEo"
+            "Video Link": "https://youtu.be/U0ZkBW4avbw"
           },
           {
             "Detail": "Asymptotic Notations - upper, lower, average",
@@ -1179,7 +1199,7 @@ export const csvData = [
             "Links": [
               "N/A"
             ],
-            "Video Link": "https://youtu.be/CRG9tcCr8iU"
+            "Video Link": "https://youtu.be/hp2bzI9TxPY"
           },
           {
             "Detail": "What is collection framework? ",
@@ -1381,7 +1401,8 @@ export const csvData = [
             "Detail": "find number of digits",
             "Links": [
               "N/A"
-            ]
+            ],
+            "Video Link": "https://youtu.be/xMXiDI2ZJuA"
           },
           {
             "Detail": "appending digits to the end",
@@ -1446,7 +1467,8 @@ export const csvData = [
             "Detail": "Armstrong Number ",
             "Links": [
               "N/A"
-            ]
+            ],
+            "Video Link": "https://youtu.be/lnpa0999qGU"
           },
           {
             "Detail": "Pallindrome Number",
@@ -1535,7 +1557,7 @@ export const csvData = [
             "Links": [
               "N/A"
             ],
-            "Video Link": "https://youtu.be/cn_KKSd3T2g"
+            "Video Link": "https://youtu.be/bX-U5C6Um3w"
           },
           {
             "Detail": "One's Complement",
@@ -1583,7 +1605,7 @@ export const csvData = [
             "Links": [
               "N/A"
             ],
-            "Video Link": "https://youtu.be/wGrEXbLQX1k"
+            "Video Link": "https://youtu.be/sbNDQu0PFoY"
           },
           {
             "Detail": "Set / Unset / Toggle a Bit",
@@ -1625,7 +1647,7 @@ export const csvData = [
             "Links": [
               "https://leetcode.com/problems/single-number/description/"
             ],
-            "Video Link": "https://youtu.be/UTVvLfkuSEs"
+            "Video Link": "https://youtu.be/Dd9d-uWyilE"
           },
           {
             "Detail": "Q. Find Unique Number (all others appear thrice) [Single Number II]",
@@ -1929,7 +1951,8 @@ export const csvData = [
             "Detail": "Binary Search on answer concept",
             "Links": [
               "N/A"
-            ]
+            ],
+            "Video Link": "https://youtu.be/TrR6Zfj-Cwg"
           },
           {
             "Detail": "Q. Allocated minimum number of pages",
@@ -1964,13 +1987,15 @@ export const csvData = [
             "Detail": "Q. Median of two sorted arrays",
             "Links": [
               "https://leetcode.com/problems/median-of-two-sorted-arrays/"
-            ]
+            ],
+            "Video Link": "https://youtu.be/2BOgAlmyTkc"
           },
           {
             "Detail": "Q. Kth element of two sorted arrays",
             "Links": [
               "https://www.geeksforgeeks.org/problems/k-th-element-of-two-sorted-array1317/1"
-            ]
+            ],
+            "Video Link": "https://youtu.be/SB6j8D95eHM"
           }
         ]
       },
@@ -2076,7 +2101,8 @@ export const csvData = [
             "Detail": "Counting Sort",
             "Links": [
               "N/A"
-            ]
+            ],
+            "Video Link": "https://youtu.be/7jR_aiX5VTw"
           }
         ]
       },
@@ -2087,7 +2113,8 @@ export const csvData = [
             "Detail": "Radix Sort",
             "Links": [
               "N/A"
-            ]
+            ],
+            "Video Link": "https://youtu.be/JkZ2B6LrYdQ"
           }
         ]
       },
@@ -2110,7 +2137,8 @@ export const csvData = [
             "Detail": "Cyclic Sort",
             "Links": [
               "N/A"
-            ]
+            ],
+            "Video Link": "https://youtu.be/1xsw92zDOhA"
           },
           {
             "Detail": "Cycle sort on fixed range",
@@ -2560,7 +2588,7 @@ export const csvData = [
             "Links": [
               "https://leetcode.com/problems/container-with-most-water/description/"
             ],
-            "Video Link": "TBD"
+            "Video Link": "https://youtu.be/Nw_XsUEXco0"
           },
           {
             "Detail": "Q. Trapping Rainwater",
@@ -2574,21 +2602,21 @@ export const csvData = [
             "Links": [
               "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/"
             ],
-            "Video Link": "TBD"
+            "Video Link": "https://youtu.be/Qa3FoGAcVdk"
           },
           {
             "Detail": "Q. Remove Duplicates from Sorted Array",
             "Links": [
               "https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/"
             ],
-            "Video Link": "TBD"
+            "Video Link": "https://youtu.be/pXd_3whf1vQ"
           },
           {
             "Detail": "Q. Maximum Consecutive ones",
             "Links": [
               "https://leetcode.com/problems/max-consecutive-ones/description/"
             ],
-            "Video Link": "TBD"
+            "Video Link": "https://youtu.be/Z0J5cX0y8dk"
           },
           {
             "Detail": "Q. Sort Colors",
@@ -2618,7 +2646,8 @@ export const csvData = [
             "Detail": "Recursion basics and syntax",
             "Links": [
               "N/A"
-            ]
+            ],
+            "Video Link": "https://youtu.be/odcRxXSLsVo"
           },
           {
             "Detail": "print number code using recursion",
@@ -2659,7 +2688,8 @@ export const csvData = [
             "Detail": "how to apply recursion on arrays",
             "Links": [
               "N/A"
-            ]
+            ],
+            "Video Link": "https://youtu.be/I0vBNGExLuM"
           },
           {
             "Detail": "Print array left to right using recursion",
@@ -2718,7 +2748,8 @@ export const csvData = [
             "Detail": "recursion on strings",
             "Links": [
               "N/A"
-            ]
+            ],
+            "Video Link": "https://youtu.be/kCVN00Cywjc"
           },
           {
             "Detail": "print string",
@@ -2765,7 +2796,8 @@ export const csvData = [
             "Detail": "What is a subsequence",
             "Links": [
               "N/A"
-            ]
+            ],
+            "Video Link": "https://youtu.be/ch9pGT8KXxY"
           },
           {
             "Detail": "Print all subsequence of a string",
@@ -2872,13 +2904,15 @@ export const csvData = [
             "Detail": "Q. Rat in a Maze",
             "Links": [
               "https://www.geeksforgeeks.org/problems/rat-in-a-maze-problem/1"
-            ]
+            ],
+            "Video Link": "https://youtu.be/tym5THS4Nk8"
           },
           {
             "Detail": "Q. Knights tour problem",
             "Links": [
               "https://www.geeksforgeeks.org/problems/the-knights-tour-problem/1"
-            ]
+            ],
+            "Video Link": "https://youtu.be/TZb-bAAMuzY"
           },
           {
             "Detail": "Q. Word Search ",
@@ -2910,7 +2944,8 @@ export const csvData = [
             "Detail": "Q. Count Inversion",
             "Links": [
               "https://www.geeksforgeeks.org/problems/inversion-of-array-1587115620/1"
-            ]
+            ],
+            "Video Link": "https://youtu.be/lm4WEMpc5p0"
           }
         ]
       }
@@ -3300,18 +3335,18 @@ export const csvData = [
         "Subtopic": "Questions on queue",
         "Details": [
           {
-            "Detail": "Q. LRU Cache",
+            "Detail": "Q. Number of Students Unable to Eat Lunch",
             "Links": [
-              "https://leetcode.com/problems/lru-cache/description/"
+              "https://leetcode.com/problems/number-of-students-unable-to-eat-lunch/description/"
             ],
-            "Video Link": "TBD"
+            "Video Link": "https://youtu.be/vlt2S8xb5vk"
           },
           {
-            "Detail": "Q. LFU Cache",
+            "Detail": "Q. Time Needed to Buy Tickets",
             "Links": [
-              "https://leetcode.com/problems/lfu-cache/description/"
+              "https://leetcode.com/problems/time-needed-to-buy-tickets/description/"
             ],
-            "Video Link": "TBD"
+            "Video Link": "https://youtu.be/cS0I2aPiL-0"
           }
         ]
       }
@@ -3377,21 +3412,21 @@ export const csvData = [
             "Links": [
               "https://leetcode.com/problems/find-all-anagrams-in-a-string/description/"
             ],
-            "Video Link": "TBD"
+            "Video Link": "https://youtu.be/tRk9czx6ucg"
           },
           {
             "Detail": "Q. K-Anagrams",
             "Links": [
               "https://www.geeksforgeeks.org/problems/check-if-two-strings-are-k-anagrams-or-not/1"
             ],
-            "Video Link": "TBD"
+            "Video Link": "https://youtu.be/j-P0DOuCFPo"
           },
           {
             "Detail": "Q. Roman to Integer",
             "Links": [
               "https://leetcode.com/problems/roman-to-integer/description/"
             ],
-            "Video Link": "TBD"
+            "Video Link": "https://youtu.be/S5lu7rLrZ5g"
           },
           {
             "Detail": "Q. Isomorphic String checker",
@@ -3415,14 +3450,14 @@ export const csvData = [
             "Links": [
               "https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/description/"
             ],
-            "Video Link": "TBD"
+            "Video Link": "https://youtu.be/xDlueq2XUEY"
           },
           {
             "Detail": "Rabin Karp",
             "Links": [
               "https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/description/"
             ],
-            "Video Link": "TBD"
+            "Video Link": "https://youtu.be/_Rya-4PiHhU"
           }
         ]
       }
@@ -4187,14 +4222,14 @@ export const csvData = [
             "Links": [
               "https://www.geeksforgeeks.org/problems/minimum-cost-of-ropes-1587115620/1"
             ],
-            "Video Link": "TBD"
+            "Video Link": "https://youtu.be/RT9-XAleJzM"
           },
           {
             "Detail": "Q. Find Median from Data Stream",
             "Links": [
               "https://leetcode.com/problems/find-median-from-data-stream/description/"
             ],
-            "Video Link": "TBD"
+            "Video Link": "https://youtu.be/hJ-vn9yDH9I"
           }
         ]
       }
@@ -4650,28 +4685,25 @@ export const csvData = [
             "Links": [
               "N/A"
             ],
-            "Video Link": "TBD"
+            "Video Link": "https://youtu.be/VnxqYcy4weg"
           },
           {
             "Detail": "Implement a Trie in java",
             "Links": [
               "N/A"
-            ],
-            "Video Link": "TBD"
+            ]
           },
           {
             "Detail": "Insert, Search and delete operations",
             "Links": [
               "N/A"
-            ],
-            "Video Link": "TBD"
+            ]
           },
           {
             "Detail": "Q. Prefix Tries",
             "Links": [
               "https://leetcode.com/problems/implement-trie-prefix-tree/"
-            ],
-            "Video Link": "TBD"
+            ]
           }
         ]
       },
@@ -4683,28 +4715,28 @@ export const csvData = [
             "Links": [
               "https://leetcode.com/problems/counting-words-with-a-given-prefix/description/"
             ],
-            "Video Link": "TBD"
+            "Video Link": "https://youtu.be/YfOU7I3240I"
           },
           {
             "Detail": "Q. Longest String with All prefixes",
             "Links": [
               "https://leetcode.com/problems/longest-common-prefix/description/"
             ],
-            "Video Link": "TBD"
+            "Video Link": "https://youtu.be/2FvOGCFQ6x4"
           },
           {
             "Detail": "Q. Number of Distinct substrings in string",
             "Links": [
               "https://leetcode.com/problems/number-of-distinct-substrings-in-a-string/description/"
             ],
-            "Video Link": "TBD"
+            "Video Link": "https://youtu.be/xFGetwuiUjo"
           },
           {
             "Detail": "Q. Maximum XoR of two Numbers in an Array",
             "Links": [
               "https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/"
             ],
-            "Video Link": "TBD"
+            "Video Link": "https://youtu.be/gVk59gUd4DU"
           }
         ]
       }

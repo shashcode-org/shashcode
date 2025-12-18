@@ -10,14 +10,14 @@ Java Basics,Programming Language and Memory Management,What is a programming Lan
 ,,Stack Memory,,
 ,,Heap Memory,,
 ,,Garbage Collection,,
-,Flow of a program,Flowchart,,https://youtu.be/wL6sbJOzF5A
+,Flow of a program,Flowchart,,https://youtu.be/VlBUOjj0R30
 ,,Psuedocode,,
 ,,Algorithm,,
 ,How Java Program Compiles,Byte code,,https://youtu.be/2Uer9X75EPI
 ,,Machine code,,
 ,,why java is platform independent,,
 ,,"JDK, JRE, JVM, JIT",,
-,Writing your first program,installation of Java,,https://youtu.be/1Z2QzcbLicY
+,Writing your first program,installation of Java,,https://youtu.be/9MIgxW-3qbs
 ,,installation of IDE,,
 ,,"""Hello Coder""",,
 ,,entrypoint of program,,
@@ -43,11 +43,11 @@ Java Basics,Programming Language and Memory Management,What is a programming Lan
 ,,while loop,,
 ,,do-while Loop,,
 ,,for each loop,,
-,Functions in Java,Functions,,https://youtu.be/IkOkAzNuefc
+,Functions in Java,Functions,,https://youtu.be/L2i2Y90Zq2U
 ,,Types of functions,,
 ,,create your own functions,,
 ,,call by value and call by reference,,
-,Mini Project -1 ,Calculator Application,,https://youtu.be/FM1ujSiOSi0
+,Mini Project -1 ,Calculator Application,,https://youtu.be/hKjRDM-f51g
 ,,Temperature convertor,,
 ,Strings in Java,characters,,https://youtu.be/aqjGYjtczvY
 ,,string literals ,,
@@ -75,7 +75,7 @@ Java Basics,Programming Language and Memory Management,What is a programming Lan
 ,Playing with String,Input Buffer and delimeters,,https://youtu.be/SrPyIYakYt8
 ,,String formatting,,
 ,,String Concatination,,
-,Arrays in Java,what are arrays,,https://youtu.be/TsoTexsJWlI
+,Arrays in Java,what are arrays,,https://youtu.be/JQlzB5i8trQ
 ,,concept of indexing,,
 ,,"Insert, update, delete, traverse",,
 ,,How arrays work in memory,,
@@ -84,81 +84,81 @@ Java Basics,Programming Language and Memory Management,What is a programming Lan
 ,,Operations on functions,,
 ,,Jagged Array,,
 ,,passing arrays to functions,,
-Object Oriented Programming,Java OOP Basics,What is a Class,,
+Object Oriented Programming,Java OOP Basics,What is a Class,,https://youtu.be/F27yToEQLDk
 ,,What is an Object,,
 ,,How to Create an Object of a Class,,
 ,,How Object is Stored in Memory,,
 ,,What is new keyword,,
 ,,Constructor in Java,,
-,Java OOP Basics - Lecture 2,Constructor Definition,,
+,Constructors,Constructor Definition,,https://youtu.be/m3mAjcE9Hws
 ,,"Types of Constructors - default, parameterized, copy",,
 ,,this keyword,,
 ,,this function,,
 ,,"object copying - reference, field wise, copy",,
-,Static in Java,Static Variable,,
+,Static in Java,Static Variable,,https://youtu.be/Ex4dwA9_Fls
 ,,Static Method,,
 ,,Static Block,,
-,Encapsulation in Java,Encapsulation in Java,,
+,Encapsulation in Java,Encapsulation in Java,,https://youtu.be/6WcSAiYBshM
 ,,Advantages of Encapsulation,,
-,Inheritance in Java,What is Inheritance?,,
+,Inheritance in Java,What is Inheritance?,,https://youtu.be/OuYLjyonukg
 ,,"Types of Inheritance in Java - Single, Multilevel, Hierarchical, Hybrid",,
 ,,Multiple Inheritance in Java,,
 ,,Parent-Child Method Access,,
 ,,Object Class in Java,,
-,Abstraction in Java,What is Abstraction,,
+,Abstraction in Java,What is Abstraction,,https://youtu.be/VTyzBtlG8DU
 ,,How to Achieve Abstraction in Java,,
 ,,Abstract Classes,,
 ,,Interfaces in Java,,
 ,,Multiple Inheritance Using Interfaces,,
-,Polymorphism in Java,What is Polymorphism,,
+,Polymorphism in Java,What is Polymorphism,,https://youtu.be/XZ9Doau9p-w
 ,,Compile-time Polymorphism (Method Overloading),,
 ,,Runtime Polymorphism (Method Overriding),,
 ,,Rules for Method Overloading,,
 ,,Rules for Method Overriding,,
-,"Final, Super, and Access Modifiers in Java",Access Modifiers in Java (Visibility),,
+,"Final, Super, and Access Modifiers in Java",Access Modifiers in Java (Visibility),,https://youtu.be/zUpUrr4vNHw
 ,,final Keyword in Java,,
 ,,super Keyword in Java,,
-,Nested Classes in Java,Types of Nested Classes,,
+,Nested Classes in Java,Types of Nested Classes,,https://youtu.be/rjWDZt7hbD8?si=B25hPrfzlVLtqZC4
 ,,Member Inner Class,,
 ,,Local Inner Class,,
 ,,Anonymous Inner Class,,
 ,,Static Nested Class,,
 ,,Scope and Object Creation Summary,,
-,Generics in Java,What are Generics,,
+,Generics in Java,What are Generics,,https://youtu.be/vGG9d_FEl60?si=fnvplRPJQ6KbmmDS
 ,,Why Generics,,
 ,,"Forms of Generics in Java - Generic Classes, Generic Methods, Generic Interfaces, Bounded Generics, ",,
-,Comparable and Comparator in Java,Why Do We Need Them,,
+,Comparable and Comparator in Java,Why Do We Need Them,,https://youtu.be/v4X6AUgCQyQ
 ,,Comparable Interface,,
 ,,Comparator Interface,,
 ,,Lambda Expressions in Java (Introduced in Java 8),,
-,"Association, Aggregation, and Composition in Java",Association,,
+,"Association, Aggregation, and Composition in Java",Association,,https://youtu.be/CAaVEbM7-yg
 ,,Aggregation,,
 ,,Composition,,
-Exception Handling,Exception Handling in Java,What is an Exception?,,
+Exception Handling,Exception Handling in Java,What is an Exception?,,https://youtu.be/1fZTclLybT0
 ,,try-catch Block,,
 ,,"types of exceptions - checked, unchecked exception",,
-,Multi-Catch Block,multi-catch block,,
-,Compiler Behavior During Exceptions,Checked Exceptions,,
+,Multi-Catch Block,multi-catch block,,https://youtu.be/cdyRZ11cTv0
+,Compiler Behavior During Exceptions,Checked Exceptions,,https://youtu.be/UNcyNIn9kig
 ,,Unchecked Exceptions,,
-,Finally Block,finally block,,
-,try-with-resources,try-with-resources,,
-,throw vs throws,throw keyword,,
+,Finally Block,finally block,,https://youtu.be/AJJJmojNJ_U
+,try-with-resources,try-with-resources,,https://youtu.be/5oZDJzHkeIg
+,throw vs throws,throw keyword,,https://youtu.be/PDdraWmfW5I
 ,,throws keyword,,
 ,,throw vs throws,,
-,User-Defined or custom Exceptions,User-Defined or custom Exceptions,,
-Pattern Printing ,patterns,"Solid Pattern - square, right angled triangle",,
+,User-Defined or custom Exceptions,User-Defined or custom Exceptions,,https://youtu.be/PtS4fTPx1E0
+Pattern Printing ,patterns,"Solid Pattern - square, right angled triangle",,https://youtu.be/R3iZV9pm-9k
 ,,Number and Character Patterns,,
 ,,Inverted and Mirrored Patterns,,
 ,,Pyramid and Diamond Patterns,,
 ,,"Advanced Number Patterns - Pascal’s Triangle, Floyd’s Triangle",,
-Time & Space Complexity,Time and Space Complexity,What is Algorithm Complexity,,https://youtu.be/ZltvAvQXIEo
+Time & Space Complexity,Time and Space Complexity,What is Algorithm Complexity,,https://youtu.be/U0ZkBW4avbw
 ,,"Asymptotic Notations - upper, lower, average",,
 ,,Time Complexity,,
 ,,Space Complexity,,
 ,,Rules for calculating time complexity,,
 ,,Questions on time complexity,,
 ,,Big Oh cheat sheet,,
-Collections Framework,Collections in One Shot,Introduction,,https://youtu.be/CRG9tcCr8iU
+Collections Framework,Collections in One Shot,Introduction,,https://youtu.be/hp2bzI9TxPY
 ,,What is collection framework? ,,
 ,,How to Import Collections Framework,,
 ,,Hierarchy of Collections Framework - Interfaces & Classes,,
@@ -190,7 +190,7 @@ Collections Framework,Collections in One Shot,Introduction,,https://youtu.be/CRG
 ,,HashSet,,
 ,,LinkedHashSet,,
 ,,TreeSet,,
-Maths in DSA,Mathematics in DSA - Part 1,find number of digits,,
+Maths in DSA,Mathematics in DSA - Part 1,find number of digits,,https://youtu.be/xMXiDI2ZJuA
 ,,appending digits to the end,,
 ,,insert digit at the front,,
 ,,reverse a number,,
@@ -200,7 +200,7 @@ Maths in DSA,Mathematics in DSA - Part 1,find number of digits,,
 ,,Number system,,
 ,,Any base to decimal,,
 ,,Decimal to any base,,
-,Mathematics in DSA - Part 2,Armstrong Number ,,
+,Mathematics in DSA - Part 2,Armstrong Number ,,https://youtu.be/lnpa0999qGU
 ,,Pallindrome Number,,
 ,,Print all divisors,,
 ,,check prime number,,
@@ -213,20 +213,20 @@ Maths in DSA,Mathematics in DSA - Part 1,find number of digits,,
 ,,factorial of a number,,
 ,,Q. find trailing zero in factorial of a number,https://leetcode.com/problems/factorial-trailing-zeroes/,
 ,,Modular Arithmatics,,
-Bits Manipulation,Bit basics & fundamentals,Binary Representation of Numbers,,https://youtu.be/cn_KKSd3T2g
+Bits Manipulation,Bit basics & fundamentals,Binary Representation of Numbers,,https://youtu.be/bX-U5C6Um3w
 ,,One's Complement,,
 ,,Two's Complement,,
 ,,Range of Integers,,
 ,,"Bitwise Operators - AND, OR, XOR, NOT, Left Shift, Right Shift, Unsigned Right Shift, ",,
 ,,Check Odd/Even,,
 ,,Swap Two Numbers using XOR,,
-,Useful Tricks in Bit Manipulation,Check if k-th Bit is Set,,https://youtu.be/wGrEXbLQX1k
+,Useful Tricks in Bit Manipulation,Check if k-th Bit is Set,,https://youtu.be/sbNDQu0PFoY
 ,,Set / Unset / Toggle a Bit,,
 ,,Count Set Bits,,
 ,,Rightmost Set Bit,,
 ,,Check if Number is Power of 2,,
 ,,Character Case Conversion using Bits,,
-,Standard Questions in Bit Manipulation,Q. Find the Unique Number (all others appear twice) - [Single Number I],https://leetcode.com/problems/single-number/description/,https://youtu.be/UTVvLfkuSEs
+,Standard Questions in Bit Manipulation,Q. Find the Unique Number (all others appear twice) - [Single Number I],https://leetcode.com/problems/single-number/description/,https://youtu.be/Dd9d-uWyilE
 ,,Q. Find Unique Number (all others appear thrice) [Single Number II],https://leetcode.com/problems/single-number-ii/description/,
 ,,Q. Find 2 Unique Numbers (all others appear twice) [Single Number III],https://leetcode.com/problems/single-number-iii/description/,
 ,,Q. Minimum Number of Bit Flips (Convert A → B),https://leetcode.com/problems/minimum-bit-flips-to-convert-number/description/,
@@ -269,13 +269,13 @@ Searching Algorithms,Linear Search,Linear Search,,https://youtu.be/slqFdKVMjeQ
 ,,Q. Find minimum in rotated sorted array,https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/,
 ,,Q. find k rotation,https://www.geeksforgeeks.org/problems/rotation4723/1,
 ,,Q. Find minimum in rotated sorted array - 2,https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/,
-,Binary Search on answer concept,Binary Search on answer concept,,
+,Binary Search on answer concept,Binary Search on answer concept,,https://youtu.be/TrR6Zfj-Cwg
 ,,Q. Allocated minimum number of pages,https://www.geeksforgeeks.org/problems/allocate-minimum-number-of-pages0937/1,
 ,,Q. Aggressive cows,https://www.geeksforgeeks.org/problems/aggressive-cows/1,
 ,,Q. Koko Eating bananas,https://leetcode.com/problems/koko-eating-bananas/description/,
 ,,Q. Capacity To Ship Packages Within D Days,https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/description/,
-,Binary Search on two arrays,Q. Median of two sorted arrays,https://leetcode.com/problems/median-of-two-sorted-arrays/,
-,,Q. Kth element of two sorted arrays,https://www.geeksforgeeks.org/problems/k-th-element-of-two-sorted-array1317/1,
+,Binary Search on two arrays,Q. Median of two sorted arrays,https://leetcode.com/problems/median-of-two-sorted-arrays/,https://youtu.be/2BOgAlmyTkc
+,,Q. Kth element of two sorted arrays,https://www.geeksforgeeks.org/problems/k-th-element-of-two-sorted-array1317/1,https://youtu.be/SB6j8D95eHM
 ,Miscellaneous Questions on Binary Search,Q. Single Element in a Sorted Array ,https://leetcode.com/problems/single-element-in-a-sorted-array/description/,https://youtu.be/f09DayNeigg
 ,,Q. Finding square root ,https://leetcode.com/problems/sqrtx/description/,
 ,,Q. Count Squares ,https://www.geeksforgeeks.org/problems/count-squares3649/1,
@@ -286,10 +286,10 @@ Searching Algorithms,Linear Search,Linear Search,,https://youtu.be/slqFdKVMjeQ
 Sorting Algorithms,Insertion Sort,Insertion Sort,,https://youtu.be/EHBeiIm59Yk
 ,Selection Sort,Selection Sort [Uni and Bi - directional],,https://youtu.be/CfEZKDoVRcw
 ,Bubble and Brick Sort,Bubble Sort and Brick Sort,,https://youtu.be/vXwKKzn6D4E
-,Counting Sort,Counting Sort,,
-,Radix Sort,Radix Sort,,
+,Counting Sort,Counting Sort,,https://youtu.be/7jR_aiX5VTw
+,Radix Sort,Radix Sort,,https://youtu.be/JkZ2B6LrYdQ
 ,Pigeonhole Sort,Pigeonhole Sort,,https://youtu.be/sWX1eMPYzSU
-,Cyclic Sort,Cyclic Sort,,
+,Cyclic Sort,Cyclic Sort,,https://youtu.be/1xsw92zDOhA
 ,,Cycle sort on fixed range,,
 ,,Q. Missing Number,https://leetcode.com/problems/missing-number/description/,
 ,,Q. Find the duplicate number,https://leetcode.com/problems/find-the-duplicate-number/description/,
@@ -345,20 +345,20 @@ Sliding Window,Sliding Window Technique,What is sliding window,,https://youtu.be
 ,,Q. Count Occurances of Anagrams,https://www.geeksforgeeks.org/problems/count-occurences-of-anagrams5839/1,https://youtu.be/PVXVsSkItpY?si=0zBiqLK0x9yzN85K
 ,,Q. Minimum Window Substring,https://leetcode.com/problems/minimum-window-substring/description/,https://youtu.be/26E3K8Njm7M
 ,,Q. Sliding Window Maximum,https://leetcode.com/problems/sliding-window-maximum/description/,https://youtu.be/jOoZuTrfpjc
-Two Pointers,Questions on two pointer,Q. Container with Most Water,https://leetcode.com/problems/container-with-most-water/description/,TBD
+Two Pointers,Questions on two pointer,Q. Container with Most Water,https://leetcode.com/problems/container-with-most-water/description/,https://youtu.be/Nw_XsUEXco0
 ,,Q. Trapping Rainwater,https://leetcode.com/problems/trapping-rain-water/description/,https://youtu.be/pzmoYG6Y3Xs?si=IpM2ifhf6enwWWZ2
-,,Q. Find Pair with a given sum in sorted Array,https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/,TBD
-,,Q. Remove Duplicates from Sorted Array,https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/,TBD
-,,Q. Maximum Consecutive ones,https://leetcode.com/problems/max-consecutive-ones/description/,TBD
+,,Q. Find Pair with a given sum in sorted Array,https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/,https://youtu.be/Qa3FoGAcVdk
+,,Q. Remove Duplicates from Sorted Array,https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/,https://youtu.be/pXd_3whf1vQ
+,,Q. Maximum Consecutive ones,https://leetcode.com/problems/max-consecutive-ones/description/,https://youtu.be/Z0J5cX0y8dk
 ,,Q. Sort Colors,https://leetcode.com/problems/sort-colors/description/,https://youtu.be/G4LWBrda_H4?si=hvyWLgeGTDpdPcan
 ,,Q. Separate Black and White Balls,https://leetcode.com/problems/separate-black-and-white-balls/,https://youtu.be/Eb7UbW2R_vo?si=w0H5bt2eUyn4-2hT
-Recursion,Introduction to recursion,Recursion basics and syntax,,
+Recursion,Introduction to recursion,Recursion basics and syntax,,https://youtu.be/odcRxXSLsVo
 ,,print number code using recursion,,
 ,,function stack and recursive states,,
 ,,print number from N to 1,,
 ,,Q. Factorial of a number,https://www.geeksforgeeks.org/problems/factorial5739/1,
 ,,Q. Fibonacci number,https://leetcode.com/problems/fibonacci-number/description/,
-,Recursion on Arrays,how to apply recursion on arrays,,
+,Recursion on Arrays,how to apply recursion on arrays,,https://youtu.be/I0vBNGExLuM
 ,,Print array left to right using recursion,,
 ,,Print array right to left using recursion,,
 ,,check if target is present in array,,
@@ -367,14 +367,14 @@ Recursion,Introduction to recursion,Recursion basics and syntax,,
 ,,Q. Find Index,https://www.geeksforgeeks.org/problems/find-index4752/1,
 ,,find all occurrence,,
 ,,binary search using recursion,,
-,Recursion on Strings,recursion on strings,,
+,Recursion on Strings,recursion on strings,,https://youtu.be/kCVN00Cywjc
 ,,print string,,
 ,,reverse print string,,
 ,,check palindrome,,
 ,,remove a char from string,,
 ,,replace PI with 3.14,,
 ,,Q. Count and say,https://leetcode.com/problems/count-and-say/description/,
-,Recursion on Subsequences,What is a subsequence,,
+,Recursion on Subsequences,What is a subsequence,,https://youtu.be/ch9pGT8KXxY
 ,,Print all subsequence of a string,,
 ,,Count all subsequece of string,,
 ,Questions on recursion,Q. Josephus problem - Find the Winner of the Circular Game,https://leetcode.com/problems/find-the-winner-of-the-circular-game/description/,https://youtu.be/2dN4ktn6D1k?si=zPPFxgG8dv_VvHnm
@@ -390,12 +390,12 @@ Recursion,Introduction to recursion,Recursion basics and syntax,,
 ,,Q. N Queens problem,https://leetcode.com/problems/n-queens/description/,
 ,,Q. Sudoku Solver,https://leetcode.com/problems/sudoku-solver/description/,
 ,,Q. Pallindrome Partitioning,https://leetcode.com/problems/palindrome-partitioning/description/,
-,,Q. Rat in a Maze,https://www.geeksforgeeks.org/problems/rat-in-a-maze-problem/1,
-,,Q. Knights tour problem,https://www.geeksforgeeks.org/problems/the-knights-tour-problem/1,
+,,Q. Rat in a Maze,https://www.geeksforgeeks.org/problems/rat-in-a-maze-problem/1,https://youtu.be/tym5THS4Nk8
+,,Q. Knights tour problem,https://www.geeksforgeeks.org/problems/the-knights-tour-problem/1,https://youtu.be/TZb-bAAMuzY
 ,,Q. Word Search ,https://leetcode.com/problems/word-search/description/,https://youtu.be/HBboUqC-rZ0?si=dcEMaByR0gfChsBs
 ,Divide and Conquer,Q. Merge Sort,https://www.geeksforgeeks.org/problems/merge-sort/1,https://youtu.be/oviqkqemCRY?si=rMjLaDHLbjDVdKvc
 ,,Q. Quick Sort,https://www.geeksforgeeks.org/problems/quick-sort/1,https://youtu.be/RFbZx9nTB3s?si=wCJ1lyskolGze6pb
-,,Q. Count Inversion,https://www.geeksforgeeks.org/problems/inversion-of-array-1587115620/1,
+,,Q. Count Inversion,https://www.geeksforgeeks.org/problems/inversion-of-array-1587115620/1,https://youtu.be/lm4WEMpc5p0
 Dynamic Programming (DP),Dynamic Programming Part 1,Overlapping Subproblems,,https://youtu.be/P3MFBCZCGXs?si=FNhk7mjC7Cf0MZRD
 ,,Optimal Substructures,,
 ,,Q. Fibonacci Number,https://leetcode.com/problems/fibonacci-number/description/,
@@ -449,8 +449,8 @@ Queue,Queue Basics,Queue,,https://youtu.be/9m4SZPRQXQI?si=izPej7j2qhbiKrys
 ,,Double ended Queue,,
 ,,Implement queue using stack ,,https://youtu.be/Enygu8ivr0w?si=SgzjEHke5oc_cwdk
 ,,Implement stack using queue,,https://youtu.be/z4FxPUgXn90?si=86tva8iOIGV5E74n
-,Questions on queue,Q. LRU Cache,https://leetcode.com/problems/lru-cache/description/,TBD
-,,Q. LFU Cache,https://leetcode.com/problems/lfu-cache/description/,TBD
+,Questions on queue,Q. Number of Students Unable to Eat Lunch,https://leetcode.com/problems/number-of-students-unable-to-eat-lunch/description/,https://youtu.be/vlt2S8xb5vk
+,,Q. Time Needed to Buy Tickets,https://leetcode.com/problems/time-needed-to-buy-tickets/description/,https://youtu.be/cS0I2aPiL-0
 String Manipulation,Problems on strings,Q. Print all substrings,,https://youtu.be/I1rgYRi1tXE
 ,,Q. Reverse a string,,https://youtu.be/m9QAjIVnmp4
 ,,Q. Check if a string is pallindrome,https://www.geeksforgeeks.org/problems/palindrome-string0817/1,https://youtu.be/-HGtMO4MkWs
@@ -458,12 +458,12 @@ String Manipulation,Problems on strings,Q. Print all substrings,,https://youtu.b
 ,,Q. Check if two strings are anagram,https://www.geeksforgeeks.org/problems/anagram-1587115620/1,https://youtu.be/SFF3ND7TPc0
 ,,Q. Reverse Words in a String -iii,https://leetcode.com/problems/reverse-words-in-a-string-iii/,https://youtu.be/ajhV7EYLfOY
 ,,Q. Longest Pallindrome,https://leetcode.com/problems/longest-palindrome/description/,https://youtu.be/Rbf3StOcRo0?si=k7VfhrhUbjsSTX2I
-,,Q. Find all Anagrams,https://leetcode.com/problems/find-all-anagrams-in-a-string/description/,TBD
-,,Q. K-Anagrams,https://www.geeksforgeeks.org/problems/check-if-two-strings-are-k-anagrams-or-not/1,TBD
-,,Q. Roman to Integer,https://leetcode.com/problems/roman-to-integer/description/,TBD
+,,Q. Find all Anagrams,https://leetcode.com/problems/find-all-anagrams-in-a-string/description/,https://youtu.be/tRk9czx6ucg
+,,Q. K-Anagrams,https://www.geeksforgeeks.org/problems/check-if-two-strings-are-k-anagrams-or-not/1,https://youtu.be/j-P0DOuCFPo
+,,Q. Roman to Integer,https://leetcode.com/problems/roman-to-integer/description/,https://youtu.be/S5lu7rLrZ5g
 ,,Q. Isomorphic String checker,https://leetcode.com/problems/isomorphic-strings/description/,https://youtu.be/TKGEUoVwdOk?si=4r_3bxXC17CKr5Oc
-String Pattern Matching,Pattern Matching Algorithms,KMP Algorithm,https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/description/,TBD
-,,Rabin Karp,https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/description/,TBD
+String Pattern Matching,Pattern Matching Algorithms,KMP Algorithm,https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/description/,https://youtu.be/xDlueq2XUEY
+,,Rabin Karp,https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/description/,https://youtu.be/_Rya-4PiHhU
 Linked List,Linked List Data Structure,Intro to linked list Data Structure,,https://youtu.be/cf4RNGYI6hk?si=aY6v4j2CUzgaPlpm
 ,,Types of linked list,,
 ,,All operations of Single linked list,,
@@ -567,8 +567,8 @@ Heap & Priority Queue,Heap,Heaps,,https://youtu.be/NFiYQGyL8rg
 ,,Q. IPO,https://leetcode.com/problems/ipo/description/?envType=daily-question&envId=2024-06-15,https://youtu.be/sdCvHi2i03E
 ,,Q. Design Twitter,https://leetcode.com/problems/design-twitter/description/,https://youtu.be/tH051S6aM5M
 ,,Q. Task Scheduler,https://leetcode.com/problems/task-scheduler/description/?envType=daily-question&envId=2024-03-19,https://youtu.be/it-tqUPacgM
-,,Q. Connect N ropes with Minimum cost,https://www.geeksforgeeks.org/problems/minimum-cost-of-ropes-1587115620/1,TBD
-,,Q. Find Median from Data Stream,https://leetcode.com/problems/find-median-from-data-stream/description/,TBD
+,,Q. Connect N ropes with Minimum cost,https://www.geeksforgeeks.org/problems/minimum-cost-of-ropes-1587115620/1,https://youtu.be/RT9-XAleJzM
+,,Q. Find Median from Data Stream,https://leetcode.com/problems/find-median-from-data-stream/description/,https://youtu.be/hJ-vn9yDH9I
 Graphs,Graph Introduction,Introduction to graphs,,https://youtu.be/f-buby0Aac8
 ,,Vertex and Edges,,
 ,,Components,,
@@ -628,11 +628,11 @@ Graphs,Graph Introduction,Introduction to graphs,,https://youtu.be/f-buby0Aac8
 ,,Minimum spanning tree,,https://youtu.be/XozGcnGHJXM
 ,,Q. Prim's Algorithm for minimum spanning tree,https://www.geeksforgeeks.org/problems/minimum-spanning-tree/1,https://youtu.be/4EuFmlbcSY8
 ,,Q. Kruskal's Algorithm for minimum spanning tree,https://www.geeksforgeeks.org/problems/minimum-spanning-tree/1,https://youtu.be/dBGYpKLY2bQ
-Tries,Trie Basics and Prefix Trie Implementation,Introduction to Trie,,TBD
-,,Implement a Trie in java,,TBD
-,,"Insert, Search and delete operations",,TBD
-,,Q. Prefix Tries,https://leetcode.com/problems/implement-trie-prefix-tree/,TBD
-,Questions on TRIE,Q. Counting Words With a Given Prefix,https://leetcode.com/problems/counting-words-with-a-given-prefix/description/,TBD
-,,Q. Longest String with All prefixes,https://leetcode.com/problems/longest-common-prefix/description/,TBD
-,,Q. Number of Distinct substrings in string,https://leetcode.com/problems/number-of-distinct-substrings-in-a-string/description/,TBD
-,,Q. Maximum XoR of two Numbers in an Array,https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/,TBD
+Tries,Trie Basics and Prefix Trie Implementation,Introduction to Trie,,https://youtu.be/VnxqYcy4weg
+,,Implement a Trie in java,,
+,,"Insert, Search and delete operations",,
+,,Q. Prefix Tries,https://leetcode.com/problems/implement-trie-prefix-tree/,
+,Questions on TRIE,Q. Counting Words With a Given Prefix,https://leetcode.com/problems/counting-words-with-a-given-prefix/description/,https://youtu.be/YfOU7I3240I
+,,Q. Longest String with All prefixes,https://leetcode.com/problems/longest-common-prefix/description/,https://youtu.be/2FvOGCFQ6x4
+,,Q. Number of Distinct substrings in string,https://leetcode.com/problems/number-of-distinct-substrings-in-a-string/description/,https://youtu.be/xFGetwuiUjo
+,,Q. Maximum XoR of two Numbers in an Array,https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/,https://youtu.be/gVk59gUd4DU
