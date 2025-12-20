@@ -59,20 +59,11 @@ const Home = () => {
               <AnimatedElement animation="fadeIn" delay="200">
                 <div className="flex flex-col sm:flex-row gap-4">
                   <button
-                    onClick={() => navigate('/dsa')}
+                    onClick={() => navigate('/java-dsa')}
                     className="btn-primary flex items-center justify-center gap-2"
                   >
-                    Explore DSA Sheet <ArrowRight size={18} />
+                    Explore Java + DSA Sheet <ArrowRight size={18} />
                   </button>
-                  <a
-                    href="https://www.youtube.com/@shashwat_tiwari_st"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-outline flex items-center justify-center gap-2"
-                  >
-                    <YoutubeIcon size={20} className="px-[2px] text-slate-200 bg-red-700 rounded-[4px]" />
-                    Subscribe
-                  </a>
                 </div>
               </AnimatedElement>
             </div>
@@ -107,24 +98,45 @@ const Home = () => {
 
       {/* Explore DSA Sheet */}
       <Section
-        contentClassName="text-center"
+        title="Explore our DSA Sheets"
+        subtitle="Structured roadmaps to crack top tech companies — from Arrays to Dynamic Programming, with Java focus"
+        contentClassName="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8"
+        gradient
       >
-        <AnimatedElement animation="fadeIn">
-          <Card className="p-8 bg-primary/5">
-            <CardContent>
-              <CardTitle className="text-3xl font-bold mb-6 text-gradient">Explore our Java DSA Sheet</CardTitle>
-              <p className="text-gray-600 max-w-xl mx-auto mb-8">
-                Structured roadmap to crack top tech companies — from Arrays to Dynamic Programming.
-              </p>
-              <button
-                onClick={() => navigate('/dsa')}
-                className="bg-primary text-white font-semibold px-8 py-3 rounded-xl hover:bg-primary/90 transition duration-300"
-              >
-                View Sheet
-              </button>
-            </CardContent>
-          </Card>
-        </AnimatedElement>
+        {[
+          {
+            icon: <BookOpen className="h-10 w-10 text-primary" />,
+            title: "DSA Sheet",
+            description: "Focus on core data structures and algorithms for interview prep.",
+            buttonText: "Explore DSA Sheet",
+            buttonClass: "bg-primary text-white hover:bg-primary/90",
+            onClick: () => navigate('/dsa')
+          },
+          {
+            icon: <Code className="h-10 w-10 text-primary" />,
+            title: "Java + DSA Sheet",
+            description: "Comprehensive guide from Java basics to advanced DSA concepts.",
+            buttonText: "Explore Java + DSA Sheet",
+            buttonClass: "bg-primary text-white hover:bg-primary/90",
+            onClick: () => navigate('/java-dsa')
+          }
+        ].map((sheet, index) => (
+          <AnimatedElement key={index} animation="fadeIn" delay={`${(index + 1) * 100}` as any}>
+            <Card hover className="h-full">
+              <CardContent className="text-center py-8">
+                <div className="mb-4 flex justify-center">{sheet.icon}</div>
+                <CardTitle className="mb-4">{sheet.title}</CardTitle>
+                <p className="text-gray-600 mb-6">{sheet.description}</p>
+                <button
+                  onClick={sheet.onClick}
+                  className={`${sheet.buttonClass} font-semibold px-6 py-3 rounded-xl transition duration-300`}
+                >
+                  {sheet.buttonText}
+                </button>
+              </CardContent>
+            </Card>
+          </AnimatedElement>
+        ))}
       </Section>
 
       {/* Features Section */}
@@ -299,11 +311,21 @@ const Home = () => {
               <CardContent className="text-center py-8">
                 <div className="mb-4 flex justify-center">{stat.icon}</div>
                 <div className="text-4xl font-bold text-gradient mb-2">{stat.number}</div>
-                <p className="text-gray-600 font-medium">{stat.label}</p>
+                <div className="text-gray-600 font-medium">{stat.label}</div>
               </CardContent>
             </Card>
           </AnimatedElement>
         ))}
+        <div className="col-span-1 md:col-span-3 mt-8 flex justify-center">
+          <a
+            href="https://www.youtube.com/@shashwat_tiwari_st"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-red-600 text-white font-semibold px-12 py-4 rounded-xl hover:bg-red-700 transition duration-300 flex items-center justify-center gap-2 min-w-[140px]"
+          >
+            Subscribe
+          </a>
+        </div>
       </Section>
 
       <Footer />

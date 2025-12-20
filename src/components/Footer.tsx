@@ -11,7 +11,8 @@ const Footer = () => {
     {
       title: 'Resources',
       links: [
-        { name: 'Java DSA Sheet', path: '/dsa' },
+        { name: 'DSA Sheet', path: '/dsa' },
+         { name: 'Java + DSA Sheet', path: '/java-dsa' },
         // { name: 'Practice Problems', path: '/dsa' },
         // { name: 'Interview Prep', path: '/dsa' },
       ]

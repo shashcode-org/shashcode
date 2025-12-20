@@ -31,8 +31,10 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'DSA', path: '/dsa' },
-    { name: 'Terms & Conditions', path: '/terms' },
-    { name: 'Privacy Policy', path: '/privacy' },
+    { name: 'Java + DSA', path: '/java-dsa' },
+    { name: 'About', path: '/about' },
+    // { name: 'Terms & Conditions', path: '/terms' },
+    // { name: 'Privacy Policy', path: '/privacy' },
   ];
 
   return (

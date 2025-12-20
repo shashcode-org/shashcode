@@ -10,7 +10,8 @@ current_subtopic = None
 
 # Read the CSV File
 try:
-  df = pd.read_csv('JavaDSASheetFinal.csv')
+#   df = pd.read_csv('JavaDSASheetFinal.csv')
+    df = pd.read_csv('DSASheetFinal.csv')  # Replace 'your_file.csv' with your actual file path
   # print(df)
 except FileNotFoundError:
   print("Error: 'your_file.csv' not found. Please upload the file or provide the correct path.")
@@ -83,7 +84,12 @@ json_data = json.dumps(structured_data, indent=2)
 print(json_data)
 
 # ✅ Save to JavaScript file
-with open("../csv-data-bkp/csv-data-java-dsa-release-v2.js", "w", encoding="utf-8") as f:
+with open("../csv-data-bkp/csv-data-dsa-release-v2.js", "w", encoding="utf-8") as f:
     f.write("export const csvData = ")
     f.write(json_data)
     f.write(";")  # Add semicolon to end JS export
+    
+# with open("../csv-data-bkp/csv-data-java-dsa-release-v2.js", "w", encoding="utf-8") as f:
+#     f.write("export const csvData = ")
+#     f.write(json_data)
+#     f.write(";")  # Add semicolon to end JS export

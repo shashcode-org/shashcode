@@ -10,7 +10,7 @@ const Terms = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      
+
       <div className="terms-page pt-32 pb-16 flex-grow">
         <Section contentClassName="max-w-4xl mx-auto">
           <AnimatedElement animation="fadeIn">
@@ -18,7 +18,7 @@ const Terms = () => {
               <CardContent className="p-8">
                 <h1 className="text-3xl font-bold text-primary mb-6">Terms and Conditions</h1>
                 <p className="mb-6 text-gray-800">
-                  <strong>Effective Date:</strong> 1st May, 2025
+                  <strong>Effective Date:</strong> 25th December, 2025
                 </p>
 
                 <div className="space-y-8">
@@ -36,17 +36,18 @@ const Terms = () => {
                   <section>
                     <h2 className="text-xl font-semibold mb-3 text-primary">2. Use of Our Services</h2>
                     <p className="font-medium mb-2">2.1 Eligibility</p>
-                    <p className="mb-4">You must be at least 13 years old (or 16 in some regions) to use our services. If you are under this age, you may only use ShashCode with parental consent.</p>
+                    <p className="mb-4">ShashCode is intended for a general audience and is not directed at children under the age of 13.</p>
 
                     <p className="font-medium mb-2">2.2 Acceptable Use</p>
                     <ul className="list-disc ml-6 space-y-1 mb-4">
-                      <li>✅ Use the website lawfully and ethically.</li>
-                      <li>✅ Respect copyrights, trademarks, and intellectual property.</li>
-                      <li>✅ Provide accurate information when required.</li>
-                      <li>❌ Do not copy, reproduce, or distribute our content without permission.</li>
-                      <li>❌ Do not engage in hacking, data scraping, or other malicious activities.</li>
-                      <li>❌ Do not use automated bots to access or manipulate the website.</li>
+                      <li>Use the website lawfully and ethically.</li>
+                      <li>Respect copyrights, trademarks, and intellectual property.</li>
+                      <li>Provide accurate information when required.</li>
+                      <li>Do not copy, reproduce, or distribute content without permission.</li>
+                      <li>Do not engage in hacking, data scraping, or malicious activities.</li>
+                      <li>Do not use automated tools or bots to access the website.</li>
                     </ul>
+
                   </section>
 
                   <section>
@@ -58,8 +59,8 @@ const Terms = () => {
                     <ul className="list-disc ml-6 space-y-1">
                       <li>View and use free content for personal learning.</li>
                       <li>Share links to content without modification.</li>
-                      <li>❌ You may not modify, sell, or distribute our content without permission.</li>
-                      <li>❌ You may not use our trademarks, logos, or brand identity without approval.</li>
+                      <li>You may not modify, sell, or distribute our content without permission.</li>
+                      <li>You may not use our trademarks, logos, or brand identity without approval.</li>
                     </ul>
                   </section>
 
@@ -67,24 +68,23 @@ const Terms = () => {
                     <h2 className="text-xl font-semibold mb-3 text-primary">4. Payment & Refund Policy (If Applicable)</h2>
                     <p className="font-medium mb-2">4.1 Payment Terms</p>
                     <ul className="list-disc ml-6 space-y-1 mb-4">
-                      <li>All payments must be made through approved gateways (e.g., Stripe, Razorpay, PayPal).</li>
+                      <li>All payments, if introduced, will be processed through secure third-party payment gateways.</li>
                       <li>Prices are subject to change without notice.</li>
                     </ul>
 
                     <p className="font-medium mb-2">4.2 Refund Policy</p>
                     <ul className="list-disc ml-6 space-y-1">
-                      <li>❌ Digital products (PDFs, pre-recorded courses): Non-refundable</li>
-                      <li>✅ Live sessions or courses: Refundable within 7 days (if unsatisfied)</li>
+                      <li>Digital products, if introduced, are generally non-refundable unless stated otherwise at the time of purchase.</li>
                     </ul>
                   </section>
 
                   <section>
                     <h2 className="text-xl font-semibold mb-3 text-primary">5. User-Generated Content</h2>
-                    <p>By submitting content (comments, feedback, reviews):</p>
+                    <p>By submitting feedback or communications to us:</p>
                     <ul className="list-disc ml-6 space-y-1">
-                      <li>✅ You own the content and have the right to share it.</li>
-                      <li>✅ You allow us to use, display, and distribute your content.</li>
-                      <li>❌ We may remove harmful, illegal, or abusive content.</li>
+                      <li>You own the content and have the right to share it.</li>
+                      <li>You allow us to use, display, and distribute your content.</li>
+                      <li>We may remove harmful, illegal, or abusive content.</li>
                     </ul>
                   </section>
 
@@ -100,8 +100,8 @@ const Terms = () => {
                   </section>
 
                   <section>
-                    <h2 className="text-xl font-semibold mb-3 text-primary">8. Account Termination</h2>
-                    <p>We may suspend or terminate accounts that violate terms, involve fraud or abuse. No refunds upon termination.</p>
+                    <h2 className="text-xl font-semibold mb-3 text-primary">8. Access Restriction</h2>
+                    <p>We reserve the right to restrict access to the website for users who violate these terms or engage in abuse or unlawful activity.</p>
                   </section>
 
                   <section>
@@ -116,15 +116,21 @@ const Terms = () => {
 
                   <section>
                     <h2 className="text-xl font-semibold mb-3 text-primary">11. Contact Us</h2>
-                    <p>📧 <a href="mailto:collaboratewithshashwat@gmail.com" className="underline text-primary hover:text-primary/80 transition-colors">collaboratewithshashwat@gmail.com</a></p>
-                  </section>
+                    <p>
+                      <a
+                        href="mailto:collaboratewithshashwat@gmail.com"
+                        className="underline text-primary hover:text-primary/80 transition-colors"
+                      >
+                        collaboratewithshashwat@gmail.com
+                      </a>
+                    </p></section>
                 </div>
               </CardContent>
             </Card>
           </AnimatedElement>
         </Section>
       </div>
-      
+
       <Footer />
     </div>
   );

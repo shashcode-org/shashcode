@@ -25,7 +25,8 @@ const About = () => {
     },
     {
       title: "Last Minute DSA",
-      description: "A quick revision guide to ace technical interviews."
+      description: "A quick revision guide to ace technical interviews.",
+      comingSoon: true
     },
     {
       title: "YouTube Tutorials",
@@ -77,7 +78,7 @@ const About = () => {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 hero-gradient">
         <div className="max-w-7xl mx-auto text-center">
@@ -96,9 +97,9 @@ const About = () => {
             <CardContent>
               <div className="flex flex-col md:flex-row items-start gap-8">
                 <div className="w-full md:w-1/3 flex justify-center">
-                  <img 
-                    src="/logo.webp" 
-                    alt="ShashCode Logo" 
+                  <img
+                    src="/logo.webp"
+                    alt="ShashCode Logo"
                     className="w-48 h-48 object-contain"
                   />
                 </div>
@@ -121,7 +122,7 @@ const About = () => {
       </Section>
 
       {/* What We Offer */}
-      <Section 
+      <Section
         title="What We Offer"
         gradient
         contentClassName="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto"
@@ -135,7 +136,15 @@ const About = () => {
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                     <div>
-                      <h3 className="font-bold text-lg mb-2">{offer.title}</h3>
+                      {/* <h3 className="font-bold text-lg mb-2">{offer.title}</h3> */}
+                      <h3 className="font-bold text-lg mb-2 flex items-center gap-2">
+                        {offer.title}
+                        {offer.comingSoon && (
+                          <span className="text-xs px-2 py-0.5 rounded-full bg-primary/10 text-primary">
+                            Coming Soon
+                          </span>
+                        )}
+                      </h3>
                       <p className="text-gray-600">{offer.description}</p>
                     </div>
                   </div>
@@ -158,19 +167,21 @@ const About = () => {
               <p className="text-gray-600 leading-relaxed">
                 Be part of our growing community and accelerate your coding journey. Subscribe to ShashCode on YouTube and explore our <strong>Java + DSA Sheet today!</strong>
               </p>
-              <button
-                onClick={() => navigate('/dsa')}
-                className="btn-primary mt-4"
+              <a
+                href="https://www.youtube.com/@shashwat_tiwari_st"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary mt-4 inline-block"
               >
                 Join Us!!
-              </button>
+              </a>
             </CardContent>
           </Card>
         </AnimatedElement>
       </Section>
 
       {/* Meet the Instructor */}
-      <Section 
+      <Section
         title="Meet the Instructor"
         gradient
         contentClassName="max-w-6xl mx-auto"
@@ -218,12 +229,12 @@ const About = () => {
           <Card className="p-8">
             <CardContent className="space-y-6">
               <h2 className="text-2xl font-bold text-primary text-center">Professional Experience</h2>
-              
+
               <div className="space-y-4">
                 <div className="flex items-start gap-4">
                   <img src={samsungLogo} alt="Samsung" className="h-12 object-contain flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold">Samsung Research and Development Institute India (RRI-B) – Senior Engineer</h3>
+                    <h3 className="font-semibold">Samsung Research and Development Institute India (SRI-B) – Senior Engineer</h3>
                     <p className="text-gray-600 text-sm">Backend development, system design, and performance optimization.</p>
                   </div>
                 </div>
@@ -286,9 +297,9 @@ const About = () => {
                   <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                   <span className="text-gray-600">
                     Microsoft Technology Associate (JavaScript) -{' '}
-                    <a 
-                      href="https://www.credly.com/badges/75f0920f-f3e8-4d89-a43f-dc10f47fc92b/linked_in_profile" 
-                      target="_blank" 
+                    <a
+                      href="https://www.credly.com/badges/75f0920f-f3e8-4d89-a43f-dc10f47fc92b/linked_in_profile"
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="text-primary hover:underline"
                     >
@@ -308,7 +319,7 @@ const About = () => {
           <Card className="p-8 bg-primary/5">
             <CardContent className="space-y-6">
               <h2 className="text-2xl font-bold text-primary text-center">Content Creation & Community Engagement</h2>
-              
+
               <div className="space-y-4">
                 {communityEngagement.map((item, index) => (
                   <div key={index} className="flex items-start gap-3">
@@ -351,7 +362,7 @@ const About = () => {
           <Card className="p-8">
             <CardContent>
               <h2 className="text-2xl font-bold text-primary mb-8 text-center">Skills & Expertise</h2>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Programming Languages */}
                 <div>

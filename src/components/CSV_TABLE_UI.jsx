@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useMemo, useRef, useLayoutEffect } from "react";
-import { csvData } from '../data/csv-data-java-dsa-release-v2';
 import { Search, ChevronRight, Youtube } from 'lucide-react';
 import AnimatedElement from '@/components/AnimatedElement';
 import { Card } from '@/components/ui/card';
@@ -8,7 +7,7 @@ import { Separator } from '@/components/ui/separator';
 import { motion, AnimatePresence } from 'framer-motion';
 import { SiLeetcode, SiGeeksforgeeks } from "react-icons/si";
 
-export const CSV_TABLE_UI = () => {
+export const CSV_TABLE_UI = ({ csvData }) => {
     const [expandedTopicIndex, setExpandedTopicIndex] = useState(null);
     const [selectedTopic, setSelectedTopic] = useState("All");
     const [searchQuery, setSearchQuery] = useState("");

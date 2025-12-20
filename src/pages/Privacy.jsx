@@ -10,7 +10,7 @@ const Privacy = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      
+
       <div className="privacy-page pt-32 pb-16 flex-grow">
         <Section contentClassName="max-w-4xl mx-auto">
           <AnimatedElement animation="fadeIn">
@@ -18,7 +18,7 @@ const Privacy = () => {
               <CardContent className="p-8">
                 <h1 className="text-3xl font-bold text-primary mb-6">Privacy Policy</h1>
                 <p className="mb-6 text-gray-800">
-                  <strong>Effective Date:</strong> 1st May, 2025
+                  <strong>Effective Date:</strong> 25th December, 2025
                 </p>
 
                 <div className="space-y-8">
@@ -31,9 +31,9 @@ const Privacy = () => {
                   <section>
                     <h2 className="text-xl font-semibold mb-3 text-primary">1. Information We Collect</h2>
                     <ul className="list-disc ml-6 space-y-1">
-                      <li><strong>Personal Information:</strong> Name, email address, and any other details you provide while contacting or subscribing.</li>
+                      <li><strong>Personal Information:</strong> Name and email address that you voluntarily provide when you contact us through the Contact Us page. We do not require account creation to access our content.</li>
                       <li><strong>Usage Data:</strong> Pages visited, clicks, time spent, and device/browser information.</li>
-                      <li><strong>Payment Details:</strong> (If applicable) via secure third-party gateways — we do not store card details.</li>
+                      <li><strong>Payment Details:</strong> If we introduce paid services in the future, payments will be processed via secure third-party gateways. We do not store card details.</li>
                     </ul>
                   </section>
 
@@ -41,8 +41,8 @@ const Privacy = () => {
                     <h2 className="text-xl font-semibold mb-3 text-primary">2. How We Use Your Information</h2>
                     <ul className="list-disc ml-6 space-y-1">
                       <li>To provide and improve our services and content.</li>
-                      <li>To personalize your experience and recommend relevant resources.</li>
-                      <li>To send you updates, newsletters, or promotional content (only if opted-in).</li>
+                      <li>To respond to inquiries and improve the quality of our learning resources.</li>
+                      <li>To communicate with you in response to your inquiries or if you explicitly request updates from us.</li>
                       <li>To ensure site security, detect fraud, and prevent abuse.</li>
                     </ul>
                   </section>
@@ -51,9 +51,10 @@ const Privacy = () => {
                     <h2 className="text-xl font-semibold mb-3 text-primary">3. Data Sharing</h2>
                     <p>We do not sell your personal data. We may share it with:</p>
                     <ul className="list-disc ml-6 space-y-1">
-                      <li>✅ Trusted service providers (e.g., email platforms, analytics, payment processors).</li>
-                      <li>✅ Legal authorities if required by law or to protect our rights.</li>
+                      <li>Trusted service providers such as analytics tools and email services that help us operate and improve the website.</li>
+                      <li>Legal authorities, if required by law or to protect our rights.</li>
                     </ul>
+
                   </section>
 
                   <section>
@@ -82,7 +83,7 @@ const Privacy = () => {
 
                   <section>
                     <h2 className="text-xl font-semibold mb-3 text-primary">8. Children's Privacy</h2>
-                    <p>We do not knowingly collect personal data from users under 13 (or 16 in some regions) without parental consent.</p>
+                    <p>ShashCode is intended for a general audience and is not directed at children under the age of 13. We do not knowingly collect personal information from children. </p>
                   </section>
 
                   <section>
@@ -101,7 +102,7 @@ const Privacy = () => {
           </AnimatedElement>
         </Section>
       </div>
-      
+
       <Footer />
     </div>
   );
