@@ -3871,16 +3871,32 @@ export const csvData = [
             "Video Link": "https://youtu.be/1m3F7zEW9qc?si=YI6cXSo8StZmYUAY"
           },
           {
+            "Detail": "Q. Sum of Binary Tree",
+            "Links": [
+              "https://www.geeksforgeeks.org/problems/sum-of-binary-tree/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article"
+            ],
+            "Video Link": "https://youtu.be/VchJ26Nlclw"
+          },
+          {
+            "Detail": "Q. Cousins in Binary Tree",
+            "Links": [
+              "https://leetcode.com/problems/cousins-in-binary-tree/description/"
+            ],
+            "Video Link": "https://youtu.be/-pNfH9ROEjg"
+          },
+          {
             "Detail": "Q. Left and Right View of Binary Tree",
             "Links": [
-              "https://leetcode.com/problems/binary-tree-right-side-view/description/"
+              "https://leetcode.com/problems/binary-tree-right-side-view/description/",
+              "https://www.geeksforgeeks.org/problems/left-view-of-binary-tree/1"
             ],
             "Video Link": "https://youtu.be/JgRsVsw_ZSw"
           },
           {
             "Detail": "Q. Top and Bottom View of Binary Tree",
             "Links": [
-              "https://www.geeksforgeeks.org/problems/top-view-of-binary-tree/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article"
+              "https://www.geeksforgeeks.org/problems/top-view-of-binary-tree/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article",
+              "https://www.geeksforgeeks.org/problems/bottom-view-of-binary-tree/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article"
             ],
             "Video Link": "https://youtu.be/zbA4yWuEoYE"
           },
