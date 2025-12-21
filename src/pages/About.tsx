@@ -176,7 +176,7 @@ const About = () => {
                 Be part of our growing community and accelerate your coding journey. Subscribe to ShashCode on YouTube and explore our <strong>Java + DSA Sheet today!</strong>
               </p>
               <a
-                href="https://www.youtube.com/@shashwat_tiwari_st"
+                href="https://www.youtube.com/channel/UCegtbaD_t6PYm3eaAf_bvGQ?sub_confirmation=1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary mt-4 inline-block"

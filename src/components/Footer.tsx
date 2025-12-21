@@ -29,7 +29,7 @@ const Footer = () => {
     {
       title: 'Socials',
       links: [
-        { name: 'Youtube', path: 'https://www.youtube.com/@shashwat_tiwari_st' },
+        { name: 'Youtube', path: 'https://www.youtube.com/channel/UCegtbaD_t6PYm3eaAf_bvGQ?sub_confirmation=1' },
         { name: 'Twitter', path: 'https://x.com/shashCode/' },
         { name: 'LinkedIn', path: 'https://www.linkedin.com/in/shashwattiwari1999/' },
         { name: 'Instagram', path: 'https://www.instagram.com/shashwat_tiwari_st/' },

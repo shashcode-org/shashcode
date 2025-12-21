@@ -325,7 +325,7 @@ const Home = () => {
         ))}
         <div className="col-span-1 md:col-span-3 mt-8 flex justify-center">
           <a
-            href="https://www.youtube.com/@shashwat_tiwari_st"
+            href="https://www.youtube.com/channel/UCegtbaD_t6PYm3eaAf_bvGQ?sub_confirmation=1"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-red-600 text-white font-semibold px-12 py-4 rounded-xl hover:bg-red-700 transition duration-300 flex items-center justify-center gap-2 min-w-[140px]"
