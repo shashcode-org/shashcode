@@ -165,8 +165,7 @@ export const csvDataAll = [
             "Video Link": "https://youtu.be/pSGtbhpuhbk",
           },
           {
-            Question:
-              "Q18. Minimize Maximum of products distributed to any store",
+            Question: "Q18. Minimize Maximum of products distributed to any store",
             "Video Link": "https://youtu.be/4O6wrTtUQvY",
           },
           {
@@ -264,8 +263,7 @@ export const csvDataAll = [
             "Video Link": "https://youtu.be/pSGtbhpuhbk",
           },
           {
-            Question:
-              "Q27. Minimize Maximum of products distributed to any store",
+            Question: "Q27. Minimize Maximum of products distributed to any store",
             "Video Link": "https://youtu.be/4O6wrTtUQvY",
           },
           {

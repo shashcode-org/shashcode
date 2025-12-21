@@ -1,15 +1,13 @@
-
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import Testimonials from '@/components/Testimonials';
-import Section from '@/components/Section';
-import AnimatedElement from '@/components/AnimatedElement';
-import Card, { CardContent, CardTitle } from '@/components/Card';
-import { ArrowRight, Code, Award, BookOpen, YoutubeIcon } from 'lucide-react';
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import Testimonials from "@/components/Testimonials";
+import Section from "@/components/Section";
+import AnimatedElement from "@/components/AnimatedElement";
+import Card, { CardContent, CardTitle } from "@/components/Card";
+import { ArrowRight, Code, Award, BookOpen, YoutubeIcon } from "lucide-react";
 import { Helmet } from "react-helmet-async";
-
 
 const Home = () => {
   const navigate = useNavigate();
@@ -37,9 +35,7 @@ const Home = () => {
                     <span className="absolute left-0 -bottom-2 h-1 w-full bg-[#F9A826] rounded-full"></span>
                   </span>
                 </h1>
-
               </AnimatedElement>
-
 
               <AnimatedElement animation="fadeIn" delay="100">
                 <p className="text-lg text-black-300 mb-8">
@@ -48,11 +44,10 @@ const Home = () => {
                 </p>
               </AnimatedElement>
 
-
               <AnimatedElement animation="fadeIn" delay="200">
                 <div className="flex flex-col sm:flex-row gap-4">
                   <button
-                    onClick={() => navigate('/java-dsa')}
+                    onClick={() => navigate("/java-dsa")}
                     className="btn-primary flex items-center justify-center gap-2"
                   >
                     Explore Java + DSA Sheet <ArrowRight size={18} />
@@ -103,7 +98,7 @@ const Home = () => {
             description: "Focus on core data structures and algorithms for interview prep.",
             buttonText: "Explore DSA Sheet",
             buttonClass: "bg-primary text-white hover:bg-primary/90",
-            onClick: () => navigate('/dsa')
+            onClick: () => navigate("/dsa"),
           },
           {
             icon: <Code className="h-10 w-10 text-primary" />,
@@ -111,8 +106,8 @@ const Home = () => {
             description: "Comprehensive guide from Java basics to advanced DSA concepts.",
             buttonText: "Explore Java + DSA Sheet",
             buttonClass: "bg-primary text-white hover:bg-primary/90",
-            onClick: () => navigate('/java-dsa')
-          }
+            onClick: () => navigate("/java-dsa"),
+          },
         ].map((sheet, index) => (
           <AnimatedElement key={index} animation="fadeIn" delay={`${(index + 1) * 100}` as any}>
             <Card hover className="h-full">
@@ -143,18 +138,21 @@ const Home = () => {
           {
             icon: <BookOpen className="h-10 w-10 text-primary" />,
             title: "Structured Learning Path",
-            description: "Follow our carefully designed curriculum that takes you from Java basics to advanced DSA concepts."
+            description:
+              "Follow our carefully designed curriculum that takes you from Java basics to advanced DSA concepts.",
           },
           {
             icon: <Code className="h-10 w-10 text-primary" />,
             title: "Comprehensive DSA Sheet",
-            description: "Practice with our curated collection of coding problems organized by topic and difficulty."
+            description:
+              "Practice with our curated collection of coding problems organized by topic and difficulty.",
           },
           {
             icon: <Award className="h-10 w-10 text-primary" />,
             title: "Interview Preparation",
-            description: "Master the patterns and techniques that top companies look for in technical interviews."
-          }
+            description:
+              "Master the patterns and techniques that top companies look for in technical interviews.",
+          },
         ].map((feature, index) => (
           <AnimatedElement key={index} animation="fadeIn" delay={`${(index + 1) * 100}` as any}>
             <Card hover className="h-full">
@@ -171,9 +169,6 @@ const Home = () => {
       {/* Testimonials */}
       <Testimonials />
 
-
-
-
       {/* Stats Section */}
       <Section
         title="Growing Community"
@@ -185,18 +180,18 @@ const Home = () => {
           {
             number: "1.4L+",
             label: "Monthly YouTube Views",
-            icon: <YoutubeIcon className="h-12 w-12 text-red-500" />
+            icon: <YoutubeIcon className="h-12 w-12 text-red-500" />,
           },
           {
             number: "3M+",
             label: "Total Views Across YouTube",
-            icon: <Award className="h-12 w-12 text-primary" />
+            icon: <Award className="h-12 w-12 text-primary" />,
           },
           {
             number: "2K+",
             label: "Instagram Community",
-            icon: <Code className="h-12 w-12 text-primary" />
-          }
+            icon: <Code className="h-12 w-12 text-primary" />,
+          },
         ].map((stat, index) => (
           <AnimatedElement key={index} animation="fadeIn" delay={`${(index + 1) * 100}` as any}>
             <Card hover className="h-full">

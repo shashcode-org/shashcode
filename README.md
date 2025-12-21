@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: 
+**URL**:
 
 Follow these steps:
 
@@ -29,4 +29,3 @@ This project is built with:
 - React
 - shadcn-ui
 - Tailwind CSS
-

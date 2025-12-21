@@ -515,8 +515,7 @@ export const csvDataAll = [
             Detail: "Q7. Find an element in an array of Infinite size",
           },
           {
-            Detail:
-              "Q8. Find first 1 in an infinite and sorted array of 0s and 1s",
+            Detail: "Q8. Find first 1 in an infinite and sorted array of 0s and 1s",
           },
         ],
         "Video Link": "https://youtu.be/DoVawmdh5NM",
@@ -546,12 +545,10 @@ export const csvDataAll = [
             Detail: "Q11. count number of rotations",
           },
           {
-            Detail:
-              "Q12. search in rotated sorted array ( with and without duplicates)",
+            Detail: "Q12. search in rotated sorted array ( with and without duplicates)",
           },
           {
-            Detail:
-              "Q13 Find min / max (peak) element in rotated and sorted array",
+            Detail: "Q13 Find min / max (peak) element in rotated and sorted array",
           },
         ],
         "Video Link": "https://youtu.be/n12QcCu8oBI",
@@ -772,8 +769,7 @@ export const csvDataAll = [
         Subtopic: "Questions on Duplicate Numbers",
         Details: [
           {
-            Detail:
-              "Q. Find the duplicate Number in an array [1 to N] ( inclusive )",
+            Detail: "Q. Find the duplicate Number in an array [1 to N] ( inclusive )",
           },
           {
             Detail:
@@ -783,8 +779,7 @@ export const csvDataAll = [
         "Video Link": "https://youtu.be/Us63C10ozzw",
       },
       {
-        Subtopic:
-          "Q. Find the missing and repeating element in an array [1 to N]",
+        Subtopic: "Q. Find the missing and repeating element in an array [1 to N]",
         Details: [],
         "Video Link": "TBD",
       },
@@ -992,8 +987,7 @@ export const csvDataAll = [
         "Video Link": "https://youtu.be/ahlaBL4gG1s",
       },
       {
-        Subtopic:
-          "Q. Largest Rectangle in Histogram + Previous smaller element",
+        Subtopic: "Q. Largest Rectangle in Histogram + Previous smaller element",
         Details: [],
         "Video Link": "https://youtu.be/qUS-DZU4fj4",
       },
@@ -1800,8 +1794,7 @@ export const csvDataAll = [
         "Video Link": "https://youtu.be/qOCuB-IC9KA?si=NEEgvm_zlI-dvSm_",
       },
       {
-        Subtopic:
-          "Q. Find pairs with given sum such that elements of pair are in different rows",
+        Subtopic: "Q. Find pairs with given sum such that elements of pair are in different rows",
         Details: [],
         "Video Link": "TBD",
       },

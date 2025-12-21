@@ -1,9 +1,7 @@
-import { AiFillHome } from 'react-icons/ai';
+import { AiFillHome } from "react-icons/ai";
 import { MdOutlineRoundaboutRight } from "react-icons/md";
 import { FaCode } from "react-icons/fa6";
 import { MdContactMail } from "react-icons/md";
-
-
 
 export const navItemsData = [
   {

@@ -1,8 +1,7 @@
-
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
-import AnimatedElement from './AnimatedElement';
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react";
+import AnimatedElement from "./AnimatedElement";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,8 +18,8 @@ const Navbar = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Close mobile menu when navigating
@@ -29,32 +28,29 @@ const Navbar = () => {
   }, [location.pathname]);
 
   const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'DSA', path: '/dsa' },
-    { name: 'Java + DSA', path: '/java-dsa' },
-    { name: 'About', path: '/about' },
+    { name: "Home", path: "/" },
+    { name: "DSA", path: "/dsa" },
+    { name: "Java + DSA", path: "/java-dsa" },
+    { name: "About", path: "/about" },
     // { name: 'Terms & Conditions', path: '/terms' },
     // { name: 'Privacy Policy', path: '/privacy' },
   ];
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled
-        ? 'bg-white/95 backdrop-blur-sm shadow-md py-3'
-        : 'bg-transparent py-5'
-      }`}>
+    <nav
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        scrolled ? "bg-white/95 backdrop-blur-sm shadow-md py-3" : "bg-transparent py-5"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <AnimatedElement animation="fadeIn" className="opacity-100">
             <Link
               to="/"
               className="flex items-center space-x-3"
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
-              <img
-                src="/logo.webp"
-                alt="ShashCode Logo"
-                className="h-8 md:h-14 w-auto"
-              />
+              <img src="/logo.webp" alt="ShashCode Logo" className="h-8 md:h-14 w-auto" />
             </Link>
           </AnimatedElement>
 
@@ -69,8 +65,9 @@ const Navbar = () => {
               >
                 <Link
                   to={link.path}
-                  className={`navbar-link ${location.pathname === link.path ? 'text-primary after:scale-x-100' : ''
-                    }`}
+                  className={`navbar-link ${
+                    location.pathname === link.path ? "text-primary after:scale-x-100" : ""
+                  }`}
                 >
                   {link.name}
                 </Link>
@@ -97,10 +94,11 @@ const Navbar = () => {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className={`block py-2 px-3 rounded-md transition-colors ${location.pathname === link.path
-                      ? 'bg-primary/10 text-primary font-medium'
-                      : 'text-gray-700 hover:bg-gray-100'
-                    }`}
+                  className={`block py-2 px-3 rounded-md transition-colors ${
+                    location.pathname === link.path
+                      ? "bg-primary/10 text-primary font-medium"
+                      : "text-gray-700 hover:bg-gray-100"
+                  }`}
                 >
                   {link.name}
                 </Link>

@@ -1,4 +1,3 @@
-
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
@@ -10,10 +9,7 @@ const NotFound = () => {
   const location = useLocation();
 
   useEffect(() => {
-    console.error(
-      "404 Error: User attempted to access non-existent route:",
-      location.pathname
-    );
+    console.error("404 Error: User attempted to access non-existent route:", location.pathname);
   }, [location.pathname]);
 
   return (
@@ -27,10 +23,7 @@ const NotFound = () => {
               <p className="text-xl text-gray-600 mb-8">
                 Oops! The page you're looking for doesn't exist.
               </p>
-              <Link
-                to="/"
-                className="btn-primary inline-flex items-center"
-              >
+              <Link to="/" className="btn-primary inline-flex items-center">
                 Return to Home
               </Link>
             </div>

@@ -1,9 +1,11 @@
 /* Terms and Privacy Page */
 
-.terms-page section h2, .privacy-page section h2{
+.terms-page section h2,
+.privacy-page section h2 {
   margin: 30px 0 5px 0;
 }
 
-.terms-page ul li, .privacy-page ul li{
+.terms-page ul li,
+.privacy-page ul li {
   list-style: none;
 }
