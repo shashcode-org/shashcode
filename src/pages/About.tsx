@@ -93,7 +93,7 @@ const About = () => {
                   About{" "}
                   <span className="relative text-[#1E1B4B]">
                     ShashCode
-                    <span className="absolute left-0 -bottom-2 h-1 w-full bg-[#F9A826] rounded-full"></span>
+                   
                   </span>
                 </h1>
         </div>
