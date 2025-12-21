@@ -1,8 +1,7 @@
-
-import React, { useRef, useState, useEffect } from 'react';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
-import AnimatedElement from './AnimatedElement';
-import Card, { CardContent } from './Card';
+import React, { useRef, useState, useEffect } from "react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import AnimatedElement from "./AnimatedElement";
+import Card, { CardContent } from "./Card";
 
 const Testimonials = () => {
   const scrollRef = useRef(null);
@@ -11,30 +10,35 @@ const Testimonials = () => {
 
   const testimonials = [
     {
-      quote: "Shashcode played a huge role in my journey to secure both a placement and an internship. The way complex DSA problems were explained in simple terms, especially in Java, made learning so much easier.",
+      quote:
+        "Shashcode played a huge role in my journey to secure both a placement and an internship. The way complex DSA problems were explained in simple terms, especially in Java, made learning so much easier.",
       name: "Ayush Raj",
-      role: "SDE @ Amazon"
+      role: "SDE @ Amazon",
     },
     {
-      quote: "By regularly following your video I am feeling confident enough to atleast make a try of any problem given to me. It significantly boosted my logical thinking. Learned so many new concept.",
+      quote:
+        "By regularly following your video I am feeling confident enough to atleast make a try of any problem given to me. It significantly boosted my logical thinking. Learned so many new concept.",
       name: "Shubham Agrawal",
-      role: "Intern @ Microsoft"
+      role: "Intern @ Microsoft",
     },
     {
-      quote: "Really helped in maintaining consistency and made super easy for me to understand non linear and complex DSA concepts and problems.",
+      quote:
+        "Really helped in maintaining consistency and made super easy for me to understand non linear and complex DSA concepts and problems.",
       name: "Anant Aggarwal",
-      role: "Placed @ Cognizant"
+      role: "Placed @ Cognizant",
     },
     {
-      quote: "I got my Microsoft SWE internship, and doing quite good in CP, I code in C++ but I really like the explanation so i watch your daily challenge videos....keep doing the good work 😉👍.",
+      quote:
+        "I got my Microsoft SWE internship, and doing quite good in CP, I code in C++ but I really like the explanation so i watch your daily challenge videos....keep doing the good work 😉👍.",
       name: "Anshdeep Bansal",
-      role: "Engineer @ NPCI"
+      role: "Engineer @ NPCI",
     },
     {
-      quote: "Shashcode helped me in staying consistent thought my placement season right from June 2024 With that , I got an on campus placement opportunity, which I can only disclose after my joining in January.",
+      quote:
+        "Shashcode helped me in staying consistent thought my placement season right from June 2024 With that , I got an on campus placement opportunity, which I can only disclose after my joining in January.",
       name: "Yash Matlani",
-      role: "Mentee @ ShashCode"
-    }
+      role: "Mentee @ ShashCode",
+    },
   ];
 
   const checkScroll = () => {
@@ -49,7 +53,7 @@ const Testimonials = () => {
     if (container) {
       container.scrollBy({
         left: -container.clientWidth,
-        behavior: 'smooth'
+        behavior: "smooth",
       });
     }
   };
@@ -59,7 +63,7 @@ const Testimonials = () => {
     if (container) {
       container.scrollBy({
         left: container.clientWidth,
-        behavior: 'smooth'
+        behavior: "smooth",
       });
     }
   };
@@ -68,8 +72,8 @@ const Testimonials = () => {
     const container = scrollRef.current;
     checkScroll();
     if (container) {
-      container.addEventListener('scroll', checkScroll);
-      return () => container.removeEventListener('scroll', checkScroll);
+      container.addEventListener("scroll", checkScroll);
+      return () => container.removeEventListener("scroll", checkScroll);
     }
   }, []);
 
@@ -77,9 +81,7 @@ const Testimonials = () => {
     <section className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <AnimatedElement animation="fadeIn">
-          <h2 className="text-3xl font-bold text-center text-gradient mb-10">
-            What Learners Say
-          </h2>
+          <h2 className="text-3xl font-bold text-center text-gradient mb-10">What Learners Say</h2>
         </AnimatedElement>
 
         <div className="flex items-center max-w-4xl mx-auto">
@@ -89,8 +91,8 @@ const Testimonials = () => {
             disabled={atStart}
             className={`p-2 rounded-full transition shrink-0 ${
               atStart
-                ? 'bg-muted opacity-30 cursor-not-allowed'
-                : 'bg-background hover:bg-accent text-foreground'
+                ? "bg-muted opacity-30 cursor-not-allowed"
+                : "bg-background hover:bg-accent text-foreground"
             }`}
             aria-label="Previous testimonial"
           >
@@ -103,10 +105,7 @@ const Testimonials = () => {
             className="overflow-x-auto flex snap-x snap-mandatory scroll-smooth scrollbar-none space-x-6 mx-6 gap-4 p-4 items-center"
           >
             {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="snap-center shrink-0 w-full"
-              >
+              <div key={index} className="snap-center shrink-0 w-full">
                 <AnimatedElement animation="fadeIn" delay="100">
                   <Card glass className="h-full">
                     <CardContent className="p-6">
@@ -128,8 +127,8 @@ const Testimonials = () => {
             disabled={atEnd}
             className={`p-2 rounded-full transition shrink-0 ${
               atEnd
-                ? 'bg-muted opacity-30 cursor-not-allowed'
-                : 'bg-background hover:bg-accent text-foreground'
+                ? "bg-muted opacity-30 cursor-not-allowed"
+                : "bg-background hover:bg-accent text-foreground"
             }`}
             aria-label="Next testimonial"
           >

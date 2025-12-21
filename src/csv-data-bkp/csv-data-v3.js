@@ -99,18 +99,15 @@ export const csvDataAll = [
           },
           {
             Detail: "Q. Find max sum 1D array in a 2D array",
-            Solve:
-              "https://www.geeksforgeeks.org/problems/java-1-d-and-2-d-array2952/1",
+            Solve: "https://www.geeksforgeeks.org/problems/java-1-d-and-2-d-array2952/1",
           },
           {
             Detail: "Q. Search all occurrences (1D/2D)",
-            Solve:
-              "https://leetcode.com/problems/search-a-2d-matrix/description/",
+            Solve: "https://leetcode.com/problems/search-a-2d-matrix/description/",
           },
           {
             Detail: "Q. Search last occurrence (1D/2D)",
-            Solve:
-              "https://leetcode.com/problems/search-a-2d-matrix-ii/description/",
+            Solve: "https://leetcode.com/problems/search-a-2d-matrix-ii/description/",
           },
         ],
         "Video Link": "https://youtu.be/slqFdKVMjeQ",
@@ -142,13 +139,11 @@ export const csvDataAll = [
         Details: [
           {
             Detail: "Q1. Ceiling of a Number",
-            Solve:
-              "https://www.geeksforgeeks.org/problems/ceil-the-floor2802/1",
+            Solve: "https://www.geeksforgeeks.org/problems/ceil-the-floor2802/1",
           },
           {
             Detail: "Q2. Floor of a Number",
-            Solve:
-              "https://www.geeksforgeeks.org/problems/floor-in-a-sorted-array-1587115620/1",
+            Solve: "https://www.geeksforgeeks.org/problems/floor-in-a-sorted-array-1587115620/1",
           },
           {
             Detail: "Q3. First and Last Position of element in sorted array",
@@ -157,8 +152,7 @@ export const csvDataAll = [
           },
           {
             Detail: "Q4. Count all occurrence of element in an array",
-            Solve:
-              "https://leetcode.com/problems/find-occurrences-of-an-element-in-an-array",
+            Solve: "https://leetcode.com/problems/find-occurrences-of-an-element-in-an-array",
           },
           {
             Detail: "Q5. Next smallest letter in sorted array",
@@ -173,8 +167,7 @@ export const csvDataAll = [
         Details: [
           {
             Detail: "Q14. Allocated minimum number of pages",
-            Solve:
-              "https://www.geeksforgeeks.org/problems/allocate-minimum-number-of-pages0937/1",
+            Solve: "https://www.geeksforgeeks.org/problems/allocate-minimum-number-of-pages0937/1",
           },
           {
             Detail: "Q15. Capacity to Ship within D Days",
@@ -189,8 +182,7 @@ export const csvDataAll = [
         Details: [
           {
             Detail: "Test",
-            Solve:
-              "https://leetcode.com/problems/koko-eating-bananas/description/",
+            Solve: "https://leetcode.com/problems/koko-eating-bananas/description/",
           },
         ],
         "Video Link": "https://youtu.be/BUFHoQIOnAs",
@@ -242,8 +234,7 @@ export const csvDataAll = [
         Details: [
           {
             Detail: "Test",
-            Solve:
-              "https://www.geeksforgeeks.org/problems/k-th-element-of-two-sorted-array1317/1",
+            Solve: "https://www.geeksforgeeks.org/problems/k-th-element-of-two-sorted-array1317/1",
           },
         ],
         "Video Link": "https://youtu.be/SB6j8D95eHM",
@@ -253,8 +244,7 @@ export const csvDataAll = [
         Details: [
           {
             Detail: "Q22. Single Element in a Sorted Array ",
-            Solve:
-              "https://leetcode.com/problems/single-element-in-a-sorted-array/description/",
+            Solve: "https://leetcode.com/problems/single-element-in-a-sorted-array/description/",
           },
           {
             Detail: "Q23. Finding square root ",
@@ -320,8 +310,7 @@ export const csvDataAll = [
         Details: [
           {
             Detail: "The Element 3",
-            Solve:
-              "https://leetcode.com/problems/koko-eating-bananas/description/",
+            Solve: "https://leetcode.com/problems/koko-eating-bananas/description/",
           },
         ],
         "Video Link": "https://youtu.be/BUFHoQIOnAs",
@@ -373,8 +362,7 @@ export const csvDataAll = [
         Details: [
           {
             Detail: "The Element 8",
-            Solve:
-              "https://www.geeksforgeeks.org/problems/k-th-element-of-two-sorted-array1317/1",
+            Solve: "https://www.geeksforgeeks.org/problems/k-th-element-of-two-sorted-array1317/1",
           },
         ],
         "Video Link": "https://youtu.be/SB6j8D95eHM",
@@ -384,8 +372,7 @@ export const csvDataAll = [
         Details: [
           {
             Detail: "Q31. Single Element in a Sorted Array ",
-            Solve:
-              "https://leetcode.com/problems/single-element-in-a-sorted-array/description/",
+            Solve: "https://leetcode.com/problems/single-element-in-a-sorted-array/description/",
           },
           {
             Detail: "Q32. Finding square root ",

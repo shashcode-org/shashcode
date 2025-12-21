@@ -1,24 +1,24 @@
-import React from 'react';
-import CSV_TABLE_UI from '../components/CSV_TABLE_UI';
-import AnimatedElement from '@/components/AnimatedElement';
-import Section from '@/components/Section';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import { csvData } from '../data/csv-data-java-dsa-release-v2';
+import React from "react";
+import CSV_TABLE_UI from "../components/CSV_TABLE_UI";
+import AnimatedElement from "@/components/AnimatedElement";
+import Section from "@/components/Section";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { csvData } from "../data/csv-data-java-dsa-release-v2";
 import { Helmet } from "react-helmet-async";
 const JavaDSA = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
-  <title>Java + DSA Sheet – ShashCode</title>
-  <meta
-    name="description"
-    content="Complete Java + DSA sheet with curated problems and video explanations for placements."
-  />
-</Helmet>
+        <title>Java + DSA Sheet – ShashCode</title>
+        <meta
+          name="description"
+          content="Complete Java + DSA sheet with curated problems and video explanations for placements."
+        />
+      </Helmet>
 
       <Navbar />
-      
+
       <div className="pt-24 flex-grow">
         <AnimatedElement animation="fadeIn">
           <Section
@@ -35,7 +35,7 @@ const JavaDSA = () => {
           </Section>
         </AnimatedElement>
       </div>
-      
+
       <Footer />
     </div>
   );

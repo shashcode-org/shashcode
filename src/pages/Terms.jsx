@@ -1,10 +1,9 @@
-
-import React from 'react';
-import AnimatedElement from '@/components/AnimatedElement';
-import Section from '@/components/Section';
-import Card, { CardContent } from '@/components/Card';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import React from "react";
+import AnimatedElement from "@/components/AnimatedElement";
+import Section from "@/components/Section";
+import Card, { CardContent } from "@/components/Card";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const Terms = () => {
   return (
@@ -23,20 +22,38 @@ const Terms = () => {
 
                 <div className="space-y-8">
                   <section>
-                    <p>Welcome to ShashCode! By accessing or using our website, services, or content, you agree to abide by these Terms and Conditions. If you do not agree, please do not use our platform.</p>
+                    <p>
+                      Welcome to ShashCode! By accessing or using our website, services, or content,
+                      you agree to abide by these Terms and Conditions. If you do not agree, please
+                      do not use our platform.
+                    </p>
                   </section>
 
                   <section>
                     <h2 className="text-xl font-semibold my-6 text-primary">1. Definitions</h2>
-                    <p><strong>"ShashCode"</strong> ("we," "our," "us") – Refers to the website, content, and services provided.</p>
-                    <p><strong>"User"</strong> ("you") – Any individual accessing or using our services.</p>
-                    <p><strong>"Content"</strong> – Includes all materials, videos, articles, code, and digital products available on the platform.</p>
+                    <p>
+                      <strong>"ShashCode"</strong> ("we," "our," "us") – Refers to the website,
+                      content, and services provided.
+                    </p>
+                    <p>
+                      <strong>"User"</strong> ("you") – Any individual accessing or using our
+                      services.
+                    </p>
+                    <p>
+                      <strong>"Content"</strong> – Includes all materials, videos, articles, code,
+                      and digital products available on the platform.
+                    </p>
                   </section>
 
                   <section>
-                    <h2 className="text-xl font-semibold mb-3 text-primary">2. Use of Our Services</h2>
+                    <h2 className="text-xl font-semibold mb-3 text-primary">
+                      2. Use of Our Services
+                    </h2>
                     <p className="font-medium mb-2">2.1 Eligibility</p>
-                    <p className="mb-4">ShashCode is intended for a general audience and is not directed at children under the age of 13.</p>
+                    <p className="mb-4">
+                      ShashCode is intended for a general audience and is not directed at children
+                      under the age of 13.
+                    </p>
 
                     <p className="font-medium mb-2">2.2 Acceptable Use</p>
                     <ul className="list-disc ml-6 space-y-1 mb-4">
@@ -47,39 +64,57 @@ const Terms = () => {
                       <li>Do not engage in hacking, data scraping, or malicious activities.</li>
                       <li>Do not use automated tools or bots to access the website.</li>
                     </ul>
-
                   </section>
 
                   <section>
-                    <h2 className="text-xl font-semibold mb-3 text-primary">3. Intellectual Property Rights</h2>
+                    <h2 className="text-xl font-semibold mb-3 text-primary">
+                      3. Intellectual Property Rights
+                    </h2>
                     <p className="font-medium mb-2">3.1 Ownership of Content</p>
-                    <p className="mb-4">All content on ShashCode is owned by Shashwat Tiwari and protected under copyright and trademark laws.</p>
+                    <p className="mb-4">
+                      All content on ShashCode is owned by Shashwat Tiwari and protected under
+                      copyright and trademark laws.
+                    </p>
 
                     <p className="font-medium mb-2">3.2 Limited License</p>
                     <ul className="list-disc ml-6 space-y-1">
                       <li>View and use free content for personal learning.</li>
                       <li>Share links to content without modification.</li>
-                      <li>You may not modify, sell, or distribute our content without permission.</li>
-                      <li>You may not use our trademarks, logos, or brand identity without approval.</li>
+                      <li>
+                        You may not modify, sell, or distribute our content without permission.
+                      </li>
+                      <li>
+                        You may not use our trademarks, logos, or brand identity without approval.
+                      </li>
                     </ul>
                   </section>
 
                   <section>
-                    <h2 className="text-xl font-semibold mb-3 text-primary">4. Payment & Refund Policy (If Applicable)</h2>
+                    <h2 className="text-xl font-semibold mb-3 text-primary">
+                      4. Payment & Refund Policy (If Applicable)
+                    </h2>
                     <p className="font-medium mb-2">4.1 Payment Terms</p>
                     <ul className="list-disc ml-6 space-y-1 mb-4">
-                      <li>All payments, if introduced, will be processed through secure third-party payment gateways.</li>
+                      <li>
+                        All payments, if introduced, will be processed through secure third-party
+                        payment gateways.
+                      </li>
                       <li>Prices are subject to change without notice.</li>
                     </ul>
 
                     <p className="font-medium mb-2">4.2 Refund Policy</p>
                     <ul className="list-disc ml-6 space-y-1">
-                      <li>Digital products, if introduced, are generally non-refundable unless stated otherwise at the time of purchase.</li>
+                      <li>
+                        Digital products, if introduced, are generally non-refundable unless stated
+                        otherwise at the time of purchase.
+                      </li>
                     </ul>
                   </section>
 
                   <section>
-                    <h2 className="text-xl font-semibold mb-3 text-primary">5. User-Generated Content</h2>
+                    <h2 className="text-xl font-semibold mb-3 text-primary">
+                      5. User-Generated Content
+                    </h2>
                     <p>By submitting feedback or communications to us:</p>
                     <ul className="list-disc ml-6 space-y-1">
                       <li>You own the content and have the right to share it.</li>
@@ -89,29 +124,60 @@ const Terms = () => {
                   </section>
 
                   <section>
-                    <h2 className="text-xl font-semibold mb-3 text-primary">6. Disclaimers & Limitation of Liability</h2>
-                    <p>Content is for educational purposes only. We do not guarantee placements or outcomes. Use at your own risk.</p>
-                    <p className="mt-2">We're not liable for technical issues, downtime, or external link content.</p>
+                    <h2 className="text-xl font-semibold mb-3 text-primary">
+                      6. Disclaimers & Limitation of Liability
+                    </h2>
+                    <p>
+                      Content is for educational purposes only. We do not guarantee placements or
+                      outcomes. Use at your own risk.
+                    </p>
+                    <p className="mt-2">
+                      We're not liable for technical issues, downtime, or external link content.
+                    </p>
                   </section>
 
                   <section>
-                    <h2 className="text-xl font-semibold mb-3 text-primary">7. Privacy Policy & Data Collection</h2>
-                    <p>By using ShashCode, you agree to our <a href="/privacy" className="text-primary underline hover:text-primary/80 transition-colors">Privacy Policy</a>.</p>
+                    <h2 className="text-xl font-semibold mb-3 text-primary">
+                      7. Privacy Policy & Data Collection
+                    </h2>
+                    <p>
+                      By using ShashCode, you agree to our{" "}
+                      <a
+                        href="/privacy"
+                        className="text-primary underline hover:text-primary/80 transition-colors"
+                      >
+                        Privacy Policy
+                      </a>
+                      .
+                    </p>
                   </section>
 
                   <section>
-                    <h2 className="text-xl font-semibold mb-3 text-primary">8. Access Restriction</h2>
-                    <p>We reserve the right to restrict access to the website for users who violate these terms or engage in abuse or unlawful activity.</p>
+                    <h2 className="text-xl font-semibold mb-3 text-primary">
+                      8. Access Restriction
+                    </h2>
+                    <p>
+                      We reserve the right to restrict access to the website for users who violate
+                      these terms or engage in abuse or unlawful activity.
+                    </p>
                   </section>
 
                   <section>
                     <h2 className="text-xl font-semibold mb-3 text-primary">9. Governing Law</h2>
-                    <p>These terms are governed by Indian law. Any disputes will be resolved through arbitration or courts in Gonda, Uttar Pradesh.</p>
+                    <p>
+                      These terms are governed by Indian law. Any disputes will be resolved through
+                      arbitration or courts in Gonda, Uttar Pradesh.
+                    </p>
                   </section>
 
                   <section>
-                    <h2 className="text-xl font-semibold mb-3 text-primary">10. Updates to Terms</h2>
-                    <p>We may update these terms. Major changes will be notified via email or site announcement.</p>
+                    <h2 className="text-xl font-semibold mb-3 text-primary">
+                      10. Updates to Terms
+                    </h2>
+                    <p>
+                      We may update these terms. Major changes will be notified via email or site
+                      announcement.
+                    </p>
                   </section>
 
                   <section>
@@ -123,7 +189,8 @@ const Terms = () => {
                       >
                         collaboratewithshashwat@gmail.com
                       </a>
-                    </p></section>
+                    </p>
+                  </section>
                 </div>
               </CardContent>
             </Card>
