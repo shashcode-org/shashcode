@@ -9,40 +9,19 @@ import AnimatedElement from '@/components/AnimatedElement';
 import Card, { CardContent, CardTitle } from '@/components/Card';
 import { ArrowRight, Code, Award, BookOpen, YoutubeIcon } from 'lucide-react';
 import { Helmet } from "react-helmet-async";
-// Import images
-import instructorImg from '../assets/shash-instructor-1.webp';
-import samsungLogo from '../assets/samsung.webp';
-import npciLogo from '../assets/npci.webp';
-import cognizantLogo from '../assets/cognizant.webp';
-import microsoftLearnLogo from '../assets/microsoftLearn.webp';
-import hpLogo from '../assets/hpcl.webp';
+
 
 const Home = () => {
   const navigate = useNavigate();
-
-  const skillsData = [
-    "GoLang",
-    "Java",
-    "Python",
-    "JavaScript",
-    "AWS",
-    "REST APIs",
-    "WebSockets",
-    "Microservices",
-    "CI / CD",
-    "System Design",
-    "Performance Testing"
-  ];
-
   return (
     <div className="min-h-screen flex flex-col">
-          <Helmet>
-  <title>ShashCode – Java & DSA for Placements</title>
-  <meta
-    name="description"
-    content="Learn Data Structures and Algorithms in Java with structured sheets and video explanations."
-  />
-</Helmet>
+      <Helmet>
+        <title>ShashCode – Java & DSA for Placements</title>
+        <meta
+          name="description"
+          content="Learn Data Structures and Algorithms in Java with structured sheets and video explanations."
+        />
+      </Helmet>
       <Navbar />
 
       {/* Hero Section */}
@@ -52,9 +31,15 @@ const Home = () => {
             <div className="lg:w-1/2">
               <AnimatedElement animation="fadeIn">
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                  Welcome to <span className="text-gradient">ShashCode</span>
+                  Welcome to{" "}
+                  <span className="relative text-[#1E1B4B]">
+                    ShashCode
+                    <span className="absolute left-0 -bottom-2 h-1 w-full bg-[#F9A826] rounded-full"></span>
+                  </span>
                 </h1>
+
               </AnimatedElement>
+
 
               <AnimatedElement animation="fadeIn" delay="100">
                 <p className="text-lg text-black-300 mb-8">
@@ -62,6 +47,7 @@ const Home = () => {
                   designed for interview success.
                 </p>
               </AnimatedElement>
+
 
               <AnimatedElement animation="fadeIn" delay="200">
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -185,112 +171,11 @@ const Home = () => {
       {/* Testimonials */}
       <Testimonials />
 
-      {/* About Section */}
-      {/* <Section
-        id="about"
-        title="About ShashCode"
-        contentClassName="max-w-4xl mx-auto space-y-6 text-[17px] leading-relaxed"
-      >
-        <AnimatedElement animation="fadeIn">
-          <Card glass className="p-8">
-            <CardContent className="space-y-6">
-              <p>
-                <span className="font-semibold text-primary">ShashCode</span> is a platform dedicated to making coding and technology education accessible to everyone. It helps students and professionals master Coding & Data Structures and Algorithms (DSA) in Java for placements.
-              </p>
-              <p>
-                Founded by <span className="font-semibold text-primary">Shashwat Tiwari</span>, a software engineer and content creator, ShashCode simplifies complex topics through structured learning paths, coding sheets, and video tutorials.
-              </p>
-              <h3 className="text-xl font-semibold text-primary pt-4">What We Offer</h3>
-              <ul className="list-disc list-inside space-y-1 pl-4">
-                <li><span className="font-medium">Java + DSA Sheet</span> – A well-structured sheet covering essential problems for coding interviews.</li>
-                <li><span className="font-medium">Last Minute DSA</span> – A quick revision guide to ace technical interviews.</li>
-                <li><span className="font-medium">YouTube Tutorials</span> – Step-by-step explanations of DSA concepts and problems.</li>
-                <li><span className="font-medium">Tech Insights</span> – Guidance on software engineering, placements, and career growth.</li>
-              </ul>
-              <h3 className="text-xl font-semibold text-primary pt-6">Our Mission</h3>
-              <p>
-                At ShashCode, we believe in learning by doing. Our goal is to provide free, high-quality coding resources to help aspiring developers crack top tech company interviews and build strong problem-solving skills.
-              </p>
-              <h3 className="text-xl font-semibold text-primary pt-6">Join Us!</h3>
-              <p>
-                Be part of our growing community and accelerate your coding journey. Subscribe to ShashCode on YouTube and explore our Java + DSA Sheet today!
-              </p>
-            </CardContent>
-          </Card>
-        </AnimatedElement>
-      </Section> */}
 
-      {/* Instructor Section */}
-      {/* <Section
-        title="Meet the Instructor"
-        subtitle="Learn from experienced developers and educators"
-        gradient
-        contentClassName="max-w-6xl mx-auto"
-      >
-        <AnimatedElement animation="fadeIn">
-          <Card className="p-8">
-            <CardContent>
-              <div className="flex flex-col md:flex-row-reverse items-center gap-10">
-            
-                <div className="flex flex-col items-center w-full md:w-[30%]">
-                  <div className="relative">
-                    <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-primary to-secondary opacity-30 blur-xl"></div>
-                    <img
-                      src={instructorImg}
-                      alt="Shashwat Tiwari"
-                      className="rounded-full relative border-4 border-white shadow-xl w-32 md:w-48 max-w-[200px] object-cover aspect-square"
-                    />
-                  </div>
-                  <h3 className="text-xl font-bold text-primary mt-4 text-center">Shashwat Tiwari</h3>
-                  <p className="text-gray-500 text-sm text-center">Engineer | Educator | Creator</p>
-                </div>
 
-            
-                <div className="text-gray-600 text-[17px] leading-relaxed space-y-5 md:w-[70%] text-center md:text-left">
-                  <p>
-                    Shashwat is a <strong>Senior Engineer at Samsung R&D</strong>, where he specializes in backend systems, microservices, and performance optimization. He's also a passionate educator with a thriving tech channel <strong>ShashCode</strong> that reaches 1.4L+ learners monthly.
-                  </p>
-                  <p>
-                    He has previously worked at <strong>NPCI, Cognizant</strong>, and interned at <strong>HPCL</strong>. He's been a <strong>Microsoft Learn Student Ambassador</strong> and has earned several certifications in software development and analytics.
-                  </p>
-                  <p>
-                    As the creator of the <strong>Java + DSA Sheet</strong>, Shashwat helps students master coding interviews with well-structured prep material, system design insights, and career mentorship.
-                  </p>
-                  <p>
-                    <strong className="uppercase text-sm">Skills:</strong>{' '}
-                    <div className="flex flex-wrap gap-2 mt-2">
-                      {skillsData.map((skill, index) => (
-                        <span
-                          key={index}
-                          className="inline-block text-xs bg-accent py-1 px-2 rounded-md whitespace-nowrap"
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </p>
 
-    
-                  <div className="mt-4">
-                    <h4 className="text-lg font-semibold text-primary">Professional Experience</h4>
-                    <div className="flex gap-4 flex-wrap items-center mt-2 justify-center md:justify-start">
-                      <img src={samsungLogo} alt="Samsung" className="h-8 sm:h-10 object-contain" />
-                      <img src={npciLogo} alt="NPCI" className="h-6 sm:h-8 object-contain" />
-                      <img src={cognizantLogo} alt="Cognizant" className="h-6 sm:h-8 object-contain" />
-                      <img src={hpLogo} alt="HPCL" className="h-6 sm:h-8 object-contain" />
-                      <img src={microsoftLearnLogo} alt="Microsoft Learn" className="h-6 sm:h-8 object-contain" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </AnimatedElement>
-      </Section> */}
-
-            
       {/* Stats Section */}
-      <Section 
+      <Section
         title="Growing Community"
         subtitle="Join thousands of developers learning with ShashCode"
         gradient

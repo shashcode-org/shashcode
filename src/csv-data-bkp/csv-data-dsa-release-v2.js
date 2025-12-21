@@ -1390,7 +1390,7 @@ export const csvData = [
         ]
       },
       {
-        "Subtopic": "Questions on K-SUM Subarray Pattern",
+        "Subtopic": "Questions on K-SUM Subarray Pattern - 1",
         "Details": [
           {
             "Detail": "K-SUM Subarray Pattern",
@@ -1434,7 +1434,12 @@ export const csvData = [
             "Links": [
               "N/A"
             ]
-          },
+          }
+        ]
+      },
+      {
+        "Subtopic": "Questions on K-SUM Subarray Pattern - 2",
+        "Details": [
           {
             "Detail": "Q. Longest subarray with sum divisible by K",
             "Links": [
@@ -1455,7 +1460,12 @@ export const csvData = [
               "https://www.geeksforgeeks.org/problems/largest-subarray-of-0s-and-1s/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article"
             ],
             "Video Link": "https://youtu.be/qOCuB-IC9KA?si=NEEgvm_zlI-dvSm_"
-          },
+          }
+        ]
+      },
+      {
+        "Subtopic": "Sort using hashing",
+        "Details": [
           {
             "Detail": "Bucket Sort Algorithm",
             "Links": [
@@ -1794,7 +1804,12 @@ export const csvData = [
             "Video Link": "https://youtu.be/2dN4ktn6D1k?si=zPPFxgG8dv_VvHnm"
           }
         ]
-      },
+      }
+    ]
+  },
+  {
+    "Main Topic": "Backtracking",
+    "Subtopics": [
       {
         "Subtopic": "Backtracking",
         "Details": [
@@ -1802,7 +1817,8 @@ export const csvData = [
             "Detail": "Backtracking and All it's variants",
             "Links": [
               "N/A"
-            ]
+            ],
+            "Video Link": "https://youtu.be/9HTOWRiwYOI"
           },
           {
             "Detail": "Q. Subsets -1",
@@ -1869,7 +1885,12 @@ export const csvData = [
             "Links": [
               "https://leetcode.com/problems/palindrome-partitioning/description/"
             ]
-          },
+          }
+        ]
+      },
+      {
+        "Subtopic": "More questions on backtracking",
+        "Details": [
           {
             "Detail": "Q. Rat in a Maze",
             "Links": [
@@ -1892,7 +1913,12 @@ export const csvData = [
             "Video Link": "https://youtu.be/HBboUqC-rZ0?si=dcEMaByR0gfChsBs"
           }
         ]
-      },
+      }
+    ]
+  },
+  {
+    "Main Topic": "Divide and Conquer",
+    "Subtopics": [
       {
         "Subtopic": "Divide and Conquer",
         "Details": [
@@ -2284,7 +2310,12 @@ export const csvData = [
             "Links": [
               "N/A"
             ]
-          },
+          }
+        ]
+      },
+      {
+        "Subtopic": "Design questions",
+        "Details": [
           {
             "Detail": "Implement queue using stack ",
             "Links": [
@@ -2727,7 +2758,7 @@ export const csvData = [
             ]
           },
           {
-            "Detail": "1Height of a Tree.",
+            "Detail": "Height of a Tree.",
             "Links": [
               "N/A"
             ]

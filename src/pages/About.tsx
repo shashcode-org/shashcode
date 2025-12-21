@@ -1,5 +1,4 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Section from '@/components/Section';
@@ -16,7 +15,6 @@ import microsoftLearnLogo from '../assets/microsoftLearn.webp';
 import hpLogo from '../assets/hpcl.webp';
 
 const About = () => {
-  const navigate = useNavigate();
 
   const offerings = [
     {
@@ -90,11 +88,6 @@ const About = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 hero-gradient">
         <div className="max-w-7xl mx-auto text-center">
-          {/* <AnimatedElement animation="fadeIn">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4">
-              About Us
-            </h1>
-          </AnimatedElement> */}
         </div>
       </section>
 
@@ -272,14 +265,6 @@ const About = () => {
                   <img src={microsoftLearnLogo} alt="Microsoft Learn" className="h-10 object-contain flex-shrink-0" />
                   <div>
                     <h3 className="font-semibold">Microsoft Learn Student Ambassador</h3>
-                    {/* <a 
-                      href="https://www.credly.com/badges/17f5b290-19d8-4dab-a836-db12b7dc8f7bad_url_profile" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-primary hover:underline text-sm"
-                    >
-                      View Credential
-                    </a> */}
                   </div>
                 </div>
               </div>

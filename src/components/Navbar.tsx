@@ -58,16 +58,6 @@ const Navbar = () => {
             </Link>
           </AnimatedElement>
 
-          {/* <AnimatedElement animation="fadeIn" className="opacity-100">
-            <Link to="/" className="flex items-center space-x-3">
-              <img 
-                src="/logo.webp" 
-                alt="ShashCode Logo" 
-                className="h-8 md:h-14 w-auto"
-              />
-            </Link>
-          </AnimatedElement> */}
-
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             {navLinks.map((link, index) => (

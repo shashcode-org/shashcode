@@ -324,17 +324,17 @@ Hashing,Hashing,Components of Hashing,,https://youtu.be/vB3WKXNH-v4?si=oAOjWmxgC
 ,,Usage of map keys,,
 ,,Set Iterator,,
 ,Subarray questions using set,Q. Minimum number of subsets with distinct elements,,https://youtu.be/h6jzp9waCyk?si=GTlG-0HGVxzwzuvK
-,Questions on K-SUM Subarray Pattern,K-SUM Subarray Pattern,,https://youtu.be/S6tARGbBGEo?si=7wRtd-jYnSdHRYmk
+,Questions on K-SUM Subarray Pattern - 1,K-SUM Subarray Pattern,,https://youtu.be/S6tARGbBGEo?si=7wRtd-jYnSdHRYmk
 ,,Q. Check if subarray with K sum Exists or Not,,
 ,,Q. Find the starting and ending index of K sum subarray,https://www.geeksforgeeks.org/problems/subarray-with-given-sum-1587115621/1,
 ,,Q. Find the maximum length subarray with K sum,https://www.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article,
 ,,Q. Find the minimum length subarray with K sum,,
 ,,Q. Count the total subarrays with sum K,https://leetcode.com/problems/subarray-sum-equals-k/description/,
 ,,Q. Find largest subarray with 0 sum,,
-,,Q. Longest subarray with sum divisible by K,https://www.geeksforgeeks.org/problems/longest-subarray-with-sum-divisible-by-k1259/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article,https://youtu.be/L03d0qThnJQ?si=1TEHDMBGaDGVeElr
+,Questions on K-SUM Subarray Pattern - 2,Q. Longest subarray with sum divisible by K,https://www.geeksforgeeks.org/problems/longest-subarray-with-sum-divisible-by-k1259/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article,https://youtu.be/L03d0qThnJQ?si=1TEHDMBGaDGVeElr
 ,,Q. Longest increasing concecutive subsequence,https://leetcode.com/problems/longest-consecutive-sequence/description/,https://youtu.be/4ohND5Hq-wQ?si=-Rdz-tpJZ4W1ke-g
 ,,Q. Largest subarray with equal number of 0s and 1s,https://www.geeksforgeeks.org/problems/largest-subarray-of-0s-and-1s/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article,https://youtu.be/qOCuB-IC9KA?si=NEEgvm_zlI-dvSm_
-,,Bucket Sort Algorithm,,https://youtu.be/5Pe3YSnqGh8?si=8cnivpNvhCX6X0hf
+,Sort using hashing,Bucket Sort Algorithm,,https://youtu.be/5Pe3YSnqGh8?si=8cnivpNvhCX6X0hf
 Sliding Window,Sliding Window Technique,What is sliding window,,https://youtu.be/DQMxp7TS2BI?si=WN_ksJt1fWPXuLmF
 ,,Q. Maximum Sum Subarray of Size K,https://www.geeksforgeeks.org/problems/max-sum-subarray-of-size-k5313/1,https://youtu.be/rGl2Z6fuAas?si=t3JH4diL-nDnBwGe
 ,,Q. First Negative Number in Each Subarray of Size K,https://www.geeksforgeeks.org/problems/first-negative-integer-in-every-window-of-size-k3345/1,https://youtu.be/Rot0y4cmlNw?si=TAp7sbW1OOQkW57C
@@ -378,7 +378,7 @@ Recursion,Introduction to recursion,Recursion basics and syntax,,https://youtu.b
 ,,Print all subsequence of a string,,
 ,,Count all subsequece of string,,
 ,Questions on recursion,Q. Josephus problem - Find the Winner of the Circular Game,https://leetcode.com/problems/find-the-winner-of-the-circular-game/description/,https://youtu.be/2dN4ktn6D1k?si=zPPFxgG8dv_VvHnm
-,Backtracking,Backtracking and All it's variants,,
+Backtracking,Backtracking,Backtracking and All it's variants,,https://youtu.be/9HTOWRiwYOI
 ,,Q. Subsets -1,https://leetcode.com/problems/subsets/description/,
 ,,Q. Subsets -2,https://leetcode.com/problems/subsets-ii/description/,
 ,,Q. Permutations -1,https://leetcode.com/problems/permutations/description/,
@@ -390,10 +390,10 @@ Recursion,Introduction to recursion,Recursion basics and syntax,,https://youtu.b
 ,,Q. N Queens problem,https://leetcode.com/problems/n-queens/description/,
 ,,Q. Sudoku Solver,https://leetcode.com/problems/sudoku-solver/description/,
 ,,Q. Pallindrome Partitioning,https://leetcode.com/problems/palindrome-partitioning/description/,
-,,Q. Rat in a Maze,https://www.geeksforgeeks.org/problems/rat-in-a-maze-problem/1,https://youtu.be/tym5THS4Nk8
+,More questions on backtracking,Q. Rat in a Maze,https://www.geeksforgeeks.org/problems/rat-in-a-maze-problem/1,https://youtu.be/tym5THS4Nk8
 ,,Q. Knights tour problem,https://www.geeksforgeeks.org/problems/the-knights-tour-problem/1,https://youtu.be/TZb-bAAMuzY
 ,,Q. Word Search ,https://leetcode.com/problems/word-search/description/,https://youtu.be/HBboUqC-rZ0?si=dcEMaByR0gfChsBs
-,Divide and Conquer,Q. Merge Sort,https://www.geeksforgeeks.org/problems/merge-sort/1,https://youtu.be/oviqkqemCRY?si=rMjLaDHLbjDVdKvc
+Divide and Conquer,Divide and Conquer,Q. Merge Sort,https://www.geeksforgeeks.org/problems/merge-sort/1,https://youtu.be/oviqkqemCRY?si=rMjLaDHLbjDVdKvc
 ,,Q. Quick Sort,https://www.geeksforgeeks.org/problems/quick-sort/1,https://youtu.be/RFbZx9nTB3s?si=wCJ1lyskolGze6pb
 ,,Q. Count Inversion,https://www.geeksforgeeks.org/problems/inversion-of-array-1587115620/1,https://youtu.be/lm4WEMpc5p0
 Dynamic Programming (DP),Dynamic Programming Part 1,Overlapping Subproblems,,https://youtu.be/P3MFBCZCGXs?si=FNhk7mjC7Cf0MZRD
@@ -447,7 +447,7 @@ Queue,Queue Basics,Queue,,https://youtu.be/9m4SZPRQXQI?si=izPej7j2qhbiKrys
 ,,Queue using Array,,
 ,,Circular Queue ,,
 ,,Double ended Queue,,
-,,Implement queue using stack ,,https://youtu.be/Enygu8ivr0w?si=SgzjEHke5oc_cwdk
+,Design questions,Implement queue using stack ,,https://youtu.be/Enygu8ivr0w?si=SgzjEHke5oc_cwdk
 ,,Implement stack using queue,,https://youtu.be/z4FxPUgXn90?si=86tva8iOIGV5E74n
 ,Questions on queue,Q. Number of Students Unable to Eat Lunch,https://leetcode.com/problems/number-of-students-unable-to-eat-lunch/description/,https://youtu.be/vlt2S8xb5vk
 ,,Q. Time Needed to Buy Tickets,https://leetcode.com/problems/time-needed-to-buy-tickets/description/,https://youtu.be/cS0I2aPiL-0
@@ -504,7 +504,7 @@ Trees,Linear and Non Linear Data Structures,Linear Data Structure ,,https://yout
 ,,Siblings in Tree.,,
 ,,Cousin in Tree.,,
 ,,Depth of a Tree.,,
-,,1Height of a Tree.,,
+,,Height of a Tree.,,
 ,,Child of a node in tree.,,
 ,,Parent of a node in tree.,,
 ,Tree Traversal,Q. Tree Traversal BFS,https://www.geeksforgeeks.org/problems/level-order-traversal/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article,https://youtu.be/4NZV0XBbKfA?si=wn_pcNP-l7dmDcXA
