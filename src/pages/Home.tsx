@@ -8,7 +8,7 @@ import Section from '@/components/Section';
 import AnimatedElement from '@/components/AnimatedElement';
 import Card, { CardContent, CardTitle } from '@/components/Card';
 import { ArrowRight, Code, Award, BookOpen, YoutubeIcon } from 'lucide-react';
-
+import { Helmet } from "react-helmet-async";
 // Import images
 import instructorImg from '../assets/shash-instructor-1.webp';
 import samsungLogo from '../assets/samsung.webp';
@@ -36,6 +36,13 @@ const Home = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+          <Helmet>
+  <title>ShashCode – Java & DSA for Placements</title>
+  <meta
+    name="description"
+    content="Learn Data Structures and Algorithms in Java with structured sheets and video explanations."
+  />
+</Helmet>
       <Navbar />
 
       {/* Hero Section */}

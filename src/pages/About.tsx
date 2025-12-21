@@ -6,7 +6,7 @@ import Section from '@/components/Section';
 import AnimatedElement from '@/components/AnimatedElement';
 import Card, { CardContent, CardTitle } from '@/components/Card';
 import { CheckCircle, Youtube, Users, BookOpen } from 'lucide-react';
-
+import { Helmet } from "react-helmet-async";
 // Import images
 import instructorImg from '../assets/shash-instructor-1.webp';
 import samsungLogo from '../assets/samsung.webp';
@@ -77,6 +77,14 @@ const About = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <Helmet>
+  <title>About ShashCode</title>
+  <meta
+    name="description"
+    content="Learn about ShashCode, our mission to make DSA simple and placement-focused."
+  />
+</Helmet>
+
       <Navbar />
 
       {/* Hero Section */}
