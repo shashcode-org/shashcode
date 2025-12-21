@@ -84,7 +84,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-12 pt-8">
           <AnimatedElement animation="fadeIn">
             <p className="text-center text-gray-400 text-sm flex items-center justify-center">
-              © {currentYear} ShashCode. Built with <Heart size={16} className="mx-1 text-red-500 animate-pulse" /> by you.
+              © {currentYear} ShashCode. All rights reserved.
             </p>
           </AnimatedElement>
         </div>
