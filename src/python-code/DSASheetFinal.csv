@@ -52,76 +52,76 @@ Collections Framework,Collections in One Shot,Introduction,,https://youtu.be/hp2
 ,,HashSet,,
 ,,LinkedHashSet,,
 ,,TreeSet,,
-Maths in DSA,Mathematics in DSA - Part 1,find number of digits,,https://youtu.be/xMXiDI2ZJuA
-,,appending digits to the end,,
-,,insert digit at the front,,
-,,reverse a number,,
-,,even / odd number,,
-,,find power,,
-,,fast exponentiation,,
+Maths in DSA,Mathematics in DSA - Part 1,Q. Find number of digits,Video-only problem,https://youtu.be/xMXiDI2ZJuA
+,,Q. Appending digits to the end,Video-only problem,
+,,Q. Insert digit at the front,Video-only problem,
+,,Q. Reverse a number,Video-only problem,
+,,Q. Even / odd number,Video-only problem,
+,,Q. Find power,Video-only problem,
+,,Q. Fast exponentiation,Video-only problem,
 ,,Number system,,
-,,Any base to decimal,,
-,,Decimal to any base,,
-,Mathematics in DSA - Part 2,Armstrong Number ,,https://youtu.be/lnpa0999qGU
-,,Pallindrome Number,,
-,,Print all divisors,,
-,,check prime number,,
-,,Sieve of Eratosthenes,,
-,,Greatest Common Divisor,,
-,,Euclidian GCD Algorithm,,
-,,lcm of two numbers,,
-,,print all unique prime factors of a number,,
-,,smallest prime factor,,
-,,factorial of a number,,
+,,Q. Any base to decimal,Video-only problem,
+,,Q. Decimal to any base,Video-only problem,
+,Mathematics in DSA - Part 2,Q. Armstrong Number ,Video-only problem,https://youtu.be/lnpa0999qGU
+,,Q. Pallindrome Number,Video-only problem,
+,,Q. Print all divisors,Video-only problem,
+,,Q. check prime number,Video-only problem,
+,,Q. Sieve of Eratosthenes,Video-only problem,
+,,Q. Greatest Common Divisor,Video-only problem,
+,,Q. Euclidian GCD Algorithm,Video-only problem,
+,,Q. Lcm of two numbers,Video-only problem,
+,,Q. Print all unique prime factors of a number,Video-only problem,
+,,Q. Smallest prime factor,Video-only problem,
+,,Q. Factorial of a number,Video-only problem,
 ,,Q. find trailing zero in factorial of a number,https://leetcode.com/problems/factorial-trailing-zeroes/,
 ,,Modular Arithmatics,,
 Bits Manipulation,Bit basics & fundamentals,Binary Representation of Numbers,,https://youtu.be/bX-U5C6Um3w
-,,One's Complement,,
-,,Two's Complement,,
+,,Q. One's Complement,Video-only problem,
+,,Q. Two's Complement,Video-only problem,
 ,,Range of Integers,,
 ,,"Bitwise Operators - AND, OR, XOR, NOT, Left Shift, Right Shift, Unsigned Right Shift, ",,
-,,Check Odd/Even,,
-,,Swap Two Numbers using XOR,,
-,Useful Tricks in Bit Manipulation,Check if k-th Bit is Set,,https://youtu.be/sbNDQu0PFoY
-,,Set / Unset / Toggle a Bit,,
-,,Count Set Bits,,
-,,Rightmost Set Bit,,
-,,Check if Number is Power of 2,,
-,,Character Case Conversion using Bits,,
+,,Q. Check Odd/Even,Video-only problem,
+,,Q. Swap Two Numbers using XOR,Video-only problem,
+,Useful Tricks in Bit Manipulation,Q. Check if k-th Bit is Set,Video-only problem,https://youtu.be/sbNDQu0PFoY
+,,Q. Set / Unset / Toggle a Bit,Video-only problem,
+,,Q. Count Set Bits,Video-only problem,
+,,Q. Rightmost Set Bit,Video-only problem,
+,,Q. Check if Number is Power of 2,Video-only problem,
+,,Q. Character Case Conversion using Bits,Video-only problem,
 ,Standard Questions in Bit Manipulation,Q. Find the Unique Number (all others appear twice) - [Single Number I],https://leetcode.com/problems/single-number/description/,https://youtu.be/Dd9d-uWyilE
 ,,Q. Find Unique Number (all others appear thrice) [Single Number II],https://leetcode.com/problems/single-number-ii/description/,
 ,,Q. Find 2 Unique Numbers (all others appear twice) [Single Number III],https://leetcode.com/problems/single-number-iii/description/,
 ,,Q. Minimum Number of Bit Flips (Convert A → B),https://leetcode.com/problems/minimum-bit-flips-to-convert-number/description/,
 ,,Q. Print All Subsets (Power Set),https://leetcode.com/problems/subsets/description/,
 Searching Algorithms,Linear Search,Linear Search,,https://youtu.be/slqFdKVMjeQ
-,,Search First Occurrence of Element in 1D Array,,
-,, Search First Occurrence of Element in 2D Array,,
-,,Find Maximum Element in 1D Array,,
-,,Find Maximum Sum Subarray in 2D Array,,
-,,Find Minimum Element in 1D Array,,
-,,Find Minimum Sum Subarray in 2D Array,,
-,,Search All Occurrences of Element in 1D Array,,
-,,Search All Occurrences of Element in 2D Array,,
-,,Search Last Occurrence of Element in 1D Array,,
-,,Search Last Occurrence of Element in 2D Array,,
+,,Q. Search First Occurrence of Element in 1D Array,Video-only problem,
+,,Q. Search First Occurrence of Element in 2D Array,Video-only problem,
+,,Q. Find Maximum Element in 1D Array,Video-only problem,
+,,Q. Find Maximum Sum Subarray in 2D Array,Video-only problem,
+,,Q. Find Minimum Element in 1D Array,Video-only problem,
+,,Q. Find Minimum Sum Subarray in 2D Array,Video-only problem,
+,,Q. Search All Occurrences of Element in 1D Array,Video-only problem,
+,,Q. Search All Occurrences of Element in 2D Array,Video-only problem,
+,,Q. Search Last Occurrence of Element in 1D Array,Video-only problem,
+,,Q. Search Last Occurrence of Element in 2D Array,Video-only problem,
 ,,How to Use LeetCode,,
-,,How to Find Number of Elements in 2D Array,,
+,,Q. How to Find Number of Elements in 2D Array,Video-only problem,
 ,Binary Search,Binary Search,,https://youtu.be/kOIECDEUzaI
-,,Binary Search in Increasing Order,,
-,,Binary Search in Decreasing Order,,
-,,Order Agnostic Binary Search,,
+,,Q. Binary Search in Increasing Order,Video-only problem,
+,,Q. Binary Search in Decreasing Order,Video-only problem,
+,,Q. Order Agnostic Binary Search,Video-only problem,
 ,,Avoid Overflow in Finding Mid,,
 ,,Why Binary Search is Faster,,
-,,Find if Array is Sorted in Increasing or Decreasing Order,,
-,Basic Questions on Binary Search,Q. Ceiling of a Number,,https://youtu.be/P-vl_BrdxJA
-,,Q. Floor of a Number,,
+,,Q. Find if Array is Sorted in Increasing or Decreasing Order,Video-only problem,
+,Basic Questions on Binary Search,Q. Ceiling of a Number,Video-only problem,https://youtu.be/P-vl_BrdxJA
+,,Q. Floor of a Number,Video-only problem,
 ,,Q. First and Last Position of element in sorted array,https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/description/,
-,,Q. Count all occurrence of element in an array,,
+,,Q. Count all occurrence of element in an array,Video-only problem,
 ,,Q. Find smallest letter greater than target,https://leetcode.com/problems/find-smallest-letter-greater-than-target/description/,
 ,Binary Search on Infinite Array,Binary Search in range,,https://youtu.be/DoVawmdh5NM
-,,Q. Find Minimum Difference in a Sorted array.,,
-,,Q. Find an element in an array of Infinite size,,
-,,Q. Find first 1 in an infinite and sorted array of 0s and 1s,,
+,,Q. Find Minimum Difference in a Sorted array.,Video-only problem,
+,,Q. Find an element in an array of Infinite size,Video-only problem,
+,,Q. Find first 1 in an infinite and sorted array of 0s and 1s,Video-only problem,
 ,Bitonic Array,Bitonic Array,,https://youtu.be/IK5eSvNw9Qw?si=f6gSi2LkYE4VAtSQ
 ,,Q. Valid Mountain Array,https://leetcode.com/problems/valid-mountain-array/,
 ,,Q. Peak Index in Mountain Array,https://leetcode.com/problems/peak-index-in-a-mountain-array/,
@@ -179,20 +179,20 @@ Hashing,Hashing,Components of Hashing,,https://youtu.be/vB3WKXNH-v4?si=oAOjWmxgC
 ,Implement HashMap in Java,All Methods,,https://youtu.be/B4VukYcQG_E?si=D4bP5zpwtOFPzNQM
 ,,Hashcode function,,
 ,,Rehashing,,
-,Questions on hashmap,Q. Most frequent element in an array,,https://youtu.be/O5iUfFHxCZc?si=wKCy3r5x7hgIDEib
+,Questions on hashmap,Q. Most frequent element in an array,Video-only problem,https://youtu.be/O5iUfFHxCZc?si=wKCy3r5x7hgIDEib
 ,,Q. Check if an array is subset of another array,https://www.geeksforgeeks.org/problems/array-subset-of-another-array2317/1,https://youtu.be/V4hi-l-xNXU?si=LMEB14_uTicW-6vM
 ,,Q. Count Pairs with given sum,https://www.geeksforgeeks.org/problems/count-pairs-with-given-sum5022/1,https://youtu.be/NC9r8D2QnHk?si=nWVnSK7h3P9V8k7u
 ,Hashset Data Structure,what is hashset data structure ,,https://youtu.be/3euKVlloIWY?si=Uvz3qkcdHLlIsnbX
 ,,Usage of map keys,,
 ,,Set Iterator,,
-,Subarray questions using set,Q. Minimum number of subsets with distinct elements,,https://youtu.be/h6jzp9waCyk?si=GTlG-0HGVxzwzuvK
+,Subarray questions using set,Q. Minimum number of subsets with distinct elements,Video-only problem,https://youtu.be/h6jzp9waCyk?si=GTlG-0HGVxzwzuvK
 ,Questions on K-SUM Subarray Pattern - 1,K-SUM Subarray Pattern,,https://youtu.be/S6tARGbBGEo?si=7wRtd-jYnSdHRYmk
-,,Q. Check if subarray with K sum Exists or Not,,
+,,Q. Check if subarray with K sum Exists or Not,Video-only problem,
 ,,Q. Find the starting and ending index of K sum subarray,https://www.geeksforgeeks.org/problems/subarray-with-given-sum-1587115621/1,
 ,,Q. Find the maximum length subarray with K sum,https://www.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article,
-,,Q. Find the minimum length subarray with K sum,,
+,,Q. Find the minimum length subarray with K sum,Video-only problem,
 ,,Q. Count the total subarrays with sum K,https://leetcode.com/problems/subarray-sum-equals-k/description/,
-,,Q. Find largest subarray with 0 sum,,
+,,Q. Find largest subarray with 0 sum,Video-only problem,
 ,Questions on K-SUM Subarray Pattern - 2,Q. Longest subarray with sum divisible by K,https://www.geeksforgeeks.org/problems/longest-subarray-with-sum-divisible-by-k1259/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article,https://youtu.be/L03d0qThnJQ?si=1TEHDMBGaDGVeElr
 ,,Q. Longest increasing concecutive subsequence,https://leetcode.com/problems/longest-consecutive-sequence/description/,https://youtu.be/4ohND5Hq-wQ?si=-Rdz-tpJZ4W1ke-g
 ,,Q. Largest subarray with equal number of 0s and 1s,https://www.geeksforgeeks.org/problems/largest-subarray-of-0s-and-1s/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article,https://youtu.be/qOCuB-IC9KA?si=NEEgvm_zlI-dvSm_
@@ -215,30 +215,30 @@ Two Pointers,Questions on two pointer,Q. Container with Most Water,https://leetc
 ,,Q. Sort Colors,https://leetcode.com/problems/sort-colors/description/,https://youtu.be/G4LWBrda_H4?si=hvyWLgeGTDpdPcan
 ,,Q. Separate Black and White Balls,https://leetcode.com/problems/separate-black-and-white-balls/,https://youtu.be/Eb7UbW2R_vo?si=w0H5bt2eUyn4-2hT
 Recursion,Introduction to recursion,Recursion basics and syntax,,https://youtu.be/odcRxXSLsVo
-,,print number code using recursion,,
+,,Q. Print number code using recursion,Video-only problem,
 ,,function stack and recursive states,,
-,,print number from N to 1,,
+,,Q. Print number from N to 1,Video-only problem,
 ,,Q. Factorial of a number,https://www.geeksforgeeks.org/problems/factorial5739/1,
 ,,Q. Fibonacci number,https://leetcode.com/problems/fibonacci-number/description/,
-,Recursion on Arrays,how to apply recursion on arrays,,https://youtu.be/I0vBNGExLuM
-,,Print array left to right using recursion,,
-,,Print array right to left using recursion,,
-,,check if target is present in array,,
-,,find first occurrence of element in array,,
-,,find last occurrence of element in array,,
+,Recursion on Arrays,Q. How to apply recursion on arrays,,https://youtu.be/I0vBNGExLuM
+,,Q. Print array left to right using recursion,Video-only problem,
+,,Q. Print array right to left using recursion,Video-only problem,
+,,Q. Check if target is present in array,Video-only problem,
+,,Q. Find first occurrence of element in array,Video-only problem,
+,,Q. Find last occurrence of element in array,Video-only problem,
 ,,Q. Find Index,https://www.geeksforgeeks.org/problems/find-index4752/1,
-,,find all occurrence,,
-,,binary search using recursion,,
+,,Q. Find all occurrence,Video-only problem,
+,,Q. Binary search using recursion,Video-only problem,
 ,Recursion on Strings,recursion on strings,,https://youtu.be/kCVN00Cywjc
-,,print string,,
-,,reverse print string,,
-,,check palindrome,,
-,,remove a char from string,,
-,,replace PI with 3.14,,
+,,Q. Print string,Video-only problem,
+,,Q. Reverse print string,Video-only problem,
+,,Q. Check palindrome,Video-only problem,
+,,Q. Remove a char from string,Video-only problem,
+,,Q. Replace PI with 3.14,Video-only problem,
 ,,Q. Count and say,https://leetcode.com/problems/count-and-say/description/,
 ,Recursion on Subsequences,What is a subsequence,,https://youtu.be/ch9pGT8KXxY
-,,Print all subsequence of a string,,
-,,Count all subsequece of string,,
+,,Q. Print all subsequence of a string,Video-only problem,
+,,Q. Count all subsequece of string,Video-only problem,
 ,Questions on recursion,Q. Josephus problem - Find the Winner of the Circular Game,https://leetcode.com/problems/find-the-winner-of-the-circular-game/description/,https://youtu.be/2dN4ktn6D1k?si=zPPFxgG8dv_VvHnm
 Backtracking,Backtracking,Backtracking and All it's variants,,https://youtu.be/9HTOWRiwYOI
 ,,Q. Subsets -1,https://leetcode.com/problems/subsets/description/,
@@ -309,12 +309,12 @@ Queue,Queue Basics,Queue,,https://youtu.be/9m4SZPRQXQI?si=izPej7j2qhbiKrys
 ,,Queue using Array,,
 ,,Circular Queue ,,
 ,,Double ended Queue,,
-,Design questions,Implement queue using stack ,,https://youtu.be/Enygu8ivr0w?si=SgzjEHke5oc_cwdk
-,,Implement stack using queue,,https://youtu.be/z4FxPUgXn90?si=86tva8iOIGV5E74n
+,Design questions,Q. Implement queue using stack ,Video-only problem,https://youtu.be/Enygu8ivr0w?si=SgzjEHke5oc_cwdk
+,,Q. Implement stack using queue,Video-only problem,https://youtu.be/z4FxPUgXn90?si=86tva8iOIGV5E74n
 ,Questions on queue,Q. Number of Students Unable to Eat Lunch,https://leetcode.com/problems/number-of-students-unable-to-eat-lunch/description/,https://youtu.be/vlt2S8xb5vk
 ,,Q. Time Needed to Buy Tickets,https://leetcode.com/problems/time-needed-to-buy-tickets/description/,https://youtu.be/cS0I2aPiL-0
-String Manipulation,Problems on strings,Q. Print all substrings,,https://youtu.be/I1rgYRi1tXE
-,,Q. Reverse a string,,https://youtu.be/m9QAjIVnmp4
+String Manipulation,Problems on strings,Q. Print all substrings,Video-only problem,https://youtu.be/I1rgYRi1tXE
+,,Q. Reverse a string,Video-only problem,https://youtu.be/m9QAjIVnmp4
 ,,Q. Check if a string is pallindrome,https://www.geeksforgeeks.org/problems/palindrome-string0817/1,https://youtu.be/-HGtMO4MkWs
 ,,Q. Reverse words in a String,https://leetcode.com/problems/reverse-words-in-a-string/description/,https://youtu.be/KhNAMB3jDOU
 ,,Q. Check if two strings are anagram,https://www.geeksforgeeks.org/problems/anagram-1587115620/1,https://youtu.be/SFF3ND7TPc0
@@ -424,7 +424,6 @@ Heap & Priority Queue,Heap,Heaps,,https://youtu.be/NFiYQGyL8rg
 ,Priority Queue in one shot,Priority Queue in Java collections,,https://youtu.be/XGfa9jnDJNY
 ,,Priority Queue on custom classes.,,
 ,,Collections.ReverseOrder(),,
-,,Dsa playlist,,
 ,,Equate objects in pq,,
 ,Priority Queue questions,Q. Top K Frequent Elements,https://leetcode.com/problems/top-k-frequent-elements/description/,https://youtu.be/bXbiLwGSZHU
 ,,Q. Sort Characters by frequency,https://leetcode.com/problems/sort-characters-by-frequency/description/,https://youtu.be/zPB7j1TMTDM

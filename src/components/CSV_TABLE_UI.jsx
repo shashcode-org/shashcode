@@ -222,7 +222,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
                           </h3>
                           {/* THEORY (SOFT PANEL + BULLETS, NON-CLICKABLE) */}
 
-                          {concepts.length > 0 && (
+                          {/* {concepts.length > 0 && (
                             <div className="rounded-lg bg-muted/30 px-4 py-3 mb-3">
                               {concepts.map((d, i) => (
                                 <div
@@ -234,7 +234,27 @@ export const CSV_TABLE_UI = ({ csvData }) => {
                                 </div>
                               ))}
                             </div>
+                          )} */}
+
+                          {concepts.length > 0 && (
+                            <div className="rounded-lg bg-muted/30 px-4 py-3 mb-3">
+                              {/* LABEL */}
+                              <div className="text-xs font-semibold uppercase text-muted-foreground mb-2 tracking-wide">
+                                What you will learn
+                              </div>
+
+                              {concepts.map((d, i) => (
+                                <div
+                                  key={i}
+                                  className="flex gap-2 text-sm text-muted-foreground"
+                                >
+                                  <span>•</span>
+                                  <span>{d.Detail?.trim()}</span>
+                                </div>
+                              ))}
+                            </div>
                           )}
+
 
 
 
@@ -272,6 +292,14 @@ export const CSV_TABLE_UI = ({ csvData }) => {
                                             style={{ color: "#2F8D46" }}
                                           />
                                         </a>
+                                      ) : link.includes("Video-only problem") ? (
+                                        <span
+                                          key={idx}
+                                          className="text-xs px-2 py-1 rounded-md bg-red-50 text-red-600 border border-red-200 select-none"
+                                          title="This problem is explained in the lecture video"
+                                        >
+                                          Video-only
+                                        </span>
                                       ) : null
                                     )}
 
