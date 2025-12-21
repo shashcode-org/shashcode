@@ -220,18 +220,19 @@ export const CSV_TABLE_UI = ({ csvData }) => {
                               </a>
                             )}
                           </h3>
-
-                          {/* THEORY (PLAIN TEXT) */}
                           {/* THEORY (SOFT PANEL + BULLETS, NON-CLICKABLE) */}
+
                           {concepts.length > 0 && (
                             <div className="rounded-lg bg-muted/30 px-4 py-3 mb-3">
-                              <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
-                                {concepts.map((d, i) => (
-                                  <li key={i} className="select-none">
-                                    {d.Detail?.trim()}
-                                  </li>
-                                ))}
-                              </ul>
+                              {concepts.map((d, i) => (
+                                <div
+                                  key={i}
+                                  className="flex gap-2 text-sm text-muted-foreground"
+                                >
+                                  <span>•</span>
+                                  <span>{d.Detail?.trim()}</span>
+                                </div>
+                              ))}
                             </div>
                           )}
 
