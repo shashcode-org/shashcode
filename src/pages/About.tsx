@@ -88,7 +88,15 @@ const About = () => {
 
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 hero-gradient">
-        <div className="max-w-7xl mx-auto text-center"></div>
+        <div className="max-w-7xl mx-auto text-center">
+                          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                  About{" "}
+                  <span className="relative text-[#1E1B4B]">
+                    ShashCode
+                    <span className="absolute left-0 -bottom-2 h-1 w-full bg-[#F9A826] rounded-full"></span>
+                  </span>
+                </h1>
+        </div>
       </section>
 
       {/* About ShashCode Section */}
@@ -101,7 +109,7 @@ const About = () => {
                   <img src="/logo.webp" alt="ShashCode Logo" className="w-48 h-48 object-contain" />
                 </div>
                 <div className="w-full md:w-2/3 space-y-4">
-                  <h2 className="text-3xl font-bold text-primary mb-4">About ShashCode</h2>
+                  {/* <h2 className="text-3xl font-bold text-primary mb-4">About ShashCode</h2> */}
                   <p className="text-gray-600 leading-relaxed">Welcome to ShashCode!</p>
                   <p className="text-gray-600 leading-relaxed">
                     ShashCode is a platform dedicated to making coding and technology education
