@@ -266,9 +266,12 @@ export const CSV_TABLE_UI = ({ csvData }) => {
                                   key={i}
                                   className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 p-3 rounded-lg border hover:bg-accent/5"
                                 >
-                                  <span>{d.Detail}</span>
+                                  <span className="flex items-center leading-snug">
+                                    {d.Detail}
+                                  </span>
 
-                                  <div className="flex gap-3">
+                                  {/* <div className="flex gap-3"> */}
+                                  <div className="flex items-center gap-3">
                                     {d._links.map((link, idx) =>
                                       link.includes("leetcode") ? (
                                         <a

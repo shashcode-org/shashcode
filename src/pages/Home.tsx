@@ -32,7 +32,7 @@ const Home = () => {
                   Welcome to{" "}
                   <span className="relative text-[#1E1B4B]">
                     ShashCode
-                   
+
                   </span>
                 </h1>
               </AnimatedElement>
@@ -208,9 +208,11 @@ const Home = () => {
             href="https://www.youtube.com/channel/UCegtbaD_t6PYm3eaAf_bvGQ?sub_confirmation=1"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-red-600 text-white font-semibold px-12 py-4 rounded-xl hover:bg-red-700 transition duration-300 flex items-center justify-center gap-2 min-w-[140px]"
+            className="bg-[rgb(205,32,31)] text-white font-semibold px-12 py-4 rounded-xl 
+             hover:bg-[rgb(180,28,27)] transition duration-300 
+             flex items-center justify-center gap-2 min-w-[140px]"
           >
-            Subscribe
+            View ShashCode on Youtube
           </a>
         </div>
       </Section>
