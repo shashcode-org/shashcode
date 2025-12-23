@@ -1,0 +1,67 @@
+.snowfall-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  overflow: hidden;
+}
+
+.snowflake {
+  position: absolute;
+  top: -10px;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: snowfall linear infinite;
+}
+
+/* Randomize snowflakes */
+.snowflake:nth-child(odd) {
+  width: 4px;
+  height: 4px;
+  opacity: 0.6;
+}
+
+@keyframes snowfall {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  100% {
+    transform: translateY(110vh) translateX(80px);
+  }
+}
+
+/* Individual randomness */
+.snowflake {
+  left: calc(100% * var(--x));
+  animation-duration: calc(5s + var(--d));
+}
+
+.snowflake:nth-child(3n) {
+  width: 8px;
+  height: 8px;
+  opacity: 0.9;
+}
+
+.snowflake:nth-child(n) {
+  --x: 0.1;
+  --d: 2s;
+}
+.snowflake:nth-child(2n) {
+  --x: 0.3;
+  --d: 4s;
+}
+.snowflake:nth-child(3n) {
+  --x: 0.5;
+  --d: 1s;
+}
+.snowflake:nth-child(4n) {
+  --x: 0.7;
+  --d: 3s;
+}
+.snowflake:nth-child(5n) {
+  --x: 0.9;
+  --d: 5s;
+}

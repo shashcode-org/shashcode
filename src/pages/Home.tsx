@@ -8,11 +8,12 @@ import AnimatedElement from "@/components/AnimatedElement";
 import Card, { CardContent, CardTitle } from "@/components/Card";
 import { ArrowRight, Code, Award, BookOpen, YoutubeIcon } from "lucide-react";
 import { Helmet } from "react-helmet-async";
-
+import Snowfall from "@/components/snowfall/snowfall";
 const Home = () => {
   const navigate = useNavigate();
   return (
     <div className="min-h-screen flex flex-col">
+      <Snowfall />
       <Helmet>
         <title>ShashCode – Java & DSA for Placements</title>
         <meta

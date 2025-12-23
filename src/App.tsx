@@ -13,10 +13,17 @@ import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 import "./App.css";
-
+import PreLaunchGame from "./pages/PreLaunchGame";
 const queryClient = new QueryClient();
+const PRELAUNCH_MODE = true;
 
-const App = () => (
+const App = () => {
+  const hasAccess =
+    localStorage.getItem("shashcode_access") === "true";
+
+  const showGame = PRELAUNCH_MODE && !hasAccess;
+  return (
+  
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
@@ -24,19 +31,19 @@ const App = () => (
       <BrowserRouter>
         <ScrollToTop />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/dsa" element={<DSA />} />
-          <Route path="/java-dsa" element={<JavaDSA />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/terms" element={<Terms />} />
-          <Route path="/contact-us" element={<ContactUs />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/" element={showGame  ? <PreLaunchGame /> :<Home />} />
+          <Route path="/dsa" element={showGame ? <PreLaunchGame /> :<DSA />} />
+          <Route path="/java-dsa" element={showGame ? <PreLaunchGame /> :<JavaDSA />} />
+          <Route path="/privacy" element={showGame ? <PreLaunchGame /> :<Privacy />} />
+          <Route path="/terms" element={showGame ? <PreLaunchGame /> :<Terms />} />
+          <Route path="/contact-us" element={showGame ? <PreLaunchGame /> :<ContactUs />} />
+          <Route path="/about" element={showGame ? <PreLaunchGame /> :<About />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
-);
+)};
 
 export default App;
