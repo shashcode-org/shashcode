@@ -181,12 +181,18 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 
                   <div className="p-4 space-y-6">
                     {mainTopic.Subtopics.map((sub, subIndex) => {
-
+                      const allVideoLinks = (
+                        csvData
+                          .find(t => t["Main Topic"] === mainTopic["Main Topic"])
+                          ?.Subtopics.find(s => s.Subtopic === sub.Subtopic)
+                          ?.Details.map(d => d["Video Link"])
+                          .filter(Boolean)
+                      ) || [];
                       /* VIDEO LOGIC (UNCHANGED) */
-                      const videoLinks = sub.Details.map(
-                        (d) => d["Video Link"]
-                      ).filter(Boolean);
-
+                      // const videoLinks = sub.Details.map(
+                      //   (d) => d["Video Link"]
+                      // ).filter(Boolean);
+                      const videoLinks = allVideoLinks;
                       const uniqueVideos = [...new Set(videoLinks)];
                       const hasSingleVideo = uniqueVideos.length === 1;
                       const hasMultipleVideos = uniqueVideos.length > 1;
