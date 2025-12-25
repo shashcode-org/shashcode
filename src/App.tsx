@@ -15,7 +15,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import "./App.css";
 import PreLaunchGame from "./pages/PreLaunchGame";
 const queryClient = new QueryClient();
-const PRELAUNCH_MODE = true;
+const PRELAUNCH_MODE = false;
 
 const App = () => {
   const hasAccess =
