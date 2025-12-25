@@ -104,16 +104,16 @@ const Contact = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
 
-      <main className="flex-grow">
+      <main className="flex-grow pt-24">
         <Section
           title="Get In Touch"
           subtitle="Have questions or want to collaborate? We'd love to hear from you."
-          className="py-20"
+          className="py-12 md:py-20"
         >
-          <div className="grid md:grid-cols-2 gap-12 items-start">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
             {/* Contact Form */}
             <AnimatedElement animation="fadeIn" delay="100">
-              <div className="bg-card rounded-lg shadow-lg p-8 border border-border">
+              <div className="bg-card rounded-lg shadow-lg p-5 sm:p-6 md:p-8 border border-border">
                 <h3 className="text-2xl font-bold mb-6 text-foreground">Query? Write to us!</h3>
 
                 <Form {...form}>
@@ -196,7 +196,7 @@ const Contact = () => {
             {/* Contact Information */}
             <AnimatedElement animation="fadeIn" delay="200">
               <div className="space-y-8">
-                <div className="bg-card rounded-lg shadow-lg p-8 border border-border">
+                <div className="bg-card rounded-lg shadow-lg p-5 sm:p-6 md:p-8 border border-border">
                   <div className="flex items-start space-x-4">
                     <div className="bg-primary/10 p-3 rounded-full">
                       <Mail className="h-6 w-6 text-primary" />
