@@ -55,7 +55,7 @@ const NotifyModal = ({ open, onClose }) => {
 
                 {status === "success" ? (
                     <div className="text-center space-y-3">
-                        <h3 className="text-lg font-semibold">You're in 🚀</h3>
+                        <h3 className="text-lg font-semibold">You're in!</h3>
                         <p className="text-sm text-gray-600">
                             We'll email you when progress tracking goes live.
                         </p>
