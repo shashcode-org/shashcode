@@ -886,7 +886,7 @@ export const csvData = [
             "Links": [
               "https://leetcode.com/problems/search-in-rotated-sorted-array/"
             ],
-            "Video Link": "https://youtu.be/n12QcCu8oBI"
+            "Video Link": "https://youtu.be/MiviQguOzfY"
           },
           {
             "Detail": "Q. Search in rotated sorted array - 2",
