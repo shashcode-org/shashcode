@@ -305,10 +305,11 @@ Stack,Stack Basics,Stack,,https://youtu.be/TpuQWpma7ug
 ,,Q. Largest Rectangle in Histogram + Previous smaller element,https://leetcode.com/problems/largest-rectangle-in-histogram/description/,https://youtu.be/qUS-DZU4fj4
 ,,Q. Max Rectangle,https://leetcode.com/problems/maximal-rectangle/description/,https://youtu.be/DPkDmhCyyuc
 ,,Q. Longest Valid Parentheses,https://leetcode.com/problems/longest-valid-parentheses/description/,https://youtu.be/gqQsbdTcey0
-Queue,Queue Basics,Queue,,https://youtu.be/9m4SZPRQXQI?si=izPej7j2qhbiKrys
+Queue,Queue Basics,Queue,,https://youtu.be/0tcmpUc2suo
 ,,Queue using Array,,
 ,,Circular Queue ,,
-,,Double ended Queue,,
+,,Double ended Queue (Deque),,
+,,Restricted Deque,,
 ,Design questions,Q. Implement queue using stack ,Video-only problem,https://youtu.be/Enygu8ivr0w?si=SgzjEHke5oc_cwdk
 ,,Q. Implement stack using queue,Video-only problem,https://youtu.be/z4FxPUgXn90?si=86tva8iOIGV5E74n
 ,Questions on queue,Q. Number of Students Unable to Eat Lunch,https://leetcode.com/problems/number-of-students-unable-to-eat-lunch/description/,https://youtu.be/vlt2S8xb5vk

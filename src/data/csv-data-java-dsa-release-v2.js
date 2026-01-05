@@ -3331,7 +3331,7 @@ export const csvData = [
             "Links": [
               "N/A"
             ],
-            "Video Link": "https://youtu.be/9m4SZPRQXQI?si=izPej7j2qhbiKrys"
+            "Video Link": "https://youtu.be/0tcmpUc2suo"
           },
           {
             "Detail": "Queue using Array",
@@ -3346,7 +3346,13 @@ export const csvData = [
             ]
           },
           {
-            "Detail": "Double ended Queue",
+            "Detail": "Double ended Queue (Deque)",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "Restricted Deque",
             "Links": [
               "N/A"
             ]
