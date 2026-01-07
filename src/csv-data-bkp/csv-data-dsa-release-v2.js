@@ -441,7 +441,7 @@ export const csvData = [
             "Video Link": "https://youtu.be/lnpa0999qGU"
           },
           {
-            "Detail": "Q. Pallindrome Number",
+            "Detail": "Q. Palindrome Number",
             "Links": [
               "Video-only problem"
             ]
@@ -471,7 +471,7 @@ export const csvData = [
             ]
           },
           {
-            "Detail": "Q. Euclidian GCD Algorithm",
+            "Detail": "Q. Euclidean GCD Algorithm",
             "Links": [
               "Video-only problem"
             ]
@@ -507,7 +507,7 @@ export const csvData = [
             ]
           },
           {
-            "Detail": "Modular Arithmatics",
+            "Detail": "Modular Arithmetic",
             "Links": [
               "N/A"
             ]
@@ -517,7 +517,7 @@ export const csvData = [
     ]
   },
   {
-    "Main Topic": "Bits Manipulation",
+    "Main Topic": "Bit Manipulation",
     "Subtopics": [
       {
         "Subtopic": "Bit basics & fundamentals",
@@ -886,7 +886,7 @@ export const csvData = [
             "Links": [
               "https://leetcode.com/problems/search-in-rotated-sorted-array/"
             ],
-            "Video Link": "https://youtu.be/n12QcCu8oBI"
+            "Video Link": "https://youtu.be/MiviQguOzfY"
           },
           {
             "Detail": "Q. Search in rotated sorted array - 2",
@@ -1289,7 +1289,7 @@ export const csvData = [
         "Subtopic": "Hashmap Data Structure",
         "Details": [
           {
-            "Detail": "What is hashmap?",
+            "Detail": "What is HashMap?",
             "Links": [
               "N/A"
             ],
@@ -1314,7 +1314,7 @@ export const csvData = [
             "Video Link": "https://youtu.be/B4VukYcQG_E?si=D4bP5zpwtOFPzNQM"
           },
           {
-            "Detail": "Hashcode function",
+            "Detail": "hashCode function (Java specific)",
             "Links": [
               "N/A"
             ]
@@ -1448,7 +1448,7 @@ export const csvData = [
             "Video Link": "https://youtu.be/L03d0qThnJQ?si=1TEHDMBGaDGVeElr"
           },
           {
-            "Detail": "Q. Longest increasing concecutive subsequence",
+            "Detail": "Q. Longest increasing consecutive subsequence",
             "Links": [
               "https://leetcode.com/problems/longest-consecutive-sequence/description/"
             ],
@@ -1489,7 +1489,12 @@ export const csvData = [
               "N/A"
             ],
             "Video Link": "https://youtu.be/DQMxp7TS2BI?si=WN_ksJt1fWPXuLmF"
-          },
+          }
+        ]
+      },
+      {
+        "Subtopic": "Questions on Sliding Window",
+        "Details": [
           {
             "Detail": "Q. Maximum Sum Subarray of Size K",
             "Links": [
@@ -1533,7 +1538,7 @@ export const csvData = [
             "Video Link": "https://youtu.be/Vgo7tvBm8OU?si=fxI1Ggsz3C_sMlIj"
           },
           {
-            "Detail": "Q. Count Occurances of Anagrams",
+            "Detail": "Q. Count Occurrences of Anagrams",
             "Links": [
               "https://www.geeksforgeeks.org/problems/count-occurences-of-anagrams5839/1"
             ],
@@ -1786,7 +1791,7 @@ export const csvData = [
             ]
           },
           {
-            "Detail": "Q. Count all subsequece of string",
+            "Detail": "Q. Count all subsequence of string",
             "Links": [
               "Video-only problem"
             ]
@@ -2226,7 +2231,12 @@ export const csvData = [
               "https://leetcode.com/problems/asteroid-collision/description/"
             ],
             "Video Link": "https://youtu.be/OtddlksWtS4"
-          },
+          }
+        ]
+      },
+      {
+        "Subtopic": "Monotonic Stack",
+        "Details": [
           {
             "Detail": "Q. Stock Span Problem",
             "Links": [
@@ -2291,7 +2301,7 @@ export const csvData = [
             "Links": [
               "N/A"
             ],
-            "Video Link": "https://youtu.be/9m4SZPRQXQI?si=izPej7j2qhbiKrys"
+            "Video Link": "https://youtu.be/0tcmpUc2suo"
           },
           {
             "Detail": "Queue using Array",
@@ -2306,7 +2316,13 @@ export const csvData = [
             ]
           },
           {
-            "Detail": "Double ended Queue",
+            "Detail": "Double ended Queue (Deque)",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "Restricted Deque",
             "Links": [
               "N/A"
             ]
@@ -3616,15 +3632,38 @@ export const csvData = [
         ]
       },
       {
-        "Subtopic": "DSU",
+        "Subtopic": "Disjoint Sets (DSU)",
         "Details": [
           {
-            "Detail": "Disjoint Sets in one shot",
+            "Detail": "Introduction to DSU",
             "Links": [
               "N/A"
             ],
             "Video Link": "https://youtu.be/7wgUuv0U5zs"
           },
+          {
+            "Detail": "Union by size",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "Union by rank",
+            "Links": [
+              "N/A"
+            ]
+          },
+          {
+            "Detail": "components of graphs using dsu",
+            "Links": [
+              "N/A"
+            ]
+          }
+        ]
+      },
+      {
+        "Subtopic": "Questions on DSU",
+        "Details": [
           {
             "Detail": "Q. Redundant Connection",
             "Links": [
@@ -3645,28 +3684,54 @@ export const csvData = [
               "https://leetcode.com/problems/number-of-operations-to-make-network-connected/description/"
             ],
             "Video Link": "https://youtu.be/Gn6ZlaLIDjY"
-          },
+          }
+        ]
+      },
+      {
+        "Subtopic": "Bipartite Graph",
+        "Details": [
           {
             "Detail": "Q. Is Graph Bipartite?",
             "Links": [
               "https://leetcode.com/problems/is-graph-bipartite/description/"
             ],
             "Video Link": "https://youtu.be/7nETmZcQRko"
-          },
+          }
+        ]
+      },
+      {
+        "Subtopic": "Kosaraju Algorithm",
+        "Details": [
           {
             "Detail": "Strongly Connected Components | Kosaraju's Algorithm",
             "Links": [
               "https://www.geeksforgeeks.org/problems/strongly-connected-components-kosarajus-algo/1"
             ],
             "Video Link": "https://youtu.be/6PyWrGdSK1o?si=TgpfMYwHgCowRa-m"
-          },
+          }
+        ]
+      },
+      {
+        "Subtopic": "Minimum Spanning Tree (MST)",
+        "Details": [
           {
-            "Detail": "Minimum spanning tree",
+            "Detail": "Intro to MST",
             "Links": [
               "N/A"
             ],
             "Video Link": "https://youtu.be/XozGcnGHJXM"
           },
+          {
+            "Detail": "Finding MST in a graph",
+            "Links": [
+              "N/A"
+            ]
+          }
+        ]
+      },
+      {
+        "Subtopic": "MST Algorithms",
+        "Details": [
           {
             "Detail": "Q. Prim's Algorithm for minimum spanning tree",
             "Links": [
