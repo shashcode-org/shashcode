@@ -346,6 +346,9 @@ export const CSV_TABLE_UI = ({ csvData }) => {
             Reset progress
           </button>
         </div>
+        <div className="mt-2 text-xs text-muted-foreground">
+          Progress is saved locally on this browser & device.
+        </div>
 
 
       </div>
@@ -385,17 +388,11 @@ export const CSV_TABLE_UI = ({ csvData }) => {
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <div
-                      className={`
-    h-5 w-5 rounded-full
-    flex items-center justify-center
-    ${allSubtopicsCompleted
-                          ? "bg-success-strong text-white"
-                          : "border border-border"}
-  `}
-                      title="Completed when all subtopics are done"
-                    >
-                      {allSubtopicsCompleted && (
+                    {allSubtopicsCompleted && (
+                      <div
+                        className="h-5 w-5 rounded-full flex items-center justify-center bg-success-strong text-white"
+                        title="Completed"
+                      >
                         <svg
                           className="h-4 w-4"
                           viewBox="0 0 24 24"
@@ -405,8 +402,9 @@ export const CSV_TABLE_UI = ({ csvData }) => {
                         >
                           <polyline points="20 6 9 17 4 12" />
                         </svg>
-                      )}
-                    </div>
+                      </div>
+                    )}
+
 
                     <ChevronRight
                       className={`transition-transform ${expandedTopicIndex === mainIndex ? "rotate-90" : ""}`}
