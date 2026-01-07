@@ -8,6 +8,25 @@ export default {
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
   ],
+  safelist: [
+  // Difficulty text colors
+  "text-green-600",
+  "text-amber-600",
+  "text-red-600",
+
+  // Difficulty left borders
+  "border-l-4",
+  "border-l-green-500",
+  "border-l-amber-500",
+  "border-l-red-500",
+  // Hover effects for cards
+  "hover:shadow-lg",
+  "hover:border-gray-300",
+  "hover:bg-gray-50",
+  "hover:-translate-y-[2px]",
+  "transition-all",
+],
+
   prefix: "",
   theme: {
     container: {

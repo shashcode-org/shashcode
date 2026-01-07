@@ -5,6 +5,7 @@ import Section from "@/components/Section";
 import AnimatedElement from "@/components/AnimatedElement";
 import Card, { CardContent, CardTitle } from "@/components/Card";
 import { CheckCircle, Youtube, Users, BookOpen } from "lucide-react";
+import PageHero from "@/components/PageHero";
 import { Helmet } from "react-helmet-async";
 // Import images
 import instructorImg from "../assets/shash-instructor-1.webp";
@@ -87,17 +88,11 @@ const About = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 hero-gradient">
-        <div className="max-w-7xl mx-auto text-center">
-                          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                  About{" "}
-                  <span className="relative text-[#1E1B4B]">
-                    ShashCode
-                   
-                  </span>
-                </h1>
-        </div>
-      </section>
+      <PageHero
+        title="About ShashCode"
+        subtitle="Making coding, Java, and DSA simple, structured, and placement-focused"
+      />
+
 
       {/* About ShashCode Section */}
       <Section contentClassName="max-w-6xl mx-auto">
@@ -257,12 +252,14 @@ const About = () => {
               </h2>
 
               <div className="space-y-4">
-                <div className="flex items-start gap-4">
-                  <img
-                    src={samsungLogo}
-                    alt="Samsung"
-                    className="h-12 object-contain flex-shrink-0"
-                  />
+                <div className="flex items-center gap-4">
+                  <div className="w-14 h-14 flex items-center justify-center flex-shrink-0">
+                    <img
+                      src={samsungLogo}
+                      alt="Samsung"
+                      className="max-h-12 object-contain"
+                    />
+                  </div>
                   <div>
                     <h3 className="font-semibold">
                       Samsung Research and Development Institute India (SRI-B) – Senior Engineer
@@ -273,8 +270,14 @@ const About = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <img src={npciLogo} alt="NPCI" className="h-10 object-contain flex-shrink-0" />
+                <div className="flex items-center gap-4">
+                  <div className="w-14 h-14 flex items-center justify-center flex-shrink-0">
+                    <img
+                      src={npciLogo}
+                      alt="NPCI"
+                      className="max-h-12 object-contain"
+                    />
+                  </div>
                   <div>
                     <h3 className="font-semibold">
                       National Payments Corporation of India (NPCI) – Engineer
@@ -282,12 +285,14 @@ const About = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <img
-                    src={cognizantLogo}
-                    alt="Cognizant"
-                    className="h-10 object-contain flex-shrink-0"
-                  />
+                <div className="flex items-center gap-4">
+                  <div className="w-14 h-14 flex items-center justify-center flex-shrink-0">
+                    <img
+                      src={cognizantLogo}
+                      alt="Cognizant"
+                      className="max-h-12 object-contain"
+                    />
+                  </div>
                   <div>
                     <h3 className="font-semibold">
                       Cognizant Technology Solutions – Programmer Analyst
@@ -295,8 +300,14 @@ const About = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <img src={hpLogo} alt="HPCL" className="h-10 object-contain flex-shrink-0" />
+                <div className="flex items-center gap-4">
+                  <div className="w-14 h-14 flex items-center justify-center flex-shrink-0">
+                    <img
+                      src={hpLogo}
+                      alt="HPCL"
+                      className="max-h-12 object-contain"
+                    />
+                  </div>
                   <div>
                     <h3 className="font-semibold">
                       Hindustan Petroleum Corporation Limited (HPCL) – Data Analyst Intern
@@ -304,17 +315,22 @@ const About = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <img
-                    src={microsoftLearnLogo}
-                    alt="Microsoft Learn"
-                    className="h-10 object-contain flex-shrink-0"
-                  />
+                <div className="flex items-center gap-4">
+                  <div className="w-14 h-14 flex items-center justify-center flex-shrink-0">
+                    <img
+                      src={microsoftLearnLogo}
+                      alt="Microsoft Learn"
+                      className="max-h-12 object-contain"
+                    />
+                  </div>
                   <div>
-                    <h3 className="font-semibold">Microsoft Learn Student Ambassador</h3>
+                    <h3 className="font-semibold">
+                      Microsoft Learn Student Ambassador
+                    </h3>
                   </div>
                 </div>
               </div>
+
             </CardContent>
           </Card>
         </AnimatedElement>
@@ -454,14 +470,6 @@ const About = () => {
                   </h3>
                   <p className="text-gray-600">
                     Last Minute DSA: coding interviews, and career growth
-                  </p>
-                  <p className="text-gray-600 mt-2">
-                    Shashwat's blend of industry experience and teaching expertise makes him a
-                    valuable mentor for aspiring engineers, data analysts, and software developers.
-                    His commitment to empowering others through clear, structured learning material,
-                    tech insights, and strong knowledge has helped thousands in their careers and
-                    shared knowledge has helped thousands tackle complex DSA concepts and
-                    placements, and advance in their coding journey.
                   </p>
                 </div>
               </div>
