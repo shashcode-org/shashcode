@@ -65,7 +65,7 @@ const Home = () => {
                     <div className="bg-gray-800 rounded-lg overflow-hidden">
                       <pre className="px-4 py-4 sm:p-6 text-white font-heading text-xs sm:text-sm overflow-x-auto whitespace-pre max-w-full text-[9px]">
                         <code>{`public class ShashCode {
-  public boolean isSuccess(boolean hardWork, boolean luck) {
+  boolean isSuccess(boolean hardWork, boolean luck) {
     if (hardWork || luck) {
       System.out.println("You succeeded 🎯");
     } else {
@@ -211,9 +211,10 @@ const Home = () => {
             rel="noopener noreferrer"
             className="bg-[rgb(205,32,31)] text-white font-semibold px-12 py-4 rounded-xl 
              hover:bg-[rgb(180,28,27)] transition duration-300 
-             flex items-center justify-center gap-2 min-w-[140px]"
+             flex items-center justify-center gap-3 min-w-[140px]"
           >
             View ShashCode on Youtube
+            <YoutubeIcon size={20} className="opacity-95 stroke-[2.2]" />
           </a>
         </div>
       </Section>

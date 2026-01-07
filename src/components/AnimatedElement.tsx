@@ -28,6 +28,7 @@ const AnimatedElement = ({
           }
           observer.unobserve(entry.target);
         }
+
       },
       {
         threshold,
@@ -46,10 +47,17 @@ const AnimatedElement = ({
   }, [animation, delay, threshold]);
 
   return (
-    <div ref={ref} className={cn("opacity-0", className)}>
+    <div
+      ref={ref}
+      className={cn(
+        "opacity-100 will-change-transform",
+        className
+      )}
+    >
       {children}
     </div>
   );
+
 };
 
 export default AnimatedElement;

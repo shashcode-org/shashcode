@@ -1,17 +1,17 @@
 ﻿Main Topics,Subtopics,Details,Links,Video Links
-Java Basics,Programming Language and Memory Management,What is a programming Language,,https://youtu.be/DEC268j2hk0
+Java Basics,Programming Language and Memory Management,What is a Programming Language,,https://youtu.be/DEC268j2hk0
 ,,Machine Language,,
 ,,Assembly Language,,
-,,High Level Language,,
+,,High-Level Language,,
 ,,Procedural Language,,
 ,,Functional Language,,
-,,Object Oriented Language,,
+,,Object-Oriented Language,,
 ,,Scripting Language,,
 ,,Stack Memory,,
 ,,Heap Memory,,
 ,,Garbage Collection,,
 ,Flow of a program,Flowchart,,https://youtu.be/VlBUOjj0R30
-,,Psuedocode,,
+,,Pseudocode,,
 ,,Algorithm,,
 ,How Java Program Compiles,Byte code,,https://youtu.be/2Uer9X75EPI
 ,,Machine code,,
@@ -20,14 +20,14 @@ Java Basics,Programming Language and Memory Management,What is a programming Lan
 ,Writing your first program,installation of Java,,https://youtu.be/9MIgxW-3qbs
 ,,installation of IDE,,
 ,,"""Hello Coder""",,
-,,entrypoint of program,,
-,,commandline arguments,,
+,,Entry point of program,,
+,,Command-line arguments,,
 ,,generating byte code in style,,
 ,,How computer runs your program?,,
 ,,writing comments in java,,
 ,Java being Java,Variables and constants,,https://youtu.be/FVs7Z9RfIJE
 ,,Literals and keywords,,
-,,data types,,
+,,Data Types,,
 ,,Program to swap two numbers,,
 ,,Type casting Implicit and explicit,,
 ,,Automatic type promotion,,
@@ -42,21 +42,21 @@ Java Basics,Programming Language and Memory Management,What is a programming Lan
 ,,switch case,,
 ,,while loop,,
 ,,do-while Loop,,
-,,for each loop,,
+,,for-each loop,,
 ,Functions in Java,Functions,,https://youtu.be/L2i2Y90Zq2U
 ,,Types of functions,,
 ,,create your own functions,,
 ,,call by value and call by reference,,
 ,Mini Project -1 ,Calculator Application,,https://youtu.be/hKjRDM-f51g
 ,,Temperature convertor,,
-,Strings in Java,characters,,https://youtu.be/aqjGYjtczvY
-,,string literals ,,
-,,string constant pool,,
+,Strings in Java,Characters,,https://youtu.be/aqjGYjtczvY
+,,String literals ,,
+,,String Constant Pool,,
 ,,subsequences,,
 ,,substrings,,
 ,,String comparison,,
 ,,String with new operator,,
-,,Reference Comparision,,
+,,Reference Comparison,,
 ,More on Strings,String Builder,,https://youtu.be/rXSUJ-PwU4g
 ,,String Buffer,,
 ,,Next vs NextLine,,
@@ -72,9 +72,9 @@ Java Basics,Programming Language and Memory Management,What is a programming Lan
 ,,toLowerCase function,,
 ,,toUpperCase function,,
 ,,toCharArray function,,
-,Playing with String,Input Buffer and delimeters,,https://youtu.be/SrPyIYakYt8
+,Playing with String,Input Buffer and delimiters,,https://youtu.be/SrPyIYakYt8
 ,,String formatting,,
-,,String Concatination,,
+,,String Concatenation,,
 ,Arrays in Java,what are arrays,,https://youtu.be/JQlzB5i8trQ
 ,,concept of indexing,,
 ,,"Insert, update, delete, traverse",,
@@ -201,19 +201,19 @@ Maths in DSA,Mathematics in DSA - Part 1,Q. Find number of digits,Video-only pro
 ,,Q. Any base to decimal,Video-only problem,
 ,,Q. Decimal to any base,Video-only problem,
 ,Mathematics in DSA - Part 2,Q. Armstrong Number ,Video-only problem,https://youtu.be/lnpa0999qGU
-,,Q. Pallindrome Number,Video-only problem,
+,,Q. Palindrome Number,Video-only problem,
 ,,Q. Print all divisors,Video-only problem,
 ,,Q. check prime number,Video-only problem,
 ,,Q. Sieve of Eratosthenes,Video-only problem,
 ,,Q. Greatest Common Divisor,Video-only problem,
-,,Q. Euclidian GCD Algorithm,Video-only problem,
+,,Q. Euclidean GCD Algorithm,Video-only problem,
 ,,Q. Lcm of two numbers,Video-only problem,
 ,,Q. Print all unique prime factors of a number,Video-only problem,
 ,,Q. Smallest prime factor,Video-only problem,
 ,,Q. Factorial of a number,Video-only problem,
 ,,Q. find trailing zero in factorial of a number,https://leetcode.com/problems/factorial-trailing-zeroes/,
-,,Modular Arithmatics,,
-Bits Manipulation,Bit basics & fundamentals,Binary Representation of Numbers,,https://youtu.be/bX-U5C6Um3w
+,,Modular Arithmetic,,
+Bit Manipulation,Bit basics & fundamentals,Binary Representation of Numbers,,https://youtu.be/bX-U5C6Um3w
 ,,Q. One's Complement,Video-only problem,
 ,,Q. Two's Complement,Video-only problem,
 ,,Range of Integers,,
@@ -264,7 +264,7 @@ Searching Algorithms,Linear Search,Linear Search,,https://youtu.be/slqFdKVMjeQ
 ,,Q. Valid Mountain Array,https://leetcode.com/problems/valid-mountain-array/,
 ,,Q. Peak Index in Mountain Array,https://leetcode.com/problems/peak-index-in-a-mountain-array/,
 ,,Q. find in mountain array,https://leetcode.com/problems/find-in-mountain-array/,
-,Binary Search on Rotated Sorted Array,Q. Search in rotated sorted array,https://leetcode.com/problems/search-in-rotated-sorted-array/,https://youtu.be/n12QcCu8oBI
+,Binary Search on Rotated Sorted Array,Q. Search in rotated sorted array,https://leetcode.com/problems/search-in-rotated-sorted-array/,https://youtu.be/MiviQguOzfY
 ,,Q. Search in rotated sorted array - 2,https://leetcode.com/problems/search-in-rotated-sorted-array-ii/description/,
 ,,Q. Find minimum in rotated sorted array,https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/,
 ,,Q. find k rotation,https://www.geeksforgeeks.org/problems/rotation4723/1,
@@ -312,10 +312,10 @@ Hashing,Hashing,Components of Hashing,,https://youtu.be/vB3WKXNH-v4?si=oAOjWmxgC
 ,,Load Factor,,
 ,,Rehashing,,
 ,,Applications and Advantages,,
-,Hashmap Data Structure,What is hashmap?,,https://youtu.be/CMA0MQQ3jhA?si=qi9VRUEUv4Rldbv2
+,Hashmap Data Structure,What is HashMap?,,https://youtu.be/CMA0MQQ3jhA?si=qi9VRUEUv4Rldbv2
 ,,How to use custom key-value pair,,
 ,Implement HashMap in Java,All Methods,,https://youtu.be/B4VukYcQG_E?si=D4bP5zpwtOFPzNQM
-,,Hashcode function,,
+,,hashCode function (Java specific),,
 ,,Rehashing,,
 ,Questions on hashmap,Q. Most frequent element in an array,Video-only problem,https://youtu.be/O5iUfFHxCZc?si=wKCy3r5x7hgIDEib
 ,,Q. Check if an array is subset of another array,https://www.geeksforgeeks.org/problems/array-subset-of-another-array2317/1,https://youtu.be/V4hi-l-xNXU?si=LMEB14_uTicW-6vM
@@ -332,17 +332,17 @@ Hashing,Hashing,Components of Hashing,,https://youtu.be/vB3WKXNH-v4?si=oAOjWmxgC
 ,,Q. Count the total subarrays with sum K,https://leetcode.com/problems/subarray-sum-equals-k/description/,
 ,,Q. Find largest subarray with 0 sum,Video-only problem,
 ,Questions on K-SUM Subarray Pattern - 2,Q. Longest subarray with sum divisible by K,https://www.geeksforgeeks.org/problems/longest-subarray-with-sum-divisible-by-k1259/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article,https://youtu.be/L03d0qThnJQ?si=1TEHDMBGaDGVeElr
-,,Q. Longest increasing concecutive subsequence,https://leetcode.com/problems/longest-consecutive-sequence/description/,https://youtu.be/4ohND5Hq-wQ?si=-Rdz-tpJZ4W1ke-g
+,,Q. Longest increasing consecutive subsequence,https://leetcode.com/problems/longest-consecutive-sequence/description/,https://youtu.be/4ohND5Hq-wQ?si=-Rdz-tpJZ4W1ke-g
 ,,Q. Largest subarray with equal number of 0s and 1s,https://www.geeksforgeeks.org/problems/largest-subarray-of-0s-and-1s/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article,https://youtu.be/qOCuB-IC9KA?si=NEEgvm_zlI-dvSm_
 ,Sort using hashing,Bucket Sort Algorithm,,https://youtu.be/5Pe3YSnqGh8?si=8cnivpNvhCX6X0hf
 Sliding Window,Sliding Window Technique,What is sliding window,,https://youtu.be/DQMxp7TS2BI?si=WN_ksJt1fWPXuLmF
-,,Q. Maximum Sum Subarray of Size K,https://www.geeksforgeeks.org/problems/max-sum-subarray-of-size-k5313/1,https://youtu.be/rGl2Z6fuAas?si=t3JH4diL-nDnBwGe
+,Questions on Sliding Window,Q. Maximum Sum Subarray of Size K,https://www.geeksforgeeks.org/problems/max-sum-subarray-of-size-k5313/1,https://youtu.be/rGl2Z6fuAas?si=t3JH4diL-nDnBwGe
 ,,Q. First Negative Number in Each Subarray of Size K,https://www.geeksforgeeks.org/problems/first-negative-integer-in-every-window-of-size-k3345/1,https://youtu.be/Rot0y4cmlNw?si=TAp7sbW1OOQkW57C
 ,,Q. Chocolate Distribution Problem,https://www.geeksforgeeks.org/problems/chocolate-distribution-problem3825/1,https://youtu.be/oYNU1TD9W5Y?si=1rn_BjF9-LIJDwcH
 ,,Q. Smallest subarray with sum greater than x,https://www.geeksforgeeks.org/problems/smallest-subarray-with-sum-greater-than-x5651/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article,https://youtu.be/UXValb-h70s?si=VaCxJsB7-WKbL4nW
 ,,Q. Longest Substring with K unique Elements,https://www.geeksforgeeks.org/problems/longest-k-unique-characters-substring0853/1,https://youtu.be/Yp3T06_27MY?si=GUuisgzt8fXO5gF6
 ,,Q. Longest Substring without repeating elements,https://leetcode.com/problems/longest-substring-without-repeating-characters/description/,https://youtu.be/Vgo7tvBm8OU?si=fxI1Ggsz3C_sMlIj
-,,Q. Count Occurances of Anagrams,https://www.geeksforgeeks.org/problems/count-occurences-of-anagrams5839/1,https://youtu.be/PVXVsSkItpY?si=0zBiqLK0x9yzN85K
+,,Q. Count Occurrences of Anagrams,https://www.geeksforgeeks.org/problems/count-occurences-of-anagrams5839/1,https://youtu.be/PVXVsSkItpY?si=0zBiqLK0x9yzN85K
 ,,Q. Minimum Window Substring,https://leetcode.com/problems/minimum-window-substring/description/,https://youtu.be/26E3K8Njm7M
 ,,Q. Sliding Window Maximum,https://leetcode.com/problems/sliding-window-maximum/description/,https://youtu.be/jOoZuTrfpjc
 Two Pointers,Questions on two pointer,Q. Container with Most Water,https://leetcode.com/problems/container-with-most-water/description/,https://youtu.be/Nw_XsUEXco0
@@ -376,7 +376,7 @@ Recursion,Introduction to recursion,Recursion basics and syntax,,https://youtu.b
 ,,Q. Count and say,https://leetcode.com/problems/count-and-say/description/,
 ,Recursion on Subsequences,What is a subsequence,,https://youtu.be/ch9pGT8KXxY
 ,,Q. Print all subsequence of a string,Video-only problem,
-,,Q. Count all subsequece of string,Video-only problem,
+,,Q. Count all subsequence of string,Video-only problem,
 ,Questions on recursion,Q. Josephus problem - Find the Winner of the Circular Game,https://leetcode.com/problems/find-the-winner-of-the-circular-game/description/,https://youtu.be/2dN4ktn6D1k?si=zPPFxgG8dv_VvHnm
 Backtracking,Backtracking,Backtracking and All it's variants,,https://youtu.be/9HTOWRiwYOI
 ,,Q. Subsets -1,https://leetcode.com/problems/subsets/description/,
@@ -436,17 +436,18 @@ Stack,Stack Basics,Stack,,https://youtu.be/TpuQWpma7ug
 ,,Q. Swap minimum brackets to balance string,https://leetcode.com/problems/minimum-number-of-swaps-to-make-the-string-balanced/description/,https://youtu.be/RZTapGf3pzI
 ,,Q. Swap adjacent brackets to balance string,https://www.geeksforgeeks.org/problems/minimum-swaps-for-bracket-balancing2704/1,https://youtu.be/U48xDsqb8OE
 ,,Q. Asteroid Collision,https://leetcode.com/problems/asteroid-collision/description/,https://youtu.be/OtddlksWtS4
-,,Q. Stock Span Problem,https://leetcode.com/problems/online-stock-span/description/,https://youtu.be/1_Bbq5qOraY
+,Monotonic Stack,Q. Stock Span Problem,https://leetcode.com/problems/online-stock-span/description/,https://youtu.be/1_Bbq5qOraY
 ,,Q. Next Greater element,https://www.geeksforgeeks.org/problems/next-larger-element-1587115620/1,https://youtu.be/8P3e34EgVyY
 ,,Q. Next Smaller element,https://www.geeksforgeeks.org/problems/help-classmates--141631/1,https://youtu.be/MqQchOMmTGY
 ,,Q. Next Greater / Smaller element in circular array,https://leetcode.com/problems/next-greater-element-ii/description/,https://youtu.be/ahlaBL4gG1s
 ,,Q. Largest Rectangle in Histogram + Previous smaller element,https://leetcode.com/problems/largest-rectangle-in-histogram/description/,https://youtu.be/qUS-DZU4fj4
 ,,Q. Max Rectangle,https://leetcode.com/problems/maximal-rectangle/description/,https://youtu.be/DPkDmhCyyuc
 ,,Q. Longest Valid Parentheses,https://leetcode.com/problems/longest-valid-parentheses/description/,https://youtu.be/gqQsbdTcey0
-Queue,Queue Basics,Queue,,https://youtu.be/9m4SZPRQXQI?si=izPej7j2qhbiKrys
+Queue,Queue Basics,Queue,,https://youtu.be/0tcmpUc2suo
 ,,Queue using Array,,
 ,,Circular Queue ,,
-,,Double ended Queue,,
+,,Double ended Queue (Deque),,
+,,Restricted Deque,,
 ,Design questions,Q. Implement queue using stack ,Video-only problem,https://youtu.be/Enygu8ivr0w?si=SgzjEHke5oc_cwdk
 ,,Q. Implement stack using queue,Video-only problem,https://youtu.be/z4FxPUgXn90?si=86tva8iOIGV5E74n
 ,Questions on queue,Q. Number of Students Unable to Eat Lunch,https://leetcode.com/problems/number-of-students-unable-to-eat-lunch/description/,https://youtu.be/vlt2S8xb5vk
@@ -620,14 +621,18 @@ Graphs,Graph Introduction,Introduction to graphs,,https://youtu.be/f-buby0Aac8
 ,,Q. Network Delay Time,https://leetcode.com/problems/network-delay-time/description/,https://youtu.be/n551TcPWSH8
 ,,Q. Cheapest Flights Within K Stops,https://leetcode.com/problems/cheapest-flights-within-k-stops/description/,https://youtu.be/NIrYezLg_6Q
 ,,Q. Minimum Cost to Convert String I,https://leetcode.com/problems/minimum-cost-to-convert-string-i/description/,https://youtu.be/jmqnpjtVPNs
-,DSU,Disjoint Sets in one shot,,https://youtu.be/7wgUuv0U5zs
-,,Q. Redundant Connection,https://leetcode.com/problems/redundant-connection/description/,https://youtu.be/jrLOReWZSes
+,Disjoint Sets (DSU),Introduction to DSU,,https://youtu.be/7wgUuv0U5zs
+,,Union by size,,
+,,Union by rank,,
+,,components of graphs using dsu,,
+,Questions on DSU,Q. Redundant Connection,https://leetcode.com/problems/redundant-connection/description/,https://youtu.be/jrLOReWZSes
 ,,Q. Satisfiability of Equality Equations,https://leetcode.com/problems/satisfiability-of-equality-equations/description/,https://youtu.be/87bMglHvC8A
 ,,Q. Number of Operations to Make Network Connected,https://leetcode.com/problems/number-of-operations-to-make-network-connected/description/,https://youtu.be/Gn6ZlaLIDjY
-,,Q. Is Graph Bipartite?,https://leetcode.com/problems/is-graph-bipartite/description/,https://youtu.be/7nETmZcQRko
-,,Strongly Connected Components | Kosaraju's Algorithm,https://www.geeksforgeeks.org/problems/strongly-connected-components-kosarajus-algo/1,https://youtu.be/6PyWrGdSK1o?si=TgpfMYwHgCowRa-m
-,,Minimum spanning tree,,https://youtu.be/XozGcnGHJXM
-,,Q. Prim's Algorithm for minimum spanning tree,https://www.geeksforgeeks.org/problems/minimum-spanning-tree/1,https://youtu.be/4EuFmlbcSY8
+,Bipartite Graph,Q. Is Graph Bipartite?,https://leetcode.com/problems/is-graph-bipartite/description/,https://youtu.be/7nETmZcQRko
+,Kosaraju Algorithm,Strongly Connected Components | Kosaraju's Algorithm,https://www.geeksforgeeks.org/problems/strongly-connected-components-kosarajus-algo/1,https://youtu.be/6PyWrGdSK1o?si=TgpfMYwHgCowRa-m
+,Minimum Spanning Tree (MST),Intro to MST,,https://youtu.be/XozGcnGHJXM
+,,Finding MST in a graph,,
+,MST Algorithms,Q. Prim's Algorithm for minimum spanning tree,https://www.geeksforgeeks.org/problems/minimum-spanning-tree/1,https://youtu.be/4EuFmlbcSY8
 ,,Q. Kruskal's Algorithm for minimum spanning tree,https://www.geeksforgeeks.org/problems/minimum-spanning-tree/1,https://youtu.be/dBGYpKLY2bQ
 Tries,Trie Basics and Prefix Trie Implementation,Introduction to Trie,,https://youtu.be/VnxqYcy4weg
 ,,Implement a Trie in java,,
