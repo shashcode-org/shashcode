@@ -9,23 +9,28 @@ export default {
     "./src/**/*.{ts,tsx}",
   ],
   safelist: [
-  // Difficulty text colors
-  "text-green-600",
-  "text-amber-600",
-  "text-red-600",
+    // Difficulty text colors
+    "text-green-600",
+    "text-amber-600",
+    "text-red-600",
 
-  // Difficulty left borders
-  "border-l-4",
-  "border-l-green-500",
-  "border-l-amber-500",
-  "border-l-red-500",
-  // Hover effects for cards
-  "hover:shadow-lg",
-  "hover:border-gray-300",
-  "hover:bg-gray-50",
-  "hover:-translate-y-[2px]",
-  "transition-all",
-],
+    // Difficulty left borders
+    "border-l-4",
+    "border-l-green-500",
+    "border-l-amber-500",
+    "border-l-red-500",
+    // Hover effects for cards
+    "hover:shadow-lg",
+    "hover:border-gray-300",
+    "hover:bg-gray-50",
+    "hover:-translate-y-[2px]",
+    "transition-all",
+    // Solved question styles
+    "bg-success",
+    "bg-success-strong",
+    "border-success",
+    "border-success-strong",
+  ],
 
   prefix: "",
   theme: {
@@ -86,6 +91,10 @@ export default {
           "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
+        },
+        success: {
+          DEFAULT: "#22c55e",
+          strong: "#16a34a",
         },
         signature_yellow: "#FFC107",
       },

@@ -320,7 +320,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 
         {completedSubtopics === totalSubtopics && totalSubtopics > 0 ? (
           <div className="mt-3 text-sm font-medium text-green-700">
-            🎉 All subtopics completed. Legendary.
+            All subtopics completed. Legendary.
           </div>
         ) : (
           firstIncompleteSubtopic && (
@@ -385,13 +385,29 @@ export const CSV_TABLE_UI = ({ csvData }) => {
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <input
-                      type="checkbox"
-                      checked={allSubtopicsCompleted}
-                      disabled
-                      className="h-4 w-4 accent-green-600 cursor-not-allowed"
-                      title="Auto-checked when all subtopics completed"
-                    />
+                    <div
+                      className={`
+    h-5 w-5 rounded-full
+    flex items-center justify-center
+    ${allSubtopicsCompleted
+                          ? "bg-success-strong text-white"
+                          : "border border-border"}
+  `}
+                      title="Completed when all subtopics are done"
+                    >
+                      {allSubtopicsCompleted && (
+                        <svg
+                          className="h-4 w-4"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="3"
+                        >
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                      )}
+                    </div>
+
                     <ChevronRight
                       className={`transition-transform ${expandedTopicIndex === mainIndex ? "rotate-90" : ""}`}
                     />
@@ -482,11 +498,10 @@ export const CSV_TABLE_UI = ({ csvData }) => {
                             </div>
 
                             {/* RIGHT: checkbox (unchanged) */}
-                            <input
-                              type="checkbox"
-                              checked={!!isSubtopicCompleted}
-                              disabled={false}
-                              onChange={() => {
+                            <div
+                              onClick={(e) => {
+                                e.stopPropagation();
+
                                 if (totalQuestions === 0) {
                                   const updated = toggleSubtopicProgress(subtopicId);
                                   setSubtopicProgress(updated);
@@ -497,10 +512,9 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 
                                   if (allSolved) {
                                     const confirm = window.confirm(
-                                      "This will unmark all questions under this subtopic. This action cannot be reverted."
+                                      "This will unmark all questions under this subtopic."
                                     );
                                     if (!confirm) return;
-
                                     questionIds.forEach(id => delete currentProgress[id]);
                                   } else {
                                     questionIds.forEach(id => {
@@ -512,13 +526,29 @@ export const CSV_TABLE_UI = ({ csvData }) => {
                                   setQuestionProgress(currentProgress);
                                 }
                               }}
-                              className="h-4 w-4 accent-green-600 cursor-pointer mt-[2px]"
-                              title={
-                                totalQuestions === 0
-                                  ? "Mark subtopic as completed"
-                                  : "Toggle all questions in this subtopic"
-                              }
-                            />
+                              className={`
+    h-5 w-5 rounded-full border
+    flex items-center justify-center
+    cursor-pointer transition-all
+    ${isSubtopicCompleted
+                                  ? "bg-success border-success"
+                                  : "border-border hover:border-success"}
+  `}
+                              title="Toggle subtopic"
+                            >
+                              {isSubtopicCompleted && (
+                                <svg
+                                  className="h-3 w-3 text-white"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  strokeWidth="3"
+                                >
+                                  <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                              )}
+                            </div>
+
                           </div>
 
 
@@ -597,7 +627,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
                                       </div>
                                     </div>
                                     {/* RIGHT: checkbox */}
-                                    <div>
+                                    {/* <div>
                                       <input
                                         type="checkbox"
                                         checked={isSolved}
@@ -608,7 +638,43 @@ export const CSV_TABLE_UI = ({ csvData }) => {
                                         className="h-5 w-5 cursor-pointer accent-green-600"
                                         title="Mark as solved"
                                       />
+                                    </div> */}
+
+                                    <div>
+                                      <div
+                                        onClick={(e) => {
+                                          e.stopPropagation();
+                                          const updated = toggleQuestionProgress(questionId);
+                                          setQuestionProgress(updated);
+                                        }}
+                                        title="Mark as solved"
+                                        className={`
+    h-5 w-5 rounded-md border
+    flex items-center justify-center
+    cursor-pointer
+    transition-all duration-200
+    ${isSolved
+                                            ? "bg-success-strong border-success-strong"
+                                            : "border-border hover:border-success"}
+  `}
+                                      >
+                                        {isSolved && (
+                                          <svg
+                                            className="h-3 w-3 text-white"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            strokeWidth="3"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                          >
+                                            <polyline points="20 6 9 17 4 12" />
+                                          </svg>
+                                        )}
+                                      </div>
+
                                     </div>
+
 
                                   </div>
                                 );
