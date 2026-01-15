@@ -65,7 +65,7 @@ const DSA = () => {
                     }}
                     className="font-semibold hover:underline transition"
                   >
-                    Jump directly to the DSA Sheet ↓
+                    Jump to the DSA Sheet ↓
                   </span>
 
 

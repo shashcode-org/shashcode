@@ -68,7 +68,7 @@ const JavaDSA = () => {
                     }}
                     className="font-semibold hover:underline transition"
                   >
-                    Jump directly to the Java + DSA Sheet ↓
+                    Jump to the Java + DSA Sheet ↓
                   </span>
 
 
