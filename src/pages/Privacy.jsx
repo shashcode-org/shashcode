@@ -13,10 +13,10 @@ const Privacy = () => {
       <div className="privacy-page pt-32 pb-16 flex-grow">
         <Section contentClassName="max-w-4xl mx-auto">
           <AnimatedElement animation="fadeIn">
-            <Card className="bg-white text-slate-800">
+            <Card className="bg-card">
               <CardContent className="p-8">
                 <h1 className="text-3xl font-bold text-primary mb-6">Privacy Policy</h1>
-                <p className="mb-6 text-gray-800">
+                <p className="mb-6 text-foreground">
                   <strong>Effective Date:</strong> 25th December, 2025
                 </p>
 

@@ -292,16 +292,21 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 
       {/* SEARCH */}
       <div className="relative mb-6">
-        <input
-          className="p-3 w-full rounded-xl border"
-          placeholder="Search topics or questions..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-        />
-      </div>
+  <input
+    className="p-3 w-full rounded-xl
+               bg-card text-foreground
+               border border-border
+               placeholder:text-muted-foreground
+               focus:outline-none focus:ring-2 focus:ring-primary/40"
+    placeholder="Search topics or questions..."
+    value={searchQuery}
+    onChange={(e) => setSearchQuery(e.target.value)}
+  />
+</div>
+
 
       {/* OVERALL SUBTOPIC PROGRESS (LIKE LAST_MINUTE_DSA) */}
-      <div className="mb-6 rounded-xl border bg-white p-4">
+      <div className="mb-6 rounded-xl border bg-card p-4">
         <div className="flex items-center justify-between mb-2">
           <span className="text-sm font-medium">
             Progress: {completedSubtopics} / {totalSubtopics}
@@ -319,7 +324,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
         </div>
 
         {completedSubtopics === totalSubtopics && totalSubtopics > 0 ? (
-          <div className="mt-3 text-sm font-medium text-green-700">
+          <div className="mt-3 text-sm font-medium text-success">
             All subtopics completed. Legendary.
           </div>
         ) : (
@@ -341,7 +346,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
         <div className="flex justify-end mt-3">
           <button
             onClick={resetProgress}
-            className="text-xs font-medium text-red-600 hover:text-red-700 hover:underline"
+            className="text-xs font-medium text-destructive hover:text-destructive/90 hover:underline"
           >
             Reset progress
           </button>
@@ -361,7 +366,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
           ref={mainIndex === 0 ? firstExpandedRef : null}
           className="mb-6"
         >
-          <Card>
+          <Card className="border border-border shadow-md dark:shadow-[0_0_0_1px_hsl(var(--border))]">
             {/* HEADER */}
             {(() => {
               const allSubtopicsCompleted = mainTopic.Subtopics.every((sub) => {
@@ -588,7 +593,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
                                   <div
                                     key={questionId}
                                     className={`flex justify-between items-center gap-2 p-3 rounded-lg border
-        ${isSolved ? "bg-green-50 border-green-300 opacity-90" : "hover:bg-accent/5"}
+        ${isSolved ? "bg-success/20 border-success" : "hover:bg-accent/5"}
       `}>
                                     {/* LEFT (EXACT OLD UI — DO NOT TOUCH) */}
                                     <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 flex-1">
@@ -624,18 +629,6 @@ export const CSV_TABLE_UI = ({ csvData }) => {
                                       </div>
                                     </div>
                                     {/* RIGHT: checkbox */}
-                                    {/* <div>
-                                      <input
-                                        type="checkbox"
-                                        checked={isSolved}
-                                        onChange={() => {
-                                          const updated = toggleQuestionProgress(questionId);
-                                          setQuestionProgress(updated);
-                                        }}
-                                        className="h-5 w-5 cursor-pointer accent-green-600"
-                                        title="Mark as solved"
-                                      />
-                                    </div> */}
 
                                     <div>
                                       <div

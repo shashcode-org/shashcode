@@ -16,12 +16,6 @@ const truncateText = (text, limit) => {
 const TestimonialModal = ({ testimonial, isOpen, onClose }) => {
   if (!isOpen || !testimonial) return null;
 
-//   useEffect(() => {
-//   document.body.style.overflow = "hidden";
-//   return () => {
-//     document.body.style.overflow = "";
-//   };
-// }, []);
 
 
   return createPortal(
@@ -37,7 +31,7 @@ const TestimonialModal = ({ testimonial, isOpen, onClose }) => {
         <div
           className="
           w-full max-w-md
-          bg-white dark:bg-slate-900
+          bg-card
           rounded-xl shadow-xl
           max-h-[75vh] sm:max-h-[80vh] flex flex-col
         "
@@ -47,20 +41,20 @@ const TestimonialModal = ({ testimonial, isOpen, onClose }) => {
           <div
             className="
      sticky top-0 z-10
-    bg-white dark:bg-slate-900
+    bg-card
     flex items-center justify-between
     px-4 py-3
-    border-b border-gray-200 dark:border-slate-700
+    border-b border-border
     rounded-t-xl
   "
-          >   <span className="font-semibold text-gray-900 dark:text-white">
+          >   <span className="font-semibold text-foreground">
               Testimonial
             </span>
             <button
               onClick={onClose}
               className="
     p-1 rounded
-    text-gray-500
+    text-muted-foreground
     hover:text-primary
     hover:bg-primary/10
     transition
@@ -73,14 +67,14 @@ const TestimonialModal = ({ testimonial, isOpen, onClose }) => {
 
           {/* Content */}
           <div className="px-4 py-4 overflow-y-auto flex-1">
-            <p className="italic text-gray-700 dark:text-gray-300 mb-6 leading-relaxed text-sm sm:text-base">
+            <p className="italic text-muted-foreground dark:text-gray-300 mb-6 leading-relaxed text-sm sm:text-base">
               "{testimonial.quote}"
             </p>
 
             <p className="font-semibold text-primary">
               {testimonial.name}
             </p>
-            <p className="text-sm text-gray-600 dark:text-gray-400">
+            <p className="text-sm text-muted-foreground dark:text-gray-400">
               {testimonial.role}
             </p>
           </div>
@@ -100,18 +94,18 @@ const Testimonials = () => {
 
   const handleTouchStart = (e) => {
     setTouchStartX(e.touches[0].clientX);
-  setTouchEndX(null);
+    setTouchEndX(null);
   };
 
   const handleTouchMove = (e) => {
     setTouchEndX(e.touches[0].clientX);
   };
 
-const handleTouchEnd = () => {
-  if (touchStartX === null) return;
+  const handleTouchEnd = () => {
+    if (touchStartX === null) return;
 
-  const endX = touchEndX ?? touchStartX;
-  const diff = touchStartX - endX;
+    const endX = touchEndX ?? touchStartX;
+    const diff = touchStartX - endX;
 
     // swipe threshold
     if (diff > 50) {
@@ -221,7 +215,7 @@ const handleTouchEnd = () => {
                     >
                       <CardContent className="p-6 h-full flex flex-col justify-between">
                         <div>
-                          <p className="italic text-gray-600 mb-3">
+                          <p className="italic text-muted-foreground mb-3">
                             "{truncateText(t.quote, SHOULD_CLAMP_LENGTH)}"
                           </p>
 
@@ -239,7 +233,7 @@ const handleTouchEnd = () => {
                           <p className="font-semibold text-primary">
                             {t.name}
                           </p>
-                          <p className="text-sm text-gray-500">
+                          <p className="text-sm text-muted-foreground">
                             {t.role}
                           </p>
                         </div>

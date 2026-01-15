@@ -31,7 +31,7 @@ const Home = () => {
               <AnimatedElement animation="fadeIn">
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
                   Welcome to{" "}
-                  <span className="relative text-[#1E1B4B]">
+                  <span className="text-[#1E1B4B] dark:text-primary/90 dark:drop-shadow-[0_0_18px_rgba(168,85,247,0.25)]">
                     ShashCode
 
                   </span>
@@ -39,7 +39,7 @@ const Home = () => {
               </AnimatedElement>
 
               <AnimatedElement animation="fadeIn" delay="100">
-                <p className="text-lg text-black-300 mb-8">
+                <p className="text-lg text-foreground mb-8">
                   Crack the code, rule the road! Master Java & DSA with structured learning paths
                   designed for interview success.
                 </p>
@@ -60,7 +60,14 @@ const Home = () => {
             <div className="w-full lg:w-1/2 sm:px-4">
               <AnimatedElement animation="fadeIn" delay="200">
                 <div className="relative">
-                  <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-primary to-secondary opacity-30 blur-xl"></div>
+                  <div
+                    className="
+      absolute -inset-2 rounded-xl blur-2xl
+      bg-gradient-to-r from-primary to-secondary
+      opacity-30
+      dark:opacity-15
+    "
+                  ></div>
                   <div className="card-glass p-2 sm:p-4 lg:p-8 relative">
                     <div className="bg-gray-800 rounded-lg overflow-hidden">
                       <pre className="px-4 py-4 sm:p-6 text-white font-heading text-xs sm:text-sm overflow-x-auto whitespace-pre max-w-full text-[9px]">
@@ -115,7 +122,7 @@ const Home = () => {
               <CardContent className="text-center py-8">
                 <div className="mb-4 flex justify-center">{sheet.icon}</div>
                 <CardTitle className="mb-4">{sheet.title}</CardTitle>
-                <p className="text-gray-600 mb-6">{sheet.description}</p>
+                <p className="text-muted-foreground mb-6">{sheet.description}</p>
                 <button
                   onClick={sheet.onClick}
                   className={`${sheet.buttonClass} font-semibold px-6 py-3 rounded-xl transition duration-300`}
@@ -160,7 +167,7 @@ const Home = () => {
               <CardContent>
                 <div className="mb-4">{feature.icon}</div>
                 <CardTitle className="mb-2">{feature.title}</CardTitle>
-                <p className="text-gray-600">{feature.description}</p>
+                <p className="text-muted-foreground">{feature.description}</p>
               </CardContent>
             </Card>
           </AnimatedElement>
@@ -199,7 +206,7 @@ const Home = () => {
               <CardContent className="text-center py-8">
                 <div className="mb-4 flex justify-center">{stat.icon}</div>
                 <div className="text-4xl font-bold text-gradient mb-2">{stat.number}</div>
-                <div className="text-gray-600 font-medium">{stat.label}</div>
+                <div className="text-muted-foreground font-medium">{stat.label}</div>
               </CardContent>
             </Card>
           </AnimatedElement>
