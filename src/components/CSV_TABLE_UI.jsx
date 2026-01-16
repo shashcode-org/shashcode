@@ -512,6 +512,13 @@ export const CSV_TABLE_UI = ({ csvData }) => {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="inline-block ml-1 align-baseline"
+                                    onClick={() => {
+                                      trackEvent("youtube_video_click", {
+                                        sheet: "DSA",
+                                        topic: mainTopic["Main Topic"],
+                                        subtopic: sub.Subtopic,
+                                      });
+                                    }}
                                   >
                                     <Youtube
                                       className="text-red-500 inline-block"
@@ -628,11 +635,23 @@ export const CSV_TABLE_UI = ({ csvData }) => {
                                       <div className="flex items-center gap-3">
                                         {d._links.map((link, idx) =>
                                           link.includes("leetcode") ? (
-                                            <a key={idx} href={link} target="_blank">
+                                            <a key={idx} href={link} target="_blank" rel="noopener noreferrer" onClick={() => {
+                                              trackEvent("outbound_problem_click", {
+                                                platform: "leetcode",
+                                                question_id: d.id,
+                                                sheet: "DSA",
+                                              });
+                                            }}>
                                               <SiLeetcode size={18} style={{ color: "#FFA116" }} />
                                             </a>
                                           ) : link.includes("geeksforgeeks") ? (
-                                            <a key={idx} href={link} target="_blank">
+                                            <a key={idx} href={link} target="_blank" rel="noopener noreferrer" onClick={() => {
+                                              trackEvent("outbound_problem_click", {
+                                                platform: "gfg",
+                                                question_id: d.id,
+                                                sheet: "DSA",
+                                              });
+                                            }}>
                                               <SiGeeksforgeeks size={18} style={{ color: "#2F8D46" }} />
                                             </a>
                                           ) : link.includes("Video-only problem") ? (
@@ -646,7 +665,13 @@ export const CSV_TABLE_UI = ({ csvData }) => {
                                         )}
 
                                         {hasMultipleVideos && d["Video Link"] && (
-                                          <a href={d["Video Link"]} target="_blank">
+                                          <a href={d["Video Link"]} target="_blank" rel="noopener noreferrer" onClick={() => {
+                                            trackEvent("youtube_video_click", {
+                                              sheet: "DSA",
+                                              topic: mainTopic["Main Topic"],
+                                              subtopic: sub.Subtopic,
+                                            });
+                                          }}>
                                             <Youtube className="text-red-500" size={18} />
                                           </a>
                                         )}
