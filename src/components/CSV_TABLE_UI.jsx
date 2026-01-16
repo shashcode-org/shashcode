@@ -11,6 +11,7 @@ import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { motion, AnimatePresence } from "framer-motion";
 import { SiLeetcode, SiGeeksforgeeks } from "react-icons/si";
+import { trackEvent } from "@/utils/analytics";
 
 const QUESTION_STORAGE_KEY = "questionProgress";
 const SUBTOPIC_STORAGE_KEY = "subtopicProgress";
@@ -114,6 +115,13 @@ export const CSV_TABLE_UI = ({ csvData }) => {
     );
 
     if (!ok) return;
+
+    trackEvent("progress_reset", {
+      sheet: "DSA",
+    });
+    Object.keys(localStorage)
+      .filter(k => k.startsWith("g4_"))
+      .forEach(k => localStorage.removeItem(k));
 
     localStorage.removeItem(QUESTION_STORAGE_KEY);
     localStorage.removeItem(SUBTOPIC_STORAGE_KEY);
@@ -292,17 +300,17 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 
       {/* SEARCH */}
       <div className="relative mb-6">
-  <input
-    className="p-3 w-full rounded-xl
+        <input
+          className="p-3 w-full rounded-xl
                bg-card text-foreground
                border border-border
                placeholder:text-muted-foreground
                focus:outline-none focus:ring-2 focus:ring-primary/40"
-    placeholder="Search topics or questions..."
-    value={searchQuery}
-    onChange={(e) => setSearchQuery(e.target.value)}
-  />
-</div>
+          placeholder="Search topics or questions..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+      </div>
 
 
       {/* OVERALL SUBTOPIC PROGRESS (LIKE LAST_MINUTE_DSA) */}
@@ -472,6 +480,22 @@ export const CSV_TABLE_UI = ({ csvData }) => {
                       const isSubtopicAutoCompleted = totalQuestions > 0 && solvedCount === totalQuestions;
                       const isSubtopicManualCompleted = isSubtopicManual && subtopicProgress[subtopicId];
                       const isSubtopicCompleted = isSubtopicAutoCompleted || isSubtopicManualCompleted;
+                      const subtopicTrackKey = `g4_subtopic_completed_${subtopicId}`;
+
+                      if (
+                        isSubtopicCompleted &&
+                        typeof window !== "undefined" &&
+                        !localStorage.getItem(subtopicTrackKey)
+                      ) {
+                        trackEvent("subtopic_completed", {
+                          sheet: "DSA",
+                          main_topic: mainTopic["Main Topic"],
+                          subtopic: sub.Subtopic,
+                        });
+
+                        localStorage.setItem(subtopicTrackKey, "true");
+                      }
+
                       return (
                         <div key={subIndex}>
                           {/* SUBTOPIC HEADER */}
@@ -636,6 +660,21 @@ export const CSV_TABLE_UI = ({ csvData }) => {
                                           e.stopPropagation();
                                           const updated = toggleQuestionProgress(questionId);
                                           setQuestionProgress(updated);
+                                          // GA4 tracking (question solved / unsolved)
+                                          if (!isSolved) {
+                                            trackEvent("question_marked_solved", {
+                                              question_id: questionId,
+                                              sheet: "DSA",
+                                            });
+                                          }
+
+                                          // fire once: progress feature used
+                                          if (!localStorage.getItem("g4_used_progress")) {
+                                            trackEvent("progress_feature_used", {
+                                              sheet: "DSA",
+                                            });
+                                            localStorage.setItem("g4_used_progress", "true");
+                                          }
                                         }}
                                         title="Mark as solved"
                                         className={`

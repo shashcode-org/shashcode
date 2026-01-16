@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import AnimatedElement from "./AnimatedElement";
+import { trackEvent } from "@/utils/analytics";
 
 const Navbar = () => {
   const [isDark, setIsDark] = useState(
@@ -45,6 +46,16 @@ const Navbar = () => {
     root.classList.toggle("dark");
     localStorage.setItem("theme", nextIsDark ? "dark" : "light");
     setIsDark(nextIsDark);
+    // 🔹 GA4: track explicit dark mode usage (once per user)
+    if (
+      nextIsDark &&
+      !localStorage.getItem("g4_dark_mode_used")
+    ) {
+      trackEvent("dark_mode_enabled", {
+        source: "user_toggle",
+      });
+      localStorage.setItem("g4_dark_mode_used", "true");
+    }
   };
 
   return (
