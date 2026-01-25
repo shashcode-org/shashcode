@@ -230,3 +230,18 @@
     animation-delay: 500ms;
   }
 }
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft 0.4s ease-out forwards;
+}

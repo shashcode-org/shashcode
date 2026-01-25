@@ -14,6 +14,8 @@ import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 import "./App.css";
+import IndependenceToast from "@/components/RepublicToast";
+
 const queryClient = new QueryClient();
 
 const App = () => {
@@ -24,6 +26,8 @@ const App = () => {
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      {/* 🇮🇳 Republic Day toast (temporary) */}
+        <IndependenceToast />
       <BrowserRouter>
         <ScrollToTop />
         <Routes>
