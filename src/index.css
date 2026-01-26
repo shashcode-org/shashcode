@@ -106,14 +106,14 @@
     z-index: 0;
     overflow: hidden;
   }
-  
+
   .hero-gradient::before {
     content: "";
     position: absolute;
     inset: 0;
     z-index: 0;
   }
-  
+
   .dark .hero-gradient::before {
     background:
       radial-gradient(circle at 70% 45%,
@@ -229,19 +229,4 @@
   .animate-delay-500 {
     animation-delay: 500ms;
   }
-}
-
-@keyframes slideInLeft {
-  from {
-    transform: translateX(-120%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-.animate-slideInLeft {
-  animation: slideInLeft 0.4s ease-out forwards;
 }
