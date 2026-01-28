@@ -1,0 +1,160 @@
+﻿index,questionNo,title,difficulty,acceptance,link,youtubeLink
+1,268',Missing Number',Easy',71.2%',https://leetcode.com/problems/missing-number',https://youtu.be/-BtU_c-mm2o?si=uUHeTVXvKG5mOvEE
+2,287',Find the Duplicate Number',Medium',63.7%',https://leetcode.com/problems/find-the-duplicate-number',https://youtu.be/hCIdhv7-5Ms?si=eukm9ipB5cve9tgu
+3,33',Search in Rotated Sorted Array',Medium',43.8%',https://leetcode.com/problems/search-in-rotated-sorted-array',TBD
+4,153',Find Minimum in Rotated Sorted Array',Medium',53.5%',https://leetcode.com/problems/find-minimum-in-rotated-sorted-array',TBD
+5,154',Find Minimum in Rotated Sorted Array II',Hard',44.5%',https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii',TBD
+6,1095',Find in Mountain Array',Hard',40.9%',https://leetcode.com/problems/find-in-mountain-array',TBD
+7,3005',Count Elements With Maximum Frequency',Easy',79.9%',https://leetcode.com/problems/count-elements-with-maximum-frequency',https://youtu.be/vK3pKC2jxcE?si=HXuRntQ_cOEJxwon
+8,169',Majority Element',Easy',66.0%',https://leetcode.com/problems/majority-element',TBD
+9,1',Two Sum',Easy',56.7%',https://leetcode.com/problems/two-sum',TBD
+10,15',3Sum',Medium',38.2%',https://leetcode.com/problems/3sum',TBD
+11,1818',Minimum Absolute Sum Difference',Medium',32.0%',https://leetcode.com/problems/minimum-absolute-sum-difference',TBD
+12,242',Valid Anagram',Easy',67.5%',https://leetcode.com/problems/valid-anagram',TBD
+13,179',Largest Number',Medium',42.2%',https://leetcode.com/problems/largest-number',https://youtu.be/x0pc-z2BxPM?si=x3198GloXbfo1HDU
+14,75',Sort Colors',Medium',68.8%',https://leetcode.com/problems/sort-colors',https://youtu.be/G4LWBrda_H4?si=rNl2x52ra_sUVy4C
+15,1636',Sort Array by Increasing Frequency',Easy',80.6%',https://leetcode.com/problems/sort-array-by-increasing-frequency',https://youtu.be/6ttg8_eROpY?si=ETWmxUG-5v-b_PNl
+16,215',Kth Largest Element in an Array',Medium',68.6%',https://leetcode.com/problems/kth-largest-element-in-an-array',https://youtu.be/wkTsKXPRjSk?si=tbL6SRgUenRpVpnX
+17,945',Minimum Increment to Make Array Unique',Medium',60.5%',https://leetcode.com/problems/minimum-increment-to-make-array-unique',https://youtu.be/-3-PHFYCTcA?si=8Va_VE8EPEBELWLN
+18,3009',Maximum Number of Intersections on the Chart',Hard',45.0%',https://leetcode.com/problems/maximum-number-of-intersections-on-the-chart',TBD
+19,330',Patching Array',Hard',54.0%',https://leetcode.com/problems/patching-array',https://youtu.be/Spj4Vz3ZK2A?si=nGQFvdZdQ0aS05ef
+20,1509',Minimum Difference Between Largest and Smallest Value in Three Moves',Medium',59.2%',https://leetcode.com/problems/minimum-difference-between-largest-and-smallest-value-in-three-moves',https://youtu.be/3ggt-iX4cyM?si=lCyLyW61lc0rVghK
+21,1701',Average Waiting Time',Medium',73.1%',https://leetcode.com/problems/average-waiting-time',https://youtu.be/xYA36kE32d8?si=bH-6Tcq1yL1SX82z
+22,1497',Check If Array Pairs Are Divisible by k',Medium',46.2%',https://leetcode.com/problems/check-if-array-pairs-are-divisible-by-k',https://youtu.be/wZbJJygkRBs?si=QAfMlasvW99B4zAW
+23,670',Maximum Swap',Medium',51.9%',https://leetcode.com/problems/maximum-swap',https://youtu.be/UwqnSOKvwVk?si=BQYidvi9LI2GEcFM
+24,1854',Maximum Population Year',Easy',63.3%',https://leetcode.com/problems/maximum-population-year',TBD
+25,1094',Car Pooling',Medium',56.1%',https://leetcode.com/problems/car-pooling',TBD
+26,253',Meeting Rooms II',Medium',52.4%',https://leetcode.com/problems/meeting-rooms-ii',TBD
+27,731',My Calendar II',Medium',62.6%',https://leetcode.com/problems/my-calendar-ii',https://youtu.be/TbHCvF4GOVE?si=r_kz2LsjThmkH9CX
+28,452',Minimum Number of Arrows to Burst Balloons',Medium',61.0%',https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons',TBD
+29,57',Insert Interval',Medium',44.5%',https://leetcode.com/problems/insert-interval',https://youtu.be/BCZ_9clRkxo?si=Gjx2f5Amy8FIzwZQ
+30,252',Meeting Rooms',Easy',59.2%',https://leetcode.com/problems/meeting-rooms',TBD
+31,729',My Calendar I',Medium',58.2%',https://leetcode.com/problems/my-calendar-i',https://youtu.be/5ZIHy_jTJOo?si=xLPYqVGSquBRpzjR
+32,1353',Maximum Number of Events That Can Be Attended',Medium',38.8%',https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended',TBD
+33,1326',Minimum Number of Taps to Open to Water a Garden',Hard',50.8%',https://leetcode.com/problems/minimum-number-of-taps-to-open-to-water-a-garden',TBD
+34,56',Merge Intervals',Medium',50.7%',https://leetcode.com/problems/merge-intervals',TBD
+35,1156',Swap For Longest Repeated Character Substring',Medium',43.9%',https://leetcode.com/problems/swap-for-longest-repeated-character-substring',https://youtu.be/Vgo7tvBm8OU?si=G0Sl4MG2MLEEVllP
+36,2134',Minimum Swaps to Group All 1's Together II',Medium',65.6%',https://leetcode.com/problems/minimum-swaps-to-group-all-1s-together-ii',https://youtu.be/F55iZUb9pLc?si=QgtcUFvTDhY0Kdir
+37,523',Continuous Subarray Sum',Medium',31.1%',https://leetcode.com/problems/continuous-subarray-sum',https://youtu.be/tW4BBWF8VJk?si=uLLsOH4dW2leLR5T
+38,567',Permutation in String',Medium',48.1%',https://leetcode.com/problems/permutation-in-string',https://youtu.be/3QbafTQaBQk?si=DvRhdUGXGPMQX9gY
+39,152',Maximum Product Subarray',Medium',35.7%',https://leetcode.com/problems/maximum-product-subarray',TBD
+40,930',Binary Subarrays With Sum',Medium',67.7%',https://leetcode.com/problems/binary-subarrays-with-sum',https://youtu.be/w_lNKXAEWdM?si=eZ_9NtVyjif_5u54
+41,2958',Length of Longest Subarray With at Most K Frequency',Medium',56.3%',https://leetcode.com/problems/length-of-longest-subarray-with-at-most-k-frequency',https://youtu.be/M0bKB44JNIQ?si=xeIz85Vkb71Bbvap
+42,2962',Count Subarrays Where Max Element Appears at Least K Times',Medium',62.4%',https://leetcode.com/problems/count-subarrays-where-max-element-appears-at-least-k-times',https://youtu.be/a7-7DIwh7dU?si=s99h0gBhlT9YhbM0
+43,974',Subarray Sums Divisible by K',Medium',55.9%',https://leetcode.com/problems/subarray-sums-divisible-by-k',https://youtu.be/a_k29lPEEjk?si=WA1YMl6uOEXCi-nx
+44,2762',Continuous Subarrays',Medium',57.9%',https://leetcode.com/problems/continuous-subarrays',https://youtu.be/GREPFkjtTFw?si=UjUOeyCiTMKSnvk1
+45,409',Longest Palindrome',Easy',55.8%',https://leetcode.com/problems/longest-palindrome',https://youtu.be/Rbf3StOcRo0?si=oXEJWk-T9_xuAzga
+46,2514',Count Anagrams',Hard',36.8%',https://leetcode.com/problems/count-anagrams',TBD
+47,205',Isomorphic Strings',Easy',47.7%',https://leetcode.com/problems/isomorphic-strings',https://youtu.be/TKGEUoVwdOk?si=TabqW4YAjib8khtw
+48,1684',Count the Number of Consistent Strings',Easy',88.4%',https://leetcode.com/problems/count-the-number-of-consistent-strings',https://youtu.be/aAF3BtUYuYY?si=9qTrDLZp2QU21x63
+49,1942',The Number of the Smallest Unoccupied Chair',Medium',60.4%',https://leetcode.com/problems/the-number-of-the-smallest-unoccupied-chair',https://youtu.be/FVysOn0hdww?si=2SmPSJir3NgCnDzj
+50,786',K-th Smallest Prime Fraction',Medium',68.9%',https://leetcode.com/problems/k-th-smallest-prime-fraction',https://youtu.be/VLIHXF4DhTU?si=czHnA2CwOanKHK4F
+51,502',IPO',Hard',53.3%',https://leetcode.com/problems/ipo',https://youtu.be/sdCvHi2i03E?si=90FylQerXNN06WEy
+52,826',Most Profit Assigning Work',Medium',56.1%',https://leetcode.com/problems/most-profit-assigning-work',https://youtu.be/dvQazppkDaY?si=CvKflNiipyU4tL4_
+53,2530',Maximal Score After Applying K Operations',Medium',64.0%',https://leetcode.com/problems/maximal-score-after-applying-k-operations',https://youtu.be/kHyka5f-BUE?si=rJ1bLaI2qI4B0X1C
+54,1508',Range Sum of Sorted Subarray Sums',Medium',63.1%',https://leetcode.com/problems/range-sum-of-sorted-subarray-sums',https://youtu.be/ZBNKXytHGew?si=Iu5DyxlYTpb5Hi-w
+55,506',Relative Ranks',Easy',74.1%',https://leetcode.com/problems/relative-ranks',https://youtu.be/-k6MIPmGzKA?si=pzizfk0yJSceFC7O
+56,2486',Append Characters to String to Make Subsequence',Medium',73.0%',https://leetcode.com/problems/append-characters-to-string-to-make-subsequence',https://youtu.be/JmTTPi7CJGs?si=wG6LSIi2jMM5SH6A
+57,1717',Maximum Score From Removing Substrings',Medium',66.6%',https://leetcode.com/problems/maximum-score-from-removing-substrings',https://youtu.be/GWURaMX2AZY?si=pAvFPnJPcIDlb4OO
+58,564',Find the Closest Palindrome',Hard',31.8%',https://leetcode.com/problems/find-the-closest-palindrome',https://youtu.be/tF9VhkSDaSI?si=MefcdbBNvDJfidQC
+59,1945',Sum of Digits of String After Convert',Easy',74.8%',https://leetcode.com/problems/sum-of-digits-of-string-after-convert',https://youtu.be/IF6JC0gwD_w?si=qUNDDg4q6Wl66rmO
+60,1813',Sentence Similarity III',Medium',48.5%',https://leetcode.com/problems/sentence-similarity-iii',https://youtu.be/CMds56X30-I?si=spqCp4k92ltJU7du
+61,1545',Find Kth Bit in Nth Binary String',Medium',70.2%',https://leetcode.com/problems/find-kth-bit-in-nth-binary-string',https://youtu.be/mfUWrC8ULfM?si=5xNcH4CD8eOXe2Qd
+62,1593',Split a String Into the Max Number of Unique Substrings',Medium',68.5%',https://leetcode.com/problems/split-a-string-into-the-max-number-of-unique-substrings',https://youtu.be/pWLKzsv1X4Q?si=ahYeeWFDRBGoHDnP
+63,1106',Parsing A Boolean Expression',Hard',69.8%',https://leetcode.com/problems/parsing-a-boolean-expression',https://youtu.be/7MODP3hx3yw?si=9ipvs0Lr6Fz4itLe
+64,42',Trapping Rain Water',Hard',66.4%',https://leetcode.com/problems/trapping-rain-water',https://youtu.be/pzmoYG6Y3Xs?si=sIQrRJoj1EsgxIn1
+65,2109',Adding Spaces to a String',Medium',71.7%',https://leetcode.com/problems/adding-spaces-to-a-string',https://youtu.be/8xDOICtqtx4?si=OS3PCyFkDXBECyhW
+66,2337',Move Pieces to Obtain a String',Medium',56.8%',https://leetcode.com/problems/move-pieces-to-obtain-a-string',https://youtu.be/vo7u7Lzx7VE?si=DIe-GAYp36Xm0_4i
+67,78',Subsets',Medium',81.8%',https://leetcode.com/problems/subsets',https://youtu.be/otFWTk-9b7g?si=fcV88X_ununRIR-f
+68,131',Palindrome Partitioning',Medium',73.4%',https://leetcode.com/problems/palindrome-partitioning',https://youtu.be/dxFBNqt9_2o?si=lLV-uZFE5r_iFu_G
+69,2597',The Number of Beautiful Subsets',Medium',50.9%',https://leetcode.com/problems/the-number-of-beautiful-subsets',https://youtu.be/INfk20gPu6Q?si=jwglthcpFGfpQc5n
+70,921',Minimum Add to Make Parentheses Valid',Medium',74.5%',https://leetcode.com/problems/minimum-add-to-make-parentheses-valid',https://youtu.be/BNFBv1KtcDM?si=HkARh5VID_4Yammo
+71,85',Maximal Rectangle',Hard',55.5%',https://leetcode.com/problems/maximal-rectangle',https://youtu.be/DPkDmhCyyuc?si=c1bsoJtKElCaugzz
+72,1614',Maximum Nesting Depth of the Parentheses',Easy',84.7%',https://leetcode.com/problems/maximum-nesting-depth-of-the-parentheses',https://youtu.be/VGloQtRnqqk?si=o8N6zuNyC9qhA52e
+73,1700',Number of Students Unable to Eat Lunch',Easy',79.1%',https://leetcode.com/problems/number-of-students-unable-to-eat-lunch',https://youtu.be/vlt2S8xb5vk?si=N7_KxJPXwUlWpTXh
+74,402',Remove K Digits',Medium',36.0%',https://leetcode.com/problems/remove-k-digits',https://youtu.be/iFdNSe26X3I?si=x90Qv1Kqd2-lRrcb
+75,2751',Robot Collisions',Hard',56.1%',https://leetcode.com/problems/robot-collisions',https://youtu.be/o_-yTmv_eCI?si=KkhLjeVgRMBNYbwu
+76,962',Maximum Width Ramp',Medium',55.8%',https://leetcode.com/problems/maximum-width-ramp',https://youtu.be/WqomLDmN424?si=Svma465YH9ImssPW
+77,1823',Find the Winner of the Circular Game',Medium',82.2%',https://leetcode.com/problems/find-the-winner-of-the-circular-game',https://youtu.be/2dN4ktn6D1k?si=d5P9aMM4airTi0a2
+78,273',Integer to English Words',Hard',34.7%',https://leetcode.com/problems/integer-to-english-words',https://youtu.be/TasoTs-9Nzo?si=5I3mav7wnO9ITq4U
+79,241',Different Ways to Add Parentheses',Medium',72.9%',https://leetcode.com/problems/different-ways-to-add-parentheses',https://youtu.be/0titnH6hL5A?si=KwjB9PoxzNI_REAA
+80,2044',Count Number of Maximum Bitwise-OR Subsets',Medium',89.6%',https://leetcode.com/problems/count-number-of-maximum-bitwise-or-subsets',https://youtu.be/Zp0-h6Rw3Xs?si=3shyfDQpYsNfnQiJ
+81,2707',Extra Characters in a String',Medium',57.2%',https://leetcode.com/problems/extra-characters-in-a-string',https://youtu.be/oCjsbtVZAlg?si=4Im2J3jHvOzINilz
+82,2220',Minimum Bit Flips to Convert Number',Easy',87.7%',https://leetcode.com/problems/minimum-bit-flips-to-convert-number',https://youtu.be/PkhxhYUxMjM?si=x34UtvEO8vLUkCT5
+83,1518',Water Bottles',Easy',72.6%',https://leetcode.com/problems/water-bottles',https://youtu.be/EVaioZKh7dI?si=s_wyW_2oj-q7c99S
+84,1395',Count Number of Teams',Medium',70.1%',https://leetcode.com/problems/count-number-of-teams',https://youtu.be/fsqo6zjFtf0?si=MCA6rOunsSf6iGGP
+85,1894',Find the Student that Will Replace the Chalk',Medium',53.2%',https://leetcode.com/problems/find-the-student-that-will-replace-the-chalk',https://youtu.be/oPvdV0xf08k?si=0cC1P3ooLw5InV92
+86,2028',Find Missing Observations',Medium',57.4%',https://leetcode.com/problems/find-missing-observations',https://youtu.be/eOw4P-aguvs?si=CxKZtAveKmGOuJDK
+87,2807',Insert Greatest Common Divisors in Linked List',Medium',91.4%',https://leetcode.com/problems/insert-greatest-common-divisors-in-linked-list',https://youtu.be/tafxWyr8KYQ?si=g0WZmi2zg1RRM669
+88,1171',Remove Zero Sum Consecutive Nodes from Linked List',Medium',53.0%',https://leetcode.com/problems/remove-zero-sum-consecutive-nodes-from-linked-list',https://youtu.be/TKhj7o_bRVE?si=nOa6Ig2LCQ_plz_y
+89,1669',Merge In Between Linked Lists',Medium',82.8%',https://leetcode.com/problems/merge-in-between-linked-lists',https://youtu.be/MfwJyOTPtks?si=L64psFoAXFuYNLtX
+90,206',Reverse Linked List',Easy',80.0%',https://leetcode.com/problems/reverse-linked-list',https://youtu.be/8cSRFGYrYb0?si=RLNhLGa1QGK6bzec
+91,92',Reverse Linked List II',Medium',50.7%',https://leetcode.com/problems/reverse-linked-list-ii',TBD
+92,19',Remove Nth Node From End of List',Medium',50.5%',https://leetcode.com/problems/remove-nth-node-from-end-of-list',https://youtu.be/cDT6EkBhn_0?si=MbJn7d8ex93DDp97
+93,2816',Double a Number Represented as a Linked List',Medium',61.2%',https://leetcode.com/problems/double-a-number-represented-as-a-linked-list',https://youtu.be/YVqrwZKvj5o?si=5VoYejXrRhD0cWMH
+94,1367',Linked List in Binary Tree',Medium',51.9%',https://leetcode.com/problems/linked-list-in-binary-tree',https://youtu.be/k6IS-AAZVwQ?si=yHcjVQKHw7FkoLNP
+95,54',Spiral Matrix',Medium',55.6%',https://leetcode.com/problems/spiral-matrix',TBD
+96,59',Spiral Matrix II',Medium',74.4%',https://leetcode.com/problems/spiral-matrix-ii',TBD
+97,885',Spiral Matrix III',Medium',84.6%',https://leetcode.com/problems/spiral-matrix-iii',https://youtu.be/f5m5JdTsL3Y?si=Dl3DdJzRDYxPuKKN
+98,2326',Spiral Matrix IV',Medium',82.3%',https://leetcode.com/problems/spiral-matrix-iv',https://youtu.be/L7ZAhNHxynE?si=hVCFt0njDStRc5Vk
+99,840',Magic Squares In Grid',Medium',51.6%',https://leetcode.com/problems/magic-squares-in-grid',https://youtu.be/LHqrUs_yZWY?si=pOPRMKe9RNDsjq6s
+100,2416',Sum of Prefix Scores of Strings',Hard',60.8%',https://leetcode.com/problems/sum-of-prefix-scores-of-strings',https://youtu.be/aq03P5fAFYY?si=g6ryzbWojmVg-rMH
+101,648',Replace Words',Medium',68.6%',https://leetcode.com/problems/replace-words',https://youtu.be/9ryPEEudxbo?si=OdaMyqCKy0nWHQzZ
+102,79',Word Search',Medium',46.5%',https://leetcode.com/problems/word-search',https://youtu.be/HBboUqC-rZ0?si=QQ3Uivd7nXN2yUJV
+103,200',Number of Islands',Medium',63.5%',https://leetcode.com/problems/number-of-islands',https://youtu.be/mwsuv-S1biw?si=HiP1NNvwTTCi7t1d
+104,1219',Path with Maximum Gold',Medium',68.2%',https://leetcode.com/problems/path-with-maximum-gold',https://youtu.be/35TyXHK9TGY?si=qeECJKD3Ir8ba-I7
+105,1791',Find Center of Star Graph',Easy',86.7%',https://leetcode.com/problems/find-center-of-star-graph',https://youtu.be/bEzD_V6Uhss?si=LiAM6N8YoCrGQn5E
+106,1579',Remove Max Number of Edges to Keep Graph Fully Traversable',Hard',70.3%',https://leetcode.com/problems/remove-max-number-of-edges-to-keep-graph-fully-traversable',https://youtu.be/IaOFnmCTRJ8?si=HJbBqkSDa5pC1yHG
+107,959',Regions Cut By Slashes',Medium',77.6%',https://leetcode.com/problems/regions-cut-by-slashes',https://youtu.be/LBwIhde7pvc?si=O-MyTRMud9XcRk3H
+108,2045',Second Minimum Time to Reach Destination',Hard',62.4%',https://leetcode.com/problems/second-minimum-time-to-reach-destination',https://youtu.be/vzaCELcnIBg?si=P1rqy9iIju510lCF
+109,1514',Path with Maximum Probability',Medium',65.4%',https://leetcode.com/problems/path-with-maximum-probability',https://youtu.be/LpsYzLleW1E?si=nutCbCXIrD3yTnHu
+110,1905',Count Sub Islands',Medium',72.9%',https://leetcode.com/problems/count-sub-islands',https://youtu.be/eQAEwsct794?si=0alzL93yfsOKIEMh
+111,3014',Minimum Number of Pushes to Type Word I',Easy',66.7%',https://leetcode.com/problems/minimum-number-of-pushes-to-type-word-i',TBD
+112,3016',Minimum Number of Pushes to Type Word II',Medium',79.9%',https://leetcode.com/problems/minimum-number-of-pushes-to-type-word-ii',https://youtu.be/j2zyVaWqF20?si=crc-J6QDKfIu9KPW
+113,948',Bag of Tokens',Medium',59.4%',https://leetcode.com/problems/bag-of-tokens',https://youtu.be/XIgqe-9IRyk?si=x8S33OIhJPekp1D6
+114,881',Boats to Save People',Medium',61.1%',https://leetcode.com/problems/boats-to-save-people',https://youtu.be/buHW-0IN184?si=mNi3lCALhK6o9QmW
+115,621',Task Scheduler',Medium',62.4%',https://leetcode.com/problems/task-scheduler',https://youtu.be/it-tqUPacgM?si=QTE-DPJGvMY7wS0o
+116,988',Smallest String Starting From Leaf',Medium',61.0%',https://leetcode.com/problems/smallest-string-starting-from-leaf',https://youtu.be/VHj0FDdm9nQ?si=2RwLOoGNuucbI1PP
+117,404',Sum of Left Leaves',Easy',62.2%',https://leetcode.com/problems/sum-of-left-leaves',https://youtu.be/RGDsjGz5MGk?si=UjFQ-L1yvGvOgISY
+118,623',Add One Row to Tree',Medium',64.1%',https://leetcode.com/problems/add-one-row-to-tree',https://youtu.be/I5wBIENHt44?si=T9OBAXASv6IIyOYi
+119,2196',Create Binary Tree From Descriptions',Medium',81.7%',https://leetcode.com/problems/create-binary-tree-from-descriptions',https://youtu.be/HMAc3Smbbwo?si=U8jqkyEPpK38v4OF
+120,1110',Delete Nodes And Return Forest',Medium',72.4%',https://leetcode.com/problems/delete-nodes-and-return-forest',https://youtu.be/LxIBAoP21LE?si=NanUPttYWTRxpU6m
+121,1331',Rank Transform of an Array',Easy',70.8%',https://leetcode.com/problems/rank-transform-of-an-array',https://youtu.be/4N2uWBukf9c?si=fYsskdq4MYUK_eyf
+122,100',Same Tree',Easy',66.3%',https://leetcode.com/problems/same-tree',https://youtu.be/t-zZ3FxqmAk?si=c03iyobdItHLSn78
+123,513',Find Bottom Left Tree Value',Medium',72.1%',https://leetcode.com/problems/find-bottom-left-tree-value',https://youtu.be/2y-a5vPqnNU?si=YKJ6IImQDzY5V8cG
+124,979',Distribute Coins in Binary Tree',Medium',77.2%',https://leetcode.com/problems/distribute-coins-in-binary-tree',https://youtu.be/fW5FQFd9oNw?si=Jp_NJ8L0ItlY2ZlB
+125,114',Flatten Binary Tree to Linked List',Medium',69.8%',https://leetcode.com/problems/flatten-binary-tree-to-linked-list',TBD
+126,2385',Amount of Time for Binary Tree to Be Infected',Medium',64.9%',https://leetcode.com/problems/amount-of-time-for-binary-tree-to-be-infected',TBD
+127,1598',Crawler Log Folder',Easy',71.6%',https://leetcode.com/problems/crawler-log-folder',https://youtu.be/KeX9QqRoXiU?si=RIwWd-qdJeiK1KFg
+128,238',Product of Array Except Self',Medium',68.4%',https://leetcode.com/problems/product-of-array-except-self',TBD
+129,2370',Longest Ideal Subsequence',Medium',46.7%',https://leetcode.com/problems/longest-ideal-subsequence',TBD
+130,1105',Filling Bookcase Shelves',Medium',68.6%',https://leetcode.com/problems/filling-bookcase-shelves',https://youtu.be/PvO1TCF_eSg?si=ZdrbHQNbc9G-pz9T
+131,1653',Minimum Deletions to Make String Balanced',Medium',65.6%',https://leetcode.com/problems/minimum-deletions-to-make-string-balanced',https://youtu.be/dkaEBlvjxA8?si=nwL3zqmH9IdNCkv9
+132,121',Best Time to Buy and Sell Stock',Easy',56.1%',https://leetcode.com/problems/best-time-to-buy-and-sell-stock',TBD
+133,122',Best Time to Buy and Sell Stock II',Medium',70.4%',https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii',TBD
+134,123',Best Time to Buy and Sell Stock III',Hard',52.8%',https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii',TBD
+135,188',Best Time to Buy and Sell Stock IV',Hard',49.0%',https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv',TBD
+136,48',Rotate Image',Medium',79.0%',https://leetcode.com/problems/rotate-image',TBD
+137,1710',Maximum Units on a Truck',Easy',74.6%',https://leetcode.com/problems/maximum-units-on-a-truck',TBD
+138,31',Next Permutation',Medium',44.4%',https://leetcode.com/problems/next-permutation',TBD
+139,4',Median of Two Sorted Arrays',Hard',45.4%',https://leetcode.com/problems/median-of-two-sorted-arrays',https://youtu.be/2BOgAlmyTkc?si=TTiffSiNptmXj_XP
+140,1475',Final Prices With a Special Discount in a Shop',Easy',83.8%',https://leetcode.com/problems/final-prices-with-a-special-discount-in-a-shop',https://youtu.be/5LehElSnmKM?si=OraHvkhqf2DDzfE7
+141,146',LRU Cache',Medium',46.5%',https://leetcode.com/problems/lru-cache',TBD
+142,236',Lowest Common Ancestor of a Binary Tree',Medium',68.3%',https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree',https://youtu.be/m9NKcTvrhSc?si=d1jWmxj7sPoj8xmQ
+143,103',Binary Tree Zigzag Level Order Traversal',Medium',62.8%',https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal',https://youtu.be/9VLBM60-AVs?si=svnL49LE3MK_mSOe
+144,700',Search in a Binary Search Tree',Easy',82.3%',https://leetcode.com/problems/search-in-a-binary-search-tree',TBD
+145,235',Lowest Common Ancestor of a Binary Search Tree',Medium',69.7%',https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree',https://youtu.be/TytL24jNZ6k?si=5Ek4le3T_wDmY7e5
+146,230',Kth Smallest Element in a BST',Medium',76.2%',https://leetcode.com/problems/kth-smallest-element-in-a-bst',https://youtu.be/RM8k2pr6V38?si=YOVs7fCd3-opJTwu
+147,141',Linked List Cycle',Easy',53.6%',https://leetcode.com/problems/linked-list-cycle',https://youtu.be/WqU5ADNm3sE?si=KGEh_PvBP6tDOBqn
+148,2360',Longest Cycle in a Graph',Hard',50.3%',https://leetcode.com/problems/longest-cycle-in-a-graph',TBD
+149,494',Target Sum',Medium',51.6%',https://leetcode.com/problems/target-sum',TBD
+150,322',Coin Change',Medium',47.6%',https://leetcode.com/problems/coin-change',TBD
+151,208',Implement Trie (Prefix Tree)',Medium',68.9%',https://leetcode.com/problems/implement-trie-prefix-tree',TBD
+152,745',Prefix and Suffix Search',Hard',40.7%',https://leetcode.com/problems/prefix-and-suffix-search',TBD
+153,11',Container With Most Water',Medium',59.2%',https://leetcode.com/problems/container-with-most-water',https://www.youtube.com/watch?v=Nw_XsUEXco0
+154,2444',Count Subarrays With Fixed Bounds',Hard',69.3%',https://leetcode.com/problems/count-subarrays-with-fixed-bounds',https://youtu.be/7l_GQIUGFQU?si=QE817OYhgUEiZ4s7
+155,2799',Count Complete Subarrays in an Array',Medium',75.9%',https://leetcode.com/problems/count-complete-subarrays-in-an-array',TBD
+156,2845',Count of Interesting Subarrays',Medium',58.1%',https://leetcode.com/problems/count-of-interesting-subarrays',TBD
+157,138',Copy List with Random Pointer',Medium',62.0%',https://leetcode.com/problems/copy-list-with-random-pointer',TBD
+158,2483',Minimum Penalty for a Shop',Medium',69.0%',"https://leetcode.com/problems/minimum-penalty-for-a-shop'
+",TBD
