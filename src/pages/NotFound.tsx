@@ -19,8 +19,8 @@ const NotFound = () => {
         <div className="text-center px-4 sm:px-6 lg:px-8 max-w-md mx-auto">
           <AnimatedElement animation="fadeIn">
             <h1 className="text-6xl font-bold mb-4 text-gradient">404</h1>
-            <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
-              <p className="text-xl text-gray-600 mb-8">
+            <div className="bg-card p-8 rounded-xl shadow-lg border border-border">
+              <p className="text-xl text-muted-foreground mb-8">
                 Oops! The page you're looking for doesn't exist.
               </p>
               <Link to="/" className="btn-primary inline-flex items-center">

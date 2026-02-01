@@ -14,8 +14,27 @@ import npciLogo from "../assets/npci.webp";
 import cognizantLogo from "../assets/cognizant.webp";
 import microsoftLearnLogo from "../assets/microsoftLearn.webp";
 import hpLogo from "../assets/hpcl.webp";
+import { useEffect, useState } from "react";
+
 
 const About = () => {
+  const [isDark, setIsDark] = useState(
+    document.documentElement.classList.contains("dark")
+  );
+
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      setIsDark(document.documentElement.classList.contains("dark"));
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   const offerings = [
     {
       title: "Java + DSA Sheet",
@@ -101,18 +120,23 @@ const About = () => {
             <CardContent>
               <div className="flex flex-col md:flex-row items-start gap-8">
                 <div className="w-full md:w-1/3 flex justify-center">
-                  <img src="/logo.webp" alt="ShashCode Logo" className="w-48 h-48 object-contain" />
+                  <img
+                    src={isDark ? "/bl-logo.webp" : "/logo.webp"}
+                    alt="ShashCode Logo"
+                    className="w-48 h-48 object-contain transition-all duration-300"
+                  />
+
                 </div>
-                <div className="w-full md:w-2/3 space-y-4">
+                <div className="w-full md:w-2/3 space-y-4 text-center md:text-left">
                   {/* <h2 className="text-3xl font-bold text-primary mb-4">About ShashCode</h2> */}
-                  <p className="text-gray-600 leading-relaxed">Welcome to ShashCode!</p>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed">Welcome to ShashCode!</p>
+                  <p className="text-muted-foreground leading-relaxed">
                     ShashCode is a platform dedicated to making coding and technology education
                     accessible to everyone. It helps students and professionals master{" "}
                     <strong>Coding & Data Structures and Algorithms (DSA) in Java</strong> for
                     placements.
                   </p>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed">
                     Founded by <strong className="text-primary">Shashwat Tiwari</strong>, a software
                     engineer and content creator, ShashCode simplifies complex topics through
                     structured learning paths, coding sheets, and video tutorials.
@@ -148,7 +172,7 @@ const About = () => {
                           </span>
                         )}
                       </h3>
-                      <p className="text-gray-600">{offer.description}</p>
+                      <p className="text-muted-foreground">{offer.description}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -164,13 +188,13 @@ const About = () => {
           <Card className="p-8 bg-primary/5">
             <CardContent className="text-center space-y-6">
               <h2 className="text-3xl font-bold text-primary">Our Mission</h2>
-              <p className="text-gray-600 text-lg leading-relaxed">
+              <p className="text-muted-foreground text-lg leading-relaxed">
                 At ShashCode, we believe in <strong>learning by doing</strong>. Our goal is to
                 provide <strong>free, high-quality coding resources</strong> to help aspiring
                 developers crack top tech company interviews and build strong problem-solving
                 skills.
               </p>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed">
                 Be part of our growing community and accelerate your coding journey. Subscribe to
                 ShashCode on YouTube and explore our <strong>Java + DSA Sheet today!</strong>
               </p>
@@ -200,19 +224,19 @@ const About = () => {
                     <img
                       src={instructorImg}
                       alt="Shashwat Tiwari"
-                      className="rounded-full relative border-4 border-white shadow-xl w-48 h-48 object-cover"
+                      className="rounded-full relative border-4 border-border shadow-xl w-48 h-48 object-cover"
                     />
                   </div>
                   <h3 className="text-2xl font-bold text-primary text-center">Shashwat Tiwari</h3>
-                  <p className="text-gray-600 font-semibold text-center">
+                  <p className="text-muted-foreground font-semibold text-center">
                     Senior Engineer | Educator |
                   </p>
-                  <p className="text-gray-600 font-semibold text-center">Content Creator</p>
+                  <p className="text-muted-foreground font-semibold text-center">Content Creator</p>
                 </div>
 
                 {/* Instructor Description */}
-                <div className="w-full md:w-2/3 space-y-4">
-                  <p className="text-gray-600 leading-relaxed">
+                <div className="w-full md:w-2/3 space-y-4 text-center md:text-left">
+                  <p className="text-muted-foreground leading-relaxed">
                     <strong>Shashwat Tiwari</strong> is a{" "}
                     <strong>Senior Engineer at Samsung Research</strong>, where he specializes in
                     backend systems, microservices, and performance optimization. He is also a
@@ -221,14 +245,14 @@ const About = () => {
                     <strong>Data Structures & Algorithms (DSA)</strong>, coding interviews, and
                     software engineering placements.
                   </p>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed">
                     He brings thought-provoking <strong>YouTube channel, ShashCode</strong>, where
                     he amplifies learning for thousands through structured{" "}
                     <strong>Java + DSA sheets</strong>, coding interviews, and career guidance. His
                     approach emphasizes clarity and real-world application, helping learners build
                     industry-relevant skills.
                   </p>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed">
                     Shashwat's blend of industry experience and teaching expertise make him a
                     valuable mentor for aspiring engineers, data analysts, and software developers.
                     His commitment to empowering others through clear, step-by-step technical
@@ -264,7 +288,7 @@ const About = () => {
                     <h3 className="font-semibold">
                       Samsung Research and Development Institute India (SRI-B) – Senior Engineer
                     </h3>
-                    <p className="text-gray-600 text-sm">
+                    <p className="text-muted-foreground text-sm">
                       Backend development, system design, and performance optimization.
                     </p>
                   </div>
@@ -342,16 +366,16 @@ const About = () => {
           <Card className="p-8">
             <CardContent>
               <h2 className="text-2xl font-bold text-primary mb-6 text-center">Certifications</h2>
-              <ul className="space-y-3">
+              <ul className="space-y-3 text-center md:text-left">
                 {certifications.map((cert, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-600">{cert}</span>
+                    <span className="text-muted-foreground">{cert}</span>
                   </li>
                 ))}
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-600">
+                  <span className="text-muted-foreground">
                     Microsoft Technology Associate (JavaScript) -{" "}
                     <a
                       href="https://www.credly.com/badges/75f0920f-f3e8-4d89-a43f-dc10f47fc92b/linked_in_profile"
@@ -386,7 +410,7 @@ const About = () => {
                     ) : (
                       <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                     )}
-                    <p className="text-gray-600">{item}</p>
+                    <p className="text-muted-foreground">{item}</p>
                   </div>
                 ))}
               </div>
@@ -403,11 +427,11 @@ const About = () => {
               <h2 className="text-2xl font-bold text-primary mb-6 text-center">
                 Mentorship & Teaching
               </h2>
-              <ul className="space-y-3">
+              <ul className="space-y-3 text-center md:text-left">
                 {mentorshipPoints.map((point, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <Users className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-600">{point}</span>
+                    <span className="text-muted-foreground">{point}</span>
                   </li>
                 ))}
               </ul>
@@ -432,7 +456,7 @@ const About = () => {
                     <BookOpen className="h-5 w-5 text-primary" />
                     Programming Languages
                   </h3>
-                  <p className="text-gray-600">{programmingLanguages.join(", ")}</p>
+                  <p className="text-muted-foreground">{programmingLanguages.join(", ")}</p>
                 </div>
 
                 {/* Backend Development */}
@@ -441,7 +465,7 @@ const About = () => {
                     <BookOpen className="h-5 w-5 text-primary" />
                     Backend Development
                   </h3>
-                  <p className="text-gray-600">{backendDevelopment.join(", ")}</p>
+                  <p className="text-muted-foreground">{backendDevelopment.join(", ")}</p>
                 </div>
 
                 {/* Performance & Testing */}
@@ -450,7 +474,7 @@ const About = () => {
                     <BookOpen className="h-5 w-5 text-primary" />
                     Performance & Testing
                   </h3>
-                  <p className="text-gray-600">{performanceTesting.join(", ")}</p>
+                  <p className="text-muted-foreground">{performanceTesting.join(", ")}</p>
                 </div>
 
                 {/* Data Analysis & Visualization */}
@@ -459,7 +483,7 @@ const About = () => {
                     <BookOpen className="h-5 w-5 text-primary" />
                     Data Analysis & Visualization
                   </h3>
-                  <p className="text-gray-600">{dataAnalytics.join(", ")}</p>
+                  <p className="text-muted-foreground">{dataAnalytics.join(", ")}</p>
                 </div>
 
                 {/* Trail Content */}
@@ -468,7 +492,7 @@ const About = () => {
                     <BookOpen className="h-5 w-5 text-primary" />
                     Trail Content
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-muted-foreground">
                     Last Minute DSA: coding interviews, and career growth
                   </p>
                 </div>

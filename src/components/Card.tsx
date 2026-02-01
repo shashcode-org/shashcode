@@ -19,8 +19,8 @@ const Card = ({
   return (
     <div
       className={cn(
-        "bg-white rounded-xl overflow-hidden shadow",
-        bordered && "border border-gray-100",
+        "bg-card rounded-xl overflow-hidden shadow",
+        bordered && "border border-border",
         hover && "card-hover",
         glass && "card-glass",
         className
@@ -38,7 +38,7 @@ export const CardHeader = ({
   children: ReactNode;
   className?: string;
 }) => {
-  return <div className={cn("p-5 border-b border-gray-100", className)}>{children}</div>;
+  return <div className={cn("p-5 border-b border-border", className)}>{children}</div>;
 };
 
 export const CardTitle = ({ children, className }: { children: ReactNode; className?: string }) => {
@@ -63,7 +63,7 @@ export const CardFooter = ({
   className?: string;
 }) => {
   return (
-    <div className={cn("p-5 border-t border-gray-100 bg-gray-50/50", className)}>{children}</div>
+    <div className={cn("p-5 border-t border-border bg-muted/50", className)}>{children}</div>
   );
 };
 

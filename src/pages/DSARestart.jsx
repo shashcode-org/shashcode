@@ -2,59 +2,13 @@ import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Section from "@/components/Section";
-import DSA_RESTART from "../components/DSARestart";
+import DSA_RESTART_TABLE from "../components/DSARestart";
+import PageHero from "@/components/PageHero";
 import { dsaRestart } from "../data/dsa-restart-162";
 import { Helmet } from "react-helmet-async";
 
 const DSARestartPage = () => {
-    const AudienceToggle = () => {
-  const [open, setOpen] = useState(null);
 
-  return (
-    <div className="bg-white/60 backdrop-blur-md rounded-xl p-6 sm:p-8 shadow-sm border">
-      <div className="flex gap-4 mb-4">
-        <button
-          onClick={() => setOpen(open === "for" ? null : "for")}
-          className={`px-4 py-2 rounded-full text-sm font-medium border
-            ${open === "for"
-              ? "bg-primary text-primary-foreground border-primary"
-              : "bg-muted/60 hover:bg-accent"}`}
-        >
-          Who this is for
-        </button>
-
-        <button
-          onClick={() => setOpen(open === "notfor" ? null : "notfor")}
-          className={`px-4 py-2 rounded-full text-sm font-medium border
-            ${open === "notfor"
-              ? "bg-primary text-primary-foreground border-primary"
-              : "bg-muted/60 hover:bg-accent"}`}
-        >
-          Who this is NOT for
-        </button>
-      </div>
-
-      {open === "for" && (
-        <ul className="list-disc ml-6 text-gray-700 space-y-2">
-          <li>You have studied DSA before but feel out of practice</li>
-          <li>You are restarting after a break</li>
-          <li>You know basics but lack confidence</li>
-          <li>You want structured revision, not random problems</li>
-          <li>You are preparing for interviews again</li>
-        </ul>
-      )}
-
-      {open === "notfor" && (
-        <ul className="list-disc ml-6 text-gray-700 space-y-2">
-          <li>You are learning DSA for the first time</li>
-          <li>You don’t know arrays, recursion, or basic patterns</li>
-          <li>You want full theory explanations</li>
-          <li>You are looking for a beginner roadmap</li>
-        </ul>
-      )}
-    </div>
-  );
-};
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -68,24 +22,49 @@ const DSARestartPage = () => {
 
       <Navbar />
 
-      <div className="pt-24 flex-grow">
+      <PageHero
+        title="DSA Restart"
+        subtitle="A structured 7-week program to regain problem-solving confidence"
+      />
+
+      <div className="pt-12 flex-grow">
         <Section
           title="DSA Restart – 7 Week Challenge"
           subtitle="Structured restart • Confidence-first • Interview-oriented problem solving"
           contentClassName="mt-8"
-          gradient
         >
+
           {/* INTRO */}
           <div className="max-w-4xl mx-auto space-y-8 mb-10">
-             {/* WHO THIS IS FOR / NOT FOR */}
-            <AudienceToggle />
-            <div className="bg-white/60 backdrop-blur-md rounded-xl p-6 sm:p-8 shadow-sm border">
-              <p className="text-gray-700 leading-relaxed">
+            <div className="rounded-2xl border border-border bg-card p-6 sm:p-8">
+              <h3 className="text-base font-semibold text-foreground mb-3">
+                Built for developers restarting DSA
+              </h3>
+
+              <ul className="space-y-2 text-foreground">
+                <li>• You have studied DSA before but feel out of practice</li>
+                <li>• You want a structured, week-by-week restart</li>
+                <li>• You are preparing for interviews again</li>
+              </ul>
+
+              <p className="mt-4 text-sm text-muted-foreground">
+                New to DSA?{" "}
+                <a
+                  href="/dsa"
+                  className="text-primary font-medium hover:underline"
+                >
+                  Start with the DSA Sheet →
+                </a>
+              </p>
+            </div>
+
+            <div className="bg-card/60 backdrop-blur-md rounded-xl p-6 sm:p-8 shadow-sm border border-border">
+              <p className="text-foreground leading-relaxed">
                 DSA Restart is a structured program for people who have already studied
                 data structures and algorithms but feel out of touch, stuck, or low on confidence.
               </p>
 
-              <p className="mt-4 text-gray-700 leading-relaxed">
+              <p className="mt-4 text-foreground leading-relaxed">
                 This is not a beginner sheet and not a last-minute cram list.
                 It is designed to help you regain problem-solving flow through
                 a guided, week-by-week restart.
@@ -93,7 +72,7 @@ const DSARestartPage = () => {
             </div>
 
             {/* HOW TO USE */}
-            <div className="bg-gradient-to-br from-primary/5 via-accent/10 to-secondary/5 rounded-xl p-6 sm:p-8 border">
+            <div className="bg-gradient-to-br from-primary/5 via-accent/10 to-secondary/5 rounded-xl p-6 sm:p-8 border border-border">
               <h3 className="text-xl font-semibold mb-4">
                 How to use DSA Restart effectively
               </h3>
@@ -110,15 +89,15 @@ const DSARestartPage = () => {
                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 text-primary font-semibold flex items-center justify-center">
                       {index + 1}
                     </div>
-                    <p className="text-gray-700 leading-relaxed">{text}</p>
+                    <p className="text-foreground leading-relaxed">{text}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* INTENT */}
-            <div className="bg-white/60 backdrop-blur-md rounded-xl p-6 sm:p-8 shadow-sm border">
-              <p className="text-gray-700 leading-relaxed">
+            <div className="bg-card/60 backdrop-blur-md rounded-xl p-6 sm:p-8 shadow-sm border border-border">
+              <p className="text-foreground leading-relaxed">
                 This restart program is intentionally challenging.
                 If you are still learning core DSA concepts, start with the DSA or Java + DSA sheets first.
                 This page is meant for rebuilding confidence, not concept learning.
@@ -133,8 +112,8 @@ const DSARestartPage = () => {
           {/* SHEET */}
           <div id="dsa-restart-sheet" className="h-0 scroll-mt-32" />
 
-          <div className="mt-8 pt-8 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 shadow-lg">
-            <DSA_RESTART data={dsaRestart} />
+          <div className="mt-8 pt-8 bg-card/5 backdrop-blur-sm rounded-xl border border-border shadow-lg">
+            <DSA_RESTART_TABLE data={dsaRestart} />
           </div>
         </Section>
       </div>

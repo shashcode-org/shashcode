@@ -23,7 +23,7 @@
     --secondary-foreground: 210 40% 98%;
 
     --muted: 210 20% 94%;
-    --muted-foreground: 215 16% 47%;
+    --muted-foreground: 215 20% 35%;
 
     --accent: 191 97% 77%;
     --accent-foreground: 222 47% 11%;
@@ -67,11 +67,62 @@
   code {
     @apply font-mono;
   }
+
+  .dark {
+    --background: 222 47% 4%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 262 83% 68%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 262 83% 65%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 217 19% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 191 97% 60%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 20% 30%;
+    --input: 217 19% 22%;
+    --ring: 245 58% 61%;
+  }
 }
 
 @layer components {
   .hero-gradient {
     @apply bg-gradient-to-br from-primary/80 via-secondary/50 to-accent/30;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .hero-gradient::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .dark .hero-gradient::before {
+    background:
+      radial-gradient(circle at 70% 45%,
+        hsl(262 83% 65% / 0.25),
+        transparent 60%),
+      linear-gradient(180deg,
+        hsl(222 47% 6%) 0%,
+        hsl(222 47% 9%) 60%,
+        hsl(222 47% 11%) 100%);
   }
 
   .card-hover {
@@ -79,7 +130,7 @@
   }
 
   .btn-primary {
-    @apply bg-primary text-white px-6 py-3 rounded-lg font-semibold transition-all hover:bg-primary/90 focus:ring-2 focus:ring-primary/50 focus:outline-none;
+    @apply bg-primary text-white px-6 py-3 rounded-lg font-semibold transition-all hover:bg-primary/50;
   }
 
   .btn-secondary {
@@ -95,7 +146,7 @@
   }
 
   .navbar {
-    @apply bg-white border-b border-gray-200 py-4 px-6 sticky top-0 z-50 shadow-sm;
+    @apply bg-card border-b border-border py-4 px-6 sticky top-0 z-50 shadow-sm;
   }
 
   .navbar-link {
@@ -103,7 +154,7 @@
   }
 
   .footer {
-    @apply bg-gray-900 text-white py-12;
+    @apply bg-background text-foreground py-12 border-t border-border;
   }
 
   .input-field {
@@ -115,7 +166,13 @@
   }
 
   .card-glass {
-    @apply bg-white/80 backdrop-blur-sm border border-white/50 shadow-lg rounded-xl;
+    @apply bg-card/90 backdrop-blur-sm border rounded-xl;
+  }
+
+  .dark .card-glass {
+    box-shadow:
+      0 0 0 1px hsl(var(--border)),
+      0 12px 30px rgba(0, 0, 0, 0.6);
   }
 
   /* Scrollbar hide */
@@ -127,6 +184,29 @@
   .scrollbar-none::-webkit-scrollbar {
     display: none;
   }
+
+  /* Dark mode – outline buttons need more contrast */
+  .dark .btn-outline {
+    @apply border-primary/60 text-primary hover:bg-primary/20;
+  }
+
+  .dark .shadow-sm {
+    box-shadow: 0 0 0 1px hsl(var(--border));
+  }
+
+  .dark .shadow-md {
+    box-shadow:
+      0 0 0 1px hsl(var(--border)),
+      0 8px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  .dark .shadow-lg {
+    box-shadow:
+      0 0 0 1px hsl(var(--border)),
+      0 12px 30px rgba(0, 0, 0, 0.5);
+  }
+
+
 }
 
 @layer utilities {

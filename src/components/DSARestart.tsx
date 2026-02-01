@@ -1,4 +1,4 @@
-import { useMemo, useState, useEffect } from "react";
+import { useMemo, useState, useEffect, useRef } from "react";
 import { SiLeetcode, SiGeeksforgeeks } from "react-icons/si";
 import { Youtube } from "lucide-react";
 
@@ -17,23 +17,65 @@ const saveProgress = (ids) => {
 };
 
 const DSA_RESTART_TABLE = ({ data = [] }) => {
-  const [activeWeek, setActiveWeek] = useState("Week 1");
+  const [activeWeek, setActiveWeek] = useState(null);
   const [completed, setCompleted] = useState([]);
+  const weekRefs = useRef({});
+
 
   useEffect(() => {
     setCompleted(readProgress());
   }, []);
 
   const weeks = useMemo(() => {
-  return [...new Set(data.map(q => q.week))]
-    .filter(Boolean)
-    .sort((a, b) => {
-      const na = parseInt(a.replace("Week", "").trim(), 10);
-      const nb = parseInt(b.replace("Week", "").trim(), 10);
-      return na - nb;
-    });
-}, [data]);
+    return [...new Set(data.map(q => q.week))]
+      .filter(Boolean)
+      .sort((a, b) => {
+        const na = parseInt(a.replace("Week", "").trim(), 10);
+        const nb = parseInt(b.replace("Week", "").trim(), 10);
+        return na - nb;
+      });
+  }, [data]);
 
+  useEffect(() => {
+    if (!weeks.length || !completed.length) return;
+
+    // find first incomplete week
+    for (const week of weeks) {
+      const weekQuestions = data.filter(q => q.week === week);
+      const doneCount = weekQuestions.filter(q =>
+        completed.includes(q.id)
+      ).length;
+
+      if (doneCount < weekQuestions.length) {
+        setActiveWeek(week);
+        return;
+      }
+    }
+
+    // if all weeks are complete, stay on last week
+    setActiveWeek(weeks[weeks.length - 1]);
+  }, [weeks, completed, data]);
+
+  // FALLBACK (FIRST VISIT SAFETY NET) ✅ THIS ONE
+  useEffect(() => {
+    if (!activeWeek && weeks.length) {
+      setActiveWeek(weeks[0]);
+    }
+  }, [activeWeek, weeks]);
+
+  // 🔥 AUTO-SCROLL ACTIVE WEEK INTO VIEW (ADD THIS)
+  useEffect(() => {
+    if (!activeWeek) return;
+
+    const el = weekRefs.current[activeWeek];
+    if (el) {
+      el.scrollIntoView({
+        behavior: "smooth",
+        inline: "center",
+        block: "nearest",
+      });
+    }
+  }, [activeWeek]);
 
   const weekData = useMemo(() => {
     return data.filter((q) => q.week === activeWeek);
@@ -61,25 +103,30 @@ const DSA_RESTART_TABLE = ({ data = [] }) => {
   return (
     <div className="p-4 sm:p-6 md:p-8">
       {/* WEEK SELECTOR */}
-      <div className="sticky top-16 z-10 bg-background/80 backdrop-blur py-3 mb-6">
-        <div className="flex gap-2 overflow-x-auto">
-          {weeks.map((w) => (
-            <button
-              key={w}
-              onClick={() => setActiveWeek(w)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all border whitespace-nowrap
+      <div className="sticky top-16 z-10 bg-background/80 backdrop-blur py-2 mb-6">
+        <div className="relative">
+          <div className="flex gap-2 overflow-x-auto scrollbar-none pr-6">
+            {weeks.map((w) => (
+              <button
+                ref={el => (weekRefs.current[w] = el)}
+                key={w}
+                onClick={() => setActiveWeek(w)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all border border-border whitespace-nowrap
                 ${w === activeWeek
-                  ? "bg-primary text-primary-foreground border-primary"
-                  : "bg-muted/60 hover:bg-accent hover:text-accent-foreground"}`}
-            >
-              {w}
-            </button>
-          ))}
+                    ? "bg-primary text-primary-foreground border-primary"
+                    : "bg-muted/60 hover:bg-accent hover:text-accent-foreground"}`}
+              >
+                {w}
+              </button>
+            ))}
+          </div>
+          {/* right fade */}
+          <div className="pointer-events-none absolute top-0 right-0 h-full w-8 bg-gradient-to-l from-background to-transparent" />
         </div>
       </div>
 
       {/* WEEK SUMMARY */}
-      <div className="mb-6 rounded-xl border bg-white p-4">
+      <div className="mb-6 rounded-xl border border-border bg-card p-4">
         <div className="flex items-center justify-between mb-2">
           <span className="text-sm font-medium">
             {activeWeek} Progress: {weekCompleted} / {weekData.length}
@@ -102,8 +149,8 @@ const DSA_RESTART_TABLE = ({ data = [] }) => {
           return (
             <div
               key={q.id}
-              className={`group flex items-start gap-3 p-4 rounded-xl border bg-white
-                ${isDone ? "bg-green-50 border-green-300 opacity-90" : ""}
+              className={`group flex items-start gap-3 p-4 rounded-xl border border-border bg-card
+                ${isDone ? "bg-green-500/10 border-green-500/30 opacity-90" : ""}
                 ${q.optional ? "opacity-80" : ""}
                 hover:-translate-y-[2px] hover:shadow-lg`}
             >
@@ -120,7 +167,7 @@ const DSA_RESTART_TABLE = ({ data = [] }) => {
                   </span>
 
                   {q.optional && (
-                    <span className="text-xs italic text-gray-400">Optional</span>
+                    <span className="text-xs italic text-muted-foreground">Optional</span>
                   )}
                 </div>
 
@@ -154,12 +201,37 @@ const DSA_RESTART_TABLE = ({ data = [] }) => {
                     <SiGeeksforgeeks size={18} color="#2F8D46" />
                   </a>
                 )}
-                <input
-                  type="checkbox"
-                  checked={isDone}
-                  onChange={() => toggleCompleted(q.id)}
-                  className="h-5 w-5 cursor-pointer accent-green-600"
-                />
+                <div
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    toggleCompleted(q.id);
+                  }}
+                  title="Mark as solved"
+                  className={`
+    h-5 w-5 rounded-md border
+    flex items-center justify-center
+    cursor-pointer
+    transition-all duration-200
+    ${isDone
+                      ? "bg-success-strong border-success-strong"
+                      : "border-border hover:border-success"}
+  `}
+                >
+                  {isDone && (
+                    <svg
+                      className="h-3 w-3 text-white"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                  )}
+                </div>
+
               </div>
             </div>
           );

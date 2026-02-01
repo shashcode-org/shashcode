@@ -46,7 +46,7 @@ const Section = ({
             )}
             {subtitle && (
               <AnimatedElement animation="fadeIn" delay="200">
-                <p className={cn("text-lg text-gray-600 max-w-3xl mx-auto", subtitleClassName)}>
+                <p className={cn("text-lg text-muted-foreground max-w-3xl mx-auto", subtitleClassName)}>
                   {subtitle}
                 </p>
               </AnimatedElement>

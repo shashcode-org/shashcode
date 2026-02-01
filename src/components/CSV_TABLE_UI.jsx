@@ -11,6 +11,7 @@ import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { motion, AnimatePresence } from "framer-motion";
 import { SiLeetcode, SiGeeksforgeeks } from "react-icons/si";
+import { trackEvent } from "@/utils/analytics";
 
 const QUESTION_STORAGE_KEY = "questionProgress";
 const SUBTOPIC_STORAGE_KEY = "subtopicProgress";
@@ -114,6 +115,13 @@ export const CSV_TABLE_UI = ({ csvData }) => {
     );
 
     if (!ok) return;
+
+    trackEvent("progress_reset", {
+      sheet: "DSA",
+    });
+    Object.keys(localStorage)
+      .filter(k => k.startsWith("g4_"))
+      .forEach(k => localStorage.removeItem(k));
 
     localStorage.removeItem(QUESTION_STORAGE_KEY);
     localStorage.removeItem(SUBTOPIC_STORAGE_KEY);
@@ -293,15 +301,20 @@ export const CSV_TABLE_UI = ({ csvData }) => {
       {/* SEARCH */}
       <div className="relative mb-6">
         <input
-          className="p-3 w-full rounded-xl border"
+          className="p-3 w-full rounded-xl
+               bg-card text-foreground
+               border border-border
+               placeholder:text-muted-foreground
+               focus:outline-none focus:ring-2 focus:ring-primary/40"
           placeholder="Search topics or questions..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
       </div>
 
+
       {/* OVERALL SUBTOPIC PROGRESS (LIKE LAST_MINUTE_DSA) */}
-      <div className="mb-6 rounded-xl border bg-white p-4">
+      <div className="mb-6 rounded-xl border bg-card p-4">
         <div className="flex items-center justify-between mb-2">
           <span className="text-sm font-medium">
             Progress: {completedSubtopics} / {totalSubtopics}
@@ -319,7 +332,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
         </div>
 
         {completedSubtopics === totalSubtopics && totalSubtopics > 0 ? (
-          <div className="mt-3 text-sm font-medium text-green-700">
+          <div className="mt-3 text-sm font-medium text-success">
             All subtopics completed. Legendary.
           </div>
         ) : (
@@ -341,7 +354,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
         <div className="flex justify-end mt-3">
           <button
             onClick={resetProgress}
-            className="text-xs font-medium text-red-600 hover:text-red-700 hover:underline"
+            className="text-xs font-medium text-destructive hover:text-destructive/90 hover:underline"
           >
             Reset progress
           </button>
@@ -361,7 +374,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
           ref={mainIndex === 0 ? firstExpandedRef : null}
           className="mb-6"
         >
-          <Card>
+          <Card className="border border-border shadow-md dark:shadow-[0_0_0_1px_hsl(var(--border))]">
             {/* HEADER */}
             {(() => {
               const allSubtopicsCompleted = mainTopic.Subtopics.every((sub) => {
@@ -467,6 +480,22 @@ export const CSV_TABLE_UI = ({ csvData }) => {
                       const isSubtopicAutoCompleted = totalQuestions > 0 && solvedCount === totalQuestions;
                       const isSubtopicManualCompleted = isSubtopicManual && subtopicProgress[subtopicId];
                       const isSubtopicCompleted = isSubtopicAutoCompleted || isSubtopicManualCompleted;
+                      const subtopicTrackKey = `g4_subtopic_completed_${subtopicId}`;
+
+                      if (
+                        isSubtopicCompleted &&
+                        typeof window !== "undefined" &&
+                        !localStorage.getItem(subtopicTrackKey)
+                      ) {
+                        trackEvent("subtopic_completed", {
+                          sheet: "DSA",
+                          main_topic: mainTopic["Main Topic"],
+                          subtopic: sub.Subtopic,
+                        });
+
+                        localStorage.setItem(subtopicTrackKey, "true");
+                      }
+
                       return (
                         <div key={subIndex}>
                           {/* SUBTOPIC HEADER */}
@@ -483,6 +512,13 @@ export const CSV_TABLE_UI = ({ csvData }) => {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="inline-block ml-1 align-baseline"
+                                    onClick={() => {
+                                      trackEvent("youtube_video_click", {
+                                        sheet: "DSA",
+                                        topic: mainTopic["Main Topic"],
+                                        subtopic: sub.Subtopic,
+                                      });
+                                    }}
                                   >
                                     <Youtube
                                       className="text-red-500 inline-block"
@@ -588,7 +624,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
                                   <div
                                     key={questionId}
                                     className={`flex justify-between items-center gap-2 p-3 rounded-lg border
-        ${isSolved ? "bg-green-50 border-green-300 opacity-90" : "hover:bg-accent/5"}
+        ${isSolved ? "bg-success/20 border-success" : "hover:bg-accent/5"}
       `}>
                                     {/* LEFT (EXACT OLD UI — DO NOT TOUCH) */}
                                     <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 flex-1">
@@ -599,11 +635,23 @@ export const CSV_TABLE_UI = ({ csvData }) => {
                                       <div className="flex items-center gap-3">
                                         {d._links.map((link, idx) =>
                                           link.includes("leetcode") ? (
-                                            <a key={idx} href={link} target="_blank">
+                                            <a key={idx} href={link} target="_blank" rel="noopener noreferrer" onClick={() => {
+                                              trackEvent("outbound_problem_click", {
+                                                platform: "leetcode",
+                                                question_id: d.id,
+                                                sheet: "DSA",
+                                              });
+                                            }}>
                                               <SiLeetcode size={18} style={{ color: "#FFA116" }} />
                                             </a>
                                           ) : link.includes("geeksforgeeks") ? (
-                                            <a key={idx} href={link} target="_blank">
+                                            <a key={idx} href={link} target="_blank" rel="noopener noreferrer" onClick={() => {
+                                              trackEvent("outbound_problem_click", {
+                                                platform: "gfg",
+                                                question_id: d.id,
+                                                sheet: "DSA",
+                                              });
+                                            }}>
                                               <SiGeeksforgeeks size={18} style={{ color: "#2F8D46" }} />
                                             </a>
                                           ) : link.includes("Video-only problem") ? (
@@ -617,25 +665,19 @@ export const CSV_TABLE_UI = ({ csvData }) => {
                                         )}
 
                                         {hasMultipleVideos && d["Video Link"] && (
-                                          <a href={d["Video Link"]} target="_blank">
+                                          <a href={d["Video Link"]} target="_blank" rel="noopener noreferrer" onClick={() => {
+                                            trackEvent("youtube_video_click", {
+                                              sheet: "DSA",
+                                              topic: mainTopic["Main Topic"],
+                                              subtopic: sub.Subtopic,
+                                            });
+                                          }}>
                                             <Youtube className="text-red-500" size={18} />
                                           </a>
                                         )}
                                       </div>
                                     </div>
                                     {/* RIGHT: checkbox */}
-                                    {/* <div>
-                                      <input
-                                        type="checkbox"
-                                        checked={isSolved}
-                                        onChange={() => {
-                                          const updated = toggleQuestionProgress(questionId);
-                                          setQuestionProgress(updated);
-                                        }}
-                                        className="h-5 w-5 cursor-pointer accent-green-600"
-                                        title="Mark as solved"
-                                      />
-                                    </div> */}
 
                                     <div>
                                       <div
@@ -643,6 +685,21 @@ export const CSV_TABLE_UI = ({ csvData }) => {
                                           e.stopPropagation();
                                           const updated = toggleQuestionProgress(questionId);
                                           setQuestionProgress(updated);
+                                          // GA4 tracking (question solved / unsolved)
+                                          if (!isSolved) {
+                                            trackEvent("question_marked_solved", {
+                                              question_id: questionId,
+                                              sheet: "DSA",
+                                            });
+                                          }
+
+                                          // fire once: progress feature used
+                                          if (!localStorage.getItem("g4_used_progress")) {
+                                            trackEvent("progress_feature_used", {
+                                              sheet: "DSA",
+                                            });
+                                            localStorage.setItem("g4_used_progress", "true");
+                                          }
                                         }}
                                         title="Mark as solved"
                                         className={`

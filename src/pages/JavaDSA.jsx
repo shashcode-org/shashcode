@@ -22,25 +22,25 @@ const JavaDSA = () => {
       <Navbar />
 
       <PageHero
-  title="Java + DSA Sheet"
-  subtitle="Learn Java programming and master DSA with a single structured roadmap"
-/>
+        title="Java + DSA Sheet"
+        subtitle="Learn Java programming and master DSA with a single structured roadmap"
+      />
 
-<div className="pt-12 flex-grow">
-  <AnimatedElement animation="fadeIn">
-    <Section contentClassName="mt-8">
+      <div className="pt-12 flex-grow">
+        <AnimatedElement animation="fadeIn">
+          <Section contentClassName="mt-8">
             {/* ================= CONTENT BLOCK ================= */}
             <div className="max-w-4xl mx-auto space-y-8 mb-10">
 
               {/* INTRO CARD */}
-              <div className="bg-white/60 backdrop-blur-md rounded-xl p-6 sm:p-8 shadow-sm border">
-                <p className="text-gray-700 leading-relaxed">
+              <div className="bg-card/60 backdrop-blur-md rounded-xl p-6 sm:p-8 shadow-sm border border-border">
+                <p className="text-foreground leading-relaxed">
                   This Java + DSA Sheet is designed for beginners as well as intermediate
                   learners who want to prepare for coding interviews using{" "}
                   <strong>Java as their primary programming language</strong>.
                 </p>
 
-                <p className="mt-4 text-gray-700 leading-relaxed">
+                <p className="mt-4 text-foreground leading-relaxed">
                   Instead of juggling between Java basics and DSA from different sources,
                   this sheet provides a{" "}
                   <strong>single, structured learning path</strong> that starts from Java
@@ -50,7 +50,7 @@ const JavaDSA = () => {
 
                 {/* JUMP CTA */}
                 <div className="mt-6 flex justify-center">
-                  <button
+                  <span
                     onClick={() => {
                       const el = document.getElementById("dsa-sheet");
                       if (!el) return;
@@ -61,21 +61,27 @@ const JavaDSA = () => {
 
                       window.scrollTo({ top: y, behavior: "smooth" });
                     }}
-                    className="text-primary font-medium hover:underline"
+                    style={{
+                      color: "hsl(262 83% 68%)",
+                      cursor: "pointer",
+                      textShadow: "0 0 6px rgba(168,85,247,0.35)",
+                    }}
+                    className="font-semibold hover:underline transition"
                   >
-                    Jump directly to the Java + DSA Sheet ↓
-                  </button>
+                    Jump to the Java + DSA Sheet ↓
+                  </span>
+
 
                 </div>
               </div>
 
               {/* WHAT YOU WILL LEARN */}
-              <div className="bg-white/60 backdrop-blur-md rounded-xl p-6 sm:p-8 shadow-sm border">
+              <div className="bg-card/60 backdrop-blur-md rounded-xl p-6 sm:p-8 shadow-sm border border-border">
                 <h3 className="text-xl font-semibold mb-3">
                   What this Java + DSA Sheet covers
                 </h3>
 
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-foreground leading-relaxed">
                   The journey begins with core Java concepts such as{" "}
                   <strong>
                     variables, data types, loops, functions, arrays, strings, and OOPs
@@ -83,7 +89,7 @@ const JavaDSA = () => {
                   to build a strong programming foundation.
                 </p>
 
-                <p className="mt-3 text-gray-700 leading-relaxed">
+                <p className="mt-3 text-foreground leading-relaxed">
                   Once the Java basics are clear, the sheet transitions smoothly into{" "}
                   <strong>
                     Data Structures and Algorithms including recursion, linked lists,
@@ -92,19 +98,19 @@ const JavaDSA = () => {
                   </strong>.
                 </p>
 
-                <p className="mt-3 text-gray-700 leading-relaxed">
+                <p className="mt-3 text-foreground leading-relaxed">
                   All problems are carefully curated to match real interview expectations
                   from service-based and product-based companies.
                 </p>
               </div>
 
               {/* HOW TO USE */}
-              <div className="bg-gradient-to-br from-primary/5 via-accent/10 to-secondary/5 rounded-xl p-6 sm:p-8 border">
+              <div className="bg-gradient-to-br from-primary/5 via-accent/10 to-secondary/5 rounded-xl p-6 sm:p-8 border border-border">
                 <h3 className="text-xl font-semibold mb-4">
                   How to use this sheet effectively
                 </h3>
 
-                <p className="text-gray-700 leading-relaxed mb-4">
+                <p className="text-foreground leading-relaxed mb-4">
                   Follow the sheet in the given order. Avoid jumping directly to advanced
                   DSA topics without completing the Java fundamentals section, as Java
                   concepts are heavily used while implementing data structures.
@@ -121,15 +127,15 @@ const JavaDSA = () => {
                       <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 text-primary font-semibold flex items-center justify-center">
                         {index + 1}
                       </div>
-                      <p className="text-gray-700 leading-relaxed">{text}</p>
+                      <p className="text-foreground leading-relaxed">{text}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* CONSISTENCY MESSAGE */}
-              <div className="bg-white/60 backdrop-blur-md rounded-xl p-6 sm:p-8 shadow-sm border">
-                <p className="text-gray-700 leading-relaxed">
+              <div className="bg-card/60 backdrop-blur-md rounded-xl p-6 sm:p-8 shadow-sm border border-border">
+                <p className="text-foreground leading-relaxed">
                   This sheet is not meant for rushed completion.{" "}
                   <span className="font-semibold">
                     Strong Java fundamentals + consistent DSA practice
@@ -137,7 +143,7 @@ const JavaDSA = () => {
                   is the combination that clears interviews.
                 </p>
 
-                <p className="mt-4 text-gray-700 leading-relaxed">
+                <p className="mt-4 text-foreground leading-relaxed">
                   If you are a beginner, take your time with Java concepts. If you already
                   know Java, use the initial sections as a quick revision before diving
                   deep into DSA problem-solving.
@@ -156,7 +162,7 @@ const JavaDSA = () => {
 
             {/* VISUAL SPACING */}
             <AnimatedElement animation="fadeIn" delay="100" className="mt-8">
-              <div className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 shadow-lg">
+              <div className="bg-card/5 backdrop-blur-sm rounded-xl border border-border shadow-lg">
                 <CSV_TABLE_UI csvData={csvData} />
               </div>
             </AnimatedElement>
