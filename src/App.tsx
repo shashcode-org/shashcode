@@ -14,6 +14,9 @@ import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 import "./App.css";
+import BlogIndex from "./pages/blog/BlogIndex";
+import UrlShortenerBlog from "./pages/blog/UrlShortenerBlog";
+
 const queryClient = new QueryClient();
 
 const App = () => {
@@ -30,6 +33,8 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/dsa" element={<DSA />} />
           <Route path="/java-dsa" element={<JavaDSA />} />
+          <Route path="/blog" element={<BlogIndex />} />
+          <Route path="/blog/system-design-url-shortener" element={<UrlShortenerBlog />}/>
           {/* <Route path="/last-minute-dsa" element={<LastMinuteDSA />} /> */}
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
