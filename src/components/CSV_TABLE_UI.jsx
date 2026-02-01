@@ -12,6 +12,7 @@ import { Separator } from "@/components/ui/separator";
 import { motion, AnimatePresence } from "framer-motion";
 import { SiLeetcode, SiGeeksforgeeks } from "react-icons/si";
 import { trackEvent } from "@/utils/analytics";
+import { evaluateTitles } from "@/utils/titleEngine";
 
 const QUESTION_STORAGE_KEY = "questionProgress";
 const SUBTOPIC_STORAGE_KEY = "subtopicProgress";
@@ -95,6 +96,33 @@ const normalizeLinks = (links) => {
   return [];
 };
 
+async function syncProgressToServer({
+  sheet,
+  subtopics,
+  questions,
+}) {
+  await fetch("/.netlify/functions/syncProgress", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      sheet,
+      subtopics,
+      questions,
+    }),
+  });
+}
+
+async function hydrateProgressFromDB(sheet) {
+  const res = await fetch(
+    `/.netlify/functions/getProgress?sheet=${sheet}`
+  );
+
+  if (!res.ok) return null;
+
+  return await res.json();
+}
+
+
 
 export const CSV_TABLE_UI = ({ csvData }) => {
   const [expandedTopicIndex, setExpandedTopicIndex] = useState(null);
@@ -103,11 +131,100 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 
   const [questionProgress, setQuestionProgress] = useState({});
   const [subtopicProgress, setSubtopicProgress] = useState({});
+  const [highestLevel, setHighestLevel] = useState("Novice");
+
+  const debounceTimerRef = useRef(null);
+  const hasHydratedFromLocalRef = useRef(false);
+
+  const isJavaDSASheet = useMemo(() => {
+    return csvData.some(
+      t => t["Main Topic"] === "Java Basics"
+    );
+  }, [csvData]);
 
   useEffect(() => {
-    setQuestionProgress(readQuestionProgress());
-    setSubtopicProgress(readSubtopicProgress());
+    const sheet = isJavaDSASheet ? "JAVA_DSA" : "DSA";
+
+    (async () => {
+      const dbData = await hydrateProgressFromDB(sheet);
+
+      if (dbData) {
+        // DB → state
+        setSubtopicProgress(dbData.subtopics || {});
+        setQuestionProgress(dbData.questions || {});
+        setHighestLevel(dbData.highestLevel || "Novice");
+
+        // optional: keep localStorage in sync
+        localStorage.setItem(
+          "subtopicProgress",
+          JSON.stringify(dbData.subtopics || {})
+        );
+        localStorage.setItem(
+          "questionProgress",
+          JSON.stringify(dbData.questions || {})
+        );
+
+        console.log("✅ Hydrated from DB");
+      } else {
+        // fallback (first-time user)
+        setSubtopicProgress(readSubtopicProgress());
+        setQuestionProgress(readQuestionProgress());
+      }
+
+      hasHydratedFromLocalRef.current = true;
+    })();
+  }, [isJavaDSASheet]);
+
+
+
+  useEffect(() => {
+    // ❌ don't sync before localStorage hydration
+    if (!hasHydratedFromLocalRef.current) return;
+
+    // ❌ don't sync if nothing exists
+    const hasAnyProgress =
+      Object.keys(subtopicProgress).length > 0 ||
+      Object.keys(questionProgress).length > 0;
+
+    if (!hasAnyProgress) return;
+
+    // 🧠 debounce logic
+    if (debounceTimerRef.current) {
+      clearTimeout(debounceTimerRef.current);
+    }
+
+    debounceTimerRef.current = setTimeout(() => {
+      const sheet = isJavaDSASheet ? "JAVA_DSA" : "DSA";
+
+      syncProgressToServer({
+        sheet,
+        subtopics: subtopicProgress,
+        questions: questionProgress,
+      });
+
+      // optional debug
+      console.log("✅ Debounced sync to DB");
+    }, 800); // ⏱️ 800ms debounce
+
+    // cleanup (important)
+    return () => {
+      if (debounceTimerRef.current) {
+        clearTimeout(debounceTimerRef.current);
+      }
+    };
+  }, [subtopicProgress, questionProgress, isJavaDSASheet]);
+
+
+  const earnedSubtopics = useMemo(() => {
+    try {
+      return JSON.parse(
+        localStorage.getItem("shashcode_earned_subtopics")
+      ) || {};
+    } catch {
+      return {};
+    }
   }, []);
+
 
   const resetProgress = () => {
     const ok = window.confirm(
@@ -128,6 +245,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 
     setQuestionProgress({});
     setSubtopicProgress({});
+    window.location.reload();
   };
 
 
@@ -176,6 +294,62 @@ export const CSV_TABLE_UI = ({ csvData }) => {
     return completed;
   }, [csvData, questionProgress, subtopicProgress]);
 
+  const javaCoreCompleted = useMemo(() => {
+    if (!isJavaDSASheet) return false;
+
+    const requiredTopics = [
+      "Java Basics",
+      "Object Oriented Programming",
+      "Exception Handling",
+    ];
+
+    return requiredTopics.every((topicName) => {
+      const topic = csvData.find(
+        t => t["Main Topic"] === topicName
+      );
+      if (!topic) return false;
+
+      return topic.Subtopics.every((sub) => {
+        const questions = sub.Details.filter(
+          (d) => normalizeLinks(d.Links).length > 0
+        );
+
+        // Auto-complete via questions
+        if (questions.length > 0) {
+          const qIds = questions.map((d) => d.id);
+          return qIds.every((id) => questionProgress[id]);
+        }
+
+        // Manual subtopic completion
+        return subtopicProgress[sub.id];
+      });
+
+    });
+  }, [csvData, isJavaDSASheet, subtopicProgress, questionProgress]);
+
+  useEffect(() => {
+    if (!javaCoreCompleted) return;
+
+    const raw = localStorage.getItem("shashcode_badges");
+    const badges = raw ? JSON.parse(raw) : {};
+
+    if (badges["Java Pro"]) return; // ✅ GUARD
+
+    badges["Java Pro"] = true;
+    localStorage.setItem(
+      "shashcode_badges",
+      JSON.stringify(badges)
+    );
+
+    trackEvent("badge_earned", {
+      badge: "Java Pro",
+      sheet: "Java + DSA",
+    });
+  }, [javaCoreCompleted]);
+
+
+
+
   // PERCENT + WIDTH (same as LAST_MINUTE_DSA)
   const progressPercent =
     totalSubtopics === 0
@@ -188,6 +362,19 @@ export const CSV_TABLE_UI = ({ csvData }) => {
       : progressPercent < 1
         ? "8px"
         : `${progressPercent}%`;
+
+  // ✅ ADD THIS BLOCK RIGHT AFTER
+  const titleState = useMemo(() => {
+    return evaluateTitles({
+      csvData,
+      completedSubtopics,
+      totalSubtopics,
+    });
+  }, [csvData, completedSubtopics, totalSubtopics]);
+
+  useEffect(() => {
+    console.log("TITLE STATE:", titleState);
+  }, [titleState]);
 
   // FIRST INCOMPLETE SUBTOPIC (for "Continue from")
   const firstIncompleteSubtopic = useMemo(() => {
@@ -330,6 +517,12 @@ export const CSV_TABLE_UI = ({ csvData }) => {
             style={{ width: progressWidth }}
           />
         </div>
+
+        {/* CURRENT LEVEL (BASED ON LIFETIME LEARNING) */}
+        <div className="mt-2 text-sm font-medium text-primary">
+          Level: <span className="font-semibold">{highestLevel}</span>
+        </div>
+
 
         {completedSubtopics === totalSubtopics && totalSubtopics > 0 ? (
           <div className="mt-3 text-sm font-medium text-success">
@@ -481,6 +674,19 @@ export const CSV_TABLE_UI = ({ csvData }) => {
                       const isSubtopicManualCompleted = isSubtopicManual && subtopicProgress[subtopicId];
                       const isSubtopicCompleted = isSubtopicAutoCompleted || isSubtopicManualCompleted;
                       const subtopicTrackKey = `g4_subtopic_completed_${subtopicId}`;
+                      sub.__completed = isSubtopicCompleted;
+                      // ✅ EARNED SUBTOPICS (LIFETIME, NOT RESET)
+                      // const earnedRaw = localStorage.getItem("shashcode_earned_subtopics");
+                      // const earnedSubtopics = earnedRaw ? JSON.parse(earnedRaw) : {};
+
+                      if (isSubtopicCompleted && !earnedSubtopics[subtopicId]) {
+                        earnedSubtopics[subtopicId] = true;
+                        localStorage.setItem(
+                          "shashcode_earned_subtopics",
+                          JSON.stringify(earnedSubtopics)
+                        );
+                      }
+
 
                       if (
                         isSubtopicCompleted &&

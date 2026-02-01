@@ -1,0 +1,5 @@
+Deployment Key
+AKfycbywCUY33FX48sA0tfzVse8AreBCNcE1tCl9IuUVmB0-2XlSdWHby3W4o2m36pWeaTz6
+
+Web App URL
+https://script.google.com/macros/s/AKfycbywCUY33FX48sA0tfzVse8AreBCNcE1tCl9IuUVmB0-2XlSdWHby3W4o2m36pWeaTz6/exec
