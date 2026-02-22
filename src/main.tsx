@@ -2,6 +2,7 @@ import { createRoot } from "react-dom/client";
 import { HelmetProvider } from "react-helmet-async";
 import App from "./App";
 import "./index.css";
+import { AuthProvider } from "@/context/AuthContext";
 // ---- THEME INITIALIZATION ----
 const savedTheme = localStorage.getItem("theme");
 
@@ -31,6 +32,8 @@ window
 
 createRoot(document.getElementById("root")!).render(
   <HelmetProvider>
+     <AuthProvider>
     <App />
+    </AuthProvider>
   </HelmetProvider>
 );

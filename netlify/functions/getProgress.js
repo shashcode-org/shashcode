@@ -1,4 +1,5 @@
 import { createClient } from "@supabase/supabase-js";
+import { getUserIdFromRequest } from "./_auth";
 
 const supabase = createClient(
     process.env.SUPABASE_URL,
@@ -11,8 +12,8 @@ export async function handler(event) {
             return { statusCode: 405, body: "Method Not Allowed" };
         }
 
-        // DEV USER (same as sync)
-        const DEV_USER_ID = "00000000-0000-0000-0000-000000000001";
+        // 🔐 AUTH (single source)
+        const user_id = getUserIdFromRequest(event);
 
         const sheet = event.queryStringParameters?.sheet;
         if (!sheet) {
@@ -24,28 +25,44 @@ export async function handler(event) {
 
         const { data, error } = await supabase
             .from("user_progress")
-            .select("progress_json, highest_level")
-            .eq("user_id", DEV_USER_ID)
+            .select("progress_json, highest_level, updated_at")
+            .eq("user_id", user_id)
             .eq("sheet", sheet)
             .single();
 
-        if (error && error.code !== "PGRST116") {
-            throw error;
+        // 🆕 First-time user
+        if (error && error.code === "PGRST116") {
+            return {
+                statusCode: 200,
+                body: JSON.stringify({
+                    subtopics: {},
+                    questions: {},
+                    highest_level: 0,
+                }),
+            };
         }
+
+        if (error) throw error;
 
         return {
             statusCode: 200,
             body: JSON.stringify({
-                subtopics: data?.progress_json?.subtopics || {},
-                questions: data?.progress_json?.questions || {},
-                highestLevel: data?.highest_level || "Novice",
-            })
+                subtopics: data.progress_json?.subtopics ?? {},
+                questions: data.progress_json?.questions ?? {},
+                highest_level: data?.highest_level ?? 0,
+                updated_at: data?.updated_at ?? null,
+            }),
         };
     } catch (err) {
         console.error("getProgress error:", err);
+
         return {
-            statusCode: 500,
-            body: JSON.stringify({ error: "Failed to load progress" }),
+            statusCode: err.statusCode || 401,
+            body: JSON.stringify({
+                error: err.message || "Unauthorized",
+            }),
         };
     }
 }
+
+
