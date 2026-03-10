@@ -6,7 +6,7 @@ type AuthContextType = {
   user: User | null;
   session: Session | null;
   loading: boolean;
-  logout: () => Promise<void>;
+  logout: (sheet?: string) => Promise<void>;
 };
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -38,8 +38,31 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     };
   }, []);
 
-  const logout = async () => {
-    await supabase.auth.signOut();
+  const logout = async (sheet?: string) => {
+
+    if (user && sheet) {
+
+      const userKeys = {
+        q: `questionProgress_${user.id}_${sheet}`,
+        s: `subtopicProgress_${user.id}_${sheet}`
+      };
+
+      const guestKeys = {
+        q: `questionProgress_guest_${sheet}`,
+        s: `subtopicProgress_guest_${sheet}`
+      };
+
+      const q = localStorage.getItem(userKeys.q);
+      const s = localStorage.getItem(userKeys.s);
+
+      if (q) localStorage.setItem(guestKeys.q, q);
+      if (s) localStorage.setItem(guestKeys.s, s);
+
+      console.log("🔁 Copied user progress → guest before logout");
+    }
+
+    await supabase.auth.signOut({ scope: "local" })
+
     setUser(null);
     setSession(null);
   };

@@ -7,6 +7,11 @@ import { useAuth } from "@/context/AuthContext";
 import { useUserMeta } from "@/hooks/useUserMeta";
 import { useNavigate } from "react-router-dom";
 
+function getSheetFromPath(pathname: string) {
+  if (pathname.startsWith("/java-dsa")) return "JAVA_DSA";
+  if (pathname.startsWith("/dsa")) return "DSA";
+  return "DSA";
+}
 
 const Navbar = () => {
   const [isDark, setIsDark] = useState(
@@ -182,8 +187,10 @@ const Navbar = () => {
                     >
                       <button
                         onClick={async () => {
-                          await logout();
-                          navigate("/login");
+                          const sheet = getSheetFromPath(location.pathname);
+                          await logout(sheet);
+                          // await logout();
+                          navigate("/login", { replace: true });
                         }}
                         className="w-full text-left px-4 py-2 text-sm hover:bg-accent/20"
                       >
@@ -277,8 +284,10 @@ const Navbar = () => {
               {user && (
                 <button
                   onClick={async () => {
-                    await logout();
-                    navigate("/login");
+                    const sheet = getSheetFromPath(location.pathname);
+                    await logout(sheet);
+                    // await logout();
+                    navigate("/login", { replace: true });
                   }}
                   className="py-2 px-3 text-left text-red-500 hover:bg-accent/20 rounded-md"
                 >
@@ -289,8 +298,8 @@ const Navbar = () => {
                 <Link
                   to="/login"
                   className={`block py-2 px-3 rounded-md transition-colors ${location.pathname === "/login"
-                      ? "bg-primary/10 text-primary font-medium"
-                      : "text-foreground hover:bg-accent/20"
+                    ? "bg-primary/10 text-primary font-medium"
+                    : "text-foreground hover:bg-accent/20"
                     }`}
                 >
                   Login

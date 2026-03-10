@@ -99,42 +99,7 @@ async function syncProgressToServer({
   return json;
 
 
-  // return await res.json();
 }
-
-// async function syncProgressToServer({
-//   sheet,
-//   subtopics,
-//   questions,
-//   completedPercent,
-//   bucketCompletion,
-//   completedMainTopics,
-// }) {
-//   const res = await fetch("/.netlify/functions/syncProgress", {
-//     method: "POST",
-//     headers: { "Content-Type": "application/json" },
-//     body: JSON.stringify({
-//       sheet,
-//       subtopics,
-//       questions,
-//       completedPercent,
-//       bucketCompletion,
-//       completedMainTopics,
-//     }),
-//   });
-//   const data = await res.json();
-//   return data;
-// }
-
-// async function hydrateProgressFromDB(sheet) {
-//   const res = await fetch(
-//     `/.netlify/functions/getProgress?sheet=${sheet}`
-//   );
-
-//   if (!res.ok) return null;
-
-//   return await res.json();
-// }
 
 async function hydrateProgressFromDB(sheet) {
   const {
@@ -176,7 +141,22 @@ export const CSV_TABLE_UI = ({ csvData }) => {
   const [highestLevel, setHighestLevel] = useState("Novice");
 
   const debounceTimerRef = useRef(null);
+  const lastSyncedRef = useRef(null);
   const hasHydratedFromLocalRef = useRef(false);
+  const hasUserInteractedRef = useRef(false);
+  const hydratedUserRef = useRef(null);
+  const isHydratingRef = useRef(false);
+
+  const questionProgressRef = useRef(questionProgress);
+  const subtopicProgressRef = useRef(subtopicProgress);
+
+  useEffect(() => {
+    questionProgressRef.current = questionProgress;
+    subtopicProgressRef.current = subtopicProgress;
+  }, [questionProgress, subtopicProgress]);
+
+  const previousUserRef = useRef(null);
+
 
   const isJavaDSASheet = useMemo(() => {
     return csvData.some(
@@ -184,20 +164,119 @@ export const CSV_TABLE_UI = ({ csvData }) => {
     );
   }, [csvData]);
 
-  const [userId, setUserId] = useState(null);
+  const [userId, setUserId] = useState(undefined);
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data }) => {
-      setUserId(data.session?.user?.id || null);
-      console.log("👤 Session userId:", data.session?.user?.id);
-    });
+    console.log("🔥 QUESTION COUNT:", Object.keys(questionProgress).length);
+    console.log("🔥 SUBTOPIC COUNT:", Object.keys(subtopicProgress).length);
+  }, [questionProgress, subtopicProgress]);
+
+  useEffect(() => {
+
+    const load = async () => {
+      const { data } = await supabase.auth.getSession();
+      const id = data.session?.user?.id ?? null;
+
+      setUserId((prev) => {
+        previousUserRef.current = prev;
+        return id;
+      });
+    };
+
+    load();
+
+    const { data: listener } = supabase.auth.onAuthStateChange(
+      (_event, session) => {
+
+        const id = session?.user?.id ?? null;
+
+        setUserId((prev) => {
+          previousUserRef.current = prev;
+          return id;
+        });
+
+      }
+    );
+
+    return () => listener.subscription.unsubscribe();
+
   }, []);
+
 
   const sheet = isJavaDSASheet ? "JAVA_DSA" : "DSA";
 
+  useEffect(() => {
+
+    if (userId !== null) return;
+
+    const prevUser = previousUserRef.current;
+    if (!prevUser) return;
+
+    const guestKeys = getStorageKeys(null, sheet);
+
+    let copied = false;
+
+    if (Object.keys(questionProgress).length) {
+      localStorage.setItem(
+        guestKeys.USER_QUESTION_STORAGE_KEY,
+        JSON.stringify(questionProgress)
+      );
+      copied = true;
+    }
+
+    if (Object.keys(subtopicProgress).length) {
+      localStorage.setItem(
+        guestKeys.USER_SUBTOPIC_STORAGE_KEY,
+        JSON.stringify(subtopicProgress)
+      );
+      copied = true;
+    }
+
+    if (copied) {
+      console.log("🔁 Copied user progress → guest on logout");
+    }
+
+  }, [userId, sheet]);
+
+  function migrateLegacyToGuest(sheet) {
+    const legacyQuestions = localStorage.getItem(QUESTION_STORAGE_KEY);
+    const legacySubtopics = localStorage.getItem(SUBTOPIC_STORAGE_KEY);
+
+
+    const guestKeys = getStorageKeys(null, sheet);
+
+    const guestQuestions = localStorage.getItem(
+      guestKeys.USER_QUESTION_STORAGE_KEY
+    );
+
+    const guestSubtopics = localStorage.getItem(
+      guestKeys.USER_SUBTOPIC_STORAGE_KEY
+    );
+
+    if (legacyQuestions && !guestQuestions) {
+      localStorage.setItem(
+        guestKeys.USER_QUESTION_STORAGE_KEY,
+        legacyQuestions
+      );
+
+      console.log("✅ Migrated legacy questionProgress → guest key");
+    }
+
+    if (legacySubtopics && !guestSubtopics) {
+      localStorage.setItem(
+        guestKeys.USER_SUBTOPIC_STORAGE_KEY,
+        legacySubtopics
+      );
+
+      console.log("✅ Migrated legacy subtopicProgress → guest key");
+    }
+  }
+
   const { USER_QUESTION_STORAGE_KEY, USER_SUBTOPIC_STORAGE_KEY } =
     getStorageKeys(userId, sheet);
-  const UPDATED_AT_KEY = `progressUpdatedAt_${userId}_${sheet}`;
+
+
+
 
 
   // Helper functions for question progress
@@ -222,6 +301,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
       progress[questionId] = true;
     }
     saveQuestionProgress(progress);
+    hasUserInteractedRef.current = true;
     return progress;
   };
 
@@ -249,6 +329,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
       progress[subtopicId] = true;
     }
     saveSubtopicProgress(progress);
+    hasUserInteractedRef.current = true;
     return progress;
   };
 
@@ -367,270 +448,127 @@ export const CSV_TABLE_UI = ({ csvData }) => {
     return bucketStats;
   }, [csvData, questionProgress, subtopicProgress]);
 
-  // useEffect(() => {
-  //   const sheet = isJavaDSASheet ? "JAVA_DSA" : "DSA";
-
-  //   (async () => {
-  //     // MIGRATE OLD STORAGE (one-time)
-  //     const oldQuestions = localStorage.getItem(QUESTION_STORAGE_KEY);
-  //     const oldSubtopics = localStorage.getItem(SUBTOPIC_STORAGE_KEY);
-
-  //     const hasUserKey = localStorage.getItem(USER_QUESTION_STORAGE_KEY);
-  //     const hasUpdatedAt = localStorage.getItem(`progressUpdatedAt_${userId}_${sheet}`);
-
-  //     if (oldQuestions && !hasUserKey && !hasUpdatedAt) {
-  //       localStorage.setItem(USER_QUESTION_STORAGE_KEY, oldQuestions);
-  //     }
-
-  //     if (oldSubtopics && !localStorage.getItem(USER_SUBTOPIC_STORAGE_KEY) && !hasUpdatedAt) {
-  //       localStorage.setItem(USER_SUBTOPIC_STORAGE_KEY, oldSubtopics);
-  //     }
-
-  //     // if (oldQuestions && !localStorage.getItem(USER_QUESTION_STORAGE_KEY)) {
-  //     //   localStorage.setItem(USER_QUESTION_STORAGE_KEY, oldQuestions);
-  //     // }
-
-  //     // if (oldSubtopics && !localStorage.getItem(USER_SUBTOPIC_STORAGE_KEY)) {
-  //     //   localStorage.setItem(USER_SUBTOPIC_STORAGE_KEY, oldSubtopics);
-  //     // }
-  //     const dbData = await hydrateProgressFromDB(sheet);
-
-  //     console.log("📥 Hydrate DB result:", dbData);
-
-  //     // always read localStorage
-  //     const localSubtopics = readSubtopicProgress();
-  //     const localQuestions = readQuestionProgress();
-
-  //     if (dbData) {
-  //       const dbSubtopics = dbData.subtopics || {};
-  //       const dbQuestions = dbData.questions || {};
-
-  //       // ✅ MERGE STRATEGY (UNION)
-  //       const localUpdatedAt = localStorage.getItem(UPDATED_AT_KEY);
-  //       const dbUpdatedAt = dbData.updated_at;
-
-  //       let finalSubtopics;
-  //       let finalQuestions;
-
-  //       // CASE 1: DB newer
-  //       if (!localUpdatedAt || dbUpdatedAt > localUpdatedAt) {
-
-  //         finalSubtopics = dbSubtopics;
-  //         finalQuestions = dbQuestions;
-
-  //         console.log("📥 Using DB progress (newer)");
-  //       }
-
-  //       // CASE 2: Local newer
-  //       else if (localUpdatedAt > dbUpdatedAt) {
-
-  //         finalSubtopics = localSubtopics;
-  //         finalQuestions = localQuestions;
-
-  //         console.log("📤 Using Local progress (newer)");
-  //       }
-
-  //       // CASE 3: Equal → merge union
-  //       else {
-
-  //         finalSubtopics = {
-  //           ...dbSubtopics,
-  //           ...localSubtopics,
-  //         };
-
-  //         finalQuestions = {
-  //           ...dbQuestions,
-  //           ...localQuestions,
-  //         };
-
-  //         console.log("🔀 Using merged progress");
-  //       }
-
-
-  //       // set merged state
-  //       setSubtopicProgress(finalSubtopics);
-  //       setQuestionProgress(finalQuestions);
-
-
-  //       setHighestLevel(
-  //         getLevelFromRank(Number(dbData.highest_level))
-  //       );
-
-  //       // update localStorage with merged version
-  //       localStorage.setItem(
-  //         USER_SUBTOPIC_STORAGE_KEY,
-  //         JSON.stringify(finalSubtopics)
-  //       );
-
-  //       localStorage.setItem(
-  //         USER_QUESTION_STORAGE_KEY,
-  //         JSON.stringify(finalQuestions)
-  //       );
-
-  //       // IMPORTANT: sync merged back to DB
-  //       await syncProgressToServer({
-  //         sheet,
-  //         subtopics: finalSubtopics,
-  //         questions: finalQuestions,
-  //         completedPercent: 0, // safe, server recalculates level
-  //         bucketCompletion: {},
-  //         completedMainTopics: [],
-  //       });
-
-  //       // ✅ STEP 5: CLEANUP OLD GLOBAL KEYS (MIGRATION COMPLETE)
-  //       localStorage.removeItem(QUESTION_STORAGE_KEY);
-  //       localStorage.removeItem(SUBTOPIC_STORAGE_KEY);
-
-  //       console.log("🧹 Old global keys cleaned");
-
-  //       console.log("✅ Hydrated + merged DB & localStorage");
-  //     }
-  //     else {
-  //       // DB empty → use local
-  //       setSubtopicProgress(localSubtopics);
-  //       setQuestionProgress(localQuestions);
-
-  //       console.log("✅ Using localStorage only");
-  //     }
-
-  //     hasHydratedFromLocalRef.current = true;
-
-  //   })();
-
-  // }, [userId, isJavaDSASheet]);
 
   useEffect(() => {
 
     if (userId === undefined) return;
-    const sheet = isJavaDSASheet ? "JAVA_DSA" : "DSA";
+
+    const hydrationKey = `${userId}_${sheet}`;
+
+    if (hydratedUserRef.current === hydrationKey) {
+      console.log("⛔ Skipping hydration for same user");
+      return;
+    }
+
+    hydratedUserRef.current = hydrationKey;
+
+
+
 
     (async () => {
+      isHydratingRef.current = true;
+      try {
 
-      console.log("🚀 Starting hydration");
-
-      const oldQuestions =
-        localStorage.getItem(QUESTION_STORAGE_KEY);
-
-      const oldSubtopics =
-        localStorage.getItem(SUBTOPIC_STORAGE_KEY);
-
-      const hasUserQuestions =
-        localStorage.getItem(USER_QUESTION_STORAGE_KEY);
-
-      const hasUserSubtopics =
-        localStorage.getItem(USER_SUBTOPIC_STORAGE_KEY);
-
-      // const hasUpdatedAt =
-      //   localStorage.getItem(UPDATED_AT_KEY);
-
-
-      // --------------------------------------------------
-      // STEP 1: MIGRATE OLD GLOBAL KEYS → USER KEYS
-      // --------------------------------------------------
-
-      if (userId) {
-
-        if (oldQuestions && !hasUserQuestions) {
-
-          localStorage.setItem(
-            USER_QUESTION_STORAGE_KEY,
-            oldQuestions
-          );
-
-          console.log("✅ Migrated old questions → user");
+        if (!userId) {
+          migrateLegacyToGuest(sheet);
         }
-
-        if (oldSubtopics && !hasUserSubtopics) {
-
-          localStorage.setItem(
-            USER_SUBTOPIC_STORAGE_KEY,
-            oldSubtopics
-          );
-
-          console.log("✅ Migrated old subtopics → user");
-        }
-
-      }
+        console.log("🚀 Starting hydration");
 
 
-      // --------------------------------------------------
-      // STEP 2: READ LOCAL
-      // --------------------------------------------------
-
-      const localQuestions = readQuestionProgress();
-      const localSubtopics = readSubtopicProgress();
 
 
-      // --------------------------------------------------
-      // STEP 3: READ DB
-      // --------------------------------------------------
+        // --------------------------------------------------
+        // STEP 1: MIGRATE OLD GLOBAL + GUEST KEYS → USER KEYS
+        // --------------------------------------------------
 
-      const dbData = await hydrateProgressFromDB(sheet);
+        if (userId) {
 
-      console.log("📥 DB data:", dbData);
+          // 🔹 1. Merge guest keys → user keys (ALWAYS MERGE)
+          const guestKeys = getStorageKeys(null, sheet);
+
+          const guestQuestions =
+            localStorage.getItem(guestKeys.USER_QUESTION_STORAGE_KEY);
+
+          const guestSubtopics =
+            localStorage.getItem(guestKeys.USER_SUBTOPIC_STORAGE_KEY);
+
+          if (guestQuestions) {
+            const parsedGuest = JSON.parse(guestQuestions);
+            const existingUser = JSON.parse(
+              localStorage.getItem(USER_QUESTION_STORAGE_KEY) || "{}"
+            );
+
+            localStorage.setItem(
+              USER_QUESTION_STORAGE_KEY,
+              JSON.stringify({
+                ...parsedGuest,
+                ...existingUser,
+              })
+            );
+
+            console.log("🔥 Guest questions merged into user");
+          }
+
+          if (guestSubtopics) {
+            const parsedGuest = JSON.parse(guestSubtopics);
+            const existingUser = JSON.parse(
+              localStorage.getItem(USER_SUBTOPIC_STORAGE_KEY) || "{}"
+            );
+
+            localStorage.setItem(
+              USER_SUBTOPIC_STORAGE_KEY,
+              JSON.stringify({
+                ...parsedGuest,
+                ...existingUser,
+              })
+            );
+
+            console.log("🔥 Guest subtopics merged into user");
 
 
-      let finalQuestions = {};
-      let finalSubtopics = {};
-      let finalUpdatedAt = null;
-
-
-      // --------------------------------------------------
-      // CASE A: DB EXISTS
-      // --------------------------------------------------
-
-      if (dbData) {
-
-        const dbQuestions = dbData.questions || {};
-        const dbSubtopics = dbData.subtopics || {};
-
-        const dbUpdatedAt = dbData.updated_at;
-        const localUpdatedAt =
-          localStorage.getItem(UPDATED_AT_KEY);
-
-
-        if (!localUpdatedAt) {
-
-          // FIRST LOGIN → LOCAL IS SOURCE OF TRUTH
-
-          if (
-            Object.keys(localQuestions).length > 0 ||
-            Object.keys(localSubtopics).length > 0
-          ) {
-
-            finalQuestions = localQuestions;
-            finalSubtopics = localSubtopics;
-
-            console.log("📤 Using local (first login)");
-
-          } else {
-
-            finalQuestions = dbQuestions;
-            finalSubtopics = dbSubtopics;
-
-            console.log("📥 Using DB");
-
+          }
+          if (guestQuestions || guestSubtopics) {
+            localStorage.removeItem(guestKeys.USER_QUESTION_STORAGE_KEY);
+            localStorage.removeItem(guestKeys.USER_SUBTOPIC_STORAGE_KEY);
+            console.log("🧹 Guest keys cleaned after merge");
           }
 
         }
-        else if (dbUpdatedAt > localUpdatedAt) {
 
-          finalQuestions = dbQuestions;
-          finalSubtopics = dbSubtopics;
 
-          console.log("📥 Using DB (newer)");
 
-        }
-        else if (localUpdatedAt > dbUpdatedAt) {
+        // --------------------------------------------------
+        // STEP 2: READ LOCAL
+        // --------------------------------------------------
 
-          finalQuestions = localQuestions;
-          finalSubtopics = localSubtopics;
+        const localQuestions = readQuestionProgress();
+        const localSubtopics = readSubtopicProgress();
 
-          console.log("📤 Using local (newer)");
 
-        }
-        else {
+        // --------------------------------------------------
+        // STEP 3: READ DB
+        // --------------------------------------------------
 
+        const dbData = await hydrateProgressFromDB(sheet);
+
+        console.log("📥 DB data:", dbData);
+
+
+        let finalQuestions = {};
+        let finalSubtopics = {};
+        let finalUpdatedAt = null;
+
+
+        // --------------------------------------------------
+        // CASE A: DB EXISTS
+        // --------------------------------------------------
+
+        if (userId) {
+
+          const dbQuestions = dbData?.questions || {};
+          const dbSubtopics = dbData?.subtopics || {};
+
+          // 🔥 ALWAYS MERGE (UNION)
           finalQuestions = {
             ...dbQuestions,
             ...localQuestions
@@ -641,115 +579,101 @@ export const CSV_TABLE_UI = ({ csvData }) => {
             ...localSubtopics
           };
 
-          console.log("🔀 Using merged");
+          console.log("🔀 Merging DB + Local (union)");
+
+          const merged =
+            JSON.stringify(finalQuestions) !== JSON.stringify(dbQuestions) ||
+            JSON.stringify(finalSubtopics) !== JSON.stringify(dbSubtopics);
+
+          if (merged) {
+            // 🔥 Always sync merged back to DB
+            await syncProgressToServer({
+              sheet,
+              subtopics: finalSubtopics,
+              questions: finalQuestions,
+              completedPercent: 0,
+              bucketCompletion: {},
+              completedMainTopics: [],
+            });
+
+            // use fresh timestamp
+            finalUpdatedAt = new Date().toISOString();
+          }
+
 
         }
 
-        finalUpdatedAt = dbUpdatedAt;
-
-      }
-
-
-      // --------------------------------------------------
-      // CASE B: DB EMPTY
-      // --------------------------------------------------
-
-      else {
-
-        finalQuestions = localQuestions;
-        finalSubtopics = localSubtopics;
-
-        console.log("📦 Using local only");
-
-      }
 
 
 
-      // --------------------------------------------------
-      // STEP 4: APPLY STATE
-      // --------------------------------------------------
+        // --------------------------------------------------
+        // CASE B: DB EMPTY
+        // --------------------------------------------------
 
-      setQuestionProgress(finalQuestions);
-      setSubtopicProgress(finalSubtopics);
+        else {
+
+          finalQuestions = localQuestions;
+          finalSubtopics = localSubtopics;
+
+          console.log("📦 Using local only");
+
+        }
 
 
 
-      // --------------------------------------------------
-      // STEP 5: SAVE LOCAL
-      // --------------------------------------------------
+        // --------------------------------------------------
+        // STEP 4: APPLY STATE
+        // --------------------------------------------------
 
-      localStorage.setItem(
-        USER_QUESTION_STORAGE_KEY,
-        JSON.stringify(finalQuestions)
-      );
+        setQuestionProgress(finalQuestions);
+        setSubtopicProgress(finalSubtopics);
 
-      localStorage.setItem(
-        USER_SUBTOPIC_STORAGE_KEY,
-        JSON.stringify(finalSubtopics)
-      );
 
-      // --------------------------------------------------
-      // STEP 5.5: STORE UPDATED_AT (CRITICAL FIX)
-      // --------------------------------------------------
 
-      if (finalUpdatedAt) {
+        // --------------------------------------------------
+        // STEP 5: SAVE LOCAL
+        // --------------------------------------------------
 
         localStorage.setItem(
-          UPDATED_AT_KEY,
-          finalUpdatedAt
+          USER_QUESTION_STORAGE_KEY,
+          JSON.stringify(finalQuestions)
         );
 
-        console.log("🕒 Stored updated_at:", finalUpdatedAt);
+        localStorage.setItem(
+          USER_SUBTOPIC_STORAGE_KEY,
+          JSON.stringify(finalSubtopics)
+        );
 
-      }
+        // --------------------------------------------------
+        // STEP 7: CLEAN OLD KEYS
+        // --------------------------------------------------
 
+        if (userId) {
 
+          localStorage.removeItem(QUESTION_STORAGE_KEY);
+          localStorage.removeItem(SUBTOPIC_STORAGE_KEY);
 
-      // --------------------------------------------------
-      // STEP 6: SYNC TO DB
-      // --------------------------------------------------
-
-      if (userId) {
-
-        const result = await syncProgressToServer({
-          sheet,
-          questions: finalQuestions,
-          subtopics: finalSubtopics,
-          completedPercent: 0,
-          bucketCompletion: {},
-          completedMainTopics: [],
-        });
-
-        if (result?.updated_at) {
-
-          localStorage.setItem(
-            UPDATED_AT_KEY,
-            result.updated_at
-          );
+          console.log("🧹 Old keys cleaned");
 
         }
 
+
+        hasHydratedFromLocalRef.current = true;
+        hasUserInteractedRef.current = false;
+        console.log("✅ Hydration complete");
+
+      } catch (err) {
+        console.error("Hydration error:", err);
+        const localQuestions = readQuestionProgress();
+        const localSubtopics = readSubtopicProgress();
+
+        setQuestionProgress(localQuestions);
+        setSubtopicProgress(localSubtopics);
+      } finally {
+        isHydratingRef.current = false;
       }
 
 
-
-      // --------------------------------------------------
-      // STEP 7: CLEAN OLD KEYS
-      // --------------------------------------------------
-
-      if (userId) {
-
-        localStorage.removeItem(QUESTION_STORAGE_KEY);
-        localStorage.removeItem(SUBTOPIC_STORAGE_KEY);
-
-        console.log("🧹 Old keys cleaned");
-
-      }
-
-
-      hasHydratedFromLocalRef.current = true;
-
-      console.log("✅ Hydration complete");
 
     })();
 
@@ -765,6 +689,10 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 
     // ❌ don't sync before localStorage hydration
     if (!hasHydratedFromLocalRef.current) return;
+
+    // 🔥 DO NOT SYNC UNLESS USER ACTUALLY CHANGED SOMETHING
+    if (!hasUserInteractedRef.current) return;
+    if (isHydratingRef.current) return;   // 🔥 CRITICAL
 
     // ❌ don't sync if nothing exists
     const hasAnyProgress =
@@ -785,8 +713,10 @@ export const CSV_TABLE_UI = ({ csvData }) => {
     }
 
     debounceTimerRef.current = setTimeout(async () => {
-      const sheet = isJavaDSASheet ? "JAVA_DSA" : "DSA";
-
+      lastSyncedRef.current = JSON.stringify({
+        questions: questionProgress,
+        subtopics: subtopicProgress,
+      });
       const result = await syncProgressToServer({
         sheet,
         subtopics: subtopicProgress,
@@ -802,9 +732,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
         );
       }
 
-      if (result?.updated_at) {
-        localStorage.setItem(UPDATED_AT_KEY, result.updated_at);
-      }
+
 
       // optional debug
       console.log("✅ Debounced sync to DB");
@@ -816,7 +744,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
         clearTimeout(debounceTimerRef.current);
       }
     };
-  }, [subtopicProgress, questionProgress, progressPercent, bucketCompletion, isJavaDSASheet]);
+  }, [subtopicProgress, questionProgress, progressPercent, bucketCompletion, sheet]);
 
   useEffect(() => {
     if (!userId) return;
@@ -832,41 +760,56 @@ export const CSV_TABLE_UI = ({ csvData }) => {
           filter: `user_id=eq.${userId}`,
         },
         (payload) => {
-          console.log("🔄 Realtime progress update:", payload);
-          console.log("Old:", payload.old);
-          console.log("New:", payload.new);
+          console.log("🔄 Realtime progress update");
 
-          const progress = payload.new.progress_json || {};
+          const progress = payload.new?.progress_json || {};
 
-          const newSubtopics = progress.subtopics || {};
-          const newQuestions = progress.questions || {};
+          const dbQuestions = progress.questions || {};
+          const dbSubtopics = progress.subtopics || {};
 
-          // ✅ prevent unnecessary overwrite
-          setSubtopicProgress(prev =>
-            JSON.stringify(prev) === JSON.stringify(newSubtopics)
-              ? prev
-              : newSubtopics
+          const incoming = JSON.stringify({
+            questions: dbQuestions,
+            subtopics: dbSubtopics,
+          });
+
+          if (incoming === lastSyncedRef.current) {
+            console.log("⏭ Ignoring own realtime update");
+            return;
+          }
+
+          // Only update if actually different
+          if (
+            JSON.stringify(dbQuestions) === JSON.stringify(questionProgressRef.current) &&
+            JSON.stringify(dbSubtopics) === JSON.stringify(subtopicProgressRef.current)
+          ) {
+            console.log("⏭ No real change from realtime");
+            return;
+          }
+
+          console.log("📥 Applying DB state");
+
+          setQuestionProgress(dbQuestions);
+          setSubtopicProgress(dbSubtopics);
+
+          lastSyncedRef.current = JSON.stringify({
+            questions: dbQuestions,
+            subtopics: dbSubtopics,
+          });
+
+          localStorage.setItem(
+            USER_QUESTION_STORAGE_KEY,
+            JSON.stringify(dbQuestions)
           );
 
-          setQuestionProgress(prev =>
-            JSON.stringify(prev) === JSON.stringify(newQuestions)
-              ? prev
-              : newQuestions
+          localStorage.setItem(
+            USER_SUBTOPIC_STORAGE_KEY,
+            JSON.stringify(dbSubtopics)
           );
 
           setHighestLevel(
             getLevelFromRank(Number(payload.new.highest_level))
           );
 
-          localStorage.setItem(
-            USER_SUBTOPIC_STORAGE_KEY,
-            JSON.stringify(newSubtopics)
-          );
-
-          localStorage.setItem(
-            USER_QUESTION_STORAGE_KEY,
-            JSON.stringify(newQuestions)
-          );
         }
       )
       .subscribe((status) => {
@@ -912,7 +855,6 @@ export const CSV_TABLE_UI = ({ csvData }) => {
     setQuestionProgress({});
     setSubtopicProgress({});
     // 🔥 IMPORTANT: sync empty progress to DB
-    const sheet = isJavaDSASheet ? "JAVA_DSA" : "DSA";
     await syncProgressToServer({
       sheet,
       subtopics: {},
@@ -1242,18 +1184,6 @@ export const CSV_TABLE_UI = ({ csvData }) => {
                       const isSubtopicCompleted = isSubtopicAutoCompleted || isSubtopicManualCompleted;
                       const subtopicTrackKey = `g4_subtopic_completed_${subtopicId}`;
                       sub.__completed = isSubtopicCompleted;
-                      // ✅ EARNED SUBTOPICS (LIFETIME, NOT RESET)
-                      // const earnedRaw = localStorage.getItem("shashcode_earned_subtopics");
-                      // const earnedSubtopics = earnedRaw ? JSON.parse(earnedRaw) : {};
-
-                      // if (isSubtopicCompleted && !earnedSubtopics[subtopicId]) {
-                      //   earnedSubtopics[subtopicId] = true;
-                      //   localStorage.setItem(
-                      //     "shashcode_earned_subtopics",
-                      //     JSON.stringify(earnedSubtopics)
-                      //   );
-                      // }
-
 
                       if (
                         isSubtopicCompleted &&
@@ -1330,6 +1260,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 
                                   saveQuestionProgress(currentProgress);
                                   setQuestionProgress(currentProgress);
+                                  hasUserInteractedRef.current = true;
                                 }
                               }}
                               className={`
