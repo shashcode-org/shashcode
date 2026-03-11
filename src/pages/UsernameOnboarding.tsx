@@ -51,12 +51,12 @@ const UsernameOnboarding = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4">
+    <div className="min-h-screen flex items-center justify-center px-4 bg-background">
       <form
         onSubmit={handleSubmit}
-        className="w-full max-w-md bg-white dark:bg-darkPurple p-6 rounded-xl shadow"
+        className="w-full max-w-md bg-card p-6 rounded-xl shadow-lg border border-border"
       >
-        <h1 className="text-2xl font-bold mb-4 text-center">
+        <h1 className="text-2xl font-bold mb-4 text-center text-foreground">
           Choose your username
         </h1>
 
@@ -68,13 +68,29 @@ const UsernameOnboarding = () => {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           placeholder="username"
-          className="w-full mb-4 px-4 py-2 rounded border"
+          className="
+          w-full mb-4 px-4 py-2 rounded
+          border border-border
+          bg-background
+          text-foreground
+          placeholder:text-muted-foreground
+          focus:outline-none focus:ring-2 focus:ring-accentYellow
+          "
           autoFocus
         />
 
         <button
           disabled={loading}
-          className="w-full py-2 bg-accentYellow text-black rounded font-semibold"
+          className="
+         w-full py-2
+      bg-signature_yellow
+      text-black
+        rounded-md
+        font-semibold
+        hover:brightness-110
+        transition
+        disabled:opacity-50
+          "
         >
           {loading ? "Saving..." : "Continue"}
         </button>
