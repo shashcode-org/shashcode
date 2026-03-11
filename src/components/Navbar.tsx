@@ -1,8 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import AnimatedElement from "./AnimatedElement";
 import { trackEvent } from "@/utils/analytics";
+import { useAuth } from "@/context/AuthContext";
+import { useUserMeta } from "@/hooks/useUserMeta";
+import { useNavigate } from "react-router-dom";
+
+function getSheetFromPath(pathname: string) {
+  if (pathname.startsWith("/java-dsa")) return "JAVA_DSA";
+  if (pathname.startsWith("/dsa")) return "DSA";
+  return "DSA";
+}
 
 const Navbar = () => {
   const [isDark, setIsDark] = useState(
@@ -12,6 +21,33 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+
+  const { user, logout } = useAuth();
+  const { username } = useUserMeta();
+  const navigate = useNavigate();
+  const [accountOpen, setAccountOpen] = useState(false);
+  const accountRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        accountRef.current &&
+        !accountRef.current.contains(event.target as Node)
+      ) {
+        setAccountOpen(false);
+      }
+    };
+
+    if (accountOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [accountOpen]);
+
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,6 +66,7 @@ const Navbar = () => {
   // Close mobile menu when navigating
   useEffect(() => {
     setIsOpen(false);
+    setAccountOpen(false); // 👈 ADD THIS
   }, [location.pathname]);
 
   const navLinks = [
@@ -120,6 +157,67 @@ const Navbar = () => {
               )}
             </button>
 
+            {user && (
+              <div className="flex items-center gap-4">
+                <div className="relative" ref={accountRef}>
+                  <button
+                    onClick={() => setAccountOpen((v) => !v)}
+                    className="flex items-center gap-2 px-3 py-1.5 rounded-full hover:bg-accent/20 transition"
+                  >
+                    <span className="text-sm font-medium">
+                      {username && `@${username}`}
+                    </span>
+                    <span
+                      className={`text-xs transition-transform ${accountOpen ? "rotate-180" : ""
+                        }`}
+                    >
+                      ▾
+                    </span>
+                  </button>
+
+                  {accountOpen && (
+                    <div
+                      className="
+        absolute right-0 mt-2 w-36
+        bg-card border border-border
+        rounded-xl shadow-lg
+        overflow-hidden
+        z-50
+      "
+                    >
+                      <button
+                        onClick={async () => {
+                          const sheet = getSheetFromPath(location.pathname);
+                          await logout(sheet);
+                          // await logout();
+                          navigate("/login", { replace: true });
+                        }}
+                        className="w-full text-left px-4 py-2 text-sm hover:bg-accent/20"
+                      >
+                        Logout
+                      </button>
+                    </div>
+                  )}
+                </div>
+
+
+              </div>
+            )}
+
+            {!user && (
+              <Link
+                to="/login"
+                className={`navbar-link ${location.pathname === "/login"
+                  ? "text-primary after:scale-x-100"
+                  : ""
+                  }`}
+              >
+                Login
+              </Link>
+            )}
+
+
+
 
           </div>
 
@@ -138,6 +236,14 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden bg-card p-4 mt-3 rounded-lg shadow-lg border border-border animate-fadeIn">
             <div className="flex flex-col space-y-4">
+              {user && (
+                <>
+                  <div className="px-3 py-2 text-sm font-medium border-b border-border">
+                    {username && `@${username}`}
+                  </div>
+                </>
+              )}
+
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
@@ -175,6 +281,31 @@ const Navbar = () => {
                   </>
                 )}
               </button>
+              {user && (
+                <button
+                  onClick={async () => {
+                    const sheet = getSheetFromPath(location.pathname);
+                    await logout(sheet);
+                    // await logout();
+                    navigate("/login", { replace: true });
+                  }}
+                  className="py-2 px-3 text-left text-red-500 hover:bg-accent/20 rounded-md"
+                >
+                  Logout
+                </button>
+              )}
+              {!user && (
+                <Link
+                  to="/login"
+                  className={`block py-2 px-3 rounded-md transition-colors ${location.pathname === "/login"
+                    ? "bg-primary/10 text-primary font-medium"
+                    : "text-foreground hover:bg-accent/20"
+                    }`}
+                >
+                  Login
+                </Link>
+              )}
+
             </div>
           </div>
         )}
