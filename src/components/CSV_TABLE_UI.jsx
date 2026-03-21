@@ -1027,11 +1027,24 @@ export const CSV_TABLE_UI = ({ csvData }) => {
           />
         </div>
 
-        {/* CURRENT LEVEL (BASED ON LIFETIME LEARNING) */}
-        <div className="mt-2 text-sm font-medium text-primary">
-          Level: <span className="font-semibold">{highestLevel}</span>
-        </div>
+        {!userId && (
+          <div className="mt-3 text-sm text-accent font-medium">
+            {progressPercent < 20 && "Start earning levels as you progress 🚀"}
+            {progressPercent >= 20 && progressPercent < 40 && "You’re close to unlocking your first level 👀"}
+            {progressPercent >= 40 && "You’re already ahead… unlock your level now 🔥"}
+          </div>
+        )}
 
+        {/* CURRENT LEVEL (BASED ON LIFETIME LEARNING) */}
+        {userId ? (
+          <div className="mt-2 text-sm font-medium text-primary">
+            Level: <span className="font-semibold">{highestLevel}</span>
+          </div>
+        ) : (
+          <div className="mt-2 text-sm font-medium text-primary">
+            🔒 Unlock your level & badges 🚀
+          </div>
+        )}
 
         {completedSubtopics === totalSubtopics && totalSubtopics > 0 ? (
           <div className="mt-3 text-sm font-medium text-success">
@@ -1061,10 +1074,11 @@ export const CSV_TABLE_UI = ({ csvData }) => {
             Reset progress
           </button>
         </div>
-        <div className="mt-2 text-xs text-muted-foreground">
-          Progress is saved locally on this browser & device.
-        </div>
-
+        {!userId && (
+          <div className="mt-2 text-xs text-muted-foreground">
+            ⚠️ Your progress is only saved on this device.
+          </div>
+        )}
       </div>
 
 
