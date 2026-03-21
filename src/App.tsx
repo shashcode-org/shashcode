@@ -13,6 +13,7 @@ import ContactUs from "./pages/Contact";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
+import * as Sentry from "@sentry/react";
 import "./App.css";
 import Login from "@/pages/Login";
 import { useAuth } from "@/context/AuthContext";
@@ -32,7 +33,14 @@ const App = () => {
     );
   }
   return (
-
+<Sentry.ErrorBoundary
+      fallback={
+        <div style={{ padding: 40, textAlign: "center" }}>
+          <h2>Something went wrong</h2>
+          <p>Please refresh the page.</p>
+        </div>
+      }
+    >
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
@@ -67,6 +75,7 @@ const App = () => {
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
+    </Sentry.ErrorBoundary>
   )
 };
 
