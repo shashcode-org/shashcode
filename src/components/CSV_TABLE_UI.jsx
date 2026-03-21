@@ -1262,6 +1262,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
                                 if (totalQuestions === 0) {
                                   const updated = toggleSubtopicProgress(subtopicId);
                                   setSubtopicProgress(updated);
+                                  window.dispatchEvent(new Event("progressUpdated"));
                                 } else {
                                   const questionIds = questions.map(q => q.id);
                                   const currentProgress = { ...questionProgress };
@@ -1281,6 +1282,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 
                                   saveQuestionProgress(currentProgress);
                                   setQuestionProgress(currentProgress);
+                                  window.dispatchEvent(new Event("progressUpdated"));
                                   hasUserInteractedRef.current = true;
                                 }
                               }}
@@ -1410,6 +1412,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
                                           e.stopPropagation();
                                           const updated = toggleQuestionProgress(questionId);
                                           setQuestionProgress(updated);
+                                          window.dispatchEvent(new Event("progressUpdated"));
                                           // GA4 tracking (question solved / unsolved)
                                           if (!isSolved) {
                                             trackEvent("question_marked_solved", {
