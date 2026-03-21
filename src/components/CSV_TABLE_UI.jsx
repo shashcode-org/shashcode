@@ -1041,19 +1041,21 @@ export const CSV_TABLE_UI = ({ csvData }) => {
             Level: <span className="font-semibold">{highestLevel}</span>
           </div>
         ) : (
-          <div className="mt-3 flex items-center justify-between">
+          <div className="mt-3 flex items-center">
             <div className="text-sm font-medium text-primary">
               🔒 Unlock your level & badges 🚀
             </div>
 
-            {!userId && (
-              <button
-                onClick={() => window.location.href = "/login"}
-                className="px-4 py-1.5 text-sm font-semibold rounded-md bg-primary text-white hover:opacity-90 transition"
-              >
-                Unlock Now
-              </button>
-            )}
+            <div className="ml-auto">
+              {!userId && (
+                <button
+                  onClick={() => window.location.href = "/login"}
+                  className="px-4 py-1.5 text-sm font-semibold rounded-md bg-primary text-white hover:opacity-90 transition"
+                >
+                  Unlock Now
+                </button>
+              )}
+            </div>
           </div>
         )}
 
