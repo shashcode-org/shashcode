@@ -470,7 +470,13 @@ export const CSV_TABLE_UI = ({ csvData }) => {
       try {
 
         if (!userId) {
-          migrateLegacyToGuest(sheet);
+          const alreadyMigrated = localStorage.getItem("migration_done");
+
+          if (!alreadyMigrated) {
+            // do nothing → App will handle migration
+          } else {
+            migrateLegacyToGuest(sheet);
+          }
         }
         console.log("🚀 Starting hydration");
 
@@ -1044,11 +1050,11 @@ export const CSV_TABLE_UI = ({ csvData }) => {
           <div className="mt-3 flex items-center">
             <div className="text-sm font-medium text-primary">
               🔒 <button
-                  onClick={() => window.location.href = "/login"}
-                  className="px-4 py-1.5 text-sm font-semibold rounded-md bg-primary text-white hover:opacity-90 transition"
-                >
-                  Unlock 
-                </button> your level & badges 🚀
+                onClick={() => window.location.href = "/login"}
+                className="px-4 py-1.5 text-sm font-semibold rounded-md bg-primary text-white hover:opacity-90 transition"
+              >
+                Unlock
+              </button> your level & badges 🚀
             </div>
           </div>
         )}

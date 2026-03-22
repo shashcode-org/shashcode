@@ -19,11 +19,61 @@ import Login from "@/pages/Login";
 import { useAuth } from "@/context/AuthContext";
 import UsernameOnboarding from "@/pages/UsernameOnboarding";
 import OnboardingGuard from "@/components/OnboardingGuard";
+import { useEffect, useState } from "react";
 const queryClient = new QueryClient();
+
+
 
 const App = () => {
   const { loading } = useAuth();
+  const [showMigrationPopup, setShowMigrationPopup] = useState(false);
+  const { user } = useAuth();
 
+  useEffect(() => {
+    if (!user) return;
+
+    const legacyQ = localStorage.getItem("questionProgress");
+    const legacyS = localStorage.getItem("subtopicProgress");
+
+    const alreadyMigrated = localStorage.getItem("migration_done");
+
+    if ((legacyQ || legacyS) && !alreadyMigrated) {
+      setShowMigrationPopup(true);
+    }
+  }, [user]);
+
+  const handleMigration = (type) => {
+    const legacyQ = localStorage.getItem("questionProgress");
+    const legacyS = localStorage.getItem("subtopicProgress");
+
+    if (!legacyQ && !legacyS) return;
+
+    if (type === "DSA") {
+      localStorage.setItem("questionProgress_guest_DSA", legacyQ ?? "{}");
+      localStorage.setItem("subtopicProgress_guest_DSA", legacyS ?? "{}");
+    }
+
+    if (type === "JAVA_DSA") {
+      localStorage.setItem("questionProgress_guest_JAVA_DSA", legacyQ ?? "{}");
+      localStorage.setItem("subtopicProgress_guest_JAVA_DSA", legacyS ?? "{}");
+    }
+
+    if (type === "BOTH") {
+      localStorage.setItem("questionProgress_guest_DSA", legacyQ ?? "{}");
+      localStorage.setItem("subtopicProgress_guest_DSA", legacyS ?? "{}");
+
+      localStorage.setItem("questionProgress_guest_JAVA_DSA", legacyQ ?? "{}");
+      localStorage.setItem("subtopicProgress_guest_JAVA_DSA", legacyS ?? "{}");
+    }
+
+    localStorage.setItem("migration_done", "true");
+
+    // 🔥 DELETE OLD LEGACY KEYS
+    localStorage.removeItem("questionProgress");
+    localStorage.removeItem("subtopicProgress");
+
+    setShowMigrationPopup(false);
+  };
   // 🔒 GLOBAL AUTH LOADING GATE
   if (loading) {
     return (
@@ -33,7 +83,8 @@ const App = () => {
     );
   }
   return (
-<Sentry.ErrorBoundary
+
+    <Sentry.ErrorBoundary
       fallback={
         <div style={{ padding: 40, textAlign: "center" }}>
           <h2>Something went wrong</h2>
@@ -41,40 +92,79 @@ const App = () => {
         </div>
       }
     >
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <ScrollToTop />
-          <Routes>
-            <Route path="/login" element={<Login />} />
-            <Route path="/onboarding/username" element={<UsernameOnboarding />} />
-            {/* PROTECTED + ONBOARDED AREA */}
-            <Route
-              path="/*"
-              element={
-                <OnboardingGuard>
-                  <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/dsa" element={<DSA />} />
-                    <Route path="/java-dsa" element={<JavaDSA />} />
-                    {/* <Route path="/last-minute-dsa" element={<LastMinuteDSA />} /> */}
-                    <Route path="/privacy" element={<Privacy />} />
-                    <Route path="/terms" element={<Terms />} />
-                    <Route path="/contact-us" element={<ContactUs />} />
-                    <Route path="/about" element={<About />} />
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            {showMigrationPopup && (
+              <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+                <div className="bg-card p-6 rounded-xl w-[90%] max-w-md text-center border border-border shadow-xl">
 
-                    {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-                    <Route path="*" element={<NotFound />} />
-                  </Routes>
-                </OnboardingGuard>
-              }
-            />
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
+                  <div className="text-3xl mb-2">🚀</div>
+
+                  <h2 className="text-lg font-semibold mb-2">
+                    We found your progress 👀
+                  </h2>
+
+                  <p className="text-sm text-muted-foreground mb-5">
+                    Where were you practicing mostly?
+                  </p>
+
+                  <div className="flex flex-col gap-3">
+                    <button
+                      onClick={() => handleMigration("DSA")}
+                      className="py-2 rounded-md bg-primary text-white font-semibold"
+                    >
+                      Continue with DSA
+                    </button>
+
+                    <button
+                      onClick={() => handleMigration("JAVA_DSA")}
+                      className="py-2 rounded-md border border-border hover:bg-accent/20"
+                    >
+                      Continue with Java DSA
+                    </button>
+
+                    <button
+                      onClick={() => handleMigration("BOTH")}
+                      className="py-2 rounded-md text-sm text-muted-foreground hover:underline"
+                    >
+                      Sync both (recommended)
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+            <ScrollToTop />
+            <Routes>
+              <Route path="/login" element={<Login />} />
+              <Route path="/onboarding/username" element={<UsernameOnboarding />} />
+              {/* PROTECTED + ONBOARDED AREA */}
+              <Route
+                path="/*"
+                element={
+                  <OnboardingGuard>
+                    <Routes>
+                      <Route path="/" element={<Home />} />
+                      <Route path="/dsa" element={<DSA />} />
+                      <Route path="/java-dsa" element={<JavaDSA />} />
+                      {/* <Route path="/last-minute-dsa" element={<LastMinuteDSA />} /> */}
+                      <Route path="/privacy" element={<Privacy />} />
+                      <Route path="/terms" element={<Terms />} />
+                      <Route path="/contact-us" element={<ContactUs />} />
+                      <Route path="/about" element={<About />} />
+
+                      {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                      <Route path="*" element={<NotFound />} />
+                    </Routes>
+                  </OnboardingGuard>
+                }
+              />
+            </Routes>
+          </BrowserRouter>
+        </TooltipProvider>
+      </QueryClientProvider>
     </Sentry.ErrorBoundary>
   )
 };
