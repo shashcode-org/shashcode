@@ -25,19 +25,65 @@ const queryClient = new QueryClient();
 
 
 const App = () => {
-  const { loading } = useAuth();
+  const { loading, user } = useAuth();
   const [showMigrationPopup, setShowMigrationPopup] = useState(false);
-  const { user } = useAuth();
+  const [showLoginNudge, setShowLoginNudge] = useState(false);
 
   useEffect(() => {
-    if (!user) return;
+    const seen = localStorage.getItem("login_nudge_seen");
+
+    if (!user && !seen) {
+      setShowLoginNudge(true);
+      localStorage.setItem("login_nudge_seen", "true");
+    }
+  }, [user]);
+
+  {
+    showLoginNudge && !user && (
+      <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
+        <div className="bg-card p-6 rounded-xl max-w-sm w-full text-center">
+
+          <h3 className="text-lg font-semibold mb-2">
+            Track your progress 🚀
+          </h3>
+
+          <p className="text-sm mb-4 text-muted-foreground">
+            Login to save progress, unlock levels & badges.
+          </p>
+
+          <button
+            onClick={() => window.location.href = "/login"}
+            className="w-full py-2 bg-primary text-white rounded-md"
+          >
+            Login with Google
+          </button>
+
+          <button
+            onClick={() => setShowLoginNudge(false)}
+            className="mt-3 text-xs text-muted-foreground"
+          >
+            Maybe later
+          </button>
+
+        </div>
+      </div>
+    )
+  }
+
+  useEffect(() => {
+    // if (!user) return;
 
     const legacyQ = localStorage.getItem("questionProgress");
     const legacyS = localStorage.getItem("subtopicProgress");
 
     const alreadyMigrated = localStorage.getItem("migration_done");
-
-    if ((legacyQ || legacyS) && !alreadyMigrated) {
+    const onboardingDone = localStorage.getItem("onboarding_done");
+    if (
+      user &&
+      onboardingDone &&
+      (legacyQ || legacyS) &&
+      !alreadyMigrated
+    ) {
       setShowMigrationPopup(true);
     }
   }, [user]);
@@ -58,14 +104,6 @@ const App = () => {
       localStorage.setItem("subtopicProgress_guest_JAVA_DSA", legacyS ?? "{}");
     }
 
-    if (type === "BOTH") {
-      localStorage.setItem("questionProgress_guest_DSA", legacyQ ?? "{}");
-      localStorage.setItem("subtopicProgress_guest_DSA", legacyS ?? "{}");
-
-      localStorage.setItem("questionProgress_guest_JAVA_DSA", legacyQ ?? "{}");
-      localStorage.setItem("subtopicProgress_guest_JAVA_DSA", legacyS ?? "{}");
-    }
-
     localStorage.setItem("migration_done", "true");
 
     // 🔥 DELETE OLD LEGACY KEYS
@@ -73,6 +111,15 @@ const App = () => {
     localStorage.removeItem("subtopicProgress");
 
     setShowMigrationPopup(false);
+    window.dispatchEvent(new Event("migrationCompleted"));
+
+    if (type === "DSA") {
+      window.location.href = "/dsa";
+    }
+
+    if (type === "JAVA_DSA") {
+      window.location.href = "/java-dsa";
+    }
   };
   // 🔒 GLOBAL AUTH LOADING GATE
   if (loading) {
@@ -108,30 +155,26 @@ const App = () => {
                   </h2>
 
                   <p className="text-sm text-muted-foreground mb-5">
-                    Where were you practicing mostly?
+                    We found your progress 👀
+                    Let’s restore it in the right place 🚀
                   </p>
 
                   <div className="flex flex-col gap-3">
                     <button
                       onClick={() => handleMigration("DSA")}
-                      className="py-2 rounded-md bg-primary text-white font-semibold"
+                      className="py-2 rounded-md border border-border hover:bg-accent/20"
                     >
-                      Continue with DSA
+                      Continue my journey with DSA
                     </button>
 
                     <button
                       onClick={() => handleMigration("JAVA_DSA")}
                       className="py-2 rounded-md border border-border hover:bg-accent/20"
                     >
-                      Continue with Java DSA
+                      Continue my journey with Java DSA
                     </button>
 
-                    <button
-                      onClick={() => handleMigration("BOTH")}
-                      className="py-2 rounded-md text-sm text-muted-foreground hover:underline"
-                    >
-                      Sync both (recommended)
-                    </button>
+
                   </div>
                 </div>
               </div>

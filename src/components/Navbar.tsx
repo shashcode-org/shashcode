@@ -73,11 +73,21 @@ const Navbar = () => {
   useEffect(() => {
     const checkBell = () => {
       try {
+        const dsaQuestions = JSON.parse(localStorage.getItem("questionProgress_guest_DSA") || "{}");
+        const javaQuestions = JSON.parse(localStorage.getItem("questionProgress_guest_JAVA_DSA") || "{}");
+        const legacyQuestions = JSON.parse(localStorage.getItem("questionProgress") || "{}");
+        const dsaSubtopics = JSON.parse(localStorage.getItem("subtopicProgress_guest_DSA") || "{}");
+        const javaSubtopics = JSON.parse(localStorage.getItem("subtopicProgress_guest_JAVA_DSA") || "{}");
+        const legacySubtopics = JSON.parse(localStorage.getItem("subtopicProgress") || "{}");
         const hasQuestionProgress =
-          Object.keys(JSON.parse(localStorage.getItem("questionProgress_guest_DSA") || "{}")).length > 0;
+          Object.keys(dsaQuestions).length > 0 ||
+          Object.keys(javaQuestions).length > 0 ||
+          Object.keys(legacyQuestions).length > 0;
 
         const hasSubtopicProgress =
-          Object.keys(JSON.parse(localStorage.getItem("subtopicProgress_guest_DSA") || "{}")).length > 0;
+          Object.keys(dsaSubtopics).length > 0 ||
+          Object.keys(javaSubtopics).length > 0 ||
+          Object.keys(legacySubtopics).length > 0;
 
         if (!user && (hasQuestionProgress || hasSubtopicProgress)) {
           setShowBell(true);

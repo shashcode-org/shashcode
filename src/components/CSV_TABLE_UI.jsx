@@ -15,6 +15,7 @@ import { trackEvent } from "@/utils/analytics";
 import { BUCKETS } from "@/utils/titleEngine";
 import { getLevelFromRank } from "@/utils/titleEngine";
 import { supabase } from "@/lib/supabaseClient";
+import { toast } from "sonner";
 const QUESTION_STORAGE_KEY = "questionProgress";
 const SUBTOPIC_STORAGE_KEY = "subtopicProgress";
 
@@ -149,6 +150,20 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 
   const questionProgressRef = useRef(questionProgress);
   const subtopicProgressRef = useRef(subtopicProgress);
+
+  useEffect(() => {
+    const handler = () => {
+      console.log("🔁 Migration done → rehydrating");
+      hydratedUserRef.current = null; // reset
+      setUserId((prev) => prev); // force re-run
+    };
+
+    window.addEventListener("migrationCompleted", handler);
+
+    return () => {
+      window.removeEventListener("migrationCompleted", handler);
+    };
+  }, []);
 
   useEffect(() => {
     questionProgressRef.current = questionProgress;
@@ -468,15 +483,12 @@ export const CSV_TABLE_UI = ({ csvData }) => {
     (async () => {
       isHydratingRef.current = true;
       try {
+        const alreadyMigrated = localStorage.getItem("migration_done");
 
-        if (!userId) {
-          const alreadyMigrated = localStorage.getItem("migration_done");
-
-          if (!alreadyMigrated) {
-            // do nothing → App will handle migration
-          } else {
-            migrateLegacyToGuest(sheet);
-          }
+        if (!alreadyMigrated && userId) {
+          console.log("⛔ Waiting for migration (user)");
+          isHydratingRef.current = false; // 🔥 ADD THIS
+          return;
         }
         console.log("🚀 Starting hydration");
 
@@ -555,7 +567,11 @@ export const CSV_TABLE_UI = ({ csvData }) => {
         // STEP 3: READ DB
         // --------------------------------------------------
 
-        const dbData = await hydrateProgressFromDB(sheet);
+        let dbData = null;
+
+        if (userId) {
+          dbData = await hydrateProgressFromDB(sheet);
+        }
 
         console.log("📥 DB data:", dbData);
 
@@ -1264,6 +1280,11 @@ export const CSV_TABLE_UI = ({ csvData }) => {
                             <div
                               onClick={(e) => {
                                 e.stopPropagation();
+                                // 🔒 BLOCK GUEST
+                                if (!userId) {
+                                  toast("🔒 Login to save progress & unlock levels 🚀");
+                                  return;
+                                }
 
                                 if (totalQuestions === 0) {
                                   const updated = toggleSubtopicProgress(subtopicId);
@@ -1416,6 +1437,12 @@ export const CSV_TABLE_UI = ({ csvData }) => {
                                       <div
                                         onClick={(e) => {
                                           e.stopPropagation();
+                                          // 🔒 BLOCK GUEST
+                                          if (!userId) {
+                                            toast("🔒 Login to save progress & unlock levels 🚀");
+                                            return;
+                                          }
+
                                           const updated = toggleQuestionProgress(questionId);
                                           setQuestionProgress(updated);
                                           window.dispatchEvent(new Event("progressUpdated"));

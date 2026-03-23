@@ -17,16 +17,24 @@ const OnboardingGuard = ({ children }: { children: React.ReactNode }) => {
     }
 
     const check = async () => {
-      const { data } = await supabase
+      const { data, error } = await supabase
         .from("user_meta")
         .select("user_id")
         .eq("user_id", user.id)
-        .single();
+        .maybeSingle();
+
+      if (error) {
+        console.error("Onboarding check failed:", error);
+        setChecking(false);
+        return;
+      }
 
       if (!data) {
         navigate("/onboarding/username", { replace: true });
       }
-
+      if (data) {
+        localStorage.setItem("onboarding_done", "true");
+      }
       setChecking(false);
     };
 

@@ -46,8 +46,9 @@ const UsernameOnboarding = () => {
       setError("Username already taken");
       return;
     }
+    localStorage.setItem("onboarding_done", "true");
+    window.location.href = "/";
 
-    navigate("/", { replace: true });
   };
 
   return (
