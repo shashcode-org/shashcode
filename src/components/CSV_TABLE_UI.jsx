@@ -769,6 +769,14 @@ export const CSV_TABLE_UI = ({ csvData }) => {
         completedMainTopics,
       });
 
+      // ✅ mark latest local update time
+      if (result?.updated_at) {
+        localStorage.setItem(
+          `progressUpdatedAt_${userId}_${sheet}`,
+          result.updated_at
+        );
+      }
+
       if (result?.highest_level !== undefined) {
         setHighestLevel(
           getLevelFromRank(Number(result.highest_level))
@@ -803,6 +811,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
           filter: `user_id=eq.${userId}`,
         },
         (payload) => {
+          if (isHydratingRef.current) return;
           console.log("🔄 Realtime progress update");
 
           const progress = payload.new?.progress_json || {};
@@ -815,10 +824,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
             subtopics: dbSubtopics,
           });
 
-          if (incoming === lastSyncedRef.current) {
-            console.log("⏭ Ignoring own realtime update");
-            return;
-          }
+
 
           // Only update if actually different
           if (
@@ -829,10 +835,30 @@ export const CSV_TABLE_UI = ({ csvData }) => {
             return;
           }
 
+          const incomingUpdatedAt = payload.new.updated_at;
+          const localUpdatedAt = localStorage.getItem(`progressUpdatedAt_${userId}_${sheet}`);
+
+          // ⛔ ignore stale realtime updates
+          if (localUpdatedAt && incomingUpdatedAt <= localUpdatedAt) {
+            console.log("⏭ Ignoring stale realtime update");
+            return;
+          }
+
+          if (incoming === lastSyncedRef.current) {
+            console.log("⏭ Ignoring own realtime update");
+            return;
+          }
+
           console.log("📥 Applying DB state");
 
           setQuestionProgress(dbQuestions);
           setSubtopicProgress(dbSubtopics);
+
+          // ✅ save latest timestamp
+          localStorage.setItem(
+            `progressUpdatedAt_${userId}_${sheet}`,
+            incomingUpdatedAt
+          );
 
           lastSyncedRef.current = JSON.stringify({
             questions: dbQuestions,
