@@ -839,6 +839,22 @@ export const CSV_TABLE_UI = ({ csvData }) => {
           });
 
 
+          const localQ = questionProgressRef.current;
+          const localS = subtopicProgressRef.current;
+
+          // 🛑 rollback detection (deep)
+          const isRollback = Object.keys(dbQuestions).some(
+            (key) => localQ[key] && !dbQuestions[key]
+          ) || Object.keys(dbSubtopics).some(
+            (key) => localS[key] && !dbSubtopics[key]
+          );
+
+          if (isRollback) {
+            console.log("⏭ Ignoring rollback (lost progress)");
+            return;
+          }
+
+
 
           // Only update if actually different
           if (
