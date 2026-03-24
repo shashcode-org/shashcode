@@ -133,6 +133,7 @@ function getStorageKeys(userId, sheet) {
 
 
 export const CSV_TABLE_UI = ({ csvData }) => {
+  const isSyncingRef = useRef(false);
   const [expandedTopicIndex, setExpandedTopicIndex] = useState(null);
   const [selectedTopic, setSelectedTopic] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
@@ -756,10 +757,13 @@ export const CSV_TABLE_UI = ({ csvData }) => {
     }
 
     debounceTimerRef.current = setTimeout(async () => {
-      lastSyncedRef.current = JSON.stringify({
-        questions: questionProgress,
-        subtopics: subtopicProgress,
+      const currentSnapshot = JSON.stringify({
+        questions: questionProgressRef.current,
+        subtopics: subtopicProgressRef.current,
       });
+
+      lastSyncedRef.current = currentSnapshot;
+      isSyncingRef.current = true;
       const result = await syncProgressToServer({
         sheet,
         subtopics: subtopicProgress,
@@ -782,6 +786,11 @@ export const CSV_TABLE_UI = ({ csvData }) => {
           getLevelFromRank(Number(result.highest_level))
         );
       }
+
+      // 🔥 IMPORTANT: delay unlocking sync
+      setTimeout(() => {
+        isSyncingRef.current = false;
+      }, 500); // 300–500ms safe buffer
 
 
 
@@ -811,7 +820,12 @@ export const CSV_TABLE_UI = ({ csvData }) => {
           filter: `user_id=eq.${userId}`,
         },
         (payload) => {
+          if (!userId) return;
           if (isHydratingRef.current) return;
+          if (isSyncingRef.current) {
+            console.log("⏭ Ignoring realtime during sync");
+            return;
+          }
           console.log("🔄 Realtime progress update");
 
           const progress = payload.new?.progress_json || {};
