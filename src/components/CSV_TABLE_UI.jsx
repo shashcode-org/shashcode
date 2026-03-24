@@ -486,7 +486,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
         const alreadyMigrated = localStorage.getItem("migration_done");
 
         if (!alreadyMigrated && userId) {
-          console.log("⛔ Waiting for migration (user)");
+          console.log("⛔ Waiting for migration (user)", alreadyMigrated, userId);
           isHydratingRef.current = false; // 🔥 ADD THIS
           return;
         }
