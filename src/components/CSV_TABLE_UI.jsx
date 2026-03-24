@@ -511,12 +511,6 @@ export const CSV_TABLE_UI = ({ csvData }) => {
           isHydratingRef.current = false;
           return;
         }
-
-        if (!alreadyMigrated && userId) {
-          console.log("⛔ Waiting for migration (user)", alreadyMigrated, userId);
-          isHydratingRef.current = false; // 🔥 ADD THIS
-          return;
-        }
         console.log("🚀 Starting hydration");
 
 
