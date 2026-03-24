@@ -484,6 +484,33 @@ export const CSV_TABLE_UI = ({ csvData }) => {
       isHydratingRef.current = true;
       try {
         const alreadyMigrated = localStorage.getItem("migration_done");
+        const userQ = JSON.parse(
+          localStorage.getItem(`questionProgress_${userId}_${sheet}`) || "{}"
+        );
+        const userS = JSON.parse(
+          localStorage.getItem(`subtopicProgress_${userId}_${sheet}`) || "{}"
+        );
+
+        const guestQ = JSON.parse(localStorage.getItem(`questionProgress_guest_${sheet}`) || "{}");
+        const guestS = JSON.parse(localStorage.getItem(`subtopicProgress_guest_${sheet}`) || "{}");
+
+        const hasGuestData =
+          Object.keys(guestQ).length > 0 ||
+          Object.keys(guestS).length > 0;
+
+        const hasUserData = Object.keys(userQ).length > 0 || Object.keys(userS).length > 0;
+
+        if (!alreadyMigrated && userId && !hasUserData && hasGuestData) {
+          console.log("⛔ Waiting for migration (user)");
+
+          console.log("📦 Using guest fallback");
+          setQuestionProgress(guestQ);
+          setSubtopicProgress(guestS);
+
+
+          isHydratingRef.current = false;
+          return;
+        }
 
         if (!alreadyMigrated && userId) {
           console.log("⛔ Waiting for migration (user)", alreadyMigrated, userId);
