@@ -38,37 +38,7 @@ const App = () => {
     }
   }, [user]);
 
-  {
-    showLoginNudge && !user && (
-      <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
-        <div className="bg-card p-6 rounded-xl max-w-sm w-full text-center">
 
-          <h3 className="text-lg font-semibold mb-2">
-            Track your progress 🚀
-          </h3>
-
-          <p className="text-sm mb-4 text-muted-foreground">
-            Login to save progress, unlock levels & badges.
-          </p>
-
-          <button
-            onClick={() => window.location.href = "/login"}
-            className="w-full py-2 bg-primary text-white rounded-md"
-          >
-            Login with Google
-          </button>
-
-          <button
-            onClick={() => setShowLoginNudge(false)}
-            className="mt-3 text-xs text-muted-foreground"
-          >
-            Maybe later
-          </button>
-
-        </div>
-      </div>
-    )
-  }
 
   useEffect(() => {
     // if (!user) return;
@@ -130,85 +100,117 @@ const App = () => {
     );
   }
   return (
+    <>
+      {
+        showLoginNudge && !user && (
+          <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
+            <div className="bg-card p-6 rounded-xl max-w-sm w-full text-center">
 
-    <Sentry.ErrorBoundary
-      fallback={
-        <div style={{ padding: 40, textAlign: "center" }}>
-          <h2>Something went wrong</h2>
-          <p>Please refresh the page.</p>
-        </div>
+              <h3 className="text-lg font-semibold mb-2">
+                Track your progress 🚀
+              </h3>
+
+              <p className="text-sm mb-4 text-muted-foreground">
+                Login to save progress, unlock levels & badges.
+              </p>
+
+              <button
+                onClick={() => window.location.href = "/login"}
+                className="w-full py-2 bg-primary text-white rounded-md"
+              >
+                Login with Google
+              </button>
+
+              <button
+                onClick={() => setShowLoginNudge(false)}
+                className="mt-3 text-xs text-muted-foreground"
+              >
+                Maybe later
+              </button>
+
+            </div>
+          </div>
+        )
       }
-    >
-      <QueryClientProvider client={queryClient}>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
-            {showMigrationPopup && (
-              <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-                <div className="bg-card p-6 rounded-xl w-[90%] max-w-md text-center border border-border shadow-xl">
+      <Sentry.ErrorBoundary
+        fallback={
+          <div style={{ padding: 40, textAlign: "center" }}>
+            <h2>Something went wrong</h2>
+            <p>Please refresh the page.</p>
+          </div>
+        }
+      >
+        <QueryClientProvider client={queryClient}>
+          <TooltipProvider>
+            <Toaster />
+            <Sonner />
+            <BrowserRouter>
+              {showMigrationPopup && (
+                <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+                  <div className="bg-card p-6 rounded-xl w-[90%] max-w-md text-center border border-border shadow-xl">
 
-                  <div className="text-3xl mb-2">🚀</div>
+                    <div className="text-3xl mb-2">🚀</div>
 
-                  <h2 className="text-lg font-semibold mb-2">
-                    We found your progress 👀
-                  </h2>
+                    <h2 className="text-lg font-semibold mb-2">
+                      We found your progress 👀
+                    </h2>
 
-                  <p className="text-sm text-muted-foreground mb-5">
-                    We found your progress 👀
-                    Let’s restore it in the right place 🚀
-                  </p>
+                    <p className="text-sm text-muted-foreground mb-5">
+                      We found your progress 👀
+                      Let’s restore it in the right place 🚀
+                    </p>
 
-                  <div className="flex flex-col gap-3">
-                    <button
-                      onClick={() => handleMigration("DSA")}
-                      className="py-2 rounded-md border border-border hover:bg-accent/20"
-                    >
-                      Continue my journey with DSA
-                    </button>
+                    <div className="flex flex-col gap-3">
+                      <button
+                        onClick={() => handleMigration("DSA")}
+                        className="py-2 rounded-md border border-border hover:bg-accent/20"
+                      >
+                        Continue my journey with DSA
+                      </button>
 
-                    <button
-                      onClick={() => handleMigration("JAVA_DSA")}
-                      className="py-2 rounded-md border border-border hover:bg-accent/20"
-                    >
-                      Continue my journey with Java DSA
-                    </button>
+                      <button
+                        onClick={() => handleMigration("JAVA_DSA")}
+                        className="py-2 rounded-md border border-border hover:bg-accent/20"
+                      >
+                        Continue my journey with Java DSA
+                      </button>
 
 
+                    </div>
                   </div>
                 </div>
-              </div>
-            )}
-            <ScrollToTop />
-            <Routes>
-              <Route path="/login" element={<Login />} />
-              <Route path="/onboarding/username" element={<UsernameOnboarding />} />
-              {/* PROTECTED + ONBOARDED AREA */}
-              <Route
-                path="/*"
-                element={
-                  <OnboardingGuard>
-                    <Routes>
-                      <Route path="/" element={<Home />} />
-                      <Route path="/dsa" element={<DSA />} />
-                      <Route path="/java-dsa" element={<JavaDSA />} />
-                      {/* <Route path="/last-minute-dsa" element={<LastMinuteDSA />} /> */}
-                      <Route path="/privacy" element={<Privacy />} />
-                      <Route path="/terms" element={<Terms />} />
-                      <Route path="/contact-us" element={<ContactUs />} />
-                      <Route path="/about" element={<About />} />
+              )}
+              <ScrollToTop />
+              <Routes>
+                <Route path="/login" element={<Login />} />
+                <Route path="/onboarding/username" element={<UsernameOnboarding />} />
+                {/* PROTECTED + ONBOARDED AREA */}
+                <Route
+                  path="/*"
+                  element={
+                    <OnboardingGuard>
+                      <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/dsa" element={<DSA />} />
+                        <Route path="/java-dsa" element={<JavaDSA />} />
+                        {/* <Route path="/last-minute-dsa" element={<LastMinuteDSA />} /> */}
+                        <Route path="/privacy" element={<Privacy />} />
+                        <Route path="/terms" element={<Terms />} />
+                        <Route path="/contact-us" element={<ContactUs />} />
+                        <Route path="/about" element={<About />} />
 
-                      {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-                      <Route path="*" element={<NotFound />} />
-                    </Routes>
-                  </OnboardingGuard>
-                }
-              />
-            </Routes>
-          </BrowserRouter>
-        </TooltipProvider>
-      </QueryClientProvider>
-    </Sentry.ErrorBoundary>
+                        {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                        <Route path="*" element={<NotFound />} />
+                      </Routes>
+                    </OnboardingGuard>
+                  }
+                />
+              </Routes>
+            </BrowserRouter>
+          </TooltipProvider>
+        </QueryClientProvider>
+      </Sentry.ErrorBoundary>
+    </>
   )
 };
 

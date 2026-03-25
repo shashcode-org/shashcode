@@ -150,7 +150,6 @@ function getStorageKeys(userId, sheet) {
 
 
 export const CSV_TABLE_UI = ({ csvData }) => {
-  // const isSyncingRef = useRef(false);
   const [expandedTopicIndex, setExpandedTopicIndex] = useState(null);
   const [selectedTopic, setSelectedTopic] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
@@ -160,7 +159,6 @@ export const CSV_TABLE_UI = ({ csvData }) => {
   const [highestLevel, setHighestLevel] = useState("Novice");
 
   const debounceTimerRef = useRef(null);
-  // const lastSyncedRef = useRef(null);
   const hasHydratedFromLocalRef = useRef(false);
   const hasUserInteractedRef = useRef(false);
   const hydratedUserRef = useRef(null);
@@ -271,40 +269,6 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 
   }, [userId, sheet]);
 
-  function migrateLegacyToGuest(sheet) {
-    const legacyQuestions = localStorage.getItem(QUESTION_STORAGE_KEY);
-    const legacySubtopics = localStorage.getItem(SUBTOPIC_STORAGE_KEY);
-
-
-    const guestKeys = getStorageKeys(null, sheet);
-
-    const guestQuestions = localStorage.getItem(
-      guestKeys.USER_QUESTION_STORAGE_KEY
-    );
-
-    const guestSubtopics = localStorage.getItem(
-      guestKeys.USER_SUBTOPIC_STORAGE_KEY
-    );
-
-    if (legacyQuestions && !guestQuestions) {
-      localStorage.setItem(
-        guestKeys.USER_QUESTION_STORAGE_KEY,
-        legacyQuestions
-      );
-
-      console.log("✅ Migrated legacy questionProgress → guest key");
-    }
-
-    if (legacySubtopics && !guestSubtopics) {
-      localStorage.setItem(
-        guestKeys.USER_SUBTOPIC_STORAGE_KEY,
-        legacySubtopics
-      );
-
-      console.log("✅ Migrated legacy subtopicProgress → guest key");
-    }
-  }
-
   const { USER_QUESTION_STORAGE_KEY, USER_SUBTOPIC_STORAGE_KEY } =
     getStorageKeys(userId, sheet);
 
@@ -379,7 +343,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 
   const toggleSubtopicProgress = (subtopicId) => {
     const progress = normalizeProgress(readSubtopicProgress());
-    if (progress[subtopicId]) {
+    if (progress[subtopicId]?.value === true) {
       progress[subtopicId] = {
         value: false,
         updatedAt: Date.now(),
@@ -515,6 +479,37 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 
     if (userId === undefined) return;
 
+    // ✅ CASE 0: GUEST USER
+    if (!userId) {
+      console.log("👤 Guest mode → loading local progress");
+
+      let guestQuestions = readQuestionProgress();
+      let guestSubtopics = readSubtopicProgress();
+
+      // 🔥 fallback to legacy keys
+      if (Object.keys(guestQuestions).length === 0) {
+        const legacyQ = localStorage.getItem("questionProgress");
+        if (legacyQ) guestQuestions = JSON.parse(legacyQ);
+      }
+
+      if (Object.keys(guestSubtopics).length === 0) {
+        const legacyS = localStorage.getItem("subtopicProgress");
+        if (legacyS) guestSubtopics = JSON.parse(legacyS);
+      }
+
+      // normalize after fallback
+      guestQuestions = normalizeProgress(guestQuestions);
+      guestSubtopics = normalizeProgress(guestSubtopics);
+
+      setQuestionProgress(guestQuestions);
+      setSubtopicProgress(guestSubtopics);
+
+      hasHydratedFromLocalRef.current = true;
+      isHydratingRef.current = false;
+
+      return;
+    }
+
     const hydrationKey = `${userId}_${sheet}`;
 
     if (hydratedUserRef.current === hydrationKey) {
@@ -551,8 +546,8 @@ export const CSV_TABLE_UI = ({ csvData }) => {
           console.log("⛔ Waiting for migration (user)");
 
           console.log("📦 Using guest fallback");
-          setQuestionProgress(guestQ);
-          setSubtopicProgress(guestS);
+          setQuestionProgress(normalizeProgress(guestQ));
+          setSubtopicProgress(normalizeProgress(guestS));
 
 
           isHydratingRef.current = false;
@@ -646,7 +641,6 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 
         let finalQuestions = {};
         let finalSubtopics = {};
-        let finalUpdatedAt = null;
 
 
         // --------------------------------------------------
@@ -657,17 +651,6 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 
           const dbQuestions = dbData?.questions || {};
           const dbSubtopics = dbData?.subtopics || {};
-
-          // 🔥 ALWAYS MERGE (UNION)
-          // finalQuestions = {
-          //   ...dbQuestions,
-          //   ...localQuestions
-          // };
-
-          // finalSubtopics = {
-          //   ...dbSubtopics,
-          //   ...localSubtopics
-          // };
 
           finalQuestions = mergeProgress(localQuestions, dbQuestions);
           finalSubtopics = mergeProgress(localSubtopics, dbSubtopics);
@@ -806,13 +789,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
     }
 
     debounceTimerRef.current = setTimeout(async () => {
-      const currentSnapshot = JSON.stringify({
-        questions: questionProgressRef.current,
-        subtopics: subtopicProgressRef.current,
-      });
 
-      // lastSyncedRef.current = currentSnapshot;
-      // isSyncingRef.current = true;
       const result = await syncProgressToServer({
         sheet,
         subtopics: subtopicProgress,
@@ -835,13 +812,6 @@ export const CSV_TABLE_UI = ({ csvData }) => {
           getLevelFromRank(Number(result.highest_level))
         );
       }
-
-      // 🔥 IMPORTANT: delay unlocking sync
-      // setTimeout(() => {
-      //   isSyncingRef.current = false;
-      // }, 500); // 300–500ms safe buffer
-
-
 
       // optional debug
       console.log("✅ Debounced sync to DB");
@@ -871,39 +841,12 @@ export const CSV_TABLE_UI = ({ csvData }) => {
         (payload) => {
           if (!userId) return;
           if (isHydratingRef.current) return;
-          // if (isSyncingRef.current) {
-          //   console.log("⏭ Ignoring realtime during sync");
-          //   return;
-          // }
           console.log("🔄 Realtime progress update");
 
           const progress = payload.new?.progress_json || {};
 
-          const dbQuestions =  normalizeProgress(progress.questions || {});
+          const dbQuestions = normalizeProgress(progress.questions || {});
           const dbSubtopics = normalizeProgress(progress.subtopics || {});
-
-          // const incoming = JSON.stringify({
-          //   questions: dbQuestions,
-          //   subtopics: dbSubtopics,
-          // });
-
-
-          // const localQ = questionProgressRef.current;
-          // const localS = subtopicProgressRef.current;
-
-          // 🛑 rollback detection (deep)
-          // const isRollback = Object.keys(dbQuestions).some(
-          //   (key) => localQ[key] && !dbQuestions[key]
-          // ) || Object.keys(dbSubtopics).some(
-          //   (key) => localS[key] && !dbSubtopics[key]
-          // );
-
-          // if (isRollback) {
-          //   console.log("⏭ Ignoring rollback (lost progress)");
-          //   return;
-          // }
-
-
 
           // Only update if actually different
           if (
@@ -922,11 +865,6 @@ export const CSV_TABLE_UI = ({ csvData }) => {
             console.log("⏭ Ignoring stale realtime update");
             return;
           }
-
-          // if (incoming === lastSyncedRef.current) {
-          //   console.log("⏭ Ignoring own realtime update");
-          //   return;
-          // }
 
           console.log("📥 Applying DB state");
 
@@ -948,11 +886,6 @@ export const CSV_TABLE_UI = ({ csvData }) => {
             `progressUpdatedAt_${userId}_${sheet}`,
             incomingUpdatedAt
           );
-
-          // lastSyncedRef.current = JSON.stringify({
-          //   questions: dbQuestions,
-          //   subtopics: dbSubtopics,
-          // });
 
           localStorage.setItem(
             USER_QUESTION_STORAGE_KEY,
