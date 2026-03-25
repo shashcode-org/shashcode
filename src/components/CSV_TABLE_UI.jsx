@@ -19,7 +19,24 @@ import { toast } from "sonner";
 const QUESTION_STORAGE_KEY = "questionProgress";
 const SUBTOPIC_STORAGE_KEY = "subtopicProgress";
 
+const normalizeProgress = (progress) => {
+  const normalized = {};
 
+  for (const key in progress) {
+    const item = progress[key];
+
+    if (typeof item === "boolean") {
+      normalized[key] = {
+        value: item,
+        updatedAt: 0, // old data → lowest priority
+      };
+    } else {
+      normalized[key] = item;
+    }
+  }
+
+  return normalized;
+};
 
 const normalizeLinks = (links) => {
   if (!links) return [];
@@ -133,7 +150,7 @@ function getStorageKeys(userId, sheet) {
 
 
 export const CSV_TABLE_UI = ({ csvData }) => {
-  const isSyncingRef = useRef(false);
+  // const isSyncingRef = useRef(false);
   const [expandedTopicIndex, setExpandedTopicIndex] = useState(null);
   const [selectedTopic, setSelectedTopic] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
@@ -143,7 +160,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
   const [highestLevel, setHighestLevel] = useState("Novice");
 
   const debounceTimerRef = useRef(null);
-  const lastSyncedRef = useRef(null);
+  // const lastSyncedRef = useRef(null);
   const hasHydratedFromLocalRef = useRef(false);
   const hasUserInteractedRef = useRef(false);
   const hydratedUserRef = useRef(null);
@@ -305,16 +322,39 @@ export const CSV_TABLE_UI = ({ csvData }) => {
     }
   };
 
+  const mergeProgress = (local, incoming) => {
+    const result = { ...local };
+
+    for (const key in incoming) {
+      if (!result[key]) {
+        result[key] = incoming[key];
+      } else {
+        result[key] =
+          incoming[key].updatedAt > result[key].updatedAt
+            ? incoming[key]
+            : result[key];
+      }
+    }
+
+    return result;
+  };
+
   const saveQuestionProgress = (progressMap) => {
     localStorage.setItem(USER_QUESTION_STORAGE_KEY, JSON.stringify(progressMap));
   };
 
   const toggleQuestionProgress = (questionId) => {
-    const progress = readQuestionProgress();
-    if (progress[questionId]) {
-      delete progress[questionId];
+    const progress = normalizeProgress(readQuestionProgress());
+    if (progress[questionId]?.value === true) {
+      progress[questionId] = {
+        value: false,
+        updatedAt: Date.now(),
+      };
     } else {
-      progress[questionId] = true;
+      progress[questionId] = {
+        value: true,
+        updatedAt: Date.now(),
+      };
     }
     saveQuestionProgress(progress);
     hasUserInteractedRef.current = true;
@@ -338,11 +378,17 @@ export const CSV_TABLE_UI = ({ csvData }) => {
   };
 
   const toggleSubtopicProgress = (subtopicId) => {
-    const progress = readSubtopicProgress();
+    const progress = normalizeProgress(readSubtopicProgress());
     if (progress[subtopicId]) {
-      delete progress[subtopicId];
+      progress[subtopicId] = {
+        value: false,
+        updatedAt: Date.now(),
+      };
     } else {
-      progress[subtopicId] = true;
+      progress[subtopicId] = {
+        value: true,
+        updatedAt: Date.now(),
+      };
     }
     saveSubtopicProgress(progress);
     hasUserInteractedRef.current = true;
@@ -374,12 +420,12 @@ export const CSV_TABLE_UI = ({ csvData }) => {
             d.id
           );
 
-          const solved = qIds.filter((id) => questionProgress[id]).length;
+          const solved = qIds.filter((id) => questionProgress[id]?.value === true).length;
           if (solved === qIds.length) completed++;
         } else {
           // MANUAL subtopic (theory-only)
           const subId = sub.id;
-          if (subtopicProgress[subId]) completed++;
+          if (subtopicProgress[subId]?.value === true) completed++;
         }
       });
     });
@@ -408,10 +454,10 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 
         if (questions.length > 0) {
           const qIds = questions.map(d => d.id);
-          const solved = qIds.filter(id => questionProgress[id]).length;
+          const solved = qIds.filter(id => questionProgress[id]?.value === true).length;
           return solved === qIds.length;
         } else {
-          return subtopicProgress[sub.id];
+          return subtopicProgress[sub.id]?.value === true;
         }
       });
 
@@ -449,9 +495,9 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 
           if (questions.length > 0) {
             const qIds = questions.map((d) => d.id);
-            const solved = qIds.filter((id) => questionProgress[id]).length;
+            const solved = qIds.filter((id) => questionProgress[id]?.value === true).length;
             if (solved === qIds.length) completed++;
-          } else if (subtopicProgress[sub.id]) {
+          } else if (subtopicProgress[sub.id]?.value === true) {
             completed++;
           }
         });
@@ -581,8 +627,8 @@ export const CSV_TABLE_UI = ({ csvData }) => {
         // STEP 2: READ LOCAL
         // --------------------------------------------------
 
-        const localQuestions = readQuestionProgress();
-        const localSubtopics = readSubtopicProgress();
+        const localQuestions = normalizeProgress(readQuestionProgress());
+        const localSubtopics = normalizeProgress(readSubtopicProgress());
 
 
         // --------------------------------------------------
@@ -613,15 +659,18 @@ export const CSV_TABLE_UI = ({ csvData }) => {
           const dbSubtopics = dbData?.subtopics || {};
 
           // 🔥 ALWAYS MERGE (UNION)
-          finalQuestions = {
-            ...dbQuestions,
-            ...localQuestions
-          };
+          // finalQuestions = {
+          //   ...dbQuestions,
+          //   ...localQuestions
+          // };
 
-          finalSubtopics = {
-            ...dbSubtopics,
-            ...localSubtopics
-          };
+          // finalSubtopics = {
+          //   ...dbSubtopics,
+          //   ...localSubtopics
+          // };
+
+          finalQuestions = mergeProgress(localQuestions, dbQuestions);
+          finalSubtopics = mergeProgress(localSubtopics, dbSubtopics);
 
           console.log("🔀 Merging DB + Local (union)");
 
@@ -708,8 +757,8 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 
       } catch (err) {
         console.error("Hydration error:", err);
-        const localQuestions = readQuestionProgress();
-        const localSubtopics = readSubtopicProgress();
+        const localQuestions = normalizeProgress(readQuestionProgress());
+        const localSubtopics = normalizeProgress(readSubtopicProgress());
 
         setQuestionProgress(localQuestions);
         setSubtopicProgress(localSubtopics);
@@ -762,8 +811,8 @@ export const CSV_TABLE_UI = ({ csvData }) => {
         subtopics: subtopicProgressRef.current,
       });
 
-      lastSyncedRef.current = currentSnapshot;
-      isSyncingRef.current = true;
+      // lastSyncedRef.current = currentSnapshot;
+      // isSyncingRef.current = true;
       const result = await syncProgressToServer({
         sheet,
         subtopics: subtopicProgress,
@@ -788,9 +837,9 @@ export const CSV_TABLE_UI = ({ csvData }) => {
       }
 
       // 🔥 IMPORTANT: delay unlocking sync
-      setTimeout(() => {
-        isSyncingRef.current = false;
-      }, 500); // 300–500ms safe buffer
+      // setTimeout(() => {
+      //   isSyncingRef.current = false;
+      // }, 500); // 300–500ms safe buffer
 
 
 
@@ -822,37 +871,37 @@ export const CSV_TABLE_UI = ({ csvData }) => {
         (payload) => {
           if (!userId) return;
           if (isHydratingRef.current) return;
-          if (isSyncingRef.current) {
-            console.log("⏭ Ignoring realtime during sync");
-            return;
-          }
+          // if (isSyncingRef.current) {
+          //   console.log("⏭ Ignoring realtime during sync");
+          //   return;
+          // }
           console.log("🔄 Realtime progress update");
 
           const progress = payload.new?.progress_json || {};
 
-          const dbQuestions = progress.questions || {};
-          const dbSubtopics = progress.subtopics || {};
+          const dbQuestions =  normalizeProgress(progress.questions || {});
+          const dbSubtopics = normalizeProgress(progress.subtopics || {});
 
-          const incoming = JSON.stringify({
-            questions: dbQuestions,
-            subtopics: dbSubtopics,
-          });
+          // const incoming = JSON.stringify({
+          //   questions: dbQuestions,
+          //   subtopics: dbSubtopics,
+          // });
 
 
-          const localQ = questionProgressRef.current;
-          const localS = subtopicProgressRef.current;
+          // const localQ = questionProgressRef.current;
+          // const localS = subtopicProgressRef.current;
 
           // 🛑 rollback detection (deep)
-          const isRollback = Object.keys(dbQuestions).some(
-            (key) => localQ[key] && !dbQuestions[key]
-          ) || Object.keys(dbSubtopics).some(
-            (key) => localS[key] && !dbSubtopics[key]
-          );
+          // const isRollback = Object.keys(dbQuestions).some(
+          //   (key) => localQ[key] && !dbQuestions[key]
+          // ) || Object.keys(dbSubtopics).some(
+          //   (key) => localS[key] && !dbSubtopics[key]
+          // );
 
-          if (isRollback) {
-            console.log("⏭ Ignoring rollback (lost progress)");
-            return;
-          }
+          // if (isRollback) {
+          //   console.log("⏭ Ignoring rollback (lost progress)");
+          //   return;
+          // }
 
 
 
@@ -874,15 +923,25 @@ export const CSV_TABLE_UI = ({ csvData }) => {
             return;
           }
 
-          if (incoming === lastSyncedRef.current) {
-            console.log("⏭ Ignoring own realtime update");
-            return;
-          }
+          // if (incoming === lastSyncedRef.current) {
+          //   console.log("⏭ Ignoring own realtime update");
+          //   return;
+          // }
 
           console.log("📥 Applying DB state");
 
-          setQuestionProgress(dbQuestions);
-          setSubtopicProgress(dbSubtopics);
+          const mergedQ = mergeProgress(
+            questionProgressRef.current,
+            dbQuestions
+          );
+
+          const mergedS = mergeProgress(
+            subtopicProgressRef.current,
+            dbSubtopics
+          );
+
+          setQuestionProgress(mergedQ);
+          setSubtopicProgress(mergedS);
 
           // ✅ save latest timestamp
           localStorage.setItem(
@@ -890,21 +949,20 @@ export const CSV_TABLE_UI = ({ csvData }) => {
             incomingUpdatedAt
           );
 
-          lastSyncedRef.current = JSON.stringify({
-            questions: dbQuestions,
-            subtopics: dbSubtopics,
-          });
+          // lastSyncedRef.current = JSON.stringify({
+          //   questions: dbQuestions,
+          //   subtopics: dbSubtopics,
+          // });
 
           localStorage.setItem(
             USER_QUESTION_STORAGE_KEY,
-            JSON.stringify(dbQuestions)
+            JSON.stringify(mergedQ)
           );
 
           localStorage.setItem(
             USER_SUBTOPIC_STORAGE_KEY,
-            JSON.stringify(dbSubtopics)
+            JSON.stringify(mergedS)
           );
-
           setHighestLevel(
             getLevelFromRank(Number(payload.new.highest_level))
           );
@@ -997,13 +1055,13 @@ export const CSV_TABLE_UI = ({ csvData }) => {
             d.id
           );
 
-          const solved = qIds.filter((id) => questionProgress[id]).length;
+          const solved = qIds.filter((id) => questionProgress[id]?.value === true).length;
           if (solved < qIds.length) {
             return { topic: topic["Main Topic"], subtopic: sub.Subtopic };
           }
         } else {
           const subId = sub.id;
-          if (!subtopicProgress[subId]) {
+          if (!subtopicProgress[subId]?.value) {
             return { topic: topic["Main Topic"], subtopic: sub.Subtopic };
           }
         }
@@ -1204,11 +1262,11 @@ export const CSV_TABLE_UI = ({ csvData }) => {
                 const totalQ = questionsInSub.length;
                 if (totalQ > 0) {
                   const qIds = questionsInSub.map(d => d.id);
-                  const solved = qIds.filter(id => questionProgress[id]).length;
+                  const solved = qIds.filter(id => questionProgress[id]?.value === true).length;
                   return solved === totalQ;
                 } else {
                   const subId = sub.id;
-                  return subtopicProgress[subId];
+                  return subtopicProgress[subId]?.value === true;
                 }
               });
               return (
@@ -1293,14 +1351,14 @@ export const CSV_TABLE_UI = ({ csvData }) => {
                       const totalQuestions = questionIds.length;
 
                       const solvedCount = questionIds.filter(
-                        (id) => questionProgress[id]
+                        (id) => questionProgress[id]?.value === true
                       ).length;
 
                       const subtopicId = sub.id;
 
                       const isSubtopicManual = totalQuestions === 0;
                       const isSubtopicAutoCompleted = totalQuestions > 0 && solvedCount === totalQuestions;
-                      const isSubtopicManualCompleted = isSubtopicManual && subtopicProgress[subtopicId];
+                      const isSubtopicManualCompleted = isSubtopicManual && subtopicProgress[subtopicId]?.value === true;
                       const isSubtopicCompleted = isSubtopicAutoCompleted || isSubtopicManualCompleted;
                       const subtopicTrackKey = `g4_subtopic_completed_${subtopicId}`;
                       sub.__completed = isSubtopicCompleted;
@@ -1370,17 +1428,27 @@ export const CSV_TABLE_UI = ({ csvData }) => {
                                 } else {
                                   const questionIds = questions.map(q => q.id);
                                   const currentProgress = { ...questionProgress };
-                                  const allSolved = questionIds.every(id => currentProgress[id]);
+                                  const allSolved = questionIds.every(
+                                    id => currentProgress[id]?.value === true
+                                  );
 
                                   if (allSolved) {
                                     const confirm = window.confirm(
                                       "This will unmark all questions under this subtopic."
                                     );
                                     if (!confirm) return;
-                                    questionIds.forEach(id => delete currentProgress[id]);
+                                    questionIds.forEach(id => {
+                                      currentProgress[id] = {
+                                        value: false,
+                                        updatedAt: Date.now(),
+                                      };
+                                    });
                                   } else {
                                     questionIds.forEach(id => {
-                                      currentProgress[id] = true;
+                                      currentProgress[id] = {
+                                        value: true,
+                                        updatedAt: Date.now(),
+                                      };
                                     });
                                   }
 
@@ -1449,7 +1517,8 @@ export const CSV_TABLE_UI = ({ csvData }) => {
                             <div className="space-y-2">
                               {questions.map((d) => {
                                 const questionId = d.id;
-                                const isSolved = !!questionProgress[questionId];
+                                // const isSolved = !!questionProgress[questionId];
+                                const isSolved = questionProgress[questionId]?.value === true;
 
                                 return (
                                   <div
