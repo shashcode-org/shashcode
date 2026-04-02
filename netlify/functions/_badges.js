@@ -39,16 +39,16 @@ export const LEVEL_BADGES = {
   
     // unique violation → already earned
     if (error?.code === "23505") {
-      console.log("ℹ️ Badge already exists:", badge_key);
+      console.log("Badge already exists:", badge_key);
       return false;
     }
   
     if (error) {
-      console.error("❌ BADGE INSERT ERROR:", error);
+      console.error("BADGE INSERT ERROR:", error);
       throw error;
     }
   
-    console.log("✅ BADGE AWARDED:", badge_key);
+    console.log("BADGE AWARDED:", badge_key);
     return true;
   }
   
