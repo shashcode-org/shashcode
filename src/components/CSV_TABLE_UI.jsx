@@ -163,7 +163,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
   const hasUserInteractedRef = useRef(false);
   const hydratedUserRef = useRef(null);
   const isHydratingRef = useRef(false);
-
+  const isRemoteUpdateRef = useRef(false);
   const questionProgressRef = useRef(questionProgress);
   const subtopicProgressRef = useRef(subtopicProgress);
 
@@ -769,6 +769,13 @@ export const CSV_TABLE_UI = ({ csvData }) => {
       USER_SUBTOPIC_STORAGE_KEY,
     });
 
+
+    // 🔥 ADD THIS BLOCK RIGHT HERE
+    if (isRemoteUpdateRef.current) {
+      console.log("⛔ Skipping sync (remote update)");
+      return;
+    }
+
     // ❌ don't sync before localStorage hydration
     if (!hasHydratedFromLocalRef.current) return;
 
@@ -874,6 +881,9 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 
           console.log("Applying DB state");
 
+          // 🔥 MARK AS REMOTE UPDATE (ADD THIS)
+          isRemoteUpdateRef.current = true;
+
           const mergedQ = mergeProgress(
             questionProgressRef.current,
             dbQuestions
@@ -886,6 +896,11 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 
           setQuestionProgress(mergedQ);
           setSubtopicProgress(mergedS);
+
+          // 🔥 RESET AFTER STATE UPDATE (ADD THIS)
+          setTimeout(() => {
+            isRemoteUpdateRef.current = false;
+          }, 0);
 
           // ✅ save latest timestamp
           localStorage.setItem(
