@@ -630,11 +630,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
         // STEP 3: READ DB
         // --------------------------------------------------
 
-        if (dbData?.highest_level !== undefined) {
-            setHighestLevel(
-            getLevelFromRank(Number(dbData.highest_level))
-        );
-}
+
 
         let dbData = null;
 
@@ -643,6 +639,12 @@ export const CSV_TABLE_UI = ({ csvData }) => {
         }
 
         console.log("DB data:", dbData);
+        // ✅ SET LEVEL AFTER FETCH
+        if (dbData?.highest_level !== undefined) {
+          setHighestLevel(
+            getLevelFromRank(Number(dbData.highest_level))
+          );
+        }
 
 
         let finalQuestions = {};
@@ -678,8 +680,6 @@ export const CSV_TABLE_UI = ({ csvData }) => {
               completedMainTopics: [],
             });
 
-            // use fresh timestamp
-            finalUpdatedAt = new Date().toISOString();
           }
 
 
