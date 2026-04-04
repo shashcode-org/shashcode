@@ -21,6 +21,7 @@ import { useAuth } from "@/context/AuthContext";
 import UsernameOnboarding from "@/pages/UsernameOnboarding";
 import OnboardingGuard from "@/components/OnboardingGuard";
 import { useEffect, useState } from "react";
+import { supabase } from "@/lib/supabaseClient"; // 👈 ensure this import
 const queryClient = new QueryClient();
 
 
@@ -59,11 +60,14 @@ const App = () => {
     }
   }, [user]);
 
-  const handleMigration = (type) => {
+  const handleMigration = async (type) => {
     const legacyQ = localStorage.getItem("questionProgress");
     const legacyS = localStorage.getItem("subtopicProgress");
 
     if (!legacyQ && !legacyS) return;
+
+    const q = JSON.parse(legacyQ ?? "{}");
+    const s = JSON.parse(legacyS ?? "{}");
 
     if (type === "DSA") {
       localStorage.setItem("questionProgress_guest_DSA", legacyQ ?? "{}");
@@ -80,6 +84,32 @@ const App = () => {
     // 🔥 DELETE OLD LEGACY KEYS
     localStorage.removeItem("questionProgress");
     localStorage.removeItem("subtopicProgress");
+
+    // 🔥🔥🔥 STEP 2: SYNC TO DB (IMPORTANT)
+    try {
+      const { data } = await supabase.auth.getSession();
+      const token = data.session?.access_token;
+
+      await fetch("/.netlify/functions/syncProgress", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          sheet: type, // DSA or JAVA_DSA
+          questions: q,
+          subtopics: s,
+          completedPercent: null, // backend handles
+          bucketCompletion: null,
+          completedMainTopics: [],
+        }),
+      });
+
+      console.log("Migration sync done");
+    } catch (err) {
+      console.error("Migration sync failed", err);
+    }
 
     setShowMigrationPopup(false);
     window.dispatchEvent(new Event("migrationCompleted"));
