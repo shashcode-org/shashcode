@@ -1,11 +1,23 @@
 // netlify/functions/_badges.js
 
 export const LEVEL_BADGES = {
-    1: { key: "coder", name: "Coder" },
-    2: { key: "problem_solver", name: "Problem Solver" },
-    3: { key: "algorithmist", name: "Algorithmist" },
-    4: { key: "dsa_specialist", name: "DSA Specialist" },
-  };
+  1: {
+    key: "code_cadet",
+    name: "Code Cadet",
+  },
+  2: {
+    key: "algo_assassin",
+    name: "Algo Assassin",
+  },
+  3: {
+    key: "pattern_hunter",
+    name: "Pattern Hunter",
+  },
+  4: {
+    key: "dsa_dhurandhar",
+    name: "DSA Dhurandhar",
+  },
+};
   
   export const SPECIAL_BADGES = {
     JAVA_PRO: {

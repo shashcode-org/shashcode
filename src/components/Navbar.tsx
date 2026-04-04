@@ -177,6 +177,26 @@ const Navbar = () => {
                   </Link>
                 </AnimatedElement>
               ))}
+
+              {/* 🏅 MY BADGES (ADD HERE) */}
+              {user && (
+                <AnimatedElement
+                  animation="fadeIn"
+                  className="opacity-100 flex items-center"
+                >
+                  <Link
+                    to="/badges"
+                    className={`navbar-link ${location.pathname === "/badges"
+                        ? "text-primary after:scale-x-100"
+                        : ""
+                      }`}
+                  >
+                    🏅 My Badges
+                  </Link>
+                </AnimatedElement>
+              )}
+
+
               <button
                 onClick={toggleTheme}
                 className="
@@ -305,6 +325,19 @@ const Navbar = () => {
                     {link.name}
                   </Link>
                 ))}
+
+                {/* 🏅 MY BADGES (ADD HERE) */}
+                {user && (
+                  <Link
+                    to="/badges"
+                    className={`block py-2 px-3 rounded-md transition-colors ${location.pathname === "/badges"
+                        ? "bg-primary/10 text-primary font-medium"
+                        : "text-foreground hover:bg-accent/20"
+                      }`}
+                  >
+                    🏅 My Badges
+                  </Link>
+                )}
                 <button
                   onClick={toggleTheme}
                   className="

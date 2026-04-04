@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import MyBadges from "@/pages/MyBadges";
 import Home from "./pages/Home";
 import DSA from "./pages/DSA";
 import JavaDSA from "./pages/JavaDSA";
@@ -193,6 +194,7 @@ const App = () => {
                         <Route path="/" element={<Home />} />
                         <Route path="/dsa" element={<DSA />} />
                         <Route path="/java-dsa" element={<JavaDSA />} />
+                        <Route path="/badges" element={<MyBadges />} />
                         {/* <Route path="/last-minute-dsa" element={<LastMinuteDSA />} /> */}
                         <Route path="/privacy" element={<Privacy />} />
                         <Route path="/terms" element={<Terms />} />
