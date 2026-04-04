@@ -100,14 +100,14 @@ export async function handler(event) {
     // --------------------------------------------------
     const newlyEarnedBadges = [];
 
-    for (let level = storedLevel + 1; level <= finalLevel; level++) {
+    // 🔥 SINGLE LOOP (handles both backfill + new)
+    for (let level = 1; level <= finalLevel; level++) {
       const badge = LEVEL_BADGES[level];
       if (!badge) continue;
 
-      console.log("🏅 ATTEMPTING LEVEL BADGE", {
-        level,
-        badge: badge.key,
-      });
+      const isNewLevel = level > storedLevel;
+
+      console.log("🏅 ATTEMPTING LEVEL BADGE", { level, badge: badge.key, isNewLevel });
 
       const awarded = await awardBadgeIfNotExists({
         supabase,
@@ -117,11 +117,14 @@ export async function handler(event) {
         sheet,
         metadata: {
           level,
-          earned_via: "level_upgrade",
+          earned_via: isNewLevel ? "level_upgrade" : "backfill",
         },
       });
 
-      if (awarded) newlyEarnedBadges.push(badge.key);
+      // only show toast for NEW ones
+      if (awarded && isNewLevel) {
+        newlyEarnedBadges.push(badge.key);
+      }
     }
 
     // --------------------------------------------------
