@@ -59,11 +59,11 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
     return (
         <div
             onClick={onClose}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 dark:bg-black/60 backdrop-blur-sm cursor-pointer"
+            className="fixed inset-0 z-50 bg-black/40 dark:bg-black/60 backdrop-blur-sm overflow-y-auto p-4 cursor-pointer"
         >
             <div
                 onClick={(e) => e.stopPropagation()}
-                className="bg-card w-[95%] max-w-3xl max-h-[80vh] overflow-y-auto rounded-2xl p-6 pb-10 relative shadow-2xl cursor-default"
+                className="bg-card w-full max-w-3xl px-2 mx-auto mt-10 rounded-2xl p-6 pb-10 relative shadow-2xl cursor-default"
             >
                 {/* Close */}
                 <button
@@ -107,7 +107,7 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
                                 key={badge.key}
                                 className={`relative group p-4 rounded-xl border text-center transition-all duration-300
                 ${earned
-                                        ? "bg-card border-border shadow-md hover:shadow-xl hover:-translate-y-1"
+                                        ? "bg-card border-border shadow-md hover:shadow-2xl hover:-translate-y-1 hover:scale-[1.02]"
                                         : "bg-muted/40 border-border opacity-60"
                                     }`}
                             >
