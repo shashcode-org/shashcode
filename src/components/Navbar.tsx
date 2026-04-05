@@ -6,7 +6,8 @@ import { trackEvent } from "@/utils/analytics";
 import { useAuth } from "@/context/AuthContext";
 import { useUserMeta } from "@/hooks/useUserMeta";
 import { useNavigate } from "react-router-dom";
-
+import BadgesModal from "./BadgesModal";
+import { useBadges } from "@/hooks/useBadges";
 function getSheetFromPath(pathname: string) {
   if (pathname.startsWith("/java-dsa")) return "JAVA_DSA";
   if (pathname.startsWith("/dsa")) return "DSA";
@@ -22,8 +23,11 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const [showBadges, setShowBadges] = useState(false);
+
 
   const { user, logout } = useAuth();
+  const { badges, loading } = useBadges(user);
   const { username } = useUserMeta();
   const navigate = useNavigate();
   const [accountOpen, setAccountOpen] = useState(false);
@@ -184,15 +188,22 @@ const Navbar = () => {
                   animation="fadeIn"
                   className="opacity-100 flex items-center"
                 >
-                  <Link
+                  <button
+                    onClick={() => setShowBadges(true)}
+                    disabled={loading}
+                    className={`${loading ? "opacity-50 cursor-not-allowed" : ""}`}
+                  >
+                    My Badges
+                  </button>
+                  {/* <Link
                     to="/badges"
                     className={`navbar-link ${location.pathname === "/badges"
                         ? "text-primary after:scale-x-100"
                         : ""
                       }`}
                   >
-                    🏅 My Badges
-                  </Link>
+                    My Badges
+                  </Link> */}
                 </AnimatedElement>
               )}
 
@@ -328,15 +339,13 @@ const Navbar = () => {
 
                 {/* 🏅 MY BADGES (ADD HERE) */}
                 {user && (
-                  <Link
-                    to="/badges"
-                    className={`block py-2 px-3 rounded-md transition-colors ${location.pathname === "/badges"
-                        ? "bg-primary/10 text-primary font-medium"
-                        : "text-foreground hover:bg-accent/20"
-                      }`}
+                  <button
+                    onClick={() => setShowBadges(true)}
+                    disabled={loading}
+                    className={`${loading ? "opacity-50 cursor-not-allowed" : ""}`}
                   >
-                    🏅 My Badges
-                  </Link>
+                    My Badges
+                  </button>
                 )}
                 <button
                   onClick={toggleTheme}
@@ -425,6 +434,11 @@ const Navbar = () => {
           </div>
         </div>
       )}
+      <BadgesModal
+        isOpen={showBadges}
+        onClose={() => setShowBadges(false)}
+        badges={badges}
+      />
     </>
   );
 };

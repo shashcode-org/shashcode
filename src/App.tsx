@@ -224,7 +224,6 @@ const App = () => {
                         <Route path="/" element={<Home />} />
                         <Route path="/dsa" element={<DSA />} />
                         <Route path="/java-dsa" element={<JavaDSA />} />
-                        <Route path="/badges" element={<MyBadges />} />
                         {/* <Route path="/last-minute-dsa" element={<LastMinuteDSA />} /> */}
                         <Route path="/privacy" element={<Privacy />} />
                         <Route path="/terms" element={<Terms />} />
