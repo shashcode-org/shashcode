@@ -59,11 +59,11 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
     return (
         <div
             onClick={onClose}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 dark:bg-black/60 backdrop-blur-sm animate-fadeIn"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 dark:bg-black/60 backdrop-blur-sm cursor-pointer"
         >
             <div
                 onClick={(e) => e.stopPropagation()}
-                className="bg-card w-[95%] max-w-3xl rounded-2xl p-6 relative shadow-2xl transition-all"
+                className="bg-card w-[95%] max-w-3xl max-h-[80vh] overflow-y-auto rounded-2xl p-6 pb-10 relative shadow-2xl animate-fadeIn cursor-default"
             >
                 {/* Close */}
                 <button
@@ -116,12 +116,11 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
                                     <div className="absolute inset-0 rounded-xl border-2 border-yellow-400 animate-pulse pointer-events-none" />
                                 )}
 
-                                <div className="h-28 w-full flex items-center justify-center mb-3 overflow-hidden">
+                                <div className="h-24 w-full flex items-center justify-center mb-3 overflow-hidden">
                                     <img
                                         src={`/badges/${badge.key}.png`}
                                         alt={badge.name}
-                                        className={`w-full h-full object-cover scale-75 ${earned ? "" : "grayscale"
-                                            }`}
+                                        className={`h-full w-auto object-contain ${earned ? "" : "grayscale"}`}
                                     />
                                 </div>
 
