@@ -30,6 +30,12 @@ export default {
     "bg-success-strong",
     "border-success",
     "border-success-strong",
+    // Badge colors
+    "bg-purple-600",
+    "bg-indigo-600",
+    "text-gray-500",
+    "bg-gray-200",
+    "bg-purple-100",
   ],
 
   prefix: "",
