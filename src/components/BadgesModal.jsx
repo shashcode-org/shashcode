@@ -42,7 +42,7 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
 
     const handleShareAll = () => {
         navigator.clipboard.writeText(
-            "I’m leveling up on ShashCode 🚀 Join me!"
+            "I’m leveling up on ShashCode Join me!"
         );
         setCopied(true);
         setTimeout(() => setCopied(false), 1500);
@@ -50,7 +50,7 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
 
     const handleShareBadge = (badgeName) => {
         navigator.clipboard.writeText(
-            `🏆 I unlocked "${badgeName}" on ShashCode 🚀`
+            ` I unlocked "${badgeName}" on ShashCode `
         );
         setCopied(true);
         setTimeout(() => setCopied(false), 1500);
@@ -59,11 +59,11 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
     return (
         <div
             onClick={onClose}
-            className="fixed inset-0 z-50 bg-black/40 dark:bg-black/60 backdrop-blur-sm overflow-y-auto p-2 cursor-pointer"
+            className="fixed inset-0 z-50 hero-gradient backdrop-blur-sm overflow-y-auto p-2 cursor-pointer"
         >
             <div
                 onClick={(e) => e.stopPropagation()}
-                className="bg-white dark:bg-card w-full max-w-3xl px-2 mx-auto mt-6 rounded-2xl p-6 pb-10 relative shadow-2xl cursor-default"
+                className="bg-white/90 dark:bg-card backdrop-blur-md w-full max-w-3xl px-2 mx-auto mt-6 rounded-2xl p-6 pb-10 relative shadow-2xl cursor-default"
             >
                 {/* Close */}
                 <button
@@ -76,11 +76,11 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
                 {/* HEADER */}
                 <div className="text-center mb-6">
                     <h2 className="text-2xl font-bold">
-                        🏆 Your Achievements
+                        Your Achievements
                     </h2>
 
                     <p className="text-sm text-gray-600 dark:text-muted-foreground mt-1">
-                        You’re crushing it 🚀 ({earnedCount}/{ALL_BADGES.length})
+                       You're making great progress  ({earnedCount}/{ALL_BADGES.length})
                     </p>
 
                     {/* Progress */}
@@ -147,7 +147,7 @@ ${earned
                                 {/* Locked */}
                                 {!earned && (
                                     <div className="text-xs text-gray-600 dark:text-muted-foreground mt-1">
-                                        🔒 Locked
+                                        Locked
                                     </div>
                                 )}
 
@@ -155,9 +155,9 @@ ${earned
                                 {earned && (
                                     <button
                                         onClick={() => handleShareBadge(badge.name)}
-                                        className="mt-2 text-xs text-primary hover:underline"
+                                       className="mt-2 text-xs px-3 py-1 rounded-md bg-primary/10 text-primary hover:bg-primary/20 transition"
                                     >
-                                        Share 🔥
+                                        Share
                                     </button>
                                 )}
                             </div>
@@ -169,9 +169,9 @@ ${earned
                 <div className="text-center">
                     <button
                         onClick={handleShareAll}
-                        className="px-5 py-2 rounded-lg bg-primary text-white font-semibold hover:opacity-90 transition"
+                        className="px-6 py-2.5 rounded-lg bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold shadow-md hover:shadow-lg hover:scale-[1.02] transition-all duration-200"
                     >
-                        {copied ? "Copied ✅" : "Share My Progress 🚀"}
+                        {copied ? "Copied" : "Share My Progress "}
                     </button>
                 </div>
             </div>
