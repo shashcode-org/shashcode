@@ -59,11 +59,11 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
     return (
         <div
             onClick={onClose}
-            className="fixed inset-0 z-50 bg-black/40 dark:bg-black/60 backdrop-blur-sm overflow-y-auto p-4 cursor-pointer"
+            className="fixed inset-0 z-50 bg-black/40 dark:bg-black/60 backdrop-blur-sm overflow-y-auto p-3 cursor-pointer"
         >
             <div
                 onClick={(e) => e.stopPropagation()}
-                className="bg-card w-full max-w-3xl px-2 mx-auto mt-10 rounded-2xl p-6 pb-10 relative shadow-2xl cursor-default"
+                className="bg-card w-full max-w-3xl px-2 mx-auto mt-6 rounded-2xl p-6 pb-10 relative shadow-2xl cursor-default"
             >
                 {/* Close */}
                 <button
@@ -95,7 +95,7 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
                 </div>
 
                 {/* GRID */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
+                <div className="grid grid-cols-2 gap-4 mb-6">
                     {ALL_BADGES.map((badge) => {
                         const earned = earnedKeys.has(badge.key);
                         const earnedData = badges.find(
@@ -105,7 +105,7 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
                         return (
                             <div
                                 key={badge.key}
-                                className={`relative group p-4 rounded-xl border text-center transition-all duration-300
+                                className={`relative group p-3 aspect-square rounded-xl border text-center transition-all duration-300
                 ${earned
                                         ? "bg-card border-border shadow-md hover:shadow-2xl hover:-translate-y-1 hover:scale-[1.02]"
                                         : "bg-muted/40 border-border opacity-60"
@@ -116,15 +116,15 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
                                     <div className="absolute inset-0 rounded-xl border-2 border-yellow-400 animate-pulse pointer-events-none" />
                                 )}
 
-                                <div className="h-24 w-full flex items-center justify-center mb-3 overflow-hidden">
+                                <div className="h-20 w-full flex items-center justify-center mb-2">
                                     <img
                                         src={`/badges/${badge.key}.png`}
                                         alt={badge.name}
-                                        className={`h-full w-auto object-contain ${earned ? "" : "grayscale"}`}
+                                        className={`max-h-full max-w-full object-contain ${earned ? "" : "grayscale"}`}
                                     />
                                 </div>
 
-                                <div className="text-base font-semibold">
+                                <div className="text-sm font-semibold">
                                     {badge.name}
                                 </div>
 
