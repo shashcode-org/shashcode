@@ -660,27 +660,45 @@ export const CSV_TABLE_UI = ({ csvData }) => {
           const dbQuestions = dbData?.questions || {};
           const dbSubtopics = dbData?.subtopics || {};
 
-          finalQuestions = mergeProgress(localQuestions, dbQuestions);
-          finalSubtopics = mergeProgress(localSubtopics, dbSubtopics);
+          const dbUpdatedAt = dbData?.updated_at;
+          const localUpdatedAt = localStorage.getItem(`progressUpdatedAt_${userId}_${sheet}`);
 
-          console.log("Merging DB + Local (union)");
+          const dbTime = new Date(dbUpdatedAt || 0).getTime();
+          const localTime = new Date(localUpdatedAt || 0).getTime();
 
-          const merged =
-            JSON.stringify(finalQuestions) !== JSON.stringify(dbQuestions) ||
-            JSON.stringify(finalSubtopics) !== JSON.stringify(dbSubtopics);
+          if (!localUpdatedAt || dbTime >= localTime) {
+            console.log("Using DB as source of truth");
 
-          if (merged) {
-            // 🔥 Always sync merged back to DB
-            await syncProgressToServer({
-              sheet,
-              subtopics: finalSubtopics,
-              questions: finalQuestions,
-              completedPercent: 0,
-              bucketCompletion: {},
-              completedMainTopics: [],
-            });
+            finalQuestions = dbQuestions;
+            finalSubtopics = dbSubtopics;
+          } else {
+            console.log("Local is newer, merging carefully");
 
+            finalQuestions = mergeProgress(dbQuestions, localQuestions);
+            finalSubtopics = mergeProgress(dbSubtopics, localSubtopics);
           }
+
+          // finalQuestions = mergeProgress(localQuestions, dbQuestions);
+          // finalSubtopics = mergeProgress(localSubtopics, dbSubtopics);
+
+          console.log("Resolving DB vs Local (DB priority)");
+
+          // const merged =
+          //   JSON.stringify(finalQuestions) !== JSON.stringify(dbQuestions) ||
+          //   JSON.stringify(finalSubtopics) !== JSON.stringify(dbSubtopics);
+
+          // if (merged) {
+          //   // 🔥 Always sync merged back to DB
+          //   await syncProgressToServer({
+          //     sheet,
+          //     subtopics: finalSubtopics,
+          //     questions: finalQuestions,
+          //     completedPercent: 0,
+          //     bucketCompletion: {},
+          //     completedMainTopics: [],
+          //   });
+
+          // }
 
 
         }
@@ -884,6 +902,27 @@ export const CSV_TABLE_UI = ({ csvData }) => {
           // 🔥 MARK AS REMOTE UPDATE (ADD THIS)
           isRemoteUpdateRef.current = true;
 
+          const isReset =
+            Object.keys(dbQuestions).length === 0 &&
+            Object.keys(dbSubtopics).length === 0;
+
+          if (isReset) {
+            console.log("Reset detected → clearing local state");
+
+            setQuestionProgress({});
+            setSubtopicProgress({});
+
+            localStorage.setItem(USER_QUESTION_STORAGE_KEY, JSON.stringify({}));
+            localStorage.setItem(USER_SUBTOPIC_STORAGE_KEY, JSON.stringify({}));
+
+            setTimeout(() => {
+              isRemoteUpdateRef.current = false;
+            }, 0);
+
+
+            return;
+          }
+
           const mergedQ = mergeProgress(
             questionProgressRef.current,
             dbQuestions
@@ -965,6 +1004,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 
     setQuestionProgress({});
     setSubtopicProgress({});
+    hasUserInteractedRef.current = true;
     // 🔥 IMPORTANT: sync empty progress to DB
     await syncProgressToServer({
       sheet,
