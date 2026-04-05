@@ -63,7 +63,7 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
         >
             <div
                 onClick={(e) => e.stopPropagation()}
-                className="bg-card w-[95%] max-w-3xl max-h-[80vh] overflow-y-auto rounded-2xl p-6 pb-10 relative shadow-2xl animate-fadeIn cursor-default"
+                className="bg-card w-[95%] max-w-3xl max-h-[80vh] overflow-y-auto rounded-2xl p-6 pb-10 relative shadow-2xl cursor-default"
             >
                 {/* Close */}
                 <button
