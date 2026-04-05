@@ -166,7 +166,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
   const isRemoteUpdateRef = useRef(false);
   const questionProgressRef = useRef(questionProgress);
   const subtopicProgressRef = useRef(subtopicProgress);
-
+  const isCatchingUpRef = useRef(false);
   useEffect(() => {
     const handler = () => {
       console.log("Migration done → rehydrating");
@@ -789,8 +789,8 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 
 
     // 🔥 ADD THIS BLOCK RIGHT HERE
-    if (isRemoteUpdateRef.current) {
-      console.log("⛔ Skipping sync (remote update)");
+    if (isRemoteUpdateRef.current || isCatchingUpRef.current) {
+      console.log("⛔ Skipping sync (remote/catchup)");
       return;
     }
 
@@ -901,6 +901,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 
           // 🔥 MARK AS REMOTE UPDATE (ADD THIS)
           isRemoteUpdateRef.current = true;
+          isCatchingUpRef.current = true;
 
           const isReset =
             Object.keys(dbQuestions).length === 0 &&
@@ -917,7 +918,8 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 
             setTimeout(() => {
               isRemoteUpdateRef.current = false;
-            }, 0);
+              isCatchingUpRef.current = false;
+            }, 300);
 
 
             return;
