@@ -63,7 +63,7 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
         >
             <div
                 onClick={(e) => e.stopPropagation()}
-                className="bg-card w-full max-w-3xl px-2 mx-auto mt-6 rounded-2xl p-6 pb-10 relative shadow-2xl cursor-default"
+                className="bg-white dark:bg-card w-full max-w-3xl px-2 mx-auto mt-6 rounded-2xl p-6 pb-10 relative shadow-2xl cursor-default"
             >
                 {/* Close */}
                 <button
@@ -79,7 +79,7 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
                         🏆 Your Achievements
                     </h2>
 
-                    <p className="text-sm text-muted-foreground mt-1">
+                    <p className="text-sm text-gray-600 dark:text-muted-foreground mt-1">
                         You’re crushing it 🚀 ({earnedCount}/{ALL_BADGES.length})
                     </p>
 
@@ -106,9 +106,9 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
                             <div
                                 key={badge.key}
                                 className={`relative group p-2 rounded-xl border text-center transition-all duration-300
-                ${earned
-                                        ? "bg-card border-border shadow-md hover:shadow-2xl hover:-translate-y-1 hover:scale-[1.02]"
-                                        : "bg-muted/40 border-border opacity-60"
+${earned
+                                        ? "bg-gradient-to-b from-white to-gray-50 dark:from-card dark:to-card border-gray-200 dark:border-border shadow-sm hover:shadow-lg hover:-translate-y-1"
+                                        : "bg-gray-100 dark:bg-muted/40 border-gray-200 dark:border-border opacity-60"
                                     }`}
                             >
                                 {/* Glow */}
@@ -137,7 +137,7 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
 
                                 {/* Date */}
                                 {earned && earnedData?.earned_at && (
-                                    <div className="text-xs text-muted-foreground">
+                                    <div className="text-xs text-gray-600 dark:text-muted-foreground">
                                         {new Date(
                                             earnedData.earned_at
                                         ).toLocaleDateString()}
@@ -146,7 +146,7 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
 
                                 {/* Locked */}
                                 {!earned && (
-                                    <div className="text-xs text-muted-foreground mt-1">
+                                    <div className="text-xs text-gray-600 dark:text-muted-foreground mt-1">
                                         🔒 Locked
                                     </div>
                                 )}
