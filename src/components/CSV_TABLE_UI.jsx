@@ -286,33 +286,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 
   }, [userId, sheet]);
 
-  useEffect(() => {
-    const handleBeforeUnload = () => {
-      if (!hasUserInteractedRef.current) return;
 
-      const token = accessTokenRef.current;
-      if (!token) return;
-
-      navigator.sendBeacon(
-        "/.netlify/functions/syncProgress",
-        JSON.stringify({
-          sheet,
-          subtopics: subtopicProgressRef.current,
-          questions: questionProgressRef.current,
-          completedPercent: progressPercent,
-          bucketCompletion,
-          completedMainTopics,
-          token,
-        })
-      );
-    };
-
-    window.addEventListener("beforeunload", handleBeforeUnload);
-
-    return () => {
-      window.removeEventListener("beforeunload", handleBeforeUnload);
-    };
-  }, [sheet, progressPercent, bucketCompletion, completedMainTopics]);
 
   const { USER_QUESTION_STORAGE_KEY, USER_SUBTOPIC_STORAGE_KEY } =
     getStorageKeys(userId, sheet);
@@ -518,6 +492,34 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 
     return bucketStats;
   }, [csvData, questionProgress, subtopicProgress]);
+
+    useEffect(() => {
+    const handleBeforeUnload = () => {
+      if (!hasUserInteractedRef.current) return;
+
+      const token = accessTokenRef.current;
+      if (!token) return;
+
+      navigator.sendBeacon(
+        "/.netlify/functions/syncProgress",
+        JSON.stringify({
+          sheet,
+          subtopics: subtopicProgressRef.current,
+          questions: questionProgressRef.current,
+          completedPercent: progressPercent,
+          bucketCompletion,
+          completedMainTopics,
+          token,
+        })
+      );
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, [sheet, progressPercent, bucketCompletion, completedMainTopics]);
 
 
   useEffect(() => {
