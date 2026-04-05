@@ -59,12 +59,13 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
     return (
         <div
             onClick={onClose}
-            className="fixed inset-0 z-50 hero-gradient backdrop-blur-sm overflow-y-auto p-2 cursor-pointer"
-        >
+           className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm overflow-y-auto p-2 cursor-pointer"   
+           >
             <div
                 onClick={(e) => e.stopPropagation()}
-                className="bg-white/90 dark:bg-card backdrop-blur-md w-full max-w-3xl px-2 mx-auto mt-6 rounded-2xl p-6 pb-10 relative shadow-2xl cursor-default"
+                className="bg-white dark:bg-card w-full max-w-3xl px-2 mx-auto mt-6 rounded-2xl p-6 pb-10 relative shadow-2xl cursor-default"
             >
+                <div className="absolute top-0 left-0 w-full h-24 hero-gradient rounded-t-2xl opacity-90" />
                 {/* Close */}
                 <button
                     onClick={onClose}
@@ -74,12 +75,12 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
                 </button>
 
                 {/* HEADER */}
-                <div className="text-center mb-6">
+                <div className="text-center mb-6 relative z-10 pt-4">
                     <h2 className="text-2xl font-bold">
                         Your Achievements
                     </h2>
 
-                    <p className="text-sm text-gray-600 dark:text-muted-foreground mt-1">
+                    <p className="text-sm text-white/80 dark:text-muted-foreground mt-1">
                        You're making great progress  ({earnedCount}/{ALL_BADGES.length})
                     </p>
 
@@ -137,7 +138,7 @@ ${earned
 
                                 {/* Date */}
                                 {earned && earnedData?.earned_at && (
-                                    <div className="text-xs text-gray-600 dark:text-muted-foreground">
+                                    <div className="text-xs text-white/80 dark:text-muted-foreground">
                                         {new Date(
                                             earnedData.earned_at
                                         ).toLocaleDateString()}
@@ -146,7 +147,7 @@ ${earned
 
                                 {/* Locked */}
                                 {!earned && (
-                                    <div className="text-xs text-gray-600 dark:text-muted-foreground mt-1">
+                                    <div className="text-xs text-white/80 dark:text-muted-foreground mt-1">
                                         Locked
                                     </div>
                                 )}
