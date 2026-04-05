@@ -167,6 +167,23 @@ export const CSV_TABLE_UI = ({ csvData }) => {
   const questionProgressRef = useRef(questionProgress);
   const subtopicProgressRef = useRef(subtopicProgress);
   const isCatchingUpRef = useRef(false);
+  const accessTokenRef = useRef(null);
+  useEffect(() => {
+    const loadToken = async () => {
+      const { data } = await supabase.auth.getSession();
+      accessTokenRef.current = data.session?.access_token || null;
+    };
+
+    loadToken();
+
+    const { data: listener } = supabase.auth.onAuthStateChange(
+      (_event, session) => {
+        accessTokenRef.current = session?.access_token || null;
+      }
+    );
+
+    return () => listener.subscription.unsubscribe();
+  }, []);
   useEffect(() => {
     const handler = () => {
       console.log("Migration done → rehydrating");
@@ -268,6 +285,34 @@ export const CSV_TABLE_UI = ({ csvData }) => {
     }
 
   }, [userId, sheet]);
+
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      if (!hasUserInteractedRef.current) return;
+
+      const token = accessTokenRef.current;
+      if (!token) return;
+
+      navigator.sendBeacon(
+        "/.netlify/functions/syncProgress",
+        JSON.stringify({
+          sheet,
+          subtopics: subtopicProgressRef.current,
+          questions: questionProgressRef.current,
+          completedPercent: progressPercent,
+          bucketCompletion,
+          completedMainTopics,
+          token,
+        })
+      );
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, [sheet, progressPercent, bucketCompletion, completedMainTopics]);
 
   const { USER_QUESTION_STORAGE_KEY, USER_SUBTOPIC_STORAGE_KEY } =
     getStorageKeys(userId, sheet);
@@ -941,7 +986,8 @@ export const CSV_TABLE_UI = ({ csvData }) => {
           // 🔥 RESET AFTER STATE UPDATE (ADD THIS)
           setTimeout(() => {
             isRemoteUpdateRef.current = false;
-          }, 0);
+            isCatchingUpRef.current = false;
+          }, 300);
 
           // ✅ save latest timestamp
           localStorage.setItem(

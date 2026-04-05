@@ -1,7 +1,7 @@
 import { createClient } from "@supabase/supabase-js";
 import { LEVEL_BADGES, awardBadgeIfNotExists } from "./_badges";
 import { getUserIdFromRequest } from "./_auth";
-
+import jwt from "jsonwebtoken";
 const supabase = createClient(
   process.env.SUPABASE_URL,
   process.env.SUPABASE_SERVICE_ROLE_KEY
@@ -34,7 +34,19 @@ export async function handler(event) {
       return { statusCode: 405, body: "Method Not Allowed" };
     }
 
-    const user_id = getUserIdFromRequest(event);
+    let user_id;
+
+    try {
+      user_id = getUserIdFromRequest(event);
+    } catch {
+      const body = JSON.parse(event.body || "{}");
+      const token = body.token;
+
+      if (!token) throw new Error("Unauthorized");
+
+      const decoded = jwt.decode(token);
+      user_id = decoded.sub;
+    }
 
     const {
       sheet,
@@ -161,6 +173,7 @@ export async function handler(event) {
     // --------------------------------------------------
     // Persist progress + level (UNCHANGED)
     // --------------------------------------------------
+    const now = new Date().toISOString();
     const { error: upsertError } = await supabase
       .from("user_progress")
       .upsert(
@@ -169,7 +182,7 @@ export async function handler(event) {
           sheet,
           progress_json: { subtopics, questions },
           highest_level: finalLevel,
-          updated_at: new Date().toISOString(),
+          updated_at: now,
         },
         { onConflict: ["user_id", "sheet"] }
       );
@@ -188,6 +201,7 @@ export async function handler(event) {
         ok: true,
         highest_level: finalLevel,
         new_badges: newlyEarnedBadges,
+         updated_at: now, // ✅ ADD THIS
       }),
     };
   } catch (err) {
