@@ -120,7 +120,7 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
                                     <img
                                         src={`/badges/${badge.key}.png`}
                                         alt={badge.name}
-                                        className={`h-full w-auto object-contain scale-90 ${earned ? "" : "grayscale"
+                                        className={`w-full h-full object-cover scale-75 ${earned ? "" : "grayscale"
                                             }`}
                                     />
                                 </div>
