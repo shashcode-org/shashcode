@@ -116,12 +116,14 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
                                     <div className="absolute inset-0 rounded-xl border-2 border-yellow-400 animate-pulse pointer-events-none" />
                                 )}
 
-                                <img
-                                    src={`/badges/${badge.key}.png`}
-                                    alt={badge.name}
-                                    className={`h-20 mx-auto mb-3 ${earned ? "" : "grayscale"
-                                        }`}
-                                />
+                                <div className="h-24 flex items-center justify-center mb-3">
+                                    <img
+                                        src={`/badges/${badge.key}.png`}
+                                        alt={badge.name}
+                                        className={`max-h-full max-w-full object-contain ${earned ? "" : "grayscale"
+                                            }`}
+                                    />
+                                </div>
 
                                 <div className="text-base font-semibold">
                                     {badge.name}
