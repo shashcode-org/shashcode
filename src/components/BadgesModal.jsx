@@ -49,11 +49,11 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
         >
             <div
                 onClick={(e) => e.stopPropagation()}
-                className="w-full max-w-2xl my-4 md:my-auto max-h-[90vh] min-h-0 rounded-3xl bg-card border border-border shadow-2xl flex flex-col"
+                className="w-full max-w-2xl my-4 md:my-auto max-h-[90vh] min-h-0 rounded-3xl bg-card border border-border shadow-2xl flex flex-col overflow-hidden"
                 style={{ borderRadius: "24px" }}
             >
                 {/* Top Gradient Bar */}
-                <div className="h-1 bg-gradient-to-r from-primary via-secondary to-accent rounded-t-3xl" />
+                <div className="h-1 bg-gradient-to-r from-primary via-secondary to-accent" />
 
                 {/* HEADER */}
                 <div className="px-6 pt-8 pb-5 border-b border-border bg-card/80 backdrop-blur-sm">
