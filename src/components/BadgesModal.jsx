@@ -49,33 +49,41 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
         >
             <div
                 onClick={(e) => e.stopPropagation()}
-                className="bg-white dark:bg-slate-900 w-full max-w-sm rounded-2xl shadow-2xl relative overflow-hidden border border-gray-200 dark:border-slate-700"
+                className="
+          w-full max-w-4xl
+          max-h-[90vh]
+          overflow-hidden
+          rounded-2xl
+          bg-card
+          border border-border
+          shadow-2xl
+          flex flex-col
+        "
             >
-                {/* Decorative top accent */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 via-indigo-500 to-blue-500" />
-
-                {/* Close */}
-                <button
-                    onClick={onClose}
-                    className="absolute top-4 right-4 p-1 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-lg transition-all"
-                >
-                    <X size={20} />
-                </button>
+                {/* Top Gradient Bar */}
+                <div className="h-1 bg-gradient-to-r from-primary via-secondary to-accent" />
 
                 {/* HEADER */}
-                <div className="text-center pt-6 px-6 pb-4">
-                    <h2 className="text-xl font-bold text-gray-900 dark:text-white tracking-tight">
+                <div className="relative px-6 pt-6 pb-4 text-center border-b border-border">
+                    <button
+                        onClick={onClose}
+                        className="absolute right-4 top-4 p-1 rounded-md hover:bg-accent/20 transition"
+                    >
+                        <X size={20} />
+                    </button>
+
+                    <h2 className="text-2xl font-bold text-foreground">
                         Your Achievements
                     </h2>
 
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mt-2 font-medium">
+                    <p className="text-sm text-muted-foreground mt-1">
                         {earnedCount}/{ALL_BADGES.length} unlocked
                     </p>
                 </div>
 
-                {/* GRID */}
-                <div className="px-6 pb-6">
-                    <div className="grid grid-cols-2 gap-3">
+                {/* CONTENT */}
+                <div className="flex-1 overflow-y-auto px-6 py-6 scrollbar-none">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         {ALL_BADGES.map((badge) => {
                             const earned = earnedKeys.has(badge.key);
 
@@ -83,35 +91,47 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
                                 <div
                                     key={badge.key}
                                     className={`
-                    p-4 rounded-xl text-center transition-all duration-200 relative
+                    group relative rounded-xl p-4 sm:p-5 text-center transition-all
                     ${earned
-                                            ? "bg-gradient-to-br from-white to-gray-50 dark:from-slate-800 dark:to-slate-850 shadow-lg hover:shadow-xl dark:shadow-lg hover:scale-105 border border-gray-100 dark:border-slate-700"
-                                            : "bg-gray-50 dark:bg-slate-800/50 opacity-50 border border-gray-200 dark:border-slate-700/50"
-                                        }`}
+                                            ? "card-glass hover:shadow-lg hover:-translate-y-1"
+                                            : "bg-muted/40 opacity-60 border border-border"
+                                        }
+                  `}
                                 >
-                                    {/* Inner glow for earned badges */}
+                                    {/* Glow effect */}
                                     {earned && (
-                                        <div className="absolute inset-0 rounded-xl opacity-0 hover:opacity-10 bg-gradient-to-br from-purple-400 to-indigo-400 transition-opacity pointer-events-none" />
+                                        <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-20 bg-gradient-to-br from-primary to-secondary transition" />
                                     )}
 
-                                    {/* Badge Icon */}
-                                    <div className="h-20 flex items-center justify-center mb-3 relative z-10">
-                                        <img
-                                            src={`/badges/${badge.key}.png`}
-                                            alt={badge.name}
-                                            className={`h-full object-contain transition-all ${earned ? "drop-shadow-md" : "grayscale opacity-70"
-                                                }`}
-                                        />
+                                    {/* Badge */}
+                                    <div className="aspect-square w-full flex items-center justify-center mb-3 relative z-10">
+                                        <picture>
+                                            <source
+                                                srcSet={`/badges/${badge.key}.webp`}
+                                                type="image/webp"
+                                            />
+                                            <img
+                                                src={`/badges/${badge.key}.png`}
+                                                alt={badge.name}
+                                                loading="lazy"
+                                                className={`
+      w-full h-full object-contain
+      scale-90 translate-y-1
+      transition-all
+      ${earned ? "drop-shadow-md" : "grayscale opacity-70"}
+    `}
+                                            />
+                                        </picture>
                                     </div>
 
-                                    {/* Badge Name */}
-                                    <div className="text-sm font-bold text-gray-900 dark:text-white leading-tight relative z-10">
+                                    {/* Name */}
+                                    <div className="text-sm font-semibold text-foreground">
                                         {badge.name}
                                     </div>
 
-                                    {/* Level Label */}
+                                    {/* Level */}
                                     {earned && (
-                                        <div className="text-xs font-semibold text-purple-600 dark:text-purple-400 mt-1.5 relative z-10">
+                                        <div className="text-xs mt-1 text-primary font-medium">
                                             {LEVEL_MAP[badge.key]}
                                         </div>
                                     )}
@@ -121,14 +141,17 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
                     </div>
                 </div>
 
-                {/* Divider */}
-                <div className="h-px bg-gradient-to-r from-transparent via-gray-200 dark:via-slate-700 to-transparent mx-6" />
-
-                {/* CTA */}
-                <div className="px-6 py-4">
+                {/* FOOTER */}
+                <div className="border-t border-border px-6 py-4">
                     <button
                         onClick={handleShareAll}
-                        className="w-full py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-200 active:scale-95"
+                        className="
+              w-full py-3 rounded-xl
+              bg-gradient-to-r from-primary to-secondary
+              text-white font-semibold
+              shadow-md hover:shadow-lg
+              transition active:scale-95
+            "
                     >
                         {copied ? "✓ Copied" : "Share Progress"}
                     </button>
