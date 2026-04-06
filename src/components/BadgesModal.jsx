@@ -105,7 +105,7 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
 
                                     {/* Badge */}
                                     <div className="aspect-square w-full flex items-center justify-center mb-3 relative z-10">
-                                        <picture>
+                                        <picture className="w-full h-full flex items-center justify-center">
                                             <source
                                                 srcSet={`/badges/${badge.key}.webp`}
                                                 type="image/webp"
