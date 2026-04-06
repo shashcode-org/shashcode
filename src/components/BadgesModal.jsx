@@ -45,7 +45,7 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
     return (
         <div
             onClick={onClose}
-            className="fixed inset-0 z-50 bg-black/70 backdrop-blur-md flex items-center justify-center p-4"
+            className="fixed inset-0 z-50 bg-black/70 backdrop-blur-md flex items-start pt-4 md:items-center md:pt-0 justify-center p-4 overflow-y-auto"
         >
             <div
                 onClick={(e) => e.stopPropagation()}
