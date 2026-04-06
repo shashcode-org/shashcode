@@ -63,10 +63,10 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
                 <div className="h-1 bg-gradient-to-r from-primary via-secondary to-accent" />
 
                 {/* HEADER */}
-                <div className="relative px-6 pt-6 pb-4 text-center border-b border-border">
+                <div className="relative px-6 pt-8 pb-5 text-center border-b border-border bg-card/80 backdrop-blur-sm">
                     <button
                         onClick={onClose}
-                        className="absolute right-4 top-4 p-1 rounded-md hover:bg-accent/20 transition"
+                        className="absolute top-5 right-5 p-1 rounded-md hover:bg-accent/20 transition"
                     >
                         <X size={20} />
                     </button>
