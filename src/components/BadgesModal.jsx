@@ -45,11 +45,11 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
     return (
         <div
             onClick={onClose}
-            className="fixed inset-0 z-50 bg-black/70 backdrop-blur-md flex items-center justify-center p-4"
+            className="fixed inset-0 z-50 bg-black/70 backdrop-blur-md flex items-start md:items-center justify-center p-4 md:p-4"
         >
             <div
                 onClick={(e) => e.stopPropagation()}
-                className="w-full max-w-2xl max-h-[90vh] min-h-0 overflow-y-auto rounded-3xl bg-card border border-border shadow-2xl flex flex-col"
+                className="w-full max-w-2xl mt-2 md:mt-0 max-h-[calc(100vh-2rem)] md:max-h-[90vh] min-h-0 overflow-y-auto rounded-3xl bg-card border border-border shadow-2xl flex flex-col"
                 style={{ borderRadius: "24px" }}
             >
                 {/* Top Gradient Bar */}
@@ -83,7 +83,7 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
                     </div>
                 </div>
                 {/* CONTENT */}
-                <div className="flex-1 overflow-y-auto px-6 py-6 min-h-0">
+                <div className="flex-1 px-6 py-6 min-h-0">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5 auto-rows-max">
                         {ALL_BADGES.map((badge) => {
                             const earned = earnedKeys.has(badge.key);
