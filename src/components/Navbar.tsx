@@ -191,7 +191,7 @@ const Navbar = () => {
                   <button
                     onClick={() => setShowBadges(true)}
                     disabled={loading}
-                    className={`${loading ? "opacity-50 cursor-not-allowed" : ""}`}
+                    className={`navbar-link ${loading ? "opacity-50 cursor-not-allowed" : ""}`}
                   >
                     My Badges
                   </button>
@@ -342,7 +342,7 @@ const Navbar = () => {
                   <button
                     onClick={() => setShowBadges(true)}
                     disabled={loading}
-                    className={`${loading ? "opacity-50 cursor-not-allowed" : ""}`}
+                    className={`block py-2 px-3 rounded-md transition-colors text-foreground hover:bg-accent/20 ${loading ? "opacity-50 cursor-not-allowed" : ""}`}
                   >
                     My Badges
                   </button>
