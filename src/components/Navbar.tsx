@@ -188,7 +188,7 @@ const Navbar = () => {
                   <button
                     onClick={() => setShowBadges(true)}
                     disabled={loading}
-                    className={`navbar-link text-foreground font-semibold hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-bottom-right hover:after:origin-bottom-left ${loading ? "opacity-50 cursor-not-allowed" : ""}`}
+                    className={`navbar-link text-left ${loading ? "opacity-50 cursor-not-allowed" : ""}`}
                   >
                     My Badges
                   </button>
