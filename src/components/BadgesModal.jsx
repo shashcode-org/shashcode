@@ -53,10 +53,10 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
                 style={{ borderRadius: "24px" }}
             >
                 {/* Top Gradient Bar */}
-                <div className="h-1 bg-gradient-to-r from-primary via-secondary to-accent" />
+                <div className="h-1 bg-gradient-to-r from-primary via-secondary to-accent rounded-t-3xl" />
 
                 {/* HEADER */}
-                <div className="px-6 pt-8 pb-5 border-b border-border bg-card/80 backdrop-blur-sm rounded-t-3xl">
+                <div className="px-6 pt-8 pb-5 border-b border-border bg-card/80 backdrop-blur-sm">
                     <div className="flex items-center justify-between">
 
                         {/* LEFT SPACER (for perfect centering) */}
