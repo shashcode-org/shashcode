@@ -104,13 +104,13 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
                                     )}
 
                                     {/* Badge */}
-                                    <div className="w-full flex items-center justify-center mb-3 relative z-10 overflow-hidden">
+                                    <div className="w-full flex items-center justify-center mb-3 relative z-10">
                                         <img
                                             src={`/badges/${badge.key}.webp`}
                                             alt={badge.name}
                                             loading="lazy"
                                             className={`
-      max-w-[100px] max-h-[100px]
+      w-[100px] h-[100px]
       object-contain
       block
       ${earned ? "drop-shadow-md" : "grayscale opacity-70"}
