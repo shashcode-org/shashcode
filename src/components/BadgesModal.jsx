@@ -83,56 +83,58 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
                     </div>
                 </div>
                 {/* CONTENT */}
-                <div className="flex-1 overflow-y-auto scroll-touch px-6 py-6 min-h-0 overscroll-contain">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 auto-rows-max">
-                        {ALL_BADGES.map((badge) => {
-                            const earned = earnedKeys.has(badge.key);
+                <div className="flex-1 overflow-y-auto scroll-touch px-6 py-6 min-h-0 overscroll-contain flex items-start md:items-center">
+                    <div className="w-full">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 auto-rows-max">
+                            {ALL_BADGES.map((badge) => {
+                                const earned = earnedKeys.has(badge.key);
 
-                            return (
-                                <div
-                                    key={badge.key}
-                                    className={`
+                                return (
+                                    <div
+                                        key={badge.key}
+                                        className={`
                     group relative rounded-2xl p-4 sm:p-5 text-center transition-all
                     ${earned
-                                            ? "card-glass hover:shadow-lg hover:-translate-y-1"
-                                            : "bg-muted/40 opacity-60 border border-border"
-                                        }
+                                                ? "card-glass hover:shadow-lg hover:-translate-y-1"
+                                                : "bg-muted/40 opacity-60 border border-border"
+                                            }
                   `}
-                                >
-                                    {/* Glow effect */}
-                                    {earned && (
-                                        <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-20 bg-gradient-to-br from-primary to-secondary transition" />
-                                    )}
+                                    >
+                                        {/* Glow effect */}
+                                        {earned && (
+                                            <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-20 bg-gradient-to-br from-primary to-secondary transition" />
+                                        )}
 
-                                    {/* Badge */}
-                                    <div className="w-full flex items-center justify-center mb-3 relative z-10">
-                                        <img
-                                            src={`/badges/${badge.key}.webp`}
-                                            alt={badge.name}
-                                            loading="lazy"
-                                            className={`
+                                        {/* Badge */}
+                                        <div className="w-full flex items-center justify-center mb-3 relative z-10">
+                                            <img
+                                                src={`/badges/${badge.key}.webp`}
+                                                alt={badge.name}
+                                                loading="lazy"
+                                                className={`
       w-[100px] h-[100px]
       object-contain
       block
       ${earned ? "drop-shadow-md" : "grayscale opacity-70"}
     `}
-                                        />
-                                    </div>
-
-                                    {/* Name */}
-                                    <div className="text-sm font-semibold text-foreground">
-                                        {badge.name}
-                                    </div>
-
-                                    {/* Level */}
-                                    {earned && (
-                                        <div className="text-xs mt-1 text-primary font-medium">
-                                            {LEVEL_MAP[badge.key]}
+                                            />
                                         </div>
-                                    )}
-                                </div>
-                            );
-                        })}
+
+                                        {/* Name */}
+                                        <div className="text-sm font-semibold text-foreground">
+                                            {badge.name}
+                                        </div>
+
+                                        {/* Level */}
+                                        {earned && (
+                                            <div className="text-xs mt-1 text-primary font-medium">
+                                                {LEVEL_MAP[badge.key]}
+                                            </div>
+                                        )}
+                                    </div>
+                                );
+                            })}
+                        </div>
                     </div>
                 </div>
 
