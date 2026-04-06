@@ -56,7 +56,7 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
                 <div className="h-1 bg-gradient-to-r from-primary via-secondary to-accent" />
 
                 {/* HEADER */}
-                <div className="px-6 pt-8 pb-5 border-b border-border bg-card/80 backdrop-blur-sm">
+                <div className="px-6 pt-8 pb-5 border-b border-border bg-card/80 backdrop-blur-sm rounded-t-3xl">
                     <div className="flex items-center justify-between">
 
                         {/* LEFT SPACER (for perfect centering) */}
