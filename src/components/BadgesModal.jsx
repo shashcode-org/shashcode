@@ -52,7 +52,6 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
                 className="
           w-full max-w-4xl
           max-h-[90vh]
-          overflow-y-auto
           rounded-2xl
           bg-card
           border border-border
@@ -82,7 +81,7 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
                 </div>
 
                 {/* CONTENT */}
-                <div className="px-6 py-6">
+                <div className="flex-1 overflow-y-auto px-6 py-6">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         {ALL_BADGES.map((badge) => {
                             const earned = earnedKeys.has(badge.key);
