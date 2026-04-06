@@ -45,11 +45,11 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
     return (
         <div
             onClick={onClose}
-            className="fixed inset-0 z-50 bg-black/70 backdrop-blur-md flex items-start md:items-center justify-center p-4 overflow-y-auto"
+            className="fixed inset-0 z-50 bg-black/70 backdrop-blur-md flex items-center justify-center p-4"
         >
             <div
                 onClick={(e) => e.stopPropagation()}
-                className="w-full max-w-2xl my-4 md:my-auto max-h-[90vh] rounded-3xl bg-card border border-border shadow-2xl flex flex-col"
+                className="w-full max-w-2xl my-0 max-h-[90vh] overflow-y-auto rounded-3xl bg-card border border-border shadow-2xl flex flex-col"
                 style={{ borderRadius: "24px" }}
             >
                 {/* Top Gradient Bar */}
