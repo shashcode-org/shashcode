@@ -45,12 +45,13 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
     return (
         <div
             onClick={onClose}
-            className="fixed inset-0 z-50 bg-black/70 backdrop-blur-md flex items-start pt-4 md:items-center md:pt-0 justify-center p-4 overflow-y-auto"
+            className="fixed inset-0 z-50 bg-black/70 backdrop-blur-md flex items-start md:items-center py-4 md:py-0 justify-center p-4 overflow-y-auto"
         >
             <div
                 onClick={(e) => e.stopPropagation()}
                 className="
           w-full max-w-4xl
+          my-auto
           max-h-[90vh]
           rounded-2xl
           bg-card
@@ -99,7 +100,7 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
                                 <div
                                     key={badge.key}
                                     className={`
-                    group relative rounded-xl p-4 sm:p-5 text-center transition-all
+                    group relative rounded-2xl p-4 sm:p-5 text-center transition-all
                     ${earned
                                             ? "card-glass hover:shadow-lg hover:-translate-y-1"
                                             : "bg-muted/40 opacity-60 border border-border"
