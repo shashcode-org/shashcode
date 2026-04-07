@@ -96,7 +96,7 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
                     group relative rounded-2xl p-4 sm:p-5 text-center transition-all
                     ${earned
                                                 ? "card-glass hover:shadow-lg hover:-translate-y-1"
-                                                : "bg-muted/40 opacity-60 border border-border"
+                                                : "bg-muted/30 border border-border opacity-50 grayscale pointer-events-none"
                                             }
                   `}
                                     >
@@ -126,11 +126,9 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
                                         </div>
 
                                         {/* Level */}
-                                        {earned && (
-                                            <div className="text-xs mt-1 text-primary font-medium">
-                                                {LEVEL_MAP[badge.key]}
-                                            </div>
-                                        )}
+                                        <div className={`text-xs mt-1 font-medium ${earned ? "text-primary" : "text-muted-foreground"}`}>
+                                            {earned ? LEVEL_MAP[badge.key] : "🔒 Locked"}
+                                        </div>
                                     </div>
                                 );
                             })}
