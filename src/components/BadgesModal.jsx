@@ -83,7 +83,7 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
                     </div>
                 </div>
                 {/* CONTENT */}
-                <div className="flex-1 overflow-y-auto scroll-touch px-6 py-6 min-h-0 overscroll-contain flex items-start md:items-center">
+                <div className="flex-1 overflow-y-auto scroll-touch px-6 py-6 min-h-0 overscroll-contain">
                     <div className="w-full">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 auto-rows-max">
                             {ALL_BADGES.map((badge) => {
