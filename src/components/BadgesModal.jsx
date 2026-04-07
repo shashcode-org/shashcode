@@ -42,6 +42,15 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
         setTimeout(() => setCopied(false), 1500);
     };
 
+    const shareTwitter = (badge) => {
+        const text = `I just unlocked "${badge.name}" on ShashCode 🚀🔥`;
+        window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`, "_blank");
+    };
+
+    const shareLinkedIn = () => {
+        window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`, "_blank");
+    };
+
     return (
         <div
             onClick={onClose}
@@ -129,6 +138,15 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
                                         <div className={`text-xs mt-1 font-medium ${earned ? "text-primary" : "text-muted-foreground"}`}>
                                             {earned ? LEVEL_MAP[badge.key] : "🔒 Locked"}
                                         </div>
+                                        {earned && (
+                                            <div className="flex items-center justify-center gap-3 mt-3 opacity-0 group-hover:opacity-100 transition">
+
+                                                <button onClick={() => shareTwitter(badge)}>🐦</button>
+                                                <button onClick={() => shareLinkedIn(badge)}>💼</button>
+                                                <button onClick={() => navigator.clipboard.writeText(window.location.href)}>🔗</button>
+
+                                            </div>
+                                        )}
                                     </div>
                                 );
                             })}
@@ -136,21 +154,6 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
                     </div>
                 </div>
 
-                {/* FOOTER */}
-                <div className="border-t border-border px-6 py-4">
-                    <button
-                        onClick={handleShareAll}
-                        className="
-              w-full py-3 rounded-xl
-              bg-gradient-to-r from-primary to-secondary
-              text-white font-semibold
-              shadow-md hover:shadow-lg
-              transition active:scale-95
-            "
-                    >
-                        {copied ? "✓ Copied" : "Share Progress"}
-                    </button>
-                </div>
             </div>
         </div>
     );
