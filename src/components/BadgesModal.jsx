@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { X } from "lucide-react";
+import { toPng } from "html-to-image";
 
 const ALL_BADGES = [
     { key: "code_cadet", name: "Code Cadet" },
@@ -16,7 +17,7 @@ const LEVEL_MAP = {
 };
 
 const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
-    const [copied, setCopied] = useState(false);
+    const badgeRefs = useRef({});
 
     const earnedKeys = new Set(badges.map((b) => b.badge_key));
     const earnedCount = earnedKeys.size;
@@ -36,19 +37,43 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
 
     if (!isOpen) return null;
 
-    const handleShareAll = () => {
-        navigator.clipboard.writeText("I’m leveling up on ShashCode 🚀");
-        setCopied(true);
-        setTimeout(() => setCopied(false), 1500);
-    };
-
     const shareTwitter = (badge) => {
-        const text = `I just unlocked "${badge.name}" on ShashCode 🚀🔥`;
+        const text = `I just unlocked "${badge.name}" on ShashCode 🚀🔥
+
+Sharpening my DSA skills daily 💪`;
         window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`, "_blank");
     };
 
-    const shareLinkedIn = () => {
-        window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`, "_blank");
+    const shareLinkedIn = (badge) => {
+        const text = `I just unlocked "${badge.name}" on ShashCode 🚀🔥
+
+Sharpening my DSA skills daily 💪`;
+
+        navigator.clipboard.writeText(text);
+
+        window.open(
+            `https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`,
+            "_blank"
+        );
+    };
+
+    const handleDownload = async (key) => {
+        const node = badgeRefs.current[key];
+        if (!node) return;
+
+        try {
+            await new Promise((res) => setTimeout(res, 100));
+            const dataUrl = await toPng(node);
+
+            const link = document.createElement("a");
+            link.download = `${key}-badge.png`;
+            link.href = dataUrl;
+            link.click();
+        } catch (err) {
+            console.error("Image generation failed", err);
+        }
+
+
     };
 
     return (
@@ -100,6 +125,7 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
 
                                 return (
                                     <div
+                                        ref={(el) => (badgeRefs.current[badge.key] = el)}
                                         key={badge.key}
                                         className={`
                     group relative rounded-2xl p-4 sm:p-5 text-center transition-all
@@ -141,9 +167,26 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
                                         {earned && (
                                             <div className="flex items-center justify-center gap-3 mt-3 opacity-0 group-hover:opacity-100 transition">
 
-                                                <button onClick={() => shareTwitter(badge)}>🐦</button>
-                                                <button onClick={() => shareLinkedIn(badge)}>💼</button>
-                                                <button onClick={() => navigator.clipboard.writeText(window.location.href)}>🔗</button>
+                                                <button
+                                                    onClick={() => shareTwitter(badge)}
+                                                    className="px-2 py-1 rounded-md bg-primary/20 hover:bg-primary/30 text-xs"
+                                                >
+                                                    🐦
+                                                </button>
+
+                                                <button
+                                                    onClick={() => shareLinkedIn(badge)}
+                                                    className="px-2 py-1 rounded-md bg-primary/20 hover:bg-primary/30 text-xs"
+                                                >
+                                                    💼
+                                                </button>
+
+                                                <button
+                                                    onClick={() => handleDownload(badge.key)}
+                                                    className="px-2 py-1 rounded-md bg-primary/20 hover:bg-primary/30 text-xs"
+                                                >
+                                                    🖼
+                                                </button>
 
                                             </div>
                                         )}
