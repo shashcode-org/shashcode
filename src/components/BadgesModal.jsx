@@ -43,7 +43,8 @@ const BadgesModal = ({ isOpen, onClose, badges = [], user }) => {
     if (!isOpen) return null;
 
     const buildShareUrl = (badge) => {
-        return `https://shashcode.com/.netlify/functions/share-badge?id=${encodeURIComponent(
+        const baseUrl = window.location.origin;
+        return `${baseUrl}/.netlify/functions/share-badge?id=${encodeURIComponent(
             badge.name
         )}&username=${encodeURIComponent(username)}&score=${encodeURIComponent(
             `${earnedCount}/${total}`

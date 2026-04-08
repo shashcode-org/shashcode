@@ -5,7 +5,7 @@ export async function handler(event) {
         score = "0/0",
     } = event.queryStringParameters || {};
 
-    const siteUrl = "https://shashcode.com"; // ⚠️ CHANGE if needed
+    const siteUrl = "https://dev-shashcode.netlify.app/";
 
     const imageUrl = `${siteUrl}/.netlify/functions/og-badge?id=${encodeURIComponent(
         id
@@ -26,11 +26,9 @@ export async function handler(event) {
       <meta name="twitter:title" content="I just unlocked ${id} 🚀" />
       <meta name="twitter:description" content="Completed ${score} on ShashCode 💪" />
       <meta name="twitter:image" content="${imageUrl}" />
-
-      <meta http-equiv="refresh" content="0; url=${siteUrl}/badge/${encodeURIComponent(id)}" />
     </head>
     <body>
-      Redirecting...
+      <h1>Redirecting...</h1>
     </body>
   </html>
   `;
