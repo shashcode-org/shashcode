@@ -16,11 +16,16 @@ const LEVEL_MAP = {
     dsa_dhurandhar: "Level 4",
 };
 
-const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
+const BadgesModal = ({ isOpen, onClose, badges = [], user }) => {
+    const username =
+        user?.user_metadata?.name ||
+        user?.email?.split("@")[0] ||
+        "user";
     const badgeRefs = useRef({});
 
     const earnedKeys = new Set(badges.map((b) => b.badge_key));
     const earnedCount = earnedKeys.size;
+    const total = ALL_BADGES.length;
 
     useEffect(() => {
         if (!isOpen) return;
@@ -37,22 +42,36 @@ const BadgesModal = ({ isOpen, onClose, badges = [] }) => {
 
     if (!isOpen) return null;
 
+    const buildShareUrl = (badge) => {
+        return `https://shashcode.com/.netlify/functions/share-badge?id=${encodeURIComponent(
+            badge.name
+        )}&username=${encodeURIComponent(username)}&score=${encodeURIComponent(
+            `${earnedCount}/${total}`
+        )}`;
+    };
+
     const shareTwitter = (badge) => {
+        const shareUrl = buildShareUrl(badge);
+
         const text = `I just unlocked "${badge.name}" on ShashCode 🚀🔥
 
 Sharpening my DSA skills daily 💪`;
-        window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`, "_blank");
+
+        window.open(
+            `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+                text
+            )}&url=${encodeURIComponent(shareUrl)}`,
+            "_blank"
+        );
     };
 
     const shareLinkedIn = (badge) => {
-        const text = `I just unlocked "${badge.name}" on ShashCode 🚀🔥
-
-Sharpening my DSA skills daily 💪`;
-
-        navigator.clipboard.writeText(text);
+        const shareUrl = buildShareUrl(badge);
 
         window.open(
-            `https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`,
+            `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+                shareUrl
+            )}`,
             "_blank"
         );
     };
@@ -75,6 +94,8 @@ Sharpening my DSA skills daily 💪`;
 
 
     };
+
+
 
     return (
         <div

@@ -436,6 +436,7 @@ const Navbar = () => {
         isOpen={showBadges}
         onClose={() => setShowBadges(false)}
         badges={badges}
+        user={user}
       />
     </>
   );
