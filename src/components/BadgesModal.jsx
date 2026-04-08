@@ -186,7 +186,7 @@ Sharpening my DSA skills daily 💪`;
                                             {earned ? LEVEL_MAP[badge.key] : "🔒 Locked"}
                                         </div>
                                         {earned && (
-                                            <div className="flex items-center justify-center gap-3 mt-3 opacity-0 group-hover:opacity-100 transition">
+                                            <div className="flex items-center justify-center gap-3 mt-3 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition">
 
                                                 <button
                                                     onClick={() => shareTwitter(badge)}
