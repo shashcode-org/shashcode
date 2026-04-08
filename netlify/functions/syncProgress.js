@@ -71,6 +71,13 @@ export async function handler(event) {
     }
 
     // --------------------------------------------------
+    // Fetch user profile for username
+    // --------------------------------------------------
+    const { data: authUser } = await supabase.auth.admin.getUserById(user_id);
+    const username = authUser?.user_metadata?.name || authUser?.email?.split("@")[0] || "user";
+    console.log("👤 User:", { user_id, username });
+
+    // --------------------------------------------------
     // Fetch existing highest level (LIFETIME)
     // --------------------------------------------------
     const { data: existingRow, error: fetchError } = await supabase
@@ -127,6 +134,9 @@ export async function handler(event) {
         badge_key: badge.key,
         badge_name: badge.name,
         sheet,
+        username,
+        earned_count: finalLevel,
+        total_badges: 4,
         metadata: {
           level,
           earned_via: isNewLevel ? "level_upgrade" : "backfill",
@@ -162,6 +172,9 @@ export async function handler(event) {
           badge_key: "java_pro",
           badge_name: "Java Pro",
           sheet,
+          username,
+          earned_count: finalLevel,
+          total_badges: 4,
           metadata: {
             earned_via: "main_topic_completion",
             topics: JAVA_CORE_TOPICS,

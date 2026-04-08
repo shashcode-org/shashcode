@@ -44,11 +44,23 @@ const BadgesModal = ({ isOpen, onClose, badges = [], user }) => {
 
     const buildShareUrl = (badge) => {
         const baseUrl = window.location.origin;
-        return `${baseUrl}/.netlify/functions/share-badge?id=${encodeURIComponent(
+        const user_id = user?.id; // Get user ID from the user prop
+        
+        // ✅ This URL points to share-badge endpoint which returns HTML with OG meta tags
+        // og:image retrieves the pre-generated badge image from Supabase
+        // LinkedIn crawler fetches this and displays the badge image in preview
+        let shareUrl = `${baseUrl}/.netlify/functions/share-badge?id=${encodeURIComponent(
             badge.name
         )}&username=${encodeURIComponent(username)}&score=${encodeURIComponent(
             `${earnedCount}/${total}`
         )}`;
+        
+        // Add user_id if available (to retrieve stored OG image)
+        if (user_id) {
+            shareUrl += `&user_id=${encodeURIComponent(user_id)}`;
+        }
+        
+        return shareUrl;
     };
 
     const shareTwitter = (badge) => {
@@ -62,19 +74,37 @@ Sharpening my DSA skills daily 💪`;
             `https://twitter.com/intent/tweet?text=${encodeURIComponent(
                 text
             )}&url=${encodeURIComponent(shareUrl)}`,
-            "_blank"
+            "_blank",
+            "width=600,height=500"
         );
+        
+        // Optional: Track share in analytics
+        if (window.gtag) {
+            window.gtag('event', 'badge_shared', {
+                badge_name: badge.name,
+                platform: 'twitter'
+            });
+        }
     };
 
     const shareLinkedIn = (badge) => {
         const shareUrl = buildShareUrl(badge);
 
-        window.open(
-            `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-                shareUrl
-            )}`,
-            "_blank"
-        );
+        // ✅ Opens LinkedIn sharing with OG preview
+        // The share-badge endpoint returns HTML with og:image pointing to cached badge
+        const linkedInShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+            shareUrl
+        )}`;
+        
+        window.open(linkedInShareUrl, "_blank", "width=600,height=500");
+        
+        // Optional: Track share in analytics
+        if (window.gtag) {
+            window.gtag('event', 'badge_shared', {
+                badge_name: badge.name,
+                platform: 'linkedin'
+            });
+        }
     };
 
     const handleDownload = async (key) => {

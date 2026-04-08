@@ -1,4 +1,5 @@
 // netlify/functions/_badges.js
+import { generateAndUploadBadgeImage } from "./generate-badge-image.js";
 
 export const LEVEL_BADGES = {
   1: {
@@ -33,19 +34,40 @@ export const LEVEL_BADGES = {
     badge_key,
     badge_name,
     sheet,
+    username = "user",
+    earned_count = 0,
+    total_badges = 4,
     metadata = {},
   }) {
     console.log("➡️ awardBadgeIfNotExists", {
       user_id,
       badge_key,
       sheet,
+      username,
     });
+
+    // Generate and upload badge image
+    let og_image_url = null;
+    try {
+      og_image_url = await generateAndUploadBadgeImage({
+        user_id,
+        badge_key,
+        username,
+        earned_count,
+        total_badges,
+      });
+      console.log(`✅ Generated OG image: ${og_image_url}`);
+    } catch (error) {
+      console.warn(`⚠️  Failed to generate badge image: ${error.message}`);
+      // Don't fail badge awarding if image generation fails
+    }
   
     const { error } = await supabase.from("user_badges").insert({
       user_id,
       badge_key,
       badge_name,
       sheet,
+      og_image_url,
       metadata,
     });
   
