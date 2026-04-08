@@ -28,7 +28,8 @@ export async function handler(event) {
       <meta name="twitter:image" content="${imageUrl}" />
     </head>
     <body>
-      <h1>Redirecting...</h1>
+      <h1>ShashCode Badge</h1>
+      <p>Loading preview...</p>
     </body>
   </html>
   `;
