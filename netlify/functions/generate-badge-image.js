@@ -5,9 +5,6 @@ import path from "path";
 import { fileURLToPath } from "url";
 import sharp from "sharp";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
 // Initialize Supabase
 const supabase = createClient(
     process.env.VITE_SUPABASE_URL,
@@ -33,6 +30,9 @@ export async function generateAndUploadBadgeImage({
         console.log(`🎨 Generating badge image for ${username} - ${badge_key}`);
 
         const badgeInfo = BADGE_MAP[badge_key] || { key: badge_key, name: badge_key };
+
+        // Get __dirname from import.meta.url
+        const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
         // Load the badge image from /public/badges/{key}.png
         const badgePath = path.join(__dirname, `../public/badges/${badgeInfo.key}.png`);

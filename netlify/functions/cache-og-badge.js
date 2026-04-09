@@ -4,9 +4,6 @@ import path from "path";
 import { fileURLToPath } from "url";
 import sharp from "sharp";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
 // Badge mapping for URL parameters to file keys
 const BADGE_MAP = {
     "code_cadet": { key: "code_cadet", name: "Code Cadet" },
@@ -34,6 +31,9 @@ export async function handler(event) {
         const badgeInfo = BADGE_MAP[id] || { key: id.toLowerCase().replace(/\s+/g, "_"), name: id };
         
         console.log("🔑 Badge Info:", { badgeKey: badgeInfo.key, badgeName: badgeInfo.name });
+        
+        // Get __dirname from import.meta.url
+        const __dirname = path.dirname(fileURLToPath(import.meta.url));
         
         // Load the badge image from /public/badges/{key}.png
         const badgePath = path.join(__dirname, `../public/badges/${badgeInfo.key}.png`);
