@@ -112,7 +112,6 @@ export async function handler(event) {
         `;
 
         const resvg = new Resvg(svg);
-        const resvg = new Resvg(svg);
         console.log("🎨 SVG rendered with Resvg");
         
         const pngData = resvg.render();
