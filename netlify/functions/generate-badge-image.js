@@ -35,6 +35,7 @@ export async function generateAndUploadBadgeImage({
 
         // Load the badge image from /public/badges/{key}.png
         const badgePath = path.join(process.cwd(), `netlify/functions/assets/badges/${badgeInfo.key}.webp`);
+        console.log("🔑 SERVICE ROLE KEY EXISTS:", !!process.env.SUPABASE_SERVICE_ROLE_KEY);
         console.log("📂 __dirname:", __dirname);
         console.log("📂 badgePath:", badgePath);
         console.log("📂 exists:", fs.existsSync(badgePath));
