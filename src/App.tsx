@@ -3,7 +3,6 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import MyBadges from "@/pages/MyBadges";
 import Home from "./pages/Home";
 import DSA from "./pages/DSA";
 import JavaDSA from "./pages/JavaDSA";
