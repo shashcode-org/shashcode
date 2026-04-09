@@ -36,7 +36,9 @@ export async function generateAndUploadBadgeImage({
 
         // Load the badge image from /public/badges/{key}.png
         const badgePath = path.join(__dirname, `../public/badges/${badgeInfo.key}.webp`);
-
+        console.log("📂 __dirname:", __dirname);
+        console.log("📂 badgePath:", badgePath);
+        console.log("📂 exists:", fs.existsSync(badgePath));
         if (!fs.existsSync(badgePath)) {
             console.warn(`⚠️  Badge image not found: ${badgePath}`);
             return null;
