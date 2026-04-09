@@ -2,7 +2,6 @@ import { Resvg } from "@resvg/resvg-js";
 import { createClient } from "@supabase/supabase-js";
 import fs from "fs";
 import path from "path";
-import { fileURLToPath } from "url";
 import sharp from "sharp";
 
 // Initialize Supabase
@@ -32,10 +31,10 @@ export async function generateAndUploadBadgeImage({
         const badgeInfo = BADGE_MAP[badge_key] || { key: badge_key, name: badge_key };
 
         // Get __dirname from import.meta.url
-        const __dirname = path.dirname(fileURLToPath(import.meta.url));
+        const __dirname = process.cwd();
 
         // Load the badge image from /public/badges/{key}.png
-        const badgePath = path.join(__dirname, `./assets/badges/${badgeInfo.key}.webp`);
+        const badgePath = path.join(process.cwd(), `netlify/functions/assets/badges/${badgeInfo.key}.webp`);
         console.log("📂 __dirname:", __dirname);
         console.log("📂 badgePath:", badgePath);
         console.log("📂 exists:", fs.existsSync(badgePath));
@@ -50,7 +49,7 @@ export async function generateAndUploadBadgeImage({
         const badgeDataUrl = `data:image/png;base64,${badgeImageBase64}`;
 
         // Load and convert the logo from /public/bl-logo.webp to PNG
-        const logoPath = path.join(__dirname, `./assets/logo/bl-logo.webp`);
+const logoPath = path.join(process.cwd(), `netlify/functions/assets/logo/bl-logo.webp`);
         let logoDataUrl = null;
 
         if (fs.existsSync(logoPath)) {

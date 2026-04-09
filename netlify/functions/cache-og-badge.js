@@ -1,7 +1,6 @@
 import { Resvg } from "@resvg/resvg-js";
 import fs from "fs";
 import path from "path";
-import { fileURLToPath } from "url";
 import sharp from "sharp";
 
 // Badge mapping for URL parameters to file keys
@@ -32,12 +31,8 @@ export async function handler(event) {
         
         console.log("🔑 Badge Info:", { badgeKey: badgeInfo.key, badgeName: badgeInfo.name });
         
-        // Get __dirname from import.meta.url
-        const __dirname = path.dirname(fileURLToPath(import.meta.url));
-        
         // Load the badge image from /public/badges/{key}.webp
-        const badgePath = path.join(__dirname, `./assets/badges/${badgeInfo.key}.webp`);
-        
+        const badgePath = path.join(process.cwd(), `netlify/functions/assets/badges/${badgeInfo.key}.webp`);
         console.log("📂 Looking for badge at:", badgePath);
         
         if (!fs.existsSync(badgePath)) {
@@ -58,7 +53,7 @@ export async function handler(event) {
         console.log("🔄 Badge converted to base64 data URL");
         
         // Load and convert the logo from /public/bl-logo.webp to PNG
-        const logoPath = path.join(__dirname, `../public/bl-logo.webp`);
+        const logoPath = path.join(process.cwd(), `netlify/functions/assets/logo/bl-logo.webp`);
         let logoDataUrl = null;
         
         if (fs.existsSync(logoPath)) {
