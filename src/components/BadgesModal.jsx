@@ -102,7 +102,10 @@ Sharpening my DSA skills daily 💪`;
                 platform: 'twitter'
             });
         }
-    };ole.log("🔗 [shareLinkedIn] Click detected for badge:", badge.name);
+    };
+
+    const shareLinkedIn = (badge) => {
+        console.log("🔗 [shareLinkedIn] Click detected for badge:", badge.name);
         const shareUrl = buildShareUrl(badge);
 
         // ✅ Opens LinkedIn sharing with OG preview
@@ -122,10 +125,7 @@ Sharpening my DSA skills daily 💪`;
         
         // Optional: Track share in analytics
         if (window.gtag) {
-            console.log("📊 Tracking analytics event...");InShareUrl, "_blank", "width=600,height=500");
-        
-        // Optional: Track share in analytics
-        if (window.gtag) {
+            console.log("📊 Tracking analytics event...");
             window.gtag('event', 'badge_shared', {
                 badge_name: badge.name,
                 platform: 'linkedin'
