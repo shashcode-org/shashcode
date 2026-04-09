@@ -50,7 +50,7 @@ export async function generateAndUploadBadgeImage({
         const badgeDataUrl = `data:image/png;base64,${badgeImageBase64}`;
 
         // Load and convert the logo from /public/bl-logo.webp to PNG
-        const logoPath = path.join(__dirname, `../public/bl-logo.webp`);
+        const logoPath = path.join(__dirname, `./assets/logo/bl-logo.webp`);
         let logoDataUrl = null;
 
         if (fs.existsSync(logoPath)) {
