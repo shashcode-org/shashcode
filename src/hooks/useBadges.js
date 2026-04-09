@@ -18,14 +18,16 @@ export const useBadges = (user) => {
 
         const { data } = await supabase.auth.getSession();
         const token = data.session?.access_token;
-
+        console.log("TOKEN:", token);
         const res = await fetch("/.netlify/functions/getBadges", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         });
+        console.log("STATUS:", res.status);
 
         const json = await res.json();
+        console.log("BADGES API RESPONSE:", json);
         setBadges(Array.isArray(json) ? json : []);
       } catch (err) {
         console.error("Failed to load badges:", err);
