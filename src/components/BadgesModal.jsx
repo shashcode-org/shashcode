@@ -46,6 +46,15 @@ const BadgesModal = ({ isOpen, onClose, badges = [], user }) => {
         const baseUrl = window.location.origin;
         const user_id = user?.id; // Get user ID from the user prop
         
+        console.log("🔍 [buildShareUrl] Starting URL generation...");
+        console.log("📊 Badge Details:", {
+            name: badge.name,
+            key: badge.key,
+            username: username,
+            score: `${earnedCount}/${total}`,
+            user_id: user_id
+        });
+        
         // ✅ This URL points to share-badge endpoint which returns HTML with OG meta tags
         // og:image retrieves the pre-generated badge image from Supabase
         // LinkedIn crawler fetches this and displays the badge image in preview
@@ -58,18 +67,26 @@ const BadgesModal = ({ isOpen, onClose, badges = [], user }) => {
         // Add user_id if available (to retrieve stored OG image)
         if (user_id) {
             shareUrl += `&user_id=${encodeURIComponent(user_id)}`;
+            console.log("✅ user_id added to URL");
+        } else {
+            console.warn("⚠️ No user_id found - badge image might not be retrieved");
         }
+        
+        console.log("🔗 Final Share URL:", shareUrl);
         
         return shareUrl;
     };
 
     const shareTwitter = (badge) => {
+        console.log("🐦 [shareTwitter] Click detected for badge:", badge.name);
         const shareUrl = buildShareUrl(badge);
 
         const text = `I just unlocked "${badge.name}" on ShashCode 🚀🔥
 
 Sharpening my DSA skills daily 💪`;
 
+        console.log("📱 Twitter share URL:", `https://twitter.com/intent/tweet?...`);
+        
         window.open(
             `https://twitter.com/intent/tweet?text=${encodeURIComponent(
                 text
@@ -85,9 +102,7 @@ Sharpening my DSA skills daily 💪`;
                 platform: 'twitter'
             });
         }
-    };
-
-    const shareLinkedIn = (badge) => {
+    };ole.log("🔗 [shareLinkedIn] Click detected for badge:", badge.name);
         const shareUrl = buildShareUrl(badge);
 
         // ✅ Opens LinkedIn sharing with OG preview
@@ -96,7 +111,18 @@ Sharpening my DSA skills daily 💪`;
             shareUrl
         )}`;
         
+        console.log("🔗 LinkedIn share URL constructed:");
+        console.log("   Base URL:", shareUrl);
+        console.log("   LinkedIn Share Endpoint:", linkedInShareUrl);
+        console.log("📤 Opening LinkedIn window...");
+        
         window.open(linkedInShareUrl, "_blank", "width=600,height=500");
+        
+        console.log("✅ LinkedIn window opened");
+        
+        // Optional: Track share in analytics
+        if (window.gtag) {
+            console.log("📊 Tracking analytics event...");InShareUrl, "_blank", "width=600,height=500");
         
         // Optional: Track share in analytics
         if (window.gtag) {

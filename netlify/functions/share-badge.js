@@ -6,6 +6,14 @@ export async function handler(event) {
         user_id,
     } = event.queryStringParameters || {};
 
+    console.log("🔍 [share-badge] Request received");
+    console.log("📋 Query Parameters:", {
+        id,
+        username,
+        score,
+        user_id
+    });
+
     const siteUrl = "https://dev-shashcode.netlify.app/";
 
     // Try to retrieve stored image from Supabase
@@ -15,6 +23,9 @@ export async function handler(event) {
         // Map badge name to key
         const badgeKey = id.toLowerCase().replace(/\s+/g, "_");
         
+        console.log("🔑 Badge Key generated:", badgeKey);
+        console.log("🗄️ Attempting to retrieve from Supabase...");
+        
         try {
             const { createClient } = await import("@supabase/supabase-js");
             const supabase = createClient(
@@ -22,7 +33,9 @@ export async function handler(event) {
                 process.env.SUPABASE_SERVICE_ROLE_KEY
             );
             
-            const { data } = await supabase
+            console.log("✅ Supabase client initialized");
+            
+            const { data, error } = await supabase
                 .from("user_badges")
                 .select("og_image_url")
                 .eq("user_id", user_id)
@@ -31,18 +44,30 @@ export async function handler(event) {
                 .limit(1)
                 .single();
             
+            if (error) {
+                console.warn("⚠️ Supabase query error:", error.message);
+            }
+            
             if (data?.og_image_url) {
                 imageUrl = data.og_image_url;
-                console.log("✅ Retrieved stored badge image:", imageUrl);
+                console.log("✅ Retrieved stored badge image from Supabase");
+                console.log("🖼️ Image URL:", imageUrl);
+            } else {
+                console.warn("⚠️ No stored image found in Supabase for this badge");
             }
         } catch (error) {
             console.warn("⚠️ Failed to retrieve badge image:", error.message);
+            console.error("❌ Full error:", error);
         }
+    } else {
+        console.warn("⚠️ Missing user_id or id - skipping Supabase lookup");
     }
     
     // Fallback: Use dynamic generation endpoint if no stored image
     if (!imageUrl) {
         imageUrl = `${siteUrl}.netlify/functions/cache-og-badge?id=${encodeURIComponent(id)}&username=${encodeURIComponent(username)}&score=${encodeURIComponent(score)}`;
+        console.log("🔄 Using fallback dynamic generation endpoint");
+        console.log("📸 Fallback Image URL:", imageUrl);
     }
 
     const html = `
@@ -82,6 +107,9 @@ export async function handler(event) {
     </body>
   </html>
   `;
+
+    console.log("📄 HTML Generated with OG meta tags");
+    console.log("🎯 OG Image Meta Tag will use:", imageUrl);
 
     return {
         statusCode: 200,

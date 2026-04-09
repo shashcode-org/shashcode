@@ -26,12 +26,19 @@ export async function handler(event) {
         score = "0/0",
     } = event.queryStringParameters || {};
 
+    console.log("🖼️ [cache-og-badge] Generating dynamic badge image");
+    console.log("📋 Parameters:", { id, username, score });
+
     try {
         // Map the badge ID to our badge key
         const badgeInfo = BADGE_MAP[id] || { key: id.toLowerCase().replace(/\s+/g, "_"), name: id };
         
+        console.log("🔑 Badge Info:", { badgeKey: badgeInfo.key, badgeName: badgeInfo.name });
+        
         // Load the badge image from /public/badges/{key}.png
         const badgePath = path.join(__dirname, `../public/badges/${badgeInfo.key}.png`);
+        
+        console.log("📂 Looking for badge at:", badgePath);
         
         if (!fs.existsSync(badgePath)) {
             console.warn(`⚠️  Badge image not found: ${badgePath}`);
@@ -41,10 +48,14 @@ export async function handler(event) {
             };
         }
         
+        console.log("✅ Badge image found");
+        
         // Read the badge image and convert to base64 for embedding in SVG
         const badgeImageBuffer = fs.readFileSync(badgePath);
         const badgeImageBase64 = badgeImageBuffer.toString('base64');
         const badgeDataUrl = `data:image/png;base64,${badgeImageBase64}`;
+        
+        console.log("🔄 Badge converted to base64 data URL");
         
         // Load and convert the logo from /public/bl-logo.webp to PNG
         const logoPath = path.join(__dirname, `../public/bl-logo.webp`);
@@ -52,13 +63,17 @@ export async function handler(event) {
         
         if (fs.existsSync(logoPath)) {
             try {
+                console.log("📂 Logo found at:", logoPath);
                 // Use sharp to convert WebP to PNG
                 const logoPngBuffer = await sharp(logoPath).png().toBuffer();
                 const logoImageBase64 = logoPngBuffer.toString('base64');
                 logoDataUrl = `data:image/png;base64,${logoImageBase64}`;
+                console.log("✅ Logo converted successfully");
             } catch (error) {
                 console.warn(`⚠️  Failed to convert logo: ${error.message}`);
             }
+        } else {
+            console.warn("⚠️  Logo not found at:", logoPath);
         }
         
         // Create SVG with the badge image + dynamic username
@@ -97,8 +112,14 @@ export async function handler(event) {
         `;
 
         const resvg = new Resvg(svg);
+        const resvg = new Resvg(svg);
+        console.log("🎨 SVG rendered with Resvg");
+        
         const pngData = resvg.render();
         const pngBuffer = pngData.asPng();
+
+        console.log("✅ PNG buffer generated successfully");
+        console.log("📏 Image size:", pngBuffer.length, "bytes");
 
         return {
             statusCode: 200,
@@ -113,7 +134,8 @@ export async function handler(event) {
             isBase64Encoded: true,
         };
     } catch (error) {
-        console.error("Error generating badge:", error);
+        console.error("❌ Error generating badge:", error);
+        console.error("📌 Error stack:", error.stack);
 
         // Fallback: Return 500 if generation fails
         return {
