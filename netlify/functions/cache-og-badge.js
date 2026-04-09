@@ -36,7 +36,7 @@ export async function handler(event) {
         const __dirname = path.dirname(fileURLToPath(import.meta.url));
         
         // Load the badge image from /public/badges/{key}.webp
-        const badgePath = path.join(__dirname, `../public/badges/${badgeInfo.key}.webp`);
+        const badgePath = path.join(__dirname, `./assets/badges/${badgeInfo.key}.webp`);
         
         console.log("📂 Looking for badge at:", badgePath);
         
