@@ -120,6 +120,13 @@ export async function handler(event) {
         console.log("✅ PNG buffer generated successfully");
         console.log("📏 Image size:", pngBuffer.length, "bytes");
 
+        console.log("\n========================================");
+        console.log("✅ [cache-og-badge] SUCCESS - Badge image generated");
+        console.log("🎯 Badge ID:", id);
+        console.log("👤 Username:", username);
+        console.log("📏 Final image size:", pngBuffer.length, "bytes");
+        console.log("========================================\n");
+
         return {
             statusCode: 200,
             headers: {
@@ -135,6 +142,13 @@ export async function handler(event) {
     } catch (error) {
         console.error("❌ Error generating badge:", error);
         console.error("📌 Error stack:", error.stack);
+
+        console.log("\n========================================");
+        console.log("❌ [cache-og-badge] FAILED - Error during badge generation");
+        console.log("🎯 Badge ID:", id);
+        console.log("👤 Username:", username);
+        console.log("❌ Error:", error.message);
+        console.log("========================================\n");
 
         // Fallback: Return 500 if generation fails
         return {

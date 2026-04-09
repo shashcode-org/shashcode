@@ -70,6 +70,11 @@ export async function handler(event) {
         console.log("📸 Fallback Image URL:", imageUrl);
     }
 
+    console.log("\n========================================");
+    console.log("🎯 FINAL IMAGE URL FOR OG META TAG:");
+    console.log("📸 URL:", imageUrl);
+    console.log("========================================\n");
+
     const html = `
   <!DOCTYPE html>
   <html lang="en">
@@ -110,6 +115,12 @@ export async function handler(event) {
 
     console.log("📄 HTML Generated with OG meta tags");
     console.log("🎯 OG Image Meta Tag will use:", imageUrl);
+
+    // Log the exact meta tag that will be in the HTML
+    console.log(`\n✅ [share-badge] Response ready:`);
+    console.log(`   <meta property="og:image" content="${imageUrl}" />`);
+    console.log(`   <meta property="og:title" content="I just unlocked ${id} 🚀" />`);
+    console.log(`   <meta property="og:description" content="Completed ${score} on ShashCode 💪" />\n`);
 
     return {
         statusCode: 200,
