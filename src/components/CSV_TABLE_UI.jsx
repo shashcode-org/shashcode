@@ -877,6 +877,11 @@ export const CSV_TABLE_UI = ({ csvData }) => {
         completedMainTopics,
       });
 
+      if (result?.new_badges?.length > 0) {
+  console.log("🎉 New badges unlocked:", result.new_badges);
+  window.dispatchEvent(new Event("badgesUpdated"));
+}
+
       // ✅ mark latest local update time
       if (result?.updated_at) {
         localStorage.setItem(
