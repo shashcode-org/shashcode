@@ -18,23 +18,23 @@ export async function handler(event) {
 
     // Try to retrieve stored image from Supabase
     let imageUrl = null;
-    
+
     if (user_id && id) {
         // Map badge name to key
         const badgeKey = id.toLowerCase().replace(/\s+/g, "_");
-        
+
         console.log("🔑 Badge Key generated:", badgeKey);
         console.log("🗄️ Attempting to retrieve from Supabase...");
-        
+
         try {
             const { createClient } = await import("@supabase/supabase-js");
             const supabase = createClient(
                 process.env.SUPABASE_URL,
                 process.env.SUPABASE_SERVICE_ROLE_KEY
             );
-            
+
             console.log("✅ Supabase client initialized");
-            
+
             const { data, error } = await supabase
                 .from("user_badges")
                 .select("og_image_url")
@@ -43,11 +43,11 @@ export async function handler(event) {
                 .order("earned_at", { ascending: false })
                 .limit(1)
                 .single();
-            
+
             if (error) {
                 console.warn("⚠️ Supabase query error:", error.message);
             }
-            
+
             if (data?.og_image_url) {
                 imageUrl = data.og_image_url;
                 console.log("✅ Retrieved stored badge image from Supabase");
@@ -62,19 +62,26 @@ export async function handler(event) {
     } else {
         console.warn("⚠️ Missing user_id or id - skipping Supabase lookup");
     }
-    
+
     // Fallback: Use dynamic generation endpoint if no stored image
     if (!imageUrl) {
+        console.warn("⚠️ No stored image found → forcing direct generation");
+
+        const badgeKey = id.toLowerCase().replace(/\s+/g, "_");
+
         imageUrl = `${siteUrl}.netlify/functions/cache-og-badge?id=${encodeURIComponent(id)}&username=${encodeURIComponent(username)}&score=${encodeURIComponent(score)}`;
-        console.log("🔄 Using fallback dynamic generation endpoint");
-        console.log("📸 Fallback Image URL:", imageUrl);
+
+        console.log("📸 Using dynamic image URL:", imageUrl);
     }
 
     console.log("\n========================================");
     console.log("🎯 FINAL IMAGE URL FOR OG META TAG:");
     console.log("📸 URL:", imageUrl);
     console.log("========================================\n");
-
+    const fullShareUrl = `${siteUrl}.netlify/functions/share-badge?id=${encodeURIComponent(id)}&username=${encodeURIComponent(username)}&score=${encodeURIComponent(score)}&user_id=${encodeURIComponent(user_id || "")}`;
+    const finalImageUrl = imageUrl.includes("?")
+        ? `${imageUrl}&t=${Date.now()}`
+        : `${imageUrl}?t=${Date.now()}`;
     const html = `
   <!DOCTYPE html>
   <html lang="en">
@@ -85,11 +92,11 @@ export async function handler(event) {
       <!-- ✅ Open Graph Tags - Optimized for LinkedIn/Twitter -->
       <meta property="og:title" content="I just unlocked ${escapeMeta(id)} 🚀" />
       <meta property="og:description" content="Completed ${escapeMeta(score)} on ShashCode 💪" />
-      <meta property="og:image" content="${imageUrl}" />
+      <meta property="og:image" content="${finalImageUrl}" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:image:type" content="image/png" />
-      <meta property="og:url" content="${siteUrl}share-badge?id=${encodeURIComponent(id)}" />
+      <meta property="og:url" content="${fullShareUrl}" />
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="ShashCode" />
 
@@ -97,7 +104,7 @@ export async function handler(event) {
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="I just unlocked ${escapeMeta(id)} 🚀" />
       <meta name="twitter:description" content="Completed ${escapeMeta(score)} on ShashCode 💪" />
-      <meta name="twitter:image" content="${imageUrl}" />
+     <meta name="twitter:image" content="${finalImageUrl}" />
       <meta name="twitter:site" content="@ShashCode" />
       
       <!-- ✅ Performance & SEO -->
@@ -127,7 +134,7 @@ export async function handler(event) {
         headers: {
             "Content-Type": "text/html; charset=utf-8",
             // Cache this page for 1 hour, but images are cached longer in Supabase
-            "Cache-Control": "public, max-age=3600, s-maxage=3600",
+            "Cache-Control": "no-cache, no-store, must-revalidate",
             "X-Content-Type-Options": "nosniff",
             "X-Frame-Options": "SAMEORIGIN",
             // Allow crawlers to access this without issues

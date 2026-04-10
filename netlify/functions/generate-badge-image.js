@@ -34,7 +34,7 @@ export async function generateAndUploadBadgeImage({
         const __dirname = process.cwd();
 
         // Load the badge image from /public/badges/{key}.png
-        const badgePath = path.join(process.cwd(), `netlify/functions/assets/badges/${badgeInfo.key}.webp`);
+        const badgePath = path.join(process.cwd(), `netlify/functions/assets/badges/${badgeInfo.key}.png`);
         console.log("🔑 SERVICE ROLE KEY EXISTS:", !!process.env.SUPABASE_SERVICE_ROLE_KEY);
         console.log("📂 __dirname:", __dirname);
         console.log("📂 badgePath:", badgePath);
@@ -106,7 +106,7 @@ export async function generateAndUploadBadgeImage({
 
         // Generate filename: (user_id)-(badge_key)-timestamp.png
         const timestamp = Date.now();
-        const filename = `${user_id}/${badge_key}-${timestamp}.png`;
+        const filename = `${user_id}/${badge_key}.png`;
         console.log("🔑 KEY START:", process.env.SUPABASE_SERVICE_ROLE_KEY?.slice(0, 20));
 
         const { data: testData, error: testError } = await supabase.storage
@@ -121,7 +121,7 @@ export async function generateAndUploadBadgeImage({
             .from("badge-images")
             .upload(filename, pngBuffer, {
                 contentType: "image/png",
-                upsert: false,
+                upsert: true,
             });
 
         if (error) {

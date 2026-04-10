@@ -31,8 +31,8 @@ export async function handler(event) {
         
         console.log("🔑 Badge Info:", { badgeKey: badgeInfo.key, badgeName: badgeInfo.name });
         
-        // Load the badge image from /public/badges/{key}.webp
-        const badgePath = path.join(process.cwd(), `netlify/functions/assets/badges/${badgeInfo.key}.webp`);
+        // Load the badge image from /public/badges/{key}.png
+        const badgePath = path.join(process.cwd(), `netlify/functions/assets/badges/${badgeInfo.key}.png`);
         console.log("📂 Looking for badge at:", badgePath);
         
         if (!fs.existsSync(badgePath)) {
