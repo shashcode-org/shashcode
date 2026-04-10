@@ -1,16 +1,23 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import { supabase } from "@/lib/supabaseClient";
 
 export const useBadges = (user) => {
   const [badges, setBadges] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const isFetchingRef = useRef(false); // 🔥 add this above (inside hook)
+
   const loadBadges = useCallback(async () => {
-    if (!user) {
-      setBadges([]);
-      setLoading(false);
+    // 🔥 prevent duplicate calls
+    if (!user || isFetchingRef.current) {
+      if (!user) {
+        setBadges([]);
+        setLoading(false);
+      }
       return;
     }
+
+    isFetchingRef.current = true;
 
     try {
       setLoading(true);
@@ -18,9 +25,10 @@ export const useBadges = (user) => {
       const sessionRes = await supabase.auth.getSession();
       const token = sessionRes?.data?.session?.access_token;
 
-      // 🔥 Retry until session is ready (real fix)
+      // 🔥 Retry until session is ready (KEEPING YOUR LOGIC)
       if (!token) {
         console.warn("⛔ No session yet, retrying badge fetch...");
+        isFetchingRef.current = false; // ⚠️ IMPORTANT (else lock ho jayega)
         setTimeout(loadBadges, 500);
         return;
       }
@@ -50,6 +58,7 @@ export const useBadges = (user) => {
       setBadges([]);
     } finally {
       setLoading(false);
+      isFetchingRef.current = false; // 🔥 MOST IMPORTANT LINE
     }
   }, [user]);
 
@@ -62,7 +71,10 @@ export const useBadges = (user) => {
   useEffect(() => {
     const handler = () => {
       console.log("🔄 badgesUpdated event received");
-      loadBadges();
+
+      if (!isFetchingRef.current) {
+        loadBadges();
+      }
     };
 
     window.addEventListener("badgesUpdated", handler);

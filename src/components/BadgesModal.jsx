@@ -44,7 +44,7 @@ const BadgesModal = ({ isOpen, onClose, badges = [], user }) => {
 
     const buildShareUrl = (badge) => {
         const baseUrl = window.location.origin;
-        const user_id = user?.id; // Get user ID from the user prop
+        const user_id = user?.id;
         
         console.log("🔍 [buildShareUrl] Starting URL generation...");
         console.log("📊 Badge Details:", {
@@ -54,26 +54,26 @@ const BadgesModal = ({ isOpen, onClose, badges = [], user }) => {
             score: `${earnedCount}/${total}`,
             user_id: user_id
         });
-        
-        // ✅ This URL points to share-badge endpoint which returns HTML with OG meta tags
-        // og:image retrieves the pre-generated badge image from Supabase
-        // LinkedIn crawler fetches this and displays the badge image in preview
+
         let shareUrl = `${baseUrl}/.netlify/functions/share-badge?id=${encodeURIComponent(
             badge.name
         )}&username=${encodeURIComponent(username)}&score=${encodeURIComponent(
             `${earnedCount}/${total}`
         )}`;
-        
-        // Add user_id if available (to retrieve stored OG image)
+
+        // ✅ Add user_id (IMPORTANT for fetching OG image from DB)
         if (user_id) {
             shareUrl += `&user_id=${encodeURIComponent(user_id)}`;
             console.log("✅ user_id added to URL");
         } else {
             console.warn("⚠️ No user_id found - badge image might not be retrieved");
         }
-        
+
+        // 🔥 ADD THIS (VERY IMPORTANT - fixes LinkedIn cache issue)
+        shareUrl += `&t=${Date.now()}`;
+
         console.log("🔗 Final Share URL:", shareUrl);
-        
+
         return shareUrl;
     };
 
@@ -86,7 +86,7 @@ const BadgesModal = ({ isOpen, onClose, badges = [], user }) => {
 Sharpening my DSA skills daily 💪`;
 
         console.log("📱 Twitter share URL:", `https://twitter.com/intent/tweet?...`);
-        
+
         window.open(
             `https://twitter.com/intent/tweet?text=${encodeURIComponent(
                 text
@@ -94,7 +94,7 @@ Sharpening my DSA skills daily 💪`;
             "_blank",
             "width=600,height=500"
         );
-        
+
         // Optional: Track share in analytics
         if (window.gtag) {
             window.gtag('event', 'badge_shared', {
@@ -113,16 +113,16 @@ Sharpening my DSA skills daily 💪`;
         const linkedInShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
             shareUrl
         )}`;
-        
+
         console.log("🔗 LinkedIn share URL constructed:");
         console.log("   Base URL:", shareUrl);
         console.log("   LinkedIn Share Endpoint:", linkedInShareUrl);
         console.log("📤 Opening LinkedIn window...");
-        
+
         window.open(linkedInShareUrl, "_blank", "width=600,height=500");
-        
+
         console.log("✅ LinkedIn window opened");
-        
+
         // Optional: Track share in analytics
         if (window.gtag) {
             console.log("📊 Tracking analytics event...");
