@@ -49,6 +49,7 @@ export async function handler(event) {
             }
 
             if (data?.og_image_url) {
+                // imageUrl = `${siteUrl}.netlify/functions/cache-og-badge?id=${encodeURIComponent(id)}&username=${encodeURIComponent(username)}&score=${encodeURIComponent(score)}`;
                 imageUrl = data.og_image_url;
                 console.log("✅ Retrieved stored badge image from Supabase");
                 console.log("🖼️ Image URL:", imageUrl);
@@ -79,9 +80,7 @@ export async function handler(event) {
     console.log("📸 URL:", imageUrl);
     console.log("========================================\n");
     const fullShareUrl = `${siteUrl}.netlify/functions/share-badge?id=${encodeURIComponent(id)}&username=${encodeURIComponent(username)}&score=${encodeURIComponent(score)}&user_id=${encodeURIComponent(user_id || "")}`;
-    const finalImageUrl = imageUrl.includes("?")
-        ? `${imageUrl}&t=${Date.now()}`
-        : `${imageUrl}?t=${Date.now()}`;
+    const finalImageUrl = imageUrl;
     const html = `
   <!DOCTYPE html>
   <html lang="en">
@@ -144,12 +143,3 @@ export async function handler(event) {
     };
 }
 
-// Helper function to safely escape meta tag content
-function escapeMeta(str) {
-    return String(str)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#x27;");
-}
