@@ -16,6 +16,13 @@ import { BUCKETS } from "@/utils/titleEngine";
 import { getLevelFromRank } from "@/utils/titleEngine";
 import { supabase } from "@/lib/supabaseClient";
 import { toast } from "sonner";
+const BADGE_NAME_MAP = {
+  code_cadet: "Code Cadet",
+  algo_assassin: "Algo Assassin",
+  pattern_hunter: "Pattern Hunter",
+  dsa_dhurandhar: "DSA Dhurandhar",
+  java_pro: "Java Pro",
+};
 const QUESTION_STORAGE_KEY = "questionProgress";
 const SUBTOPIC_STORAGE_KEY = "subtopicProgress";
 
@@ -878,9 +885,23 @@ export const CSV_TABLE_UI = ({ csvData }) => {
       });
 
       if (result?.new_badges?.length > 0) {
-  console.log("🎉 New badges unlocked:", result.new_badges);
-  window.dispatchEvent(new Event("badgesUpdated"));
-}
+        console.log("🎉 New badges unlocked:", result.new_badges);
+        const unlockedBadgeNames = result.new_badges.map(
+          (badgeKey) => BADGE_NAME_MAP[badgeKey] || badgeKey
+        );
+
+        toast.success(
+          unlockedBadgeNames.length === 1
+            ? `New badge unlocked: ${unlockedBadgeNames[0]}`
+            : `New badges unlocked: ${unlockedBadgeNames.join(", ")}`
+        );
+
+        window.dispatchEvent(
+          new CustomEvent("badgesUpdated", {
+            detail: { newBadges: result.new_badges },
+          })
+        );
+      }
 
       // ✅ mark latest local update time
       if (result?.updated_at) {
@@ -1706,3 +1727,4 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 };
 
 export default CSV_TABLE_UI;
+

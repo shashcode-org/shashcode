@@ -7,6 +7,7 @@ const ALL_BADGES = [
     { key: "algo_assassin", name: "Algo Assassin" },
     { key: "pattern_hunter", name: "Pattern Hunter" },
     { key: "dsa_dhurandhar", name: "DSA Dhurandhar" },
+    { key: "java_pro", name: "Java Pro" },
 ];
 
 const LEVEL_MAP = {
@@ -14,6 +15,7 @@ const LEVEL_MAP = {
     algo_assassin: "Level 2",
     pattern_hunter: "Level 3",
     dsa_dhurandhar: "Level 4",
+    java_pro: "Special Badge",
 };
 
 const BadgesModal = ({ isOpen, onClose, badges = [], user }) => {
@@ -22,6 +24,7 @@ const BadgesModal = ({ isOpen, onClose, badges = [], user }) => {
         user?.email?.split("@")[0] ||
         "user";
     const badgeRefs = useRef({});
+    const [missingImages, setMissingImages] = useState({});
 
     const earnedKeys = new Set(badges.map((b) => b.badge_key));
     const earnedCount = earnedKeys.size;
@@ -224,13 +227,30 @@ Sharpening my DSA skills daily 💪`;
                                                 src={`/badges/${badge.key}.webp`}
                                                 alt={badge.name}
                                                 loading="lazy"
+                                                onError={() =>
+                                                    setMissingImages((current) => ({
+                                                        ...current,
+                                                        [badge.key]: true,
+                                                    }))
+                                                }
                                                 className={`
       w-[100px] h-[100px]
       object-contain
-      block
+      ${missingImages[badge.key] ? "hidden" : "block"}
       ${earned ? "drop-shadow-md" : "grayscale opacity-70"}
     `}
                                             />
+                                            {missingImages[badge.key] && (
+                                                <div
+                                                    className={`w-[100px] h-[100px] rounded-full border flex items-center justify-center px-3 text-center text-xs font-semibold ${
+                                                        earned
+                                                            ? "border-primary/40 bg-primary/10 text-primary"
+                                                            : "border-border bg-muted/40 text-muted-foreground"
+                                                    }`}
+                                                >
+                                                    {badge.name}
+                                                </div>
+                                            )}
                                         </div>
 
                                         {/* Name */}

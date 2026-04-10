@@ -73,8 +73,12 @@ export async function handler(event) {
     // --------------------------------------------------
     // Fetch user profile for username
     // --------------------------------------------------
-    const { data: authUser } = await supabase.auth.admin.getUserById(user_id);
-    const username = authUser?.user_metadata?.name || authUser?.email?.split("@")[0] || "user";
+    const { data: authUserData } = await supabase.auth.admin.getUserById(user_id);
+    const authUser = authUserData?.user;
+    const username =
+      authUser?.user_metadata?.name ||
+      authUser?.email?.split("@")[0] ||
+      "user";
     console.log("👤 User:", { user_id, username });
 
     // --------------------------------------------------
@@ -166,7 +170,7 @@ export async function handler(event) {
       if (javaCoreCompleted) {
         console.log("🏅 JAVA PRO CONDITIONS MET");
 
-        await awardBadgeIfNotExists({
+        const awarded = await awardBadgeIfNotExists({
           supabase,
           user_id: user_id,
           badge_key: "java_pro",
@@ -180,6 +184,10 @@ export async function handler(event) {
             topics: JAVA_CORE_TOPICS,
           },
         });
+
+        if (awarded) {
+          newlyEarnedBadges.push("java_pro");
+        }
       }
     }
 
