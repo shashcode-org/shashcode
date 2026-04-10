@@ -50,7 +50,7 @@ export async function generateAndUploadBadgeImage({
         const badgeDataUrl = `data:image/png;base64,${badgeImageBase64}`;
 
         // Load and convert the logo from /public/bl-logo.webp to PNG
-const logoPath = path.join(process.cwd(), `netlify/functions/assets/logo/bl-logo.webp`);
+        const logoPath = path.join(process.cwd(), `netlify/functions/assets/logo/bl-logo.webp`);
         let logoDataUrl = null;
 
         if (fs.existsSync(logoPath)) {
@@ -107,6 +107,14 @@ const logoPath = path.join(process.cwd(), `netlify/functions/assets/logo/bl-logo
         // Generate filename: (user_id)-(badge_key)-timestamp.png
         const timestamp = Date.now();
         const filename = `${user_id}/${badge_key}-${timestamp}.png`;
+        console.log("🔑 KEY START:", process.env.SUPABASE_SERVICE_ROLE_KEY?.slice(0, 20));
+
+        const { data: testData, error: testError } = await supabase.storage
+            .from("badge-images")
+            .list("", { limit: 1 });
+
+        console.log("🧪 STORAGE TEST DATA:", testData);
+        console.log("🧪 STORAGE TEST ERROR:", testError);
 
         // Upload to Supabase Storage
         const { data, error } = await supabase.storage
