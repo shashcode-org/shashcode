@@ -437,6 +437,7 @@ const Navbar = () => {
         onClose={() => setShowBadges(false)}
         badges={badges}
         user={user}
+        username={username}
       />
     </>
   );

@@ -18,9 +18,9 @@ const LEVEL_MAP = {
     java_pro: "Special Badge",
 };
 
-const BadgesModal = ({ isOpen, onClose, badges = [], user }) => {
+const BadgesModal = ({ isOpen, onClose, badges = [], user, username: badgeUsername }) => {
     const username =
-        user?.user_metadata?.name ||
+        badgeUsername ||
         user?.email?.split("@")[0] ||
         "user";
     const badgeRefs = useRef({});

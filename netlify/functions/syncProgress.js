@@ -71,12 +71,18 @@ export async function handler(event) {
     }
 
     // --------------------------------------------------
-    // Fetch user profile for username
+    // Fetch canonical ShashCode username
     // --------------------------------------------------
+    const { data: userMetaRow } = await supabase
+      .from("user_meta")
+      .select("meta_json")
+      .eq("user_id", user_id)
+      .single();
+
     const { data: authUserData } = await supabase.auth.admin.getUserById(user_id);
     const authUser = authUserData?.user;
     const username =
-      authUser?.user_metadata?.name ||
+      userMetaRow?.meta_json?.username ||
       authUser?.email?.split("@")[0] ||
       "user";
     console.log("👤 User:", { user_id, username });
