@@ -1,145 +1,96 @@
+function escapeMeta(value) {
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function getSiteUrl(event) {
+  const headers = event.headers || {};
+  const host = headers["x-forwarded-host"] || headers.host || "dev-shashcode.netlify.app";
+  const protocol = headers["x-forwarded-proto"] || "https";
+  return `${protocol}://${host}`;
+}
+
 export async function handler(event) {
-    const {
-        id = "Badge",
-        username = "user",
-        score = "0/0",
-        user_id,
-    } = event.queryStringParameters || {};
+  const {
+    id = "Badge",
+    username = "user",
+    score = "0/0",
+    user_id = "",
+    t = Date.now().toString(),
+  } = event.queryStringParameters || {};
 
-    console.log("🔍 [share-badge] Request received");
-    console.log("📋 Query Parameters:", {
-        id,
-        username,
-        score,
-        user_id
-    });
+  const siteUrl = getSiteUrl(event);
 
-    const siteUrl = "https://dev-shashcode.netlify.app/";
+  console.log("[share-badge] Request received", {
+    id,
+    username,
+    score,
+    user_id,
+    siteUrl,
+    t,
+  });
 
-    // Try to retrieve stored image from Supabase
-    let imageUrl = null;
+  const imageUrl =
+    `${siteUrl}/.netlify/functions/cache-og-badge` +
+    `?id=${encodeURIComponent(id)}` +
+    `&username=${encodeURIComponent(username)}` +
+    `&score=${encodeURIComponent(score)}` +
+    `&t=${encodeURIComponent(t)}`;
 
-    if (user_id && id) {
-        // Map badge name to key
-        const badgeKey = id.toLowerCase().replace(/\s+/g, "_");
+  const fullShareUrl =
+    `${siteUrl}/.netlify/functions/share-badge` +
+    `?id=${encodeURIComponent(id)}` +
+    `&username=${encodeURIComponent(username)}` +
+    `&score=${encodeURIComponent(score)}` +
+    `&user_id=${encodeURIComponent(user_id)}` +
+    `&t=${encodeURIComponent(t)}`;
 
-        console.log("🔑 Badge Key generated:", badgeKey);
-        console.log("🗄️ Attempting to retrieve from Supabase...");
-
-        try {
-            const { createClient } = await import("@supabase/supabase-js");
-            const supabase = createClient(
-                process.env.SUPABASE_URL,
-                process.env.SUPABASE_SERVICE_ROLE_KEY
-            );
-
-            console.log("✅ Supabase client initialized");
-
-            const { data, error } = await supabase
-                .from("user_badges")
-                .select("og_image_url")
-                .eq("user_id", user_id)
-                .eq("badge_key", badgeKey)
-                .order("earned_at", { ascending: false })
-                .limit(1)
-                .single();
-
-            if (error) {
-                console.warn("⚠️ Supabase query error:", error.message);
-            }
-
-            if (data?.og_image_url) {
-                // imageUrl = `${siteUrl}.netlify/functions/cache-og-badge?id=${encodeURIComponent(id)}&username=${encodeURIComponent(username)}&score=${encodeURIComponent(score)}`;
-                imageUrl = data.og_image_url;
-                console.log("✅ Retrieved stored badge image from Supabase");
-                console.log("🖼️ Image URL:", imageUrl);
-            } else {
-                console.warn("⚠️ No stored image found in Supabase for this badge");
-            }
-        } catch (error) {
-            console.warn("⚠️ Failed to retrieve badge image:", error.message);
-            console.error("❌ Full error:", error);
-        }
-    } else {
-        console.warn("⚠️ Missing user_id or id - skipping Supabase lookup");
-    }
-
-    // Fallback: Use dynamic generation endpoint if no stored image
-    if (!imageUrl) {
-        console.warn("⚠️ No stored image found → forcing direct generation");
-
-        const badgeKey = id.toLowerCase().replace(/\s+/g, "_");
-
-        imageUrl = `${siteUrl}.netlify/functions/cache-og-badge?id=${encodeURIComponent(id)}&username=${encodeURIComponent(username)}&score=${encodeURIComponent(score)}`;
-
-        console.log("📸 Using dynamic image URL:", imageUrl);
-    }
-
-    console.log("\n========================================");
-    console.log("🎯 FINAL IMAGE URL FOR OG META TAG:");
-    console.log("📸 URL:", imageUrl);
-    console.log("========================================\n");
-    const fullShareUrl = `${siteUrl}.netlify/functions/share-badge?id=${encodeURIComponent(id)}&username=${encodeURIComponent(username)}&score=${encodeURIComponent(score)}&user_id=${encodeURIComponent(user_id || "")}`;
-    const finalImageUrl = imageUrl;
-    const html = `
+  const html = `
   <!DOCTYPE html>
   <html lang="en">
     <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      
-      <!-- ✅ Open Graph Tags - Optimized for LinkedIn/Twitter -->
-      <meta property="og:title" content="I just unlocked ${escapeMeta(id)} 🚀" />
-      <meta property="og:description" content="Completed ${escapeMeta(score)} on ShashCode 💪" />
-      <meta property="og:image" content="${finalImageUrl}" />
+      <meta property="og:title" content="I just unlocked ${escapeMeta(id)}" />
+      <meta property="og:description" content="Completed ${escapeMeta(score)} on ShashCode" />
+      <meta property="og:image" content="${imageUrl}" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:image:type" content="image/png" />
       <meta property="og:url" content="${fullShareUrl}" />
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="ShashCode" />
-
-      <!-- ✅ Twitter Card Tags -->
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="I just unlocked ${escapeMeta(id)} 🚀" />
-      <meta name="twitter:description" content="Completed ${escapeMeta(score)} on ShashCode 💪" />
-     <meta name="twitter:image" content="${finalImageUrl}" />
-      <meta name="twitter:site" content="@ShashCode" />
-      
-      <!-- ✅ Performance & SEO -->
-      <link rel="preload" as="image" href="${imageUrl}" />
+      <meta name="twitter:title" content="I just unlocked ${escapeMeta(id)}" />
+      <meta name="twitter:description" content="Completed ${escapeMeta(score)} on ShashCode" />
+      <meta name="twitter:image" content="${imageUrl}" />
       <title>ShashCode - ${escapeMeta(id)}</title>
     </head>
     <body style="margin: 0; padding: 20px; font-family: system-ui, sans-serif; background: #0f172a; color: white;">
-      <h1>🎉 ShashCode Badge</h1>
+      <h1>ShashCode Badge</h1>
       <p>You just unlocked: <strong>${escapeMeta(id)}</strong></p>
       <p>Score: ${escapeMeta(score)}</p>
-      <p>Keep grinding DSA! 💪</p>
     </body>
   </html>
   `;
 
-    console.log("📄 HTML Generated with OG meta tags");
-    console.log("🎯 OG Image Meta Tag will use:", imageUrl);
+  console.log("[share-badge] Response ready", {
+    imageUrl,
+    fullShareUrl,
+  });
 
-    // Log the exact meta tag that will be in the HTML
-    console.log(`\n✅ [share-badge] Response ready:`);
-    console.log(`   <meta property="og:image" content="${imageUrl}" />`);
-    console.log(`   <meta property="og:title" content="I just unlocked ${id} 🚀" />`);
-    console.log(`   <meta property="og:description" content="Completed ${score} on ShashCode 💪" />\n`);
-
-    return {
-        statusCode: 200,
-        headers: {
-            "Content-Type": "text/html; charset=utf-8",
-            // Cache this page for 1 hour, but images are cached longer in Supabase
-            "Cache-Control": "no-cache, no-store, must-revalidate",
-            "X-Content-Type-Options": "nosniff",
-            "X-Frame-Options": "SAMEORIGIN",
-            // Allow crawlers to access this without issues
-            "Vary": "Accept-Encoding",
-        },
-        body: html,
-    };
+  return {
+    statusCode: 200,
+    headers: {
+      "Content-Type": "text/html; charset=utf-8",
+      "Cache-Control": "no-cache, no-store, must-revalidate",
+      "X-Content-Type-Options": "nosniff",
+      Vary: "Accept-Encoding",
+    },
+    body: html,
+  };
 }
-
