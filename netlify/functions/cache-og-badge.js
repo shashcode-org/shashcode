@@ -2,6 +2,7 @@ import { Resvg } from "@resvg/resvg-js";
 import fs from "fs";
 import path from "path";
 import sharp from "sharp";
+import { createClient } from "@supabase/supabase-js";
 
 const BADGE_MAP = {
   code_cadet: { key: "code_cadet", name: "Code Cadet" },
@@ -51,9 +52,44 @@ function buildBadgeVisual(badgeInfo, badgeDataUrl) {
 }
 
 export async function handler(event) {
-  const { id = "Badge", username = "user" } = event.queryStringParameters || {};
+  const { id = "Badge", user_id = "" } = event.queryStringParameters || {};
 
   try {
+    let canonicalUsername = "user";
+
+    // Validate against Supabase to stop spoofing
+    if (user_id && process.env.SUPABASE_URL) {
+      const supabase = createClient(
+        process.env.SUPABASE_URL,
+        process.env.SUPABASE_SERVICE_ROLE_KEY
+      );
+
+      const { data: badgeData, error: badgeError } = await supabase
+        .from("user_badges")
+        .select("earned_at")
+        .eq("user_id", user_id)
+        .eq("badge_name", id)
+        .single();
+
+      if (!badgeError && badgeData) {
+        const { data: userMetaRow } = await supabase
+          .from("user_meta")
+          .select("meta_json")
+          .eq("user_id", user_id)
+          .single();
+
+        const { data: authUserData } = await supabase.auth.admin.getUserById(user_id);
+        const authUser = authUserData?.user;
+        
+        canonicalUsername =
+          userMetaRow?.meta_json?.username ||
+          authUser?.email?.split("@")[0] ||
+          "user";
+      } else {
+        console.warn(`[cache-og-badge] Invalid badge request for user_id=${user_id}, id=${id}`);
+      }
+    }
+
     const badgeInfo =
       BADGE_MAP[id] || { key: id.toLowerCase().replace(/\s+/g, "_"), name: id };
 
@@ -102,7 +138,7 @@ export async function handler(event) {
         </g>
         ${buildBadgeVisual(badgeInfo, badgeDataUrl)}
         <text x="600" y="480" font-size="48" font-family="Arial, sans-serif" fill="white" text-anchor="middle" font-weight="bold">
-          @${escapeXml(username)}
+          @${escapeXml(canonicalUsername)}
         </text>
         <text x="600" y="560" font-size="36" font-family="Arial, sans-serif" fill="white" opacity="0.8" text-anchor="middle">
           Keep grinding DSA
@@ -118,7 +154,7 @@ export async function handler(event) {
         "Content-Type": "image/png",
         "Cache-Control": "public, max-age=2592000, immutable",
         "X-Badge-ID": id,
-        "X-Username": username,
+        "X-Username": canonicalUsername,
       },
       body: pngBuffer.toString("base64"),
       isBase64Encoded: true,

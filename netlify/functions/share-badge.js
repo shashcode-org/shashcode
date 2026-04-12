@@ -1,3 +1,5 @@
+import { createClient } from "@supabase/supabase-js";
+
 function escapeMeta(value) {
   return String(value ?? "")
     .replace(/&/g, "&amp;")
@@ -17,35 +19,72 @@ function getSiteUrl(event) {
 export async function handler(event) {
   const {
     id = "Badge",
-    username = "user",
-    score = "0/0",
     user_id = "",
     t = Date.now().toString(),
   } = event.queryStringParameters || {};
 
   const siteUrl = getSiteUrl(event);
 
-  console.log("[share-badge] Request received", {
+  if (!user_id) {
+    return {
+      statusCode: 400,
+      body: "Missing user_id",
+    };
+  }
+
+  const supabase = createClient(
+    process.env.SUPABASE_URL,
+    process.env.SUPABASE_SERVICE_ROLE_KEY
+  );
+
+  // 1. Verify that user ACTUALLY owns this badge
+  const { data: badgeData, error: badgeError } = await supabase
+    .from("user_badges")
+    .select("metadata, earned_at, og_image_url")
+    .eq("user_id", user_id)
+    .eq("badge_name", id)
+    .single();
+
+  if (badgeError || !badgeData) {
+    return {
+      statusCode: 404,
+      body: "Badge not found or not unlocked by this user.",
+    };
+  }
+
+  // 2. Fetch canonical username securely
+  const { data: userMetaRow } = await supabase
+    .from("user_meta")
+    .select("meta_json")
+    .eq("user_id", user_id)
+    .single();
+
+  const { data: authUserData } = await supabase.auth.admin.getUserById(user_id);
+  const authUser = authUserData?.user;
+  const canonicalUsername =
+    userMetaRow?.meta_json?.username ||
+    authUser?.email?.split("@")[0] ||
+    "user";
+
+  console.log("[share-badge] Request verified", {
     id,
-    username,
-    score,
+    canonicalUsername,
     user_id,
     siteUrl,
     t,
   });
 
-  const imageUrl =
+  // Use the pre-generated static OG image if available, else fallback to dynamic generation
+  const imageUrl = badgeData.og_image_url || (
     `${siteUrl}/.netlify/functions/cache-og-badge` +
     `?id=${encodeURIComponent(id)}` +
-    `&username=${encodeURIComponent(username)}` +
-    `&score=${encodeURIComponent(score)}` +
-    `&t=${encodeURIComponent(t)}`;
+    `&user_id=${encodeURIComponent(user_id)}` +
+    `&t=${encodeURIComponent(t)}`
+  );
 
   const fullShareUrl =
     `${siteUrl}/.netlify/functions/share-badge` +
     `?id=${encodeURIComponent(id)}` +
-    `&username=${encodeURIComponent(username)}` +
-    `&score=${encodeURIComponent(score)}` +
     `&user_id=${encodeURIComponent(user_id)}` +
     `&t=${encodeURIComponent(t)}`;
 
@@ -56,7 +95,7 @@ export async function handler(event) {
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta property="og:title" content="I just unlocked ${escapeMeta(id)}" />
-      <meta property="og:description" content="Completed ${escapeMeta(score)} on ShashCode" />
+      <meta property="og:description" content="Unlocked ${escapeMeta(id)} on ShashCode" />
       <meta property="og:image" content="${imageUrl}" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
@@ -66,7 +105,7 @@ export async function handler(event) {
       <meta property="og:site_name" content="ShashCode" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="I just unlocked ${escapeMeta(id)}" />
-      <meta name="twitter:description" content="Completed ${escapeMeta(score)} on ShashCode" />
+      <meta name="twitter:description" content="Unlocked ${escapeMeta(id)} on ShashCode" />
       <meta name="twitter:image" content="${imageUrl}" />
       <title>ShashCode - ${escapeMeta(id)}</title>
     </head>
@@ -75,7 +114,7 @@ export async function handler(event) {
         <div style="margin-bottom: 30px;">
           <h1 style="margin: 0 0 10px 0; font-size: 2.5rem; font-weight: bold; background: linear-gradient(to right, #3b82f6, #8b5cf6); -webkit-background-clip: text; color: transparent;">Badge Unlocked!</h1>
           <p style="margin: 0; font-size: 1.2rem; color: #cbd5e1;">
-            <strong>${escapeMeta(username)}</strong> earned the <strong>${escapeMeta(id)}</strong> badge.
+            <strong>${escapeMeta(canonicalUsername)}</strong> earned the <strong>${escapeMeta(id)}</strong> badge.
           </p>
         </div>
         
