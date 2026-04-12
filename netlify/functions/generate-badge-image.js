@@ -17,6 +17,19 @@ const BADGE_MAP = {
   java_pro: { key: "java_pro", name: "Java Pro" },
 };
 
+function getResvgOptions() {
+  return {
+    font: {
+      loadSystemFonts: false,
+      defaultFontFamily: "Arial",
+      fontFiles: [
+        path.join(process.cwd(), "netlify/functions/assets/fonts/arial.ttf"),
+        path.join(process.cwd(), "netlify/functions/assets/fonts/arialbd.ttf"),
+      ],
+    },
+  };
+}
+
 function buildBadgeVisual(badgeInfo, badgeDataUrl) {
   if (badgeDataUrl) {
     return `<image x="425" y="80" width="350" height="350" href="${badgeDataUrl}" />`;
@@ -96,7 +109,7 @@ export async function generateAndUploadBadgeImage({
       </svg>
     `;
 
-    const pngBuffer = new Resvg(svg).render().asPng();
+    const pngBuffer = new Resvg(svg, getResvgOptions()).render().asPng();
     const filename = `${user_id}/${badge_key}.png`;
 
     const { error } = await supabase.storage.from("badge-images").upload(filename, pngBuffer, {

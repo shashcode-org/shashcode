@@ -11,6 +11,19 @@ const BADGE_MAP = {
   java_pro: { key: "java_pro", name: "Java Pro" },
 };
 
+function getResvgOptions() {
+  return {
+    font: {
+      loadSystemFonts: false,
+      defaultFontFamily: "Arial",
+      fontFiles: [
+        path.join(process.cwd(), "netlify/functions/assets/fonts/arial.ttf"),
+        path.join(process.cwd(), "netlify/functions/assets/fonts/arialbd.ttf"),
+      ],
+    },
+  };
+}
+
 function escapeXml(str) {
   return String(str)
     .replace(/&/g, "&amp;")
@@ -97,7 +110,7 @@ export async function handler(event) {
       </svg>
     `;
 
-    const pngBuffer = new Resvg(svg).render().asPng();
+    const pngBuffer = new Resvg(svg, getResvgOptions()).render().asPng();
 
     return {
       statusCode: 200,
