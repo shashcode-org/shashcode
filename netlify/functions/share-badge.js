@@ -70,10 +70,21 @@ export async function handler(event) {
       <meta name="twitter:image" content="${imageUrl}" />
       <title>ShashCode - ${escapeMeta(id)}</title>
     </head>
-    <body style="margin: 0; padding: 20px; font-family: system-ui, sans-serif; background: #0f172a; color: white;">
-      <h1>ShashCode Badge</h1>
-      <p>You just unlocked: <strong>${escapeMeta(id)}</strong></p>
-      <p>Score: ${escapeMeta(score)}</p>
+    <body style="margin: 0; padding: 20px; font-family: system-ui, sans-serif; background: #0f172a; color: white; display: flex; align-items: center; justify-content: center; min-height: 100vh;">
+      <div style="text-align: center; max-width: 800px; width: 100%;">
+        <div style="margin-bottom: 30px;">
+          <h1 style="margin: 0 0 10px 0; font-size: 2.5rem; font-weight: bold; background: linear-gradient(to right, #3b82f6, #8b5cf6); -webkit-background-clip: text; color: transparent;">Badge Unlocked!</h1>
+          <p style="margin: 0; font-size: 1.2rem; color: #cbd5e1;">
+            <strong>${escapeMeta(username)}</strong> earned the <strong>${escapeMeta(id)}</strong> badge.
+          </p>
+        </div>
+        
+        <img src="${imageUrl}" alt="${escapeMeta(id)} Badge" style="width: 100%; max-width: 600px; height: auto; border-radius: 12px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.2); border: 1px solid #1e293b;" />
+        
+        <div style="margin-top: 40px;">
+          <a href="${siteUrl}" style="display: inline-block; background-color: #3b82f6; color: white; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: background-color 0.2s;">Explore ShashCode</a>
+        </div>
+      </div>
     </body>
   </html>
   `;
