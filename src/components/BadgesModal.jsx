@@ -136,23 +136,21 @@ Sharpening my DSA skills daily 💪`;
         }
     };
 
-    const handleDownload = async (key) => {
-        const node = badgeRefs.current[key];
-        if (!node) return;
-
+    const handleDownload = async (badge) => {
         try {
-            await new Promise((res) => setTimeout(res, 100));
-            const dataUrl = await toPng(node);
+            if (!badge.og_image_url) {
+                console.warn("No image found, fallback...");
+                return;
+            }
 
             const link = document.createElement("a");
-            link.download = `${key}-badge.png`;
-            link.href = dataUrl;
+            link.href = badge.og_image_url;
+            link.download = `${badge.badge_key}.png`;
+            link.target = "_blank";
             link.click();
         } catch (err) {
-            console.error("Image generation failed", err);
+            console.error("Download failed", err);
         }
-
-
     };
 
 
@@ -289,7 +287,7 @@ Sharpening my DSA skills daily 💪`;
 
                                                 {/* Download */}
                                                 <button
-                                                    onClick={() => handleDownload(badge.key)}
+                                                    onClick={() => handleDownload(badge)}
                                                     className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 transition"
                                                 >
                                                     <img

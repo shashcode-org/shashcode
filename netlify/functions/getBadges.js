@@ -16,7 +16,7 @@ export async function handler(event) {
 
     const { data, error } = await supabase
       .from("user_badges")
-      .select("badge_key, badge_name, sheet, earned_at")
+      .select("badge_key, badge_name, sheet, earned_at, og_image_url")
       .eq("user_id", user_id)
       .order("earned_at", { ascending: true });
 
