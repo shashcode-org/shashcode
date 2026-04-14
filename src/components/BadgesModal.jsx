@@ -48,7 +48,7 @@ const BadgesModal = ({ isOpen, onClose, badges = [], user, username: badgeUserna
     const buildShareUrl = (badge) => {
         const baseUrl = window.location.origin;
         const user_id = user?.id;
-        
+
         console.log("🔍 [buildShareUrl] Starting URL generation...");
         console.log("📊 Badge Details:", {
             name: badge.name,
@@ -242,11 +242,10 @@ Sharpening my DSA skills daily 💪`;
                                             />
                                             {missingImages[badge.key] && (
                                                 <div
-                                                    className={`w-[100px] h-[100px] rounded-full border flex items-center justify-center px-3 text-center text-xs font-semibold ${
-                                                        earned
-                                                            ? "border-primary/40 bg-primary/10 text-primary"
-                                                            : "border-border bg-muted/40 text-muted-foreground"
-                                                    }`}
+                                                    className={`w-[100px] h-[100px] rounded-full border flex items-center justify-center px-3 text-center text-xs font-semibold ${earned
+                                                        ? "border-primary/40 bg-primary/10 text-primary"
+                                                        : "border-border bg-muted/40 text-muted-foreground"
+                                                        }`}
                                                 >
                                                     {badge.name}
                                                 </div>
@@ -263,27 +262,41 @@ Sharpening my DSA skills daily 💪`;
                                             {earned ? LEVEL_MAP[badge.key] : "🔒 Locked"}
                                         </div>
                                         {earned && (
-                                            <div className="flex items-center justify-center gap-3 mt-3 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition">
+                                            <div className="flex items-center justify-center gap-3 mt-3 opacity-100 transition">
 
                                                 <button
                                                     onClick={() => shareTwitter(badge)}
-                                                    className="px-2 py-1 rounded-md bg-primary/20 hover:bg-primary/30 text-xs"
+                                                    className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 transition"
+                                                // className="px-2 py-1 rounded-md bg-primary/20 hover:bg-primary/30 text-xs"
                                                 >
-                                                    🐦
+                                                    <img
+                                                        src="/icons/twitter.webp"
+                                                        alt="Twitter"
+                                                        className="w-4 h-4 object-contain"
+                                                    />
                                                 </button>
 
                                                 <button
                                                     onClick={() => shareLinkedIn(badge)}
-                                                    className="px-2 py-1 rounded-md bg-primary/20 hover:bg-primary/30 text-xs"
+                                                    className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 transition"
                                                 >
-                                                    💼
+                                                    <img
+                                                        src="/icons/linkedin.webp"
+                                                        alt="LinkedIn"
+                                                        className="w-4 h-4 object-contain"
+                                                    />
                                                 </button>
 
+                                                {/* Download */}
                                                 <button
                                                     onClick={() => handleDownload(badge.key)}
-                                                    className="px-2 py-1 rounded-md bg-primary/20 hover:bg-primary/30 text-xs"
+                                                    className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 transition"
                                                 >
-                                                    🖼
+                                                    <img
+                                                        src="/icons/download.webp"
+                                                        alt="Download"
+                                                        className="w-4 h-4 object-contain"
+                                                    />
                                                 </button>
 
                                             </div>
