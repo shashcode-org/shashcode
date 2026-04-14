@@ -218,7 +218,7 @@ Sharpening my DSA skills daily 💪`;
                                     >
                                         {/* Glow effect */}
                                         {earned && (
-                                            <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-20 bg-gradient-to-br from-primary to-secondary transition" />
+                                            <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-20 bg-gradient-to-br from-primary to-secondary transition pointer-events-none" />
                                         )}
 
                                         {/* Badge */}
