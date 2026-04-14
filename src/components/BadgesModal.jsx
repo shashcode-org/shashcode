@@ -138,14 +138,17 @@ Sharpening my DSA skills daily 💪`;
 
     const handleDownload = async (badge) => {
         try {
-            if (!badge.og_image_url) {
+            // Find the earned badge data from the DB array to get the og_image_url
+            const earnedBadge = badges.find((b) => b.badge_key === badge.key);
+
+            if (!earnedBadge || !earnedBadge.og_image_url) {
                 console.warn("No image found, fallback...");
                 return;
             }
 
             const link = document.createElement("a");
-            link.href = badge.og_image_url;
-            link.download = `${badge.badge_key}.png`;
+            link.href = earnedBadge.og_image_url;
+            link.download = `${badge.key}.png`;
             link.target = "_blank";
             link.click();
         } catch (err) {
