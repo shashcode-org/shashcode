@@ -13,6 +13,7 @@ const BADGE_IDS = [
     { name: "Algo Assassin", key: "algo_assassin" },
     { name: "Pattern Hunter", key: "pattern_hunter" },
     { name: "DSA Dhurandhar", key: "dsa_dhurandhar" },
+    { name: "Java Pro", key: "java_pro" },
 ];
 
 async function generateBadgeImage(badge, username = "user", score = "0/0") {
