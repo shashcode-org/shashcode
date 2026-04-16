@@ -60,6 +60,10 @@ export async function generateAndUploadBadgeImage({
       process.cwd(),
       `netlify/functions/assets/badges/${badgeInfo.key}.png`
     );
+    // 🔥 ADD THIS
+    console.log("🧠 Badge key:", badgeInfo.key);
+    console.log("📁 Looking for badge at:", badgePath);
+    console.log("📦 Exists?", fs.existsSync(badgePath));
 
     let badgeDataUrl = null;
     if (fs.existsSync(badgePath)) {
