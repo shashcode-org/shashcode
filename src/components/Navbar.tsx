@@ -419,7 +419,7 @@ const Navbar = () => {
               onClick={() => navigate("/login")}
               className="w-full py-2 rounded-md bg-primary text-white font-semibold hover:opacity-90 transition"
             >
-              Claim My Progress 🚀
+              Claim My Progress
             </button>
 
             <button

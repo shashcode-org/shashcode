@@ -500,7 +500,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
     return bucketStats;
   }, [csvData, questionProgress, subtopicProgress]);
 
-    useEffect(() => {
+  useEffect(() => {
     const handleBeforeUnload = () => {
       if (!hasUserInteractedRef.current) return;
 
@@ -1300,17 +1300,20 @@ export const CSV_TABLE_UI = ({ csvData }) => {
           )
         )}
 
-        <div className="flex justify-end mt-3">
-          <button
-            onClick={resetProgress}
-            className="text-xs font-medium text-destructive hover:text-destructive/90 hover:underline"
-          >
-            Reset progress
-          </button>
-        </div>
+
         {!userId && (
-          <div className="mt-2 text-xs text-muted-foreground">
-            ⚠️ Your progress is only saved on this device.
+          <div>
+            <div className="flex justify-end mt-3">
+              <button
+                onClick={resetProgress}
+                className="text-xs font-medium text-destructive hover:text-destructive/90 hover:underline"
+              >
+                Reset progress
+              </button>
+            </div>
+            <div className="mt-2 text-xs text-muted-foreground">
+              ⚠️ Your progress is only saved on this device.
+            </div>
           </div>
         )}
       </div>
