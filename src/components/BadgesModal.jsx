@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { X } from "lucide-react";
+import { X, Lock } from "lucide-react";
 import { toPng } from "html-to-image";
 
 const ALL_BADGES = [
@@ -53,24 +53,13 @@ const BadgesModal = ({ isOpen, onClose, badges = [], user, username: badgeUserna
         console.log("📊 Badge Details:", {
             name: badge.name,
             key: badge.key,
-            username: username,
-            score: `${earnedCount}/${total}`,
             user_id: user_id
         });
 
-        let shareUrl = `${baseUrl}/.netlify/functions/share-badge?id=${encodeURIComponent(
-            badge.name
-        )}&username=${encodeURIComponent(username)}&score=${encodeURIComponent(
-            `${earnedCount}/${total}`
-        )}`;
-
-        // ✅ Add user_id (IMPORTANT for fetching OG image from DB)
-        if (user_id) {
-            shareUrl += `&user_id=${encodeURIComponent(user_id)}`;
-            console.log("✅ user_id added to URL");
-        } else {
-            console.warn("⚠️ No user_id found - badge image might not be retrieved");
-        }
+        // ✅ Approach C: Secure, clean URL passing only identifiers
+        let shareUrl = `${baseUrl}/.netlify/functions/share-badge?user=${encodeURIComponent(
+            user_id || ""
+        )}&badge=${encodeURIComponent(badge.key)}`;
 
         // 🔥 ADD THIS (VERY IMPORTANT - fixes LinkedIn cache issue)
         shareUrl += `&t=${Date.now()}`;
@@ -260,7 +249,13 @@ Sharpening my DSA skills daily 💪`;
 
                                         {/* Level */}
                                         <div className={`text-xs mt-1 font-medium ${earned ? "text-primary" : "text-muted-foreground"}`}>
-                                            {earned ? LEVEL_MAP[badge.key] : "🔒 Locked"}
+                                            {earned ? (
+                                                LEVEL_MAP[badge.key]
+                                            ) : (
+                                                <span className="flex items-center justify-center gap-1">
+                                                    <Lock size={12} /> Locked
+                                                </span>
+                                            )}
                                         </div>
                                         {earned && (
                                             <div className="flex items-center justify-center gap-3 mt-3 opacity-100 transition">

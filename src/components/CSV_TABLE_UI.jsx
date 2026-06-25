@@ -5,7 +5,7 @@ import React, {
   useRef,
   useLayoutEffect,
 } from "react";
-import { ChevronRight, Youtube } from "lucide-react";
+import { ChevronRight, Youtube, Rocket, Unlock, Flame, AlertTriangle } from "lucide-react";
 import AnimatedElement from "@/components/AnimatedElement";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -1255,10 +1255,16 @@ export const CSV_TABLE_UI = ({ csvData }) => {
         </div>
 
         {!userId && (
-          <div className="mt-3 text-sm text-accent font-medium">
-            {progressPercent < 20 && "Start earning levels as you progress 🚀"}
-            {progressPercent >= 20 && progressPercent < 40 && "You’re close to unlocking your first level 👀"}
-            {progressPercent >= 40 && "You’re already ahead… unlock your level now 🔥"}
+          <div className="mt-3 text-sm text-accent font-medium flex items-center gap-1.5">
+            {progressPercent < 20 && (
+              <>Start earning levels as you progress <Rocket size={16} /></>
+            )}
+            {progressPercent >= 20 && progressPercent < 40 && (
+              <>You’re close to unlocking your first level <Unlock size={16} /></>
+            )}
+            {progressPercent >= 40 && (
+              <>You’re already ahead… unlock your level now <Flame size={16} className="text-orange-500" /></>
+            )}
           </div>
         )}
 
@@ -1300,21 +1306,25 @@ export const CSV_TABLE_UI = ({ csvData }) => {
           )
         )}
 
+        {userId && (
+          <div className="flex justify-end mt-3">
+            <button
+              onClick={resetProgress}
+              className="text-xs font-medium text-destructive hover:text-destructive/90 hover:underline"
+            >
+              Reset progress
+            </button>
+          </div>
+        )}
+
 
         {!userId && (
-          <div>
-            <div className="flex justify-end mt-3">
-              <button
-                onClick={resetProgress}
-                className="text-xs font-medium text-destructive hover:text-destructive/90 hover:underline"
-              >
-                Reset progress
-              </button>
-            </div>
-            <div className="mt-2 text-xs text-muted-foreground">
-              ⚠️ Your progress is only saved on this device.
-            </div>
+
+
+          <div className="mt-2 text-xs text-muted-foreground flex items-center gap-1.5">
+            <AlertTriangle size={14} className="text-amber-500" /> Your progress is only saved on this device.
           </div>
+
         )}
       </div>
 
@@ -1730,4 +1740,3 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 };
 
 export default CSV_TABLE_UI;
-
