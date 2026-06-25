@@ -79,7 +79,14 @@ export async function handler(event) {
   });
 
   // Resolve the Image URL
-  const imageUrl = badgeData.og_image_url || `https://xmvmaspijfiwvjghxwzi.supabase.co/storage/v1/object/public/badge-images/${user}/${badge}.png`;
+  // ✅ Use the pre-generated static OG image if it exists in the database record.
+  // ✅ If not (due to the race condition), fallback to the on-the-fly generator.
+  // This ensures the preview works correctly on the very first click.
+  const imageUrl = badgeData.og_image_url || (
+    `${siteUrl}/.netlify/functions/cache-og-badge` +
+    `?id=${encodeURIComponent(badge)}` + // Use the badge key for consistency
+    `&user_id=${encodeURIComponent(user)}`
+  );
 
   const fullShareUrl =
     `${siteUrl}/.netlify/functions/share-badge` +
