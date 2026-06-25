@@ -5,9 +5,3 @@
 
 [build]
   functions = "netlify/functions"
-
-# Rewrite rule for clean badge sharing URLs
-[[redirects]]
-  from = "/badge/:user/:badge"
-  to = "/.netlify/functions/share-badge?user=:user&badge=:badge"
-  status = 200 # This makes it a rewrite, not a redirect

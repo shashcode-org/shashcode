@@ -68,7 +68,7 @@ export async function handler(event) {
         .from("user_badges")
         .select("earned_at")
         .eq("user_id", user_id)
-        .eq("badge_name", id)
+        .eq("badge_key", id)
         .single();
 
       if (!badgeError && badgeData) {
