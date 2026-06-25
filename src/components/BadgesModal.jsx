@@ -56,13 +56,11 @@ const BadgesModal = ({ isOpen, onClose, badges = [], user, username: badgeUserna
             user_id: user_id
         });
 
-        // ✅ Approach C: Secure, clean URL passing only identifiers
-        let shareUrl = `${baseUrl}/.netlify/functions/share-badge?user=${encodeURIComponent(
-            user_id || ""
-        )}&badge=${encodeURIComponent(badge.key)}`;
+        // ✅ Use a clean, rewritten URL for a more professional look
+        let shareUrl = `${baseUrl}/badge/${encodeURIComponent(user_id || "")}/${encodeURIComponent(badge.key)}`;
 
         // 🔥 ADD THIS (VERY IMPORTANT - fixes LinkedIn cache issue)
-        shareUrl += `&t=${Date.now()}`;
+        shareUrl += `?t=${Date.now()}`;
 
         console.log("🔗 Final Share URL:", shareUrl);
 

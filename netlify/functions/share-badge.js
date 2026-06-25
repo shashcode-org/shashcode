@@ -88,11 +88,9 @@ export async function handler(event) {
     `&user_id=${encodeURIComponent(user)}`
   );
 
-  const fullShareUrl =
-    `${siteUrl}/.netlify/functions/share-badge` +
-    `?user=${encodeURIComponent(user)}` +
-    `&badge=${encodeURIComponent(badge)}` +
-    `&t=${encodeURIComponent(t)}`;
+  const fullShareUrl = 
+    `${siteUrl}/badge/${encodeURIComponent(user)}/${encodeURIComponent(badge)}` +
+    `?t=${encodeURIComponent(t)}`;
 
   // Return your original beautiful HTML landing page
   const html = `
