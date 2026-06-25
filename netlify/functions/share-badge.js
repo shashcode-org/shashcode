@@ -89,8 +89,7 @@ export async function handler(event) {
   );
 
   const fullShareUrl = 
-    `${siteUrl}/badge/${encodeURIComponent(user)}/${encodeURIComponent(badge)}` +
-    `?t=${encodeURIComponent(t)}`;
+    `${siteUrl}/badge/${encodeURIComponent(user)}/${encodeURIComponent(badge)}`;
 
   // Return your original beautiful HTML landing page
   const html = `
