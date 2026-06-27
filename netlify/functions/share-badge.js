@@ -16,21 +16,83 @@ function getSiteUrl(event) {
   return `${protocol}://${host}`;
 }
 
+function getPathSegments(pathname, marker) {
+  const markerIndex = pathname.indexOf(marker);
+  if (markerIndex === -1) return null;
+
+  return pathname
+    .slice(markerIndex + marker.length)
+    .split("/")
+    .filter(Boolean)
+    .map((part) => decodeURIComponent(part));
+}
+
+function getRawPath(rawUrl) {
+  if (!rawUrl) return "";
+
+  try {
+    return new URL(rawUrl).pathname;
+  } catch {
+    return rawUrl.split("?")[0];
+  }
+}
+
+function getShareParams(event) {
+  const query = event.queryStringParameters || {};
+  if (query.user && query.badge) {
+    return {
+      user: query.user,
+      badge: query.badge,
+      t: query.t || Date.now().toString(),
+    };
+  }
+
+  const paths = [
+    event.path || "",
+    getRawPath(event.rawUrl),
+  ];
+
+  for (const pathname of paths) {
+    const functionSegments = getPathSegments(pathname, "/.netlify/functions/share-badge/");
+    if (functionSegments?.length >= 2) {
+      return {
+        user: functionSegments[0],
+        badge: functionSegments[1],
+        t: query.t || Date.now().toString(),
+      };
+    }
+
+    const badgeSegments = getPathSegments(pathname, "/badge/");
+    if (badgeSegments?.length >= 2) {
+      return {
+        user: badgeSegments[0],
+        badge: badgeSegments[1],
+        t: query.t || Date.now().toString(),
+      };
+    }
+  }
+
+  return {
+    user: "",
+    badge: "",
+    t: query.t || Date.now().toString(),
+  };
+}
+
 export async function handler(event) {
-  const {
-    user = "",
-    badge = "",
-    t = Date.now().toString(),
-  } = event.queryStringParameters || {};
+  const { user, badge, t } = getShareParams(event);
 
   const siteUrl = getSiteUrl(event);
 
   // Fallback: If someone visits the URL directly without parameters, redirect them to the app
   if (!user || !badge) {
     return {
-      statusCode: 302, // 302 Redirect
-      headers: { Location: siteUrl },
-      body: "Missing user or badge parameters",
+      statusCode: 400,
+      headers: {
+        "Content-Type": "text/plain; charset=utf-8",
+        "Cache-Control": "no-cache, no-store, must-revalidate",
+      },
+      body: "Missing user or badge parameters.",
     };
   }
 
