@@ -311,6 +311,7 @@ const Terms = () => {
                     </p>
 
                     <p className="mt-4">
+                      📧{" "}
                       <a
                         href="mailto:collaboratewithshashwat@gmail.com"
                         className="underline text-primary hover:text-primary/80 transition-colors"
