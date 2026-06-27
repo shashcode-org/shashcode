@@ -74,9 +74,9 @@ const BadgesModal = ({ isOpen, onClose, badges = [], user, username: badgeUserna
         console.log("🐦 [shareTwitter] Click detected for badge:", badge.name);
         const shareUrl = buildShareUrl(badge);
 
-        const text = `I just unlocked "${badge.name}" on ShashCode 🚀🔥
+        const text = `I just unlocked "${badge.name}" on ShashCode 
 
-Sharpening my DSA skills daily 💪`;
+Sharpening my DSA skills daily !!`;
 
         console.log("📱 Twitter share URL:", `https://twitter.com/intent/tweet?...`);
 

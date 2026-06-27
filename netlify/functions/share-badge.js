@@ -160,6 +160,8 @@ export async function handler(event) {
     <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="icon" href="${siteUrl}/logo.webp" type="image/webp" media="(prefers-color-scheme: light)" />
+      <link rel="icon" href="${siteUrl}/bl-logo.webp" type="image/webp" media="(prefers-color-scheme: dark)" />
       <meta property="og:title" content="I just unlocked ${escapeMeta(badgeName)} 🚀" />
       <meta property="og:description" content="Unlocked ${escapeMeta(badgeName)} on ShashCode" />
       <meta property="og:image" content="${imageUrl}" />
@@ -210,3 +212,4 @@ export async function handler(event) {
     body: html,
   };
 }
+
