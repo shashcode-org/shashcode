@@ -1,4 +1,5 @@
 import { supabase } from "@/lib/supabaseClient";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const handleGoogleLogin = async () => {
@@ -16,7 +17,7 @@ const Login = () => {
         <h1 className="text-2xl font-bold mb-6 text-foreground">
           Welcome to ShashCode
         </h1>
-
+        <p className="text-sm text-muted-foreground mb-6"> Sign in to sync your learning progress, badges, and achievements across devices. </p>
         <button
           onClick={handleGoogleLogin}
           className="
@@ -32,6 +33,22 @@ const Login = () => {
           <img src="/google.svg" alt="Google" className="h-5 w-5" />
           Continue with Google
         </button>
+        <p className="mt-5 text-xs text-muted-foreground leading-5">
+          By continuing, you agree to our{" "}
+          <Link
+            to="/terms"
+            className="underline hover:text-foreground transition-colors"
+          >
+            Terms & Conditions
+          </Link>{" "}
+          and{" "}
+          <Link
+            to="/privacy"
+            className="underline hover:text-foreground transition-colors"
+          >
+            Privacy Policy
+          </Link>.
+        </p>
       </div>
 
     </div>

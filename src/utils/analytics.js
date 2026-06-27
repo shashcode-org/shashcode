@@ -1,8 +1,8 @@
 export const trackEvent = (eventName, params = {}) => {
-  // if (!window.gtag) return;
+  if (!window.gtag) return;
 
-  // window.gtag("event", eventName, {
-  //   ...params,
-  //   page_path: window.location.pathname,
-  // });
+  window.gtag("event", eventName, {
+    ...params,
+    page_path: window.location.pathname,
+  });
 };
