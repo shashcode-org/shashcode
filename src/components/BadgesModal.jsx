@@ -48,6 +48,10 @@ const BadgesModal = ({ isOpen, onClose, badges = [], user, username: badgeUserna
     const buildShareUrl = (badge) => {
         const baseUrl = window.location.origin;
         const user_id = user?.id;
+        const earnedBadge = badges.find((b) => b.badge_key === badge.key);
+        const cacheVersion = earnedBadge?.earned_at
+            ? new Date(earnedBadge.earned_at).getTime()
+            : badge.key;
 
         console.log("🔍 [buildShareUrl] Starting URL generation...");
         console.log("📊 Badge Details:", {
@@ -58,9 +62,8 @@ const BadgesModal = ({ isOpen, onClose, badges = [], user, username: badgeUserna
 
         // ✅ Use a clean, rewritten URL for a more professional look
         let shareUrl = `${baseUrl}/badge/${encodeURIComponent(user_id || "")}/${encodeURIComponent(badge.key)}`;
-
-        // 🔥 ADD THIS (VERY IMPORTANT - fixes LinkedIn cache issue)
-        shareUrl += `?t=${Date.now()}`;
+        // Stable cache-buster for social crawlers without changing the share URL on every click.
+        shareUrl += `?v=${encodeURIComponent(cacheVersion)}`;
 
         console.log("🔗 Final Share URL:", shareUrl);
 
@@ -308,3 +311,4 @@ Sharpening my DSA skills daily 💪`;
 };
 
 export default BadgesModal;
+
