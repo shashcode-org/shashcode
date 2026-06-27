@@ -134,6 +134,12 @@ const Terms = () => {
                     <p className="mt-2">
                       We're not liable for technical issues, downtime, or external link content.
                     </p>
+                    <p className="mt-2">
+                      ShashCode may provide links to third-party coding platforms, tools, or
+                      resources for practice and learning. We are not affiliated with, endorsed by,
+                      or responsible for those third-party platforms, and your use of them is
+                      subject to their own terms, policies, availability, and access rules.
+                    </p>
                   </section>
 
                   <section>
