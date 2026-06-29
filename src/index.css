@@ -206,7 +206,9 @@
       0 12px 30px rgba(0, 0, 0, 0.5);
   }
 
-
+  .scroll-touch {
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 @layer utilities {
