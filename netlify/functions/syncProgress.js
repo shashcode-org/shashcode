@@ -56,19 +56,30 @@ export async function handler(event) {
       bucketCompletion,
       completedMainTopics = [], // 👈 IMPORTANT ADDITION
     } = JSON.parse(event.body || "{}");
-
-    if (
-      !sheet ||
-      !subtopics ||
-      !questions ||
-      typeof completedPercent !== "number" ||
-      !bucketCompletion
-    ) {
+    if (!sheet || !subtopics || !questions) {
       return {
         statusCode: 400,
         body: JSON.stringify({ error: "Invalid payload" }),
       };
     }
+
+    const isMigration =
+      typeof completedPercent !== "number" || !bucketCompletion;
+
+    const safeCompletedPercent = isMigration ? 0 : completedPercent;
+    const safeBucketCompletion = isMigration ? {} : bucketCompletion;
+    // if (
+    //   !sheet ||
+    //   !subtopics ||
+    //   !questions ||
+    //   typeof completedPercent !== "number" ||
+    //   !bucketCompletion
+    // ) {
+    //   return {
+    //     statusCode: 400,
+    //     body: JSON.stringify({ error: "Invalid payload" }),
+    //   };
+    // }
 
     // --------------------------------------------------
     // Fetch canonical ShashCode username
@@ -111,8 +122,8 @@ export async function handler(event) {
     // Evaluate + enforce MONOTONIC
     // --------------------------------------------------
     const evaluatedLevel = evaluateLevel({
-      completedPercent,
-      bucketCompletion,
+      completedPercent: safeCompletedPercent,
+      bucketCompletion: safeBucketCompletion,
     });
 
     const finalLevel =
@@ -228,7 +239,7 @@ export async function handler(event) {
         ok: true,
         highest_level: finalLevel,
         new_badges: newlyEarnedBadges,
-         updated_at: now, // ✅ ADD THIS
+        updated_at: now, // ✅ ADD THIS
       }),
     };
   } catch (err) {
