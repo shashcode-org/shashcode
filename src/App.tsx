@@ -104,18 +104,18 @@ const App = () => {
           completedMainTopics: [],
         }),
       });
-      console.log("SYNC STATUS", res.status);
+      // console.log("SYNC STATUS", res.status);
 
       const body = await res.text();
 
-      console.log("SYNC BODY", body);
+      // console.log("SYNC BODY", body);
       if (!res.ok) {
         throw new Error(await res.text());
       }
 
-      console.log("Migration sync done");
+      // console.log("Migration sync done");
     } catch (err) {
-      console.error("Migration sync failed", err);
+      // console.error("Migration sync failed", err);
     }
 
     setShowMigrationPopup(false);
