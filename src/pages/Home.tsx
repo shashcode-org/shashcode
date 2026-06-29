@@ -74,9 +74,9 @@ const Home = () => {
                         <code>{`public class ShashCode {
   boolean isSuccess(boolean hardWork, boolean luck) {
     if (hardWork || luck) {
-      System.out.println("You succeeded");
+      System.out.println("You succeeded 🎯");
     } else {
-      System.out.println("You still succeeded");
+      System.out.println("You still succeeded 💪");
     }
 
     return true; // Because success is a mindset.
