@@ -28,7 +28,7 @@ export async function handler(event) {
     method: event.httpMethod,
     body: event.body,
   });
-
+  console.log("STEP 0 - Function entered");
   try {
     if (event.httpMethod !== "POST") {
       return { statusCode: 405, body: "Method Not Allowed" };
@@ -38,6 +38,7 @@ export async function handler(event) {
 
     try {
       user_id = getUserIdFromRequest(event);
+      console.log("STEP 1A - User from Authorization", user_id);
     } catch {
       const body = JSON.parse(event.body || "{}");
       const token = body.token;
@@ -46,6 +47,7 @@ export async function handler(event) {
 
       const decoded = jwt.decode(token);
       user_id = decoded.sub;
+      console.log("STEP 1B - Falling back to token in body");
     }
 
     const {
@@ -56,6 +58,14 @@ export async function handler(event) {
       bucketCompletion,
       completedMainTopics = [], // 👈 IMPORTANT ADDITION
     } = JSON.parse(event.body || "{}");
+
+    console.log("STEP 2 - Payload", {
+      sheet,
+      questionCount: Object.keys(questions || {}).length,
+      subtopicCount: Object.keys(subtopics || {}).length,
+      completedPercent,
+      bucketCompletion,
+    });
     if (!sheet || !subtopics || !questions) {
       return {
         statusCode: 400,
@@ -89,9 +99,10 @@ export async function handler(event) {
       .select("meta_json")
       .eq("user_id", user_id)
       .single();
-
+    console.log("STEP 4 - user_meta", userMetaRow);
     const { data: authUserData } = await supabase.auth.admin.getUserById(user_id);
     const authUser = authUserData?.user;
+    console.log("STEP 5 - auth user", authUser?.email);
     const username =
       userMetaRow?.meta_json?.username ||
       authUser?.email?.split("@")[0] ||
@@ -107,6 +118,11 @@ export async function handler(event) {
       .eq("user_id", user_id)
       .eq("sheet", sheet)
       .single();
+
+    console.log("STEP 6 - Existing progress", {
+      existingRow,
+      fetchError,
+    });
 
     if (fetchError && fetchError.code !== "PGRST116") {
       console.error("Fetch error:", fetchError);
@@ -126,6 +142,12 @@ export async function handler(event) {
       bucketCompletion: safeBucketCompletion,
     });
 
+    console.log("STEP 7 - Levels", {
+      storedLevel,
+      evaluatedLevel,
+      finalLevel,
+    });
+
     const finalLevel =
       evaluatedLevel > storedLevel ? evaluatedLevel : storedLevel;
 
@@ -139,7 +161,7 @@ export async function handler(event) {
     // 🏅 LEVEL BADGES (Coder → DSA Specialist)
     // --------------------------------------------------
     const newlyEarnedBadges = [];
-
+    console.log("STEP 8 - Badge loop");
     // 🔥 SINGLE LOOP (handles both backfill + new)
     for (let level = 1; level <= finalLevel; level++) {
       const badge = LEVEL_BADGES[level];
@@ -169,7 +191,7 @@ export async function handler(event) {
         newlyEarnedBadges.push(badge.key);
       }
     }
-
+    console.log("STEP 9 - Badge loop");
     // --------------------------------------------------
     // 🏅 JAVA PRO BADGE (SIMPLE + CORRECT)
     // --------------------------------------------------
@@ -225,6 +247,12 @@ export async function handler(event) {
         { onConflict: ["user_id", "sheet"] }
       );
 
+    console.log("STEP 10 - UPSERT START", {
+      user_id,
+      sheet,
+      highest_level: finalLevel,
+    });
+
     if (upsertError) {
       console.error("DB error:", upsertError);
       return {
@@ -244,6 +272,7 @@ export async function handler(event) {
     };
   } catch (err) {
     console.error("Function crash:", err);
+    console.error(err.stack);
     return {
       statusCode: 500,
       body: JSON.stringify({ error: "Server error" }),

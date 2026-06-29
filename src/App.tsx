@@ -104,7 +104,12 @@ const App = () => {
           completedMainTopics: [],
         }),
       });
-      if(!res.ok) {
+      console.log("SYNC STATUS", res.status);
+
+      const body = await res.text();
+
+      console.log("SYNC BODY", body);
+      if (!res.ok) {
         throw new Error(await res.text());
       }
 
