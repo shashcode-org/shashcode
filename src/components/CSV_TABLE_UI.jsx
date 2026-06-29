@@ -180,6 +180,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
   const questionProgressRef = useRef(questionProgress);
   const subtopicProgressRef = useRef(subtopicProgress);
   const isCatchingUpRef = useRef(false);
+  // const migrationSyncDoneRef = useRef(false);
   const accessTokenRef = useRef(null);
   useEffect(() => {
     const loadToken = async () => {
@@ -799,6 +800,13 @@ export const CSV_TABLE_UI = ({ csvData }) => {
         setQuestionProgress(finalQuestions);
         setSubtopicProgress(finalSubtopics);
 
+//         const shouldRunMigrationSync =
+//   localStorage.getItem("migration_done") === "true";
+
+// if (shouldRunMigrationSync) {
+//   migrationSyncDoneRef.current = true;
+// }
+
 
 
         // --------------------------------------------------
@@ -869,7 +877,13 @@ export const CSV_TABLE_UI = ({ csvData }) => {
     if (!hasHydratedFromLocalRef.current) return;
 
     // 🔥 DO NOT SYNC UNLESS USER ACTUALLY CHANGED SOMETHING
-    if (!hasUserInteractedRef.current) return;
+    // Allow one sync immediately after migration
+if (
+  !hasUserInteractedRef.current &&
+  !migrationSyncDoneRef.current
+) {
+  return;
+}
     if (isHydratingRef.current) return;   // 🔥 CRITICAL
 
     // ❌ don't sync if nothing exists
@@ -892,6 +906,12 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 
     debounceTimerRef.current = setTimeout(async () => {
 
+      console.log("AUTO MIGRATION SYNC", {
+        progressPercent,
+        bucketCompletion,
+        completedMainTopics,
+    });
+
       const result = await syncProgressToServer({
         sheet,
         subtopics: subtopicProgress,
@@ -900,6 +920,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
         bucketCompletion,
         completedMainTopics,
       });
+      // migrationSyncDoneRef.current = false;
 
       if (result?.new_badges?.length > 0) {
         // console.log("🎉 New badges unlocked:", result.new_badges);
