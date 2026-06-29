@@ -3,7 +3,6 @@ import { HelmetProvider } from "react-helmet-async";
 import * as Sentry from "@sentry/react";
 import App from "./App";
 import "./index.css";
-import { AuthProvider } from "@/context/AuthContext";
 
 Sentry.init({
   dsn: "https://5dc1a3b13315dc9a0bb39f5a122d5170@o4511055127052288.ingest.us.sentry.io/4511055137800192",
@@ -47,8 +46,6 @@ window
 
 createRoot(document.getElementById("root")!).render(
   <HelmetProvider>
-     <AuthProvider>
     <App />
-    </AuthProvider>
   </HelmetProvider>
 );
