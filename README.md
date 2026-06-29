@@ -18,6 +18,12 @@ npm i
 
 # Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
+
+# Step 5: Start the netlify backend dev server on linux/mac.
+NETLIFY_DEV_NO_WATCH=true netlify dev
+
+# Step 6: Start the netlify backend dev server on windows.
+set NETLIFY_DEV_NO_WATCH=true && netlify dev
 ```
 
 ## What technologies are used for this project?
