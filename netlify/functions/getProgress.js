@@ -7,6 +7,10 @@ const supabase = createClient(
 );
 
 export async function handler(event) {
+    console.log("📥 getProgress HIT", {
+        method: event.httpMethod,
+        query: event.queryStringParameters,
+    });
     try {
         if (event.httpMethod !== "GET") {
             return { statusCode: 405, body: "Method Not Allowed" };
@@ -14,14 +18,21 @@ export async function handler(event) {
 
         // 🔐 AUTH (single source)
         const user_id = getUserIdFromRequest(event);
+        console.log("STEP 1 - user_id", user_id);
+
 
         const sheet = event.queryStringParameters?.sheet;
+        console.log("STEP 2 - sheet", sheet);
+
         if (!sheet) {
             return {
                 statusCode: 400,
                 body: JSON.stringify({ error: "sheet is required" }),
             };
         }
+
+        console.log("STEP 3 - Querying DB");
+
 
         const { data, error } = await supabase
             .from("user_progress")
@@ -30,8 +41,15 @@ export async function handler(event) {
             .eq("sheet", sheet)
             .single();
 
+            console.log("STEP 4 - Query result", {
+                data,
+                error,
+            });
+
         // 🆕 First-time user
         if (error && error.code === "PGRST116") {
+            console.log("STEP 5 - No progress found");
+
             return {
                 statusCode: 200,
                 body: JSON.stringify({
@@ -42,9 +60,12 @@ export async function handler(event) {
             };
         }
 
-        if (error) throw error;
+        if (error) {
+            console.error("STEP 5 - DB ERROR", error);
+            throw error;
+        }
 
-        return {
+        const response = {
             statusCode: 200,
             body: JSON.stringify({
                 subtopics: data.progress_json?.subtopics ?? {},
@@ -53,8 +74,22 @@ export async function handler(event) {
                 updated_at: data?.updated_at ?? null,
             }),
         };
+
+        console.log("STEP 6 - Returning", {
+            questionCount: Object.keys(response.questions).length,
+            subtopicCount: Object.keys(response.subtopics).length,
+            highest_level: response.highest_level,
+            updated_at: response.updated_at,
+        });
+
+        return {
+            statusCode: 200,
+            body: JSON.stringify(response),
+        }
     } catch (err) {
         console.error("getProgress error:", err);
+        console.error(err.stack);
+
 
         return {
             statusCode: err.statusCode || 401,

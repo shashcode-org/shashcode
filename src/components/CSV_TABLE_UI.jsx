@@ -142,6 +142,10 @@ async function hydrateProgressFromDB(sheet) {
     }
   );
 
+  console.log("GET PROGRESS RESPONSE", res);
+console.log("Questions", Object.keys(res.questions || {}).length);
+console.log("Subtopics", Object.keys(res.subtopics || {}).length);
+
   if (!res.ok) return null;
   return await res.json();
 }
