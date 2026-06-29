@@ -11,7 +11,7 @@ function escapeMeta(value) {
 
 function getSiteUrl(event) {
   const headers = event.headers || {};
-  const host = headers["x-forwarded-host"] || headers.host || "dev-shashcode.netlify.app";
+  const host = headers["x-forwarded-host"] || headers.host || "shashcode.com";
   const protocol = headers["x-forwarded-proto"] || "https";
   return `${protocol}://${host}`;
 }
