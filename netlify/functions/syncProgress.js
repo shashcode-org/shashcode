@@ -24,10 +24,10 @@ function evaluateLevel({ completedPercent, bucketCompletion }) {
 }
 
 export async function handler(event) {
-  // console.log("🔥 syncProgress HIT", {
-  //   method: event.httpMethod,
-  //   body: event.body,
-  // });
+  console.log("🔥 syncProgress HIT", {
+    method: event.httpMethod,
+    body: event.body,
+  });
 
   try {
     if (event.httpMethod !== "POST") {
@@ -85,7 +85,7 @@ export async function handler(event) {
       userMetaRow?.meta_json?.username ||
       authUser?.email?.split("@")[0] ||
       "user";
-    // console.log("👤 User:", { user_id, username });
+    console.log("👤 User:", { user_id, username });
 
     // --------------------------------------------------
     // Fetch existing highest level (LIFETIME)
@@ -98,7 +98,7 @@ export async function handler(event) {
       .single();
 
     if (fetchError && fetchError.code !== "PGRST116") {
-      // console.error("Fetch error:", fetchError);
+      console.error("Fetch error:", fetchError);
       return {
         statusCode: 500,
         body: JSON.stringify({ error: "Failed to fetch user progress" }),
@@ -118,11 +118,11 @@ export async function handler(event) {
     const finalLevel =
       evaluatedLevel > storedLevel ? evaluatedLevel : storedLevel;
 
-    // console.log("🧠 LEVEL STATE", {
-    //   storedLevel,
-    //   evaluatedLevel,
-    //   finalLevel,
-    // });
+    console.log("🧠 LEVEL STATE", {
+      storedLevel,
+      evaluatedLevel,
+      finalLevel,
+    });
 
     // --------------------------------------------------
     // 🏅 LEVEL BADGES (Coder → DSA Specialist)
@@ -136,7 +136,7 @@ export async function handler(event) {
 
       const isNewLevel = level > storedLevel;
 
-      // console.log("🏅 ATTEMPTING LEVEL BADGE", { level, badge: badge.key, isNewLevel });
+      console.log("🏅 ATTEMPTING LEVEL BADGE", { level, badge: badge.key, isNewLevel });
 
       const awarded = await awardBadgeIfNotExists({
         supabase,
@@ -174,7 +174,7 @@ export async function handler(event) {
       );
 
       if (javaCoreCompleted) {
-        // console.log("🏅 JAVA PRO CONDITIONS MET");
+        console.log("🏅 JAVA PRO CONDITIONS MET");
 
         const awarded = await awardBadgeIfNotExists({
           supabase,
@@ -215,7 +215,7 @@ export async function handler(event) {
       );
 
     if (upsertError) {
-      // console.error("DB error:", upsertError);
+      console.error("DB error:", upsertError);
       return {
         statusCode: 500,
         body: JSON.stringify({ error: upsertError.message }),
@@ -232,7 +232,7 @@ export async function handler(event) {
       }),
     };
   } catch (err) {
-    // console.error("Function crash:", err);
+    console.error("Function crash:", err);
     return {
       statusCode: 500,
       body: JSON.stringify({ error: "Server error" }),

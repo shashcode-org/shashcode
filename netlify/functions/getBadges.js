@@ -27,7 +27,7 @@ export async function handler(event) {
       body: JSON.stringify(data),
     };
   } catch (err) {
-    // console.error("getBadges error:", err);
+    console.error("getBadges error:", err);
 
     return {
       statusCode: err.statusCode || 401,

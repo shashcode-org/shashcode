@@ -54,7 +54,7 @@ export async function handler(event) {
             }),
         };
     } catch (err) {
-        // console.error("getProgress error:", err);
+        console.error("getProgress error:", err);
 
         return {
             statusCode: err.statusCode || 401,

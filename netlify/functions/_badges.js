@@ -105,12 +105,12 @@ export async function awardBadgeIfNotExists({
         .eq("user_id", user_id)
         .eq("badge_key", badge_key);
 
-      // console.log("✅ DB updated with og_image_url");
+      console.log("✅ DB updated with og_image_url");
     }
   } catch (err) {
-    // console.warn("⚠️ Image generation failed:", err.message);
+    console.warn("⚠️ Image generation failed:", err.message);
   }
 
-  // console.log("BADGE AWARDED:", badge_key);
+  console.log("BADGE AWARDED:", badge_key);
   return true;
 }
