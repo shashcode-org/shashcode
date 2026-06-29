@@ -89,7 +89,7 @@ const App = () => {
       const { data } = await supabase.auth.getSession();
       const token = data.session?.access_token;
 
-      await fetch("/.netlify/functions/syncProgress", {
+      const res = await fetch("/.netlify/functions/syncProgress", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -104,10 +104,13 @@ const App = () => {
           completedMainTopics: [],
         }),
       });
+      if(!res.ok) {
+        throw new Error(await res.text());
+      }
 
-      // console.log("Migration sync done");
+      console.log("Migration sync done");
     } catch (err) {
-      // console.error("Migration sync failed", err);
+      console.error("Migration sync failed", err);
     }
 
     setShowMigrationPopup(false);
