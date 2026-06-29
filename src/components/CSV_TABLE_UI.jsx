@@ -800,12 +800,12 @@ export const CSV_TABLE_UI = ({ csvData }) => {
         setQuestionProgress(finalQuestions);
         setSubtopicProgress(finalSubtopics);
 
-//         const shouldRunMigrationSync =
-//   localStorage.getItem("migration_done") === "true";
+        //         const shouldRunMigrationSync =
+        //   localStorage.getItem("migration_done") === "true";
 
-// if (shouldRunMigrationSync) {
-//   migrationSyncDoneRef.current = true;
-// }
+        // if (shouldRunMigrationSync) {
+        //   migrationSyncDoneRef.current = true;
+        // }
 
 
 
@@ -878,12 +878,13 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 
     // 🔥 DO NOT SYNC UNLESS USER ACTUALLY CHANGED SOMETHING
     // Allow one sync immediately after migration
-if (
-  !hasUserInteractedRef.current &&
-  !migrationSyncDoneRef.current
-) {
-  return;
-}
+    if (!hasUserInteractedRef.current) return;
+    // if (
+    //   !hasUserInteractedRef.current &&
+    //   !migrationSyncDoneRef.current
+    // ) {
+    //   return;
+    // }
     if (isHydratingRef.current) return;   // 🔥 CRITICAL
 
     // ❌ don't sync if nothing exists
@@ -910,7 +911,7 @@ if (
         progressPercent,
         bucketCompletion,
         completedMainTopics,
-    });
+      });
 
       const result = await syncProgressToServer({
         sheet,
