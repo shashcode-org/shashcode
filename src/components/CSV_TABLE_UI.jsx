@@ -142,12 +142,14 @@ async function hydrateProgressFromDB(sheet) {
     }
   );
 
-  console.log("GET PROGRESS RESPONSE", res);
-console.log("Questions", Object.keys(res.questions || {}).length);
-console.log("Subtopics", Object.keys(res.subtopics || {}).length);
 
   if (!res.ok) return null;
-  return await res.json();
+  const data = await res.json();
+  console.log("GET PROGRESS JSON", data);
+  console.log("Questions", Object.keys(data.questions || {}).length);
+  console.log("Subtopics", Object.keys(data.subtopics || {}).length);
+
+  return data;
 }
 
 function getStorageKeys(userId, sheet) {
@@ -715,22 +717,31 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 
         if (userId) {
 
-          const dbQuestions = dbData?.questions || {};
-          const dbSubtopics = dbData?.subtopics || {};
+          const dbQuestions = normalizeProgress(dbData?.questions || {});
+          const dbSubtopics = normalizeProgress(dbData?.subtopics || {});
+
+          console.log("DB QUESTIONS", Object.keys(dbQuestions).length);
+          console.log("DB SUBTOPICS", Object.keys(dbSubtopics).length);
+
 
           const dbUpdatedAt = dbData?.updated_at;
           const localUpdatedAt = localStorage.getItem(`progressUpdatedAt_${userId}_${sheet}`);
+
+          console.log({
+            dbUpdatedAt,
+            localUpdatedAt,
+          });
 
           const dbTime = new Date(dbUpdatedAt || 0).getTime();
           const localTime = new Date(localUpdatedAt || 0).getTime();
 
           if (!localUpdatedAt || dbTime >= localTime) {
-            // console.log("Using DB as source of truth");
+            console.log("Using DB as source of truth");
 
             finalQuestions = dbQuestions;
             finalSubtopics = dbSubtopics;
           } else {
-            // console.log("Local is newer, merging carefully");
+            console.log("Local is newer, merging carefully");
 
             finalQuestions = mergeProgress(dbQuestions, localQuestions);
             finalSubtopics = mergeProgress(dbSubtopics, localSubtopics);
@@ -773,7 +784,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
           finalQuestions = localQuestions;
           finalSubtopics = localSubtopics;
 
-          // console.log("Using local only");
+          console.log("Using local only");
 
         }
 
@@ -782,6 +793,8 @@ export const CSV_TABLE_UI = ({ csvData }) => {
         // --------------------------------------------------
         // STEP 4: APPLY STATE
         // --------------------------------------------------
+        console.log("FINAL QUESTIONS", Object.keys(finalQuestions).length);
+        console.log("FINAL SUBTOPICS", Object.keys(finalSubtopics).length);
 
         setQuestionProgress(finalQuestions);
         setSubtopicProgress(finalSubtopics);
