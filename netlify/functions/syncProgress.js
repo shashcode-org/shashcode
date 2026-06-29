@@ -142,11 +142,6 @@ export async function handler(event) {
       bucketCompletion: safeBucketCompletion,
     });
 
-    console.log("STEP 7 - Levels", {
-      storedLevel,
-      evaluatedLevel,
-      finalLevel,
-    });
 
     const finalLevel =
       evaluatedLevel > storedLevel ? evaluatedLevel : storedLevel;
@@ -234,6 +229,11 @@ export async function handler(event) {
     // Persist progress + level (UNCHANGED)
     // --------------------------------------------------
     const now = new Date().toISOString();
+    console.log("STEP 10 - UPSERT START", {
+      user_id,
+      sheet,
+      highest_level: finalLevel,
+    });
     const { error: upsertError } = await supabase
       .from("user_progress")
       .upsert(
@@ -247,11 +247,7 @@ export async function handler(event) {
         { onConflict: ["user_id", "sheet"] }
       );
 
-    console.log("STEP 10 - UPSERT START", {
-      user_id,
-      sheet,
-      highest_level: finalLevel,
-    });
+    console.log("STEP 10 - UPSERT DONE", upsertError);
 
     if (upsertError) {
       console.error("DB error:", upsertError);
