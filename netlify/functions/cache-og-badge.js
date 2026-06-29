@@ -86,7 +86,7 @@ export async function handler(event) {
           authUser?.email?.split("@")[0] ||
           "user";
       } else {
-        console.warn(`[cache-og-badge] Invalid badge request for user_id=${user_id}, id=${id}`);
+        // console.warn(`[cache-og-badge] Invalid badge request for user_id=${user_id}, id=${id}`);
       }
     }
 
@@ -103,7 +103,7 @@ export async function handler(event) {
       const badgeImageBuffer = fs.readFileSync(badgePath);
       badgeDataUrl = `data:image/png;base64,${badgeImageBuffer.toString("base64")}`;
     } else {
-      console.warn(`Badge image not found: ${badgePath}. Using text fallback.`);
+      // console.warn(`Badge image not found: ${badgePath}. Using text fallback.`);
     }
 
     const logoPath = path.join(
@@ -117,7 +117,7 @@ export async function handler(event) {
         const logoPngBuffer = await sharp(logoPath).png().toBuffer();
         logoDataUrl = `data:image/png;base64,${logoPngBuffer.toString("base64")}`;
       } catch (error) {
-        console.warn(`Failed to convert logo: ${error.message}`);
+        // console.warn(`Failed to convert logo: ${error.message}`);
       }
     }
 
@@ -160,7 +160,7 @@ export async function handler(event) {
       isBase64Encoded: true,
     };
   } catch (error) {
-    console.error("Error generating badge:", error);
+    // console.error("Error generating badge:", error);
 
     return {
       statusCode: 500,

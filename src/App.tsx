@@ -105,9 +105,9 @@ const App = () => {
         }),
       });
 
-      console.log("Migration sync done");
+      // console.log("Migration sync done");
     } catch (err) {
-      console.error("Migration sync failed", err);
+      // console.error("Migration sync failed", err);
     }
 
     setShowMigrationPopup(false);

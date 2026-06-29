@@ -27,13 +27,13 @@ export const useBadges = (user) => {
 
       // 🔥 Retry until session is ready (KEEPING YOUR LOGIC)
       if (!token) {
-        console.warn("⛔ No session yet, retrying badge fetch...");
+        // console.warn("⛔ No session yet, retrying badge fetch...");
         isFetchingRef.current = false; // ⚠️ IMPORTANT (else lock ho jayega)
         setTimeout(loadBadges, 500);
         return;
       }
 
-      console.log("TOKEN:", token);
+      // console.log("TOKEN:", token);
 
       const res = await fetch("/.netlify/functions/getBadges", {
         headers: {
@@ -41,20 +41,20 @@ export const useBadges = (user) => {
         },
       });
 
-      console.log("STATUS:", res.status);
+      // console.log("STATUS:", res.status);
 
       const json = await res.json();
-      console.log("BADGES API RESPONSE:", json);
+      // console.log("BADGES API RESPONSE:", json);
 
       if (!res.ok) {
-        console.error("❌ Badge API failed:", json);
+        // console.error("❌ Badge API failed:", json);
         setBadges([]);
         return;
       }
 
       setBadges(Array.isArray(json) ? json : []);
     } catch (err) {
-      console.error("❌ Failed to load badges:", err);
+      // console.error("❌ Failed to load badges:", err);
       setBadges([]);
     } finally {
       setLoading(false);
@@ -70,7 +70,7 @@ export const useBadges = (user) => {
   // 🔹 Optional: real-time refresh trigger
   useEffect(() => {
     const handler = () => {
-      console.log("🔄 badgesUpdated event received");
+      // console.log("🔄 badgesUpdated event received");
 
       if (!isFetchingRef.current) {
         loadBadges();

@@ -58,7 +58,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       if (q) localStorage.setItem(guestKeys.q, q);
       if (s) localStorage.setItem(guestKeys.s, s);
 
-      console.log("🔁 Copied user progress → guest before logout");
+      // console.log("🔁 Copied user progress → guest before logout");
     }
 
     await supabase.auth.signOut({ scope: "local" })

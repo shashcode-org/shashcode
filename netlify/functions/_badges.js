@@ -39,12 +39,12 @@ export async function awardBadgeIfNotExists({
   total_badges = 4,
   metadata = {},
 }) {
-  console.log("➡️ awardBadgeIfNotExists", {
-    user_id,
-    badge_key,
-    sheet,
-    username,
-  });
+  // console.log("➡️ awardBadgeIfNotExists", {
+  //   user_id,
+  //   badge_key,
+  //   sheet,
+  //   username,
+  // });
 
   // Generate and upload badge image
   // let og_image_url = null;
@@ -72,12 +72,12 @@ export async function awardBadgeIfNotExists({
 
   // unique violation → already earned
   if (error?.code === "23505") {
-    console.log("Badge already exists:", badge_key);
+    // console.log("Badge already exists:", badge_key);
     return false;
   }
 
   if (error) {
-    console.error("BADGE INSERT ERROR:", error);
+    // console.error("BADGE INSERT ERROR:", error);
     throw error;
   }
 
@@ -85,7 +85,7 @@ export async function awardBadgeIfNotExists({
   let og_image_url = null;
 
   try {
-    console.log("🚀 Generating badge image AFTER insert:", badge_key);
+    // console.log("🚀 Generating badge image AFTER insert:", badge_key);
 
     og_image_url = await generateAndUploadBadgeImage({
       user_id,
@@ -95,7 +95,7 @@ export async function awardBadgeIfNotExists({
       total_badges,
     });
 
-    console.log("🖼️ Generated URL:", og_image_url);
+    // console.log("🖼️ Generated URL:", og_image_url);
 
     // ✅ Update DB with image URL
     if (og_image_url) {
@@ -105,12 +105,12 @@ export async function awardBadgeIfNotExists({
         .eq("user_id", user_id)
         .eq("badge_key", badge_key);
 
-      console.log("✅ DB updated with og_image_url");
+      // console.log("✅ DB updated with og_image_url");
     }
   } catch (err) {
-    console.warn("⚠️ Image generation failed:", err.message);
+    // console.warn("⚠️ Image generation failed:", err.message);
   }
 
-  console.log("BADGE AWARDED:", badge_key);
+  // console.log("BADGE AWARDED:", badge_key);
   return true;
 }

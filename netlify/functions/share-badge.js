@@ -132,13 +132,13 @@ export async function handler(event) {
     authUser?.email?.split("@")[0] ||
     "user";
 
-  console.log("[share-badge] Request verified", {
-    badge,
-    canonicalUsername,
-    user,
-    siteUrl,
-    t,
-  });
+  // console.log("[share-badge] Request verified", {
+  //   badge,
+  //   canonicalUsername,
+  //   user,
+  //   siteUrl,
+  //   t,
+  // });
 
   // Resolve the Image URL
   // ✅ Use the pre-generated static OG image if it exists in the database record.
@@ -196,10 +196,10 @@ export async function handler(event) {
   </html>
   `;
 
-  console.log("[share-badge] Response ready", {
-    imageUrl,
-    fullShareUrl,
-  });
+  // console.log("[share-badge] Response ready", {
+  //   imageUrl,
+  //   fullShareUrl,
+  // });
 
   return {
     statusCode: 200,

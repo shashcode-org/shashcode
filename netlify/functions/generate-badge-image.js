@@ -53,7 +53,7 @@ export async function generateAndUploadBadgeImage({
   username = "user",
 }) {
   try {
-    console.log(`Generating badge image for ${username} - ${badge_key}`);
+    // console.log(`Generating badge image for ${username} - ${badge_key}`);
 
     const badgeInfo = BADGE_MAP[badge_key] || { key: badge_key, name: badge_key };
     const badgePath = path.join(
@@ -61,16 +61,16 @@ export async function generateAndUploadBadgeImage({
       `netlify/functions/assets/badges/${badgeInfo.key}.png`
     );
     // 🔥 ADD THIS
-    console.log("🧠 Badge key:", badgeInfo.key);
-    console.log("📁 Looking for badge at:", badgePath);
-    console.log("📦 Exists?", fs.existsSync(badgePath));
+    // console.log("🧠 Badge key:", badgeInfo.key);
+    // console.log("📁 Looking for badge at:", badgePath);
+    // console.log("📦 Exists?", fs.existsSync(badgePath));
 
     let badgeDataUrl = null;
     if (fs.existsSync(badgePath)) {
       const badgeImageBuffer = fs.readFileSync(badgePath);
       badgeDataUrl = `data:image/png;base64,${badgeImageBuffer.toString("base64")}`;
     } else {
-      console.warn(`Badge image not found: ${badgePath}. Using text fallback.`);
+      // console.warn(`Badge image not found: ${badgePath}. Using text fallback.`);
     }
 
     const logoPath = path.join(
@@ -84,7 +84,7 @@ export async function generateAndUploadBadgeImage({
         const logoPngBuffer = await sharp(logoPath).png().toBuffer();
         logoDataUrl = `data:image/png;base64,${logoPngBuffer.toString("base64")}`;
       } catch (error) {
-        console.warn(`Failed to convert logo: ${error.message}`);
+        // console.warn(`Failed to convert logo: ${error.message}`);
       }
     }
 
@@ -122,7 +122,7 @@ export async function generateAndUploadBadgeImage({
     });
 
     if (error) {
-      console.error("Upload failed:", error);
+      // console.error("Upload failed:", error);
       return null;
     }
 
@@ -132,7 +132,7 @@ export async function generateAndUploadBadgeImage({
 
     return publicUrlData?.publicUrl ?? null;
   } catch (error) {
-    console.error("Error generating badge image:", error);
+    // console.error("Error generating badge image:", error);
     return null;
   }
 }

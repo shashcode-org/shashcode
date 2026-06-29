@@ -53,32 +53,32 @@ const BadgesModal = ({ isOpen, onClose, badges = [], user, username: badgeUserna
             ? new Date(earnedBadge.earned_at).getTime()
             : badge.key;
 
-        console.log("🔍 [buildShareUrl] Starting URL generation...");
-        console.log("📊 Badge Details:", {
-            name: badge.name,
-            key: badge.key,
-            user_id: user_id
-        });
+        // console.log("🔍 [buildShareUrl] Starting URL generation...");
+        // console.log("📊 Badge Details:", {
+        //     name: badge.name,
+        //     key: badge.key,
+        //     user_id: user_id
+        // });
 
         // ✅ Use a clean, rewritten URL for a more professional look
         let shareUrl = `${baseUrl}/badge/${encodeURIComponent(user_id || "")}/${encodeURIComponent(badge.key)}`;
         // Stable cache-buster for social crawlers without changing the share URL on every click.
         shareUrl += `?v=${encodeURIComponent(cacheVersion)}`;
 
-        console.log("🔗 Final Share URL:", shareUrl);
+        // console.log("🔗 Final Share URL:", shareUrl);
 
         return shareUrl;
     };
 
     const shareTwitter = (badge) => {
-        console.log("🐦 [shareTwitter] Click detected for badge:", badge.name);
+        // console.log("🐦 [shareTwitter] Click detected for badge:", badge.name);
         const shareUrl = buildShareUrl(badge);
 
         const text = `I just unlocked "${badge.name}" on ShashCode 
 
 Sharpening my DSA skills daily !!`;
 
-        console.log("📱 Twitter share URL:", `https://twitter.com/intent/tweet?...`);
+        // console.log("📱 Twitter share URL:", `https://twitter.com/intent/tweet?...`);
 
         window.open(
             `https://twitter.com/intent/tweet?text=${encodeURIComponent(
@@ -98,7 +98,7 @@ Sharpening my DSA skills daily !!`;
     };
 
     const shareLinkedIn = (badge) => {
-        console.log("🔗 [shareLinkedIn] Click detected for badge:", badge.name);
+        // console.log("🔗 [shareLinkedIn] Click detected for badge:", badge.name);
         const shareUrl = buildShareUrl(badge);
 
         // ✅ Opens LinkedIn sharing with OG preview
@@ -107,18 +107,18 @@ Sharpening my DSA skills daily !!`;
             shareUrl
         )}`;
 
-        console.log("🔗 LinkedIn share URL constructed:");
-        console.log("   Base URL:", shareUrl);
-        console.log("   LinkedIn Share Endpoint:", linkedInShareUrl);
-        console.log("📤 Opening LinkedIn window...");
+        // console.log("🔗 LinkedIn share URL constructed:");
+        // console.log("   Base URL:", shareUrl);
+        // console.log("   LinkedIn Share Endpoint:", linkedInShareUrl);
+        // console.log("📤 Opening LinkedIn window...");
 
         window.open(linkedInShareUrl, "_blank", "width=600,height=500");
 
-        console.log("✅ LinkedIn window opened");
+        // console.log("✅ LinkedIn window opened");
 
         // Optional: Track share in analytics
         if (window.gtag) {
-            console.log("📊 Tracking analytics event...");
+            // console.log("📊 Tracking analytics event...");
             window.gtag('event', 'badge_shared', {
                 badge_name: badge.name,
                 platform: 'linkedin'
@@ -132,7 +132,7 @@ Sharpening my DSA skills daily !!`;
             const earnedBadge = badges.find((b) => b.badge_key === badge.key);
 
             if (!earnedBadge || !earnedBadge.og_image_url) {
-                console.warn("No image found, fallback...");
+                // console.warn("No image found, fallback...");
                 return;
             }
 
@@ -142,7 +142,7 @@ Sharpening my DSA skills daily !!`;
             link.target = "_blank";
             link.click();
         } catch (err) {
-            console.error("Download failed", err);
+            // console.error("Download failed", err);
         }
     };
 

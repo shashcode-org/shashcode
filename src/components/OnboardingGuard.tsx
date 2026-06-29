@@ -24,7 +24,7 @@ const OnboardingGuard = ({ children }: { children: React.ReactNode }) => {
         .maybeSingle();
 
       if (error) {
-        console.error("Onboarding check failed:", error);
+        // console.error("Onboarding check failed:", error);
         setChecking(false);
         return;
       }

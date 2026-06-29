@@ -15,5 +15,5 @@ export function getUserIdFromRequest(event) {
     throw new Error("Invalid token");
   }
 
-  return decoded.sub; // ✅ REAL USER ID
+  return decoded.sub; 
 }

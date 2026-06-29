@@ -22,7 +22,7 @@ async function generateBadgeImage(badge, username = "user", score = "0/0") {
         const badgePath = path.join(__dirname, `../public/badges/${badge.key}.png`);
         
         if (!fs.existsSync(badgePath)) {
-            console.warn(`⚠️  Badge image not found: ${badgePath}`);
+            // console.warn(`⚠️  Badge image not found: ${badgePath}`);
             return null;
         }
         
@@ -42,7 +42,7 @@ async function generateBadgeImage(badge, username = "user", score = "0/0") {
                 const logoImageBase64 = logoPngBuffer.toString('base64');
                 logoDataUrl = `data:image/png;base64,${logoImageBase64}`;
             } catch (error) {
-                console.warn(`⚠️  Failed to convert logo: ${error.message}`);
+                // console.warn(`⚠️  Failed to convert logo: ${error.message}`);
             }
         }
         
@@ -91,25 +91,25 @@ async function generateBadgeImage(badge, username = "user", score = "0/0") {
 }
 
 async function generateAllBadges() {
-    console.log("🎨 Generating OG badge images...");
+    // console.log("🎨 Generating OG badge images...");
 
     // Create cache directory if it doesn't exist
     const cacheDir = path.join(__dirname, "../public/og-badge-cache");
     if (!fs.existsSync(cacheDir)) {
         fs.mkdirSync(cacheDir, { recursive: true });
-        console.log(`✅ Created cache directory: ${cacheDir}`);
+        // console.log(`✅ Created cache directory: ${cacheDir}`);
     }
 
     let generated = 0;
     let failed = 0;
 
     for (const badge of BADGE_IDS) {
-        console.log(`⏳ Generating: ${badge.name}...`);
+        // console.log(`⏳ Generating: ${badge.name}...`);
 
         const pngBuffer = await generateBadgeImage(badge);
         if (!pngBuffer) {
             failed++;
-            console.log(`❌ Failed: ${badge.name}`);
+            // console.log(`❌ Failed: ${badge.name}`);
             continue;
         }
 
@@ -118,19 +118,19 @@ async function generateAllBadges() {
         const filePath = path.join(cacheDir, filename);
 
         fs.writeFileSync(filePath, pngBuffer);
-        console.log(`✅ Saved: ${filename}`);
+        // console.log(`✅ Saved: ${filename}`);
         generated++;
     }
 
-    console.log(`\n📊 Badge Generation Summary:`);
-    console.log(`✅ Generated: ${generated}`);
-    console.log(`❌ Failed: ${failed}`);
-    console.log(`📁 Location: ${cacheDir}`);
-    console.log(`\n✨ All badges are now cached and will be served instantly!`);
+    // console.log(`\n📊 Badge Generation Summary:`);
+    // console.log(`✅ Generated: ${generated}`);
+    // console.log(`❌ Failed: ${failed}`);
+    // console.log(`📁 Location: ${cacheDir}`);
+    // console.log(`\n✨ All badges are now cached and will be served instantly!`);
 }
 
 // Run the generator
 generateAllBadges().catch((error) => {
-    console.error("Fatal error:", error);
+    // console.error("Fatal error:", error);
     process.exit(1);
 });

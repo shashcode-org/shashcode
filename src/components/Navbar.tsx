@@ -97,7 +97,7 @@ const Navbar = () => {
           setShowBell(true);
         }
       } catch (e) {
-        console.log("bell check failed");
+        // console.log("bell check failed");
       }
     };
 

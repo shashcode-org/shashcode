@@ -85,15 +85,15 @@ async function syncProgressToServer({
   } = await supabase.auth.getSession();
 
   if (!session) {
-    console.warn("No session, skipping sync");
+    // console.warn("No session, skipping sync");
     return null;
   }
 
-  console.log("Sync request:", {
-    sheet,
-    subtopicsCount: Object.keys(subtopics).length,
-    questionsCount: Object.keys(questions).length,
-  });
+  // console.log("Sync request:", {
+  //   sheet,
+  //   subtopicsCount: Object.keys(subtopics).length,
+  //   questionsCount: Object.keys(questions).length,
+  // });
 
 
   const res = await fetch("/.netlify/functions/syncProgress", {
@@ -114,12 +114,12 @@ async function syncProgressToServer({
 
   if (!res.ok) {
     const text = await res.text();
-    console.error("syncProgress failed:", text);
+    // console.error("syncProgress failed:", text);
     return null;
   }
   const json = await res.json();
 
-  console.log("Sync response:", json);
+  // console.log("Sync response:", json);
 
   return json;
 
@@ -193,7 +193,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
   }, []);
   useEffect(() => {
     const handler = () => {
-      console.log("Migration done → rehydrating");
+      // console.log("Migration done → rehydrating");
       hydratedUserRef.current = null; // reset
       setUserId((prev) => prev); // force re-run
     };
@@ -222,8 +222,8 @@ export const CSV_TABLE_UI = ({ csvData }) => {
   const [userId, setUserId] = useState(undefined);
 
   useEffect(() => {
-    console.log("QUESTION COUNT:", Object.keys(questionProgress).length);
-    console.log("SUBTOPIC COUNT:", Object.keys(subtopicProgress).length);
+    // console.log("QUESTION COUNT:", Object.keys(questionProgress).length);
+    // console.log("SUBTOPIC COUNT:", Object.keys(subtopicProgress).length);
   }, [questionProgress, subtopicProgress]);
 
   useEffect(() => {
@@ -288,7 +288,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
     }
 
     if (copied) {
-      console.log("Copied user progress → guest on logout");
+      // console.log("Copied user progress → guest on logout");
     }
 
   }, [userId, sheet]);
@@ -535,7 +535,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 
     // ✅ CASE 0: GUEST USER
     if (!userId) {
-      console.log("Guest mode → loading local progress");
+      // console.log("Guest mode → loading local progress");
 
       let guestQuestions = readQuestionProgress();
       let guestSubtopics = readSubtopicProgress();
@@ -567,7 +567,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
     const hydrationKey = `${userId}_${sheet}`;
 
     if (hydratedUserRef.current === hydrationKey) {
-      console.log("Skipping hydration for same user");
+      // console.log("Skipping hydration for same user");
       return;
     }
 
@@ -597,9 +597,9 @@ export const CSV_TABLE_UI = ({ csvData }) => {
         const hasUserData = Object.keys(userQ).length > 0 || Object.keys(userS).length > 0;
 
         if (!alreadyMigrated && userId && !hasUserData && hasGuestData) {
-          console.log("Waiting for migration (user)");
+          // console.log("Waiting for migration (user)");
 
-          console.log("Using guest fallback");
+          // console.log("Using guest fallback");
           setQuestionProgress(normalizeProgress(guestQ));
           setSubtopicProgress(normalizeProgress(guestS));
 
@@ -607,7 +607,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
           isHydratingRef.current = false;
           return;
         }
-        console.log("Starting hydration");
+        // console.log("Starting hydration");
 
 
 
@@ -641,7 +641,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
               })
             );
 
-            console.log("Guest questions merged into user");
+            // console.log("Guest questions merged into user");
           }
 
           if (guestSubtopics) {
@@ -658,14 +658,14 @@ export const CSV_TABLE_UI = ({ csvData }) => {
               })
             );
 
-            console.log("Guest subtopics merged into user");
+            // console.log("Guest subtopics merged into user");
 
 
           }
           if (guestQuestions || guestSubtopics) {
             localStorage.removeItem(guestKeys.USER_QUESTION_STORAGE_KEY);
             localStorage.removeItem(guestKeys.USER_SUBTOPIC_STORAGE_KEY);
-            console.log("Guest keys cleaned after merge");
+            // console.log("Guest keys cleaned after merge");
           }
 
         }
@@ -692,7 +692,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
           dbData = await hydrateProgressFromDB(sheet);
         }
 
-        console.log("DB data:", dbData);
+        // console.log("DB data:", dbData);
         // ✅ SET LEVEL AFTER FETCH
         if (dbData?.highest_level !== undefined) {
           setHighestLevel(
@@ -721,12 +721,12 @@ export const CSV_TABLE_UI = ({ csvData }) => {
           const localTime = new Date(localUpdatedAt || 0).getTime();
 
           if (!localUpdatedAt || dbTime >= localTime) {
-            console.log("Using DB as source of truth");
+            // console.log("Using DB as source of truth");
 
             finalQuestions = dbQuestions;
             finalSubtopics = dbSubtopics;
           } else {
-            console.log("Local is newer, merging carefully");
+            // console.log("Local is newer, merging carefully");
 
             finalQuestions = mergeProgress(dbQuestions, localQuestions);
             finalSubtopics = mergeProgress(dbSubtopics, localSubtopics);
@@ -735,7 +735,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
           // finalQuestions = mergeProgress(localQuestions, dbQuestions);
           // finalSubtopics = mergeProgress(localSubtopics, dbSubtopics);
 
-          console.log("Resolving DB vs Local (DB priority)");
+          // console.log("Resolving DB vs Local (DB priority)");
 
           // const merged =
           //   JSON.stringify(finalQuestions) !== JSON.stringify(dbQuestions) ||
@@ -769,7 +769,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
           finalQuestions = localQuestions;
           finalSubtopics = localSubtopics;
 
-          console.log("Using local only");
+          // console.log("Using local only");
 
         }
 
@@ -807,17 +807,17 @@ export const CSV_TABLE_UI = ({ csvData }) => {
           localStorage.removeItem(QUESTION_STORAGE_KEY);
           localStorage.removeItem(SUBTOPIC_STORAGE_KEY);
 
-          console.log("Old keys cleaned");
+          // console.log("Old keys cleaned");
 
         }
 
 
         hasHydratedFromLocalRef.current = true;
         hasUserInteractedRef.current = false;
-        console.log("Hydration complete");
+        // console.log("Hydration complete");
 
       } catch (err) {
-        console.error("Hydration error:", err);
+        // console.error("Hydration error:", err);
         const localQuestions = normalizeProgress(readQuestionProgress());
         const localSubtopics = normalizeProgress(readSubtopicProgress());
 
@@ -836,15 +836,15 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 
 
   useEffect(() => {
-    console.log("Storage keys:", {
-      USER_QUESTION_STORAGE_KEY,
-      USER_SUBTOPIC_STORAGE_KEY,
-    });
+    // console.log("Storage keys:", {
+    //   USER_QUESTION_STORAGE_KEY,
+    //   USER_SUBTOPIC_STORAGE_KEY,
+    // });
 
 
     // 🔥 ADD THIS BLOCK RIGHT HERE
     if (isRemoteUpdateRef.current || isCatchingUpRef.current) {
-      console.log("⛔ Skipping sync (remote/catchup)");
+      // console.log("⛔ Skipping sync (remote/catchup)");
       return;
     }
 
@@ -862,10 +862,10 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 
     if (!hasAnyProgress) return;
 
-    console.log("Debounced sync triggered", {
-      progressPercent,
-      questions: Object.keys(questionProgress).length,
-    });
+    // console.log("Debounced sync triggered", {
+    //   progressPercent,
+    //   questions: Object.keys(questionProgress).length,
+    // });
 
 
     // 🧠 debounce logic
@@ -885,7 +885,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
       });
 
       if (result?.new_badges?.length > 0) {
-        console.log("🎉 New badges unlocked:", result.new_badges);
+        // console.log("🎉 New badges unlocked:", result.new_badges);
         const unlockedBadgeNames = result.new_badges.map(
           (badgeKey) => BADGE_NAME_MAP[badgeKey] || badgeKey
         );
@@ -918,7 +918,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
       }
 
       // optional debug
-      console.log("Debounced sync to DB");
+      // console.log("Debounced sync to DB");
     }, 800); // ⏱️ 800ms debounce
 
     // cleanup (important)
@@ -945,7 +945,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
         (payload) => {
           if (!userId) return;
           if (isHydratingRef.current) return;
-          console.log("🔄 Realtime progress update");
+          // console.log("🔄 Realtime progress update");
 
           const progress = payload.new?.progress_json || {};
 
@@ -957,7 +957,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
             JSON.stringify(dbQuestions) === JSON.stringify(questionProgressRef.current) &&
             JSON.stringify(dbSubtopics) === JSON.stringify(subtopicProgressRef.current)
           ) {
-            console.log("⏭ No real change from realtime");
+            // console.log("⏭ No real change from realtime");
             return;
           }
 
@@ -966,11 +966,11 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 
           // ⛔ ignore stale realtime updates
           if (localUpdatedAt && incomingUpdatedAt <= localUpdatedAt) {
-            console.log("Ignoring stale realtime update");
+            // console.log("Ignoring stale realtime update");
             return;
           }
 
-          console.log("Applying DB state");
+          // console.log("Applying DB state");
 
           // 🔥 MARK AS REMOTE UPDATE (ADD THIS)
           isRemoteUpdateRef.current = true;
@@ -981,7 +981,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
             Object.keys(dbSubtopics).length === 0;
 
           if (isReset) {
-            console.log("Reset detected → clearing local state");
+            // console.log("Reset detected → clearing local state");
 
             setQuestionProgress({});
             setSubtopicProgress({});
@@ -1039,7 +1039,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
         }
       )
       .subscribe((status) => {
-        console.log("Realtime status:", status);
+        // console.log("Realtime status:", status);
       });
 
     return () => {
