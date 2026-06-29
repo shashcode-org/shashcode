@@ -65,27 +65,24 @@ export async function handler(event) {
             throw error;
         }
 
-        const response = {
-            statusCode: 200,
-            body: JSON.stringify({
-                subtopics: data.progress_json?.subtopics ?? {},
-                questions: data.progress_json?.questions ?? {},
-                highest_level: data?.highest_level ?? 0,
-                updated_at: data?.updated_at ?? null,
-            }),
+        const payload = {
+            subtopics: data.progress_json?.subtopics ?? {},
+            questions: data.progress_json?.questions ?? {},
+            highest_level: data?.highest_level ?? 0,
+            updated_at: data?.updated_at ?? null,
         };
 
         console.log("STEP 6 - Returning", {
-            questionCount: Object.keys(response.questions).length,
-            subtopicCount: Object.keys(response.subtopics).length,
-            highest_level: response.highest_level,
-            updated_at: response.updated_at,
+            questionCount: Object.keys(payload.questions).length,
+            subtopicCount: Object.keys(payload.subtopics).length,
+            highest_level: payload.highest_level,
+            updated_at: payload.updated_at,
         });
 
         return {
             statusCode: 200,
-            body: JSON.stringify(response),
-        }
+            body: JSON.stringify(payload),
+        };
     } catch (err) {
         console.error("getProgress error:", err);
         console.error(err.stack);
