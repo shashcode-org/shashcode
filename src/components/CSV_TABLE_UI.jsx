@@ -180,6 +180,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
   const questionProgressRef = useRef(questionProgress);
   const subtopicProgressRef = useRef(subtopicProgress);
   const isCatchingUpRef = useRef(false);
+  const needsOnePostHydrationSyncRef = useRef(false);
   // const migrationSyncDoneRef = useRef(false);
   const accessTokenRef = useRef(null);
   useEffect(() => {
@@ -804,6 +805,18 @@ export const CSV_TABLE_UI = ({ csvData }) => {
         setQuestionProgress(finalQuestions);
         setSubtopicProgress(finalSubtopics);
 
+        const hasProgress =
+  Object.keys(finalQuestions).length ||
+  Object.keys(finalSubtopics).length;
+
+if (
+  hasProgress &&
+  dbData?.highest_level === "0"
+) {
+  console.log("Need one post hydration sync");
+  needsOnePostHydrationSyncRef.current = true;
+}
+
         //         const shouldRunMigrationSync =
         //   localStorage.getItem("migration_done") === "true";
 
@@ -886,7 +899,10 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 
     // 🔥 DO NOT SYNC UNLESS USER ACTUALLY CHANGED SOMETHING
     // Allow one sync immediately after migration
-    if (!hasUserInteractedRef.current) {
+    if (
+      !hasUserInteractedRef.current &&
+      !needsOnePostHydrationSyncRef.current
+    ) {
       console.log("hey 76");
       return;
     }
@@ -939,6 +955,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
         bucketCompletion,
         completedMainTopics,
       });
+      needsOnePostHydrationSyncRef.current = false;
       // migrationSyncDoneRef.current = false;
 
       if (result?.new_badges?.length > 0) {
