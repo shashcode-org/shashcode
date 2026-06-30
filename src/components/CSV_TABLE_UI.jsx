@@ -85,7 +85,7 @@ async function syncProgressToServer({
   } = await supabase.auth.getSession();
 
   if (!session) {
-    console.warn("No session, skipping sync");
+    // console.warn("No session, skipping sync");
     return null;
   }
 
@@ -113,13 +113,13 @@ async function syncProgressToServer({
   });
 
   if (!res.ok) {
-    const text = await res.text();
-    console.error("syncProgress failed:", text);
+    // const text = await res.text();
+    // console.error("syncProgress failed:", text);
     return null;
   }
   const json = await res.json();
 
-  console.log("Sync response:", json);
+  // console.log("Sync response:", json);
 
   return json;
 
@@ -453,10 +453,10 @@ export const CSV_TABLE_UI = ({ csvData }) => {
         if (questions.length > 0) {
           const qIds = questions.map(d => d.id);
           const solved = qIds.filter(id => questionProgress[id]?.value === true).length;
-          console.log("Oye hoye kya scene hai")
+          // console.log("Oye hoye kya scene hai")
           return solved === qIds.length;
         } else {
-          console.log("Teri walk me jaane hai")
+          // console.log("Teri walk me jaane hai")
           return subtopicProgress[sub.id]?.value === true;
         }
       });
@@ -545,7 +545,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 
     // ✅ CASE 0: GUEST USER
     if (!userId) {
-      console.log("Guest mode → loading local progress");
+      // console.log("Guest mode → loading local progress");
 
       let guestQuestions = readQuestionProgress();
       let guestSubtopics = readSubtopicProgress();
@@ -577,7 +577,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
     const hydrationKey = `${userId}_${sheet}`;
 
     if (hydratedUserRef.current === hydrationKey) {
-      console.log("Skipping hydration for same user");
+      // console.log("Skipping hydration for same user");
       return;
     }
 
@@ -607,9 +607,9 @@ export const CSV_TABLE_UI = ({ csvData }) => {
         const hasUserData = Object.keys(userQ).length > 0 || Object.keys(userS).length > 0;
 
         if (!alreadyMigrated && userId && !hasUserData && hasGuestData) {
-          console.log("Waiting for migration (user)");
+          // console.log("Waiting for migration (user)");
 
-          console.log("Using guest fallback");
+          // console.log("Using guest fallback");
           setQuestionProgress(normalizeProgress(guestQ));
           setSubtopicProgress(normalizeProgress(guestS));
 
@@ -617,7 +617,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
           isHydratingRef.current = false;
           return;
         }
-        console.log("Starting hydration");
+        // console.log("Starting hydration");
 
 
 
@@ -668,14 +668,14 @@ export const CSV_TABLE_UI = ({ csvData }) => {
               })
             );
 
-            console.log("Guest subtopics merged into user");
+            // console.log("Guest subtopics merged into user");
 
 
           }
           if (guestQuestions || guestSubtopics) {
             localStorage.removeItem(guestKeys.USER_QUESTION_STORAGE_KEY);
             localStorage.removeItem(guestKeys.USER_SUBTOPIC_STORAGE_KEY);
-            console.log("Guest keys cleaned after merge");
+            // console.log("Guest keys cleaned after merge");
           }
 
         }
@@ -702,7 +702,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
           dbData = await hydrateProgressFromDB(sheet);
         }
 
-        console.log("DB data:", dbData);
+        // console.log("DB data:", dbData);
         // ✅ SET LEVEL AFTER FETCH
         if (dbData?.highest_level !== undefined) {
           setHighestLevel(
@@ -736,18 +736,18 @@ export const CSV_TABLE_UI = ({ csvData }) => {
           //   localUpdatedAt,
           // });
 
-          console.log("Using DB as source of truth -> welcome");
+          // console.log("Using DB as source of truth -> welcome");
 
           const dbTime = new Date(dbUpdatedAt || 0).getTime();
           const localTime = new Date(localUpdatedAt || 0).getTime();
 
           if (!localUpdatedAt || dbTime >= localTime) {
-            console.log("Using DB as source of truth");
+            // console.log("Using DB as source of truth");
 
             finalQuestions = dbQuestions;
             finalSubtopics = dbSubtopics;
           } else {
-            console.log("Local is newer, merging carefully");
+            // console.log("Local is newer, merging carefully");
 
             finalQuestions = mergeProgress(dbQuestions, localQuestions);
             finalSubtopics = mergeProgress(dbSubtopics, localSubtopics);
@@ -790,7 +790,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
           finalQuestions = localQuestions;
           finalSubtopics = localSubtopics;
 
-          console.log("Using local only");
+          // console.log("Using local only");
 
         }
 
@@ -812,7 +812,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
         if (
           isMigrationFlow
         ) {
-          console.log("Need one post hydration sync");
+          // console.log("Need one post hydration sync");
           needsOnePostHydrationSyncRef.current = true;
         }
 
@@ -848,17 +848,17 @@ export const CSV_TABLE_UI = ({ csvData }) => {
           localStorage.removeItem(QUESTION_STORAGE_KEY);
           localStorage.removeItem(SUBTOPIC_STORAGE_KEY);
 
-          console.log("Old keys cleaned");
+          // console.log("Old keys cleaned");
 
         }
 
 
         hasHydratedFromLocalRef.current = true;
         hasUserInteractedRef.current = false;
-        console.log("Hydration complete");
+        // console.log("Hydration complete");
 
       } catch (err) {
-        console.error("Hydration error:", err);
+        // console.error("Hydration error:", err);
         const localQuestions = normalizeProgress(readQuestionProgress());
         const localSubtopics = normalizeProgress(readSubtopicProgress());
 
@@ -886,13 +886,13 @@ export const CSV_TABLE_UI = ({ csvData }) => {
     // 🔥 ADD THIS BLOCK RIGHT HERE
     if (isRemoteUpdateRef.current || isCatchingUpRef.current) {
       // console.log("⛔ Skipping sync (remote/catchup)");
-      console.log("hey 74");
+      // console.log("hey 74");
       return;
     }
 
     // ❌ don't sync before localStorage hydration
     if (!hasHydratedFromLocalRef.current) {
-      console.log("hey 75");
+      // console.log("hey 75");
       return;
     }
 
@@ -902,7 +902,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
       !hasUserInteractedRef.current &&
       !needsOnePostHydrationSyncRef.current
     ) {
-      console.log("hey 76");
+      // console.log("hey 76");
       return;
     }
     // if (
@@ -912,7 +912,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
     //   return;
     // }
     if (isHydratingRef.current) {
-      console.log("hey 77");
+      // console.log("hey 77");
       return;   // 🔥 CRITICAL
     }
 
@@ -923,7 +923,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
       Object.keys(questionProgress).length > 0;
 
     if (!hasAnyProgress) {
-      console.log("hey 78");
+      // console.log("hey 78");
       return;
     }
 
@@ -942,16 +942,16 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 
       const isMigrationSync = needsOnePostHydrationSyncRef.current;
 
-      console.log(
-        isMigrationSync
-          ? "POST HYDRATION SYNC"
-          : "USER PROGRESS SYNC",
-        {
-          progressPercent,
-          bucketCompletion,
-          completedMainTopics,
-        }
-      );
+      // console.log(
+      //   isMigrationSync
+      //     ? "POST HYDRATION SYNC"
+      //     : "USER PROGRESS SYNC",
+      //   {
+      //     progressPercent,
+      //     bucketCompletion,
+      //     completedMainTopics,
+      //   }
+      // );
 
       // console.log("AUTO MIGRATION SYNC", {
       //   progressPercent,
@@ -969,7 +969,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
       });
       if (isMigrationSync) {
         needsOnePostHydrationSyncRef.current = false;
-        console.log("Migration sync completed");
+        // console.log("Migration sync completed");
       }
       // needsOnePostHydrationSyncRef.current = false;
       // migrationSyncDoneRef.current = false;
