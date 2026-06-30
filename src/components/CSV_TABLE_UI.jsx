@@ -805,13 +805,12 @@ export const CSV_TABLE_UI = ({ csvData }) => {
         setQuestionProgress(finalQuestions);
         setSubtopicProgress(finalSubtopics);
 
-        const hasProgress =
-  Object.keys(finalQuestions).length ||
-  Object.keys(finalSubtopics).length;
+
+  const isMigrationFlow =
+    localStorage.getItem("migration_done") === "true";
 
 if (
-  hasProgress &&
-  dbData?.highest_level === "0"
+  isMigrationFlow
 ) {
   console.log("Need one post hydration sync");
   needsOnePostHydrationSyncRef.current = true;
