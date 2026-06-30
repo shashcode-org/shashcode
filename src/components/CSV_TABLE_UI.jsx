@@ -806,15 +806,15 @@ export const CSV_TABLE_UI = ({ csvData }) => {
         setSubtopicProgress(finalSubtopics);
 
 
-  const isMigrationFlow =
-    localStorage.getItem("migration_done") === "true";
+        const isMigrationFlow =
+          localStorage.getItem("migration_done") === "true";
 
-if (
-  isMigrationFlow
-) {
-  console.log("Need one post hydration sync");
-  needsOnePostHydrationSyncRef.current = true;
-}
+        if (
+          isMigrationFlow
+        ) {
+          console.log("Need one post hydration sync");
+          needsOnePostHydrationSyncRef.current = true;
+        }
 
         //         const shouldRunMigrationSync =
         //   localStorage.getItem("migration_done") === "true";
@@ -915,7 +915,7 @@ if (
       console.log("hey 77");
       return;   // 🔥 CRITICAL
     }
-      
+
 
     // ❌ don't sync if nothing exists
     const hasAnyProgress =
@@ -940,11 +940,24 @@ if (
 
     debounceTimerRef.current = setTimeout(async () => {
 
-      console.log("AUTO MIGRATION SYNC", {
-        progressPercent,
-        bucketCompletion,
-        completedMainTopics,
-      });
+      const isMigrationSync = needsOnePostHydrationSyncRef.current;
+
+      console.log(
+        isMigrationSync
+          ? "POST HYDRATION SYNC"
+          : "USER PROGRESS SYNC",
+        {
+          progressPercent,
+          bucketCompletion,
+          completedMainTopics,
+        }
+      );
+
+      // console.log("AUTO MIGRATION SYNC", {
+      //   progressPercent,
+      //   bucketCompletion,
+      //   completedMainTopics,
+      // });
 
       const result = await syncProgressToServer({
         sheet,
@@ -954,7 +967,11 @@ if (
         bucketCompletion,
         completedMainTopics,
       });
-      needsOnePostHydrationSyncRef.current = false;
+      if (isMigrationSync) {
+        needsOnePostHydrationSyncRef.current = false;
+        console.log("Migration sync completed");
+      }
+      // needsOnePostHydrationSyncRef.current = false;
       // migrationSyncDoneRef.current = false;
 
       if (result?.new_badges?.length > 0) {
