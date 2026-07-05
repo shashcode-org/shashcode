@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import DSA from "./pages/DSA";
 import JavaDSA from "./pages/JavaDSA";
-// import LastMinuteDSA from "./pages/LastMinuteDSA";
+import DSARestart from "./pages/DSARestart";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import ContactUs from "./pages/Contact";
@@ -231,6 +231,7 @@ const App = () => {
                         <Route path="/" element={<Home />} />
                         <Route path="/dsa" element={<DSA />} />
                         <Route path="/java-dsa" element={<JavaDSA />} />
+                        <Route path="/dsa-restart" element={<DSARestart />} />
                         {/* <Route path="/last-minute-dsa" element={<LastMinuteDSA />} /> */}
                         <Route path="/privacy" element={<Privacy />} />
                         <Route path="/terms" element={<Terms />} />
