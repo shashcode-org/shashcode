@@ -25,6 +25,7 @@ const BADGE_NAME_MAP = {
 };
 const QUESTION_STORAGE_KEY = "questionProgress";
 const SUBTOPIC_STORAGE_KEY = "subtopicProgress";
+const PENDING_POST_MIGRATION_SYNC_KEY = "pending_post_migration_sync";
 
 const normalizeProgress = (progress) => {
   const normalized = {};
@@ -183,6 +184,13 @@ export const CSV_TABLE_UI = ({ csvData }) => {
   const needsOnePostHydrationSyncRef = useRef(false);
   // const migrationSyncDoneRef = useRef(false);
   const accessTokenRef = useRef(null);
+  const progressPercentRef = useRef(0);
+  const bucketCompletionRef = useRef({});
+  const completedMainTopicsRef = useRef([]);
+  const pendingUnsyncedRef = useRef(false);
+  const syncInFlightRef = useRef(false);
+  const syncQueuedRef = useRef(false);
+  const flushProgressToServerRef = useRef(async () => null);
   useEffect(() => {
     const loadToken = async () => {
       const { data } = await supabase.auth.getSession();
@@ -212,11 +220,6 @@ export const CSV_TABLE_UI = ({ csvData }) => {
       window.removeEventListener("migrationCompleted", handler);
     };
   }, []);
-
-  useEffect(() => {
-    questionProgressRef.current = questionProgress;
-    subtopicProgressRef.current = subtopicProgress;
-  }, [questionProgress, subtopicProgress]);
 
   const previousUserRef = useRef(null);
 
@@ -355,7 +358,9 @@ export const CSV_TABLE_UI = ({ csvData }) => {
       };
     }
     saveQuestionProgress(progress);
+    questionProgressRef.current = progress;
     hasUserInteractedRef.current = true;
+    pendingUnsyncedRef.current = true;
     return progress;
   };
 
@@ -389,7 +394,9 @@ export const CSV_TABLE_UI = ({ csvData }) => {
       };
     }
     saveSubtopicProgress(progress);
+    subtopicProgressRef.current = progress;
     hasUserInteractedRef.current = true;
+    pendingUnsyncedRef.current = true;
     return progress;
   };
 
@@ -511,8 +518,106 @@ export const CSV_TABLE_UI = ({ csvData }) => {
   }, [csvData, questionProgress, subtopicProgress]);
 
   useEffect(() => {
+    questionProgressRef.current = questionProgress;
+    subtopicProgressRef.current = subtopicProgress;
+    progressPercentRef.current = progressPercent;
+    bucketCompletionRef.current = bucketCompletion;
+    completedMainTopicsRef.current = completedMainTopics;
+  }, [
+    questionProgress,
+    subtopicProgress,
+    progressPercent,
+    bucketCompletion,
+    completedMainTopics,
+  ]);
+
+  const flushProgressToServer = async () => {
+    if (syncInFlightRef.current) {
+      syncQueuedRef.current = true;
+      return null;
+    }
+
+    syncInFlightRef.current = true;
+    let lastApplied = null;
+
+    try {
+      do {
+        syncQueuedRef.current = false;
+        const isMigrationSync = needsOnePostHydrationSyncRef.current;
+
+        const result = await syncProgressToServer({
+          sheet,
+          subtopics: subtopicProgressRef.current,
+          questions: questionProgressRef.current,
+          completedPercent: progressPercentRef.current,
+          bucketCompletion: bucketCompletionRef.current,
+          completedMainTopics: completedMainTopicsRef.current,
+        });
+
+        if (syncQueuedRef.current) {
+          continue;
+        }
+
+        if (!result) {
+          break;
+        }
+
+        if (isMigrationSync) {
+          needsOnePostHydrationSyncRef.current = false;
+          sessionStorage.removeItem(PENDING_POST_MIGRATION_SYNC_KEY);
+        }
+
+        if (result?.new_badges?.length > 0) {
+          const unlockedBadgeNames = result.new_badges.map(
+            (badgeKey) => BADGE_NAME_MAP[badgeKey] || badgeKey
+          );
+
+          toast.success(
+            unlockedBadgeNames.length === 1
+              ? `New badge unlocked: ${unlockedBadgeNames[0]}`
+              : `New badges unlocked: ${unlockedBadgeNames.join(", ")}`
+          );
+
+          window.dispatchEvent(
+            new CustomEvent("badgesUpdated", {
+              detail: { newBadges: result.new_badges },
+            })
+          );
+        }
+
+        if (result?.updated_at) {
+          localStorage.setItem(
+            `progressUpdatedAt_${userId}_${sheet}`,
+            result.updated_at
+          );
+        }
+
+        if (result?.highest_level !== undefined) {
+          setHighestLevel(getLevelFromRank(Number(result.highest_level)));
+        }
+
+        if (result) {
+          pendingUnsyncedRef.current = false;
+        }
+
+        lastApplied = result;
+      } while (syncQueuedRef.current);
+    } finally {
+      syncInFlightRef.current = false;
+    }
+
+    if (syncQueuedRef.current) {
+      return flushProgressToServer();
+    }
+
+    return lastApplied;
+  };
+
+  flushProgressToServerRef.current = flushProgressToServer;
+
+  useEffect(() => {
     const handleBeforeUnload = () => {
-      if (!hasUserInteractedRef.current) return;
+      if (!pendingUnsyncedRef.current) return;
 
       const token = accessTokenRef.current;
       if (!token) return;
@@ -523,9 +628,9 @@ export const CSV_TABLE_UI = ({ csvData }) => {
           sheet,
           subtopics: subtopicProgressRef.current,
           questions: questionProgressRef.current,
-          completedPercent: progressPercent,
-          bucketCompletion,
-          completedMainTopics,
+          completedPercent: progressPercentRef.current,
+          bucketCompletion: bucketCompletionRef.current,
+          completedMainTopics: completedMainTopicsRef.current,
           token,
         })
       );
@@ -536,7 +641,7 @@ export const CSV_TABLE_UI = ({ csvData }) => {
     return () => {
       window.removeEventListener("beforeunload", handleBeforeUnload);
     };
-  }, [sheet, progressPercent, bucketCompletion, completedMainTopics]);
+  }, [sheet]);
 
 
   useEffect(() => {
@@ -807,13 +912,11 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 
 
         const isMigrationFlow =
-          localStorage.getItem("migration_done") === "true";
+          sessionStorage.getItem(PENDING_POST_MIGRATION_SYNC_KEY) === "true";
 
-        if (
-          isMigrationFlow
-        ) {
-          // console.log("Need one post hydration sync");
+        if (isMigrationFlow) {
           needsOnePostHydrationSyncRef.current = true;
+          pendingUnsyncedRef.current = true;
         }
 
         //         const shouldRunMigrationSync =
@@ -843,13 +946,9 @@ export const CSV_TABLE_UI = ({ csvData }) => {
         // STEP 7: CLEAN OLD KEYS
         // --------------------------------------------------
 
-        if (userId) {
-
+        if (userId && localStorage.getItem("migration_done") === "true") {
           localStorage.removeItem(QUESTION_STORAGE_KEY);
           localStorage.removeItem(SUBTOPIC_STORAGE_KEY);
-
-          // console.log("Old keys cleaned");
-
         }
 
 
@@ -938,77 +1037,10 @@ export const CSV_TABLE_UI = ({ csvData }) => {
       clearTimeout(debounceTimerRef.current);
     }
 
-    debounceTimerRef.current = setTimeout(async () => {
+    pendingUnsyncedRef.current = true;
 
-      const isMigrationSync = needsOnePostHydrationSyncRef.current;
-
-      // console.log(
-      //   isMigrationSync
-      //     ? "POST HYDRATION SYNC"
-      //     : "USER PROGRESS SYNC",
-      //   {
-      //     progressPercent,
-      //     bucketCompletion,
-      //     completedMainTopics,
-      //   }
-      // );
-
-      // console.log("AUTO MIGRATION SYNC", {
-      //   progressPercent,
-      //   bucketCompletion,
-      //   completedMainTopics,
-      // });
-
-      const result = await syncProgressToServer({
-        sheet,
-        subtopics: subtopicProgress,
-        questions: questionProgress,
-        completedPercent: progressPercent,
-        bucketCompletion,
-        completedMainTopics,
-      });
-      if (isMigrationSync) {
-        needsOnePostHydrationSyncRef.current = false;
-        // console.log("Migration sync completed");
-      }
-      // needsOnePostHydrationSyncRef.current = false;
-      // migrationSyncDoneRef.current = false;
-
-      if (result?.new_badges?.length > 0) {
-        // console.log("🎉 New badges unlocked:", result.new_badges);
-        const unlockedBadgeNames = result.new_badges.map(
-          (badgeKey) => BADGE_NAME_MAP[badgeKey] || badgeKey
-        );
-
-        toast.success(
-          unlockedBadgeNames.length === 1
-            ? `New badge unlocked: ${unlockedBadgeNames[0]}`
-            : `New badges unlocked: ${unlockedBadgeNames.join(", ")}`
-        );
-
-        window.dispatchEvent(
-          new CustomEvent("badgesUpdated", {
-            detail: { newBadges: result.new_badges },
-          })
-        );
-      }
-
-      // ✅ mark latest local update time
-      if (result?.updated_at) {
-        localStorage.setItem(
-          `progressUpdatedAt_${userId}_${sheet}`,
-          result.updated_at
-        );
-      }
-
-      if (result?.highest_level !== undefined) {
-        setHighestLevel(
-          getLevelFromRank(Number(result.highest_level))
-        );
-      }
-
-      // optional debug
-      // console.log("Debounced sync to DB");
+    debounceTimerRef.current = setTimeout(() => {
+      flushProgressToServerRef.current();
     }, 800); // ⏱️ 800ms debounce
 
     // cleanup (important)
@@ -1170,16 +1202,14 @@ export const CSV_TABLE_UI = ({ csvData }) => {
 
     setQuestionProgress({});
     setSubtopicProgress({});
+    questionProgressRef.current = {};
+    subtopicProgressRef.current = {};
+    progressPercentRef.current = 0;
+    bucketCompletionRef.current = {};
+    completedMainTopicsRef.current = [];
     hasUserInteractedRef.current = true;
-    // 🔥 IMPORTANT: sync empty progress to DB
-    await syncProgressToServer({
-      sheet,
-      subtopics: {},
-      questions: {},
-      completedPercent: 0,
-      bucketCompletion: {},
-      completedMainTopics: [],
-    });
+    pendingUnsyncedRef.current = true;
+    await flushProgressToServerRef.current();
     window.location.reload();
   };
 
@@ -1626,9 +1656,11 @@ export const CSV_TABLE_UI = ({ csvData }) => {
                                   }
 
                                   saveQuestionProgress(currentProgress);
+                                  questionProgressRef.current = currentProgress;
                                   setQuestionProgress(currentProgress);
                                   window.dispatchEvent(new Event("progressUpdated"));
                                   hasUserInteractedRef.current = true;
+                                  pendingUnsyncedRef.current = true;
                                 }
                               }}
                               className={`
