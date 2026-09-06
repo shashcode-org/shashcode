@@ -79,6 +79,7 @@ const App = () => {
     }
 
     localStorage.setItem("migration_done", "true");
+    sessionStorage.setItem("pending_post_migration_sync", "true");
 
     // 🔥 DELETE OLD LEGACY KEYS
     localStorage.removeItem("questionProgress");
