@@ -28,6 +28,7 @@ const queryClient = new QueryClient();
 const App = () => {
   const { loading, user } = useAuth();
   const [showMigrationPopup, setShowMigrationPopup] = useState(false);
+  const [isMigrating, setIsMigrating] = useState(false);
   const [showLoginNudge, setShowLoginNudge] = useState(false);
 
   useEffect(() => {
@@ -60,10 +61,17 @@ const App = () => {
   }, [user]);
 
   const handleMigration = async (type) => {
+    if (isMigrating) return;
+
     const legacyQ = localStorage.getItem("questionProgress");
     const legacyS = localStorage.getItem("subtopicProgress");
 
-    if (!legacyQ && !legacyS) return;
+    if (!legacyQ && !legacyS) {
+      setShowMigrationPopup(false);
+      return;
+    }
+
+    setIsMigrating(true);
 
     const q = JSON.parse(legacyQ ?? "{}");
     const s = JSON.parse(legacyS ?? "{}");
@@ -119,6 +127,7 @@ const App = () => {
       // console.error("Migration sync failed", err);
     }
 
+    setIsMigrating(false);
     setShowMigrationPopup(false);
     window.dispatchEvent(new Event("migrationCompleted"));
 
@@ -201,17 +210,21 @@ const App = () => {
 
                     <div className="flex flex-col gap-3">
                       <button
+                        type="button"
+                        disabled={isMigrating}
                         onClick={() => handleMigration("DSA")}
-                        className="py-2 rounded-md border border-border hover:bg-accent/20"
+                        className="py-2 rounded-md border border-border hover:bg-accent/20 disabled:opacity-50"
                       >
-                        Continue my journey with DSA
+                        {isMigrating ? "Restoring…" : "Continue my journey with DSA"}
                       </button>
 
                       <button
+                        type="button"
+                        disabled={isMigrating}
                         onClick={() => handleMigration("JAVA_DSA")}
-                        className="py-2 rounded-md border border-border hover:bg-accent/20"
+                        className="py-2 rounded-md border border-border hover:bg-accent/20 disabled:opacity-50"
                       >
-                        Continue my journey with Java DSA
+                        {isMigrating ? "Restoring…" : "Continue my journey with Java DSA"}
                       </button>
 
 

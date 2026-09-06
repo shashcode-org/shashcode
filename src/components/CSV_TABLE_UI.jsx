@@ -946,13 +946,9 @@ export const CSV_TABLE_UI = ({ csvData }) => {
         // STEP 7: CLEAN OLD KEYS
         // --------------------------------------------------
 
-        if (userId) {
-
+        if (userId && localStorage.getItem("migration_done") === "true") {
           localStorage.removeItem(QUESTION_STORAGE_KEY);
           localStorage.removeItem(SUBTOPIC_STORAGE_KEY);
-
-          // console.log("Old keys cleaned");
-
         }
 
 
