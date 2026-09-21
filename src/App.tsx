@@ -21,6 +21,7 @@ import UsernameOnboarding from "@/pages/UsernameOnboarding";
 import OnboardingGuard from "@/components/OnboardingGuard";
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabaseClient"; // 👈 ensure this import
+import LeetCodeDailyStickyBar from "@/components/LeetCodeDailyStickyBar";
 const queryClient = new QueryClient();
 
 
@@ -233,6 +234,7 @@ const App = () => {
                 </div>
               )}
               <ScrollToTop />
+              <LeetCodeDailyStickyBar />
               <Routes>
                 <Route path="/login" element={<Login />} />
                 <Route path="/onboarding/username" element={<UsernameOnboarding />} />

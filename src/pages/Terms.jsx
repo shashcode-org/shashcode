@@ -10,7 +10,7 @@ const Terms = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
 
-      <div className="terms-page pt-32 pb-16 flex-grow">
+      <div className="terms-page pb-16 flex-grow pt-[calc(8rem+var(--lcd-cta-h,0px))]">
         <Section contentClassName="max-w-4xl mx-auto">
           <AnimatedElement animation="fadeIn">
             <Card className="bg-card">

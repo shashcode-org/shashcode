@@ -2,7 +2,7 @@ import AnimatedElement from "@/components/AnimatedElement";
 
 const PageHero = ({ title, subtitle }) => {
   return (
-    <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 hero-gradient">
+    <section className="pb-20 px-4 sm:px-6 lg:px-8 hero-gradient pt-[calc(8rem+var(--lcd-cta-h,0px))]">
       <div className="relative z-10 max-w-6xl mx-auto text-center">
         <AnimatedElement animation="fadeIn">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">

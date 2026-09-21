@@ -83,7 +83,7 @@ const Contact = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
 
-      <main className="flex-grow pt-24">
+      <main className="flex-grow pt-[calc(6rem+var(--lcd-cta-h,0px))]">
         <Section
           title="Get In Touch"
           subtitle="Have questions or want to collaborate? We'd love to hear from you."

@@ -9,6 +9,7 @@ import Card, { CardContent, CardTitle } from "@/components/Card";
 import { ArrowRight, Code, Award, BookOpen, YoutubeIcon } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import Snowfall from "@/components/snowfall/snowfall";
+import LeetCodeDailyBanner from "@/components/LeetCodeDailyBanner";
 const Home = () => {
   const navigate = useNavigate();
   return (
@@ -24,7 +25,7 @@ const Home = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 hero-gradient">
+      <section className="pb-20 px-4 sm:px-6 lg:px-8 hero-gradient pt-[calc(8rem+var(--lcd-cta-h,0px))]">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="lg:w-1/2">
@@ -91,6 +92,8 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      <LeetCodeDailyBanner />
 
       {/* Explore DSA Sheet */}
       <Section
