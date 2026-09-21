@@ -55,6 +55,7 @@ const Home = () => {
                     Explore Java + DSA Sheet <ArrowRight size={18} />
                   </button>
                 </div>
+                <LeetCodeDailyBanner />
               </AnimatedElement>
             </div>
 
@@ -92,8 +93,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      <LeetCodeDailyBanner />
 
       {/* Explore DSA Sheet */}
       <Section
