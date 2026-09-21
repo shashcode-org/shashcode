@@ -55,7 +55,6 @@ const Home = () => {
                     Explore Java + DSA Sheet <ArrowRight size={18} />
                   </button>
                 </div>
-                <LeetCodeDailyBanner />
               </AnimatedElement>
             </div>
 
@@ -91,6 +90,12 @@ const Home = () => {
               </AnimatedElement>
             </div>
           </div>
+
+          <AnimatedElement animation="fadeIn" delay="300">
+            <div className="mt-10 sm:mt-12 w-full">
+              <LeetCodeDailyBanner />
+            </div>
+          </AnimatedElement>
         </div>
       </section>
 
